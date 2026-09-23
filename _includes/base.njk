@@ -9,7 +9,7 @@
 {% set ogType = 'article' if resumo else 'website' %}
 <title>{{ title }} — registros de viagem</title>
 <meta name="description" content="{{ pageDescription }}">
-<link rel="canonical" href="{{ pageUrl }}">
+{% if page.url == '/404.html' %}<meta name="robots" content="noindex">{% else %}<link rel="canonical" href="{{ pageUrl }}">{% endif %}
 
 <!-- Open Graph / social previews -->
 <meta property="og:type" content="{{ ogType }}">

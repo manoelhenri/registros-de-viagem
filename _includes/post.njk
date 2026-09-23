@@ -29,7 +29,10 @@ layout: base.njk
 
 <div class="post-cover">
   {% if capa %}
-    <img src="{{ capa }}" alt="{{ title }}" loading="lazy" decoding="async">
+    <img src="{{ capa }}" alt="{{ title }}" fetchpriority="high" decoding="async">
+    {% if capaCredito %}
+      <p class="cover-credit">{% if capaFonte %}<a href="{{ capaFonte }}" target="_blank" rel="noopener">{{ capaCredito }}</a>{% else %}{{ capaCredito }}{% endif %}</p>
+    {% endif %}
   {% else %}
     <div class="img-placeholder" style="aspect-ratio: 21 / 9;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
