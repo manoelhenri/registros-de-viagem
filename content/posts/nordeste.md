@@ -2,14 +2,13 @@
 title: "Nordeste em 14 dias: praias, dunas e o que eu faria diferente"
 data: 2026-06-08
 coordenadas: "03.7172° S, 38.5433° W — LITORAL DO NORDESTE"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Dunas_jericoacoara_01.jpg"
+capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Dunas_jericoacoara_01.jpg?width=1600"
+localizacaoMapa: "Jericoacoara, Ceará, Brasil"
 cidades: "Milhas de benefício"
 duracao: "14 dias"
 resumo: "Usando milhas para rodar o litoral — o roteiro, os custos e os erros de logística que quase estragaram a viagem."
 destaque: false
 ---
-
-*[Post de exemplo — substitua por seu próprio relato e fotos.]*
 
 Duas semanas rodando o litoral nordestino usando benefícios de passagem — a logística exigiu mais planejamento do que eu esperava, mas o resultado valeu cada detalhe organizado com antecedência.
 
