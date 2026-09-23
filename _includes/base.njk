@@ -3,8 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% set pageDescription = description or resumo or 'Diário pessoal de viagens: roteiros, destinos e parques já visitados.' %}
+{% set pageUrl = site.url + page.url %}
+{% set pageImage = capa or (site.url + '/images/og-cover.png') %}
+{% set ogType = 'article' if resumo else 'website' %}
 <title>{{ title }} — registros de viagem</title>
-<meta name="description" content="{{ description or 'Diário pessoal de viagens: roteiros, destinos e parques já visitados.' }}">
+<meta name="description" content="{{ pageDescription }}">
+<link rel="canonical" href="{{ pageUrl }}">
+
+<!-- Open Graph / social previews -->
+<meta property="og:type" content="{{ ogType }}">
+<meta property="og:title" content="{{ title }} — registros de viagem">
+<meta property="og:description" content="{{ pageDescription }}">
+<meta property="og:url" content="{{ pageUrl }}">
+<meta property="og:image" content="{{ pageImage }}">
+{% if not capa %}<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">{% endif %}
+<meta property="og:site_name" content="registros de viagem">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }} — registros de viagem">
+<meta name="twitter:description" content="{{ pageDescription }}">
+<meta name="twitter:image" content="{{ pageImage }}">
+
+<link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | url }}">
+<link rel="alternate" type="application/rss+xml" title="registros de viagem" href="{{ '/feed.xml' | url }}">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/style.css' | url }}">
@@ -39,6 +62,7 @@
   <div class="foot-links">
     <a href="{{ '/' | url }}">Início</a>
     <a href="{{ site.instagramUrl }}" target="_blank" rel="noopener">Instagram</a>
+    <a href="{{ '/feed.xml' | url }}">RSS</a>
   </div>
 </footer>
 
