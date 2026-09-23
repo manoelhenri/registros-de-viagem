@@ -1,0 +1,16 @@
+---
+layout: base.njk
+title: "Página não encontrada"
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+<div class="page-hero" style="text-align:center; padding-top:80px; padding-bottom:80px;">
+  <span class="eyebrow">Erro 404</span>
+  <h1>Esse destino ainda não foi visitado.</h1>
+  <p class="lede" style="margin:0 auto;">A página que você procura não existe ou foi movida. Que tal voltar para o início ou dar uma olhada nos posts?</p>
+  <div class="country-jump" style="justify-content:center; margin-top:28px;">
+    <a href="{{ '/' | url }}">← Início</a>
+    <a href="{{ '/posts/' | url }}">Ver posts</a>
+    <a href="{{ '/destinos/' | url }}">Ver destinos</a>
+  </div>
+</div>
