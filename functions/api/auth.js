@@ -3,7 +3,7 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const clientId = env.GITHUB_CLIENT_ID;
   const redirectUri = `${url.origin}/api/callback`;
-  const state = Math.random().toString(36).slice(2);
+  const state = crypto.randomUUID();
 
   const authUrl = new URL('https://github.com/login/oauth/authorize');
   authUrl.searchParams.set('client_id', clientId);

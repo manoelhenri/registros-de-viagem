@@ -31,6 +31,8 @@ export async function onRequestGet(context) {
 <script>
 (function() {
   function receiveMessage(e) {
+    // Only hand the token to the admin panel on this same site.
+    if (e.origin !== ${JSON.stringify(url.origin)}) return;
     window.opener.postMessage('authorization:github:success:${payload}', e.origin);
     window.removeEventListener('message', receiveMessage, false);
   }
