@@ -2,7 +2,7 @@
 title: "14 dias entre Portugal e Espanha: o roteiro completo"
 data: 2025-09-10
 coordenadas: "38.7223° N, 9.1393° W — LISBOA → BARCELONA"
-capa: ""
+capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Alfama_lisboa.jpg"
 cidades: "5 cidades"
 duracao: "14 dias"
 resumo: "De Lisboa a Barcelona, passando por Porto, Sevilha e Madrid — como organizamos duas semanas de estrada, trem e muita caminhada."
