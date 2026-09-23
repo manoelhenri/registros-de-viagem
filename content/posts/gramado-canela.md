@@ -2,7 +2,7 @@
 title: "Um fim de semana longo em Gramado e Canela"
 data: 2026-09-04
 coordenadas: "29.3747° S, 50.8764° W — GRAMADO → CANELA"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Rua_Coberta_-_Gramado_-_panoramio.jpg?width=1600"
+capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Rua_Coberta_Gramado_panoramio.jpg/1600px-Rua_Coberta_Gramado_panoramio.jpg"
 localizacaoMapa: "Gramado, Rio Grande do Sul, Brasil"
 cidades: "Gramado, Canela"
 duracao: "3 dias"

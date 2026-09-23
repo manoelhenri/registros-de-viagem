@@ -2,7 +2,7 @@
 title: "20 dias, três países: Bogotá, Nova York, Toronto e a Costa Leste dos EUA"
 data: 2023-05-12
 coordenadas: "04.7110° N, 74.0721° W — BOGOTÁ → NOVA YORK → TORONTO"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Bogot%C3%A1_Skyline.jpg?width=1600"
+capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Bogota_Skyline.jpg/1600px-Bogota_Skyline.jpg"
 localizacaoMapa: "Bogotá, Colômbia"
 cidades: "Bogotá, Nova York, Toronto, Washington DC, Cleveland, Cincinnati"
 duracao: "20 dias"

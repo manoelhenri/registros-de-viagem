@@ -2,7 +2,7 @@
 title: "Vale do Jequitinhonha: uma viagem de estrada fora do circuito óbvio"
 data: 2020-02-21
 coordenadas: "18.2372° S, 43.3767° W — SÃO GONÇALO DO RIO PRETO"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Rio_Jequitinhonha_(21042181156).jpg?width=1600"
+capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Rio_Jequitinhonha_21042181156.jpg/1600px-Rio_Jequitinhonha_21042181156.jpg"
 localizacaoMapa: "São Gonçalo do Rio Preto, Minas Gerais, Brasil"
 cidades: "São Gonçalo do Rio Preto"
 duracao: "5 dias"

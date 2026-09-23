@@ -2,7 +2,7 @@
 title: "Manaus e o Amazonas: a primeira vez na floresta"
 data: 2026-04-16
 coordenadas: "03.1190° S, 60.0217° W — MANAUS"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Teatro_Amazonas,_Manaus-AM.jpg?width=1600"
+capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Teatro_Amazonas_Manaus-AM.jpg/1600px-Teatro_Amazonas_Manaus-AM.jpg"
 localizacaoMapa: "Manaus, Amazonas, Brasil"
 cidades: "Manaus"
 duracao: "5 dias"

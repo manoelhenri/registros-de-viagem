@@ -2,7 +2,7 @@
 title: "25 dias pelos EUA: parques nacionais, parques temáticos e o deserto de Nevada"
 data: 2024-07-25
 coordenadas: "40.7608° N, 111.8910° W — SALT LAKE CITY → LAS VEGAS"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Las_Vegas_Strip_at_night,_2012.jpg?width=1600"
+capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Las_Vegas_Strip_at_night%2C_2012.jpg/1600px-Las_Vegas_Strip_at_night%2C_2012.jpg"
 localizacaoMapa: "Salt Lake City, Utah, Estados Unidos"
 cidades: "Salt Lake City, Orlando, Denver, Las Vegas"
 duracao: "25 dias"
