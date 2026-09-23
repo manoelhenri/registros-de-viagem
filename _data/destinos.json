@@ -56,6 +56,8 @@
         "nome": "Recife",
         "estado": "Pernambuco, Brasil",
         "anos": [
+          "2024",
+          "2026",
           "2025"
         ],
         "resumo": "Capital pernambucana, conhecida pelo Recife Antigo e suas pontes.",
@@ -156,7 +158,7 @@
         "nome": "Fortaleza",
         "estado": "Ceará, Brasil",
         "anos": [
-          "2022"
+          "2021"
         ],
         "resumo": "Capital cearense, com a orla da Beira-Mar e o Mercado Central.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Avenida_Beira_Mar_(Fortaleza)_22.jpg?width=640"
@@ -165,7 +167,7 @@
         "nome": "Aquiraz",
         "estado": "Ceará, Brasil",
         "anos": [
-          "2022"
+          "2021"
         ],
         "resumo": "Praia do Porto das Dunas, na Grande Fortaleza.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Praia_de_Porto_das_Dunas_6.jpg?width=640"
@@ -174,7 +176,7 @@
         "nome": "Jericoacoara",
         "estado": "Ceará, Brasil",
         "anos": [
-          "2022"
+          "2021"
         ],
         "resumo": "Vilarejo entre dunas, um dos destinos mais bonitos do Brasil.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunas_jericoacoara_01.jpg?width=640"
@@ -192,7 +194,7 @@
         "nome": "Paraty",
         "estado": "Rio de Janeiro, Brasil",
         "anos": [
-          "2021"
+          "2020"
         ],
         "resumo": "Centro histórico colonial preservado na Costa Verde fluminense.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Centro_Hist%C3%B3rico_de_Paraty.jpg?width=640"
@@ -205,6 +207,105 @@
         ],
         "resumo": "Cidade histórica mineira, com o Santuário do Bom Jesus de Matosinhos.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Santu%C3%A1rio_do_Bom_Jesus_de_Matosinhos_Congonhas_Minas_Gerais.jpg?width=640"
+      },
+      {
+        "nome": "Canoa Quebrada",
+        "estado": "Ceará, Brasil",
+        "anos": [
+          "2021"
+        ],
+        "resumo": "Vilarejo de falésias e dunas, bate-volta clássico saindo de Fortaleza.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunas_jericoacoara_01.jpg?width=640"
+      },
+      {
+        "nome": "Ilhabela",
+        "estado": "São Paulo, Brasil",
+        "anos": [
+          "2025",
+          "2022",
+          "2021",
+          "2020",
+          "2017",
+          "2016"
+        ],
+        "resumo": "Ilha do litoral norte paulista, entre trilhas na Mata Atlântica e praias de água calma.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Vista_de_Ilhabela_(S%C3%A3o_Paulo).jpg?width=640"
+      },
+      {
+        "nome": "Itanhaém",
+        "estado": "São Paulo, Brasil",
+        "anos": [
+          "2024",
+          "2023",
+          "2022",
+          "2021",
+          "2018"
+        ],
+        "resumo": "Praia do litoral sul paulista — quase sempre o destino da virada de ano.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Praia_do_Tombo_-_Itanha%C3%A9m.jpg?width=640"
+      },
+      {
+        "nome": "São Gonçalo do Rio Preto",
+        "estado": "Minas Gerais, Brasil",
+        "anos": [
+          "2020"
+        ],
+        "resumo": "Vale do Jequitinhonha, cachoeiras de água cristalina e estrada de terra.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Rio_Jequitinhonha_(21042181156).jpg?width=640"
+      },
+      {
+        "nome": "Salvador",
+        "estado": "Bahia, Brasil",
+        "anos": [
+          "2022"
+        ],
+        "resumo": "Centro histórico do Pelourinho e a vista da Baía de Todos os Santos.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Pelourinho_Salvador_Bahia_2019-0882.jpg?width=640"
+      },
+      {
+        "nome": "Olinda",
+        "estado": "Pernambuco, Brasil",
+        "anos": [
+          "2026"
+        ],
+        "resumo": "Ladeiras coloridas e igrejas barrocas no centro histórico tombado pela Unesco.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Se_Church_-_Olinda,_Pernambuco,_Brazil.jpg?width=640"
+      },
+      {
+        "nome": "Porto Seguro",
+        "estado": "Bahia, Brasil",
+        "anos": [
+          "2026"
+        ],
+        "resumo": "Onde o Brasil foi encontrado — praias e o litoral sul da Bahia.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Vista_%C3%A1rea_de_Porto_Seguro_01.jpg?width=640"
+      },
+      {
+        "nome": "Trancoso",
+        "estado": "Bahia, Brasil",
+        "anos": [
+          "2026"
+        ],
+        "resumo": "O Quadrado ao pôr do sol, vizinho de Porto Seguro.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Quadrado_-_Trancoso_-_Porto_Seguro-BA_-_panoramio.jpg?width=640"
+      },
+      {
+        "nome": "Gramado",
+        "estado": "Rio Grande do Sul, Brasil",
+        "anos": [
+          "2026"
+        ],
+        "resumo": "Arquitetura de inspiração europeia na Serra Gaúcha.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Rua_Coberta_-_Gramado_-_panoramio.jpg?width=640"
+      },
+      {
+        "nome": "Canela",
+        "estado": "Rio Grande do Sul, Brasil",
+        "anos": [
+          "2026"
+        ],
+        "resumo": "Vizinha de Gramado, lar da Cascata do Caracol.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Cascata_do_Caracol_iluminada_pelo_sol.JPG?width=640"
       }
     ]
   },
@@ -330,6 +431,24 @@
         ],
         "resumo": "A cidade que nunca dorme, entre Manhattan e o Central Park.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/NYC_Manhattan_Skyline.JPG?width=640"
+      },
+      {
+        "nome": "Salt Lake City",
+        "estado": "Utah, Estados Unidos",
+        "anos": [
+          "2024"
+        ],
+        "resumo": "Base para os parques nacionais Arches e Canyonlands.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Salt_Lake_Temple,_Utah_-_Sept_2004.jpg?width=640"
+      },
+      {
+        "nome": "Denver",
+        "estado": "Colorado, Estados Unidos",
+        "anos": [
+          "2024"
+        ],
+        "resumo": "Porta de entrada para as Montanhas Rochosas.",
+        "foto": ""
       }
     ]
   },
@@ -473,6 +592,47 @@
         ],
         "resumo": "Capital portenha, tango e arquitetura europeia às margens do Rio da Prata.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Obelisco,_Buenos_Aires,_Argentina_(2360406889).jpg?width=640"
+      }
+    ]
+  },
+  {
+    "pais": "México",
+    "bandeira": "🇲🇽",
+    "id": "mexico",
+    "cidades": [
+      {
+        "nome": "Cancún",
+        "estado": "Quintana Roo, México",
+        "anos": [
+          "2017"
+        ],
+        "resumo": "Água turquesa do Caribe mexicano.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Cancun_Beach.jpg?width=640"
+      },
+      {
+        "nome": "Cidade do México",
+        "estado": "Cidade do México, México",
+        "anos": [
+          "2017"
+        ],
+        "resumo": "A capital mais alta e mais populosa das Américas.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Mexico_City_Zocalo.jpg?width=640"
+      }
+    ]
+  },
+  {
+    "pais": "Colômbia",
+    "bandeira": "🇨🇴",
+    "id": "colombia",
+    "cidades": [
+      {
+        "nome": "Bogotá",
+        "estado": "Distrito Capital, Colômbia",
+        "anos": [
+          "2023"
+        ],
+        "resumo": "Cerro de Monserrate e o centro histórico de La Candelaria.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Bogot%C3%A1_Skyline.jpg?width=640"
       }
     ]
   }
