@@ -7,8 +7,8 @@ public_folder: "/images/uploads"
 
 locale: "pt"
 
-site_url: https://SEU-SITE.netlify.app
-display_url: https://SEU-SITE.netlify.app
+site_url: https://registros-de-viagem-manoel.netlify.app
+display_url: https://registros-de-viagem-manoel.netlify.app
 
 collections:
 
