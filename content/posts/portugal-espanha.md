@@ -2,14 +2,13 @@
 title: "14 dias entre Portugal e Espanha: o roteiro completo"
 data: 2025-09-10
 coordenadas: "38.7223° N, 9.1393° W — LISBOA → BARCELONA"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Alfama_lisboa.jpg"
+capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Alfama_lisboa.jpg?width=1600"
+localizacaoMapa: "Lisboa, Portugal"
 cidades: "5 cidades"
 duracao: "14 dias"
 resumo: "De Lisboa a Barcelona, passando por Porto, Sevilha e Madrid — como organizamos duas semanas de estrada, trem e muita caminhada."
 destaque: true
 ---
-
-*[Post de exemplo — substitua por seu próprio relato e fotos.]*
 
 Duas semanas para atravessar dois países parecia pouco tempo quando planejei essa viagem, mas o segredo foi escolher poucas bases e viajar de trem entre elas. Começamos em Lisboa, seguimos para o Porto, cruzamos a fronteira até Sevilha, passamos por Madrid e fechamos em Barcelona.
 
