@@ -837,22 +837,38 @@ footer a:hover { color: var(--petrol); }
 
 .post-nav a { text-decoration: none; color: var(--petrol); }
 
+/* floating "back to top" button, on every page (see base.njk) */
 .back-to-top {
-  display: none;
-  background: none;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  background: var(--petrol);
+  color: var(--paper-raised);
   border: none;
-  color: var(--petrol);
+  border-radius: 999px;
   font-family: var(--font-mono);
   font-size: 13px;
+  padding: 10px 16px;
   cursor: pointer;
-  padding: 0;
-  text-decoration: none;
-  transition: color .15s, opacity .15s;
+  box-shadow: 0 4px 14px rgba(30, 36, 34, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .2s, transform .2s, visibility .2s, background .15s;
 }
 
-.back-to-top:hover {
-  color: var(--petrol-deep);
-  opacity: 0.8;
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.back-to-top:hover { background: var(--petrol-deep); }
+.back-to-top:focus-visible { outline: 2px solid var(--sand); outline-offset: 3px; }
+
+@media (max-width: 480px) {
+  .back-to-top { right: 16px; bottom: 16px; }
 }
 
 /* ===========================================================
