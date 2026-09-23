@@ -1,14 +1,17 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: manoelhenri/registros-de-viagem
   branch: main
+  base_url: https://registros-de-viagem.pages.dev
+  auth_endpoint: api/auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 locale: "pt"
 
-site_url: https://SEU-SITE.netlify.app
-display_url: https://SEU-SITE.netlify.app
+site_url: https://registros-de-viagem.pages.dev
+display_url: https://registros-de-viagem.pages.dev
 
 collections:
 
