@@ -1,0 +1,117 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "pt"
+
+site_url: https://SEU-SITE.netlify.app
+display_url: https://SEU-SITE.netlify.app
+
+collections:
+
+  # ---------- Posts do blog ----------
+  - name: "posts"
+    label: "Posts do blog"
+    label_singular: "Post"
+    folder: "content/posts"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{data}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data da viagem", name: "data", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Foto de capa", name: "capa", widget: "image", required: false, hint: "Aparece no topo do post e na home. Se deixar em branco, mostra um espaço reservado." }
+      - { label: "Coordenadas / rota (texto pequeno acima do título)", name: "coordenadas", widget: "string", required: false, hint: "Ex: 38.7223° N, 9.1393° W — LISBOA" }
+      - { label: "Cidades / pessoas (aparece nos detalhes do post)", name: "cidades", widget: "string", required: false, hint: "Ex: 5 cidades, ou 6 pessoas" }
+      - { label: "Duração", name: "duracao", widget: "string", required: false, hint: "Ex: 14 dias" }
+      - { label: "Resumo curto (aparece nos cards da home)", name: "resumo", widget: "text" }
+      - { label: "Destacar na home?", name: "destaque", widget: "boolean", default: false, hint: "Só um post deve estar marcado como destaque por vez." }
+      - { label: "Texto do post", name: "body", widget: "markdown" }
+
+  # ---------- Destinos (histórico de viagens) ----------
+  - name: "destinos"
+    label: "Destinos (histórico de viagens)"
+    files:
+      - name: "destinos"
+        label: "Lista de destinos por país"
+        file: "_data/destinos.json"
+        fields:
+          - label: "Países"
+            name: "destinos"
+            widget: "list"
+            summary: "{{fields.bandeira}} {{fields.pais}}"
+            fields:
+              - { label: "Nome do país", name: "pais", widget: "string" }
+              - { label: "Bandeira (emoji)", name: "bandeira", widget: "string", hint: "Ex: 🇧🇷" }
+              - { label: "Identificador (sem espaços, sem acento)", name: "id", widget: "string", hint: "Ex: brasil, eua, portugal" }
+              - label: "Cidades visitadas"
+                name: "cidades"
+                widget: "list"
+                summary: "{{fields.nome}}"
+                fields:
+                  - { label: "Cidade", name: "nome", widget: "string" }
+                  - { label: "Estado / região, país", name: "estado", widget: "string" }
+                  - { label: "Anos da visita", name: "anos", widget: "list", field: { label: "Ano", name: "ano", widget: "string" } }
+                  - { label: "Mini resumo", name: "resumo", widget: "text" }
+                  - { label: "Foto", name: "foto", widget: "image", required: false }
+
+  # ---------- Parques ----------
+  - name: "parques"
+    label: "Parques visitados"
+    files:
+      - name: "parques"
+        label: "Lista de parques"
+        file: "_data/parques.json"
+        fields:
+          - label: "Grupos"
+            name: "parques"
+            widget: "list"
+            summary: "{{fields.icone}} {{fields.grupo}}"
+            fields:
+              - { label: "Nome do grupo", name: "grupo", widget: "string", hint: "Ex: Parques Temáticos, Parques Aquáticos" }
+              - { label: "Ícone (emoji)", name: "icone", widget: "string", hint: "Ex: 🎢" }
+              - { label: "Identificador (sem espaços, sem acento)", name: "id", widget: "string" }
+              - label: "Parques"
+                name: "parques"
+                widget: "list"
+                summary: "{{fields.nome}}"
+                fields:
+                  - { label: "Nome do parque", name: "nome", widget: "string" }
+                  - { label: "Local / país", name: "local", widget: "string" }
+                  - { label: "Anos da visita", name: "anos", widget: "list", required: false, field: { label: "Ano", name: "ano", widget: "string" } }
+                  - { label: "Mini resumo", name: "resumo", widget: "text" }
+                  - { label: "Foto", name: "foto", widget: "image", required: false }
+
+  # ---------- Página Sobre ----------
+  - name: "sobre"
+    label: "Página Sobre"
+    files:
+      - name: "sobre"
+        label: "Conteúdo da página Sobre"
+        file: "_data/sobre.json"
+        fields:
+          - { label: "Seu nome (primeiro nome)", name: "nome", widget: "string" }
+          - { label: "Sua foto", name: "foto", widget: "image", required: false }
+          - { label: "Texto de apresentação", name: "textoIntro", widget: "text" }
+          - { label: "Texto extra", name: "textoExtra", widget: "text" }
+          - { label: "Status de viagem (boarding pass)", name: "statusViagem", widget: "string" }
+          - { label: "Roteiros publicados", name: "roteirosPublicados", widget: "string" }
+          - { label: "Países recentes", name: "paisesRecentes", widget: "string" }
+          - { label: "Próximos destinos", name: "proximosDestinos", widget: "string" }
+
+  # ---------- Configurações gerais do site ----------
+  - name: "config"
+    label: "Configurações do site"
+    files:
+      - name: "site"
+        label: "Nome, Instagram e ano"
+        file: "_data/site.json"
+        fields:
+          - { label: "Seu nome completo (aparece no rodapé)", name: "author", widget: "string" }
+          - { label: "Usuário do Instagram (com @)", name: "instagramHandle", widget: "string" }
+          - { label: "Link do Instagram", name: "instagramUrl", widget: "string" }
+          - { label: "Ano (rodapé)", name: "year", widget: "string" }
