@@ -16,9 +16,9 @@ nav: inicio
     <text class="stop-label" x="985" y="92">MCO</text>
   </svg>
   <div class="hero-content">
-    <span class="eyebrow">Diário de bordo · desde 2025</span>
-    <h1>Um mapa de lugares onde já pousei.</h1>
-    <p class="lede">Roteiros, aprendizados e o que vale a pena levar na mala — registrado destino por destino, sem pressa.</p>
+    <span class="eyebrow">{{ home.heroEyebrow }}</span>
+    <h1>{{ home.heroTitulo }}</h1>
+    <p class="lede">{{ home.heroSubtitulo }}</p>
   </div>
 </header>
 
@@ -27,11 +27,10 @@ nav: inicio
 <section class="featured">
   <a class="featured-card" href="{{ destaque.url }}" style="text-decoration:none; color:inherit;">
     {% if destaque.data.capa %}
-      <img src="{{ destaque.data.capa }}" alt="{{ destaque.data.title }}">
+      <img src="{{ destaque.data.capa }}" alt="{{ destaque.data.title }}" loading="lazy" decoding="async">
     {% else %}
       <div class="img-placeholder">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
-        <span>Adicione a foto de capa</span>
       </div>
     {% endif %}
     <div class="featured-text">
@@ -46,21 +45,21 @@ nav: inicio
 
 <section class="explore-grid">
   <a class="explore-card" href="{{ '/destinos/' | url }}">
-    <span class="eyebrow">45+ cidades · 7 países</span>
-    <h3>Histórico completo de viagens</h3>
-    <p>Todo lugar onde já pousei, organizado por país, com ano da visita e espaço para as fotos.</p>
+    <span class="eyebrow">{{ home.card1Eyebrow }}</span>
+    <h3>{{ home.card1Titulo }}</h3>
+    <p>{{ home.card1Texto }}</p>
     <span class="arrow">Ver mapa completo →</span>
   </a>
   <a class="explore-card alt" href="{{ '/parques/' | url }}">
-    <span class="eyebrow">Temáticos e aquáticos</span>
-    <h3>Todos os parques já visitados</h3>
-    <p>Do Hopi Hari ao Epic Universe — o histórico completo de parques pelo Brasil e pelo mundo.</p>
+    <span class="eyebrow">{{ home.card2Eyebrow }}</span>
+    <h3>{{ home.card2Titulo }}</h3>
+    <p>{{ home.card2Texto }}</p>
     <span class="arrow">Ver todos os parques →</span>
   </a>
 </section>
 
 <div class="section-head">
-  <h2>Últimos destinos</h2>
+  <h2>{{ home.tituloUltimosDestinos }}</h2>
   <span class="count">{{ collections.posts.length | pad2 }} registros</span>
 </div>
 
@@ -69,11 +68,10 @@ nav: inicio
   <a class="tag-card" href="{{ post.url }}">
     <span class="punch"></span>
     {% if post.data.capa %}
-      <img src="{{ post.data.capa }}" alt="{{ post.data.title }}">
+      <img src="{{ post.data.capa }}" alt="{{ post.data.title }}" loading="lazy" decoding="async">
     {% else %}
       <div class="img-placeholder" style="height:160px; margin-bottom:16px;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
-        <span>Sem foto ainda</span>
       </div>
     {% endif %}
     <span class="coords">{{ post.data.coordenadas }}</span>
@@ -86,19 +84,18 @@ nav: inicio
 <section class="ig-strip">
   <div class="ig-inner">
     <div class="section-head-alt">
-      <h2>Siga a jornada em tempo real</h2>
+      <h2>{{ home.tituloInstagram }}</h2>
       <a class="ig-handle" href="{{ site.instagramUrl }}" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         {{ site.instagramHandle }}
       </a>
     </div>
-    <div class="ig-grid">
-      {% for post in collections.posts %}
-        {% if post.data.capa %}
-          <a href="{{ site.instagramUrl }}" target="_blank" rel="noopener"><img src="{{ post.data.capa }}" alt=""></a>
-        {% endif %}
+    {% if site.instagramPosts.length %}
+    <div class="ig-embed-list">
+      {% for post in site.instagramPosts %}
+        <blockquote class="instagram-media" data-instgrm-permalink="{{ post.url }}" data-instgrm-version="14"></blockquote>
       {% endfor %}
     </div>
-    <p class="ig-note">Assim que você adicionar fotos aos posts pelo painel, elas aparecem aqui automaticamente. Para puxar as fotos reais do seu perfil, troque esta seção pelo embed oficial do Instagram.</p>
+    {% endif %}
   </div>
 </section>
