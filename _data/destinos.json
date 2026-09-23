@@ -4,28 +4,28 @@
     "bandeira": "🇧🇷",
     "id": "brasil",
     "cidades": [
-      { "nome": "João Pessoa", "estado": "Paraíba, Brasil", "anos": ["2026"], "resumo": "Praias urbanas e o ponto mais oriental das Américas.", "foto": "" },
-      { "nome": "Manaus", "estado": "Amazonas, Brasil", "anos": ["2026"], "resumo": "Porta de entrada da Amazônia, entre o Teatro Amazonas e o encontro das águas.", "foto": "" },
-      { "nome": "Ubatuba", "estado": "São Paulo, Brasil", "anos": ["2025"], "resumo": "Mais de cem praias entre a Mata Atlântica e o litoral norte paulista.", "foto": "" },
-      { "nome": "Brasília", "estado": "Distrito Federal, Brasil", "anos": ["2025"], "resumo": "Capital federal, com a arquitetura modernista de Oscar Niemeyer.", "foto": "" },
-      { "nome": "Rio de Janeiro", "estado": "Rio de Janeiro, Brasil", "anos": ["2025", "2021", "2020", "2019"], "resumo": "Cristo Redentor, Pão de Açúcar e praias icônicas — visitas recorrentes.", "foto": "" },
-      { "nome": "Recife", "estado": "Pernambuco, Brasil", "anos": ["2025"], "resumo": "Capital pernambucana, conhecida pelo Recife Antigo e suas pontes.", "foto": "" },
-      { "nome": "Porto de Galinhas", "estado": "Pernambuco, Brasil", "anos": ["2024"], "resumo": "Piscinas naturais de águas mornas e recifes de coral.", "foto": "" },
-      { "nome": "Fernando de Noronha", "estado": "Pernambuco, Brasil", "anos": ["2024"], "resumo": "Arquipélago paradisíaco, patrimônio natural da Unesco.", "foto": "" },
-      { "nome": "Campos do Jordão", "estado": "São Paulo, Brasil", "anos": ["2024"], "resumo": "Clima de serra e arquitetura de inspiração europeia.", "foto": "" },
-      { "nome": "Búzios", "estado": "Rio de Janeiro, Brasil", "anos": ["2024"], "resumo": "Charme litorâneo com dezenas de praias na Região dos Lagos.", "foto": "" },
-      { "nome": "Belém", "estado": "Pará, Brasil", "anos": ["2023"], "resumo": "Portal da Amazônia, com o Mercado Ver-o-Peso e culinária paraense.", "foto": "" },
-      { "nome": "Olímpia", "estado": "São Paulo, Brasil", "anos": ["2023", "2021"], "resumo": "Capital nacional dos parques aquáticos, no interior paulista.", "foto": "" },
+      { "nome": "João Pessoa", "estado": "Paraíba, Brasil", "anos": ["2026"], "resumo": "Praias urbanas e o ponto mais oriental das Américas.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Jo%C3%A3o_Pessoa_-_Para%C3%ADba_-_Brasil.jpg" },
+      { "nome": "Manaus", "estado": "Amazonas, Brasil", "anos": ["2026"], "resumo": "Porta de entrada da Amazônia, entre o Teatro Amazonas e o encontro das águas.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Teatro_Amazonas,_Manaus-AM.jpg" },
+      { "nome": "Ubatuba", "estado": "São Paulo, Brasil", "anos": ["2025"], "resumo": "Mais de cem praias entre a Mata Atlântica e o litoral norte paulista.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Praia_Grande_Ubatuba_11.jpg" },
+      { "nome": "Brasília", "estado": "Distrito Federal, Brasil", "anos": ["2025"], "resumo": "Capital federal, com a arquitetura modernista de Oscar Niemeyer.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Brasilia_-_Congresso_Nacional.jpg" },
+      { "nome": "Rio de Janeiro", "estado": "Rio de Janeiro, Brasil", "anos": ["2025", "2021", "2020", "2019"], "resumo": "Cristo Redentor, Pão de Açúcar e praias icônicas — visitas recorrentes.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Rio_de_Janeiro_-_Cristo_Redentor.jpg" },
+      { "nome": "Recife", "estado": "Pernambuco, Brasil", "anos": ["2025"], "resumo": "Capital pernambucana, conhecida pelo Recife Antigo e suas pontes.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Recife_-_Marco_Zero.jpg" },
+      { "nome": "Porto de Galinhas", "estado": "Pernambuco, Brasil", "anos": ["2024"], "resumo": "Piscinas naturais de águas mornas e recifes de coral.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Porto_de_Galinhas-001.jpg" },
+      { "nome": "Fernando de Noronha", "estado": "Pernambuco, Brasil", "anos": ["2024"], "resumo": "Arquipélago paradisíaco, patrimônio natural da Unesco.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Morro_Dois_Irm%C3%A3os_-_Fernando_de_Noronha.jpg" },
+      { "nome": "Campos do Jordão", "estado": "São Paulo, Brasil", "anos": ["2024"], "resumo": "Clima de serra e arquitetura de inspiração europeia.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/P%C3%B3rtico_de_Campos_do_Jord%C3%A3o.jpg" },
+      { "nome": "Búzios", "estado": "Rio de Janeiro, Brasil", "anos": ["2024"], "resumo": "Charme litorâneo com dezenas de praias na Região dos Lagos.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Praia_Brava_em_Arma%C3%A7%C3%A3o_dos_B%C3%BAzios_Rio_de_Janeiro.jpg" },
+      { "nome": "Belém", "estado": "Pará, Brasil", "anos": ["2023"], "resumo": "Portal da Amazônia, com o Mercado Ver-o-Peso e culinária paraense.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Bel%C3%A9m_Ver-o-Peso_01.jpg" },
+      { "nome": "Olímpia", "estado": "São Paulo, Brasil", "anos": ["2023", "2021"], "resumo": "Capital nacional dos parques aquáticos, no interior paulista.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Thermas_dos_Laranjais,_Olimpia,_SP_-_panoramio.jpg" },
       { "nome": "Itupeva", "estado": "São Paulo, Brasil", "anos": ["2022"], "resumo": "Cidade do interior paulista, conhecida pelos outlets.", "foto": "" },
-      { "nome": "Cabo Frio", "estado": "Rio de Janeiro, Brasil", "anos": ["2022"], "resumo": "Praias e dunas na Região dos Lagos fluminense.", "foto": "" },
-      { "nome": "Balneário Camboriú", "estado": "Santa Catarina, Brasil", "anos": ["2022"], "resumo": "Litoral catarinense com o icônico teleférico do Parque Unipraias.", "foto": "" },
-      { "nome": "Penha", "estado": "Santa Catarina, Brasil", "anos": ["2022"], "resumo": "Cidade praiana, lar do parque Beto Carrero World.", "foto": "" },
-      { "nome": "Fortaleza", "estado": "Ceará, Brasil", "anos": ["2022"], "resumo": "Capital cearense, com a orla da Beira-Mar e o Mercado Central.", "foto": "" },
-      { "nome": "Aquiraz", "estado": "Ceará, Brasil", "anos": ["2022"], "resumo": "Praia do Porto das Dunas, na Grande Fortaleza.", "foto": "" },
-      { "nome": "Jericoacoara", "estado": "Ceará, Brasil", "anos": ["2022"], "resumo": "Vilarejo entre dunas, um dos destinos mais bonitos do Brasil.", "foto": "" },
-      { "nome": "Foz do Iguaçu", "estado": "Paraná, Brasil", "anos": ["2021"], "resumo": "Lar das Cataratas do Iguaçu, uma das sete maravilhas naturais do mundo.", "foto": "" },
-      { "nome": "Paraty", "estado": "Rio de Janeiro, Brasil", "anos": ["2021"], "resumo": "Centro histórico colonial preservado na Costa Verde fluminense.", "foto": "" },
-      { "nome": "Congonhas", "estado": "Minas Gerais, Brasil", "anos": ["2020"], "resumo": "Cidade histórica mineira, com o Santuário do Bom Jesus de Matosinhos.", "foto": "" }
+      { "nome": "Cabo Frio", "estado": "Rio de Janeiro, Brasil", "anos": ["2022"], "resumo": "Praias e dunas na Região dos Lagos fluminense.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Vista_da_Praia_das_Dunas,_Cabo_Frio_em_2015.jpg" },
+      { "nome": "Balneário Camboriú", "estado": "Santa Catarina, Brasil", "anos": ["2022"], "resumo": "Litoral catarinense com o icônico teleférico do Parque Unipraias.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Balne%C3%A1rio_Cambori%C3%BA_from_Unipraias_Park_2023-04-02.jpg" },
+      { "nome": "Penha", "estado": "Santa Catarina, Brasil", "anos": ["2022"], "resumo": "Cidade praiana, lar do parque Beto Carrero World.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Castelo_das_Na%C3%A7%C3%B5es_no_Beto_Carrero_World,_Penha_SC.JPG" },
+      { "nome": "Fortaleza", "estado": "Ceará, Brasil", "anos": ["2022"], "resumo": "Capital cearense, com a orla da Beira-Mar e o Mercado Central.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Avenida_Beira_Mar_(Fortaleza)_22.jpg" },
+      { "nome": "Aquiraz", "estado": "Ceará, Brasil", "anos": ["2022"], "resumo": "Praia do Porto das Dunas, na Grande Fortaleza.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Praia_de_Porto_das_Dunas_6.jpg" },
+      { "nome": "Jericoacoara", "estado": "Ceará, Brasil", "anos": ["2022"], "resumo": "Vilarejo entre dunas, um dos destinos mais bonitos do Brasil.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunas_jericoacoara_01.jpg" },
+      { "nome": "Foz do Iguaçu", "estado": "Paraná, Brasil", "anos": ["2021"], "resumo": "Lar das Cataratas do Iguaçu, uma das sete maravilhas naturais do mundo.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Cataratas,_Foz_do_Igua%C3%A7u,_Paran%C3%A1,_Brasil.jpg" },
+      { "nome": "Paraty", "estado": "Rio de Janeiro, Brasil", "anos": ["2021"], "resumo": "Centro histórico colonial preservado na Costa Verde fluminense.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Centro_Hist%C3%B3rico_de_Paraty.jpg" },
+      { "nome": "Congonhas", "estado": "Minas Gerais, Brasil", "anos": ["2020"], "resumo": "Cidade histórica mineira, com o Santuário do Bom Jesus de Matosinhos.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Santu%C3%A1rio_do_Bom_Jesus_de_Matosinhos_Congonhas_Minas_Gerais.jpg" }
     ]
   },
   {
@@ -33,19 +33,19 @@
     "bandeira": "🇺🇸",
     "id": "eua",
     "cidades": [
-      { "nome": "Miami", "estado": "Flórida, Estados Unidos", "anos": ["2026"], "resumo": "Praias, vida noturna e o charme latino de South Beach.", "foto": "" },
-      { "nome": "Orlando", "estado": "Flórida, Estados Unidos", "anos": ["2026", "2018"], "resumo": "Capital mundial dos parques temáticos.", "foto": "" },
-      { "nome": "Moab", "estado": "Utah, Estados Unidos", "anos": ["2025"], "resumo": "Base para os parques nacionais Arches e Canyonlands.", "foto": "" },
-      { "nome": "Las Vegas", "estado": "Nevada, Estados Unidos", "anos": ["2025"], "resumo": "Cassinos, shows e a Strip iluminada no deserto de Nevada.", "foto": "" },
+      { "nome": "Miami", "estado": "Flórida, Estados Unidos", "anos": ["2026"], "resumo": "Praias, vida noturna e o charme latino de South Beach.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Miami_Beach-South_Beach.jpg" },
+      { "nome": "Orlando", "estado": "Flórida, Estados Unidos", "anos": ["2026", "2018"], "resumo": "Capital mundial dos parques temáticos.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline_of_Orlando,_FL,_USA,_2012-03-28.JPG" },
+      { "nome": "Moab", "estado": "Utah, Estados Unidos", "anos": ["2025"], "resumo": "Base para os parques nacionais Arches e Canyonlands.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Delicate_Arch,_Arches_National_Park,_Moab,_Utah_(9099708035).jpg" },
+      { "nome": "Las Vegas", "estado": "Nevada, Estados Unidos", "anos": ["2025"], "resumo": "Cassinos, shows e a Strip iluminada no deserto de Nevada.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Las_Vegas_Strip_at_night,_2012.jpg" },
       { "nome": "Farmington", "estado": "Utah, Estados Unidos", "anos": ["2025"], "resumo": "Cidade nos arredores de Salt Lake City, próxima às montanhas de Utah.", "foto": "" },
-      { "nome": "Valencia / Los Angeles", "estado": "Califórnia, Estados Unidos", "anos": ["2025"], "resumo": "Região próxima ao parque Six Flags Magic Mountain.", "foto": "" },
-      { "nome": "Hollywood / Los Angeles", "estado": "Califórnia, Estados Unidos", "anos": ["2025"], "resumo": "Meca do cinema, com a Calçada da Fama e o letreiro icônico.", "foto": "" },
-      { "nome": "Anaheim", "estado": "Califórnia, Estados Unidos", "anos": ["2025"], "resumo": "Lar da Disneyland original, a primeira Disney do mundo.", "foto": "" },
-      { "nome": "Mason", "estado": "Ohio, Estados Unidos", "anos": ["2023"], "resumo": "Cidade de Ohio, conhecida pelo parque Kings Island.", "foto": "" },
-      { "nome": "Doswell", "estado": "Virgínia, Estados Unidos", "anos": ["2023"], "resumo": "Vila da Virgínia, lar do parque Kings Dominion.", "foto": "" },
-      { "nome": "Washington", "estado": "Distrito de Colúmbia, Estados Unidos", "anos": ["2023"], "resumo": "Capital dos Estados Unidos, com seus museus e monumentos.", "foto": "" },
-      { "nome": "Sandusky", "estado": "Ohio, Estados Unidos", "anos": ["2023"], "resumo": "Cidade à beira do Lago Erie, lar do parque Cedar Point.", "foto": "" },
-      { "nome": "Nova York", "estado": "Nova York, Estados Unidos", "anos": ["2023"], "resumo": "A cidade que nunca dorme, entre Manhattan e o Central Park.", "foto": "" }
+      { "nome": "Valencia / Los Angeles", "estado": "Califórnia, Estados Unidos", "anos": ["2025"], "resumo": "Região próxima ao parque Six Flags Magic Mountain.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Freefall,_Six_Flags_Magic_Mountain.jpg" },
+      { "nome": "Hollywood / Los Angeles", "estado": "Califórnia, Estados Unidos", "anos": ["2025"], "resumo": "Meca do cinema, com a Calçada da Fama e o letreiro icônico.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Hollywood_sign_in_Los_Angeles.jpg" },
+      { "nome": "Anaheim", "estado": "Califórnia, Estados Unidos", "anos": ["2025"], "resumo": "Lar da Disneyland original, a primeira Disney do mundo.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Disneyland_Anaheim.jpg" },
+      { "nome": "Mason", "estado": "Ohio, Estados Unidos", "anos": ["2023"], "resumo": "Cidade de Ohio, conhecida pelo parque Kings Island.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Flying_Ace_Aerial_Chase_roller_coaster_at_Kings_Island,_Ohio.jpg" },
+      { "nome": "Doswell", "estado": "Virgínia, Estados Unidos", "anos": ["2023"], "resumo": "Vila da Virgínia, lar do parque Kings Dominion.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Kings_Dominion_-_Dolphin_Show.jpg" },
+      { "nome": "Washington", "estado": "Distrito de Colúmbia, Estados Unidos", "anos": ["2023"], "resumo": "Capital dos Estados Unidos, com seus museus e monumentos.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/U.S._Capitol_Washington_D.C..jpg" },
+      { "nome": "Sandusky", "estado": "Ohio, Estados Unidos", "anos": ["2023"], "resumo": "Cidade à beira do Lago Erie, lar do parque Cedar Point.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Cedar_point.jpg" },
+      { "nome": "Nova York", "estado": "Nova York, Estados Unidos", "anos": ["2023"], "resumo": "A cidade que nunca dorme, entre Manhattan e o Central Park.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/NYC_Manhattan_Skyline.JPG" }
     ]
   },
   {
@@ -53,10 +53,10 @@
     "bandeira": "🇵🇹",
     "id": "portugal",
     "cidades": [
-      { "nome": "Lisboa", "estado": "Distrito de Lisboa, Portugal", "anos": ["2025"], "resumo": "Capital portuguesa, entre bairros históricos e vista para o Tejo.", "foto": "" },
-      { "nome": "Sintra", "estado": "Distrito de Lisboa, Portugal", "anos": ["2025"], "resumo": "Palácios coloridos entre montanhas, perto de Lisboa.", "foto": "" },
-      { "nome": "Porto", "estado": "Distrito do Porto, Portugal", "anos": ["2025"], "resumo": "Cidade das pontes e do vinho, às margens do Douro.", "foto": "" },
-      { "nome": "Braga", "estado": "Distrito de Braga, Portugal", "anos": ["2025"], "resumo": "Uma das cidades mais antigas de Portugal, com o Santuário do Bom Jesus.", "foto": "" }
+      { "nome": "Lisboa", "estado": "Distrito de Lisboa, Portugal", "anos": ["2025"], "resumo": "Capital portuguesa, entre bairros históricos e vista para o Tejo.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Alfama_lisboa.jpg" },
+      { "nome": "Sintra", "estado": "Distrito de Lisboa, Portugal", "anos": ["2025"], "resumo": "Palácios coloridos entre montanhas, perto de Lisboa.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Pena_Palace_Sintra.jpg" },
+      { "nome": "Porto", "estado": "Distrito do Porto, Portugal", "anos": ["2025"], "resumo": "Cidade das pontes e do vinho, às margens do Douro.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_Dom_Luis_I_in_Porto,_Portugal.jpg" },
+      { "nome": "Braga", "estado": "Distrito de Braga, Portugal", "anos": ["2025"], "resumo": "Uma das cidades mais antigas de Portugal, com o Santuário do Bom Jesus.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Braga_-_Santu%C3%A1rio_do_Bom_Jesus_do_Monte_(1).jpg" }
     ]
   },
   {
@@ -64,9 +64,9 @@
     "bandeira": "🇪🇸",
     "id": "espanha",
     "cidades": [
-      { "nome": "Madrid", "estado": "Comunidade de Madrid, Espanha", "anos": ["2025"], "resumo": "Capital espanhola, com o Museu do Prado e o Parque do Retiro.", "foto": "" },
-      { "nome": "Salou / Tarragona", "estado": "Catalunha, Espanha", "anos": ["2025"], "resumo": "Litoral catalão, base para o parque PortAventura.", "foto": "" },
-      { "nome": "Barcelona", "estado": "Catalunha, Espanha", "anos": ["2025"], "resumo": "Arquitetura de Gaudí e praia no coração da Catalunha.", "foto": "" }
+      { "nome": "Madrid", "estado": "Comunidade de Madrid, Espanha", "anos": ["2025"], "resumo": "Capital espanhola, com o Museu do Prado e o Parque do Retiro.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid-_Puerta_del_Sol.jpg" },
+      { "nome": "Salou / Tarragona", "estado": "Catalunha, Espanha", "anos": ["2025"], "resumo": "Litoral catalão, base para o parque PortAventura.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Portaventura_Salou_-_Red_Dragon_-_panoramio.jpg" },
+      { "nome": "Barcelona", "estado": "Catalunha, Espanha", "anos": ["2025"], "resumo": "Arquitetura de Gaudí e praia no coração da Catalunha.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Sagrada_Familia_Barcelona.jpg" }
     ]
   },
   {
@@ -74,9 +74,9 @@
     "bandeira": "🇨🇦",
     "id": "canada",
     "cidades": [
-      { "nome": "Vaughan", "estado": "Ontário, Canadá", "anos": ["2023"], "resumo": "Cidade nos arredores de Toronto, lar do parque Canada's Wonderland.", "foto": "" },
-      { "nome": "Niagara Falls", "estado": "Ontário, Canadá", "anos": ["2023"], "resumo": "As icônicas Cataratas do Niágara, do lado canadense.", "foto": "" },
-      { "nome": "Toronto", "estado": "Ontário, Canadá", "anos": ["2023"], "resumo": "Maior cidade do Canadá, com a CN Tower no horizonte.", "foto": "" }
+      { "nome": "Vaughan", "estado": "Ontário, Canadá", "anos": ["2023"], "resumo": "Cidade nos arredores de Toronto, lar do parque Canada's Wonderland.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Main_entrance_of_Canada's_Wonderland_in_Vaughan,_Ontario,_Canada_-_20110717.jpg" },
+      { "nome": "Niagara Falls", "estado": "Ontário, Canadá", "anos": ["2023"], "resumo": "As icônicas Cataratas do Niágara, do lado canadense.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Niagara_Falls,_Ontario_3.jpg" },
+      { "nome": "Toronto", "estado": "Ontário, Canadá", "anos": ["2023"], "resumo": "Maior cidade do Canadá, com a CN Tower no horizonte.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/CN_Tower,_Toronto,_Ontario_(29920003351).jpg" }
     ]
   },
   {
@@ -84,7 +84,7 @@
     "bandeira": "🇨🇱",
     "id": "chile",
     "cidades": [
-      { "nome": "Santiago", "estado": "Região Metropolitana de Santiago, Chile", "anos": ["2019"], "resumo": "Capital chilena, entre a Cordilheira dos Andes e bairros históricos.", "foto": "" }
+      { "nome": "Santiago", "estado": "Região Metropolitana de Santiago, Chile", "anos": ["2019"], "resumo": "Capital chilena, entre a Cordilheira dos Andes e bairros históricos.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Cordilheira_dos_Andes_-_Santiago_-_Chile.JPG" }
     ]
   },
   {
@@ -92,7 +92,7 @@
     "bandeira": "🇦🇷",
     "id": "argentina",
     "cidades": [
-      { "nome": "Buenos Aires", "estado": "Cidade Autónoma de Buenos Aires, Argentina", "anos": ["2019"], "resumo": "Capital portenha, tango e arquitetura europeia às margens do Rio da Prata.", "foto": "" }
+      { "nome": "Buenos Aires", "estado": "Cidade Autónoma de Buenos Aires, Argentina", "anos": ["2019"], "resumo": "Capital portenha, tango e arquitetura europeia às margens do Rio da Prata.", "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Obelisco,_Buenos_Aires,_Argentina_(2360406889).jpg" }
     ]
   }
 ]
