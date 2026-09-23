@@ -1,8 +1,8 @@
-cancun-cidade-mexico.md---
+---
 title: "Cancún e Cidade do México: praia caribenha e a capital mais alta da América"
 data: 2017-06-19
 coordenadas: "21.1619° N, 86.8515° W — CANCÚN → CIDADE DO MÉXICO"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Cancun_Beach.jpg?width=1600"
+capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Cancun_Beach.jpg/1600px-Cancun_Beach.jpg"
 localizacaoMapa: "Cancún, México"
 cidades: "Cancún, Cidade do México"
 duracao: "15 dias"
