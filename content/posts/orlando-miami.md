@@ -2,14 +2,13 @@
 title: "Orlando e Miami em grupo: como dividir tudo sem brigar"
 data: 2026-02-14
 coordenadas: "25.7617° N, 80.1918° W — ORLANDO → MIAMI"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Miami_Beach-South_Beach.jpg"
+capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Miami_Beach-South_Beach.jpg?width=1600"
+localizacaoMapa: "Miami, Flórida, Estados Unidos"
 cidades: "6 pessoas"
 duracao: "10 dias"
 resumo: "Parques, praia e a planilha que salvou a viagem — organizando gastos e roteiro para seis pessoas."
 destaque: false
 ---
-
-*[Post de exemplo — substitua por seu próprio relato e fotos.]*
 
 Organizar uma viagem para seis pessoas é outro nível de logística. Entre parques em Orlando e praia em Miami, o maior desafio nunca foi o roteiro — foi manter as contas do grupo organizadas do início ao fim.
 
