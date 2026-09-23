@@ -13,6 +13,8 @@ module.exports = function (eleventyConfig) {
     return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" });
   });
 
+  eleventyConfig.addFilter("encodeURI", (str) => encodeURIComponent(str || ""));
+
   eleventyConfig.addCollection("posts", (collectionApi) => {
     return collectionApi.getFilteredByGlob("content/posts/*.md")
       .sort((a, b) => new Date(b.data.data) - new Date(a.data.data));
@@ -31,10 +33,8 @@ module.exports = function (eleventyConfig) {
       input: ".",
       includes: "_includes",
       data: "_data",
-      output: "_site"
+      output: "_site",
     },
     markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk",
-    templateFormats: ["njk", "md", "html"]
   };
 };
