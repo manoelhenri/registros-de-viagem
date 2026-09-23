@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://registros-de-viagem.pages.dev/sitemap.xml
