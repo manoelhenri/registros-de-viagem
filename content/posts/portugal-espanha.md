@@ -2,7 +2,7 @@
 title: "16 dias entre Portugal e Espanha: o roteiro completo"
 data: 2025-05-15
 coordenadas: "38.7223° N, 9.1393° W — LISBOA → BARCELONA → PORTO"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Alfama_lisboa.jpg?width=1600"
+capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Alfama_Lisboa_01.jpg/1600px-Alfama_Lisboa_01.jpg"
 localizacaoMapa: "Lisboa, Portugal"
 cidades: "7 cidades"
 duracao: "16 dias"
