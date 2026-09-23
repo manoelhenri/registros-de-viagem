@@ -1,0 +1,32 @@
+---
+layout: base.njk
+---
+<div class="post-hero">
+  <a class="back-link" href="{{ '/' | url }}">← voltar para todos os registros</a>
+  <span class="coords">{{ coordenadas }}</span>
+  <h1>{{ title }}</h1>
+  <div class="post-meta">
+    <span>📅 {{ data | dataAno }}</span>
+    {% if cidades %}<span>✈️ {{ cidades }}</span>{% endif %}
+    {% if duracao %}<span>🕓 {{ duracao }}</span>{% endif %}
+  </div>
+</div>
+
+<div class="post-cover">
+  {% if capa %}
+    <img src="{{ capa }}" alt="{{ title }}">
+  {% else %}
+    <div class="img-placeholder" style="aspect-ratio: 21 / 9;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
+      <span>Adicione a foto de capa deste post pelo painel</span>
+    </div>
+  {% endif %}
+</div>
+
+<article class="post-body">
+  {{ content | safe }}
+</article>
+
+<div class="post-nav">
+  <a href="{{ '/' | url }}">← voltar para o início</a>
+</div>
