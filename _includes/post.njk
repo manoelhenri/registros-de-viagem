@@ -85,26 +85,4 @@ layout: base.njk
 
 <div class="post-nav">
   <a href="{{ '/' | url }}">← voltar para o início</a>
-  <button class="back-to-top" id="backToTop" aria-label="Voltar ao início da página">↑ Topo</button>
 </div>
-
-<script>
-const backToTopBtn = document.getElementById('backToTop');
-
-// Show button when user scrolls down
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTopBtn.style.display = 'block';
-  } else {
-    backToTopBtn.style.display = 'none';
-  }
-});
-
-// Scroll to top when button is clicked
-backToTopBtn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-</script>

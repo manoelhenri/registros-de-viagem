@@ -66,7 +66,20 @@
   </div>
 </footer>
 
+<button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo da página">↑ Topo</button>
+
 <script>
+(function(){
+  // Floating "back to top" button: appears after scrolling down a bit.
+  var topBtn = document.getElementById('backToTop');
+  if (topBtn) {
+    var toggleTopBtn = function(){ topBtn.classList.toggle('visible', window.scrollY > 400); };
+    window.addEventListener('scroll', toggleTopBtn, { passive: true });
+    toggleTopBtn();
+    topBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+})();
+
 (function(){
   var btn = document.getElementById('navToggle');
   var links = document.getElementById('navLinks');
