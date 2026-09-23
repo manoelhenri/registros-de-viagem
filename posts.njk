@@ -7,11 +7,14 @@ nav: posts
   <span class="eyebrow">{{ collections.posts.length | pad2 }} registros publicados</span>
   <h1>Todos os posts.</h1>
   <p class="lede">Cada viagem, do primeiro ao último dia — roteiros, aprendizados e o que vale a pena levar na mala.</p>
+  <div class="post-search">
+    <input type="search" id="postSearch" placeholder="Buscar por título, lugar..." aria-label="Buscar posts">
+  </div>
 </div>
 
-<section class="post-grid">
+<section class="post-grid" id="postGrid">
   {% for post in collections.posts %}
-  <a class="tag-card" href="{{ post.url }}">
+  <a class="tag-card" href="{{ post.url }}" data-search="{{ (post.data.title + ' ' + post.data.resumo + ' ' + post.data.coordenadas) | lower }}">
     <span class="punch"></span>
     {% if post.data.capa %}
       <img src="{{ post.data.capa }}" alt="{{ post.data.title }}" loading="lazy" decoding="async">
@@ -26,3 +29,23 @@ nav: posts
   </a>
   {% endfor %}
 </section>
+<p class="no-results" id="noResults" hidden>Nenhum post encontrado para essa busca.</p>
+
+<script>
+(function () {
+  var input = document.getElementById('postSearch');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#postGrid .tag-card'));
+  var noResults = document.getElementById('noResults');
+  if (!input) return;
+  input.addEventListener('input', function () {
+    var q = input.value.trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function (card) {
+      var match = !q || card.getAttribute('data-search').indexOf(q) !== -1;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    noResults.hidden = visible !== 0;
+  });
+})();
+</script>
