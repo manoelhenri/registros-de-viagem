@@ -1,8 +1,8 @@
-buenos-aires-santiago.md---
+---
 title: "Buenos Aires e Santiago: dois países vizinhos numa viagem só"
 data: 2019-04-27
 coordenadas: "34.6037° S, 58.3816° W — BUENOS AIRES → SANTIAGO"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Obelisco,_Buenos_Aires,_Argentina_(2360406889).jpg?width=1600"
+capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Obelisco_de_Buenos_Aires_%28cropped%29.jpg/1600px-Obelisco_de_Buenos_Aires_%28cropped%29.jpg"
 localizacaoMapa: "Buenos Aires, Argentina"
 cidades: "Buenos Aires, Santiago"
 duracao: "9 dias"
