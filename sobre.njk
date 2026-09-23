@@ -1,0 +1,50 @@
+---
+layout: base.njk
+title: "Sobre"
+nav: sobre
+---
+<div class="about-wrap">
+  <div class="about-grid">
+    <div class="about-photo">
+      {% if sobre.foto %}
+        <img src="{{ sobre.foto }}" alt="Foto de perfil">
+      {% else %}
+        <div class="img-placeholder" style="aspect-ratio: 4/5;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
+          <span>Adicione sua foto pelo painel</span>
+        </div>
+      {% endif %}
+      <p class="caption">Em algum lugar entre um voo e o próximo.</p>
+    </div>
+    <div class="about-text">
+      <h1>Oi, eu sou o {{ sobre.nome }}.</h1>
+      <p>{{ sobre.textoIntro }}</p>
+      <p>{{ sobre.textoExtra }}</p>
+
+      <div class="boarding-pass">
+        <div class="bp-row">
+          <span>Passageiro</span>
+          <span>{{ site.author }}</span>
+        </div>
+        <div class="bp-row">
+          <span>Status</span>
+          <span>{{ sobre.statusViagem }}</span>
+        </div>
+        <div class="bp-stats">
+          <div>
+            <strong>{{ sobre.roteirosPublicados }}</strong>
+            <span>ROTEIROS PUBLICADOS</span>
+          </div>
+          <div>
+            <strong>{{ sobre.paisesRecentes }}</strong>
+            <span>PAÍSES EM 2025–26</span>
+          </div>
+          <div>
+            <strong>{{ sobre.proximosDestinos }}</strong>
+            <span>PRÓXIMOS DESTINOS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

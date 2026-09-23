@@ -1,0 +1,104 @@
+---
+layout: base.njk
+title: "Início"
+nav: inicio
+---
+<header class="hero">
+  <svg class="hero-route" viewBox="0 0 1036 300" preserveAspectRatio="none">
+    <path d="M20,240 C160,60 280,260 420,120 S 620,40 760,150 920,70 1016,110" />
+    <circle cx="20" cy="240" r="3.5"/>
+    <circle cx="420" cy="120" r="3.5"/>
+    <circle cx="760" cy="150" r="3.5"/>
+    <circle cx="1016" cy="110" r="3.5"/>
+    <text class="stop-label" x="10" y="262">LIS</text>
+    <text class="stop-label" x="410" y="102">BSB</text>
+    <text class="stop-label" x="750" y="176">FOR</text>
+    <text class="stop-label" x="985" y="92">MCO</text>
+  </svg>
+  <div class="hero-content">
+    <span class="eyebrow">Diário de bordo · desde 2025</span>
+    <h1>Um mapa de lugares onde já pousei.</h1>
+    <p class="lede">Roteiros, aprendizados e o que vale a pena levar na mala — registrado destino por destino, sem pressa.</p>
+  </div>
+</header>
+
+{% set destaque = collections.postoDestaque %}
+{% if destaque %}
+<section class="featured">
+  <a class="featured-card" href="{{ destaque.url }}" style="text-decoration:none; color:inherit;">
+    {% if destaque.data.capa %}
+      <img src="{{ destaque.data.capa }}" alt="{{ destaque.data.title }}">
+    {% else %}
+      <div class="img-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
+        <span>Adicione a foto de capa</span>
+      </div>
+    {% endif %}
+    <div class="featured-text">
+      <span class="coords">{{ destaque.data.coordenadas }}</span>
+      <h3>{{ destaque.data.title }}</h3>
+      <p>{{ destaque.data.resumo }}</p>
+      <span class="read-link">Ler o post →</span>
+    </div>
+  </a>
+</section>
+{% endif %}
+
+<section class="explore-grid">
+  <a class="explore-card" href="{{ '/destinos/' | url }}">
+    <span class="eyebrow">45+ cidades · 7 países</span>
+    <h3>Histórico completo de viagens</h3>
+    <p>Todo lugar onde já pousei, organizado por país, com ano da visita e espaço para as fotos.</p>
+    <span class="arrow">Ver mapa completo →</span>
+  </a>
+  <a class="explore-card alt" href="{{ '/parques/' | url }}">
+    <span class="eyebrow">Temáticos e aquáticos</span>
+    <h3>Todos os parques já visitados</h3>
+    <p>Do Hopi Hari ao Epic Universe — o histórico completo de parques pelo Brasil e pelo mundo.</p>
+    <span class="arrow">Ver todos os parques →</span>
+  </a>
+</section>
+
+<div class="section-head">
+  <h2>Últimos destinos</h2>
+  <span class="count">{{ collections.posts.length | pad2 }} registros</span>
+</div>
+
+<section class="post-grid">
+  {% for post in collections.posts %}
+  <a class="tag-card" href="{{ post.url }}">
+    <span class="punch"></span>
+    {% if post.data.capa %}
+      <img src="{{ post.data.capa }}" alt="{{ post.data.title }}">
+    {% else %}
+      <div class="img-placeholder" style="height:160px; margin-bottom:16px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
+        <span>Sem foto ainda</span>
+      </div>
+    {% endif %}
+    <span class="coords">{{ post.data.coordenadas }}</span>
+    <h4>{{ post.data.title }}</h4>
+    <p class="snippet">{{ post.data.resumo }}</p>
+  </a>
+  {% endfor %}
+</section>
+
+<section class="ig-strip">
+  <div class="ig-inner">
+    <div class="section-head-alt">
+      <h2>Siga a jornada em tempo real</h2>
+      <a class="ig-handle" href="{{ site.instagramUrl }}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        {{ site.instagramHandle }}
+      </a>
+    </div>
+    <div class="ig-grid">
+      {% for post in collections.posts %}
+        {% if post.data.capa %}
+          <a href="{{ site.instagramUrl }}" target="_blank" rel="noopener"><img src="{{ post.data.capa }}" alt=""></a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <p class="ig-note">Assim que você adicionar fotos aos posts pelo painel, elas aparecem aqui automaticamente. Para puxar as fotos reais do seu perfil, troque esta seção pelo embed oficial do Instagram.</p>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+---
+layout: base.njk
+title: "Destinos"
+nav: destinos
+---
+{% set totalCidades = 0 %}
+{% for pais in destinos %}{% set totalCidades = totalCidades + pais.cidades.length %}{% endfor %}
+
+<div class="page-hero">
+  <span class="eyebrow">Histórico de viagens · {{ totalCidades }} destinos em {{ destinos.length }} países</span>
+  <h1>Todo lugar onde já pousei.</h1>
+  <p class="lede">Organizado por país, com o ano de cada visita. Os quadros pontilhados são o espaço reservado para as suas fotos — adicione pelo painel, sem precisar editar nada aqui.</p>
+  <div class="country-jump">
+    {% for pais in destinos %}
+    <a href="#{{ pais.id }}">{{ pais.bandeira }} {{ pais.pais }}</a>
+    {% endfor %}
+  </div>
+</div>
+
+{% for pais in destinos %}
+<section class="country-section" id="{{ pais.id }}">
+  <div class="country-title">
+    <span class="flag">{{ pais.bandeira }}</span>
+    <h2>{{ pais.pais }}</h2>
+    <span class="n">{{ pais.cidades.length | pad2 }} destino{% if pais.cidades.length != 1 %}s{% endif %}</span>
+  </div>
+  <div class="place-grid">
+    {% for cidade in pais.cidades %}
+    <div class="place-card">
+      {% if cidade.foto %}
+        <img src="{{ cidade.foto }}" alt="{{ cidade.nome }}" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-bottom:1px solid var(--line);">
+      {% else %}
+        <div class="img-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
+          <span>Adicione uma foto de {{ cidade.nome }}</span>
+        </div>
+      {% endif %}
+      <div class="place-body">
+        <h3>{{ cidade.nome }}</h3>
+        <span class="place-state">{{ cidade.estado }}</span>
+        <div class="year-chips">
+          {% for ano in cidade.anos %}<span class="year-chip">{{ ano }}</span>{% endfor %}
+        </div>
+        <p>{{ cidade.resumo }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
