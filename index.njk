@@ -27,7 +27,7 @@ nav: inicio
 <section class="featured">
   <a class="featured-card" href="{{ destaque.url }}" style="text-decoration:none; color:inherit;">
     {% if destaque.data.capa %}
-      <img src="{{ destaque.data.capa }}" alt="{{ destaque.data.title }}" loading="lazy" decoding="async">
+      <img src="{{ destaque.data.capa }}" alt="{{ destaque.data.title }}" fetchpriority="high" decoding="async">
     {% else %}
       <div class="img-placeholder">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
