@@ -2,7 +2,7 @@
 title: "Orlando e Miami em grupo: como dividir tudo sem brigar"
 data: 2026-02-12
 coordenadas: "25.7617° N, 80.1918° W — ORLANDO → MIAMI"
-capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Miami_Beach-South_Beach.jpg?width=1600"
+capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Miami-beach-south-beach.jpg/1600px-Miami-beach-south-beach.jpg"
 localizacaoMapa: "Miami, Flórida, Estados Unidos"
 cidades: "6 pessoas"
 duracao: "10 dias"
