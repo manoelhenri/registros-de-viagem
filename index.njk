@@ -60,7 +60,7 @@ nav: inicio
 
 <div class="section-head">
   <h2>{{ home.tituloUltimosDestinos }}</h2>
-  <span class="count">{{ collections.posts.length | pad2 }} registros</span>
+  <a class="count" href="{{ '/posts/' | url }}" style="text-decoration:none;">{{ collections.posts.length | pad2 }} registros — ver todos →</a>
 </div>
 
 <section class="post-grid">
