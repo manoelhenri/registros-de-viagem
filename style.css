@@ -638,7 +638,8 @@ footer a:hover { color: var(--petrol); }
 
 .explore-card {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   color: var(--paper);
   background: var(--ink);
@@ -667,9 +668,8 @@ footer a:hover { color: var(--petrol); }
 }
 
 .explore-card .arrow {
-  position: absolute;
-  bottom: 26px;
-  right: 30px;
+  margin-top: 24px;
+  padding-top: 6px;
   font-family: var(--font-mono);
   font-size: 13px;
 }
@@ -957,4 +957,15 @@ footer a:hover { color: var(--petrol); }
   .featured-text { padding-left: 0; padding-right: 0; }
   .about-grid { gap: 28px; }
   .boarding-pass { padding: 20px; }
+
+  .post-grid,
+  .place-grid { grid-template-columns: 1fr; }
+
+  .section-head {
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+
+  .country-title { flex-wrap: wrap; }
+  .country-title .n { margin-left: 0; }
 }
