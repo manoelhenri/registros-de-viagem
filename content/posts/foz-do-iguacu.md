@@ -2,7 +2,9 @@
 title: "Foz do Iguaçu: lado brasileiro, lado argentino, os dois valem?"
 data: 2021-03-02
 coordenadas: "25.6953° S, 54.4367° W — FOZ DO IGUAÇU"
-capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Cataratas_Foz_do_Igua%C3%A7u_Paran%C3%A1_Brasil.jpg/1600px-Cataratas_Foz_do_Igua%C3%A7u_Paran%C3%A1_Brasil.jpg"
+capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Cataratas,_Foz_do_Igua%C3%A7u,_Paran%C3%A1,_Brasil.jpg?width=1280"
+capaCredito: "Foto: Sor2l · CC BY-SA 3.0 · Wikimedia Commons"
+capaFonte: "https://commons.wikimedia.org/wiki/File:Cataratas,_Foz_do_Igua%C3%A7u,_Paran%C3%A1,_Brasil.jpg"
 localizacaoMapa: "Foz do Iguaçu, Paraná, Brasil"
 cidades: "Foz do Iguaçu"
 duracao: "5 dias"

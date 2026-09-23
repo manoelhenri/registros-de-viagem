@@ -2,7 +2,9 @@
 title: "Nordeste em 15 dias: história, praia urbana e litoral sul da Bahia"
 data: 2026-06-06
 coordenadas: "07.1195° S, 34.8450° W — JOÃO PESSOA → PORTO SEGURO"
-capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Jo%C3%A3o_Pessoa_-_Para%C3%ADba_-_Brasil.jpg/1600px-Jo%C3%A3o_Pessoa_-_Para%C3%ADba_-_Brasil.jpg"
+capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Jo%C3%A3o_Pessoa_-_Para%C3%ADba_-_Brasil.jpg?width=1280"
+capaCredito: "Foto: Peace_ · CC BY 2.0 · Wikimedia Commons"
+capaFonte: "https://commons.wikimedia.org/wiki/File:Jo%C3%A3o_Pessoa_-_Para%C3%ADba_-_Brasil.jpg"
 localizacaoMapa: "João Pessoa, Paraíba, Brasil"
 cidades: "João Pessoa, Recife, Olinda, Porto Seguro, Trancoso"
 duracao: "15 dias"

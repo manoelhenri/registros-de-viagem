@@ -2,7 +2,9 @@
 title: "Recife e Fernando de Noronha: vale o preço do arquipélago?"
 data: 2024-03-09
 coordenadas: "03.8557° S, 32.4297° W — RECIFE → FERNANDO DE NORONHA"
-capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Morro_Dois_Irm%C3%A3os_Fernando_de_Noronha.jpg/1600px-Morro_Dois_Irm%C3%A3os_Fernando_de_Noronha.jpg"
+capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Morro_Dois_Irm%C3%A3os_-_Fernando_de_Noronha.jpg?width=1280"
+capaCredito: "Foto: Ricardo Polisel Alves · CC BY 2.0 · Wikimedia Commons"
+capaFonte: "https://commons.wikimedia.org/wiki/File:Morro_Dois_Irm%C3%A3os_-_Fernando_de_Noronha.jpg"
 localizacaoMapa: "Fernando de Noronha, Pernambuco, Brasil"
 cidades: "Recife, Porto de Galinhas, Fernando de Noronha"
 duracao: "9 dias"

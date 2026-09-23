@@ -2,7 +2,9 @@
 title: "Dois dias em Salvador: o que dá (e não dá) para ver"
 data: 2022-08-02
 coordenadas: "12.9714° S, 38.5014° W — SALVADOR"
-capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Pelourinho_Salvador_Bahia_2019-0882.jpg/1600px-Pelourinho_Salvador_Bahia_2019-0882.jpg"
+capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Pelourinho_Salvador_Bahia_2019-0882.jpg?width=1280"
+capaCredito: "Foto: Paul R. Burley · CC BY-SA 4.0 · Wikimedia Commons"
+capaFonte: "https://commons.wikimedia.org/wiki/File:Pelourinho_Salvador_Bahia_2019-0882.jpg"
 localizacaoMapa: "Salvador, Bahia, Brasil"
 cidades: "Salvador"
 duracao: "2 dias"

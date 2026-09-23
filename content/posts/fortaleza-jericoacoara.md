@@ -2,7 +2,9 @@
 title: "Fortaleza e Jericoacoara: dunas, van e um bate-volta até Canoa Quebrada"
 data: 2021-10-24
 coordenadas: "02.9038° S, 40.5000° W — FORTALEZA → JERICOACOARA"
-capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Dunas_jericoacoara_01.jpg/1600px-Dunas_jericoacoara_01.jpg"
+capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Dunas_jericoacoara_01.jpg?width=1280"
+capaCredito: "Foto: Dlgoncalves · CC BY-SA 4.0 · Wikimedia Commons"
+capaFonte: "https://commons.wikimedia.org/wiki/File:Dunas_jericoacoara_01.jpg"
 localizacaoMapa: "Jericoacoara, Ceará, Brasil"
 cidades: "Fortaleza, Jericoacoara, Canoa Quebrada"
 duracao: "9 dias"

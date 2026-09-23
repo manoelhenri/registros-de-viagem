@@ -2,7 +2,9 @@
 title: "Hopi Hari, Ilhabela e Itanhaém: os lugares que eu mais visito sem perceber"
 data: 2024-09-06
 coordenadas: "23.0952° S, 47.0161° W — VINHEDO · ILHABELA · ITANHAÉM"
-capa: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Parque_Hopi_Hari_Foto_2023.jpg/1600px-Parque_Hopi_Hari_Foto_2023.jpg"
+capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Parque_Hopi_Hari._Foto_de_2023..jpg?width=1280"
+capaCredito: "Foto: Cleber Giovane dos Santos · CC BY-SA 4.0 · Wikimedia Commons"
+capaFonte: "https://commons.wikimedia.org/wiki/File:Parque_Hopi_Hari._Foto_de_2023..jpg"
 localizacaoMapa: "Vinhedo, São Paulo, Brasil"
 cidades: "Hopi Hari, Ilhabela, Itanhaém"
 duracao: "recorrente"
