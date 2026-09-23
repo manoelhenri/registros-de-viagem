@@ -7,8 +7,8 @@ public_folder: "/images/uploads"
 
 locale: "pt"
 
-site_url: https://registros-de-viagem-manoel.netlify.app
-display_url: https://registros-de-viagem-manoel.netlify.app
+site_url: https://SEU-SITE.netlify.app
+display_url: https://SEU-SITE.netlify.app
 
 collections:
 
@@ -30,7 +30,28 @@ collections:
       - { label: "Duração", name: "duracao", widget: "string", required: false, hint: "Ex: 14 dias" }
       - { label: "Resumo curto (aparece nos cards da home)", name: "resumo", widget: "text" }
       - { label: "Destacar na home?", name: "destaque", widget: "boolean", default: false, hint: "Só um post deve estar marcado como destaque por vez." }
+      - { label: "Localização (mostra um mapa no post)", name: "localizacaoMapa", widget: "string", required: false, hint: "Ex: Lisboa, Portugal. Deixe em branco para não mostrar mapa." }
       - { label: "Texto do post", name: "body", widget: "markdown" }
+
+  # ---------- Página Inicial ----------
+  - name: "home"
+    label: "Página Inicial"
+    files:
+      - name: "home"
+        label: "Conteúdo da Página Inicial"
+        file: "_data/home.json"
+        fields:
+          - { label: "Legenda (texto pequeno acima do título)", name: "heroEyebrow", widget: "string" }
+          - { label: "Título principal", name: "heroTitulo", widget: "string" }
+          - { label: "Subtítulo", name: "heroSubtitulo", widget: "text" }
+          - { label: "Cartão 1 — Legenda", name: "card1Eyebrow", widget: "string" }
+          - { label: "Cartão 1 — Título", name: "card1Titulo", widget: "string" }
+          - { label: "Cartão 1 — Texto", name: "card1Texto", widget: "text" }
+          - { label: "Cartão 2 — Legenda", name: "card2Eyebrow", widget: "string" }
+          - { label: "Cartão 2 — Título", name: "card2Titulo", widget: "string" }
+          - { label: "Cartão 2 — Texto", name: "card2Texto", widget: "text" }
+          - { label: "Título da seção 'Últimos destinos'", name: "tituloUltimosDestinos", widget: "string" }
+          - { label: "Título da seção do Instagram", name: "tituloInstagram", widget: "string" }
 
   # ---------- Destinos (histórico de viagens) ----------
   - name: "destinos"
@@ -115,3 +136,10 @@ collections:
           - { label: "Usuário do Instagram (com @)", name: "instagramHandle", widget: "string" }
           - { label: "Link do Instagram", name: "instagramUrl", widget: "string" }
           - { label: "Ano (rodapé)", name: "year", widget: "string" }
+          - label: "Posts do Instagram em destaque na home"
+            name: "instagramPosts"
+            widget: "list"
+            required: false
+            hint: "Cole o link de posts/reels públicos do Instagram (ex: https://www.instagram.com/p/XXXXXXX/). Deixe vazio para não mostrar nenhum."
+            fields:
+              - { label: "Link do post", name: "url", widget: "string" }
