@@ -7,11 +7,10 @@ nav: sobre
   <div class="about-grid">
     <div class="about-photo">
       {% if sobre.foto %}
-        <img src="{{ sobre.foto }}" alt="Foto de perfil">
+        <img src="{{ sobre.foto }}" alt="Foto de perfil" loading="lazy" decoding="async">
       {% else %}
         <div class="img-placeholder" style="aspect-ratio: 4/5;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
-          <span>Adicione sua foto pelo painel</span>
         </div>
       {% endif %}
       <p class="caption">Em algum lugar entre um voo e o próximo.</p>
