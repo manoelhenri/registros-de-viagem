@@ -1,6 +1,6 @@
 ---
 title: "Orlando e Miami em grupo: como dividir tudo sem brigar"
-data: 2026-02-14
+data: 2026-02-12
 coordenadas: "25.7617° N, 80.1918° W — ORLANDO → MIAMI"
 capa: "https://commons.wikimedia.org/wiki/Special:FilePath/Miami_Beach-South_Beach.jpg?width=1600"
 localizacaoMapa: "Miami, Flórida, Estados Unidos"
@@ -20,7 +20,7 @@ Uma planilha compartilhada com cada gasto categorizado por pessoa, atualizada to
 
 ## Orlando vs. Miami
 
-Cinco dias entre os parques, com um dia de descanso no meio — essencial para aguentar o ritmo. Depois, cinco dias mais soltos em Miami, sem roteiro fechado, só praia e passeios decididos no dia.
+Sete dias entre os parques, com um dia de descanso no meio — essencial para aguentar o ritmo. Depois, dois ou três dias mais soltos em Miami e Fort Lauderdale, sem roteiro fechado, só praia e passeios decididos no dia. Vale mais tempo nos parques do que parece no papel — entre filas, deslocamento e um dia de chuva, sete dias em Orlando renderam menos do que a gente esperava.
 
 ## O que eu levaria de novo
 
