@@ -18,7 +18,10 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 16l20-7-7 20-3-8-8-3z"/></svg>
     registros de viagem
   </a>
-  <div class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav-links" id="navLinks">
     <a href="{{ '/' | url }}"{% if nav == 'inicio' %} aria-current="page"{% endif %}>Início</a>
     <a href="{{ '/destinos/' | url }}"{% if nav == 'destinos' %} aria-current="page"{% endif %}>Destinos</a>
     <a href="{{ '/parques/' | url }}"{% if nav == 'parques' %} aria-current="page"{% endif %}>Parques</a>
@@ -39,6 +42,24 @@
     <a href="{{ site.instagramUrl }}" target="_blank" rel="noopener">Instagram</a>
   </div>
 </footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (!btn || !links) return;
+  btn.addEventListener('click', function(){
+    var isOpen = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
