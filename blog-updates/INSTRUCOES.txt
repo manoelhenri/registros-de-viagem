@@ -1,0 +1,51 @@
+🚀 INSTRUÇÕES DE DEPLOY - GitHub Web Upload
+
+====================================================
+PASSO 1: Abrir GitHub no Browser
+====================================================
+
+1. Vá para: https://github.com/manoelhenri/registros-de-viagem
+2. Faça login (se não estiver logado)
+3. Clique no botão "Add file" (verde, lado direito)
+4. Selecione "Upload files"
+
+====================================================
+PASSO 2: Arrastar e Soltar os Arquivos
+====================================================
+
+1. Na página de upload, arraste TODOS os arquivos desta pasta
+   (ou clique em "choose your files" para selecionar)
+
+2. A estrutura de pastas vai ser criada automaticamente
+
+Arquivos para enviar:
+- _data/destinos.json
+- _data/home.json
+- _data/sobre.json
+- _includes/post.njk
+- content/posts/ (todos os 15 arquivos .md)
+- style.css
+
+====================================================
+PASSO 3: Fazer Commit
+====================================================
+
+1. Role para baixo até encontrar "Commit changes"
+2. Em "Commit message" coloque:
+   "Fix image URLs and add back-to-top button"
+
+3. Selecione "Commit directly to the main branch"
+4. Clique em "Commit changes"
+
+====================================================
+PRONTO! ✅
+====================================================
+
+GitHub vai processar os arquivos e em 2-3 minutos
+o Cloudflare Pages vai fazer o deploy automático.
+
+Seu blog será atualizado com:
+✓ Botão "Voltar ao Topo" funcionando
+✓ Todas as imagens carregando corretamente
+✓ URLs de imagens corrigidas em todos os 15 posts
+

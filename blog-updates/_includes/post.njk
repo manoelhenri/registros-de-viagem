@@ -1,0 +1,107 @@
+---
+layout: base.njk
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title | escapeJson }}",
+  "description": "{{ resumo | escapeJson }}",
+  "datePublished": "{{ data | isoDate }}",
+  {% if capa %}"image": "{{ capa }}",{% endif %}
+  "url": "{{ site.url }}{{ page.url }}",
+  "author": { "@type": "Person", "name": "{{ site.author | escapeJson }}" },
+  "publisher": { "@type": "Person", "name": "{{ site.author | escapeJson }}" }
+}
+</script>
+
+<div class="post-hero">
+  <a class="back-link" href="{{ '/' | url }}">← voltar para todos os registros</a>
+  <span class="coords">{{ coordenadas }}</span>
+  <h1>{{ title }}</h1>
+  <div class="post-meta">
+    <span>📅 {{ data | dataAno }}</span>
+    {% if cidades %}<span>✈️ {{ cidades }}</span>{% endif %}
+    {% if duracao %}<span>🕓 {{ duracao }}</span>{% endif %}
+    <span>📖 {{ content | readingTime }} min de leitura</span>
+  </div>
+</div>
+
+<div class="post-cover">
+  {% if capa %}
+    <img src="{{ capa }}" alt="{{ title }}" loading="lazy" decoding="async">
+  {% else %}
+    <div class="img-placeholder" style="aspect-ratio: 21 / 9;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
+    </div>
+  {% endif %}
+</div>
+
+{% if localizacaoMapa %}
+<div class="map-embed">
+  <iframe src="https://www.google.com/maps?q={{ localizacaoMapa | encodeURI }}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+</div>
+{% endif %}
+
+<article class="post-body">
+  {{ content | safe }}
+</article>
+
+<div class="share-row">
+  <span class="share-label">Compartilhar:</span>
+  <a href="https://wa.me/?text={{ (title + ' — ' + site.url + page.url) | encodeURI }}" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="https://twitter.com/intent/tweet?text={{ title | encodeURI }}&url={{ (site.url + page.url) | encodeURI }}" target="_blank" rel="noopener">X</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ (site.url + page.url) | encodeURI }}" target="_blank" rel="noopener">Facebook</a>
+</div>
+
+{% set outros = collections.posts | excludeUrl(page.url) %}
+{% if outros.length %}
+<section class="related-posts">
+  <h2>Outros registros</h2>
+  <div class="post-grid">
+    {% for post in outros %}
+      {% if loop.index <= 3 %}
+      <a class="tag-card" href="{{ post.url }}">
+        <span class="punch"></span>
+        {% if post.data.capa %}
+          <img src="{{ post.data.capa }}" alt="{{ post.data.title }}" loading="lazy" decoding="async">
+        {% else %}
+          <div class="img-placeholder" style="height:160px; margin-bottom:16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
+          </div>
+        {% endif %}
+        <span class="coords">{{ post.data.coordenadas }}</span>
+        <h4>{{ post.data.title }}</h4>
+        <p class="snippet">{{ post.data.resumo }}</p>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<div class="post-nav">
+  <a href="{{ '/' | url }}">← voltar para o início</a>
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao início da página">↑ Topo</button>
+</div>
+
+<script>
+const backToTopBtn = document.getElementById('backToTop');
+
+// Show button when user scrolls down
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
+
+// Scroll to top when button is clicked
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+</script>
