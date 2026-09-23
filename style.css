@@ -827,6 +827,24 @@ footer a:hover { color: var(--petrol); }
 
 .post-nav a { text-decoration: none; color: var(--petrol); }
 
+.back-to-top {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--petrol);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  transition: color .15s, opacity .15s;
+}
+
+.back-to-top:hover {
+  color: var(--petrol-deep);
+  opacity: 0.8;
+}
+
 /* ===========================================================
    About page
    =========================================================== */
