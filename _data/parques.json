@@ -26,7 +26,8 @@
         "nome": "Beto Carrero World",
         "local": "Brasil",
         "anos": [
-          "2017"
+          "2017",
+          "2021"
         ],
         "resumo": "Maior parque temático da América Latina, em Santa Catarina.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Vista_do_Beto_Carrero_World_a_partir_da_roda-gigante,_Penha_SC.JPG?width=640"
@@ -252,6 +253,15 @@
         ],
         "resumo": "O mais novo parque da Universal Orlando.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Chronos_Tower_Front_Epic_Universe.jpg?width=640"
+      },
+      {
+        "nome": "Snowland",
+        "local": "Brasil — Gramado, RS",
+        "anos": [
+          "2026"
+        ],
+        "resumo": "Parque de neve artificial no coração da Serra Gaúcha.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/RenatoSoares_SnowLand_Gramado_RS_(40193258034).jpg?width=640"
       }
     ]
   },
