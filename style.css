@@ -25,6 +25,36 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+/* Acessibilidade: foco visível em qualquer elemento navegável por teclado
+   que não tenha um estilo de foco próprio definido em outro lugar. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--petrol);
+  outline-offset: 2px;
+}
+
+/* Link "pular para o conteúdo": invisível até receber foco (primeiro Tab
+   da página), para quem navega por teclado ou leitor de tela pular o menu. */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 1000;
+  background: var(--petrol);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: top .15s;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
 body {
   margin: 0;
   background: var(--paper);
@@ -594,6 +624,16 @@ footer a:hover { color: var(--petrol); }
   margin: 0 0 4px;
 }
 
+.place-body h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.place-body h3 a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--sage);
+}
+
 .place-state {
   display: block;
   font-family: var(--font-mono);
@@ -1092,4 +1132,375 @@ footer a:hover { color: var(--petrol); }
 @media (max-width: 480px) {
   .share-row,
   .related-posts { padding-left: 20px; padding-right: 20px; }
+}
+
+/* ==========================================================================
+   Breadcrumbs
+   ========================================================================== */
+.breadcrumb {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px 32px 0;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+.breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--line-strong);
+}
+.breadcrumb a:hover { color: var(--petrol); border-color: var(--petrol); }
+.breadcrumb .sep { margin: 0 8px; opacity: 0.5; }
+.breadcrumb .here { color: var(--petrol); }
+
+.breadcrumb--narrow { max-width: 900px; }
+
+@media (max-width: 480px) {
+  .breadcrumb { padding-left: 20px; padding-right: 20px; }
+}
+
+/* ==========================================================================
+   Filtros — destinos / parques
+   ========================================================================== */
+.filter-bar {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.filter-search {
+  width: 100%;
+  max-width: 420px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 12px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--paper-raised);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.filter-search:focus { border-color: var(--petrol); }
+.filter-search::placeholder { color: var(--ink-soft); opacity: 0.7; }
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-chip {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  background: var(--paper-raised);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 15px 6px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.filter-chip:hover { border-color: var(--petrol); color: var(--petrol); }
+.filter-chip.is-active {
+  background: var(--petrol);
+  border-color: var(--petrol);
+  color: var(--paper);
+}
+.filter-chip:focus-visible { outline: 2px solid var(--petrol); outline-offset: 2px; }
+
+.link-button {
+  font-family: var(--font-mono);
+  font-size: inherit;
+  color: var(--petrol);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--petrol);
+  padding: 0;
+  cursor: pointer;
+}
+
+.related-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--petrol);
+  text-decoration: none;
+  border-bottom: 1px solid var(--petrol);
+}
+.related-link:hover { color: var(--petrol-deep); border-color: var(--petrol-deep); }
+
+/* ==========================================================================
+   Chips de destinos/parques relacionados — dentro do post
+   ========================================================================== */
+.chips-section {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 32px;
+}
+
+.chips-section h2 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  margin: 0 0 16px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.place-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 8px 15px 7px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+.place-chip:hover { border-color: var(--petrol); background: rgba(44, 90, 97, 0.06); }
+.place-chip .pin { font-size: 11px; }
+
+@media (max-width: 480px) {
+  .chips-section { padding-left: 20px; padding-right: 20px; }
+}
+
+/* ==========================================================================
+   Timeline (/timeline/)
+   ========================================================================== */
+.timeline {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  padding: 0 32px;
+}
+
+.timeline-ano {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 24px;
+}
+
+.timeline-ano-marcador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  height: 100%;
+}
+
+.timeline-ano-numero {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--petrol);
+  background: var(--paper);
+  padding: 4px 0 10px;
+}
+
+.timeline-ano-linha {
+  flex: 1;
+  width: 2px;
+  background: var(--line);
+  margin-top: 4px;
+  min-height: 40px;
+}
+
+.timeline-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 44px;
+}
+
+.timeline-item {
+  display: block;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 22px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.15s, transform 0.15s;
+}
+.timeline-item:hover { border-color: var(--petrol); transform: translateX(2px); }
+
+.timeline-item-data {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--sage);
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.timeline-item h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  margin: 0 0 4px;
+}
+
+.timeline-item .coords {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+.timeline-item .snippet {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .timeline { padding: 0 20px; }
+  .timeline-ano { grid-template-columns: 52px 1fr; gap: 14px; }
+  .timeline-ano-numero { font-size: 18px; }
+}
+
+/* ==========================================================================
+   Mapa interativo (/mapa/)
+   ========================================================================== */
+.mapa-interativo {
+  max-width: 1100px;
+  height: 560px;
+  margin: 0 auto 12px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper-raised);
+  font-family: var(--font-body);
+}
+
+.mapa-credito {
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  padding: 0 32px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+.mapa-credito a { color: var(--petrol); }
+
+.mapa-pino span {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid var(--paper-raised);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.mapa-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: var(--font-body);
+  min-width: 150px;
+}
+.mapa-popup img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  margin: -12px -20px 6px;
+  width: calc(100% + 40px);
+}
+.mapa-popup strong {
+  font-family: var(--font-display);
+  font-size: 15px;
+}
+.mapa-popup span {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-soft);
+}
+.mapa-popup a {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--petrol);
+  text-decoration: none;
+}
+.mapa-popup a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .mapa-interativo { height: 420px; }
+  .mapa-credito { padding: 0 20px; }
+}
+
+/* ==========================================================================
+   Ficha da viagem e rota visual — dentro do post (Fase 4)
+   ========================================================================== */
+.ficha-viagem {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 0 32px;
+}
+
+.ficha-viagem .boarding-pass { margin-top: 0; }
+
+.rota-visual {
+  max-width: 900px;
+  margin: 0 auto 48px;
+  padding: 0 32px;
+}
+
+.rota-visual h2 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin: 0 0 16px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.rota-trilha {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.rota-trilha .rota-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 7px 14px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a.rota-pill:hover { border-color: var(--petrol); color: var(--petrol); }
+
+.rota-seta {
+  flex-shrink: 0;
+  color: var(--line-strong);
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+@media (max-width: 700px) {
+  .ficha-viagem, .rota-visual { padding: 0 20px; }
 }
