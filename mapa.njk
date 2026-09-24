@@ -1,0 +1,113 @@
+---
+layout: base.njk
+title: "Mapa"
+nav: mapa
+---
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+<nav class="breadcrumb" aria-label="Você está aqui">
+  <a href="{{ '/' | url }}">Início</a>
+  <span class="sep">→</span>
+  <span class="here">Mapa</span>
+</nav>
+
+<div class="page-hero">
+  <span class="eyebrow">{{ destinosFlat.length }} destinos · {{ parquesFlat.length }} parques</span>
+  <h1>Todo lugar, num mapa só.</h1>
+  <p class="lede">Arraste, dê zoom e clique nos pinos para ver cada destino e parque.</p>
+
+  <div class="filter-bar">
+    <div class="filter-chips" id="mapaCamadas">
+      <button type="button" class="filter-chip is-active" data-camada="destinos">📍 Destinos</button>
+      <button type="button" class="filter-chip is-active" data-camada="parques">🎢 Parques</button>
+    </div>
+  </div>
+</div>
+
+<div id="mapaInterativo" class="mapa-interativo" aria-label="Mapa com todos os destinos e parques visitados"></div>
+<p class="mapa-credito">Mapa: <a href="https://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a> · Tiles: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">colaboradores do OpenStreetMap</a></p>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+(function () {
+  var destinos = {{ destinosFlat | json | safe }};
+  var parques = {{ parquesFlat | json | safe }};
+  var urlBase = "{{ '/' | url }}";
+
+  var mapa = L.map('mapaInterativo', { scrollWheelZoom: false }).setView([10, -40], 2);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; colaboradores do OpenStreetMap'
+  }).addTo(mapa);
+
+  function pino(cor) {
+    return L.divIcon({
+      className: 'mapa-pino',
+      html: '<span style="background:' + cor + '"></span>',
+      iconSize: [16, 16],
+      iconAnchor: [8, 8],
+      popupAnchor: [0, -10]
+    });
+  }
+
+  function popupHtml(item, tipo) {
+    var link = tipo === 'destino' ? urlBase + 'destinos/' + item.slug + '/' : urlBase + 'parques/' + item.slug + '/';
+    var local = tipo === 'destino' ? item.estado : item.local;
+    var foto = item.foto ? '<img src="' + item.foto + '" alt="" loading="lazy">' : '';
+    return '<div class="mapa-popup">' + foto +
+      '<strong>' + item.nome + '</strong>' +
+      '<span>' + local + '</span>' +
+      '<a href="' + link + '">Ver página →</a></div>';
+  }
+
+  var grupoDestinos = L.layerGroup();
+  destinos.forEach(function (d) {
+    if (d.lat === null || d.lng === null) return;
+    L.marker([d.lat, d.lng], { icon: pino('#2c5a61') })
+      .bindPopup(popupHtml(d, 'destino'))
+      .addTo(grupoDestinos);
+  });
+  grupoDestinos.addTo(mapa);
+
+  var grupoParques = L.layerGroup();
+  parques.forEach(function (p) {
+    if (p.lat === null || p.lng === null) return;
+    L.marker([p.lat, p.lng], { icon: pino('#c9762c') })
+      .bindPopup(popupHtml(p, 'parque'))
+      .addTo(grupoParques);
+  });
+  grupoParques.addTo(mapa);
+
+  var camadas = { destinos: grupoDestinos, parques: grupoParques };
+  var chips = document.querySelectorAll('#mapaCamadas .filter-chip');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var camada = chip.getAttribute('data-camada');
+      var ativo = chip.classList.toggle('is-active');
+      if (ativo) {
+        mapa.addLayer(camadas[camada]);
+      } else {
+        mapa.removeLayer(camadas[camada]);
+      }
+    });
+  });
+
+  // Abre um popup específico se a URL trouxer #destino-slug ou #parque-slug
+  // (usado pelos links "Ver no mapa" nas páginas individuais).
+  var hash = window.location.hash.replace('#', '');
+  if (hash.indexOf('destino-') === 0) {
+    var slugAlvo = hash.replace('destino-', '');
+    var achado = destinos.find(function (d) { return d.slug === slugAlvo; });
+    if (achado && achado.lat !== null) {
+      mapa.setView([achado.lat, achado.lng], 10);
+    }
+  } else if (hash.indexOf('parque-') === 0) {
+    var slugAlvoP = hash.replace('parque-', '');
+    var achadoP = parques.find(function (p) { return p.slug === slugAlvoP; });
+    if (achadoP && achadoP.lat !== null) {
+      mapa.setView([achadoP.lat, achadoP.lng], 10);
+    }
+  }
+})();
+</script>
