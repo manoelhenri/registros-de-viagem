@@ -245,7 +245,7 @@
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Praia_do_Tombo_-_Itanha%C3%A9m.jpg?width=640"
       },
       {
-        "nome": "São Gonçalo do Rio Preto",
+        "nome": "São José do Jacuri",
         "estado": "Minas Gerais, Brasil",
         "anos": [
           "2020"
@@ -306,6 +306,24 @@
         ],
         "resumo": "Vizinha de Gramado, lar da Cascata do Caracol.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Cascata_do_Caracol_iluminada_pelo_sol.JPG?width=640"
+      },
+      {
+        "nome": "Curitiba",
+        "estado": "Paraná, Brasil",
+        "anos": [
+          "2025"
+        ],
+        "resumo": "Jardim Botânico, Mercado Municipal e o Museu Oscar Niemeyer.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Jardim_Bot%C3%A2nico_-_Curitiba_-_PR.jpg?width=640"
+      },
+      {
+        "nome": "Presidente Figueiredo",
+        "estado": "Amazonas, Brasil",
+        "anos": [
+          "2026"
+        ],
+        "resumo": "A \"terra das cachoeiras\", a poucas horas de Manaus.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/MarioOliveira_Cachoeira_Santu%C3%A1rio_Presidente_Figueiredo_AM_(40813383134).jpg?width=640"
       }
     ]
   },
@@ -337,7 +355,8 @@
         "nome": "Moab",
         "estado": "Utah, Estados Unidos",
         "anos": [
-          "2025"
+          "2025",
+          "2024"
         ],
         "resumo": "Base para os parques nacionais Arches e Canyonlands.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Delicate_Arch,_Arches_National_Park,_Moab,_Utah_(9099708035).jpg?width=640"
@@ -346,7 +365,8 @@
         "nome": "Las Vegas",
         "estado": "Nevada, Estados Unidos",
         "anos": [
-          "2025"
+          "2025",
+          "2024"
         ],
         "resumo": "Cassinos, shows e a Strip iluminada no deserto de Nevada.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Las_Vegas_Strip_at_night,_2012.jpg?width=640"
@@ -364,7 +384,8 @@
         "nome": "Valencia / Los Angeles",
         "estado": "Califórnia, Estados Unidos",
         "anos": [
-          "2025"
+          "2025",
+          "2024"
         ],
         "resumo": "Região próxima ao parque Six Flags Magic Mountain.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Freefall,_Six_Flags_Magic_Mountain.jpg?width=640"
@@ -373,7 +394,8 @@
         "nome": "Hollywood / Los Angeles",
         "estado": "Califórnia, Estados Unidos",
         "anos": [
-          "2025"
+          "2025",
+          "2024"
         ],
         "resumo": "Meca do cinema, com a Calçada da Fama e o letreiro icônico.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Hollywood_sign_in_Los_Angeles.jpg?width=640"
@@ -382,7 +404,8 @@
         "nome": "Anaheim",
         "estado": "Califórnia, Estados Unidos",
         "anos": [
-          "2025"
+          "2025",
+          "2024"
         ],
         "resumo": "Lar da Disneyland original, a primeira Disney do mundo.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Disneyland_Anaheim.jpg?width=640"
@@ -592,6 +615,22 @@
         ],
         "resumo": "Capital portenha, tango e arquitetura europeia às margens do Rio da Prata.",
         "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Obelisco,_Buenos_Aires,_Argentina_(2360406889).jpg?width=640"
+      }
+    ]
+  },
+  {
+    "pais": "Paraguai",
+    "bandeira": "🇵🇾",
+    "id": "paraguai",
+    "cidades": [
+      {
+        "nome": "Ciudad del Este",
+        "estado": "Alto Paraná, Paraguai",
+        "anos": [
+          "2021"
+        ],
+        "resumo": "Cidade de fronteira, do outro lado da Ponte da Amizade.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Ciudad_del_Este_puente_de_la_Amistad.jpg?width=640"
       }
     ]
   },
