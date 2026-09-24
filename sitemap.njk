@@ -8,6 +8,8 @@ eleventyExcludeFromCollections: true
   <url><loc>{{ site.url }}/posts/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>{{ site.url }}/destinos/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>{{ site.url }}/parques/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>{{ site.url }}/mapa/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>{{ site.url }}/timeline/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>{{ site.url }}/sobre/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   {% for post in collections.posts %}
   <url>
@@ -16,5 +18,11 @@ eleventyExcludeFromCollections: true
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+  {% endfor %}
+  {% for destino in destinosFlat %}
+  <url><loc>{{ site.url }}/destinos/{{ destino.slug }}/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  {% endfor %}
+  {% for parque in parquesFlat %}
+  <url><loc>{{ site.url }}/parques/{{ parque.slug }}/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   {% endfor %}
 </urlset>
