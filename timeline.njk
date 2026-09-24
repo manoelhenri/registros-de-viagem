@@ -1,0 +1,37 @@
+---
+layout: base.njk
+title: "Timeline"
+nav: timeline
+---
+<nav class="breadcrumb" aria-label="Você está aqui">
+  <a href="{{ '/' | url }}">Início</a>
+  <span class="sep">→</span>
+  <span class="here">Timeline</span>
+</nav>
+
+<div class="page-hero">
+  <span class="eyebrow">{{ collections.posts.length | pad2 }} registros · desde {{ collections.timeline[collections.timeline.length - 1].ano }}</span>
+  <h1>A linha do tempo das viagens.</h1>
+  <p class="lede">Todo post, na ordem em que aconteceu — ano por ano.</p>
+</div>
+
+<div class="timeline">
+  {% for grupo in collections.timeline %}
+  <section class="timeline-ano">
+    <div class="timeline-ano-marcador">
+      <span class="timeline-ano-numero">{{ grupo.ano }}</span>
+      <span class="timeline-ano-linha"></span>
+    </div>
+    <div class="timeline-posts">
+      {% for post in grupo.posts %}
+      <a class="timeline-item" href="{{ post.url }}">
+        <span class="timeline-item-data">{{ post.data.data | dataAno }}</span>
+        <h3>{{ post.data.title }}</h3>
+        <span class="coords">{{ post.data.coordenadas }}</span>
+        <p class="snippet">{{ post.data.resumo }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
