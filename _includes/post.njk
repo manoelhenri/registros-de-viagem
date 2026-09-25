@@ -19,8 +19,9 @@ layout: base.njk
 {% set destinosViagem = thisPost | destinosDoPost(destinos) %}
 {% set parquesViagem = thisPost | parquesDoPost(parques) %}
 {% set relacionados = thisPost | relacionadosDe(collections.posts, destinos, 3) %}
-{% set rota = thisPost | rotaDoPost(destinos) %}
+{% set rota = thisPost | rotaDoPost(destinos, parques) %}
 {% set totalPaises = destinosViagem | paisesUnicos %}
+{% set vizinhos = thisPost | vizinhosDoPost(collections.posts) %}
 
 <nav class="breadcrumb breadcrumb--narrow" aria-label="Você está aqui">
   <a href="{{ '/' | url }}">Início</a>
@@ -31,7 +32,7 @@ layout: base.njk
 </nav>
 
 <div class="post-hero">
-  <a class="back-link" href="{{ '/' | url }}">← voltar para todos os registros</a>
+  <a class="back-link" href="{{ '/posts/' | url }}">← voltar para todos os registros</a>
   <span class="coords">{{ coordenadas }}</span>
   <h1>{{ title }}</h1>
   <div class="post-meta">
@@ -78,7 +79,7 @@ layout: base.njk
       {% if rota.length %}
       <div>
         <strong>{{ rota.length | pad2 }}</strong>
-        <span>{% if rota.length == 1 %}CIDADE{% else %}CIDADES{% endif %}</span>
+        <span>{% if rota.length == 1 %}PARADA{% else %}PARADAS{% endif %}</span>
       </div>
       {% endif %}
       {% if totalPaises %}
@@ -103,7 +104,9 @@ layout: base.njk
   <h2>O roteiro, parada por parada</h2>
   <div class="rota-trilha">
     {% for parada in rota %}
-    {% if parada.slug %}
+    {% if parada.slug and parada.tipo == "parque" %}
+      <a class="rota-pill" href="{{ '/parques/' | url }}{{ parada.slug }}/">{{ parada.nome }}</a>
+    {% elif parada.slug %}
       <a class="rota-pill" href="{{ '/destinos/' | url }}{{ parada.slug }}/">{{ parada.nome }}</a>
     {% else %}
       <span class="rota-pill">{{ parada.nome }}</span>
@@ -172,6 +175,25 @@ layout: base.njk
     {% endfor %}
   </div>
 </section>
+{% endif %}
+
+{% if vizinhos.anterior or vizinhos.proximo %}
+<nav class="post-adjacent-nav" aria-label="Navegação entre viagens">
+  {% if vizinhos.anterior %}
+    <a class="adjacent-link adjacent-prev" href="{{ vizinhos.anterior.url }}">
+      <span class="adjacent-label">← Viagem anterior</span>
+      <span class="adjacent-title">{{ vizinhos.anterior.data.title }}</span>
+    </a>
+  {% else %}
+    <span></span>
+  {% endif %}
+  {% if vizinhos.proximo %}
+    <a class="adjacent-link adjacent-next" href="{{ vizinhos.proximo.url }}">
+      <span class="adjacent-label">Próxima viagem →</span>
+      <span class="adjacent-title">{{ vizinhos.proximo.data.title }}</span>
+    </a>
+  {% endif %}
+</nav>
 {% endif %}
 
 <div class="post-nav">
