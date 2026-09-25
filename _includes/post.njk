@@ -60,7 +60,7 @@ layout: base.njk
 
 {% if localizacaoMapa %}
 <div class="map-embed">
-  <iframe src="https://www.google.com/maps?q={{ localizacaoMapa | encodeURI }}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Mapa de {{ localizacaoMapa }}"></iframe>
+  {{ localizacaoMapa | mapaEmbed(localizacaoMapa) | safe }}
 </div>
 {% endif %}
 
@@ -96,6 +96,23 @@ layout: base.njk
       {% endif %}
     </div>
   </div>
+</div>
+{% endif %}
+
+{% set temFichaExtra = perfilViagem or transporte or hospedagem or melhorEpoca or tempoIdeal or destaquePessoal or repetiriaViagem or observacaoPratica %}
+{% if temFichaExtra %}
+<div class="ficha-extra">
+  <h2>Detalhes da viagem</h2>
+  <dl class="ficha-extra-grid">
+    {% if perfilViagem %}<div><dt>Perfil</dt><dd>{{ perfilViagem }}</dd></div>{% endif %}
+    {% if transporte %}<div><dt>Transporte</dt><dd>{{ transporte }}</dd></div>{% endif %}
+    {% if hospedagem %}<div><dt>Hospedagem</dt><dd>{{ hospedagem }}</dd></div>{% endif %}
+    {% if melhorEpoca %}<div><dt>Melhor época</dt><dd>{{ melhorEpoca }}</dd></div>{% endif %}
+    {% if tempoIdeal %}<div><dt>Tempo ideal</dt><dd>{{ tempoIdeal }}</dd></div>{% endif %}
+    {% if repetiriaViagem %}<div><dt>Repetiria a viagem?</dt><dd>{{ repetiriaViagem }}</dd></div>{% endif %}
+  </dl>
+  {% if destaquePessoal %}<p class="ficha-extra-destaque">"{{ destaquePessoal }}"</p>{% endif %}
+  {% if observacaoPratica %}<p class="ficha-extra-obs"><strong>💡 Vale saber:</strong> {{ observacaoPratica }}</p>{% endif %}
 </div>
 {% endif %}
 
