@@ -7,8 +7,8 @@ Veja **COMO-PUBLICAR.md** para o passo a passo completo de publicação.
 ## Estrutura (para referência — você não precisa mexer aqui)
 
 - `content/posts/` — cada post do blog (criado pelo painel)
-- `_data/destinos.json` — histórico de cidades visitadas
-- `_data/parques.json` — histórico de parques visitados
+- `_data/destinosData.json` — histórico de cidades visitadas (editado pelo painel; `_data/destinos.js` desembrulha para o site)
+- `_data/parquesData.json` — histórico de parques visitados (editado pelo painel; `_data/parques.js` desembrulha para o site)
 - `_data/sobre.json` — conteúdo da página Sobre
 - `_data/site.json` — nome, Instagram, rodapé
 - `admin/` — o painel de administração (acessível em `/admin` depois de publicado)
