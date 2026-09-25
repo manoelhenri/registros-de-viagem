@@ -34,7 +34,7 @@ nav: destinos
   </div>
 </div>
 
-<p class="no-results" id="destinoNoResults" hidden>Nenhum destino encontrado. <button type="button" id="destinoLimpar" class="link-button">Limpar filtros</button></p>
+<p class="no-results" id="destinoNoResults" role="status" aria-live="polite" hidden>Nenhum destino encontrado. <button type="button" id="destinoLimpar" class="link-button">Limpar filtros</button></p>
 
 {% for pais in destinos %}
 <section class="country-section" id="{{ pais.id }}" data-pais-section="{{ pais.id }}">

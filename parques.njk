@@ -34,14 +34,14 @@ nav: parques
   </div>
 </div>
 
-<p class="no-results" id="parqueNoResults" hidden>Nenhum parque encontrado. <button type="button" id="parqueLimpar" class="link-button">Limpar filtros</button></p>
+<p class="no-results" id="parqueNoResults" role="status" aria-live="polite" hidden>Nenhum parque encontrado. <button type="button" id="parqueLimpar" class="link-button">Limpar filtros</button></p>
 
 {% for grupo in parques %}
 <section class="country-section" id="{{ grupo.id }}" data-grupo-section="{{ grupo.id }}">
   <div class="country-title">
     <span class="flag">{{ grupo.icone }}</span>
     <h2>{{ grupo.grupo }}</h2>
-    <span class="n">{{ grupo.parques.length | pad2 }} parques</span>
+    <span class="n">{{ grupo.parques.length | pad2 }} parque{% if grupo.parques.length != 1 %}s{% endif %}</span>
   </div>
   <div class="place-grid">
     {% for parque in grupo.parques %}
