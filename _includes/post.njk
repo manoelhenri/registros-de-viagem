@@ -43,7 +43,9 @@ layout: base.njk
 </div>
 
 <div class="post-cover">
-  {% if capa %}
+  {% if videoCapa %}
+    {{ videoCapa | videoEmbed(title) | safe }}
+  {% elif capa %}
     <img src="{{ capa }}" alt="{{ title }}" fetchpriority="high" decoding="async">
     {% if capaCredito %}
       <p class="cover-credit">{% if capaFonte %}<a href="{{ capaFonte }}" target="_blank" rel="noopener">{{ capaCredito }}</a>{% else %}{{ capaCredito }}{% endif %}</p>
