@@ -198,16 +198,34 @@ layout: base.njk
 <nav class="post-adjacent-nav" aria-label="Navegação entre viagens">
   {% if vizinhos.anterior %}
     <a class="adjacent-link adjacent-prev" href="{{ vizinhos.anterior.url }}">
-      <span class="adjacent-label">← Viagem anterior</span>
-      <span class="adjacent-title">{{ vizinhos.anterior.data.title }}</span>
+      {% if vizinhos.anterior.data.capa %}
+        <img src="{{ vizinhos.anterior.data.capa }}" alt="" loading="lazy" decoding="async">
+      {% else %}
+        <div class="adjacent-thumb-placeholder" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
+        </div>
+      {% endif %}
+      <span class="adjacent-text">
+        <span class="adjacent-label">← Viagem anterior</span>
+        <span class="adjacent-title">{{ vizinhos.anterior.data.title }}</span>
+      </span>
     </a>
   {% else %}
     <span></span>
   {% endif %}
   {% if vizinhos.proximo %}
     <a class="adjacent-link adjacent-next" href="{{ vizinhos.proximo.url }}">
-      <span class="adjacent-label">Próxima viagem →</span>
-      <span class="adjacent-title">{{ vizinhos.proximo.data.title }}</span>
+      {% if vizinhos.proximo.data.capa %}
+        <img src="{{ vizinhos.proximo.data.capa }}" alt="" loading="lazy" decoding="async">
+      {% else %}
+        <div class="adjacent-thumb-placeholder" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-5 5"/></svg>
+        </div>
+      {% endif %}
+      <span class="adjacent-text">
+        <span class="adjacent-label">Próxima viagem →</span>
+        <span class="adjacent-title">{{ vizinhos.proximo.data.title }}</span>
+      </span>
     </a>
   {% endif %}
 </nav>

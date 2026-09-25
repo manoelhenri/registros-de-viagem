@@ -1073,23 +1073,53 @@ footer a:hover { color: var(--petrol); }
 
 .adjacent-link {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
   text-decoration: none;
   color: var(--ink);
-  padding: 14px 16px;
+  padding: 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  transition: border-color 0.15s ease, background 0.15s ease;
+  background: var(--paper-raised);
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
 .adjacent-link:hover,
 .adjacent-link:focus-visible {
   border-color: var(--petrol);
-  background: var(--paper-raised);
+  transform: translateY(-1px);
 }
 
-.adjacent-next { text-align: right; margin-left: auto; }
+.adjacent-link img,
+.adjacent-thumb-placeholder {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: calc(var(--radius) - 4px);
+  object-fit: cover;
+  filter: saturate(0.92) sepia(0.06);
+}
+
+.adjacent-thumb-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  color: var(--ink-soft);
+}
+
+.adjacent-thumb-placeholder svg { width: 20px; height: 20px; opacity: 0.6; }
+
+.adjacent-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.adjacent-next { flex-direction: row-reverse; text-align: right; }
+.adjacent-next .adjacent-text { align-items: flex-end; }
 
 .adjacent-label {
   font-family: var(--font-mono);
@@ -1101,13 +1131,19 @@ footer a:hover { color: var(--petrol); }
 
 .adjacent-title {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.3;
   color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media (max-width: 640px) {
   .post-adjacent-nav { grid-template-columns: 1fr; }
-  .adjacent-next { text-align: left; margin-left: 0; }
+  .adjacent-next { flex-direction: row; text-align: left; }
+  .adjacent-next .adjacent-text { align-items: flex-start; }
 }
 
 /* floating "back to top" button, on every page (see base.njk) */
