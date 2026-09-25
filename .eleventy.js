@@ -97,14 +97,24 @@ module.exports = function (eleventyConfig) {
     // YouTube/Vimeo/Instagram aparece sozinho numa linha do corpo do post,
     // vira um player embutido em vez de só um link. "html: true" mantém o
     // comportamento padrão do Eleventy (permite HTML solto no markdown).
+    // "Dicas que fazem diferença" / "Vale a pena?": ver lib/callout.js —
+    // envolve esses headings (quando existem) num bloco destacado, sem
+    // reescrever nenhuma palavra do texto original (Bloco 5, item 22).
     const markdownIt = require("markdown-it");
     const { pluginVideoEmbed, videoEmbedHtml } = require("./lib/video.js");
-    eleventyConfig.setLibrary("md", markdownIt({ html: true }).use(pluginVideoEmbed));
+    const { pluginCallout } = require("./lib/callout.js");
+    eleventyConfig.setLibrary("md", markdownIt({ html: true }).use(pluginVideoEmbed).use(pluginCallout));
 
     // Usado pelo campo "Vídeo de capa" do post (post.njk), pra desenhar o
     // mesmo player no topo do post quando não é um link solto no meio do
     // texto. Devolve "" (nunca quebra o build) se o link não for reconhecido.
     eleventyConfig.addFilter("videoEmbed", (url, titulo) => videoEmbedHtml(url, titulo) || "");
+
+    // Capa clicável de mapa do Google (lib/mapa-embed.js) — usada no lugar do
+    // iframe direto em post.njk/destino.njk/parque.njk (Bloco 6, item 24).
+    // Devolve "" (nunca quebra o build) se não houver texto de busca.
+    const { mapaEmbedHtml } = require("./lib/mapa-embed.js");
+    eleventyConfig.addFilter("mapaEmbed", (query, titulo) => mapaEmbedHtml(query, titulo) || "");
 
     eleventyConfig.addFilter("pad2", (num) => String(num).padStart(2, "0"));
 
@@ -302,6 +312,46 @@ module.exports = function (eleventyConfig) {
           return (posts || []).filter((post) =>
                   pedacosDoPost(post).some((pedaco) => normalizar(pedaco) === normParque)
                                           );
+    });
+
+    // Maior ano numérico de uma lista "anos" (ex.: ["2017", "2021"]) — usada
+    // na página de destino/parque pra mostrar a "última visita" (Bloco 4,
+    // item 20). Cai no último item da lista, sem comparar, quando nenhum ano
+    // é numérico (ex.: só "várias visitas") — mesma lógica de anosNumericos
+    // já usada no filtro por ano do mapa (mapa.njk).
+    eleventyConfig.addFilter("ultimaVisita", (anos) => {
+          const numericos = (anos || []).map(String).filter((a) => /^\d{4}$/.test(a));
+          if (numericos.length) return Math.max(...numericos.map(Number));
+          return (anos && anos[anos.length - 1]) || "";
+    });
+
+    // Destinos/parques relacionados a um lugar (Bloco 4, item 20): cruza os
+    // posts que passam por esse lugar com os OUTROS destinos/parques que
+    // aparecem nos mesmos posts — "quem visitou esse lugar também visitou".
+    // Mesma regra de igualdade exata (normalizada) usada no resto do
+    // arquivo, nunca por substring; o próprio lugar nunca aparece na lista.
+    eleventyConfig.addFilter("lugaresRelacionados", (nomeLugar, posts, destinos, parques) => {
+          const normLugar = normalizar(nomeLugar);
+          const postsRelacionados = (posts || []).filter((post) =>
+                  pedacosDoPost(post).some((pedaco) => normalizar(pedaco) === normLugar)
+                                                );
+          const destinosConhecidos = listaCidades(destinos);
+          const parquesConhecidos = listaParques(parques);
+          const achados = new Map();
+
+          postsRelacionados.forEach((post) => {
+                  const pedacos = pedacosDoPost(post);
+                  acharCorrespondencias(pedacos, destinosConhecidos).forEach((d) => {
+                            if (d.norm === normLugar) return;
+                            achados.set("destino:" + d.slug, { nome: d.nome, slug: d.slug, tipo: "destino", bandeira: d.bandeira });
+                  });
+                  acharCorrespondencias(pedacos, parquesConhecidos).forEach((p) => {
+                            if (p.norm === normLugar) return;
+                            achados.set("parque:" + p.slug, { nome: p.nome, slug: p.slug, tipo: "parque", icone: p.icone });
+                  });
+          });
+
+          return Array.from(achados.values());
     });
 
     // Recomendações relacionadas, em ordem de prioridade:
