@@ -773,6 +773,7 @@ footer a:hover { color: var(--petrol); }
 
 .post-cover img {
   width: 100%;
+  aspect-ratio: 21 / 9;
   max-height: 520px;
   object-fit: cover;
   border-radius: var(--radius);
@@ -801,6 +802,63 @@ footer a:hover { color: var(--petrol); }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   display: block;
+}
+
+/* Capa clicável do mapa embutido (lib/mapa-embed.js) — mesmo padrão da capa
+   de vídeo (.video-facade): o iframe do Google Maps só é criado no clique
+   (script em base.njk). Sem thumbnail fixa disponível (precisaria de uma API
+   paga do Google), mostra um retângulo com ícone no lugar da miniatura. */
+.map-facade {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--paper-raised);
+}
+
+.map-facade iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.map-facade-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.map-play-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.map-facade:hover .map-play-btn,
+.map-play-btn:focus-visible {
+  border-color: var(--petrol);
+  color: var(--petrol);
 }
 
 /* Player de vídeo embutido (YouTube/Vimeo/Instagram) — usado tanto no
@@ -918,6 +976,37 @@ footer a:hover { color: var(--petrol); }
   font-style: italic;
   font-size: 20px;
   color: var(--ink);
+}
+
+/* "Dicas que fazem diferença" / "Vale a pena?" (Bloco 5, item 22): o
+   markdown-it (lib/callout.js) reconhece esses headings no corpo do post e
+   envolve o heading + o conteúdo seguinte nesse bloco destacado, sem alterar
+   nenhuma palavra do texto original. */
+.callout {
+  display: flex;
+  gap: 16px;
+  margin: 36px 0;
+  padding: 24px 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line-strong);
+  background: var(--paper-raised);
+}
+
+.callout-icone {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.callout-corpo { min-width: 0; }
+.post-body .callout-corpo h2 { margin-top: 0; }
+.callout-corpo > :last-child { margin-bottom: 0; }
+
+.callout--dicas { border-left: 4px solid var(--sage); }
+.callout--vale-a-pena { border-left: 4px solid var(--petrol); }
+
+@media (max-width: 640px) {
+  .callout { padding: 18px; gap: 12px; }
 }
 
 .post-gallery {
@@ -1593,6 +1682,71 @@ footer a:hover { color: var(--petrol); }
 }
 
 .ficha-viagem .boarding-pass { margin-top: 0; }
+
+/* Detalhes opcionais da viagem (Bloco 5, item 21) — só aparece quando pelo
+   menos um dos campos foi preenchido no post; posts antigos, sem nenhum
+   campo, nunca mostram esse bloco. */
+.ficha-extra {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 0 32px;
+}
+
+.ficha-extra h2 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin: 0 0 16px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.ficha-extra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px 24px;
+  margin: 0 0 18px;
+}
+
+.ficha-extra-grid dt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sage);
+  margin-bottom: 4px;
+}
+
+.ficha-extra-grid dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.ficha-extra-destaque {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--ink);
+  border-left: 3px solid var(--petrol);
+  padding: 4px 0 4px 18px;
+  margin: 0 0 18px;
+}
+
+.ficha-extra-obs {
+  font-size: 14px;
+  color: var(--ink-soft);
+  background: var(--paper-raised);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin: 0;
+}
+
+.ficha-extra-obs strong { color: var(--ink); }
+
+@media (max-width: 700px) {
+  .ficha-extra { padding: 0 20px; }
+}
 
 .rota-visual {
   max-width: 900px;
