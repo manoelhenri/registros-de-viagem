@@ -50,7 +50,9 @@ collections:
           - { label: "Legenda (texto pequeno acima do título)", name: "heroEyebrow", widget: "string" }
           - { label: "Título principal", name: "heroTitulo", widget: "string" }
           - { label: "Subtítulo", name: "heroSubtitulo", widget: "text" }
-          - { label: "Cartão 1 — Legenda", name: "card1Eyebrow", widget: "string" }
+          # A legenda do Cartão 1 (ex.: "65 destinos · 10 países") é calculada
+          # sozinha a partir de Destinos/Parques cadastrados — não tem campo
+          # aqui de propósito, pra nunca mais ficar desatualizada.
           - { label: "Cartão 1 — Título", name: "card1Titulo", widget: "string" }
           - { label: "Cartão 1 — Texto", name: "card1Texto", widget: "text" }
           - { label: "Cartão 2 — Legenda", name: "card2Eyebrow", widget: "string" }
@@ -126,8 +128,9 @@ collections:
           - { label: "Texto de apresentação", name: "textoIntro", widget: "text" }
           - { label: "Texto extra", name: "textoExtra", widget: "text" }
           - { label: "Status de viagem (boarding pass)", name: "statusViagem", widget: "string" }
-          - { label: "Roteiros publicados", name: "roteirosPublicados", widget: "string" }
-          - { label: "Países recentes", name: "paisesRecentes", widget: "string" }
+          # "Roteiros publicados" e "Países recentes" (boarding pass da
+          # página Sobre) são calculados sozinhos a partir dos posts e do
+          # catálogo de Destinos — não têm campo aqui de propósito.
           - { label: "Próximos destinos", name: "proximosDestinos", widget: "string" }
 
   # ---------- Configurações gerais do site ----------
