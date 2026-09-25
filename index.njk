@@ -45,16 +45,16 @@ nav: inicio
 
 <section class="explore-grid">
   <a class="explore-card" href="{{ '/destinos/' | url }}">
-    <span class="eyebrow">{{ home.card1Eyebrow }}</span>
+    <span class="eyebrow">{{ estatisticas.totalDestinos }} {% if estatisticas.totalDestinos == 1 %}destino{% else %}destinos{% endif %} · {{ estatisticas.totalPaises }} {% if estatisticas.totalPaises == 1 %}país{% else %}países{% endif %}</span>
     <h3>{{ home.card1Titulo }}</h3>
     <p>{{ home.card1Texto }}</p>
-    <span class="arrow">Ver mapa completo →</span>
+    <span class="arrow">Explorar destinos →</span>
   </a>
   <a class="explore-card alt" href="{{ '/parques/' | url }}">
     <span class="eyebrow">{{ home.card2Eyebrow }}</span>
     <h3>{{ home.card2Titulo }}</h3>
     <p>{{ home.card2Texto }}</p>
-    <span class="arrow">Ver todos os parques →</span>
+    <span class="arrow">Explorar parques →</span>
   </a>
 </section>
 
@@ -64,7 +64,7 @@ nav: inicio
 </div>
 
 <section class="post-grid">
-  {% for post in collections.posts %}
+  {% for post in collections.posts.slice(0, 8) %}
   <a class="tag-card" href="{{ post.url }}">
     <span class="punch"></span>
     {% if post.data.capa %}
@@ -81,6 +81,7 @@ nav: inicio
   {% endfor %}
 </section>
 
+{% if site.instagramPosts.length %}
 <section class="ig-strip">
   <div class="ig-inner">
     <div class="section-head-alt">
@@ -90,12 +91,11 @@ nav: inicio
         {{ site.instagramHandle }}
       </a>
     </div>
-    {% if site.instagramPosts.length %}
     <div class="ig-embed-list">
       {% for post in site.instagramPosts %}
         <blockquote class="instagram-media" data-instgrm-permalink="{{ post.url }}" data-instgrm-version="14"></blockquote>
       {% endfor %}
     </div>
-    {% endif %}
   </div>
 </section>
+{% endif %}
