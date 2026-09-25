@@ -88,7 +88,7 @@
     var toggleTopBtn = function(){ topBtn.classList.toggle('visible', window.scrollY > 400); };
     window.addEventListener('scroll', toggleTopBtn, { passive: true });
     toggleTopBtn();
-    topBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    topBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }); });
   }
 })();
 
