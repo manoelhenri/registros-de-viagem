@@ -496,7 +496,7 @@ footer {
   border-top: 1px solid var(--line);
 }
 
-footer .foot-links { display: flex; gap: 20px; }
+footer .foot-links { display: flex; flex-wrap: wrap; gap: 12px 20px; }
 footer a { text-decoration: none; color: var(--ink-soft); }
 footer a:hover { color: var(--petrol); }
 
@@ -969,6 +969,57 @@ footer a:hover { color: var(--petrol); }
 }
 
 .post-nav a { text-decoration: none; color: var(--petrol); }
+
+/* Viagem anterior / próxima (ver .eleventy.js "vizinhosDoPost") — nav
+   complementar aos relacionados ("Outros registros"), no final do post. */
+.post-adjacent-nav {
+  max-width: var(--measure);
+  margin: 40px auto 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.adjacent-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.adjacent-link:hover,
+.adjacent-link:focus-visible {
+  border-color: var(--petrol);
+  background: var(--paper-raised);
+}
+
+.adjacent-next { text-align: right; margin-left: auto; }
+
+.adjacent-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--petrol);
+}
+
+.adjacent-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .post-adjacent-nav { grid-template-columns: 1fr; }
+  .adjacent-next { text-align: left; margin-left: 0; }
+}
 
 /* floating "back to top" button, on every page (see base.njk) */
 .back-to-top {
