@@ -1,4 +1,91 @@
+// ---------------------------------------------------------------------
+// Validações de build: pegam erros de dado antes de publicar, sem exigir
+// que alguém abra cada post/cadastro manualmente pra conferir. Rodam toda
+// vez que o build é configurado (build normal ou --serve).
+//
+// - ERRO (interrompe o build): mais de um post com "destaque: true" — só
+//   um post pode ser o destaque da home por vez.
+// - AVISO (não interrompe, só aparece no terminal do build): um destino ou
+//   parque cadastrado sem coordenada em coordsMapa.json (não aparece no
+//   mapa interativo); ou uma cidade/parque citada num post que não bate
+//   com o cadastro, quando pelo menos outra cidade/parque do mesmo post
+//   bate — sinal de que aquele pedaço provavelmente é um lugar de verdade
+//   com o nome escrito diferente do cadastro (e não um texto livre tipo
+//   "6 pessoas", que nunca aparece misturado com lugares de verdade).
+// ---------------------------------------------------------------------
+function validarBuild() {
+    const fs = require("fs");
+    const path = require("path");
+    const matter = require("gray-matter");
+    const { normalizar, listaCidades, listaParques } = require("./lib/geo.js");
+
+    const dataDir = path.join(__dirname, "_data");
+    const destinosData = JSON.parse(fs.readFileSync(path.join(dataDir, "destinosData.json"), "utf8"));
+    const parquesData = JSON.parse(fs.readFileSync(path.join(dataDir, "parquesData.json"), "utf8"));
+    const coordsMapa = JSON.parse(fs.readFileSync(path.join(dataDir, "coordsMapa.json"), "utf8"));
+
+    const destinosConhecidos = listaCidades(destinosData.destinos, coordsMapa);
+    const parquesConhecidos = listaParques(parquesData.parques, coordsMapa);
+
+    // --- erro: mais de um post em destaque ---------------------------------
+    const postsDir = path.join(__dirname, "content/posts");
+    const arquivosPosts = fs.readdirSync(postsDir).filter((f) => f.endsWith(".md"));
+    const posts = arquivosPosts.map((arquivo) => {
+          const bruto = fs.readFileSync(path.join(postsDir, arquivo), "utf8");
+          const { data } = matter(bruto);
+          return { arquivo, data };
+    });
+
+    const emDestaque = posts.filter((p) => p.data.destaque === true);
+    if (emDestaque.length > 1) {
+          throw new Error(
+                `Build interrompido: ${emDestaque.length} posts marcados com "destaque: true" ` +
+              `(${emDestaque.map((p) => p.arquivo).join(", ")}). Só um post pode ser o destaque da home por vez.`
+                                     );
+    }
+
+    // --- aviso: destino/parque cadastrado sem coordenada --------------------
+    const avisos = [];
+    destinosConhecidos.forEach((c) => {
+          if (c.lat == null || c.lng == null) {
+                  avisos.push(`Destino "${c.nome}" (${c.pais}) não tem coordenada em _data/coordsMapa.json — não aparece no mapa interativo.`);
+          }
+    });
+    parquesConhecidos.forEach((p) => {
+          if (p.lat == null || p.lng == null) {
+                  avisos.push(`Parque "${p.nome}" (${p.grupo}) não tem coordenada em _data/coordsMapa.json — não aparece no mapa interativo.`);
+          }
+    });
+
+    // --- aviso: cidade/parque de um post que não bate com o cadastro --------
+    posts.forEach((post) => {
+          if (!post.data.cidades) return;
+          const pedacos = post.data.cidades.split(",").map((p) => p.trim()).filter(Boolean);
+          if (pedacos.length < 2) return; // item único: pode ser texto livre ("6 pessoas") — nunca avisa
+
+          const resultados = pedacos.map((pedaco) => {
+                  const norm = normalizar(pedaco);
+                  const bate = destinosConhecidos.some((c) => c.norm === norm) || parquesConhecidos.some((p) => p.norm === norm);
+                  return { pedaco, bate };
+          });
+          const algumBateu = resultados.some((r) => r.bate);
+          if (!algumBateu) return; // nenhum pedaço bateu: provavelmente todo o campo é texto livre
+
+          resultados.filter((r) => !r.bate).forEach((r) => {
+                  avisos.push(`Post "${post.arquivo}": "${r.pedaco}" (em "cidades") não bate com nenhum destino/parque cadastrado — confira o nome ou cadastre o lugar.`);
+          });
+    });
+
+    if (avisos.length) {
+          console.warn(`\n⚠ Avisos de build (${avisos.length}) — não impedem a publicação:`);
+          avisos.forEach((a) => console.warn(`  - ${a}`));
+          console.warn("");
+    }
+}
+
 module.exports = function (eleventyConfig) {
+    validarBuild();
+
     // Static passthrough: images uploaded via the admin panel, the stylesheet,
     // and the admin panel itself (Decap CMS) go straight to the output folder.
     eleventyConfig.addPassthroughCopy("images");
@@ -72,8 +159,8 @@ module.exports = function (eleventyConfig) {
     // cidades de verdade — em alguns posts é um texto tipo "7 cidades" ou
     // "6 pessoas". Por isso o matching nunca assume que "cidades" é sempre
     // uma lista: ele tenta casar cada pedaço (separado por vírgula) e o campo
-    // "localizacaoMapa" contra os nomes que já existem em destinos.json e
-    // parques.json. Um pedaço que não bate com nada conhecido é ignorado —
+    // "localizacaoMapa" contra os nomes que já existem em destinosData.json e
+    // parquesData.json. Um pedaço que não bate com nada conhecido é ignorado —
     // nunca vira um destino ou parque inventado.
     // ---------------------------------------------------------------------
 
