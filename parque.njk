@@ -9,6 +9,7 @@ eleventyComputed:
   title: "{{ parque.nome }}"
 ---
 {% set viagens = parque.nome | postsDoParque(collections.posts) %}
+{% set relacionados = parque.nome | lugaresRelacionados(collections.posts, destinos, parques) %}
 
 <nav class="breadcrumb breadcrumb--narrow" aria-label="Você está aqui">
   <a href="{{ '/' | url }}">Início</a>
@@ -25,6 +26,8 @@ eleventyComputed:
   <div class="post-meta">
     <span>📍 {{ parque.local }}</span>
     {% if parque.anos.length %}<span>📅 {{ parque.anos | join(', ') }}</span>{% endif %}
+    <span>🧳 {{ viagens.length }} {% if viagens.length == 1 %}viagem registrada{% else %}viagens registradas{% endif %}</span>
+    {% if parque.anos.length %}<span>🕓 Última visita: {{ parque.anos | ultimaVisita }}</span>{% endif %}
   </div>
 </div>
 
@@ -44,9 +47,24 @@ eleventyComputed:
 
 {% if parque.lat and parque.lng %}
 <div class="map-embed">
-  <iframe src="https://www.google.com/maps?q={{ (parque.nome + ', ' + parque.local) | encodeURI }}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Mapa de {{ parque.nome }}"></iframe>
+  {{ (parque.nome + ', ' + parque.local) | mapaEmbed(parque.nome) | safe }}
 </div>
 <p class="cover-credit"><a href="{{ '/mapa/' | url }}#parque-{{ parque.slug }}">Ver no mapa de todos os parques →</a></p>
+{% endif %}
+
+{% if relacionados.length %}
+<section class="chips-section">
+  <h2>Também aparece com</h2>
+  <div class="chip-row">
+    {% for r in relacionados %}
+    {% if r.tipo == "parque" %}
+    <a class="place-chip" href="{{ '/parques/' | url }}{{ r.slug }}/"><span class="pin">{{ r.icone }}</span> {{ r.nome }}</a>
+    {% else %}
+    <a class="place-chip" href="{{ '/destinos/' | url }}{{ r.slug }}/"><span class="pin">📍</span> {{ r.nome }}</a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
 {% endif %}
 
 {% if viagens.length %}
