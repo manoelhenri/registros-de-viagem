@@ -37,7 +37,15 @@ collections:
       - { label: "Resumo curto (aparece nos cards da home)", name: "resumo", widget: "text" }
       - { label: "Destacar na home?", name: "destaque", widget: "boolean", default: false, hint: "Só um post deve estar marcado como destaque por vez." }
       - { label: "Localização (mostra um mapa no post)", name: "localizacaoMapa", widget: "string", required: false, hint: "Ex: Lisboa, Portugal. Deixe em branco para não mostrar mapa." }
-      - { label: "Texto do post", name: "body", widget: "markdown", hint: "Pra colocar um vídeo no meio do texto, cole o link do YouTube, Vimeo ou Instagram SOZINHO numa linha (sem mais nada de texto nela) — ele vira automaticamente um player, no lugar onde você colar." }
+      - { label: "Perfil da viagem (opcional)", name: "perfilViagem", widget: "string", required: false, hint: "Ex: sozinho, casal, família, amigos. Só aparece no post se preenchido." }
+      - { label: "Transporte (opcional)", name: "transporte", widget: "string", required: false, hint: "Ex: carro alugado, avião + Uber, ônibus" }
+      - { label: "Hospedagem (opcional)", name: "hospedagem", widget: "string", required: false, hint: "Ex: Airbnb no centro, hotel na praia" }
+      - { label: "Melhor época pra ir (opcional)", name: "melhorEpoca", widget: "string", required: false, hint: "Ex: abril a junho, fora da alta temporada" }
+      - { label: "Tempo ideal (opcional)", name: "tempoIdeal", widget: "string", required: false, hint: "Ex: 4 a 5 dias" }
+      - { label: "Repetiria a viagem? (opcional)", name: "repetiriaViagem", widget: "select", required: false, options: ["Sim", "Não", "Talvez", "Já repeti"] }
+      - { label: "Destaque pessoal (opcional)", name: "destaquePessoal", widget: "text", required: false, hint: "Um momento ou frase curta que resume a viagem — aparece em destaque no post." }
+      - { label: "Observação prática (opcional)", name: "observacaoPratica", widget: "text", required: false, hint: "Uma dica prática de quem já foi (ex: reserve com antecedência, leve dinheiro em espécie)." }
+      - { label: "Texto do post", name: "body", widget: "markdown", hint: "Pra colocar um vídeo no meio do texto, cole o link do YouTube, Vimeo ou Instagram SOZINHO numa linha (sem mais nada de texto nela) — ele vira automaticamente um player, no lugar onde você colar. Os títulos \"## Dicas que fazem diferença\" e \"## Vale a pena?\" ganham um destaque visual automático." }
 
   # ---------- Página Inicial ----------
   - name: "home"
