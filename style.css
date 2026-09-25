@@ -1244,26 +1244,6 @@ footer a:hover { color: var(--petrol); }
   margin: 0 0 24px;
 }
 
-.post-search {
-  margin-top: 28px;
-  max-width: 420px;
-}
-
-.post-search input {
-  width: 100%;
-  font-family: var(--font-body);
-  font-size: 15px;
-  padding: 12px 16px;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  background: var(--paper-raised);
-  color: var(--ink);
-  outline: none;
-  transition: border-color .15s;
-}
-.post-search input:focus { border-color: var(--petrol); }
-.post-search input::placeholder { color: var(--ink-soft); opacity: 0.7; }
-
 .no-results {
   max-width: 1100px;
   margin: 0 auto 80px;
@@ -1357,6 +1337,21 @@ footer a:hover { color: var(--petrol); }
   color: var(--paper);
 }
 .filter-chip:focus-visible { outline: 2px solid var(--petrol); outline-offset: 2px; }
+
+.filter-select {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  background: var(--paper-raised);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 15px 6px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.filter-select:hover { border-color: var(--petrol); color: var(--petrol); }
+.filter-select:focus-visible { outline: 2px solid var(--petrol); outline-offset: 2px; }
 
 .link-button {
   font-family: var(--font-mono);

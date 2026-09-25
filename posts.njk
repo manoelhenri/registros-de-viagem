@@ -13,14 +13,29 @@ nav: posts
   <span class="eyebrow">{{ collections.posts.length | pad2 }} registros publicados</span>
   <h1>Todos os posts.</h1>
   <p class="lede">Cada viagem, do primeiro ao último dia — roteiros, aprendizados e o que vale a pena levar na mala.</p>
-  <div class="post-search">
-    <input type="search" id="postSearch" placeholder="Buscar por título, lugar..." aria-label="Buscar posts">
+
+  <div class="filter-bar">
+    <input type="search" id="postSearch" class="filter-search" placeholder="Buscar por título, lugar..." aria-label="Buscar posts">
+    <div class="filter-chips" id="postFiltrosRegiao">
+      <button type="button" class="filter-chip is-active" data-regiao="todos">Todos</button>
+      <button type="button" class="filter-chip" data-regiao="brasil">🇧🇷 Brasil</button>
+      <button type="button" class="filter-chip" data-regiao="exterior">🌎 Exterior</button>
+    </div>
+    <select id="postFiltroAno" class="filter-select" aria-label="Filtrar por ano">
+      <option value="todos">Todos os anos</option>
+      {% for ano in collections.posts | anosDosPosts %}
+      <option value="{{ ano }}">{{ ano }}</option>
+      {% endfor %}
+    </select>
   </div>
 </div>
 
 <section class="post-grid" id="postGrid">
   {% for post in collections.posts %}
-  <a class="tag-card" href="{{ post.url }}" data-search="{{ (post.data.title + ' ' + post.data.resumo + ' ' + post.data.coordenadas + ' ' + (post.data.cidades or '') + ' ' + (post.data.duracao or '')) | lower }}">
+  <a class="tag-card" href="{{ post.url }}"
+     data-search="{{ (post.data.title + ' ' + post.data.resumo + ' ' + post.data.coordenadas + ' ' + (post.data.cidades or '') + ' ' + (post.data.duracao or '')) | lower }}"
+     data-regiao="{{ post | regiaoDoPost(destinos, parques) }}"
+     data-ano="{{ post.data.data | ano }}">
     <span class="punch"></span>
     {% if post.data.capa %}
       <img src="{{ post.data.capa }}" alt="{{ post.data.title }}" loading="lazy" decoding="async">
@@ -35,23 +50,57 @@ nav: posts
   </a>
   {% endfor %}
 </section>
-<p class="no-results" id="noResults" hidden>Nenhum post encontrado para essa busca.</p>
+<p class="no-results" id="noResults" role="status" aria-live="polite" hidden>Nenhum post encontrado. <button type="button" id="postLimpar" class="link-button">Limpar filtros</button></p>
 
 <script>
 (function () {
   var input = document.getElementById('postSearch');
+  var chips = document.querySelectorAll('#postFiltrosRegiao .filter-chip');
+  var anoSelect = document.getElementById('postFiltroAno');
   var cards = Array.prototype.slice.call(document.querySelectorAll('#postGrid .tag-card'));
   var noResults = document.getElementById('noResults');
-  if (!input) return;
-  input.addEventListener('input', function () {
-    var q = input.value.trim().toLowerCase();
-    var visible = 0;
+  var limparBtn = document.getElementById('postLimpar');
+  var regiaoAtiva = 'todos';
+
+  function aplicarFiltros() {
+    var termo = (input.value || '').trim().toLowerCase();
+    var ano = anoSelect.value;
+    var visiveis = 0;
+
     cards.forEach(function (card) {
-      var match = !q || card.getAttribute('data-search').indexOf(q) !== -1;
-      card.style.display = match ? '' : 'none';
-      if (match) visible++;
+      var bateTermo = !termo || card.getAttribute('data-search').indexOf(termo) !== -1;
+      var bateRegiao = regiaoAtiva === 'todos' || card.getAttribute('data-regiao') === regiaoAtiva;
+      var bateAno = ano === 'todos' || card.getAttribute('data-ano') === ano;
+      var mostrar = bateTermo && bateRegiao && bateAno;
+      card.style.display = mostrar ? '' : 'none';
+      if (mostrar) visiveis++;
     });
-    noResults.hidden = visible !== 0;
+
+    noResults.hidden = visiveis !== 0;
+  }
+
+  if (!input) return;
+  input.addEventListener('input', aplicarFiltros);
+  anoSelect.addEventListener('change', aplicarFiltros);
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+      regiaoAtiva = chip.getAttribute('data-regiao');
+      aplicarFiltros();
+    });
   });
+
+  if (limparBtn) {
+    limparBtn.addEventListener('click', function () {
+      input.value = '';
+      anoSelect.value = 'todos';
+      chips.forEach(function (c) { c.classList.remove('is-active'); });
+      chips[0].classList.add('is-active');
+      regiaoAtiva = 'todos';
+      aplicarFiltros();
+    });
+  }
 })();
 </script>
