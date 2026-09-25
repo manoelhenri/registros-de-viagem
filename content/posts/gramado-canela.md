@@ -9,7 +9,7 @@ localizacaoMapa: "Gramado, Rio Grande do Sul, Brasil"
 cidades: "Gramado, Canela"
 duracao: "4 dias"
 resumo: "Quatro dias na Serra Gaúcha em setembro de 2026 — Gramado com calma, um dia inteiro no Snowland e a atmosfera mais recolhida de Canela."
-destaque: false
+destaque: true
 ---
 
 A ideia de passar alguns dias na Serra Gaúcha em setembro de 2026 surgiu quase como uma fuga de calendário: sair de São Paulo, trocar o calor do fim do inverno paulista por um friozinho de verdade e ainda emendar dois destinos que, no mapa, ficam a poucos minutos um do outro. Gramado entrou no roteiro pelo motivo mais óbvio, é a porta de entrada da região, mas a proposta desde o início era não parar por aí. Canela, com seu ritmo mais recolhido, ficou reservada para a segunda metade da viagem.
