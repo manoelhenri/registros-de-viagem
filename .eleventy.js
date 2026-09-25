@@ -6,6 +6,19 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("admin");
     eleventyConfig.addPassthroughCopy("robots.txt");
 
+    // markdown-it com o plugin de vídeo (lib/video.js): quando um link de
+    // YouTube/Vimeo/Instagram aparece sozinho numa linha do corpo do post,
+    // vira um player embutido em vez de só um link. "html: true" mantém o
+    // comportamento padrão do Eleventy (permite HTML solto no markdown).
+    const markdownIt = require("markdown-it");
+    const { pluginVideoEmbed, videoEmbedHtml } = require("./lib/video.js");
+    eleventyConfig.setLibrary("md", markdownIt({ html: true }).use(pluginVideoEmbed));
+
+    // Usado pelo campo "Vídeo de capa" do post (post.njk), pra desenhar o
+    // mesmo player no topo do post quando não é um link solto no meio do
+    // texto. Devolve "" (nunca quebra o build) se o link não for reconhecido.
+    eleventyConfig.addFilter("videoEmbed", (url, titulo) => videoEmbedHtml(url, titulo) || "");
+
     eleventyConfig.addFilter("pad2", (num) => String(num).padStart(2, "0"));
 
     eleventyConfig.addFilter("dataAno", (dateObj) => {
