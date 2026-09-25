@@ -135,23 +135,34 @@ module.exports = function (eleventyConfig) {
                                );
 
     // Rota visual: a ordem em que o post escreveu "cidades" (a ordem em que o
-    // autor visitou os lugares), com o slug do destino quando existe uma
-    // página correspondente — e null quando não bate com nada conhecido
-    // (nesse caso a parada aparece como texto simples, nunca vira link
-    // inventado). Só usa o campo "cidades", nunca "localizacaoMapa" (que é
-    // só um ponto de referência para o mapa embutido, não uma rota).
-    eleventyConfig.addFilter("rotaDoPost", (post, destinos) => {
+    // autor visitou os lugares), com o slug e o tipo (destino OU parque)
+    // quando existe uma página correspondente — e slug/tipo null quando não
+    // bate com nada conhecido (nesse caso a parada aparece como texto
+    // simples, nunca vira link inventado). Cada pedaço é testado primeiro
+    // contra destinos e, se não achar, contra parques — mesma regra de
+    // igualdade exata (normalizada) usada em pedacosDoPost/acharCorrespondencias,
+    // nunca por substring. Só usa o campo "cidades", nunca "localizacaoMapa"
+    // (que é só um ponto de referência para o mapa embutido, não uma rota).
+    eleventyConfig.addFilter("rotaDoPost", (post, destinos, parques) => {
           const data = post.data || post;
           if (!data.cidades) return [];
-          const conhecidas = listaCidades(destinos);
+          const destinosConhecidos = listaCidades(destinos);
+          const parquesConhecidos = listaParques(parques || []);
           return data.cidades
             .split(",")
             .map((p) => p.trim())
             .filter(Boolean)
             .map((nomeBruto) => {
                       const norm = normalizar(nomeBruto);
-                      const achado = conhecidas.find((c) => c.norm === norm);
-                      return { nome: nomeBruto, slug: achado ? achado.slug : null };
+                      const destinoAchado = destinosConhecidos.find((c) => c.norm === norm);
+                      if (destinoAchado) {
+                              return { nome: nomeBruto, slug: destinoAchado.slug, tipo: "destino" };
+                      }
+                      const parqueAchado = parquesConhecidos.find((p) => p.norm === norm);
+                      if (parqueAchado) {
+                              return { nome: nomeBruto, slug: parqueAchado.slug, tipo: "parque" };
+                      }
+                      return { nome: nomeBruto, slug: null, tipo: null };
             });
     });
 
@@ -208,6 +219,22 @@ module.exports = function (eleventyConfig) {
             });
 
                                  return candidatos.slice(0, limite).map((c) => c.post);
+    });
+
+    // Viagem anterior/próxima na ordem histórica (mesma ordem de
+    // collections.posts: mais recente primeiro). "Anterior" é a viagem mais
+    // antiga que esta; "Próxima" é a viagem mais recente que esta — nomeado
+    // do ponto de vista de quem está lendo em ordem cronológica de viagem.
+    // Complementar aos "Outros registros" (relacionadosDe) já existentes,
+    // nunca substitui.
+    eleventyConfig.addFilter("vizinhosDoPost", (post, posts) => {
+          const lista = posts || [];
+          const indice = lista.findIndex((p) => p.url === post.url);
+          if (indice === -1) return { anterior: null, proximo: null };
+          return {
+                  anterior: lista[indice + 1] || null,
+                  proximo: indice > 0 ? lista[indice - 1] : null
+          };
     });
 
     eleventyConfig.addCollection("posts", (collectionApi) => {
