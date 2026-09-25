@@ -27,16 +27,17 @@ collections:
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Data da viagem", name: "data", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
-      - { label: "Foto de capa", name: "capa", widget: "image", required: false, hint: "Aparece no topo do post e na home. Se deixar em branco, mostra um espaço reservado." }
+      - { label: "Foto de capa", name: "capa", widget: "image", required: false, hint: "Aparece no topo do post e na home. Se deixar em branco, mostra um espaço reservado. Ignorada se 'Vídeo de capa' (abaixo) estiver preenchido." }
       - { label: "Crédito da foto de capa", name: "capaCredito", widget: "string", required: false, hint: "Obrigatório para fotos de terceiros. Ex: Foto: Nome do autor · CC BY-SA 4.0 · Wikimedia Commons. Deixe em branco se a foto for sua." }
       - { label: "Link da fonte da foto", name: "capaFonte", widget: "string", required: false, hint: "Página original da foto (ex: o link do arquivo no Wikimedia Commons)." }
+      - { label: "Vídeo de capa (em vez da foto)", name: "videoCapa", widget: "string", required: false, hint: "Cole aqui o link de um vídeo do YouTube, Vimeo ou Instagram (Reel) pra ele aparecer no topo do post, no lugar da foto de capa. Deixe em branco pra usar a foto normalmente." }
       - { label: "Coordenadas / rota (texto pequeno acima do título)", name: "coordenadas", widget: "string", required: false, hint: "Nome do lugar em MAIÚSCULAS, sem coordenadas. Ex: LISBOA — ou, para mais de uma parada: LISBOA → PORTO" }
       - { label: "Cidades / pessoas (aparece nos detalhes do post)", name: "cidades", widget: "string", required: false, hint: "Se forem cidades ou parques de verdade, separe por vírgula NA ORDEM DA VIAGEM (ex: Lisboa, Porto, Paris) — essa ordem vira a rota visual do post, e cada nome precisa ser IGUAL ao cadastrado em Destinos ou em Parques para virar link. Se não forem lugares (ex: '6 pessoas'), pode deixar como texto livre." }
       - { label: "Duração", name: "duracao", widget: "string", required: false, hint: "Ex: 14 dias" }
       - { label: "Resumo curto (aparece nos cards da home)", name: "resumo", widget: "text" }
       - { label: "Destacar na home?", name: "destaque", widget: "boolean", default: false, hint: "Só um post deve estar marcado como destaque por vez." }
       - { label: "Localização (mostra um mapa no post)", name: "localizacaoMapa", widget: "string", required: false, hint: "Ex: Lisboa, Portugal. Deixe em branco para não mostrar mapa." }
-      - { label: "Texto do post", name: "body", widget: "markdown" }
+      - { label: "Texto do post", name: "body", widget: "markdown", hint: "Pra colocar um vídeo no meio do texto, cole o link do YouTube, Vimeo ou Instagram SOZINHO numa linha (sem mais nada de texto nela) — ele vira automaticamente um player, no lugar onde você colar." }
 
   # ---------- Página Inicial ----------
   - name: "home"
