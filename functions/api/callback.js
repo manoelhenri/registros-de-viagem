@@ -37,7 +37,9 @@ export async function onRequestGet(context) {
     window.removeEventListener('message', receiveMessage, false);
   }
   window.addEventListener('message', receiveMessage, false);
-  window.opener.postMessage('authorizing:github', '*');
+  // window.opener is always this same site's admin panel, so restrict
+  // the target origin instead of broadcasting to "*".
+  window.opener.postMessage('authorizing:github', ${JSON.stringify(url.origin)});
 })();
 </script>
 </body></html>`;
