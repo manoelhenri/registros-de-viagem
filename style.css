@@ -835,6 +835,62 @@ footer a:hover { color: var(--petrol); }
   aspect-ratio: 9 / 16;
 }
 
+/* Capa clicável (ver lib/video.js) — miniatura + botão de play, antes do
+   clique trocar isso pelo iframe de verdade (script em base.njk). */
+.video-facade { cursor: pointer; }
+
+.video-facade img,
+.video-facade-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Vimeo/Instagram não têm uma URL de thumbnail fixa sem chamar a API deles
+   — em vez de depender de um serviço de terceiros só pra isso, mostra o
+   nome da plataforma num retângulo, no estilo dos outros placeholders do
+   site (ver .img-placeholder). */
+.video-facade-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--petrol-deep);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.video-play-btn {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(30, 36, 34, 0.72);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.video-play-btn svg { width: 24px; height: 24px; margin-left: 3px; }
+
+.video-facade:hover .video-play-btn,
+.video-play-btn:focus-visible {
+  background: var(--petrol);
+  transform: scale(1.07);
+}
+
 /* Dentro de .post-cover, o vídeo de capa ocupa a largura toda disponível
    (igual à foto de capa hoje), não só a largura de leitura do texto. */
 .post-cover .video-embed { max-width: 100%; }
