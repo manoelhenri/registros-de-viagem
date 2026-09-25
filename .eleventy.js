@@ -257,6 +257,30 @@ module.exports = function (eleventyConfig) {
           acharCorrespondencias(pedacosDoPost(post), listaParques(parques))
                                );
 
+    // Ano da viagem (número), a partir do front matter "data" — usado pelo
+    // filtro por ano de /posts/ e pelo <select> correspondente.
+    eleventyConfig.addFilter("ano", (dateObj) => (dateObj ? new Date(dateObj).getFullYear() : ""));
+
+    // Lista de anos distintos entre os posts, do mais recente pro mais
+    // antigo — usada pra montar as opções do filtro por ano em /posts/.
+    eleventyConfig.addFilter("anosDosPosts", (posts) => {
+          const anos = new Set((posts || []).map((p) => new Date(p.data.data).getFullYear()));
+          return Array.from(anos).sort((a, b) => b - a);
+    });
+
+    // "Brasil" ou "exterior", pra filtrar /posts/ por região: exterior se
+    // QUALQUER destino/parque resolvido do post não for do Brasil (ex.: Foz
+    // do Iguaçu, que mistura Brasil e Paraguai, conta como exterior — é uma
+    // viagem internacional). Cai em "brasil" quando nada é resolvido (não
+    // deveria acontecer com os dados reais — ver validações de build).
+    eleventyConfig.addFilter("regiaoDoPost", (post, destinos, parques) => {
+          const destinosPost = acharCorrespondencias(pedacosDoPost(post), listaCidades(destinos));
+          const parquesPost = acharCorrespondencias(pedacosDoPost(post), listaParques(parques));
+          const temDestinoForaDoBrasil = destinosPost.some((d) => d.pais !== "Brasil");
+          const temParqueForaDoBrasil = parquesPost.some((p) => !String(p.local || "").startsWith("Brasil"));
+          return temDestinoForaDoBrasil || temParqueForaDoBrasil ? "exterior" : "brasil";
+    });
+
     // Número de países distintos entre os destinos resolvidos de um post —
     // usado na ficha da viagem.
     eleventyConfig.addFilter("paisesUnicos", (destinosViagem) =>
