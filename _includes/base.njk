@@ -113,5 +113,34 @@
 <script async src="https://www.instagram.com/embed.js"></script>
 {% endif %}
 
+<script>
+(function(){
+  // Capa clicável de vídeo (ver lib/video.js): só cria o iframe de verdade
+  // (YouTube/Vimeo/Instagram) quando a pessoa clica no play, em vez de
+  // carregar o player — e os scripts de rastreamento dele — em toda visita.
+  document.addEventListener('click', function(e){
+    var facade = e.target.closest('.video-facade');
+    if (!facade) return;
+    var src = facade.getAttribute('data-video-src');
+    if (!src) return;
+    var titulo = facade.getAttribute('data-video-title') || 'Vídeo';
+    var allow = facade.getAttribute('data-video-allow') || '';
+    var separador = src.indexOf('?') > -1 ? '&' : '?';
+
+    var iframe = document.createElement('iframe');
+    iframe.src = src + separador + 'autoplay=1';
+    iframe.title = titulo;
+    iframe.loading = 'lazy';
+    iframe.allow = allow;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.setAttribute('allowfullscreen', '');
+
+    facade.innerHTML = '';
+    facade.classList.remove('video-facade');
+    facade.appendChild(iframe);
+  });
+})();
+</script>
+
 </body>
 </html>
