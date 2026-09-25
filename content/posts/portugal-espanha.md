@@ -9,7 +9,7 @@ localizacaoMapa: "Lisboa, Portugal"
 cidades: "Lisboa, Barcelona, Madrid, Salou / Tarragona, Porto, Braga"
 duracao: "16 dias"
 resumo: "Dezesseis dias entre Portugal e Espanha — Lisboa, Barcelona, PortAventura, Madrid, Parque Warner, Porto, Braga, Sintra e Cascais."
-destaque: true
+destaque: false
 ---
 
 Foram dezesseis dias de uma viagem que cruzou Portugal e Espanha, passando por grandes cidades, parques temáticos, cidades históricas e bate voltas pelo litoral. O roteiro começou em Lisboa, passou por Barcelona e Madrid, entrou no interior da Catalunha, voltou à Espanha, cruzou novamente para Portugal e terminou em Lisboa.
