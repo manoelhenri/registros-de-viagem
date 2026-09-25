@@ -21,6 +21,7 @@ nav: mapa
       <button type="button" class="filter-chip is-active" data-camada="destinos">📍 Destinos</button>
       <button type="button" class="filter-chip is-active" data-camada="parques">🎢 Parques</button>
     </div>
+    <select id="mapaFiltroAno" class="filter-select" aria-label="Filtrar por ano"></select>
   </div>
 </div>
 
@@ -61,37 +62,84 @@ nav: mapa
       '<a href="' + link + '">Ver página →</a></div>';
   }
 
+  // Filtro por ano: só considera anos numéricos de verdade (ex.: "2023").
+  // Itens cujo único registro é texto livre (ex.: "várias visitas", usado
+  // por alguns parques) não têm como ser excluídos com segurança por um ano
+  // específico, então continuam aparecendo em qualquer ano selecionado — é
+  // melhor mostrar de mais do que esconder um lugar visitado de verdade.
+  function anosNumericos(item) {
+    return (item.anos || []).filter(function (a) { return /^\d{4}$/.test(String(a)); });
+  }
+
+  var todosOsAnos = new Set();
+  destinos.concat(parques).forEach(function (item) {
+    anosNumericos(item).forEach(function (a) { todosOsAnos.add(a); });
+  });
+  var anoSelect = document.getElementById('mapaFiltroAno');
+  var opcaoTodos = document.createElement('option');
+  opcaoTodos.value = 'todos';
+  opcaoTodos.textContent = 'Todos os anos';
+  anoSelect.appendChild(opcaoTodos);
+  Array.from(todosOsAnos).sort(function (a, b) { return b - a; }).forEach(function (ano) {
+    var opt = document.createElement('option');
+    opt.value = ano;
+    opt.textContent = ano;
+    anoSelect.appendChild(opt);
+  });
+
+  function bateAno(item, anoAtivo) {
+    if (anoAtivo === 'todos') return true;
+    var anos = anosNumericos(item);
+    if (!anos.length) return true; // só "várias visitas" ou similar: sempre mostra
+    return anos.indexOf(anoAtivo) !== -1;
+  }
+
   var grupoDestinos = L.layerGroup();
-  destinos.forEach(function (d) {
-    if (d.lat === null || d.lng === null) return;
-    L.marker([d.lat, d.lng], { icon: pino('#2c5a61') })
-      .bindPopup(popupHtml(d, 'destino'))
-      .addTo(grupoDestinos);
-  });
-  grupoDestinos.addTo(mapa);
-
   var grupoParques = L.layerGroup();
-  parques.forEach(function (p) {
-    if (p.lat === null || p.lng === null) return;
-    L.marker([p.lat, p.lng], { icon: pino('#c9762c') })
-      .bindPopup(popupHtml(p, 'parque'))
-      .addTo(grupoParques);
-  });
-  grupoParques.addTo(mapa);
-
   var camadas = { destinos: grupoDestinos, parques: grupoParques };
+  var camadasAtivas = { destinos: true, parques: true };
+
+  function renderMarcadores() {
+    var anoAtivo = anoSelect.value;
+
+    grupoDestinos.clearLayers();
+    destinos.forEach(function (d) {
+      if (d.lat === null || d.lng === null || !bateAno(d, anoAtivo)) return;
+      L.marker([d.lat, d.lng], { icon: pino('#2c5a61') })
+        .bindPopup(popupHtml(d, 'destino'))
+        .addTo(grupoDestinos);
+    });
+
+    grupoParques.clearLayers();
+    parques.forEach(function (p) {
+      if (p.lat === null || p.lng === null || !bateAno(p, anoAtivo)) return;
+      L.marker([p.lat, p.lng], { icon: pino('#c9762c') })
+        .bindPopup(popupHtml(p, 'parque'))
+        .addTo(grupoParques);
+    });
+
+    Object.keys(camadas).forEach(function (nome) {
+      if (camadasAtivas[nome]) {
+        mapa.addLayer(camadas[nome]);
+      } else {
+        mapa.removeLayer(camadas[nome]);
+      }
+    });
+  }
+
+  renderMarcadores();
+
   var chips = document.querySelectorAll('#mapaCamadas .filter-chip');
   chips.forEach(function (chip) {
     chip.addEventListener('click', function () {
       var camada = chip.getAttribute('data-camada');
       var ativo = chip.classList.toggle('is-active');
-      if (ativo) {
-        mapa.addLayer(camadas[camada]);
-      } else {
-        mapa.removeLayer(camadas[camada]);
-      }
+      camadasAtivas[camada] = ativo;
+      renderMarcadores();
     });
   });
+
+  anoSelect.addEventListener('change', renderMarcadores);
 
   // Abre um popup específico se a URL trouxer #destino-slug ou #parque-slug
   // (usado pelos links "Ver no mapa" nas páginas individuais).
