@@ -182,6 +182,26 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter("slugify", slugify);
 
+    // Slug de verdade de uma cidade/parque, usando a lista achatada já
+    // desambiguada (destinosFlat/parquesFlat — a mesma fonte que gera as
+    // páginas individuais em destino.njk/parque.njk). NUNCA recalcule o slug
+    // com o filtro "slugify" direto num template de listagem: quando dois
+    // lugares geram o mesmo slug bruto (ex.: dois parques "Wet'n Wild", um no
+    // México e outro no Brasil), só o segundo tem o local anexado ao slug
+    // (ver desambiguarSlugs em lib/geo.js) — recalcular com "slugify" faz o
+    // link do segundo apontar pra página do primeiro, um bug real encontrado
+    // em 26/09/2026 numa revisão geral (destinos.njk/parques.njk usavam
+    // "slugify" direto). Cai em "slugify" só se o item não for encontrado na
+    // lista achatada (não deveria acontecer com os dados reais).
+    eleventyConfig.addFilter("slugDoDestino", (nome, estado, listaFlat) => {
+          const achado = (listaFlat || []).find((c) => c.nome === nome && c.estado === estado);
+          return achado ? achado.slug : slugify(nome);
+    });
+    eleventyConfig.addFilter("slugDoParque", (nome, local, listaFlat) => {
+          const achado = (listaFlat || []).find((p) => p.nome === nome && p.local === local);
+          return achado ? achado.slug : slugify(nome);
+    });
+
     // Serializa um valor como JSON para embutir em <script> (ex.: dados do mapa).
     eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
 

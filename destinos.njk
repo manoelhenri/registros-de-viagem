@@ -45,7 +45,7 @@ nav: destinos
   </div>
   <div class="place-grid">
     {% for cidade in pais.cidades %}
-    {% set slug = cidade.nome | slugify %}
+    {% set slug = cidade.nome | slugDoDestino(cidade.estado, destinosFlat) %}
     {% set viagens = cidade.nome | postsDaCidade(collections.posts) %}
     <div class="place-card" id="cidade-{{ slug }}" data-pais="{{ pais.id }}" data-search="{{ (cidade.nome + ' ' + cidade.estado + ' ' + cidade.resumo) | lower }}">
       {% if cidade.foto %}

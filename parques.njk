@@ -45,7 +45,7 @@ nav: parques
   </div>
   <div class="place-grid">
     {% for parque in grupo.parques %}
-    {% set slug = parque.nome | slugify %}
+    {% set slug = parque.nome | slugDoParque(parque.local, parquesFlat) %}
     {% set viagens = parque.nome | postsDoParque(collections.posts) %}
     <div class="place-card" id="parque-{{ slug }}" data-grupo="{{ grupo.id }}" data-search="{{ (parque.nome + ' ' + parque.local + ' ' + parque.resumo) | lower }}">
       {% if parque.foto %}
