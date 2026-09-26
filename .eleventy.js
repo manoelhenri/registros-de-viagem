@@ -91,7 +91,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("style.css");
     eleventyConfig.addPassthroughCopy("admin");
-    eleventyConfig.addPassthroughCopy("robots.txt");
 
     // markdown-it com o plugin de vídeo (lib/video.js): quando um link de
     // YouTube/Vimeo/Instagram aparece sozinho numa linha do corpo do post,

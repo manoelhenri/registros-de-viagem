@@ -10,8 +10,8 @@ public_folder: "/images/uploads"
 
 locale: "pt"
 
-site_url: https://registros-de-viagem.pages.dev
-display_url: https://registros-de-viagem.pages.dev
+site_url: https://manoelhenrique.com
+display_url: https://manoelhenrique.com
 
 collections:
 
