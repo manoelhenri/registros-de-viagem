@@ -1,5 +1,5 @@
 {
-    "_comentario": "Coordenadas aproximadas (nível cidade/local), usadas só para posicionar pins no mapa interativo. Não são dados de viagem do usuário — são referências geográficas públicas dos lugares já cadastrados em destinos.json e parques.json.",
+    "_comentario": "Coordenadas aproximadas (nível cidade/local), usadas só para posicionar pins no mapa interativo. Não são dados de viagem do usuário — são referências geográficas públicas dos lugares já cadastrados em destinos.json e parques.json. Desde 27/09/2026, um lugar novo (sem entrada aqui) tem a coordenada buscada automaticamente no build (lib/coordsAutomatico.js, cache em coordsAutoCache.json) — só é preciso adicionar uma entrada aqui pra corrigir um pin que a busca automática colocou errado ou não encontrou. Entradas manuais aqui sempre têm prioridade sobre a busca automática.",
     "destinos": {
           "João Pessoa": [-7.1195, -34.8450],
           "Manaus": [-3.1190, -60.0217],

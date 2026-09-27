@@ -97,7 +97,7 @@ collections:
                 widget: "list"
                 summary: "{{fields.nome}}"
                 fields:
-                  - { label: "Cidade", name: "nome", widget: "string", hint: "Depois de salvar uma cidade nova, ela só aparece no mapa interativo quando alguém adicionar a coordenada dela em _data/coordsMapa.json no GitHub (veja CONTEXTO-DO-BLOG.md)." }
+                  - { label: "Cidade", name: "nome", widget: "string", hint: "Depois de salvar uma cidade nova, a coordenada dela no mapa interativo é buscada automaticamente na próxima publicação — não precisa fazer nada. Se o pin não aparecer ou aparecer no lugar errado, é só avisar." }
                   - { label: "Estado / região, país", name: "estado", widget: "string" }
                   - { label: "Anos da visita", name: "anos", widget: "list", field: { label: "Ano", name: "ano", widget: "string" } }
                   - { label: "Mini resumo", name: "resumo", widget: "text" }
@@ -124,7 +124,7 @@ collections:
                 widget: "list"
                 summary: "{{fields.nome}}"
                 fields:
-                  - { label: "Nome do parque", name: "nome", widget: "string", hint: "Depois de salvar um parque novo, ele só aparece no mapa interativo quando alguém adicionar a coordenada dele em _data/coordsMapa.json no GitHub (veja CONTEXTO-DO-BLOG.md)." }
+                  - { label: "Nome do parque", name: "nome", widget: "string", hint: "Depois de salvar um parque novo, a coordenada dele no mapa interativo é buscada automaticamente na próxima publicação — não precisa fazer nada. Se o pin não aparecer ou aparecer no lugar errado, é só avisar." }
                   - { label: "Local / país", name: "local", widget: "string" }
                   - { label: "Anos da visita", name: "anos", widget: "list", required: false, field: { label: "Ano", name: "ano", widget: "string" } }
                   - { label: "Mini resumo", name: "resumo", widget: "text" }

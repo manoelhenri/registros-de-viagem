@@ -6,8 +6,10 @@
 // - ERRO (interrompe o build): mais de um post com "destaque: true" — só
 //   um post pode ser o destaque da home por vez.
 // - AVISO (não interrompe, só aparece no terminal do build): um destino ou
-//   parque cadastrado sem coordenada em coordsMapa.json (não aparece no
-//   mapa interativo); ou uma cidade/parque citada num post que não bate
+//   parque sem coordenada manual (coordsMapa.json) NEM em cache (a
+//   geocodificação automática, em lib/coordsAutomatico.js, ainda vai
+//   tentar buscar durante este build — ver "Coordenadas do mapa" em
+//   CONTEXTO-DO-BLOG.md); ou uma cidade/parque citada num post que não bate
 //   com o cadastro, quando pelo menos outra cidade/parque do mesmo post
 //   bate — sinal de que aquele pedaço provavelmente é um lugar de verdade
 //   com o nome escrito diferente do cadastro (e não um texto livre tipo
@@ -18,12 +20,17 @@ function validarBuild() {
     const path = require("path");
     const matter = require("gray-matter");
     const { normalizar, listaCidades, listaParques } = require("./lib/geo.js");
+    const { lerCache, chaveCache } = require("./lib/coordsAutomatico.js");
 
     const dataDir = path.join(__dirname, "_data");
     const destinosData = JSON.parse(fs.readFileSync(path.join(dataDir, "destinosData.json"), "utf8"));
     const parquesData = JSON.parse(fs.readFileSync(path.join(dataDir, "parquesData.json"), "utf8"));
     const coordsMapa = JSON.parse(fs.readFileSync(path.join(dataDir, "coordsMapa.json"), "utf8"));
+    const coordsAutoCache = lerCache();
 
+    // Só pra saber, aqui, se um lugar JÁ tem coordenada resolvida (manual ou
+    // em cache) — a busca automática de verdade (ao vivo) acontece depois,
+    // de forma assíncrona, em _data/destinosFlat.js/parquesFlat.js.
     const destinosConhecidos = listaCidades(destinosData.destinos, coordsMapa);
     const parquesConhecidos = listaParques(parquesData.parques, coordsMapa);
 
@@ -44,16 +51,18 @@ function validarBuild() {
                                      );
     }
 
-    // --- aviso: destino/parque cadastrado sem coordenada --------------------
+    // --- aviso: destino/parque sem coordenada manual nem em cache -----------
+    // (se já está em coordsAutoCache.json, o pin aparece normalmente — só
+    // avisa quando o build vai depender de uma busca ao vivo no Nominatim)
     const avisos = [];
     destinosConhecidos.forEach((c) => {
-          if (c.lat == null || c.lng == null) {
-                  avisos.push(`Destino "${c.nome}" (${c.pais}) não tem coordenada em _data/coordsMapa.json — não aparece no mapa interativo.`);
+          if ((c.lat == null || c.lng == null) && !coordsAutoCache[chaveCache(c.nome, [c.estado, c.pais].filter(Boolean).join(", "))]) {
+                  avisos.push(`Destino "${c.nome}" (${c.pais}) ainda não tem coordenada em cache nem em _data/coordsMapa.json — o build vai tentar geocodificar automaticamente; se falhar, cadastre a coordenada manualmente.`);
           }
     });
     parquesConhecidos.forEach((p) => {
-          if (p.lat == null || p.lng == null) {
-                  avisos.push(`Parque "${p.nome}" (${p.grupo}) não tem coordenada em _data/coordsMapa.json — não aparece no mapa interativo.`);
+          if ((p.lat == null || p.lng == null) && !coordsAutoCache[chaveCache(p.nome, p.local)]) {
+                  avisos.push(`Parque "${p.nome}" (${p.grupo}) ainda não tem coordenada em cache nem em _data/coordsMapa.json — o build vai tentar geocodificar automaticamente; se falhar, cadastre a coordenada manualmente.`);
           }
     });
 

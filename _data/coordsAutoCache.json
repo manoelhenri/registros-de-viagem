@@ -1,0 +1,3 @@
+{
+  "_comentario": "Cache gerado e mantido automaticamente por lib/coordsAutomatico.js (geocodificação via Nominatim/OpenStreetMap) — não editar à mão. Uma coordenada errada aqui se corrige cadastrando a coordenada certa em _data/coordsMapa.json, que sempre tem prioridade sobre este cache."
+}
