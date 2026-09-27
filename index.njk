@@ -11,10 +11,10 @@ nav: inicio
     <p class="lede">{{ home.heroSubtitulo }}</p>
     {% if heroLugares.length %}
     <div class="hero-solari" aria-hidden="true">
-      <span class="hero-solari-label">Último destino</span>
+      <span class="hero-solari-label">Últimos destinos</span>
       <div class="hero-solari-row" id="heroSolariRow"></div>
     </div>
-    <span class="visually-hidden" id="heroSolariSr">Último destino: {{ heroLugares[heroLugares.length - 1] }}</span>
+    <span class="visually-hidden" id="heroSolariSr">Últimos destinos: {{ heroLugares[heroLugares.length - 1] }}</span>
     {% endif %}
   </div>
 </header>
@@ -130,7 +130,7 @@ nav: inicio
       });
     }
 
-    if (sr) sr.textContent = "Último destino: " + alvo;
+    if (sr) sr.textContent = "Últimos destinos: " + alvo;
   }, 4200);
 })();
 </script>
