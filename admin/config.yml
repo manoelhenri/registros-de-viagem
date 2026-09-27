@@ -58,6 +58,13 @@ collections:
           - { label: "Legenda (texto pequeno acima do título)", name: "heroEyebrow", widget: "string" }
           - { label: "Título principal", name: "heroTitulo", widget: "string" }
           - { label: "Subtítulo", name: "heroSubtitulo", widget: "text" }
+          - label: "Letreiro giratório do topo (Últimos destinos)"
+            name: "heroDestinos"
+            widget: "list"
+            required: false
+            min: 1
+            max: 6
+            hint: "Até 6 lugares que aparecem em letras giratórias no topo da home, um de cada vez, na ordem daqui (o último da lista é o primeiro a aparecer parado, e por onde o ciclo recomeça). Digite em MAIÚSCULAS, como deve aparecer no letreiro (ex.: GRAMADO, ORLANDO). Deixe essa lista vazia para voltar a mostrar automaticamente os destinos mais recentes do blog."
           # A legenda do Cartão 1 (ex.: "65 destinos · 10 países") é calculada
           # sozinha a partir de Destinos/Parques cadastrados — não tem campo
           # aqui de propósito, pra nunca mais ficar desatualizada.
