@@ -1,6 +1,6 @@
 # Como publicar e usar o painel — guia completo
 
-Esse site tem um painel de administração: você acessa **https://registros-de-viagem.pages.dev/admin**, faz login com sua conta do GitHub e edita tudo por formulários — novos posts, novas fotos, novos destinos. Nada de código.
+Esse site tem um painel de administração: você acessa **https://manoelhenrique.com/admin**, faz login com sua conta do GitHub e edita tudo por formulários — novos posts, novas fotos, novos destinos. Nada de código.
 
 A hospedagem é **Cloudflare Pages**, ligada ao repositório no **GitHub** (`github.com/manoelhenri/registros-de-viagem`, branch `main`). Todo commit na `main` publica o site sozinho, em cerca de 1 minuto. No dia a dia, você só usa o painel — o que vem a seguir na Parte 1 já está configurado e serve como referência, caso um dia precise mexer nisso de novo (por exemplo, se trocar de conta do GitHub).
 
@@ -17,9 +17,9 @@ O código do site vive em [github.com/manoelhenri/registros-de-viagem](https://g
 O projeto está conectado ao Cloudflare Pages, que builda e publica o site a cada commit na `main`:
 - **Build command:** `npm run build`
 - **Diretório de saída (output/publish directory):** `_site`
-- **Link do site:** `https://registros-de-viagem.pages.dev`
+- **Link do site:** `https://manoelhenrique.com` (domínio próprio, configurado no Cloudflare Pages; o endereço técnico `https://registros-de-viagem.pages.dev` continua existindo e funcionando, é só que agora ninguém precisa usá-lo no dia a dia)
 
-Se um dia precisar recriar essa conexão (em [dash.cloudflare.com](https://dash.cloudflare.com), aba **Workers & Pages**), é só apontar para esse mesmo repositório com essas mesmas configurações de build.
+Se um dia precisar recriar essa conexão (em [dash.cloudflare.com](https://dash.cloudflare.com), aba **Workers & Pages**), é só apontar para esse mesmo repositório com essas mesmas configurações de build — e reconectar o domínio próprio depois.
 
 ### 3. Login do painel (GitHub OAuth, sem Netlify Identity)
 O painel (`/admin`) usa o [Decap CMS](https://decapcms.org/) com backend `github` — ou seja, você faz login com sua própria conta do GitHub, sem precisar de usuário/senha separado. Isso funciona por meio de duas *Cloudflare Pages Functions* já publicadas no repositório:
@@ -30,6 +30,8 @@ O painel (`/admin`) usa o [Decap CMS](https://decapcms.org/) com backend `github
 Essas duas funções dependem de um **GitHub OAuth App**, configurado em [github.com/settings/developers](https://github.com/settings/developers), com:
 - **Homepage URL:** `https://registros-de-viagem.pages.dev`
 - **Authorization callback URL:** `https://registros-de-viagem.pages.dev/api/callback`
+
+(Essas duas URLs continuam no endereço técnico `pages.dev` de propósito, mesmo com o site usando `manoelhenrique.com` — é o endereço que o painel usa por baixo dos panos pra fazer login, funciona igual não importa por qual domínio você abra o `/admin`. Não precisa mexer aqui.)
 
 E de duas variáveis de ambiente configuradas no Cloudflare Pages (aba **Settings → Environment variables** do projeto):
 - `GITHUB_CLIENT_ID`
@@ -44,7 +46,7 @@ Como o login é feito com sua conta do GitHub, só consegue entrar em `/admin` q
 
 ## Parte 2 — Usando o painel no dia a dia
 
-Acesse **https://registros-de-viagem.pages.dev/admin** e clique em **"Entrar"** — você será levado para autorizar no GitHub (só na primeira vez, ou se o acesso expirar) e voltará direto para o painel.
+Acesse **https://manoelhenrique.com/admin** e clique em **"Entrar"** — você será levado para autorizar no GitHub (só na primeira vez, ou se o acesso expirar) e voltará direto para o painel.
 
 ### Adicionar um novo post de viagem
 1. Clique em **"Posts do blog"** → **"Novo(a) Post"**.

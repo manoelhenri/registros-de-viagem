@@ -91,6 +91,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("style.css");
     eleventyConfig.addPassthroughCopy("admin");
+    // Navegadores pedem /favicon.ico direto na raiz por padrão, mesmo com o
+    // <link rel="icon"> em SVG já declarado no <head> — sem isso, toda página
+    // gerava um 404 silencioso nessa requisição extra.
+    eleventyConfig.addPassthroughCopy({ "images/favicon.ico": "favicon.ico" });
 
     // markdown-it com o plugin de vídeo (lib/video.js): quando um link de
     // YouTube/Vimeo/Instagram aparece sozinho numa linha do corpo do post,

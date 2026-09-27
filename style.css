@@ -502,35 +502,6 @@ a { color: inherit; }
 .ig-handle:hover { background: rgba(247, 244, 238, 0.12); }
 .ig-handle svg { width: 15px; height: 15px; }
 
-.ig-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 4px;
-}
-
-.ig-grid a { aspect-ratio: 1; overflow: hidden; }
-
-.ig-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(0.85);
-  transition: transform .3s ease, filter .3s ease;
-}
-
-.ig-grid a:hover img { transform: scale(1.06); filter: saturate(1.05); }
-
-@media (max-width: 700px) {
-  .ig-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-.ig-note {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: rgba(247, 244, 238, 0.65);
-  margin: 22px 0 0;
-}
-
 .ig-embed-list {
   display: flex;
   flex-wrap: wrap;
@@ -1113,43 +1084,6 @@ footer a:hover { color: var(--petrol); }
   .callout { padding: 18px; gap: 12px; }
 }
 
-.post-gallery {
-  max-width: var(--measure);
-  margin: 0 auto 20px;
-  padding: 0 32px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.post-gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: var(--radius);
-  filter: saturate(0.92) sepia(0.06);
-}
-
-.stat-strip {
-  max-width: var(--measure);
-  margin: 40px auto;
-  padding: 20px 32px;
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  border-top: 1px dashed var(--line-strong);
-  border-bottom: 1px dashed var(--line-strong);
-}
-
-.stat-strip div { font-family: var(--font-mono); font-size: 12px; }
-.stat-strip strong {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 22px;
-  color: var(--petrol);
-  margin-top: 4px;
-}
-
 .post-nav {
   max-width: var(--measure);
   margin: 60px auto 20px;
@@ -1370,16 +1304,12 @@ footer a:hover { color: var(--petrol); }
    Mobile — general polish
    =========================================================== */
 @media (max-width: 560px) {
-  .post-gallery { grid-template-columns: 1fr; }
-
   .boarding-pass .bp-stats {
     grid-template-columns: 1fr 1fr;
     gap: 16px 12px;
   }
 
   .post-meta { gap: 12px 18px; }
-
-  .stat-strip { gap: 20px; }
 
   .footer, footer {
     flex-direction: column;
@@ -1401,7 +1331,6 @@ footer a:hover { color: var(--petrol); }
   .post-hero,
   .post-cover,
   .post-body,
-  .post-gallery,
   .post-nav,
   .explore-grid,
   .ig-strip,
