@@ -195,6 +195,11 @@ a { color: inherit; }
 }
 
 .hero-solari-label {
+  /* Sempre em sua própria linha, acima do quadro — sem isso, nomes curtos
+     cabiam ao lado do rótulo na mesma linha e, com align-items:center,
+     o rótulo aparecia deslocado para o meio do quadro reservado (min-height),
+     dando a impressão de que o quadro "pulava" ao trocar de destino. */
+  flex-basis: 100%;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.06em;
@@ -205,7 +210,12 @@ a { color: inherit; }
 .hero-solari-row {
   display: inline-flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   max-width: 100%;
+  /* Reserva altura para até 2 linhas de letras (nomes longos que quebram),
+     mesmo quando o nome atual cabe em 1 linha só — assim o quadro nunca
+     "pula" o resto da home pra baixo/cima ao trocar de destino. */
+  min-height: 64px;
   row-gap: 4px;
   gap: 3px;
   perspective: 300px;
