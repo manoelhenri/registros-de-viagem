@@ -176,40 +176,86 @@ a { color: inherit; }
   overflow: hidden;
 }
 
-.hero-route {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0.9;
+.hero-content { position: relative; z-index: 1; max-width: 640px; }
+
+/* Quadro de letras giratórias com o destino mais recente de verdade, no
+   lugar da antiga rota fixa (LIS/BSB/FOR/MCO hardcoded). Largura dinâmica:
+   nasce com o número exato de letras do nome, sem placas vazias — a
+   diferença de tamanho entre um nome e outro cresce/encolhe suavemente em
+   vez de a placa aparecer/sumir de uma vez (ver .hero-solari-cell abaixo).
+   Decorativo (aria-hidden): o texto de verdade pro leitor de tela vem do
+   span .visually-hidden ao lado (#heroSolariSr), sempre atualizado. */
+.hero-solari {
+  position: relative;
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.hero-route path {
-  fill: none;
-  stroke: var(--line-strong);
-  stroke-width: 1.5;
-  stroke-dasharray: 5 7;
-  animation: dash-flow 40s linear infinite;
-}
-
-.hero-route circle { fill: var(--petrol); }
-.hero-route .stop-label {
+.hero-solari-label {
   font-family: var(--font-mono);
-  font-size: 10px;
-  fill: var(--ink-soft);
-  letter-spacing: 0.05em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 
-@keyframes dash-flow {
-  to { stroke-dashoffset: -240; }
+.hero-solari-row {
+  display: inline-flex;
+  gap: 3px;
+  perspective: 300px;
+}
+
+.hero-solari-cell {
+  width: 22px;
+  height: 30px;
+  background: var(--petrol-deep);
+  color: var(--paper-raised);
+  border-radius: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  position: relative;
+  overflow: hidden;
+  transform-origin: left center;
+}
+
+.hero-solari-cell::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-solari-cell.flip { animation: hero-flap-turn 0.35s ease-in-out; }
+
+@keyframes hero-flap-turn {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(-90deg); }
+  51% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-route path { animation: none; }
+  .hero-solari-cell.flip { animation: none; }
 }
 
-.hero-content { position: relative; z-index: 1; max-width: 640px; }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+}
 
 .eyebrow {
   font-family: var(--font-mono);

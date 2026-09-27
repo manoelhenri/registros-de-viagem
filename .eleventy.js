@@ -344,6 +344,28 @@ module.exports = function (eleventyConfig) {
           return (anos && anos[anos.length - 1]) || "";
     });
 
+    // Destinos recentes de verdade pro quadro de letras giratórias da home
+    // (substitui a rota fixa LIS/BSB/FOR/MCO que existia hardcoded no hero).
+    // Pega a primeira cidade do campo `cidades` dos posts mais novos
+    // (collections.posts já vem ordenado do mais recente pro mais antigo),
+    // sem repetir o mesmo lugar, e devolve em ordem cronológica (mais antigo
+    // primeiro) pra o quadro terminar sempre na viagem mais recente.
+    eleventyConfig.addFilter("heroDestinosRecentes", (posts, limite) => {
+          const vistos = new Set();
+          const resultado = [];
+          for (const post of posts || []) {
+                  const cidades = String(post.data.cidades || "").split(",").map((c) => c.trim()).filter(Boolean);
+                  const primeira = cidades[0];
+                  if (!primeira) continue;
+                  const chave = normalizar(primeira);
+                  if (vistos.has(chave)) continue;
+                  vistos.add(chave);
+                  resultado.push(primeira.toUpperCase());
+                  if (resultado.length >= (limite || 5)) break;
+          }
+          return resultado.reverse();
+    });
+
     // Destinos/parques relacionados a um lugar (Bloco 4, item 20): cruza os
     // posts que passam por esse lugar com os OUTROS destinos/parques que
     // aparecem nos mesmos posts — "quem visitou esse lugar também visitou".

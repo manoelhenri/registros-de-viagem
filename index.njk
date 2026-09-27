@@ -3,24 +3,138 @@ layout: base.njk
 title: "Início"
 nav: inicio
 ---
+{% set heroLugares = collections.posts | heroDestinosRecentes(5) %}
 <header class="hero">
-  <svg class="hero-route" viewBox="0 0 1036 300" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M20,240 C160,60 280,260 420,120 S 620,40 760,150 920,70 1016,110" />
-    <circle cx="20" cy="240" r="3.5"/>
-    <circle cx="420" cy="120" r="3.5"/>
-    <circle cx="760" cy="150" r="3.5"/>
-    <circle cx="1016" cy="110" r="3.5"/>
-    <text class="stop-label" x="10" y="262">LIS</text>
-    <text class="stop-label" x="410" y="102">BSB</text>
-    <text class="stop-label" x="750" y="176">FOR</text>
-    <text class="stop-label" x="985" y="92">MCO</text>
-  </svg>
   <div class="hero-content">
     <span class="eyebrow">{{ home.heroEyebrow }}</span>
     <h1>{{ home.heroTitulo }}</h1>
     <p class="lede">{{ home.heroSubtitulo }}</p>
+    {% if heroLugares.length %}
+    <div class="hero-solari" aria-hidden="true">
+      <span class="hero-solari-label">Último destino</span>
+      <div class="hero-solari-row" id="heroSolariRow"></div>
+    </div>
+    <span class="visually-hidden" id="heroSolariSr">Último destino: {{ heroLugares[heroLugares.length - 1] }}</span>
+    {% endif %}
   </div>
 </header>
+
+{% if heroLugares.length %}
+<script>
+(function () {
+  var lugares = {{ heroLugares | dump | safe }};
+  var row = document.getElementById("heroSolariRow");
+  var sr = document.getElementById("heroSolariSr");
+  if (!row || !lugares.length) return;
+
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  function letraAleatoria() { return alfabeto[Math.floor(Math.random() * alfabeto.length)]; }
+
+  function criarCelula(letra) {
+    var cell = document.createElement("div");
+    cell.className = "hero-solari-cell";
+    cell.textContent = letra;
+    return cell;
+  }
+
+  var cells = [];
+  lugares[0].split("").forEach(function (letra) {
+    var cell = criarCelula(letra);
+    row.appendChild(cell);
+    cells.push(cell);
+  });
+
+  if (lugares.length < 2 || reduceMotion) return;
+
+  function flipParaLetra(cell, letraFinal, giros) {
+    var passo = 0;
+    (function proximoGiro() {
+      cell.classList.remove("flip");
+      void cell.offsetWidth;
+      cell.classList.add("flip");
+      setTimeout(function () {
+        passo++;
+        if (passo < giros) {
+          cell.textContent = letraAleatoria();
+          setTimeout(proximoGiro, 90);
+        } else {
+          cell.textContent = letraFinal;
+        }
+      }, 175);
+    })();
+  }
+
+  function criarCelulaEntrando(letraFinal) {
+    var cell = document.createElement("div");
+    cell.className = "hero-solari-cell";
+    cell.textContent = letraFinal;
+    cell.style.width = "0px";
+    cell.style.opacity = "0";
+    cell.style.overflow = "hidden";
+    row.appendChild(cell);
+    void cell.offsetWidth;
+    cell.style.transition = "width 0.3s ease, opacity 0.3s ease";
+    requestAnimationFrame(function () {
+      cell.style.width = "22px";
+      cell.style.opacity = "1";
+    });
+    setTimeout(function () {
+      cell.style.width = "";
+      cell.style.opacity = "";
+      cell.style.overflow = "";
+      cell.style.transition = "";
+    }, 320);
+    return cell;
+  }
+
+  function removerCelula(cell) {
+    cell.style.overflow = "hidden";
+    cell.style.transition = "width 0.28s ease, opacity 0.28s ease";
+    void cell.offsetWidth;
+    requestAnimationFrame(function () {
+      cell.style.width = "0px";
+      cell.style.opacity = "0";
+    });
+    setTimeout(function () {
+      if (cell.parentNode) cell.parentNode.removeChild(cell);
+    }, 300);
+  }
+
+  var indice = 0;
+  setInterval(function () {
+    indice = (indice + 1) % lugares.length;
+    var alvo = lugares[indice];
+    var atualLen = cells.length;
+    var alvoLen = alvo.length;
+    var comum = Math.min(atualLen, alvoLen);
+
+    for (var idx = 0; idx < comum; idx++) {
+      (function (idx) {
+        var giros = 2 + Math.floor(Math.random() * 2);
+        setTimeout(function () { flipParaLetra(cells[idx], alvo[idx], giros); }, idx * 65);
+      })(idx);
+    }
+
+    if (alvoLen > atualLen) {
+      for (var idxNova = atualLen; idxNova < alvoLen; idxNova++) {
+        (function (idxNova) {
+          setTimeout(function () { cells.push(criarCelulaEntrando(alvo[idxNova])); }, idxNova * 65);
+        })(idxNova);
+      }
+    } else if (atualLen > alvoLen) {
+      var saindo = cells.slice(alvoLen);
+      cells = cells.slice(0, alvoLen);
+      saindo.forEach(function (cell, i) {
+        setTimeout(function () { removerCelula(cell); }, i * 65);
+      });
+    }
+
+    if (sr) sr.textContent = "Último destino: " + alvo;
+  }, 4200);
+})();
+</script>
+{% endif %}
 
 {% set destaque = collections.postoDestaque %}
 {% if destaque %}
