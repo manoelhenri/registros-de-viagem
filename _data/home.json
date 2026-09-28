@@ -1,6 +1,14 @@
 {
   "card2Texto": "Do Hopi Hari ao Epic Universe — o histórico completo de parques pelo Brasil e pelo mundo.",
   "card1Texto": "Todo lugar onde já pousei, organizado por país e ano da visita.",
+  "heroDestinos": [
+    "GRAMADO",
+    "MIAMI",
+    "ORLANDO",
+    "MANAUS",
+    "BARCELONA",
+    "LISBOA"
+  ],
   "card2Eyebrow": "Temáticos e aquáticos",
   "heroEyebrow": "Diário de viagens · desde 2017",
   "heroTitulo": "Registro de tudo que já visitei por aí.",
