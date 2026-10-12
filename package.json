@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "eleventy && node scripts/build-jogos.js",
+    "build": "eleventy",
     "serve": "eleventy --serve"
   },
   "devDependencies": {

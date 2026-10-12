@@ -95,6 +95,12 @@ function validarBuild() {
 module.exports = function (eleventyConfig) {
     validarBuild();
 
+    // Área /jogos (apps estáticos fora do Eleventy): copiada ao fim de todo build,
+    // não importa o comando que o Cloudflare use (npm run build ou eleventy direto).
+    eleventyConfig.on("eleventy.after", () => {
+          require("./scripts/build-jogos.js");
+    });
+
     // Static passthrough: images uploaded via the admin panel, the stylesheet,
     // and the admin panel itself (Decap CMS) go straight to the output folder.
     eleventyConfig.addPassthroughCopy("images");
