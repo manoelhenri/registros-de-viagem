@@ -1,0 +1,1328 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#D6246A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Quem é mais?">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<script>window.__PWA=true;</script>
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Quem é Mais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout: app de uma tela por vez. Barra no topo (menu, título, atalho), conteúdo no meio e botões de ação fixos na base, na zona do polegar. Cada casal tem uma cor própria usada em avatares, pontos e bordas, nunca em texto. Rosa é a marca; verde e vermelho só indicam sintonia e divergência. */
+:root{
+  --bg:#F5F2FC;
+  --surface:#FFFFFF;
+  --soft:#ECE8F9;
+  --ink:#1D1838;
+  --muted:#5F5985;
+  --line:#DCD7F0;
+  --accent:#D6246A;
+  --on-accent:#FFFFFF;
+  --gold:#F2B705;
+  --good:#12775A;
+  --on-good:#FFFFFF;
+  --bad:#C62828;
+  --on-bad:#FFFFFF;
+  --c1:#2F5FD0;  --on-c1:#FFFFFF;
+  --c2:#F0A202;  --on-c2:#2A1B00;
+  --c3:#8B3FD0;  --on-c3:#FFFFFF;
+  --c4:#0E8FA3;  --on-c4:#FFFFFF;
+  --c5:#7FA00C;  --on-c5:#1C2400;
+  --c6:#5D6C80;  --on-c6:#FFFFFF;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#13102A;
+    --surface:#1D1940;
+    --soft:#2A2559;
+    --ink:#F2EFFF;
+    --muted:#A9A3D2;
+    --line:#352F66;
+    --accent:#FF5C93;
+    --on-accent:#1A0A14;
+    --gold:#FFD25A;
+    --good:#4BDDA6;
+    --on-good:#06281C;
+    --bad:#FF7A7A;
+    --on-bad:#2A0A0A;
+    --c1:#7FA2FF;  --on-c1:#0E1A44;
+    --c2:#FFC53D;  --on-c2:#2A1B00;
+    --c3:#C79BFF;  --on-c3:#230B3D;
+    --c4:#5CD6EA;  --on-c4:#052A33;
+    --c5:#C4E65C;  --on-c5:#1C2400;
+    --c6:#AEBBCD;  --on-c6:#14202E;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#13102A;
+  --surface:#1D1940;
+  --soft:#2A2559;
+  --ink:#F2EFFF;
+  --muted:#A9A3D2;
+  --line:#352F66;
+  --accent:#FF5C93;
+  --on-accent:#1A0A14;
+  --gold:#FFD25A;
+  --good:#4BDDA6;
+  --on-good:#06281C;
+  --bad:#FF7A7A;
+  --on-bad:#2A0A0A;
+  --c1:#7FA2FF;  --on-c1:#0E1A44;
+  --c2:#FFC53D;  --on-c2:#2A1B00;
+  --c3:#C79BFF;  --on-c3:#230B3D;
+  --c4:#5CD6EA;  --on-c4:#052A33;
+  --c5:#C4E65C;  --on-c5:#1C2400;
+  --c6:#AEBBCD;  --on-c6:#14202E;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(60% 32% at 100% 0%, color-mix(in srgb,var(--accent) 16%, transparent), transparent),
+    radial-gradient(55% 30% at 0% 18%, color-mix(in srgb,var(--c3) 14%, transparent), transparent);
+  background-repeat:no-repeat;
+  color:var(--ink);
+  font:16px/1.5 var(--body);
+  padding-inline:16px;
+  padding-block:0 40px;
+}
+body.hasdock{padding-block-end:132px}
+body.lock{overflow:hidden}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,h2,h3,p{margin:0}
+
+.ic{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.22em}
+.ic.fill{fill:currentColor}
+.ic.lg{width:28px;height:28px}
+
+.app{max-width:560px;margin-inline:auto;display:flex;flex-direction:column;gap:16px}
+.app.shake{animation:shake .5s}
+@keyframes shake{0%,100%{transform:none}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(5px)}}
+.view{display:flex;flex-direction:column;gap:16px}
+.view.enter{animation:enter .22s ease-out}
+@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* barra do app */
+.appbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:8px;padding:8px 16px 10px;margin-inline:-16px;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.appbar .ttl{text-align:center;font-family:var(--display);font-weight:800;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.appbar .pb{position:absolute;left:16px;right:16px;bottom:3px;height:3px;border-radius:99px;background:var(--soft);overflow:hidden}
+.appbar .pb i{display:block;height:100%;background:var(--accent);transition:width .3s}
+.brand{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.01em}
+.brand .ic{color:var(--accent)}
+.iconbtn{width:44px;height:44px;border-radius:50%;border:2px solid var(--line);background:var(--surface);display:grid;place-items:center;padding:0}
+.iconbtn[aria-pressed="false"]{color:var(--muted)}
+.link{background:none;border:0;padding:8px 4px;color:var(--muted);font-weight:500;display:inline-flex;align-items:center;gap:6px;align-self:flex-start}
+
+/* KV */
+.kv{display:flex;flex-direction:column;gap:14px}
+.stage{border-radius:28px;border:1px solid var(--line);background-color:var(--surface);
+  background-image:radial-gradient(color-mix(in srgb,var(--ink) 14%,transparent) 1.2px,transparent 1.6px);background-size:14px 14px;padding:14px 10px 6px;overflow:hidden}
+.art{display:block;width:100%;height:auto;max-height:230px}
+.art .bt{font-family:var(--display);font-weight:800}
+.pulse{transform-origin:center;transform-box:fill-box;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+.sticker{display:inline-flex;align-items:center;gap:6px;transform:rotate(-3deg);background:var(--gold);color:#1D1838;padding:6px 12px;border-radius:999px;font-weight:700;font-size:13px;align-self:flex-start}
+.kvtext{display:flex;flex-direction:column;gap:10px;padding-top:2px}
+.kvtext h1{font-family:var(--display);font-weight:800;font-size:clamp(46px,14vw,72px);line-height:.92;letter-spacing:-.035em;text-wrap:balance}
+.hl{background:linear-gradient(transparent 64%,color-mix(in srgb,var(--accent) 50%,transparent) 64%);padding-inline:2px}
+.lede{color:var(--muted);max-width:46ch}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:8px;width:max-content;animation:slide 40s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-weight:500;font-size:14px;white-space:nowrap}
+.tag .ic{color:var(--accent)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 16px;color:var(--muted);font-size:14px}
+.facts span{display:inline-flex;align-items:center;gap:6px}
+.facts .ic{color:var(--accent)}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.card .opt,.card .nameinput,.card .switchrow{background:var(--bg)}
+.section{display:flex;flex-direction:column;gap:10px}
+.label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.hint{font-size:13px;color:var(--muted)}
+.center{text-align:center}
+.pagehead{display:flex;flex-direction:column;gap:4px}
+.pagehead h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,10vw,46px);line-height:1;letter-spacing:-.03em}
+.resume b{font-family:var(--display);font-weight:800;font-size:22px}
+.clamp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+.couple{border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+.couple legend{padding:0;display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;margin-bottom:6px}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--cc);flex:none}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:8px}
+.amp{color:var(--accent)}
+.nameinput{width:100%;min-width:0;padding:13px 14px;border-radius:12px;background:var(--surface);border:2px solid var(--line);font-weight:500}
+.nameinput:focus{border-color:var(--cc);outline:none}
+.nameinput:focus-visible{outline:3px solid var(--cc);outline-offset:1px}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.opt{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:var(--surface);border:2px solid var(--line);font-weight:500;min-height:44px}
+.opt[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:700}
+.opt.num{min-width:48px;justify-content:center;font-family:var(--display);font-weight:800;font-size:18px}
+.switchrow{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 14px;border-radius:14px;background:var(--surface);border:2px solid var(--line)}
+.switchrow b{display:block;font-weight:700}
+.switchrow span{font-size:13px;color:var(--muted)}
+.switch{appearance:none;-webkit-appearance:none;flex:none;width:52px;height:30px;border-radius:999px;background:var(--line);position:relative;border:0;cursor:pointer;transition:background .15s}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--surface);transition:transform .15s;box-shadow:0 1px 2px rgb(0 0 0 / .25)}
+.switch:checked{background:var(--accent)}
+.switch:checked::after{transform:translateX(22px)}
+
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 20px;border-radius:16px;border:0;background:var(--accent);color:var(--on-accent);font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.01em;text-decoration:none;min-height:56px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line);font-family:var(--body);font-weight:700;font-size:16px;padding:12px 16px}
+.btn.danger{background:var(--bad);color:var(--on-bad)}
+
+/* base fixa */
+#dock{position:fixed;left:0;right:0;bottom:0;z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.dockin{max-width:560px;margin-inline:auto;display:flex;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px))}
+.dockin .btn{flex:1;min-width:0}
+.dockin .btn.ghost{flex:0 0 auto;width:auto}
+
+/* placar */
+.scores{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:2px}
+.score{flex:1 0 104px;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.score .row{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.score .n{font-family:var(--display);font-weight:800;font-size:28px;line-height:1;font-variant-numeric:tabular-nums;display:inline-block}
+.score .n.bump{animation:bump .6s}
+@keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.5);color:var(--accent)}100%{transform:scale(1)}}
+.score .t{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);min-width:0}
+.score .t span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.score .dot{width:9px;height:9px}
+.fl{display:inline-flex;align-items:center;gap:2px;color:var(--accent);font-weight:700;font-size:12px}
+
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:14px;
+  background-image:radial-gradient(color-mix(in srgb,var(--ink) 9%,transparent) 1.1px,transparent 1.5px);background-size:14px 14px}
+.qtop{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--soft);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700}
+.pill .ic{color:var(--accent)}
+.badge2{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#1D1838;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800;animation:pulse 1.4s ease-in-out infinite}
+.qcard h2{font-family:var(--display);font-weight:800;font-size:clamp(30px,8.5vw,44px);line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
+
+.count{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:200px;text-align:center}
+.count .num{font-family:var(--display);font-weight:800;font-size:150px;line-height:1;color:var(--accent);animation:pop .9s ease-out both;font-variant-numeric:tabular-nums}
+.count .go{font-family:var(--display);font-weight:800;font-size:clamp(46px,14vw,68px);line-height:1;color:var(--accent);animation:pop 1.1s ease-out both}
+@keyframes pop{0%{transform:scale(.4);opacity:0}30%{transform:scale(1.1);opacity:1}100%{transform:scale(1);opacity:1}}
+
+.markcard{background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.markcard.done{border-color:var(--cc)}
+.mhead{display:flex;align-items:center;gap:8px;font-weight:700;min-width:0}
+.mhead b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mopts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:8px}
+.mopt{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:8px 10px;border-radius:12px;background:var(--bg);border:2px solid var(--line);font-weight:700;min-width:0}
+.mopt span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mopt .av{width:24px;height:24px;border-radius:50%;background:var(--cc);color:var(--onc);display:grid;place-items:center;font-size:12px;font-weight:800;flex:none;font-style:normal}
+.mopt[aria-pressed="true"]{background:var(--cc);color:var(--onc);border-color:var(--cc)}
+.mopt[aria-pressed="true"] .av{background:var(--onc);color:var(--cc)}
+.mopt.x[aria-pressed="true"]{background:var(--bad);color:var(--on-bad);border-color:var(--bad)}
+
+.rlist{display:flex;flex-direction:column;gap:12px}
+.rcard{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.rcard.anim{animation:flip .6s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k) * var(--step,.65s))}
+@keyframes flip{0%{opacity:0;transform:perspective(600px) rotateX(-70deg) translateY(14px)}100%{opacity:1;transform:none}}
+.rhead{display:flex;align-items:center;gap:10px}
+.stat{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none}
+.rcard.match .stat{background:var(--good);color:var(--on-good)}
+.rcard.conflict .stat{background:var(--bad);color:var(--on-bad)}
+.rtitle{min-width:0;flex:1}
+.rtitle b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rtitle span{font-size:14px;color:var(--muted)}
+.pts{font-family:var(--display);font-weight:800;font-size:28px;font-variant-numeric:tabular-nums;color:var(--good)}
+.combo{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;background:var(--accent);color:var(--on-accent);border-radius:999px;padding:3px 9px}
+.pren{background:var(--soft);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.pmeta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pmeta .k{display:inline-flex;align-items:center;gap:5px}
+.pmeta .lvl{display:inline-flex;color:var(--accent)}
+.ptext{font-weight:500;font-size:17px;line-height:1.4}
+.pact{display:flex;gap:8px;flex-wrap:wrap}
+.mini{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;border:2px solid var(--line);background:var(--surface);font-weight:700;font-size:14px;min-height:40px}
+.mini[aria-pressed="true"]{background:var(--good);border-color:var(--good);color:var(--on-good)}
+
+/* fim */
+.podium{display:grid;gap:8px;align-items:end;padding-top:6px}
+.pcol{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0;text-align:center}
+.pcol .crown{color:var(--gold)}
+.pcol .nm{font-weight:700;font-size:13px;line-height:1.2;overflow-wrap:anywhere}
+.pcol .pt{font-family:var(--display);font-weight:800;font-size:26px;line-height:1;font-variant-numeric:tabular-nums}
+.block{width:100%;border-radius:14px 14px 0 0;background:var(--cc);color:var(--onc);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:34px}
+.awards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.award{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.award .ic{color:var(--accent);width:24px;height:24px}
+.award b{font-family:var(--display);font-weight:800;font-size:18px;line-height:1.15;overflow-wrap:anywhere}
+.award span{font-size:13px;color:var(--muted)}
+.trow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.trow .nm{display:flex;align-items:center;gap:8px;font-weight:700;min-width:0}
+.trow .nm span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trow .v{font-family:var(--display);font-weight:800;font-size:22px;font-variant-numeric:tabular-nums;grid-row:span 2}
+.trow small{color:var(--muted);font-size:13px}
+.trow .bar{grid-column:1/-1;height:6px}
+.trow .bar i{background:var(--cc)}
+.bar{height:6px;border-radius:99px;background:var(--soft);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.shbtns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.shbtns .full{grid-column:1/-1}
+.sharecard{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);display:block}
+.sharetxt{width:100%;min-height:170px;border-radius:12px;border:2px solid var(--line);background:var(--surface);padding:12px;resize:vertical;line-height:1.45;margin-top:10px}
+details.recap{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+details.recap summary{cursor:pointer;font-weight:700}
+details.recap ol{margin:12px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:12px}
+details.recap li b{font-weight:500}
+.rrs{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.rr{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);background:var(--bg);border-radius:999px;padding:4px 10px}
+.rr.ok .ic{color:var(--good)}
+.rr.no .ic{color:var(--bad)}
+
+/* folhas e diálogos */
+.scrim{position:fixed;top:0;right:0;bottom:0;left:0;background:rgb(12 8 32 / .55);z-index:60;cursor:pointer}
+.scrim.top{z-index:70}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;max-width:560px;margin-inline:auto;max-height:calc(100% - 24px);overflow-y:auto;
+  background:var(--surface);border:1px solid var(--line);border-bottom:0;border-radius:26px 26px 0 0;padding:10px 16px calc(20px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:12px}
+.sheet.anim{animation:up .26s cubic-bezier(.2,.8,.2,1)}
+@keyframes up{from{transform:translateY(48px);opacity:0}to{transform:none;opacity:1}}
+.grab{width:40px;height:4px;border-radius:99px;background:var(--line);margin:0 auto}
+.shead{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.shead b{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.01em}
+.mlist{display:flex;flex-direction:column;gap:8px}
+.mitem{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:10px 12px;border-radius:14px;background:var(--bg);border:1px solid var(--line);min-height:56px}
+.mitem .bub{width:38px;height:38px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--accent);flex:none}
+.mitem .tx{min-width:0;flex:1}
+.mitem .tx b{display:block;font-weight:700}
+.mitem .tx span{font-size:13px;color:var(--muted)}
+.mitem .go{color:var(--muted)}
+.mitem.warn .bub{background:color-mix(in srgb,var(--bad) 16%,var(--surface));color:var(--bad)}
+.steps{display:grid;gap:8px}
+.step{display:flex;gap:12px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+.step .bub{width:42px;height:42px;border-radius:13px;background:var(--soft);display:grid;place-items:center;color:var(--accent);flex:none}
+.step b{display:block}
+.step span{font-size:14px;color:var(--muted)}
+.rules{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:15px}
+.dialog{position:fixed;left:16px;right:16px;top:50%;transform:translateY(-50%);max-width:420px;margin-inline:auto;z-index:71;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.dialog.anim{animation:dpop .2s ease-out}
+@keyframes dpop{from{opacity:0;transform:translateY(-46%) scale(.96)}to{opacity:1;transform:translateY(-50%)}}
+.dialog h3{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.01em}
+.dialog p{color:var(--muted)}
+.dialog .row{display:flex;gap:10px}
+.dialog .row .btn{padding:12px 14px;min-height:50px;font-size:16px}
+
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+#toast{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-weight:700;font-size:14px;z-index:80;pointer-events:none;transition:opacity .25s,transform .25s;max-width:calc(100% - 32px);text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion: reduce){
+  .track{animation:none;flex-wrap:wrap;width:auto}
+  .pulse,.badge2,.count .num,.count .go,.rcard.anim,.app.shake,.score .n.bump,.view.enter,.sheet.anim,.dialog.anim{animation:none}
+  .appbar .pb i,.switch,.switch::after,#toast{transition:none}
+}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+  <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.4-.8-1.4-1.2-2.5-1.2-1.4 0-2.5.7-2.5 1.8 0 2.6 5 1.2 5 3.8 0 1.1-1.1 1.9-2.5 1.9-1.1 0-2.2-.5-2.6-1.4M12 6.5V8M12 16v1.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21.1 7 14.2 2 9.3l6.9-1L12 2z"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5zM15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5zM22 9l-6 6M16 9l6 6"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.1A8.4 8.4 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 22l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-dice" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8.5 8.5h.01M15.5 8.5h.01M8.5 15.5h.01M15.5 15.5h.01M12 12h.01"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zM19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M2 20h20M3 8l4.5 4L12 4l4.5 8L21 8l-2 12H5L3 8z"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></symbol>
+  <symbol id="i-again" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 22V4M4 4h13l-2 4 2 4H4"/></symbol>
+  <symbol id="i-exit" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24"><path d="M3 7v6h6M3 13a9 9 0 1 0 3-7.7L3 8"/></symbol>
+  <symbol id="i-vibrate" viewBox="0 0 24 24"><path d="M2 8v8M5 6v12M22 8v8M19 6v12M9 3h6a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3l14 9-14 9V3z"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M12 12h10"/></symbol>
+</svg>
+
+<div class="app" id="app"></div>
+<div id="dock" hidden></div>
+<div id="overlay"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============ dados ============ */
+const CATS = [
+  {id:'dia', name:'Dia a dia', icon:'sun', q:[
+    'Quem é mais bagunceiro(a)?','Quem é mais dorminhoco(a)?','Quem demora mais para se arrumar?','Quem se perde mais fácil?',
+    'Quem esquece mais as coisas (chave, celular, carteira)?','Quem é mais enrolado(a) com horário?','Quem vira outra pessoa quando está com fome?',
+    'Quem fica mais estressado(a) no trânsito?','Quem é mais vaidoso(a)?','Quem acorda de pior humor?','Quem aperta mais vezes o "soneca" do despertador?',
+    'Quem deixa mais luzes acesas e portas abertas?','Quem espalha mais roupa pela casa?','Quem fala ou ri dormindo?']},
+  {id:'perso', name:'Personalidade', icon:'smile', q:[
+    'Quem é mais ciumento(a)?','Quem é mais dramático(a)?','Quem é mais teimoso(a)?','Quem é mais romântico(a)?','Quem chora mais em filme?',
+    'Quem fica mais bravo(a) quando está errado(a)?','Quem é mais curioso(a) e fofoqueiro(a)?','Quem é mais bom de papo?',
+    'Quem é mais competitivo(a) até em joguinho bobo?','Quem é mais medroso(a)?','Quem é mais engraçado(a)?','Quem é mais tímido(a) com gente nova?',
+    'Quem é mais ansioso(a)?','Quem é mais paciente?','Quem é mais impulsivo(a)?','Quem é mais cara de pau?']},
+  {id:'rel', name:'Relacionamento', icon:'heart', q:[
+    'Quem deu o primeiro passo no começo da relação?','Quem diz "eu te amo" mais vezes?','Quem manda mais mensagem durante o dia?','Quem é mais grudento(a)?',
+    'Quem costuma pedir desculpa primeiro?','Quem sempre decide onde comer?','Quem ronca mais?','Quem puxa mais a coberta?','Quem faz mais surpresas para o par?',
+    'Quem lembra mais das datas importantes?','Quem se apaixonou primeiro?','Quem sente mais saudade quando estão longe?','Quem pede mais carinho?',
+    'Quem acha que sempre tem razão numa discussão?','Quem faz mais as vontades do outro?','Quem mais se declara em público?']},
+  {id:'pica', name:'Apimentadas', icon:'flame', q:[
+    'Quem é mais safado(a)?','Quem é mais ciumento(a) com o celular do outro?','Quem já ficou com mais gente antes de namorar?',
+    'Quem é mais tímido(a) para demonstrar carinho em público?','Quem flerta sem perceber?','Quem é mais ousado(a) em público?','Quem toma mais a iniciativa?',
+    'Quem elogia mais o corpo do outro?','Quem sente mais ciúme de ex?','Quem beija melhor?','Quem seria o primeiro a dar um beijo num lugar proibido?',
+    'Quem é mais bom de conquista?']},
+  {id:'role', name:'Rolê e viagem', icon:'plane', q:[
+    'Quem leva a mala mais exagerada?','Quem se perde mais em viagem?','Quem dorme primeiro no carro ou no avião?','Quem tira mais fotos?',
+    'Quem planeja todo o roteiro?','Quem reclama mais de cansaço?','Quem tem mais medo de montanha-russa?','Quem acorda mais cedo nas férias?',
+    'Quem esquece mais documentos e carregadores?','Quem é mais aventureiro(a)?','Quem é o(a) melhor copiloto(a) ou GPS?','Quem é mais animado(a) na balada?',
+    'Quem queima mais no sol?','Quem faz mais amizade com estranhos em viagem?']},
+  {id:'comida', name:'Comida e casa', icon:'utensils', q:[
+    'Quem cozinha melhor?','Quem queima mais a comida?','Quem come mais?','Quem rouba mais comida do prato do outro?','Quem enrola mais para lavar a louça?',
+    'Quem mais pede delivery?','Quem tem mais fome de madrugada?','Quem é mais enjoado(a) para comer?','Quem deixa a cozinha mais bagunçada?',
+    'Quem manda no controle da TV?','Quem controla o ar-condicionado?','Quem exagera mais na pimenta?','Quem é mais fresco(a) com sujeira?',
+    'Quem deixa sempre o último pedaço?']},
+  {id:'grana', name:'Dinheiro', icon:'coin', q:[
+    'Quem gasta mais dinheiro?','Quem é mais pão-duro?','Quem compra mais por impulso?','Quem controla melhor as finanças?','Quem mais esquece de pagar contas?',
+    'Quem mais pechincha?','Quem mais gosta de presentear?','Quem mais faz compras online?','Quem assina mais serviços e esquece de cancelar?',
+    'Quem mais pede dinheiro emprestado ao outro?','Quem compraria uma coisa inútil e caríssima primeiro?']},
+  {id:'tech', name:'Tech e redes', icon:'phone', q:[
+    'Quem passa mais tempo no celular?','Quem vive com a bateria no fim?','Quem posta mais nas redes sociais?','Quem demora mais para responder mensagem?',
+    'Quem tem mais fotos do outro na galeria?','Quem mais bisbilhota perfis alheios?','Quem tem mais capturas de tela guardadas?','Quem manda mais áudios longos?',
+    'Quem vive no grupo da família?','Quem mais perde o celular dentro de casa?','Quem tira mais selfies?','Quem manda mais memes?']},
+  {id:'gente', name:'Família e amigos', icon:'users', q:[
+    'Quem é mais querido(a) pela família do outro?','Quem se dá melhor com os sogros?','Quem tem mais amigos?','Quem fala mais com a mãe por telefone?',
+    'Quem é mais fiel ao grupo de amigos?','Quem é mais popular na turma?','Quem some quando tem festa de família?','Quem mais leva presentinho para os anfitriões?',
+    'Quem mais lembra aniversário de amigos?','Quem é mais protetor(a)?','Quem faz o papel de mãe ou pai do grupo de amigos?','Quem fala mais com os vizinhos?']},
+  {id:'loucura', name:'E se...', icon:'bolt', q:[
+    'Quem pularia de paraquedas primeiro?','Quem sobreviveria mais tempo numa ilha deserta?','Quem entraria primeiro numa casa mal-assombrada?',
+    'Quem desistiria primeiro de uma maratona?','Quem viraria celebridade mais fácil?','Quem ganharia uma guerra de travesseiros?',
+    'Quem seria o primeiro a chorar num casamento?','Quem se daria melhor num reality show?','Quem fugiria primeiro de uma barata gigante?',
+    'Quem aguentaria 24 horas sem celular?','Quem faria mais barulho num esconde-esconde?','Quem seria o(a) vilão(ã) numa série?',
+    'Quem sumiria primeiro depois de ganhar na loteria?']}
+];
+const catById = {};
+CATS.forEach(c=>{catById[c.id]=c;});
+const ALLQ = [];
+CATS.forEach(c=>c.q.forEach(t=>ALLQ.push({cat:c.id,t:t})));
+
+const TAGS = {
+  mimica:{n:'Mímica',i:'smile'}, voz:{n:'Voz',i:'mic'}, danca:{n:'Dança',i:'music'}, carinho:{n:'Carinho',i:'heart'},
+  confissao:{n:'Confissão',i:'chat'}, criativo:{n:'Criatividade',i:'sparkles'}, fisico:{n:'Físico',i:'bolt'}
+};
+const PR_RAW = [
+  [1,'mimica','Mímica do primeiro encontro: encenem como se conheceram, sem falar. O grupo tem 1 minuto para adivinhar o momento.'],
+  [1,'voz','Falem só em rima até a próxima pergunta. Quem quebrar a rima paga 5 agachamentos.'],
+  [1,'carinho','Elogiem um ao outro por 20 segundos cada, sem repetir nenhuma palavra.'],
+  [1,'danca','Baile de formatura: dancem 20 segundos como se fosse a valsa da turma, sem música.'],
+  [1,'criativo','Narrador de futebol: um de vocês narra, com emoção, tudo o que o outro fizer nos próximos 30 segundos (beber água, pegar um petisco...).'],
+  [1,'criativo','Façam uma pose de capa de novela e o grupo inventa o título do folhetim.'],
+  [1,'voz','Falem com sotaque de outro estado até o fim da próxima rodada.'],
+  [1,'criativo','Comercial de TV: vendam o seu par em 30 segundos, com slogan e tudo.'],
+  [1,'confissao','Revelem o apelido mais bobo que vocês usam um com o outro.'],
+  [1,'danca','O grupo escolhe a música e vocês dançam o refrão como se fosse o clipe oficial.'],
+  [1,'mimica','Duelo de caretas: o grupo vota na pior careta e o perdedor ganha um cafuné do outro.'],
+  [1,'criativo','Descrevam o seu par como o perfil de um app de relacionamento: nome, idade, hobbies e uma frase de efeito.'],
+  [1,'mimica','Imitem um ao outro escolhendo restaurante, por 20 segundos. O grupo dá nota para a imitação.'],
+  [1,'voz','Inventem um grito de guerra do casal em 30 segundos e gritem juntos.'],
+  [1,'fisico','Proibido dizer "sim" e "não" até a próxima rodada. Cada escorregão vale 5 agachamentos.'],
+  [1,'fisico','Dez agachamentos juntos, de mãos dadas, com o grupo contando em voz alta.'],
+  [1,'criativo','Desenho às cegas: cada um desenha o outro de olhos fechados em 30 segundos. O grupo escolhe o melhor.'],
+  [1,'confissao','Sincronia: digam ao mesmo tempo o filme favorito do casal. Se não bater, repitam até acertar (máximo de 3 tentativas).'],
+  [1,'criativo','Contem a piada mais ruim que lembrarem. Vale se o grupo rir, ou só de dó.'],
+  [1,'voz','Falem como robôs até a próxima pergunta.'],
+  [2,'confissao','Contem o maior mico que o seu par já pagou, com todos os detalhes.'],
+  [2,'mimica','Recriem a cena do primeiro beijo como se fosse um filme de época, com direito a suspiro.'],
+  [2,'criativo','Pedido de casamento dramático (de novo), usando só objetos que estão por perto no lugar do anel.'],
+  [2,'voz','Cantem um trecho de uma música que represente o casal, com coreografia.'],
+  [2,'carinho','Um de vocês (o grupo escolhe) grava um áudio de 10 segundos dizendo o que mais admira no outro, e todos ouvem.'],
+  [2,'mimica','Encenem uma briga clássica de casal em câmera lenta durante 30 segundos.'],
+  [2,'confissao','Deem uma nota de 0 a 10 para o último beijo e justifiquem.'],
+  [2,'criativo','Contem a história do casal em 1 minuto, dizendo uma palavra cada um, alternando.'],
+  [2,'confissao','Entrevista relâmpago: o grupo faz 3 perguntas de fofoca e vocês respondem em dupla.'],
+  [2,'mimica','Dublagem de novela mexicana: encenem um reencontro com choro, tapa de mentira e música dramática feita pelo grupo.'],
+  [2,'carinho','Brinde de 20 segundos contando o melhor momento do casal até hoje.'],
+  [2,'fisico','Fiquem de mãos dadas até o fim da próxima rodada. Quem soltar paga mais uma prenda leve.'],
+  [2,'criativo','Tirem uma foto imitando a capa de um álbum de música romântica.'],
+  [2,'carinho','Massagem de 30 segundos nos ombros um do outro, com o grupo cronometrando.'],
+  [2,'confissao','Cada um conta quando percebeu que estava apaixonado.'],
+  [2,'carinho','Cada um cita uma mania irritante do outro e transforma em elogio.'],
+  [2,'criativo','Reality de casal: deem uma nota de 0 a 10 um ao outro em três quesitos e defendam as notas.'],
+  [2,'voz','Podcast de 40 segundos: apresentem a última viagem que fizeram, como se fosse um episódio.'],
+  [2,'mimica','Peçam desculpa por algo bobo de forma exageradamente teatral, de joelhos.'],
+  [2,'danca','Coreografia relâmpago de 20 segundos para uma música que o grupo escolher.'],
+  [3,'carinho','Beijo de cinema de 5 segundos, com trilha sonora cantarolada pelo grupo.'],
+  [3,'criativo','Troquem uma peça de roupa visível (boné, casaco, óculos) e usem até o fim do jogo.'],
+  [3,'voz','Declaração de talent show: um de vocês se declara de joelhos, com discurso de 30 segundos. O grupo dá nota.'],
+  [3,'confissao','Contem uma fofoca engraçada do casal que o grupo ainda não conhece.'],
+  [3,'danca','Dancem uma música lenta bem coladinhos por 20 segundos, com o grupo fazendo a trilha.'],
+  [3,'carinho','Digam o que mais acham atraente no outro, olhando nos olhos, sem rir por 15 segundos.'],
+  [3,'carinho','Sentem no colo um do outro e fiquem assim por uma rodada inteira.'],
+  [3,'carinho','Pose de beijo de cinema por 10 segundos para a foto do grupo.'],
+  [3,'criativo','Confiança no escuro: um de vocês fecha os olhos e o outro dá um petisco na boca, com muito carinho.'],
+  [3,'confissao','Contem o lugar mais inusitado em que já se beijaram.'],
+  [3,'danca','Dança de acasalamento de um animal escolhido pelo grupo, por 15 segundos.'],
+  [3,'voz','Peçam o outro em namoro de novo, na frente de todos, com discurso de 30 segundos.'],
+  [3,'fisico','Duelo de olhar: 20 segundos sem piscar e sem rir. Quem perder faz 5 agachamentos.'],
+  [3,'confissao','Leiam em voz alta a última mensagem fofa que receberam um do outro.'],
+  [3,'mimica','Cena de sedução de novela por 20 segundos, com trilha sonora do grupo.'],
+  [3,'carinho','Cada um inventa em 10 segundos a frase mais romântica que conseguir e fala olhando nos olhos.'],
+  [3,'confissao','Contem a coisa mais ousada (versão PG-13) que já fizeram juntos.'],
+  [3,'confissao','Revelem como se chamam quando estão a sós e chamem assim em voz alta.'],
+  [3,'mimica','Recriem uma cena famosa de beijo na chuva, com o grupo fazendo o barulho da chuva.'],
+  [3,'criativo','Poema de 4 versos para o seu par, feito na hora e declamado com emoção.']
+];
+const PRENDAS = PR_RAW.map((p,i)=>({id:i,l:p[0],tag:p[1],t:p[2]}));
+const LEVELS = [['off','Sem prendas'],['leve','Leves'],['media','Médias'],['ousada','Ousadas'],['mix','Mix']];
+const LEVEL_HINT = {
+  off:'Quem divergir só fica sem o ponto da rodada.',
+  leve:'Desafios simples e engraçados, bons para quebrar o gelo.',
+  media:'Mais teatro, mais confissão, mais carinho.',
+  ousada:'Mais coladinho e mais constrangedor (versão PG-13).',
+  mix:'Sorteia entre todas as prendas, de leves a ousadas.'
+};
+const FINAL_PRENDAS = [
+  'Dançar juntos uma música inteira no meio da roda.',
+  'Pagar a próxima rodada de petiscos para o grupo.',
+  'Fazer um brinde contando como se conheceram.',
+  'Escolher as próximas três músicas da playlist.'
+];
+const QUIP_OK = ['Vocês se conhecem bem.','Sintonia total.','Nem precisou combinar.','Casal que pensa junto.','Essa foi fácil para vocês.'];
+const QUIP_NO = ['Cada um com a sua verdade.','Essa vai dar conversa em casa.','Quem aqui se conhece pouco?','Hora de pagar a conta.','Ih, apontaram para lados diferentes.'];
+const DEFAULT_NAMES = ['Ana','Bruno','Carla','Diego','Elisa','Fábio','Gabi','Hugo','Íris','João','Lia','Marcos'];
+const ROUND_OPTS = [10,15,20,30,0];
+const NC_OPTS = [2,3,4,5,6];
+const KEY = 'quem-e-mais-v3';
+const GKEY = 'quem-e-mais-v3-jogo';
+
+/* ============ estado ============ */
+const S = {
+  screen:'home', names:DEFAULT_NAMES.slice(), nc:3, rounds:15, cats:new Set(CATS.map(c=>c.id)), level:'mix', doubles:true,
+  sound:true, vibrate:true, theme:'auto',
+  gn:DEFAULT_NAMES.slice(), glevel:'mix',
+  qs:[], spares:[], i:0, phase:'ask', count:3, marks:[],
+  pts:[], shown:[], matches:[], conflicts:[], streak:[], best:[], cited:[],
+  hist:[], current:null, snap:null, usedPr:new Set(), prDone:0, prTotal:0, animReveal:false, shareImg:null, finalPr:'',
+  game:null, sheet:null, sheetFresh:false, dialog:null
+};
+function zeros(n){return Array.from({length:n},()=>0);}
+function saveSettings(){
+  try{localStorage.setItem(KEY,JSON.stringify({names:S.names,nc:S.nc,rounds:S.rounds,cats:[...S.cats],level:S.level,doubles:S.doubles,sound:S.sound,vibrate:S.vibrate,theme:S.theme}));}catch(e){}
+}
+try{
+  const d=JSON.parse(localStorage.getItem(KEY)||'null');
+  if(d){
+    if(Array.isArray(d.names)){S.names=DEFAULT_NAMES.map((n,i)=>String(d.names[i]!==undefined?d.names[i]:n));}
+    if(NC_OPTS.includes(d.nc)) S.nc=d.nc;
+    if(ROUND_OPTS.includes(d.rounds)) S.rounds=d.rounds;
+    if(Array.isArray(d.cats)){const ok=d.cats.filter(x=>catById[x]);if(ok.length) S.cats=new Set(ok);}
+    if(LEVELS.some(l=>l[0]===d.level)) S.level=d.level;
+    if(typeof d.doubles==='boolean') S.doubles=d.doubles;
+    if(typeof d.sound==='boolean') S.sound=d.sound;
+    if(typeof d.vibrate==='boolean') S.vibrate=d.vibrate;
+    if(['auto','light','dark'].includes(d.theme)) S.theme=d.theme;
+  }
+}catch(e){}
+
+function saveGame(){
+  try{
+    const g={v:3,nc:S.nc,gn:S.gn,glevel:S.glevel,qs:S.qs,spares:S.spares,i:S.i,phase:S.phase==='count'?'ask':S.phase,marks:S.marks,
+      pts:S.pts,matches:S.matches,conflicts:S.conflicts,streak:S.streak,best:S.best,cited:S.cited,hist:S.hist,current:S.current,snap:S.snap,
+      usedPr:[...S.usedPr],prDone:S.prDone,prTotal:S.prTotal};
+    localStorage.setItem(GKEY,JSON.stringify(g));
+    S.game={i:S.i,n:S.qs.length,nc:S.nc,gn:S.gn.slice()};
+  }catch(e){}
+}
+function clearGame(){try{localStorage.removeItem(GKEY);}catch(e){}S.game=null;}
+function readGame(){
+  try{
+    const g=JSON.parse(localStorage.getItem(GKEY)||'null');
+    if(g&&g.v===3&&Array.isArray(g.qs)&&g.qs.length&&g.i<g.qs.length&&NC_OPTS.includes(g.nc)) return g;
+  }catch(e){}
+  return null;
+}
+(function(){const g=readGame();if(g) S.game={i:g.i,n:g.qs.length,nc:g.nc,gn:g.gn};})();
+
+const app=document.getElementById('app');
+const dock=document.getElementById('dock');
+const overlay=document.getElementById('overlay');
+const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let timers=[];
+let lastKey='';
+/* Instalado como app (tela cheia): o botão voltar do Android fecha menus e janelas em vez de sair. */
+const STANDALONE=!!window.__PWA&&((window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true);
+let hOpen=false;
+function at(fn,ms){timers.push(setTimeout(fn,ms));}
+function clearTimers(){timers.forEach(clearTimeout);timers=[];}
+
+/* ============ helpers ============ */
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function ic(n,cls){return '<svg class="ic'+(cls?' '+cls:'')+'" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-'+n+'"/></svg>';}
+function nm(i){return (S.gn[i]||'').trim()||DEFAULT_NAMES[i];}
+function ini(i){return nm(i).charAt(0).toUpperCase();}
+function cname(c){return nm(c*2)+' & '+nm(c*2+1);}
+function cs(c){const k=(c%6)+1;return 'style="--cc:var(--c'+k+');--onc:var(--on-c'+k+')"';}
+function couples(){return Array.from({length:S.nc},(_,i)=>i);}
+function plural(n,a,b){return n===1?a:b;}
+function shuffle(a){const r=a.slice();for(let i=r.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[r[i],r[j]]=[r[j],r[i]];}return r;}
+function pickOne(a){return a[Math.floor(Math.random()*a.length)];}
+function poolQ(){return ALLQ.filter(q=>S.cats.has(q.cat));}
+function rankOf(c){return 1+S.pts.filter(p=>p>S.pts[c]).length;}
+function rankOrder(){return couples().sort((a,b)=>S.pts[b]-S.pts[a]||S.matches[b]-S.matches[a]);}
+function topOf(arr){const m=Math.max.apply(null,arr);return {m:m,idx:arr.map((v,i)=>v===m?i:-1).filter(i=>i>=0)};}
+function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+function toast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove('show'),2200);
+}
+function buzz(p){try{if(S.vibrate&&navigator.vibrate) navigator.vibrate(p);}catch(e){}}
+function applyTheme(){
+  const r=document.documentElement;
+  if(S.theme==='auto'){if(r.dataset.myTheme){r.removeAttribute('data-theme');delete r.dataset.myTheme;}}
+  else{r.setAttribute('data-theme',S.theme);r.dataset.myTheme='1';}
+}
+
+/* ============ som ============ */
+let actx=null;
+function ac(){
+  if(!actx){try{actx=new (window.AudioContext||window.webkitAudioContext)();}catch(e){actx=null;}}
+  if(actx&&actx.state==='suspended'){try{actx.resume();}catch(e){}}
+  return actx;
+}
+function tone(freq,t0,dur,type,vol,slideTo){
+  if(!S.sound) return;
+  const a=ac();if(!a) return;
+  try{
+    const o=a.createOscillator(),g=a.createGain(),t=a.currentTime+t0;
+    o.type=type||'sine';
+    o.frequency.setValueAtTime(freq,t);
+    if(slideTo) o.frequency.exponentialRampToValueAtTime(slideTo,t+dur);
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(vol||.1,t+0.015);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+    o.connect(g);g.connect(a.destination);
+    o.start(t);o.stop(t+dur+0.05);
+  }catch(e){}
+}
+const SFX={
+  click(){tone(540,0,.06,'triangle',.07);},
+  select(){tone(720,0,.05,'sine',.08);},
+  open(){tone(480,0,.06,'triangle',.06);tone(640,.05,.07,'triangle',.06);},
+  tick(){tone(900,0,.08,'square',.05);},
+  go(){tone(523,0,.1,'sawtooth',.06);tone(659,.09,.1,'sawtooth',.06);tone(1047,.18,.35,'triangle',.12);},
+  match(){[523,659,784,1047].forEach((f,i)=>tone(f,i*.07,.2,'triangle',.11));},
+  conflict(){tone(260,0,.4,'sawtooth',.08,110);tone(196,.04,.4,'square',.05,80);},
+  combo(){[784,988,1175,1568].forEach((f,i)=>tone(f,i*.06,.18,'square',.05));},
+  swap(){tone(600,0,.05,'triangle',.07);tone(900,.06,.07,'triangle',.07);},
+  done(){tone(660,0,.08,'sine',.1);tone(990,.08,.14,'sine',.1);},
+  fanfare(){[[523,0,.16],[523,.16,.16],[523,.32,.16],[784,.48,.24],[659,.74,.14],[784,.88,.14],[1047,1.04,.6]].forEach(n=>tone(n[0],n[1],n[2],'triangle',.12));}
+};
+
+/* ============ efeitos ============ */
+const cv=document.getElementById('fx'),cx=cv.getContext?cv.getContext('2d'):null;
+let parts=[],raf=0;
+function sizeCv(){
+  if(!cx) return;
+  const d=window.devicePixelRatio||1;
+  cv.width=Math.round(window.innerWidth*d);cv.height=Math.round(window.innerHeight*d);
+  cx.setTransform(d,0,0,d,0,0);
+}
+window.addEventListener('resize',sizeCv);sizeCv();
+function confetti(n){
+  if(reduce||!cx) return;
+  const cols=[css('--c1'),css('--c2'),css('--c3'),css('--accent'),'#F2B705'];
+  const W=window.innerWidth,H=window.innerHeight;
+  for(let i=0;i<n;i++){
+    parts.push({x:W/2+(Math.random()-.5)*W*.5,y:H*.4,vx:(Math.random()-.5)*10,vy:-Math.random()*12-3,g:.3,s:6+Math.random()*6,r:Math.random()*6.28,vr:(Math.random()-.5)*.4,c:cols[i%cols.length]});
+  }
+  if(!raf) loop();
+}
+function loop(){
+  const W=window.innerWidth,H=window.innerHeight;
+  cx.clearRect(0,0,W,H);
+  parts=parts.filter(p=>p.y<H+30);
+  parts.forEach(p=>{
+    p.vy+=p.g;p.vx*=.992;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
+    cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);cx.restore();
+  });
+  raf=parts.length?requestAnimationFrame(loop):0;
+  if(!raf) cx.clearRect(0,0,W,H);
+}
+function shake(){
+  if(reduce) return;
+  app.classList.remove('shake');void app.offsetWidth;app.classList.add('shake');
+  at(()=>app.classList.remove('shake'),600);
+}
+
+/* ============ barra, base e telas ============ */
+function appbar(){
+  let mid='',right='',pb='';
+  if(S.screen==='play'){
+    mid='<div class="ttl">Pergunta '+(S.i+1)+' de '+S.qs.length+'</div>';
+    right='<button type="button" class="iconbtn" data-act="open-score" aria-label="Placar">'+ic('trophy')+'</button>';
+    const pct=Math.round((S.i+(S.phase==='reveal'?1:0))/S.qs.length*100);
+    pb='<div class="pb"><i style="width:'+pct+'%"></i></div>';
+  }else{
+    mid=S.screen==='home'?'<span class="brand">'+ic('heart','fill')+'Quem é mais?</span>':'<div class="ttl">'+(S.screen==='setup'?'Novo jogo':'Resultado')+'</div>';
+    right='<button type="button" class="iconbtn" data-act="sound" aria-pressed="'+S.sound+'" aria-label="'+(S.sound?'Desligar som':'Ligar som')+'">'+ic(S.sound?'volume':'mute')+'</button>';
+  }
+  return '<header class="appbar"><button type="button" class="iconbtn" data-act="open-menu" aria-label="Abrir menu">'+ic('menu')+'</button>'+mid+right+pb+'</header>';
+}
+
+function kv(){
+  const tags=CATS.map(c=>'<span class="tag">'+ic(c.icon)+esc(c.name)+'</span>').join('');
+  return `
+  <header class="kv">
+    <div class="stage" aria-hidden="true">
+      <svg class="art" viewBox="0 0 360 176">
+        <rect x="14" y="14" width="152" height="68" rx="22" style="fill:var(--c1)"/>
+        <path d="M46 78 L40 106 L74 80 Z" style="fill:var(--c1)"/>
+        <text x="90" y="58" text-anchor="middle" class="bt" style="fill:var(--on-c1)" font-size="30">VOCÊ!</text>
+        <rect x="196" y="82" width="150" height="68" rx="22" style="fill:var(--c3)"/>
+        <path d="M312 146 L324 172 L288 148 Z" style="fill:var(--c3)"/>
+        <text x="271" y="126" text-anchor="middle" class="bt" style="fill:var(--on-c3)" font-size="23">NÃO, VOCÊ!</text>
+        <svg x="170" y="34" width="42" height="42" class="ic fill pulse" style="color:var(--accent)" viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+        <circle cx="322" cy="34" r="22" style="fill:var(--gold)"/>
+        <text x="322" y="45" text-anchor="middle" class="bt" style="fill:#1D1838" font-size="32">?</text>
+        <svg x="184" y="6" width="20" height="20" class="ic fill" style="color:var(--gold)" viewBox="0 0 24 24"><use href="#i-sparkles"/></svg>
+        <svg x="108" y="120" width="22" height="22" class="ic fill" style="color:var(--gold)" viewBox="0 0 24 24"><use href="#i-sparkles"/></svg>
+        <svg x="12" y="124" width="26" height="26" class="ic" style="color:var(--c2)" viewBox="0 0 24 24"><use href="#i-star"/></svg>
+        <svg x="238" y="154" width="18" height="18" class="ic fill" style="color:var(--accent)" viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+        <circle cx="262" cy="26" r="7" fill="none" style="stroke:var(--c2)" stroke-width="3"/>
+      </svg>
+    </div>
+    <div class="kvtext">
+      <span class="sticker">${ic('star','fill')} Edição casais</span>
+      <h1>Quem é <span class="hl">mais?</span></h1>
+      <p class="lede">Cada casal aponta entre si, ao mesmo tempo. Apontaram a mesma pessoa, ponto. Divergiram, prenda.</p>
+    </div>
+    <div class="marquee" aria-hidden="true"><div class="track">${tags}${tags}</div></div>
+  </header>`;
+}
+
+function viewHome(){
+  const g=S.game;
+  let card='';
+  if(g){
+    const line=Array.from({length:g.nc},(_,c)=>(g.gn[c*2]||DEFAULT_NAMES[c*2])+' & '+(g.gn[c*2+1]||DEFAULT_NAMES[c*2+1])).join(' · ');
+    card='<div class="card resume"><p class="label">Partida em andamento</p><b>Pergunta '+(g.i+1)+' de '+g.n+'</b><span class="hint clamp">'+g.nc+' casais: '+esc(line)+'</span></div>';
+  }
+  const facts='<div class="facts"><span>'+ic('dice')+ALLQ.length+' perguntas</span><span>'+ic('flame')+PRENDAS.length+' prendas</span><span>'+ic('users')+'2 a 6 casais</span></div>';
+  return kv()+card+facts;
+}
+
+function viewSetup(){
+  const total=poolQ().length;
+  const ncs=NC_OPTS.map(n=>'<button type="button" class="opt num" data-act="nc" data-v="'+n+'" aria-pressed="'+(S.nc===n)+'">'+n+'</button>').join('');
+  const rounds=ROUND_OPTS.map(n=>'<button type="button" class="opt" data-act="rounds" data-v="'+n+'" aria-pressed="'+(S.rounds===n)+'">'+(n===0?'Todas ('+total+')':n)+'</button>').join('');
+  const cats=CATS.map(c=>'<button type="button" class="opt" data-act="cat" data-v="'+c.id+'" aria-pressed="'+S.cats.has(c.id)+'">'+ic(c.icon)+esc(c.name)+'</button>').join('');
+  const levels=LEVELS.map(l=>'<button type="button" class="opt" data-act="level" data-v="'+l[0]+'" aria-pressed="'+(S.level===l[0])+'">'+l[1]+'</button>').join('');
+  const people=Array.from({length:S.nc},(_,c)=>{
+    const a=c*2,b=a+1;
+    return '<fieldset class="couple" '+cs(c)+'><legend><span class="dot"></span>Casal '+(c+1)+'</legend><div class="pair">'+
+      '<input id="p'+a+'" class="nameinput" data-i="'+a+'" value="'+esc(S.names[a])+'" maxlength="16" autocomplete="off" aria-label="Nome 1 do casal '+(c+1)+'">'+
+      '<span class="amp">'+ic('heart','fill')+'</span>'+
+      '<input id="p'+b+'" class="nameinput" data-i="'+b+'" value="'+esc(S.names[b])+'" maxlength="16" autocomplete="off" aria-label="Nome 2 do casal '+(c+1)+'">'+
+      '</div></fieldset>';
+  }).join('');
+  return '<div class="pagehead"><button type="button" class="link" data-act="home">'+ic('back')+'Início</button><h1>Novo jogo</h1></div>'+
+  '<section class="card"><p class="label">Quantos casais</p><div class="chips">'+ncs+'</div><p class="hint">'+S.nc+' casais, '+(S.nc*2)+' jogadores.</p></section>'+
+  '<section class="card"><p class="label">Jogadores</p>'+people+'<p class="hint">Os nomes abaixo são de exemplo. Troque pelos de vocês.</p></section>'+
+  '<section class="card"><p class="label">Quantas perguntas</p><div class="chips">'+rounds+'</div>'+
+  '<p class="label" style="margin-top:6px">Categorias</p><div class="chips">'+cats+'</div><p class="hint">'+total+' perguntas disponíveis nas categorias marcadas.</p></section>'+
+  '<section class="card"><p class="label">Prendas</p><div class="chips">'+levels+'</div><p class="hint">'+LEVEL_HINT[S.level]+'</p>'+
+  '<label class="switchrow" for="doubles"><div><b>Rodadas em dobro</b><span>Algumas perguntas valem 2 pontos.</span></div>'+
+  '<input id="doubles" class="switch" type="checkbox" role="switch" data-act="doubles"'+(S.doubles?' checked':'')+'></label></section>';
+}
+
+function scoresRow(){
+  return '<div class="scores">'+couples().map(c=>
+    '<div class="score" '+cs(c)+'><div class="row"><span class="n" data-score="'+c+'">'+S.shown[c]+'</span>'+
+    (S.streak[c]>=2?'<span class="fl">'+ic('flame','fill')+S.streak[c]+'</span>':'')+'</div>'+
+    '<span class="t"><span class="dot"></span><span>'+esc(cname(c))+'</span></span></div>').join('')+'</div>';
+}
+
+function viewMark(){
+  const cards=couples().map(c=>{
+    const a=c*2,b=a+1,m=S.marks[c];
+    return '<div class="markcard'+(m!==null?' done':'')+'" '+cs(c)+'><div class="mhead"><span class="dot"></span><b>'+esc(cname(c))+'</b></div><div class="mopts">'+
+      '<button type="button" class="mopt" data-act="mark" data-c="'+c+'" data-v="'+a+'" aria-pressed="'+(m===a)+'"><i class="av">'+esc(ini(a))+'</i><span>'+esc(nm(a))+'</span></button>'+
+      '<button type="button" class="mopt" data-act="mark" data-c="'+c+'" data-v="'+b+'" aria-pressed="'+(m===b)+'"><i class="av">'+esc(ini(b))+'</i><span>'+esc(nm(b))+'</span></button>'+
+      '<button type="button" class="mopt x" data-act="mark" data-c="'+c+'" data-v="x" aria-pressed="'+(m==='x')+'" aria-label="Apontaram para pessoas diferentes">'+ic('bolt')+'<span>Divergiram</span></button>'+
+      '</div></div>';
+  }).join('');
+  return '<section class="section"><p class="label">Para quem cada casal apontou?</p>'+cards+
+    '<p class="hint">Os dois apontaram para a mesma pessoa? Toque no nome dela. Apontaram para lados diferentes? Toque em Divergiram.</p></section>';
+}
+
+function prendaBlock(r){
+  if(!r.prenda) return '<p class="hint">Sem prendas nesta partida. Fica só sem o ponto.</p>';
+  const p=r.prenda,t=TAGS[p.tag];
+  const fl=Array.from({length:p.l}).map(()=>ic('flame','fill')).join('');
+  return '<div class="pren"><div class="pmeta"><span class="k">'+ic(t.i)+t.n+'</span><span class="lvl" aria-label="Nível '+p.l+' de 3">'+fl+'</span></div>'+
+    '<p class="ptext">'+esc(p.t)+'</p><div class="pact">'+
+    '<button type="button" class="mini" data-act="swappr" data-c="'+r.c+'">'+ic('swap')+'Trocar prenda</button>'+
+    '<button type="button" class="mini" data-act="done" data-c="'+r.c+'" aria-pressed="'+r.done+'">'+ic('check')+'Cumprida</button></div></div>';
+}
+
+function viewReveal(){
+  const step=S.nc>3?'.45s':'.65s';
+  const cards=S.current.map((r,k)=>{
+    const cls='rcard '+r.status+(S.animReveal?' anim':'');
+    if(r.status==='match'){
+      return '<div class="'+cls+'" style="--k:'+k+';--step:'+step+'"><div class="rhead"><span class="stat">'+ic('check')+'</span>'+
+        '<div class="rtitle"><b>'+esc(cname(r.c))+'</b><span>Apontaram para '+esc(nm(r.who))+'. '+esc(r.quip)+'</span></div>'+
+        '<span class="pts">+'+r.pts+'</span></div>'+
+        (r.combo?'<div><span class="combo">'+ic('flame','fill')+'Combo de sintonia +1</span></div>':'')+'</div>';
+    }
+    return '<div class="'+cls+'" style="--k:'+k+';--step:'+step+'"><div class="rhead"><span class="stat">'+ic('bolt')+'</span>'+
+      '<div class="rtitle"><b>'+esc(cname(r.c))+'</b><span>Divergiram! '+esc(r.quip)+'</span></div></div>'+prendaBlock(r)+'</div>';
+  }).join('');
+  return '<div class="rlist">'+cards+'</div>';
+}
+
+function viewPlay(){
+  const q=S.qs[S.i],cat=catById[q.cat];
+  const head=scoresRow()+
+    '<section class="qcard"><div class="qtop"><span class="pill">'+ic(cat.icon)+esc(cat.name)+'</span>'+
+    (q.double?'<span class="badge2">'+ic('bolt','fill')+'Vale em dobro</span>':'')+'</div><h2>'+esc(q.t)+'</h2></section>';
+  let body='';
+  if(S.phase==='ask'){
+    body='<p class="hint center">Cada casal pensa em silêncio. Quando chegar no zero, os dois apontam ao mesmo tempo, um para o outro ou para si.</p>';
+  }else if(S.phase==='count'){
+    body='<div class="count" role="status" aria-live="assertive">'+(S.count>0?'<div class="num">'+S.count+'</div>':'<div class="go">Apontem!</div>')+
+      '<p class="hint">Cada casal aponta entre si.</p></div>';
+  }else if(S.phase==='mark'){body=viewMark();}
+  else{body=viewReveal();}
+  return head+body;
+}
+
+function awards(){
+  const out=[];
+  const mt=topOf(S.matches);if(mt.m>0) out.push({i:'heart',t:'Casal mais afinado',v:mt.idx.map(cname).join(' e '),s:mt.m+' '+plural(mt.m,'sintonia','sintonias')});
+  const ct=topOf(S.conflicts);if(ct.m>0) out.push({i:'bolt',t:'Casal mais caótico',v:ct.idx.map(cname).join(' e '),s:ct.m+' '+plural(ct.m,'divergência','divergências')});
+  const pt=topOf(S.cited);if(pt.m>0) out.push({i:'star',t:'Mais citado(a) da noite',v:pt.idx.map(nm).join(' e '),s:'Apontado(a) '+pt.m+' '+plural(pt.m,'vez','vezes')});
+  const bt=topOf(S.best);if(bt.m>=2) out.push({i:'flame',t:'Maior sequência',v:bt.idx.map(cname).join(' e '),s:bt.m+' sintonias seguidas'});
+  if(S.prTotal>0) out.push({i:'check',t:'Prendas cumpridas',v:S.prDone+' de '+S.prTotal,s:'Marcadas como cumpridas'});
+  return out;
+}
+function shareText(){
+  const order=rankOrder();
+  let t='🏆 Quem é mais? Resultado do jogo de casais\n\n';
+  order.forEach(c=>{t+=rankOf(c)+'º '+cname(c)+' ('+S.pts[c]+' '+plural(S.pts[c],'ponto','pontos')+')\n';});
+  const a=awards().filter(x=>x.i!=='check');
+  if(a.length) t+='\n';
+  a.forEach(x=>{t+=x.t+': '+x.v+' ('+x.s+')\n';});
+  t+='\n'+S.hist.length+' '+plural(S.hist.length,'rodada','rodadas')+' jogadas.';
+  return t;
+}
+
+function viewEnd(){
+  const order=rankOrder();
+  const top3=order.slice(0,3);
+  const disp=top3.length===2?[top3[1],top3[0]]:top3.length>=3?[top3[1],top3[0],top3[2]]:top3;
+  const H={1:132,2:98,3:72};
+  const podium=disp.map(c=>{
+    const r=Math.min(rankOf(c),3);
+    return '<div class="pcol" '+cs(c)+'>'+(rankOf(c)===1&&S.pts[c]>0?ic('crown','fill lg crown'):'<span style="height:28px"></span>')+
+      '<span class="nm">'+esc(cname(c))+'</span><span class="pt">'+S.pts[c]+'</span>'+
+      '<div class="block" style="height:'+H[r]+'px">'+rankOf(c)+'º</div></div>';
+  }).join('');
+  const aw=awards().map(a=>'<div class="award">'+ic(a.i)+'<span>'+a.t+'</span><b>'+esc(a.v)+'</b><span>'+esc(a.s)+'</span></div>').join('');
+  const maxP=Math.max(1,Math.max.apply(null,S.pts));
+  const table=order.map(c=>
+    '<div class="trow" '+cs(c)+'><div class="nm"><span class="dot"></span><span>'+rankOf(c)+'º '+esc(cname(c))+'</span></div><span class="v">'+S.pts[c]+'</span>'+
+    '<small>'+S.matches[c]+' '+plural(S.matches[c],'sintonia','sintonias')+' · '+S.conflicts[c]+' '+plural(S.conflicts[c],'divergência','divergências')+'</small>'+
+    '<div class="bar"><i style="width:'+Math.round(S.pts[c]/maxP*100)+'%"></i></div></div>').join('');
+  const recap=S.hist.map(h=>{
+    const chips=h.res.map(r=>r.status==='match'
+      ?'<span class="rr ok">'+ic('check')+esc(nm(r.who))+'</span>'
+      :'<span class="rr no">'+ic('bolt')+esc(cname(r.c))+'</span>').join('');
+    return '<li><b>'+esc(h.q)+(h.double?' (em dobro)':'')+'</b><div class="rrs">'+chips+'</div></li>';
+  }).join('');
+  const topC=topOf(S.pts);
+  const finalPr=topC.m>0
+    ?'<div class="pren"><div class="pmeta"><span class="k">'+ic('trophy')+(topC.idx.length>1?'Casais empatados':'Casal campeão')+'</span></div>'+
+      '<p class="ptext"><b>'+esc(topC.idx.map(cname).join(' e '))+'</b> com '+topC.m+' '+plural(topC.m,'ponto','pontos')+'.</p>'+
+      (S.glevel!=='off'?'<p class="hint">Prenda do campeão: '+esc(S.finalPr)+'</p>':'')+'</div>'
+    :'<div class="pren"><p class="ptext">Ninguém pontuou. Joguem de novo e tentem se conhecer melhor.</p></div>';
+  const card=S.shareImg
+    ?'<img id="sharecard" class="sharecard" src="'+S.shareImg+'" alt="Cartão com o resultado do jogo"><p class="hint">Segure a imagem para salvar ou compartilhar. Se preferir, tire um print.</p>':'';
+  const wa='https://wa.me/?text='+encodeURIComponent(shareText());
+  return '<div class="pagehead"><span class="kicker">Fim de jogo</span><h1>Resultado</h1></div>'+
+    '<div class="podium" style="grid-template-columns:repeat('+disp.length+',minmax(0,1fr))">'+podium+'</div>'+finalPr+
+    (aw?'<section class="section"><p class="label">Destaques</p><div class="awards">'+aw+'</div></section>':'')+
+    '<section class="card"><p class="label">Placar</p><div>'+table+'</div></section>'+
+    '<section class="card"><p class="label">Compartilhar</p><div class="shbtns">'+
+      '<button type="button" class="btn ghost" data-act="copy">'+ic('copy')+'Copiar texto</button>'+
+      '<a class="btn ghost" href="'+wa+'" target="_blank" rel="noopener noreferrer">'+ic('chat')+'WhatsApp</a>'+
+      '<button type="button" class="btn ghost full" data-act="gencard">'+ic('image')+(S.shareImg?'Gerar cartão de novo':'Gerar cartão em imagem')+'</button></div>'+
+      card+
+      '<details id="sharebox"><summary class="hint" style="cursor:pointer">Ver texto para colar</summary><textarea class="sharetxt" readonly aria-label="Texto do resultado">'+esc(shareText())+'</textarea></details></section>'+
+    '<details class="recap"><summary>Ver todas as rodadas</summary><ol>'+recap+'</ol></details>'+
+    '<button type="button" class="btn ghost" data-act="newgame-ask">Mudar jogadores e perguntas</button>';
+}
+
+function dockHtml(){
+  if(S.screen==='home'){
+    return S.game
+      ?'<button type="button" class="btn ghost" data-act="setup">Novo jogo</button><button type="button" class="btn" data-act="continue">'+ic('play','fill')+'Continuar</button>'
+      :'<button type="button" class="btn ghost" data-act="open-rules">'+ic('info')+'Como jogar</button><button type="button" class="btn" data-act="setup">'+ic('dice')+'Novo jogo</button>';
+  }
+  if(S.screen==='setup') return '<button type="button" class="btn" data-act="start">'+ic('dice')+'Começar o jogo</button>';
+  if(S.screen==='end') return '<button type="button" class="btn" data-act="again">'+ic('again')+'Jogar de novo</button>';
+  if(S.phase==='ask') return '<button type="button" class="btn ghost" data-act="swapq"'+(S.spares.length?'':' disabled')+' aria-label="Trocar pergunta">'+ic('swap')+'Trocar</button>'+
+    '<button type="button" class="btn" data-act="count">'+ic('hand')+'Contar até 3</button>';
+  if(S.phase==='mark'){
+    const ok=S.marks.every(m=>m!==null);
+    return '<button type="button" class="btn" data-act="reveal"'+(ok?'':' disabled')+'>'+ic('sparkles')+'Revelar resultado</button>';
+  }
+  if(S.phase==='reveal'){
+    const last=S.i>=S.qs.length-1;
+    return '<button type="button" class="btn ghost" data-act="undo" aria-label="Corrigir marcação">'+ic('undo')+'Corrigir</button>'+
+      '<button type="button" class="btn" data-act="next">'+(last?ic('trophy')+'Resultado final':ic('arrow')+'Próxima')+'</button>';
+  }
+  return '';
+}
+function renderDock(){
+  const h=dockHtml();
+  dock.hidden=!h;
+  dock.innerHTML=h?'<div class="dockin">'+h+'</div>':'';
+  document.body.classList.toggle('hasdock',!!h);
+}
+
+function render(){
+  const key=S.screen+'|'+S.phase+'|'+S.i+'|'+S.nc;
+  const enter=key!==lastKey;lastKey=key;
+  const view=S.screen==='home'?viewHome():S.screen==='setup'?viewSetup():S.screen==='play'?viewPlay():viewEnd();
+  app.innerHTML=appbar()+'<main class="view'+(enter?' enter':'')+'">'+view+'</main>';
+  renderDock();
+  if(S.screen==='play'&&S.phase!=='count') saveGame();
+}
+
+/* ============ folhas e diálogos ============ */
+function mitem(act,icon,label,sub,cls){
+  return '<button type="button" class="mitem'+(cls?' '+cls:'')+'" data-act="'+act+'"><span class="bub">'+ic(icon)+'</span><span class="tx"><b>'+label+'</b>'+(sub?'<span>'+sub+'</span>':'')+'</span><span class="go">'+ic('chev')+'</span></button>';
+}
+function sheetMenu(){
+  const play=S.screen==='play';
+  let items='';
+  if(play){
+    items+=mitem('open-score','trophy','Placar','Pontos de cada casal');
+    items+=mitem('restart-ask','again','Reiniciar partida','Zera os pontos, mesmas configurações');
+    items+=mitem('finish-ask','flag','Encerrar e ver resultado','Termina agora e mostra o pódio');
+    items+=mitem('newgame-ask','dice','Nova partida','Escolher casais, categorias e prendas');
+  }
+  items+=mitem('open-rules','info','Como jogar','Regras e pontuação');
+  const themes=[['auto','Automático'],['light','Claro'],['dark','Escuro']].map(t=>'<button type="button" class="opt" data-act="theme" data-v="'+t[0]+'" aria-pressed="'+(S.theme===t[0])+'">'+t[1]+'</button>').join('');
+  const prefs=
+    '<label class="switchrow" for="t-sound"><div><b>Som</b><span>Efeitos sonoros do jogo</span></div><input id="t-sound" class="switch" type="checkbox" role="switch" data-act="t-sound"'+(S.sound?' checked':'')+'></label>'+
+    '<label class="switchrow" for="t-vib"><div><b>Vibração</b><span>Toque suave nas contagens e resultados</span></div><input id="t-vib" class="switch" type="checkbox" role="switch" data-act="t-vib"'+(S.vibrate?' checked':'')+'></label>'+
+    '<div class="switchrow" style="flex-direction:column;align-items:flex-start;gap:10px"><div><b>Tema</b><span>Aparência do app</span></div><div class="chips">'+themes+'</div></div>';
+  const exit=S.screen!=='home'?mitem('exit','exit',play?'Sair para o início':'Voltar ao início',play?'A partida fica salva':'','warn'):'';
+  return '<div class="grab"></div><div class="shead"><b>Menu</b><button type="button" class="iconbtn" data-act="close" aria-label="Fechar">'+ic('x')+'</button></div>'+
+    '<div class="mlist">'+items+'</div><p class="label">Preferências</p><div class="mlist">'+prefs+'</div>'+(exit?'<div class="mlist">'+exit+'</div>':'');
+}
+function sheetScore(){
+  const order=rankOrder(),max=Math.max(1,Math.max.apply(null,S.pts));
+  const rows=order.map(c=>
+    '<div class="trow" '+cs(c)+'><div class="nm"><span class="dot"></span><span>'+rankOf(c)+'º '+esc(cname(c))+'</span></div><span class="v">'+S.pts[c]+'</span>'+
+    '<small>'+S.matches[c]+' '+plural(S.matches[c],'sintonia','sintonias')+' · '+S.conflicts[c]+' '+plural(S.conflicts[c],'divergência','divergências')+(S.streak[c]>=2?' · sequência de '+S.streak[c]:'')+'</small>'+
+    '<div class="bar"><i style="width:'+Math.round(S.pts[c]/max*100)+'%"></i></div></div>').join('');
+  return '<div class="grab"></div><div class="shead"><b>Placar</b><button type="button" class="iconbtn" data-act="close" aria-label="Fechar">'+ic('x')+'</button></div>'+
+    '<p class="hint">Rodada '+(S.i+1)+' de '+S.qs.length+'</p><div>'+rows+'</div>';
+}
+function sheetRules(){
+  const steps=[['hand','Todos apontam','Cada casal responde entre si ao mesmo tempo: quem é mais?'],
+    ['heart','Mesma pessoa?','Apontaram para a mesma pessoa: ponto de sintonia.'],
+    ['bolt','Divergiram?','Sem ponto, e o casal paga uma prenda sorteada.']];
+  const st=steps.map(s=>'<div class="step"><span class="bub">'+ic(s[0],'lg')+'</span><div><b>'+s[1]+'</b><span>'+s[2]+'</span></div></div>').join('');
+  return '<div class="grab"></div><div class="shead"><b>Como jogar</b><button type="button" class="iconbtn" data-act="close" aria-label="Fechar">'+ic('x')+'</button></div>'+
+    '<div class="steps">'+st+'</div>'+
+    '<ul class="rules"><li>Sintonia vale 1 ponto. Em rodada em dobro, vale 2.</li><li>Três sintonias seguidas do mesmo casal dão +1 de bônus.</li>'+
+    '<li>Quem estiver com o celular marca para quem cada casal apontou e toca em revelar.</li>'+
+    '<li>Marcou errado? Use Corrigir na tela do resultado para voltar e refazer a rodada.</li>'+
+    '<li>A partida fica salva. Dá para sair e continuar depois.</li></ul>';
+}
+function renderOverlay(){
+  let h='';
+  if(S.sheet){
+    const label={menu:'Menu',score:'Placar',rules:'Como jogar'}[S.sheet];
+    h+='<div class="scrim" data-act="close"></div><section class="sheet'+(S.sheetFresh?' anim':'')+'" role="dialog" aria-modal="true" aria-label="'+label+'">'+
+      (S.sheet==='menu'?sheetMenu():S.sheet==='score'?sheetScore():sheetRules())+'</section>';
+    S.sheetFresh=false;
+  }
+  if(S.dialog){
+    const d=S.dialog;
+    h+='<div class="scrim top" data-act="dlg-no"></div><div class="dialog anim" role="alertdialog" aria-modal="true" aria-label="'+esc(d.title)+'"><h3>'+esc(d.title)+'</h3><p>'+esc(d.text)+'</p>'+
+      '<div class="row"><button type="button" class="btn ghost" data-act="dlg-no">Cancelar</button><button type="button" class="btn'+(d.danger?' danger':'')+'" data-act="dlg-ok">'+esc(d.ok)+'</button></div></div>';
+  }
+  overlay.innerHTML=h;
+  document.body.classList.toggle('lock',!!(S.sheet||S.dialog));
+  if(S.sheet||S.dialog){
+    const f=overlay.querySelector(S.dialog?'.dialog .btn':'.sheet .iconbtn');
+    if(f&&f.focus) try{f.focus({preventScroll:true});}catch(e){}
+  }
+  if(STANDALONE){
+    try{
+      const vis=!!(S.sheet||S.dialog);
+      if(vis&&!hOpen){history.pushState({ov:1},'');hOpen=true;}
+      else if(!vis&&hOpen){hOpen=false;history.back();}
+    }catch(e){}
+  }
+}
+function openSheet(n){S.sheet=n;S.sheetFresh=true;SFX.open();renderOverlay();}
+function closeSheet(){S.sheet=null;S.dialog=null;renderOverlay();}
+function askDialog(title,text,ok,act,danger){S.dialog={title:title,text:text,ok:ok,act:act,danger:!!danger};renderOverlay();}
+
+/* ============ cartão de imagem ============ */
+function rr(g,x,y,w,h,r){
+  g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath();
+}
+function fit(g,text,maxW,size,weight,fam){
+  let s=size;
+  do{g.font=weight+' '+s+'px '+fam;s-=2;}while(g.measureText(text).width>maxW&&s>14);
+}
+async function makeCard(){
+  try{await document.fonts.load('800 80px "Bricolage Grotesque"');await document.fonts.load('500 30px "DM Sans"');}catch(e){}
+  const D='"Bricolage Grotesque","Trebuchet MS",sans-serif',B='"DM Sans",system-ui,sans-serif';
+  const W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;
+  const g=c.getContext('2d');
+  const bg=css('--bg'),sf=css('--surface'),ink=css('--ink'),mu=css('--muted'),ln=css('--line'),ac=css('--accent'),gold='#F2B705';
+  g.fillStyle=bg;g.fillRect(0,0,W,H);
+  g.globalAlpha=.1;g.fillStyle=ink;
+  for(let y=24;y<H;y+=36)for(let x=24;x<W;x+=36){g.beginPath();g.arc(x,y,2.4,0,6.283);g.fill();}
+  g.globalAlpha=1;g.textBaseline='alphabetic';g.textAlign='left';
+  g.fillStyle=ac;g.font='700 28px '+B;try{g.letterSpacing='6px';}catch(e){}
+  g.fillText('JOGO DE CASAIS',72,104);
+  try{g.letterSpacing='0px';}catch(e){}
+  g.fillStyle=ink;g.font='800 128px '+D;
+  const w1=g.measureText('Quem é ').width;
+  g.fillText('Quem é ',72,238);
+  g.fillStyle=ac;g.fillText('mais?',72+w1,238);
+  g.fillStyle=mu;g.font='500 30px '+B;
+  g.fillText(new Date().toLocaleDateString('pt-BR')+' · '+S.hist.length+' '+plural(S.hist.length,'rodada','rodadas'),72,292);
+  const order=rankOrder(),n=order.length,gap=16,areaH=640;
+  const rowH=Math.min(188,Math.floor((areaH-gap*(n-1))/n)),k=rowH/188;
+  order.forEach((cp,idx)=>{
+    const y=340+idx*(rowH+gap),ci=(cp%6)+1,col=css('--c'+ci),on=css('--on-c'+ci),mid=y+rowH/2;
+    g.fillStyle=sf;rr(g,72,y,936,rowH,Math.max(14,28*k));g.fill();
+    g.strokeStyle=ln;g.lineWidth=2;g.stroke();
+    g.fillStyle=col;g.beginPath();g.arc(72+88*k+20,mid,Math.max(22,52*k),0,6.283);g.fill();
+    g.fillStyle=on;g.font='800 '+Math.max(24,Math.round(56*k))+'px '+D;g.textAlign='center';g.fillText(String(rankOf(cp)),72+88*k+20,mid+Math.max(8,20*k));
+    g.textAlign='left';g.fillStyle=ink;
+    const tx=72+88*k+20+Math.max(22,52*k)+24;
+    fit(g,cname(cp),880-tx-150*k,Math.max(24,Math.round(54*k)),800,D);g.fillText(cname(cp),tx,mid-(n>4?0:2));
+    g.fillStyle=mu;g.font='500 '+Math.max(16,Math.round(28*k))+'px '+B;
+    g.fillText(S.matches[cp]+' '+plural(S.matches[cp],'sintonia','sintonias')+' · '+S.conflicts[cp]+' '+plural(S.conflicts[cp],'divergência','divergências'),tx,mid+Math.max(22,44*k));
+    g.textAlign='right';g.fillStyle=ink;g.font='800 '+Math.max(30,Math.round(92*k))+'px '+D;g.fillText(String(S.pts[cp]),970,mid+Math.max(10,30*k));
+    g.textAlign='left';
+  });
+  const mt=topOf(S.matches),ct=topOf(S.conflicts),pt=topOf(S.cited);
+  const boxes=[
+    ['MAIS AFINADO',mt.m>0?mt.idx.map(cname).join(' e '):'-'],
+    ['MAIS CAÓTICO',ct.m>0?ct.idx.map(cname).join(' e '):'-'],
+    ['MAIS CITADO(A)',pt.m>0?pt.idx.map(nm).join(' e '):'-']
+  ];
+  boxes.forEach((b,i)=>{
+    const x=72+i*320,y=1010;
+    g.fillStyle=sf;rr(g,x,y,296,200,24);g.fill();g.strokeStyle=ln;g.lineWidth=2;g.stroke();
+    g.fillStyle=mu;g.font='700 22px '+B;try{g.letterSpacing='3px';}catch(e){}
+    g.fillText(b[0],x+24,y+44);
+    try{g.letterSpacing='0px';}catch(e){}
+    g.fillStyle=ink;fit(g,b[1],248,38,800,D);
+    if(g.measureText(b[1]).width<=248){g.fillText(b[1],x+24,y+110);}
+    else{
+      g.font='800 28px '+D;
+      let l1='',l2='';
+      b[1].split(' ').forEach(w=>{if(!l2&&g.measureText((l1+' '+w).trim()).width<=248) l1=(l1+' '+w).trim(); else l2=(l2+' '+w).trim();});
+      g.fillText(l1,x+24,y+104);g.fillText(l2,x+24,y+140);
+    }
+  });
+  g.fillStyle=mu;g.font='500 26px '+B;g.textAlign='center';
+  g.fillText('Quem é mais? · jogo de casais',W/2,1290);
+  return c.toDataURL('image/png');
+}
+async function copyText(t){
+  try{await navigator.clipboard.writeText(t);return true;}catch(e){
+    try{
+      const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();return ok;
+    }catch(err){return false;}
+  }
+}
+
+/* ============ lógica do jogo ============ */
+function startGame(){
+  clearTimers();
+  const nc=S.nc;
+  S.gn=S.names.map((v,i)=>(String(v||'').trim()||DEFAULT_NAMES[i]));
+  S.glevel=S.level;
+  const list=shuffle(poolQ());
+  const n=S.rounds>0?Math.min(S.rounds,list.length):list.length;
+  S.qs=list.slice(0,n).map(q=>({cat:q.cat,t:q.t,double:false}));
+  S.spares=list.slice(n);
+  if(S.doubles&&n>1){
+    shuffle(Array.from({length:n-1},(_,k)=>k+1)).slice(0,Math.max(1,Math.round(n/5))).forEach(k=>{S.qs[k].double=true;});
+  }
+  S.i=0;S.phase='ask';S.marks=Array.from({length:nc},()=>null);S.current=null;S.snap=null;
+  S.pts=zeros(nc);S.shown=zeros(nc);S.matches=zeros(nc);S.conflicts=zeros(nc);S.streak=zeros(nc);S.best=zeros(nc);S.cited=zeros(nc*2);
+  S.hist=[];S.usedPr=new Set();S.prDone=0;S.prTotal=0;S.shareImg=null;S.screen='play';
+  S.sheet=null;S.dialog=null;
+  saveSettings();render();renderOverlay();window.scrollTo(0,0);
+}
+function continueGame(){
+  const g=readGame();
+  if(!g){clearGame();S.screen='setup';render();return;}
+  clearTimers();
+  S.nc=g.nc;S.gn=g.gn;S.glevel=g.glevel;S.qs=g.qs;S.spares=g.spares||[];S.i=g.i;S.phase=g.phase;S.marks=g.marks;
+  S.pts=g.pts;S.shown=g.pts.slice();S.matches=g.matches;S.conflicts=g.conflicts;S.streak=g.streak;S.best=g.best;S.cited=g.cited;
+  S.hist=g.hist||[];S.current=g.current;S.snap=g.snap;S.usedPr=new Set(g.usedPr||[]);S.prDone=g.prDone||0;S.prTotal=g.prTotal||0;
+  S.screen='play';S.shareImg=null;S.sheet=null;S.dialog=null;
+  render();renderOverlay();window.scrollTo(0,0);
+}
+function startCount(){
+  clearTimers();
+  S.phase='count';S.count=3;render();SFX.tick();buzz(15);
+  const tick=()=>{
+    S.count--;render();
+    if(S.count>0){SFX.tick();buzz(15);at(tick,900);}
+    else{SFX.go();buzz([30,40,60]);at(()=>{S.phase='mark';render();},1100);}
+  };
+  at(tick,900);
+}
+function levelsFor(){return ({leve:[1],media:[2],ousada:[3],mix:[1,2,3]})[S.glevel]||[];}
+function pickPrenda(){
+  if(S.glevel==='off') return null;
+  const lv=levelsFor();
+  let p=PRENDAS.filter(x=>lv.includes(x.l)&&!S.usedPr.has(x.id));
+  if(!p.length){PRENDAS.filter(x=>lv.includes(x.l)).forEach(x=>S.usedPr.delete(x.id));p=PRENDAS.filter(x=>lv.includes(x.l));}
+  const x=pickOne(p);S.usedPr.add(x.id);return x;
+}
+function snapshot(){
+  S.snap={pts:S.pts.slice(),matches:S.matches.slice(),conflicts:S.conflicts.slice(),streak:S.streak.slice(),best:S.best.slice(),cited:S.cited.slice(),
+    prDone:S.prDone,prTotal:S.prTotal,usedPr:[...S.usedPr],histLen:S.hist.length};
+}
+function reveal(){
+  if(S.phase!=='mark'||S.marks.some(m=>m===null)) return;
+  clearTimers();snapshot();
+  const q=S.qs[S.i],mult=q.double?2:1;
+  const res=S.marks.map((m,c)=>{
+    if(m==='x'){
+      S.conflicts[c]++;S.streak[c]=0;
+      const p=pickPrenda();if(p) S.prTotal++;
+      return {c:c,status:'conflict',who:null,pts:0,combo:false,prenda:p,done:false,quip:pickOne(QUIP_NO)};
+    }
+    S.matches[c]++;S.streak[c]++;S.best[c]=Math.max(S.best[c],S.streak[c]);S.cited[m]++;
+    let pts=mult,combo=false;
+    if(S.streak[c]%3===0){pts+=1;combo=true;}
+    S.pts[c]+=pts;
+    return {c:c,status:'match',who:m,pts:pts,combo:combo,prenda:null,done:false,quip:pickOne(QUIP_OK)};
+  });
+  S.current=res;
+  S.hist.push({q:q.t,double:q.double,res:res.map(r=>({c:r.c,status:r.status,who:r.who}))});
+  S.phase='reveal';S.animReveal=true;render();S.animReveal=false;
+  const stepMs=S.nc>3?450:650;
+  res.forEach((r,k)=>at(()=>{
+    if(r.status==='match'){SFX.match();}else{SFX.conflict();buzz(80);}
+    S.shown[r.c]=S.pts[r.c];
+    const el=document.querySelector('[data-score="'+r.c+'"]');
+    if(el){el.textContent=S.pts[r.c];el.classList.remove('bump');void el.offsetWidth;if(r.pts>0) el.classList.add('bump');}
+  },400+k*stepMs));
+  const allM=res.every(r=>r.status==='match'),allC=res.every(r=>r.status==='conflict'),anyCombo=res.some(r=>r.combo);
+  at(()=>{
+    if(allM){SFX.combo();confetti(150);}
+    else if(anyCombo){SFX.combo();confetti(70);}
+    if(allC) shake();
+  },400+res.length*stepMs);
+}
+function undoReveal(){
+  if(S.phase!=='reveal'||!S.snap) return;
+  clearTimers();
+  const s=S.snap;
+  S.pts=s.pts.slice();S.matches=s.matches.slice();S.conflicts=s.conflicts.slice();S.streak=s.streak.slice();S.best=s.best.slice();S.cited=s.cited.slice();
+  S.prDone=s.prDone;S.prTotal=s.prTotal;S.usedPr=new Set(s.usedPr);S.hist=S.hist.slice(0,s.histLen);
+  S.shown=S.pts.slice();S.current=null;S.snap=null;S.phase='mark';
+  SFX.swap();toast('Rodada reaberta. Corrija a marcação.');render();
+}
+function endGame(){
+  clearTimers();
+  S.screen='end';S.finalPr=pickOne(FINAL_PRENDAS);S.shareImg=null;S.sheet=null;S.dialog=null;
+  S.shown=S.pts.slice();
+  clearGame();render();renderOverlay();window.scrollTo(0,0);
+  SFX.fanfare();confetti(180);at(()=>confetti(120),600);
+}
+function nextRound(){
+  clearTimers();
+  S.shown=S.pts.slice();
+  S.i++;S.marks=Array.from({length:S.nc},()=>null);S.current=null;S.snap=null;
+  if(S.i>=S.qs.length){endGame();return;}
+  S.phase='ask';render();window.scrollTo(0,0);
+}
+function goHome(){
+  clearTimers();
+  if(S.screen==='play'&&S.phase==='count') S.phase='ask';
+  if(S.screen==='play') saveGame();
+  S.screen='home';S.sheet=null;S.dialog=null;
+  render();renderOverlay();window.scrollTo(0,0);
+}
+function goSetup(){
+  clearTimers();S.screen='setup';S.sheet=null;S.dialog=null;
+  render();renderOverlay();window.scrollTo(0,0);
+}
+function runDialog(){
+  const a=S.dialog&&S.dialog.act;
+  S.dialog=null;S.sheet=null;renderOverlay();
+  if(a==='restart') startGame();
+  else if(a==='newgame'){clearGame();goSetup();}
+  else if(a==='finish') endGame();
+}
+
+/* ============ eventos ============ */
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-act]');if(!t) return;
+  const act=t.dataset.act;
+  switch(act){
+    case 'open-menu': openSheet('menu');break;
+    case 'open-score': S.sheet=null;openSheet('score');break;
+    case 'open-rules': S.sheet=null;openSheet('rules');break;
+    case 'close': closeSheet();break;
+    case 'dlg-no': S.dialog=null;renderOverlay();break;
+    case 'dlg-ok': SFX.click();runDialog();break;
+    case 'restart-ask': askDialog('Reiniciar a partida?','Os pontos e as rodadas voltam ao zero. As configurações continuam as mesmas.','Reiniciar','restart',true);break;
+    case 'finish-ask': askDialog('Encerrar a partida?','O jogo termina agora e mostra o resultado com o que já foi jogado.','Encerrar','finish',true);break;
+    case 'newgame-ask':
+      if(S.screen==='play') askDialog('Começar uma nova partida?','A partida atual será descartada.','Descartar e configurar','newgame',true);
+      else{clearGame();goSetup();}
+      break;
+    case 'exit':
+      if(S.screen==='play'){goHome();toast('Partida salva. Continue quando quiser.');}else goHome();
+      break;
+    case 'sound': S.sound=!S.sound;saveSettings();if(S.sound) SFX.click();render();break;
+    case 'theme': S.theme=t.dataset.v;saveSettings();applyTheme();SFX.click();renderOverlay();break;
+    case 'home': SFX.click();goHome();break;
+    case 'setup': SFX.click();goSetup();break;
+    case 'continue': SFX.click();continueGame();break;
+    case 'nc': SFX.click();S.nc=Number(t.dataset.v);saveSettings();render();break;
+    case 'rounds': SFX.click();S.rounds=Number(t.dataset.v);saveSettings();render();break;
+    case 'cat': {
+      SFX.click();const v=t.dataset.v;
+      if(S.cats.has(v)){if(S.cats.size>1) S.cats.delete(v);}else S.cats.add(v);
+      saveSettings();render();break;
+    }
+    case 'level': SFX.click();S.level=t.dataset.v;saveSettings();render();break;
+    case 'start': case 'again': SFX.click();startGame();break;
+    case 'count': SFX.click();startCount();break;
+    case 'swapq':
+      if(!S.spares.length){toast('Acabaram as perguntas reservas');break;}
+      SFX.swap();{const cur=S.qs[S.i];S.qs[S.i]=Object.assign({},S.spares.pop(),{double:cur.double});}render();break;
+    case 'mark': SFX.select();S.marks[Number(t.dataset.c)]=t.dataset.v==='x'?'x':Number(t.dataset.v);render();break;
+    case 'reveal': reveal();break;
+    case 'undo': undoReveal();break;
+    case 'swappr': {
+      const r=S.current&&S.current.find(x=>x.c===Number(t.dataset.c));
+      if(r&&r.status==='conflict'){
+        if(r.done){r.done=false;S.prDone--;}
+        const p=pickPrenda();if(p) r.prenda=p;
+        SFX.swap();render();
+      }
+      break;
+    }
+    case 'done': {
+      const r=S.current&&S.current.find(x=>x.c===Number(t.dataset.c));
+      if(r&&r.prenda){r.done=!r.done;S.prDone+=r.done?1:-1;if(r.done){SFX.done();confetti(30);}else SFX.click();render();}
+      break;
+    }
+    case 'next': SFX.click();nextRound();break;
+    case 'copy':
+      SFX.click();
+      copyText(shareText()).then(ok=>{
+        if(ok) toast('Resultado copiado');
+        else{toast('Não deu para copiar. Use o texto abaixo.');const d=document.getElementById('sharebox');if(d) d.open=true;}
+      });
+      break;
+    case 'gencard':
+      SFX.click();toast('Gerando o cartão...');
+      makeCard().then(url=>{
+        S.shareImg=url;render();
+        const im=document.getElementById('sharecard');if(im&&im.scrollIntoView) im.scrollIntoView({block:'nearest'});
+      }).catch(()=>toast('Não foi possível gerar o cartão'));
+      break;
+    default: break;
+  }
+});
+document.addEventListener('change',e=>{
+  const t=e.target,a=t.dataset&&t.dataset.act;
+  if(a==='doubles'){S.doubles=t.checked;saveSettings();SFX.click();}
+  else if(a==='t-sound'){S.sound=t.checked;saveSettings();if(S.sound) SFX.click();render();}
+  else if(a==='t-vib'){S.vibrate=t.checked;saveSettings();if(S.vibrate) buzz(30);}
+});
+document.addEventListener('input',e=>{
+  const el=e.target;
+  if(el.classList&&el.classList.contains('nameinput')){S.names[Number(el.dataset.i)]=el.value;saveSettings();}
+});
+window.addEventListener('popstate',()=>{
+  if(hOpen){hOpen=false;S.sheet=null;S.dialog=null;renderOverlay();}
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(S.dialog){S.dialog=null;renderOverlay();}
+    else if(S.sheet) closeSheet();
+  }
+});
+
+applyTheme();
+render();
+</script>
+
+<script>
+if('serviceWorker' in navigator && /^https?:$/.test(location.protocol)){
+  window.addEventListener('load',function(){try{navigator.serviceWorker.register('./sw.js').catch(function(){});}catch(e){}});
+}
+</script>
+
+</body>
+</html>
