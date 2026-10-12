@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "eleventy && node -e \"require('fs').cpSync('static-quem-e-mais','_site/quem-e-mais',{recursive:true})\"",
+    "build": "eleventy && node scripts/build-jogos.js",
     "serve": "eleventy --serve"
   },
   "devDependencies": {
