@@ -12,6 +12,9 @@ const redirects = [
   "",
 ].join("\n");
 fs.writeFileSync(path.join(out, "_redirects"), redirects);
+// Arquivos da raiz do domínio (ex.: .well-known/assetlinks.json, usado para vincular o app Android ao site).
+const rootDir = path.join(root, "static-root");
+if (fs.existsSync(rootDir)) fs.cpSync(rootDir, out, { recursive: true });
 // O service worker nunca fica em cache do navegador: assim as atualizações do jogo chegam na hora.
 const headers = [
   "/jogos/quem-e-mais/sw.js",
