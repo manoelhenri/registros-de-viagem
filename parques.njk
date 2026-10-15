@@ -2,6 +2,8 @@
 layout: base.njk
 title: "Parques"
 nav: parques
+eleventyComputed:
+  description: "{{ estatisticas.totalParques }} parques temáticos e aquáticos já visitados, no Brasil e no exterior, com o ano de cada visita e as viagens em que aparecem."
 ---
 {% set totalParques = 0 %}
 {% for grupo in parques %}{% set totalParques = totalParques + grupo.parques.length %}{% endfor %}

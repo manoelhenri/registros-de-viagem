@@ -7,14 +7,15 @@
 {% set pageUrl = site.url + page.url %}
 {% set pageImage = capa or (site.url + '/images/og-cover.png') %}
 {% set ogType = 'article' if resumo else 'website' %}
-<title>{{ title }} — registros de viagem</title>
+{% set pageTitle = seoTitle or (title + ' — registros de viagem') %}
+<title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDescription }}">
 <meta name="theme-color" content="#2c5a61">
 {% if page.url == '/404.html' %}<meta name="robots" content="noindex">{% else %}<link rel="canonical" href="{{ pageUrl }}">{% endif %}
 
 <!-- Open Graph / social previews -->
 <meta property="og:type" content="{{ ogType }}">
-<meta property="og:title" content="{{ title }} — registros de viagem">
+<meta property="og:title" content="{{ pageTitle }}">
 <meta property="og:description" content="{{ pageDescription }}">
 <meta property="og:url" content="{{ pageUrl }}">
 <meta property="og:image" content="{{ pageImage }}">
@@ -22,9 +23,36 @@
 <meta property="og:site_name" content="registros de viagem">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ title }} — registros de viagem">
+<meta name="twitter:title" content="{{ pageTitle }}">
 <meta name="twitter:description" content="{{ pageDescription }}">
 <meta name="twitter:image" content="{{ pageImage }}">
+
+{% if page.url == '/' or page.url == '/sobre/' %}
+<!-- Dados estruturados: o site e o autor, ligados ao Instagram (sameAs). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "name": "registros de viagem",
+      "url": "{{ site.url }}/",
+      "inLanguage": "pt-BR",
+      "author": { "@id": "{{ site.url }}/#autor" },
+      "publisher": { "@id": "{{ site.url }}/#autor" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#autor",
+      "name": "{{ site.author | escapeJson }}",
+      "url": "{{ site.url }}/",
+      "sameAs": ["{{ site.instagramUrl }}"]
+    }
+  ]
+}
+</script>
+{% endif %}
 
 <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | url }}">
 <link rel="alternate" type="application/rss+xml" title="registros de viagem" href="{{ '/feed.xml' | url }}">
@@ -69,10 +97,12 @@
   <span>© {{ site.year }} {{ site.author }}</span>
   <div class="foot-links">
     <a href="{{ '/' | url }}">Início</a>
+    <a href="{{ '/posts/' | url }}">Posts</a>
     <a href="{{ '/destinos/' | url }}">Destinos</a>
     <a href="{{ '/parques/' | url }}">Parques</a>
     <a href="{{ '/mapa/' | url }}">Mapa</a>
     <a href="{{ '/timeline/' | url }}">Timeline</a>
+    <a href="{{ '/sobre/' | url }}">Sobre</a>
     <a href="{{ site.instagramUrl }}" target="_blank" rel="noopener">Instagram</a>
     <a href="{{ '/feed.xml' | url }}">RSS</a>
   </div>

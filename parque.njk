@@ -6,7 +6,8 @@ pagination:
   alias: parque
 permalink: "/parques/{{ parque.slug }}/"
 eleventyComputed:
-  title: "{{ parque.nome }}"
+  title: "{{ parque.nome | safe }}"
+  description: "{{ parque.nome | safe }} ({{ parque.local | safe }}): {{ parque.resumo | safe }} Visitas e roteiros registrados no diário de viagens de Manoel Henrique."
 ---
 {% set viagens = parque.nome | postsDoParque(collections.posts) %}
 {% set relacionados = parque.nome | lugaresRelacionados(collections.posts, destinos, parques) %}

@@ -2,6 +2,8 @@
 layout: base.njk
 title: "Destinos"
 nav: destinos
+eleventyComputed:
+  description: "{{ estatisticas.totalDestinos }} destinos em {{ estatisticas.totalPaises }} países, organizados por país e ano da visita, com as viagens registradas em cada lugar."
 ---
 {% set totalCidades = 0 %}
 {% for pais in destinos %}{% set totalCidades = totalCidades + pais.cidades.length %}{% endfor %}

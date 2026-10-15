@@ -2,6 +2,8 @@
 layout: base.njk
 title: "Sobre"
 nav: sobre
+eleventyComputed:
+  description: "Quem escreve os registros de viagem: Manoel Henrique e o diário de {{ estatisticas.totalDestinos }} destinos em {{ estatisticas.totalPaises }} países."
 ---
 <nav class="breadcrumb breadcrumb--narrow" aria-label="Você está aqui">
   <a href="{{ '/' | url }}">Início</a>

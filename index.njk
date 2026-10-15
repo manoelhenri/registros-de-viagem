@@ -1,7 +1,10 @@
 ---
 layout: base.njk
 title: "Início"
+seoTitle: "Registros de Viagem por Manoel Henrique | Roteiros, Destinos e Parques"
 nav: inicio
+eleventyComputed:
+  description: "Diário de viagens de Manoel Henrique: {{ estatisticas.totalDestinos }} destinos em {{ estatisticas.totalPaises }} países, roteiros práticos e parques temáticos do Hopi Hari ao Epic Universe."
 ---
 {# Letreiro do hero: usa a lista manual editada no painel (home.heroDestinos,
    até 6 nomes) quando ela existir e tiver pelo menos 1 item; senão, cai no
@@ -182,7 +185,7 @@ nav: inicio
 </div>
 
 <section class="post-grid">
-  {% for post in collections.posts.slice(0, 8) %}
+  {% for post in (collections.posts | semPost(destaque.url if destaque else '')).slice(0, 8) %}
   <a class="tag-card" href="{{ post.url }}">
     <span class="punch"></span>
     {% if post.data.capa %}
