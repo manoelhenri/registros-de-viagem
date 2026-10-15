@@ -2,6 +2,8 @@
 layout: base.njk
 title: "Posts"
 nav: posts
+eleventyComputed:
+  description: "Todos os {{ estatisticas.totalPosts }} registros de viagem de Manoel Henrique, com busca e filtros por região (Brasil ou exterior) e por ano."
 ---
 <nav class="breadcrumb" aria-label="Você está aqui">
   <a href="{{ '/' | url }}">Início</a>

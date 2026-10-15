@@ -6,7 +6,8 @@ pagination:
   alias: destino
 permalink: "/destinos/{{ destino.slug }}/"
 eleventyComputed:
-  title: "{{ destino.nome }}"
+  title: "{{ destino.nome | safe }}"
+  description: "{{ destino.nome | safe }}, {{ (destino.estado or destino.pais) | safe }}: {{ destino.resumo | safe }} Visitas e roteiros registrados no diário de viagens de Manoel Henrique."
 ---
 {% set viagens = destino.nome | postsDaCidade(collections.posts) %}
 {% set relacionados = destino.nome | lugaresRelacionados(collections.posts, destinos, parques) %}
