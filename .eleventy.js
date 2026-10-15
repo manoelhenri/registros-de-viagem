@@ -158,6 +158,14 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("encodeURI", (str) => encodeURIComponent(str || ""));
 
     // Safe string escaping for values dropped inside JSON-LD / RSS XML.
+    // Datas reais de publicação/alteração de um post, a partir do Git
+    // (lib/datasGit.js). Uso: {% set datas = page.inputPath | datasGit %}.
+    eleventyConfig.addFilter("datasGit", require("./lib/datasGit.js"));
+
+    // Lista de posts sem um post específico (ex.: o destaque da home, pra ele
+    // não aparecer de novo logo abaixo na grade de últimos destinos).
+    eleventyConfig.addFilter("semPost", (posts, url) => (posts || []).filter((p) => p.url !== url));
+
     eleventyConfig.addFilter("escapeJson", (str) => JSON.stringify(str || "").slice(1, -1));
     eleventyConfig.addFilter("escapeXml", (str) =>
           String(str || "")

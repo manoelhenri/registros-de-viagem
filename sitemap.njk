@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
   {% for post in collections.posts %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.data.data | isoDate }}</lastmod>
+    {% set datas = post.inputPath | datasGit %}{% if datas.modificado %}<lastmod>{{ datas.modificado }}</lastmod>{% endif %}
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -1,17 +1,22 @@
 ---
 layout: base.njk
 ---
+{% set datas = page.inputPath | datasGit %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "{{ title | escapeJson }}",
   "description": "{{ resumo | escapeJson }}",
-  "datePublished": "{{ data | isoDate }}",
+  {% if datas.publicado %}"datePublished": "{{ datas.publicado }}",{% endif %}
+  {% if datas.modificado %}"dateModified": "{{ datas.modificado }}",{% endif %}
   {% if capa %}"image": "{{ capa }}",{% endif %}
   "url": "{{ site.url }}{{ page.url }}",
-  "author": { "@type": "Person", "name": "{{ site.author | escapeJson }}" },
-  "publisher": { "@type": "Person", "name": "{{ site.author | escapeJson }}" }
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ site.url }}{{ page.url }}" },
+  "inLanguage": "pt-BR",
+  "author": { "@type": "Person", "@id": "{{ site.url }}/#autor", "name": "{{ site.author | escapeJson }}", "url": "{{ site.url }}/sobre/" },
+  "publisher": { "@type": "Person", "@id": "{{ site.url }}/#autor", "name": "{{ site.author | escapeJson }}" },
+  "isPartOf": { "@id": "{{ site.url }}/#website" }
 }
 </script>
 
