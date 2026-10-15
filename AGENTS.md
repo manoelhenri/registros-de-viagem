@@ -25,7 +25,7 @@ Blog pessoal de viagens do Manoel Henrique, "registros de viagem", no ar em **ht
 | `index.njk`, `posts.njk`, `destinos.njk`, `destino.njk`, `parques.njk`, `parque.njk`, `mapa.njk`, `timeline.njk`, `sobre.njk`, `404.njk` | Páginas do blog |
 | `feed.njk`, `sitemap.njk`, `robots.njk` | RSS, sitemap e robots |
 | `_data/` | Dados globais: `site.json`, `home.json`, `sobre.json`, `destinosData.json`, `parquesData.json` (editados pelo painel), mais os `.js` que derivam dados deles |
-| `lib/` | Módulos compartilhados (geo, geocodificação, vídeo, mapa embutido, callout) |
+| `lib/` | Módulos compartilhados (geo, geocodificação, vídeo, mapa embutido, callout, datas do Git) |
 | `.eleventy.js` | Filtros, coleções, markdown-it, `validarBuild()` e o gancho que copia `/jogos` |
 | `admin/` | Painel Decap CMS |
 | `functions/api/` | Login OAuth do painel |
@@ -64,6 +64,8 @@ A área `/jogos/` (hoje: o hub em `static-jogos/index.html`, o jogo "Quem é mai
 15. **`GUIA-DO-BLOG.html` acompanha o painel.** Mudou um campo ou fluxo do painel ou do blog, atualize a seção do guia no mesmo commit.
 16. **Arquivo novo na raiz** que não deve virar página (`.md`, `.html` de documentação, pastas estáticas) precisa entrar no `.eleventyignore`.
 17. **Não suba ZIP** nem arquivos gerados (`_site/`, `node_modules/`).
+18. **SEO por página:** toda página tem `description` própria (front matter ou `eleventyComputed`); o `base.njk` só cai no texto genérico quando falta. Números (destinos, países, parques, posts) vêm de `estatisticas`, nunca digitados. `seoTitle` no front matter substitui o título padrão "<title> — registros de viagem" (usado na Home). Em `eleventyComputed` com texto vindo de dado, use `| safe` para não escapar duas vezes (o `base.njk` já escapa).
+19. **Datas de post para o Google** (`datePublished`/`dateModified` no JSON-LD e `<lastmod>` no sitemap) vêm do histórico do Git (`lib/datasGit.js`), não do campo `data`, que é a data da viagem. Se o build não tiver histórico, essas datas ficam de fora; nunca troque por uma data inventada.
 
 ## Textos e preferências do dono
 
