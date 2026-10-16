@@ -53,7 +53,7 @@ A área `/jogos/` (hoje: o hub em `static-jogos/index.html`, o jogo "Quem é mai
 4. **Nunca dê a um arquivo de `_data/` o nome de um campo do front matter** (`coordenadas`, `cidades`, `data`, `title`, `resumo`, `capa`...). O dado global sobrescreve o campo em todos os posts sem avisar.
 5. **Painel (Decap):** coleção de arquivo nunca aponta para JSON cujo topo seja uma lista; envolva num objeto (`{"chave": [...]}`) e crie um `_data/<nome>.js` que desembrulha, como `destinos.js`/`parques.js`. **Não apague `_data/destinos.js` nem `_data/parques.js`.**
 6. **Versão do Decap é fixa** (`decap-cms@3.1.3`, sem `^` ou `~`). Ao subir de propósito, teste as 6 coleções antes.
-7. **Segurança do login:** não remova as checagens do `callback.js` (confere `e.origin`, `postMessage` restrito à própria origem, nunca `"*"`) nem os atributos `Secure` + `HttpOnly` + `SameSite=Lax` do cookie `oauth_state`.
+7. **Segurança do login:** não remova as checagens do `callback.js` (confere `e.origin`, `postMessage` restrito à própria origem, nunca `"*"`) nem os atributos `Secure` + `HttpOnly` + `SameSite=Lax` do cookie `oauth_state`. O login pede só `public_repo,read:user` (o repositório é público); não volte para `repo`. O `callback.js` apaga o cookie `oauth_state` em toda resposta e manda `Cache-Control: no-store`.
 8. **URL pública só em `_data/site.json` → `url`.** Use `{{ site.url }}`; não escreva o domínio fixo em template, CSS ou JS do blog. Exceção proposital: `admin/config.yml` → `base_url` aponta para `registros-de-viagem.pages.dev` (login do painel).
 9. **Matching post ↔ destino/parque** é por igualdade exata normalizada (sem acento, minúsculo), nunca por "contém". Não troque por busca de substring.
 10. **Campos opcionais da ficha de viagem** (perfil, transporte, hospedagem etc.) nunca viram obrigatórios no painel.
@@ -66,6 +66,7 @@ A área `/jogos/` (hoje: o hub em `static-jogos/index.html`, o jogo "Quem é mai
 17. **Não suba ZIP** nem arquivos gerados (`_site/`, `node_modules/`).
 18. **SEO por página:** toda página tem `description` própria (front matter ou `eleventyComputed`); o `base.njk` só cai no texto genérico quando falta. Números (destinos, países, parques, posts) vêm de `estatisticas`, nunca digitados. `seoTitle` no front matter substitui o título padrão "<title> — registros de viagem" (usado na Home). Em `eleventyComputed` com texto vindo de dado, use `| safe` para não escapar duas vezes (o `base.njk` já escapa).
 19. **Datas de post para o Google** (`datePublished`/`dateModified` no JSON-LD e `<lastmod>` no sitemap) vêm do histórico do Git (`lib/datasGit.js`), não do campo `data`, que é a data da viagem. Se o build não tiver histórico, essas datas ficam de fora; nunca troque por uma data inventada.
+20. **HTML montado no navegador** (ex.: popup do mapa) usa `document.createElement` + `textContent`, nunca texto concatenado em HTML. Dados do painel podem ter `&`, `<` e aspas.
 
 ## Textos e preferências do dono
 
