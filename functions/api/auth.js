@@ -8,7 +8,10 @@ export async function onRequestGet(context) {
   const authUrl = new URL('https://github.com/login/oauth/authorize');
   authUrl.searchParams.set('client_id', clientId);
   authUrl.searchParams.set('redirect_uri', redirectUri);
-  authUrl.searchParams.set('scope', 'repo,user');
+  // Repositório público: public_repo basta para o Decap ler e gravar, e
+  // read:user só lê o perfil (nome e avatar no painel). Não peça "repo",
+  // que daria acesso a todos os repositórios privados da conta.
+  authUrl.searchParams.set('scope', 'public_repo,read:user');
   authUrl.searchParams.set('state', state);
 
   return new Response(null, {

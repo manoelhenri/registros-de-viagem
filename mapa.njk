@@ -54,14 +54,34 @@ eleventyComputed:
     });
   }
 
-  function popupHtml(item, tipo) {
+  // Monta o popup com elementos do DOM e textContent, nunca juntando texto
+  // em HTML: um nome com "&", "<" ou aspas aparece como está, sem quebrar o
+  // popup. A foto só entra se for um endereço https.
+  function popupElemento(item, tipo) {
     var link = tipo === 'destino' ? urlBase + 'destinos/' + item.slug + '/' : urlBase + 'parques/' + item.slug + '/';
     var local = tipo === 'destino' ? item.estado : item.local;
-    var foto = item.foto ? '<img src="' + item.foto + '" alt="" loading="lazy">' : '';
-    return '<div class="mapa-popup">' + foto +
-      '<strong>' + item.nome + '</strong>' +
-      '<span>' + local + '</span>' +
-      '<a href="' + link + '">Ver página →</a></div>';
+    var caixa = document.createElement('div');
+    caixa.className = 'mapa-popup';
+    if (item.foto && /^https:\/\//.test(item.foto)) {
+      var img = document.createElement('img');
+      img.src = item.foto;
+      img.alt = '';
+      img.loading = 'lazy';
+      caixa.appendChild(img);
+    }
+    var nome = document.createElement('strong');
+    nome.textContent = item.nome;
+    caixa.appendChild(nome);
+    if (local) {
+      var lugar = document.createElement('span');
+      lugar.textContent = local;
+      caixa.appendChild(lugar);
+    }
+    var a = document.createElement('a');
+    a.href = link;
+    a.textContent = 'Ver página →';
+    caixa.appendChild(a);
+    return caixa;
   }
 
   // Filtro por ano: só considera anos numéricos de verdade (ex.: "2023").
@@ -108,7 +128,7 @@ eleventyComputed:
     destinos.forEach(function (d) {
       if (d.lat === null || d.lng === null || !bateAno(d, anoAtivo)) return;
       L.marker([d.lat, d.lng], { icon: pino('#2c5a61') })
-        .bindPopup(popupHtml(d, 'destino'))
+        .bindPopup(popupElemento(d, 'destino'))
         .addTo(grupoDestinos);
     });
 
@@ -116,7 +136,7 @@ eleventyComputed:
     parques.forEach(function (p) {
       if (p.lat === null || p.lng === null || !bateAno(p, anoAtivo)) return;
       L.marker([p.lat, p.lng], { icon: pino('#c9762c') })
-        .bindPopup(popupHtml(p, 'parque'))
+        .bindPopup(popupElemento(p, 'parque'))
         .addTo(grupoParques);
     });
 

@@ -6,8 +6,15 @@ export async function onRequestGet(context) {
   const cookie = request.headers.get('Cookie') || '';
   const cookieState = (cookie.match(/oauth_state=([^;]+)/) || [])[1];
 
+  // O state vale para um único login: o cookie é apagado em toda resposta
+  // daqui, deu certo ou não, e a página com o token não fica em cache.
+  const semCache = {
+    'Set-Cookie': 'oauth_state=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0',
+    'Cache-Control': 'no-store',
+  };
+
   if (!code || !state || state !== cookieState) {
-    return new Response('Invalid OAuth state. Please try logging in again.', { status: 400 });
+    return new Response('Invalid OAuth state. Please try logging in again.', { status: 400, headers: semCache });
   }
 
   const tokenRes = await fetch('https://github.com/login/oauth/access_token', {
@@ -22,7 +29,7 @@ export async function onRequestGet(context) {
   const tokenData = await tokenRes.json();
 
   if (tokenData.error) {
-    return new Response('GitHub OAuth error: ' + (tokenData.error_description || tokenData.error), { status: 400 });
+    return new Response('GitHub OAuth error: ' + (tokenData.error_description || tokenData.error), { status: 400, headers: semCache });
   }
 
   const payload = JSON.stringify({ token: tokenData.access_token, provider: 'github' });
@@ -44,5 +51,5 @@ export async function onRequestGet(context) {
 </script>
 </body></html>`;
 
-  return new Response(html, { headers: { 'Content-Type': 'text/html' } });
+  return new Response(html, { headers: { ...semCache, 'Content-Type': 'text/html' } });
 }
