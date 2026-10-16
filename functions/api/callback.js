@@ -34,19 +34,25 @@ export async function onRequestGet(context) {
 
   const payload = JSON.stringify({ token: tokenData.access_token, provider: 'github' });
 
+  // O painel pode ser aberto em manoelhenrique.com/admin, mas o login sempre
+  // volta por registros-de-viagem.pages.dev (base_url do config.yml). Por isso
+  // o token só é entregue a uma destas origens, nunca a "*".
+  const origens = [url.origin, 'https://manoelhenrique.com', 'https://www.manoelhenrique.com'];
+
   const html = `<!DOCTYPE html><html><body>
 <script>
 (function() {
+  var origens = ${JSON.stringify(origens)};
   function receiveMessage(e) {
-    // Only hand the token to the admin panel on this same site.
-    if (e.origin !== ${JSON.stringify(url.origin)}) return;
+    // Only hand the token to the admin panel on one of the blog's own origins.
+    if (origens.indexOf(e.origin) === -1) return;
     window.opener.postMessage('authorization:github:success:${payload}', e.origin);
     window.removeEventListener('message', receiveMessage, false);
   }
   window.addEventListener('message', receiveMessage, false);
-  // window.opener is always this same site's admin panel, so restrict
-  // the target origin instead of broadcasting to "*".
-  window.opener.postMessage('authorizing:github', ${JSON.stringify(url.origin)});
+  // Announce to each allowed origin; the browser drops the ones that don't
+  // match the opener, so nothing goes to a third-party site.
+  origens.forEach(function (o) { window.opener.postMessage('authorizing:github', o); });
 })();
 </script>
 </body></html>`;
