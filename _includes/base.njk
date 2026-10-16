@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js): Google Analytics do blog. Só nas páginas do blog
+     (base.njk); os jogos em /jogos/ e o painel /admin ficam de fora. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZSXHX6PQE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SZSXHX6PQE');
+</script>
 {% set pageDescription = description or resumo or 'Diário pessoal de viagens: roteiros, destinos e parques já visitados.' %}
 {% set pageUrl = site.url + page.url %}
 {% set pageImage = capa or (site.url + '/images/og-cover.png') %}

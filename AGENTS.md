@@ -67,6 +67,7 @@ A área `/jogos/` (hoje: o hub em `static-jogos/index.html`, o jogo "Quem é mai
 18. **SEO por página:** toda página tem `description` própria (front matter ou `eleventyComputed`); o `base.njk` só cai no texto genérico quando falta. Números (destinos, países, parques, posts) vêm de `estatisticas`, nunca digitados. `seoTitle` no front matter substitui o título padrão "<title> — registros de viagem" (usado na Home). Em `eleventyComputed` com texto vindo de dado, use `| safe` para não escapar duas vezes (o `base.njk` já escapa).
 19. **Datas de post para o Google** (`datePublished`/`dateModified` no JSON-LD e `<lastmod>` no sitemap) vêm do histórico do Git (`lib/datasGit.js`), não do campo `data`, que é a data da viagem. Se o build não tiver histórico, essas datas ficam de fora; nunca troque por uma data inventada.
 20. **HTML montado no navegador** (ex.: popup do mapa) usa `document.createElement` + `textContent`, nunca texto concatenado em HTML. Dados do painel podem ter `&`, `<` e aspas.
+21. **Google Analytics** (`G-SZSXHX6PQE`) fica no `<head>` do `base.njk`, só no blog. Não coloque nos jogos (produto separado) nem no `/admin`.
 
 ## Textos e preferências do dono
 
