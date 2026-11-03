@@ -102,7 +102,7 @@ module.exports = function (eleventyConfig) {
     });
 
     // Área /receitas ("Pães do Manoel"): produto separado, gerado de
-    // static-receitas/receitas.json por scripts/build-receitas.js. Roda depois
+    // static-receitas/ (categorias.json + receitas/*.json) por scripts/build-receitas.js. Roda depois
     // dos jogos e dentro de try/catch: se algo der errado nas receitas, o blog
     // e os jogos são publicados normalmente e o erro aparece no log do build.
     eleventyConfig.on("eleventy.after", () => {

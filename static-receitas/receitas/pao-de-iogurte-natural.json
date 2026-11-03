@@ -1,0 +1,94 @@
+{
+  "titulo": "Pão de iogurte natural",
+  "ordem": 63,
+  "publicado": "2026-11-03",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "Iogurte natural na massa para um miolo macio e levemente ácido.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 24"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Iogurte natural integral",
+          "quantidade": "90 g",
+          "q750": "135 g",
+          "q1000": "180 g"
+        },
+        {
+          "nome": "Água",
+          "quantidade": "70 ml",
+          "q750": "105 ml",
+          "q1000": "140 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1",
+          "q750": "1",
+          "q1000": "1"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "12 g",
+          "q750": "19 g",
+          "q1000": "25 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "10 g",
+          "q750": "15 g",
+          "q1000": "20 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "225 g",
+          "q750": "340 g",
+          "q1000": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "2,5 g",
+          "q750": "4 g",
+          "q1000": "5 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Misture iogurte, água e ovo. Coloque na forma com a manteiga.",
+        "Acrescente açúcar, sal e farinha; finalize com fermento.",
+        "Encaixe a forma, escolha o programa Macio, o tamanho escolhido e a casca média e aperte iniciar.",
+        "A massa deve ficar macia e coesa; ajuste com 5 a 10 ml de água se estiver muito firme.",
+        "Desenforme e esfrie."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Iogurte varia de espessura e acidez. Não use timer."
+}

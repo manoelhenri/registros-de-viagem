@@ -1,0 +1,100 @@
+{
+  "titulo": "Pão de banana",
+  "ordem": 81,
+  "publicado": "2026-11-03",
+  "categoria": "doces",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "O pão de banana do livro da Gallant, com leite em pó e manteiga colocada depois do início, no programa Brioche.",
+  "icone": "brioche",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Brioche",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "oficial",
+    "fonte": "Livro de Receitas Gallant, Panificadora 19 programas, p. 13"
+  },
+  "quantidades": "oficial",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "130 ml",
+          "q750": "230 ml",
+          "q1000": "250 ml"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "4 g",
+          "q750": "6 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1",
+          "q750": "1",
+          "q1000": "2"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "25 g",
+          "q750": "40 g",
+          "q1000": "50 g"
+        },
+        {
+          "nome": "Leite em pó",
+          "quantidade": "35 g",
+          "q750": "60 g",
+          "q1000": "65 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "230 g",
+          "q750": "400 g",
+          "q1000": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Banana em pedaços",
+          "quantidade": "55 g",
+          "q750": "80 g",
+          "q1000": "110 g"
+        },
+        {
+          "nome": "Manteiga (10 minutos depois do início)",
+          "quantidade": "20 g",
+          "q750": "30 g",
+          "q1000": "36 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá. Coloque na forma, nesta ordem: água, sal, ovo, açúcar, leite em pó e farinha de trigo.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal. Espalhe a banana em pedaços por cima.",
+        "Encaixe a forma, selecione Brioche, o tamanho escolhido e casca clara. Inicie na hora: esta receita não pode ficar no timer.",
+        "Cerca de 10 minutos depois do início, abra a tampa e junte a manteiga, como pede o livro. Feche a tampa e não abra mais até o fim.",
+        "Desenforme e deixe esfriar por completo."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Coloque a banana em pedaços por cima de tudo antes de iniciar e a manteiga só 10 minutos depois do início, como indica o livro da Gallant."
+}

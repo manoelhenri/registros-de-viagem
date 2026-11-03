@@ -1,0 +1,72 @@
+{
+  "titulo": "Baguete caseira",
+  "ordem": 92,
+  "publicado": "2026-11-03",
+  "categoria": "massas",
+  "tags": [
+    "Jantar"
+  ],
+  "resumo": "Massa de baguete feita na máquina; a modelagem, os cortes e o forno são em casa.",
+  "icone": "pizza",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → forno",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "2 baguetes",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "330 ml"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "15 ml"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "10 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "500 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "5 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "5 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Coloque na forma, nesta ordem: água e azeite.",
+        "Por cima, coloque sal, farinha de trigo para pão e açúcar, cobrindo todo o líquido. Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
+        "Ao fim do programa Massa, divida em 2 partes e descanse cobertas por 15 minutos.",
+        "Modele baguetes compridas, tensionando a superfície. Coloque em assadeira ou pano enfarinhado para a segunda fermentação.",
+        "Deixe crescer até aumentar visivelmente. Faça 3 a 4 cortes diagonais com lâmina.",
+        "Asse a 230 °C com vapor inicial (uma assadeira com água quente na base do forno) por cerca de 20 a 25 minutos. Retire a água após os primeiros 10 minutos se necessário."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Assado, em saco bem fechado por até 3 dias. A massa crua pode ficar na geladeira, em pote untado, por até 1 dia, ou congelada por até 1 mês.",
+  "dica": "A água quente e o vapor exigem cuidado para evitar queimaduras. O resultado depende do forno; não é baguete de fermentação longa."
+}

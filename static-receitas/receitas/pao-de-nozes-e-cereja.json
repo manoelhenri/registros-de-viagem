@@ -1,0 +1,107 @@
+{
+  "titulo": "Pão de nozes e cereja",
+  "ordem": 52,
+  "publicado": "2026-11-03",
+  "categoria": "doces",
+  "tags": [
+    "Natal"
+  ],
+  "resumo": "Pão doce enriquecido com nozes, cereja em calda e raspas de limão, no programa Brioche.",
+  "icone": "brioche",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Brioche",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Ovos",
+          "quantidade": "1",
+          "q750": "2",
+          "q1000": "2"
+        },
+        {
+          "nome": "Leite (complete o copo com o ovo dentro)",
+          "quantidade": "145 ml",
+          "q750": "215 ml",
+          "q1000": "288 ml"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "32 g",
+          "q750": "47 g",
+          "q1000": "63 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "4,5 g",
+          "q750": "7 g",
+          "q1000": "9 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "30 g",
+          "q750": "44 g",
+          "q1000": "59 g"
+        },
+        {
+          "nome": "Raspas finas de limão",
+          "quantidade": "¼ limão",
+          "q750": "½ limão",
+          "q1000": "½ limão"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "215 g",
+          "q750": "325 g",
+          "q1000": "432 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "2,5 g",
+          "q750": "4 g",
+          "q1000": "5 g"
+        },
+        {
+          "nome": "Cerejas em calda bem escorridas e picadas",
+          "quantidade": "14 g",
+          "q750": "20 g",
+          "q1000": "27 g"
+        },
+        {
+          "nome": "Nozes picadas",
+          "quantidade": "14 g",
+          "q750": "20 g",
+          "q1000": "27 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Coloque o ovo no copo medidor e complete com leite até a quantidade da lista.",
+        "Adicione a mistura de leite e ovo, a manteiga, o sal e o açúcar à forma.",
+        "Acrescente raspas e farinha. Faça uma cavidade e coloque o fermento.",
+        "Selecione Brioche, o tamanho escolhido e casca clara. Inicie imediatamente.",
+        "Junte as cerejas e as nozes quando a máquina tocar o sinal de adição (10 bipes).",
+        "Desenforme com luvas e esfrie completamente."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "As cerejas devem estar muito bem escorridas e as nozes picadas; excesso de líquido enfraquece a massa."
+}

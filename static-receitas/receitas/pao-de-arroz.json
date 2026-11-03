@@ -1,0 +1,94 @@
+{
+  "titulo": "Pão de arroz",
+  "ordem": 68,
+  "publicado": "2026-11-03",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "Aproveita arroz branco cozido e frio, batido com a água. Leva trigo: não é sem glúten.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 26"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Arroz branco cozido e frio",
+          "quantidade": "90 g",
+          "q750": "135 g",
+          "q1000": "180 g"
+        },
+        {
+          "nome": "Água",
+          "quantidade": "115 ml",
+          "q750": "170 ml",
+          "q1000": "230 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1",
+          "q750": "1",
+          "q1000": "1"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "15 ml",
+          "q750": "22 ml",
+          "q1000": "30 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "10 g",
+          "q750": "15 g",
+          "q1000": "20 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "215 g",
+          "q750": "320 g",
+          "q1000": "430 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "2,5 g",
+          "q750": "4 g",
+          "q1000": "5 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Pese o arroz já cozido e frio.",
+        "Bata o arroz com a água até formar um creme com pequenos grãos. Misture ovo e óleo.",
+        "Coloque na forma; acrescente açúcar, sal e farinha; fermento por último.",
+        "Encaixe a forma, escolha o programa Macio, o tamanho escolhido e a casca média e aperte iniciar. E observe a massa: o arroz não deve formar grumos secos. Ajuste água ou farinha aos poucos.",
+        "Desenforme e esfrie."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "A receita contém trigo e não é sem glúten. Não use arroz quente nem timer."
+}

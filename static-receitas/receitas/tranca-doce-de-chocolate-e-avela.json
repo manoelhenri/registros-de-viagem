@@ -1,0 +1,89 @@
+{
+  "titulo": "Trança doce de chocolate e avelã",
+  "ordem": 83,
+  "publicado": "2026-11-03",
+  "categoria": "doces",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Massa doce feita na máquina, recheada com creme de avelã, trançada e assada no forno.",
+  "icone": "brioche",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → forno",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 trança",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "240 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "40 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "45 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "6 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "5 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Recheio",
+      "itens": [
+        {
+          "nome": "Creme de avelã",
+          "quantidade": "120 g"
+        },
+        {
+          "nome": "Avelãs picadas",
+          "quantidade": "30 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Coloque na forma, nesta ordem: leite, ovo e manteiga.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
+        "Ao fim do programa Massa, abra a massa em retângulo de aproximadamente 30 × 40 cm.",
+        "Espalhe creme de avelã em camada fina e polvilhe avelãs, deixando bordas livres.",
+        "Enrole, corte o rolo ao meio no comprimento e trance com o recheio para cima.",
+        "Transfira para assadeira, deixe crescer até ficar fofa e asse a 180 °C por 25 a 30 minutos."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Assado, em saco bem fechado por até 3 dias. A massa crua pode ficar na geladeira, em pote untado, por até 1 dia, ou congelada por até 1 mês.",
+  "dica": "Não aqueça o creme de avelã. Use camada fina para evitar vazamento e massa crua no centro."
+}

@@ -1,0 +1,88 @@
+{
+  "titulo": "Pão de parmesão",
+  "ordem": 6,
+  "publicado": "2026-11-03",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Parmesão ralado fino na massa de um pão salgado no ciclo Macio, bom para torradas e lanches.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "135 ml",
+          "q750": "200 ml",
+          "q1000": "270 ml"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "22 ml",
+          "q750": "34 ml",
+          "q1000": "45 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "9 g",
+          "q750": "14 g",
+          "q1000": "18 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "2,5 g",
+          "q750": "4 g",
+          "q1000": "5 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "225 g",
+          "q750": "340 g",
+          "q1000": "450 g"
+        },
+        {
+          "nome": "Parmesão ralado fino",
+          "quantidade": "38 g",
+          "q750": "56 g",
+          "q1000": "75 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Coloque água e óleo na forma.",
+        "Acrescente açúcar, sal, farinha e parmesão. Coloque o fermento por último.",
+        "Selecione Macio, o tamanho escolhido e casca média. Inicie imediatamente.",
+        "Observe a massa no início. O parmesão pode absorver um pouco de água; faça ajustes pequenos apenas se necessário.",
+        "Ao terminar, desenforme com luvas e esfrie sobre grade."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Queijos variam bastante em sal e umidade. Se o parmesão for muito salgado, reduza o sal da receita para 3 a 4 g."
+}

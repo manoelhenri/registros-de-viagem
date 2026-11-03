@@ -1,0 +1,89 @@
+{
+  "titulo": "Pão de leite fofinho",
+  "ordem": 2,
+  "publicado": "2026-11-02",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Café da manhã",
+    "Lanche"
+  ],
+  "resumo": "Leite, ovo e um pouco de creme de leite para um miolo bem macio e levemente adocicado.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Sanduíche",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 18"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "500 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Ovo",
+          "quantidade": "1",
+          "q750": "2",
+          "q1000": "2"
+        },
+        {
+          "nome": "Leite (complete o copo com o ovo dentro)",
+          "quantidade": "180 ml",
+          "q750": "270 ml",
+          "q1000": "360 ml"
+        },
+        {
+          "nome": "Creme de leite sem soro",
+          "quantidade": "15 g",
+          "q750": "22 g",
+          "q1000": "30 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "5 g",
+          "q750": "8 g",
+          "q1000": "10 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "12 g",
+          "q750": "18 g",
+          "q1000": "24 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "240 g",
+          "q750": "360 g",
+          "q1000": "480 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3 g",
+          "q750": "4,5 g",
+          "q1000": "6 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Quebre o ovo em um copo medidor e complete com leite até a quantidade da lista.",
+        "Retire a forma, encaixe a pá e coloque a mistura de ovo e leite e o creme de leite.",
+        "Acrescente sal, açúcar e farinha. Faça uma cavidade na farinha e coloque o fermento.",
+        "Selecione Sanduíche (ou Macio), o tamanho escolhido, e inicie imediatamente.",
+        "Ao terminar, desenforme com luvas e espere esfriar por completo."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "A massa fica macia e ligeiramente pegajosa."
+}

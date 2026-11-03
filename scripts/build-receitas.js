@@ -1,8 +1,11 @@
-// Gera a área /receitas ("Pães do Manoel") a partir de static-receitas/receitas.json.
+// Gera a área /receitas ("Pães do Manoel") a partir de static-receitas/categorias.json e de um
+// arquivo por receita em static-receitas/receitas/<slug>.json (editados pelo painel /admin).
 // Produto à parte do blog: HTML próprio, sem templates, CSS, dados ou analytics do blog, e sem
 // nenhum link entre os dois. Roda no fim do build (eleventy.after), depois dos jogos.
 // Sem dependências: só módulos do Node.
 const fs = require("fs");
+const crypto = require("crypto");
+const VER = { css: "", js: "" };
 const path = require("path");
 
 const root = path.join(__dirname, "..");
@@ -118,8 +121,85 @@ function tinta(cor, fundo) {
   return hex;
 }
 
+// ---------- leitura dos dados ----------
+// Cada receita é um arquivo JSON (o painel Decap grava um por receita). Aqui o formato do painel
+// vira o formato interno usado no resto do gerador. Receita com erro grave fica fora do ar e
+// aparece no log como "[receitas] ERRO"; as outras continuam publicando.
+const TRES = ["500 g", "750 g", "1000 g"];
+function slugDe(nome) {
+  return norm(nome).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+function carregar() {
+  const base = JSON.parse(fs.readFileSync(path.join(src, "categorias.json"), "utf8"));
+  const cats = new Set(base.categorias.map((c) => c.id));
+  const dir = path.join(src, "receitas");
+  const txt = (v) => (v == null ? "" : String(v).trim());
+  const receitas = [], vistos = new Set();
+  fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort().forEach((arq) => {
+    const erro = (m) => console.error(`[receitas] ERRO em ${arq}: ${m}. Esta receita ficou fora do site até ser corrigida.`);
+    const aviso = (m) => console.warn(`[receitas] aviso em ${arq}: ${m}`);
+    let d;
+    try { d = JSON.parse(fs.readFileSync(path.join(dir, arq), "utf8")); } catch (e) { return erro(`arquivo inválido (${e.message})`); }
+    const slug = slugDe(arq.replace(/\.json$/, ""));
+    if (!slug) return erro("nome de arquivo sem letras");
+    if (vistos.has(slug)) return erro(`endereço repetido (${slug})`);
+    const titulo = txt(d.titulo);
+    if (!titulo) return erro("falta o título");
+    if (!cats.has(d.categoria)) return erro(`categoria desconhecida (${d.categoria})`);
+    const quantidades = ["oficial", "calculadas", "unica"].includes(d.quantidades) ? d.quantidades : "unica";
+    const tres = quantidades !== "unica";
+    const tabelas = [];
+    let falta = "";
+    (d.tabelas || []).forEach((g) => {
+      const itens = (g && g.itens || []).filter((i) => i && txt(i.nome)).map((i) => {
+        if (tres && !(txt(i.quantidade) && txt(i.q750) && txt(i.q1000))) falta = falta || txt(i.nome);
+        return tres ? [txt(i.nome), txt(i.quantidade), txt(i.q750), txt(i.q1000)] : [txt(i.nome), txt(i.quantidade)];
+      });
+      if (itens.length) tabelas.push([txt(g.grupo) || "Ingredientes", itens]);
+    });
+    if (!tabelas.length) return erro("nenhum ingrediente");
+    if (falta) return erro(`receita de 3 tamanhos sem as 3 quantidades em "${falta}"`);
+    const preparo = (d.preparo || []).map((g) => [txt(g && g.grupo) || "Preparo", (g && g.passos || []).map(txt).filter(Boolean)]).filter((g) => g[1].length);
+    if (!preparo.length) return erro("nenhum passo no modo de preparo");
+    let foto = txt(d.foto);
+    if (foto) {
+      const local = foto.startsWith(BASE + "assets/") ? path.join(src, foto.slice(BASE.length)) : "";
+      if (!local || !fs.existsSync(local)) { aviso(`foto não encontrada (${foto}); a página usa a ilustração`); foto = ""; }
+      else if (fs.statSync(local).size > 700 * 1024) aviso(`foto com ${Math.round(fs.statSync(local).size / 1024)} KB; abaixo de 500 KB a página abre mais rápido no celular`);
+    }
+    ["resumo", "pronto", "guardar", "dica", "rende"].forEach((k) => { if (!txt(d[k])) aviso(`campo "${k}" vazio`); });
+    vistos.add(slug);
+    receitas.push({
+      slug, titulo, categoria: d.categoria, ordem: Number(d.ordem) || 9999, publicado: txt(d.publicado).slice(0, 10),
+      tags: Array.isArray(d.tags) ? d.tags.map(txt).filter(Boolean) : [],
+      icone: txt(d.icone) || "loaf", resumo: txt(d.resumo), programa: txt(d.programa), casca: txt(d.casca) || null,
+      timer: d.timer === true, nivel: txt(d.nivel) || "Fácil", rende: txt(d.rende),
+      origem: { tipo: ["oficial", "adaptada", "autoral"].includes(d.origem && d.origem.tipo) ? d.origem.tipo : "autoral", fonte: txt(d.origem && d.origem.fonte) },
+      quantidades, tamanhoBase: tres && quantidades === "calculadas" ? txt(d.tamanhoBase) || null : null,
+      colunas: tres ? TRES : ["Quantidade"], tabelas, preparo,
+      pronto: txt(d.pronto), guardar: txt(d.guardar), dica: txt(d.dica),
+      foto, fotoAlt: txt(d.fotoAlt),
+      ...(Array.isArray(d.imagens) && d.imagens.length ? { imagens: d.imagens } : {}),
+      ...(d.complemento && txt(d.complemento.titulo) ? { complemento: {
+        titulo: txt(d.complemento.titulo), intro: txt(d.complemento.intro), passosTitulo: txt(d.complemento.passosTitulo),
+        passos: (d.complemento.passos || []).map(txt).filter(Boolean),
+        itens: (d.complemento.itens || []).filter((i) => i && txt(i.nome)).map((i) => ({
+          nome: txt(i.nome), modo: txt(i.modo),
+          ingredientes: (i.ingredientes || []).map((x) => (Array.isArray(x) ? x.map(txt) : [txt(x && x.nome), txt(x && x.quantidade)])).filter((x) => x[0]),
+        })),
+      } } : {}),
+    });
+  });
+  receitas.sort((a, b) => a.ordem - b.ordem || a.titulo.localeCompare(b.titulo, "pt-BR"));
+  return { categorias: base.categorias, livros: base.livros || [], receitas };
+}
+
 function build() {
-  const dados = JSON.parse(fs.readFileSync(path.join(src, "receitas.json"), "utf8"));
+  const dados = carregar();
+  // versão dos arquivos pelo conteúdo: depois de publicar, o celular baixa o CSS e o JS novos
+  // em vez de usar a cópia antiga (que não teria os botões novos)
+  const hash = (f) => crypto.createHash("sha1").update(fs.readFileSync(path.join(src, "assets", f))).digest("hex").slice(0, 10);
+  VER.css = hash("receitas.css"); VER.js = hash("receitas.js");
   const site = JSON.parse(fs.readFileSync(path.join(root, "_data", "site.json"), "utf8"));
   const origem = String(site.url).replace(/\/$/, "");
   const abs = (p) => origem + p;
@@ -153,7 +233,7 @@ function build() {
     return n;
   };
   const art = (n) => `${BASE}assets/art/${n}.svg`;
-  const imgs = (r) => (Array.isArray(r.imagens) && r.imagens.length
+  const imgs = (r) => (r.foto ? [abs(r.foto)] : Array.isArray(r.imagens) && r.imagens.length
     ? r.imagens.map((p) => abs(`${BASE}assets/img/${p}`))
     : ["1x1", "4x3", "16x9"].map((k) => abs(`${BASE}assets/img/${r.categoria}-${k}.jpg`)));
   const programas = (r) => r.programa.split("→").map((p) => p.trim());
@@ -182,7 +262,7 @@ ${robots}<link rel="canonical" href="${esc(url)}">
 <link rel="preload" href="${BASE}assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${BASE}assets/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${BASE}assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="${BASE}assets/receitas.css">
+<link rel="stylesheet" href="${BASE}assets/receitas.css?v=${VER.css}">
 ${extra}
 </head>`;
 
@@ -201,7 +281,7 @@ ${extra}
 <div><div class="t">Categorias</div>${dados.categorias.map((c) => `<a href="${BASE}?categoria=${esc(c.id)}#receitas">${esc(c.nome)}</a>`).join("")}</div>
 </div></footer>
 <button class="totop" type="button" data-topo hidden aria-label="Voltar ao topo">${ico("up")}<span>Topo</span></button>
-<script src="${BASE}assets/receitas.js" defer></script>
+<script src="${BASE}assets/receitas.js?v=${VER.js}" defer></script>
 </body>
 </html>`;
 
@@ -213,7 +293,7 @@ ${extra}
       ...r.tabelas.flatMap(([, it]) => it.map((x) => x[0])),
       ...(k.itens || []).flatMap((it) => [it.nome, ...it.ingredientes.map((x) => x[0])])].join(" "));
     return `<article class="rc" style="--c:${esc(c.cor)};--soft:${esc(c.soft)}" data-slug="${esc(r.slug)}" data-cat="${esc(r.categoria)}" data-tags="${esc(r.tags.join("|"))}" data-timer="${r.timer ? 1 : 0}" data-nivel="${esc(norm(r.nivel))}" data-origem="${esc(r.origem ? r.origem.tipo : "autoral")}" data-busca="${esc(busca)}">
-<div class="pic"><span class="tagc">${esc(c.nome)}</span><img src="${art(r.icone)}" alt="" width="116" height="90" loading="lazy"></div>
+<div class="pic${r.foto ? " com-foto" : ""}"><span class="tagc">${esc(c.nome)}</span>${r.foto ? `<img class="ft" src="${esc(r.foto)}" alt="" width="320" height="240" loading="lazy">` : `<img src="${art(r.icone)}" alt="" width="116" height="90" loading="lazy">`}</div>
 <button class="save" type="button" data-save="${esc(r.slug)}" data-titulo="${esc(r.titulo)}" aria-pressed="false" aria-label="Salvar: ${esc(r.titulo)}">${ico("heart")}</button>
 <div class="body"><small class="kc">${esc(c.nome)}</small><h3><a href="${urlR(r)}">${esc(r.titulo)}</a></h3><p>${esc(r.resumo)}</p><div class="meta">${pills(r)}</div></div>
 </article>`;
@@ -292,7 +372,7 @@ ${(k.itens || []).length ? `<div class="flavors">${k.itens.map((it) => `<article
 <body style="--c:${esc(c.cor)};--soft:${esc(c.soft)}">
 ${topo("receita")}
 <nav class="cooknav" aria-label="Passos do modo cozinha"><button type="button" id="passo-ant">${ico("prev")}<span>Voltar</span></button><span id="passo-pos" aria-live="polite"></span><button type="button" id="passo-ok" class="ok"><span>Concluí</span>${ico("next")}</button></nav>
-<div class="cookbar" role="status"><div class="wrap"><span><b>Modo cozinha</b><span class="ck-long"> ligado: a tela fica acesa. Toque nos ingredientes e passos para marcar.</span><span class="ck-short">: tela acesa</span></span><button type="button" id="sair-cozinha">Sair</button></div></div>
+<div class="cookbar" role="status"><div class="wrap"><span><b>Modo cozinha</b><span class="ck-long" data-ck-long> ligado: letras maiores e um passo por vez. Toque nos ingredientes e passos para marcar.</span><span class="ck-short" data-ck-short>: letras maiores</span></span><button type="button" id="sair-cozinha">Sair</button></div></div>
 <main id="conteudo">
 <section class="rh"><div class="wrap">
 <div>
@@ -307,8 +387,9 @@ ${topo("receita")}
 <a class="btn" href="https://wa.me/?text=${encodeURIComponent(`${r.titulo} na panificadora: ${abs(urlR(r))}`)}" target="_blank" rel="noopener">${ico("zap")}WhatsApp</a>
 <button class="btn needs-js" type="button" id="imprimir">${ico("print")}Imprimir</button>
 </div>
+<div class="copia-manual" id="copia-link" hidden><p><b>Não deu para copiar sozinho.</b> Toque e segure no endereço abaixo para copiar.</p><textarea readonly rows="2" aria-label="Endereço da receita"></textarea></div>
 </div>
-<div class="art"><img src="${art(r.icone)}" alt="" width="200" height="155"></div>
+${r.foto ? `<div class="art foto"><img src="${esc(r.foto)}" alt="${esc(r.fotoAlt || r.titulo)}" width="640" height="640"></div>` : `<div class="art"><img src="${art(r.icone)}" alt="" width="200" height="155"></div>`}
 </div></section>
 <div class="wrap">
 <div class="glance">${glance.map(([i, l, v]) => `<div>${ico(i)}<span><small>${esc(l)}</small><b>${esc(v)}</b></span></div>`).join("")}</div>
@@ -323,7 +404,8 @@ ${subIng}
 ${tam}
 ${ingHtml}
 <p class="hint needs-js">Toque em cada item conforme for separando: ele fica riscado.</p>
-<div class="ing-actions needs-js"><button class="btn small" type="button" id="copiar-ing">${ico("copy")}<span class="lbl">Copiar ingredientes</span></button><button class="linkbtn" type="button" id="limpar-marcas">Desmarcar tudo</button></div>
+<div class="ing-actions needs-js"><button class="btn small" type="button" id="copiar-ing">${ico("copy")}<span class="lbl">Copiar ingredientes</span></button><button class="linkbtn" type="button" id="limpar-marcas" hidden>Desmarcar tudo</button></div>
+<div class="copia-manual" id="copia-ing" hidden><p><b>Não deu para copiar sozinho.</b> Toque e segure no texto abaixo para copiar a lista.</p><textarea readonly rows="8" aria-label="Lista de ingredientes"></textarea></div>
 </section>
 <div>
 <section class="panel" id="preparo" aria-labelledby="h-modo">

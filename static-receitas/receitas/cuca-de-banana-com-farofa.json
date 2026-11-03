@@ -1,0 +1,126 @@
+{
+  "titulo": "Cuca de banana com farofa",
+  "ordem": 31,
+  "publicado": "2026-11-02",
+  "categoria": "bolos",
+  "tags": [
+    "Café da manhã",
+    "Sul"
+  ],
+  "resumo": "A cuca do Sul com massa fermentada, banana, canela e farofa crocante por cima.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → Fermentar → Assar",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 cuca na forma da máquina",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 43"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa (na ordem)",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "250 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Manteiga amolecida",
+          "quantidade": "60 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "4½ colheres (sopa)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "¾ colher (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "1½ colher (chá)"
+        }
+      ]
+    },
+    {
+      "grupo": "Cobertura",
+      "itens": [
+        {
+          "nome": "Banana nanica fatiada",
+          "quantidade": "3"
+        },
+        {
+          "nome": "Canela em pó",
+          "quantidade": "1½ colher (chá)"
+        },
+        {
+          "nome": "Farinha (farofa)",
+          "quantidade": "75 g"
+        },
+        {
+          "nome": "Açúcar (farofa)",
+          "quantidade": "75 g"
+        },
+        {
+          "nome": "Manteiga gelada (farofa)",
+          "quantidade": "60 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos e a manteiga da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
+        "Use o leite em temperatura ambiente, entre 20 °C e 25 °C, como pede o manual da Gallant: líquido quente demais mata o fermento.",
+        "Separe e pese todos os ingredientes antes de começar. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "A massa",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: leite, ovo e manteiga amolecida.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar."
+      ]
+    },
+    {
+      "grupo": "Montagem, fermentação e forno",
+      "passos": [
+        "Enquanto a massa cresce, prepare a farofa: esfarele a farinha, o açúcar e a manteiga gelada com as pontas dos dedos até virar uma areia grossa. Guarde na geladeira.",
+        "Ao fim do programa Massa, tire a massa e a pá. Unte a forma com manteiga e volte a massa, apertando com os dedos para cobrir o fundo.",
+        "Cubra com as fatias de banana, polvilhe a canela e espalhe a farofa por cima.",
+        "Rode o programa Fermentar por cerca de 30 minutos, até a massa crescer uns 2 cm.",
+        "Rode o programa Assar até a farofa dourar.",
+        "Se a farofa não dourar na máquina, desenforme como explicado abaixo e leve a cuca ao forno preaquecido a 200 °C por 5 a 10 minutos, só para dourar por cima."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere uns 10 minutos antes de desenformar, para o pão firmar e não rasgar.",
+        "Espere amornar por 15 minutos. Vire sobre um prato e desvire em outro, para a farofa ficar por cima, inteira."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Coberto, em temperatura ambiente, por até 3 dias. Em dia muito quente ou com cobertura de leite condensado, prefira a geladeira.",
+  "dica": "Desenforme morna, virando sobre um prato e desvirando em outro: a farofa fica por cima, inteira."
+}

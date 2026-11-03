@@ -1,0 +1,85 @@
+{
+  "titulo": "Pão de hot dog",
+  "ordem": 91,
+  "publicado": "2026-11-03",
+  "categoria": "massas",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "A máquina sova; você modela pães compridos e macios e assa no forno.",
+  "icone": "pizza",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → forno",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "10 pães",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "250 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "35 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "35 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "7 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "500 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "6 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Acabamento",
+      "itens": [
+        {
+          "nome": "Gema e 1 colher (sopa) leite",
+          "quantidade": "1"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Coloque na forma, nesta ordem: leite, ovo e manteiga.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
+        "Ao fim do programa Massa, divida em 10 partes iguais.",
+        "Modele cilindros de 12 a 14 cm, com pontas arredondadas. Coloque em assadeira deixando espaço entre eles.",
+        "Cubra e deixe crescer até ficarem fofos. Pincele gema misturada ao leite.",
+        "Asse a 180 °C por 15 a 20 minutos, até dourar."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Assado, em saco bem fechado por até 3 dias. A massa crua pode ficar na geladeira, em pote untado, por até 1 dia, ou congelada por até 1 mês.",
+  "dica": "Pincele a gema só nos pães já modelados, logo antes do forno."
+}

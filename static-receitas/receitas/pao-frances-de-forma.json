@@ -1,0 +1,82 @@
+{
+  "titulo": "Pão francês de forma",
+  "ordem": 5,
+  "publicado": "2026-11-02",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "A fórmula de pão francês do livro da Gallant: sem leite e sem ovo, casca firme e miolo leve. Fica no formato da forma, não de bisnaga.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Francês ou D'Água",
+  "casca": "Escura",
+  "timer": true,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "oficial",
+    "fonte": "Livro de Receitas Gallant, Panificadora 19 programas, p. 5"
+  },
+  "quantidades": "oficial",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "170 ml",
+          "q750": "250 ml",
+          "q1000": "340 ml"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "4 g",
+          "q750": "6 g",
+          "q1000": "8 g"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "6 ml",
+          "q750": "9 ml",
+          "q1000": "12 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "8 g",
+          "q750": "12 g",
+          "q1000": "16 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "260 g",
+          "q750": "400 g",
+          "q1000": "520 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3 g",
+          "q750": "5 g",
+          "q1000": "6 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Retire a forma e encaixe a pá. Coloque a água e o óleo.",
+        "Acrescente sal, açúcar e farinha.",
+        "Faça uma cavidade na farinha e coloque o fermento.",
+        "Selecione Francês ou D'Água, o tamanho escolhido e casca escura. Inicie.",
+        "Retire assim que o ciclo terminar e esfrie sobre uma grade, sem cobrir."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Retire o pão assim que o ciclo terminar e deixe esfriar sem cobrir: a casca continua firme."
+}

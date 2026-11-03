@@ -1,0 +1,107 @@
+{
+  "titulo": "Pão de mel de forma",
+  "ordem": 50,
+  "publicado": "2026-11-02",
+  "categoria": "bolos",
+  "tags": [
+    "Natal"
+  ],
+  "resumo": "Massa de mel, cacau e especiarias assada no programa Bolo e banhada em chocolate. Cortado em cubos, vira lembrancinha.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 bolo pequeno, cortado em cubos",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "100 ml"
+        },
+        {
+          "nome": "Mel",
+          "quantidade": "70 g"
+        },
+        {
+          "nome": "Açúcar mascavo",
+          "quantidade": "70 g"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Manteiga derretida",
+          "quantidade": "15 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "160 g"
+        },
+        {
+          "nome": "Cacau em pó",
+          "quantidade": "20 g"
+        },
+        {
+          "nome": "Canela, cravo e gengibre em pó (somados)",
+          "quantidade": "½ colher (chá)"
+        },
+        {
+          "nome": "Bicarbonato de sódio",
+          "quantidade": "2 g"
+        },
+        {
+          "nome": "Fermento químico em pó",
+          "quantidade": "6 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Cobertura",
+      "itens": [
+        {
+          "nome": "Chocolate meio amargo derretido",
+          "quantidade": "100 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Misture o leite, o mel, o açúcar mascavo, o ovo e a manteiga derretida e despeje na forma.",
+        "Junte a farinha, o cacau, a canela, o cravo e o gengibre, com o bicarbonato e o fermento por cima.",
+        "Encaixe a forma na máquina, com a pá no eixo, e rode o programa Bolo.",
+        "Não abra a tampa durante o ciclo. Para evitar farinha seca, pese e distribua os ingredientes com precisão antes de iniciar."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere 15 minutos antes de desenformar. Passe uma espátula fina nas laterais, vire sobre um prato e retire a pá, se ela ficar presa no fundo."
+      ]
+    },
+    {
+      "grupo": "Cobertura",
+      "passos": [
+        "Depois de frio, corte em cubos.",
+        "Derreta o chocolate em banho-maria ou no micro-ondas, de 30 em 30 segundos, mexendo entre um e outro. Banhe os cubos e deixe secar sobre papel-manteiga."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas. Se sair molhado, rode o programa Assar por mais 5 a 10 minutos e teste de novo.",
+  "guardar": "Em pote bem fechado por até 3 dias em temperatura ambiente; com cobertura cremosa ou recheio, na geladeira.",
+  "dica": "Embrulhado em celofane com fita, vira lembrancinha de Natal."
+}

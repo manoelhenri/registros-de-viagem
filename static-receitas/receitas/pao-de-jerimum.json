@@ -1,0 +1,95 @@
+{
+  "titulo": "Pão de abóbora",
+  "ordem": 41,
+  "publicado": "2026-11-02",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Café da manhã",
+    "Norte e Nordeste"
+  ],
+  "resumo": "O pão de abóbora do livro da Gallant: abóbora cozida no vapor dá cor e miolo úmido. Também conhecido como pão de jerimum.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Brioche",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "oficial",
+    "fonte": "Livro de Receitas Gallant, Panificadora 19 programas, p. 10"
+  },
+  "quantidades": "oficial",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "50 ml",
+          "q750": "80 ml",
+          "q1000": "100 ml"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3 g",
+          "q750": "5 g",
+          "q1000": "6 g"
+        },
+        {
+          "nome": "Abóbora cozida no vapor, escorrida e amassada",
+          "quantidade": "150 g",
+          "q750": "210 g",
+          "q1000": "300 g"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "15 ml",
+          "q750": "27 ml",
+          "q1000": "30 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "24 g",
+          "q750": "40 g",
+          "q1000": "48 g"
+        },
+        {
+          "nome": "Leite em pó",
+          "quantidade": "10 g",
+          "q750": "18 g",
+          "q1000": "20 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "180 g",
+          "q750": "300 g",
+          "q1000": "380 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "4 g",
+          "q750": "5 g",
+          "q1000": "8 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Cozinhe a abóbora, escorra muito bem e deixe esfriar completamente. Pese depois de fria.",
+        "Coloque água, óleo e abóbora na forma.",
+        "Acrescente sal, açúcar, leite em pó e farinha. Faça uma cavidade e coloque o fermento.",
+        "Selecione Brioche, o tamanho escolhido e casca clara. Inicie.",
+        "Desenforme e esfrie sobre grade."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Corte a abóbora em pedaços de uns 0,5 cm, cozinhe no vapor por cerca de 20 minutos, escorra a água depois de esfriar e amasse bem."
+}

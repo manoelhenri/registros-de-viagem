@@ -1,0 +1,93 @@
+{
+  "titulo": "Pão de bacalhau com azeitonas",
+  "ordem": 90,
+  "publicado": "2026-11-03",
+  "categoria": "recheados",
+  "tags": [
+    "Natal",
+    "Páscoa"
+  ],
+  "resumo": "Bacalhau dessalgado, cozido e desfiado com azeitonas recheando uma massa de azeite assada no forno.",
+  "icone": "swirl",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → forno",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 pão recheado",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "240 ml"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "25 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "10 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "6 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "5 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Recheio",
+      "itens": [
+        {
+          "nome": "Bacalhau dessalgado, cozido, sem pele/espinhas e bem desfiado",
+          "quantidade": "180 g"
+        },
+        {
+          "nome": "Azeitonas picadas",
+          "quantidade": "50 g"
+        },
+        {
+          "nome": "Cebola refogada",
+          "quantidade": "40 g"
+        },
+        {
+          "nome": "Salsa",
+          "quantidade": "a gosto"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Coloque na forma, nesta ordem: água e azeite.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
+        "Dessalgue o bacalhau sob refrigeração, cozinhe, retire pele e espinhas e desfie. Refogue a cebola e junte o bacalhau até ficar sem líquido. Esfrie.",
+        "Misture azeitonas e salsa. Abra a massa, espalhe o recheio e enrole.",
+        "Feche, deixe crescer em forma untada e asse a 180 °C por 25 a 35 minutos."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Por levar ingredientes perecíveis, guarde na geladeira, bem embalado, por até 3 dias. Aqueça as fatias antes de servir. Congelado, dura até 1 mês.",
+  "dica": "Bacalhau deve estar dessalgado e frio. Não use timer; mantenha o recheio refrigerado até a montagem."
+}

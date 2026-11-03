@@ -1,0 +1,90 @@
+{
+  "titulo": "Brownie de forma",
+  "ordem": 56,
+  "publicado": "2026-11-02",
+  "categoria": "bolos",
+  "tags": [
+    "Sobremesa"
+  ],
+  "resumo": "Brownie de chocolate meio amargo com centro úmido, no programa que mistura e assa.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Misturar e Assar",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "12 cubos",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel, revisada com o manual da Gallant"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Chocolate meio amargo",
+          "quantidade": "150 g"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "120 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "200 g"
+        },
+        {
+          "nome": "Ovos",
+          "quantidade": "3"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "90 g"
+        },
+        {
+          "nome": "Cacau em pó",
+          "quantidade": "20 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "1 pitada"
+        },
+        {
+          "nome": "Nozes picadas (opcional)",
+          "quantidade": "60 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos da geladeira 30 minutos antes.",
+        "Deixe a pá encaixada e passe um pouco de manteiga no fundo e nos cantos da forma, para o bolo soltar inteiro."
+      ]
+    },
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Derreta o chocolate com a manteiga e deixe amornar.",
+        "Numa tigela, misture o açúcar com os ovos e junte o chocolate derretido. Despeje na forma.",
+        "Coloque por cima a farinha, o cacau, o sal e as nozes.",
+        "Rode o programa Misturar e Assar, casca clara."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Espere esfriar por completo na forma antes de desenformar e corte em cubos. Na geladeira, ele firma ainda mais."
+      ]
+    }
+  ],
+  "pronto": "As bordas estão firmes e o centro ainda úmido. O palito sai com migalhas grudadas, não com massa líquida. Na geladeira, ele firma.",
+  "guardar": "Em pote fechado por até 4 dias. Na geladeira, fica mais denso e úmido.",
+  "dica": "Centro úmido é o ponto certo. Ele termina de firmar na geladeira."
+}

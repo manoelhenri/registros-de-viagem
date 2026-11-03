@@ -1,0 +1,118 @@
+{
+  "titulo": "Pão de paçoca",
+  "ordem": 49,
+  "publicado": "2026-11-02",
+  "categoria": "doces",
+  "tags": [
+    "Festa junina"
+  ],
+  "resumo": "Paçoca esfarelada na massa, para um pão doce com gosto de festa junina.",
+  "icone": "brioche",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Brioche",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel, revisada com o manual da Gallant"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "750 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "160 ml",
+          "q750": "265 ml",
+          "q1000": "320 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1",
+          "q750": "1",
+          "q1000": "2"
+        },
+        {
+          "nome": "Manteiga amolecida",
+          "quantidade": "20 g",
+          "q750": "30 g",
+          "q1000": "40 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "2 colheres (sopa)",
+          "q750": "3 colheres (sopa)",
+          "q1000": "4 colheres (sopa)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "¾ colher (chá)",
+          "q750": "1 colher (chá)",
+          "q1000": "1½ colher (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "280 g",
+          "q750": "420 g",
+          "q1000": "560 g"
+        },
+        {
+          "nome": "Paçoca de rolha esfarelada",
+          "quantidade": "60 g",
+          "q750": "90 g",
+          "q1000": "120 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "1¼ colher (chá)",
+          "q750": "2 colheres (chá)",
+          "q1000": "2½ colheres (chá)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos e a manteiga da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
+        "Use o leite em temperatura ambiente, entre 20 °C e 25 °C, como pede o manual da Gallant: líquido quente demais mata o fermento.",
+        "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "Na forma",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "A paçoca esfarelada vai junto com a farinha.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: leite, ovo e manteiga amolecida.",
+        "Por cima, coloque açúcar, sal, farinha de trigo e paçoca esfarelada, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal."
+      ]
+    },
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Encaixe a forma na máquina e escolha o programa Brioche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
+        "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Massa com bastante ovo, manteiga ou açúcar fica mais mole e brilhante e pode grudar nas paredes: isso é normal, não junte farinha por causa disso. Só se ela estiver escorrendo como um creme, junte 1 colher (sopa) de farinha por vez.",
+        "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
+        "Deixe esfriar sobre uma grade por cerca de 20 minutos antes de fatiar, como orienta o manual. Para fatias finas e firmes, espere esfriar por completo.",
+        "Sirva com doce de leite ou geleia de morango."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado ou num pote, em temperatura ambiente, por até 3 dias. Para congelar, fatie antes e guarde por até 1 mês; tire as fatias que for usar e leve direto à torradeira.",
+  "dica": "A paçoca já tem açúcar e gordura, por isso a massa leva menos manteiga que um brioche."
+}

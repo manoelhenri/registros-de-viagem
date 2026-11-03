@@ -1,0 +1,94 @@
+{
+  "titulo": "Pão vegano integral",
+  "ordem": 76,
+  "publicado": "2026-11-03",
+  "categoria": "integrais",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "Farinha integral, aveia e açúcar mascavo, sem leite, ovo ou manteiga. Confira os rótulos dos ingredientes industrializados.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Pão Integral",
+  "casca": "Média",
+  "timer": true,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "160 ml",
+          "q750": "240 ml",
+          "q1000": "320 ml"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "15 ml",
+          "q750": "22 ml",
+          "q1000": "30 ml"
+        },
+        {
+          "nome": "Açúcar mascavo",
+          "quantidade": "12 g",
+          "q750": "19 g",
+          "q1000": "25 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "4 g",
+          "q750": "6 g",
+          "q1000": "8 g"
+        },
+        {
+          "nome": "Farinha integral",
+          "quantidade": "150 g",
+          "q750": "225 g",
+          "q1000": "300 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "75 g",
+          "q750": "110 g",
+          "q1000": "150 g"
+        },
+        {
+          "nome": "Aveia fina",
+          "quantidade": "15 g",
+          "q750": "22 g",
+          "q1000": "30 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3 g",
+          "q750": "4,5 g",
+          "q1000": "6 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Coloque água e óleo na forma.",
+        "Acrescente açúcar, sal, farinhas e aveia. Por último, faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma, escolha o programa Pão Integral, o tamanho escolhido e a casca média e aperte iniciar.",
+        "Observe a massa: deve formar uma massa coesa e um pouco pegajosa. Ajuste aos poucos.",
+        "Desenforme e esfrie."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Sem ingredientes de origem animal. Contém glúten."
+}

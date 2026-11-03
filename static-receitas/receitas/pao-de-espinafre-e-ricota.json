@@ -1,0 +1,122 @@
+{
+  "titulo": "Pão de espinafre e ricota",
+  "ordem": 22,
+  "publicado": "2026-11-02",
+  "categoria": "recheados",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Espinafre bem espremido, ricota e parmesão, com um toque de noz-moscada.",
+  "icone": "swirl",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → Fermentar → Assar",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 pão recheado",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 35"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa (na ordem)",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "250 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "3 colheres (sopa)"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "1½ colher (sopa)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "1½ colher (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "1½ colher (chá)"
+        }
+      ]
+    },
+    {
+      "grupo": "Recheio",
+      "itens": [
+        {
+          "nome": "Espinafre refogado e bem espremido",
+          "quantidade": "150 g"
+        },
+        {
+          "nome": "Ricota amassada",
+          "quantidade": "150 g"
+        },
+        {
+          "nome": "Parmesão ralado",
+          "quantidade": "3 colheres (sopa)"
+        },
+        {
+          "nome": "Noz-moscada, sal e pimenta",
+          "quantidade": "a gosto"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
+        "Use o leite em temperatura ambiente, entre 20 °C e 25 °C, como pede o manual da Gallant: líquido quente demais mata o fermento.",
+        "Separe e pese todos os ingredientes antes de começar. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "A massa",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: leite, ovo e óleo.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar."
+      ]
+    },
+    {
+      "grupo": "Montagem, fermentação e forno",
+      "passos": [
+        "Enquanto a massa cresce, esprema o espinafre refogado num pano limpo até não sair mais água. Misture com a ricota, o parmesão, a noz-moscada, sal e pimenta. A massa já tem sal: prove o recheio antes de salgar.",
+        "Ao fim do programa Massa, tire a massa, aperte para soltar o ar e abra com rolo num retângulo de 1 cm de espessura. Um lado deve ter 17 cm (o comprimento interno da forma); o outro, cerca de 40 cm.",
+        "Espalhe o recheio deixando 2 cm de borda livre em volta.",
+        "Enrole como rocambole a partir do lado de 17 cm. Aperte bem a emenda e as pontas para o recheio não vazar.",
+        "Tire a pá da forma, unte a forma com óleo e coloque o rolo com a emenda para baixo.",
+        "Encaixe a forma e rode o programa Fermentar até a massa quase alcançar a borda da forma.",
+        "Rode o programa Assar até a casca dourar por igual."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere uns 10 minutos antes de desenformar, para o pão firmar e não rasgar.",
+        "Corte só depois de amornar, com faca de serra."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Por causa do recheio, guarde na geladeira, bem embalado, por até 3 dias. Aqueça as fatias no forno ou na frigideira antes de servir. Congelado, dura até 1 mês.",
+  "dica": "Esprema o espinafre num pano até sair toda a água: é isso que evita miolo cru perto do recheio."
+}

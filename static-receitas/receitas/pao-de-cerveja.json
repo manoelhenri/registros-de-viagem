@@ -1,0 +1,83 @@
+{
+  "titulo": "Pão de cerveja",
+  "ordem": 55,
+  "publicado": "2026-11-03",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Churrasco",
+    "Jantar"
+  ],
+  "resumo": "Cerveja no lugar da água para um pão de sabor maltado, mais marcante com cerveja escura.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Cerveja em temperatura ambiente, sem excesso de espuma",
+          "quantidade": "190 ml",
+          "q750": "290 ml",
+          "q1000": "384 ml"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "18 g",
+          "q750": "27 g",
+          "q1000": "36 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "13 g",
+          "q750": "20 g",
+          "q1000": "26 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "2 g",
+          "q750": "3 g",
+          "q1000": "4 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "240 g",
+          "q750": "360 g",
+          "q1000": "480 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "2,5 g",
+          "q750": "4 g",
+          "q1000": "5 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Retire a forma, encaixe a pá e coloque a cerveja e a manteiga.",
+        "Acrescente açúcar, sal e farinha. Faça uma cavidade na farinha e coloque o fermento sem contato direto com o líquido ou o sal.",
+        "Encaixe a forma, selecione Macio, o tamanho escolhido e casca média. Inicie imediatamente; não use programação antecipada.",
+        "Observe a massa somente durante a mistura inicial e apenas se o manual permitir. Ela deve formar uma massa coesa e macia.",
+        "Ao terminar, retire com luvas, desenforme e esfrie completamente sobre uma grade."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Cerveja escura dá sabor e cor mais marcados. A massa não deve ficar líquida; corrija apenas com pequenas quantidades de farinha durante a mistura inicial."
+}

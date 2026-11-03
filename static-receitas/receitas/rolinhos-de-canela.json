@@ -1,0 +1,112 @@
+{
+  "titulo": "Rolinhos de canela (cinnamon rolls)",
+  "ordem": 77,
+  "publicado": "2026-11-03",
+  "categoria": "doces",
+  "tags": [
+    "Café da manhã",
+    "Lanche"
+  ],
+  "resumo": "A máquina sova a massa; você enrola com manteiga, açúcar mascavo e canela, corta e assa no forno.",
+  "icone": "brioche",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → forno",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "10 a 12 rolinhos",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "250 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "50 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "55 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "6 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "6 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Recheio",
+      "itens": [
+        {
+          "nome": "Manteiga macia",
+          "quantidade": "60 g"
+        },
+        {
+          "nome": "Açúcar mascavo",
+          "quantidade": "90 g"
+        },
+        {
+          "nome": "Canela em pó",
+          "quantidade": "10 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Cobertura",
+      "itens": [
+        {
+          "nome": "Cream cheese",
+          "quantidade": "100 g"
+        },
+        {
+          "nome": "Açúcar de confeiteiro",
+          "quantidade": "40 g"
+        },
+        {
+          "nome": "Leite",
+          "quantidade": "15 ml"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Coloque na forma, nesta ordem: leite, ovo e manteiga.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
+        "Ao fim do programa Massa, abra a massa em retângulo de cerca de 35 × 45 cm.",
+        "Espalhe manteiga e polvilhe açúcar mascavo com canela, deixando uma borda livre.",
+        "Enrole pelo lado comprido, corte em 9 a 10 rolinhos e acomode em forma untada.",
+        "Cubra e deixe crescer até ficarem fofos. Asse a 180 °C por cerca de 20 a 25 minutos, até dourar e cozinhar no centro.",
+        "Misture o cream cheese, o açúcar de confeiteiro e o leite da cobertura e espalhe sobre os rolinhos mornos."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Assado, em saco bem fechado por até 3 dias. A massa crua pode ficar na geladeira, em pote untado, por até 1 dia, ou congelada por até 1 mês.",
+  "dica": "O tempo de forno depende do tamanho dos rolinhos e da forma. Recheio e cobertura não vão à forma."
+}

@@ -1,0 +1,89 @@
+{
+  "titulo": "Broa de fubá",
+  "ordem": 36,
+  "publicado": "2026-11-02",
+  "categoria": "bolos",
+  "tags": [
+    "Café da manhã",
+    "Festa junina"
+  ],
+  "resumo": "Broa compacta de fubá, parmesão e erva-doce, com fermento químico, no programa Bolo. Textura de bolo rústico.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 broa pequena",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 37"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "100 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "40 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "70 g"
+        },
+        {
+          "nome": "Fubá mimoso",
+          "quantidade": "60 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "50 g"
+        },
+        {
+          "nome": "Queijo parmesão ralado",
+          "quantidade": "25 g"
+        },
+        {
+          "nome": "Erva-doce",
+          "quantidade": "½ colher (chá)"
+        },
+        {
+          "nome": "Fermento químico em pó",
+          "quantidade": "5 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Bata no liquidificador o leite, o ovo, o óleo e o açúcar e despeje na forma.",
+        "Junte o fubá, a farinha, o parmesão e a erva-doce, com o fermento por cima.",
+        "Encaixe a forma na máquina, com a pá no eixo, e rode o programa Bolo.",
+        "Não abra a tampa durante o ciclo. Para evitar farinha seca, pese e distribua os ingredientes com precisão antes de iniciar."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere 15 minutos antes de desenformar. Passe uma espátula fina nas laterais, vire sobre um prato e retire a pá, se ela ficar presa no fundo.",
+        "Sirva morna, com café passado."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas. Se sair molhado, rode o programa Assar por mais 5 a 10 minutos e teste de novo.",
+  "guardar": "Em pote bem fechado por até 3 dias em temperatura ambiente; com cobertura cremosa ou recheio, na geladeira.",
+  "dica": "Sirva morna, com café passado."
+}

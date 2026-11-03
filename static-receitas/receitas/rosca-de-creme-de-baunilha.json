@@ -1,0 +1,101 @@
+{
+  "titulo": "Rosca de creme de baunilha",
+  "ordem": 80,
+  "publicado": "2026-11-03",
+  "categoria": "doces",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Massa doce feita na máquina, recheada com creme de baunilha frio e firme, modelada e assada no forno.",
+  "icone": "brioche",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → forno",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 rosca",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "240 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "45 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "50 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "6 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "5 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Creme",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "250 ml"
+        },
+        {
+          "nome": "Gemas",
+          "quantidade": "2"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "45 g"
+        },
+        {
+          "nome": "Amido de milho",
+          "quantidade": "20 g"
+        },
+        {
+          "nome": "Baunilha",
+          "quantidade": "5 ml"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Prepare o creme: aqueça leite. Misture gemas, açúcar e amido; tempere com leite quente e cozinhe mexendo até engrossar. Junte baunilha e esfrie coberto com filme em contato.",
+        "Tire a forma da máquina e encaixe a pá no eixo. Coloque na forma, nesta ordem: leite, ovo e manteiga.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
+        "Ao fim do programa Massa, abra a massa em retângulo, espalhe creme frio em camada fina e enrole.",
+        "Una as pontas para formar uma rosca ou corte em fatias e acomode em forma.",
+        "Deixe crescer até ficar fofa. Asse a 180 °C por 25 a 30 minutos."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Assado, em saco bem fechado por até 3 dias. A massa crua pode ficar na geladeira, em pote untado, por até 1 dia, ou congelada por até 1 mês.",
+  "dica": "Creme deve estar frio e firme; não use creme morno nem em excesso. Refrigerar sobras por conter creme e ovos."
+}

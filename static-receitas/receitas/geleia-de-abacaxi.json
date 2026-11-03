@@ -1,0 +1,58 @@
+{
+  "titulo": "Geleia de abacaxi",
+  "ordem": 58,
+  "publicado": "2026-11-03",
+  "categoria": "doces-de-pote",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "Geleia de abacaxi com limão em lote pequeno, para não transbordar a forma. Guarde na geladeira.",
+  "icone": "jar",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Geleia",
+  "casca": "",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pote pequeno",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Abacaxi sem casca e sem miolo duro, triturado",
+          "quantidade": "500 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "200 g"
+        },
+        {
+          "nome": "Suco de limão",
+          "quantidade": "8 ml"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Retire casca e miolo duro. Pese a polpa já limpa e triturada.",
+        "Coloque abacaxi, açúcar e limão na forma com a pá encaixada.",
+        "Selecione Geleia e acompanhe o ciclo. Não aumente o lote nem use timer.",
+        "Interrompa imediatamente se a mistura ameaçar transbordar.",
+        "Transfira para recipiente limpo, resfrie rapidamente e leve à geladeira."
+      ]
+    }
+  ],
+  "pronto": "Faça o teste do pires: pingue um pouco num pires gelado, espere 1 minuto e empurre com o dedo. Se enrugar, está no ponto. Ela engrossa bastante ao esfriar.",
+  "guardar": "Depois de frio, guarde na geladeira em pote limpo e bem fechado por até 1 semana, como orienta o livro de receitas da Gallant para geleias feitas na panificadora. Não é conserva: não deixe fora da geladeira.",
+  "dica": "Não aumente a quantidade: a geleia não pode transbordar da forma. O ponto final firma depois de fria."
+}

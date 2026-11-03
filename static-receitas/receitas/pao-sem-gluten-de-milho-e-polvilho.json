@@ -1,0 +1,106 @@
+{
+  "titulo": "Pão sem glúten de milho e polvilho",
+  "ordem": 74,
+  "publicado": "2026-11-03",
+  "categoria": "integrais",
+  "tags": [
+    "Sem glúten"
+  ],
+  "resumo": "Fubá, polvilho doce, fécula e psyllium no programa Sem Glúten. Massa grossa como de bolo. Receita experimental.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Sem Glúten",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "175 ml",
+          "q750": "260 ml",
+          "q1000": "350 ml"
+        },
+        {
+          "nome": "Ovos",
+          "quantidade": "1",
+          "q750": "2",
+          "q1000": "2"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "18 ml",
+          "q750": "26 ml",
+          "q1000": "35 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "8 g",
+          "q750": "11 g",
+          "q1000": "15 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Fubá fino certificado sem glúten",
+          "quantidade": "90 g",
+          "q750": "135 g",
+          "q1000": "180 g"
+        },
+        {
+          "nome": "Polvilho doce",
+          "quantidade": "80 g",
+          "q750": "120 g",
+          "q1000": "160 g"
+        },
+        {
+          "nome": "Fécula de batata",
+          "quantidade": "35 g",
+          "q750": "52 g",
+          "q1000": "70 g"
+        },
+        {
+          "nome": "Psyllium em pó",
+          "quantidade": "6 g",
+          "q750": "9 g",
+          "q1000": "12 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Misture fubá, polvilho, fécula e psyllium.",
+        "Bata água, ovos e óleo; coloque na forma.",
+        "Acrescente açúcar, sal e secos; fermento por último.",
+        "Encaixe a forma, escolha o programa Sem Glúten, o tamanho escolhido e a casca média e aperte iniciar. Raspe os cantos no início se houver farinha seca. A mistura deve parecer massa grossa de bolo.",
+        "Complete o ciclo e esfrie totalmente antes de fatiar."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Fórmula experimental. Use somente ingredientes certificados sem glúten e utensílios sem contaminação cruzada."
+}

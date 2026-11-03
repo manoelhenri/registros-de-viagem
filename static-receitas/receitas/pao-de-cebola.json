@@ -1,0 +1,95 @@
+{
+  "titulo": "Pão de cebola",
+  "ordem": 62,
+  "publicado": "2026-11-03",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Lanche",
+    "Jantar"
+  ],
+  "resumo": "Cebola refogada e fria com orégano numa massa salgada, bom para lanche e sopa.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "750 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Cebola picada e refogada até secar, fria",
+          "quantidade": "80 g",
+          "q750": "120 g",
+          "q1000": "160 g"
+        },
+        {
+          "nome": "Água",
+          "quantidade": "165 ml",
+          "q750": "250 ml",
+          "q1000": "335 ml"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "20 ml",
+          "q750": "30 ml",
+          "q1000": "40 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "10 g",
+          "q750": "15 g",
+          "q1000": "20 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "4,5 g",
+          "q750": "7 g",
+          "q1000": "9 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "300 g",
+          "q750": "450 g",
+          "q1000": "600 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Orégano",
+          "quantidade": "¾ colher (chá)",
+          "q750": "1 colher (chá)",
+          "q1000": "1¼ colher (chá)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Refogue a cebola sem deixar dourar demais e deixe esfriar por completo.",
+        "Coloque água e óleo na forma; acrescente cebola, açúcar, sal, farinha e orégano. Por último, faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma, escolha o programa Macio, o tamanho escolhido e a casca média e aperte iniciar.",
+        "Observe a massa e ajuste em pequenas quantidades se necessário.",
+        "Desenforme e esfrie."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Cebola crua solta água e altera a hidratação; por isso entra refogada e fria. Não use timer."
+}

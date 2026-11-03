@@ -1,0 +1,94 @@
+{
+  "titulo": "Pretzel macio",
+  "ordem": 94,
+  "publicado": "2026-11-03",
+  "categoria": "massas",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Massa sovada na máquina, modelada em laços, mergulhada em água com bicarbonato e assada no forno.",
+  "icone": "pizza",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → forno",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "8 pretzels",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "280 ml"
+        },
+        {
+          "nome": "Manteiga em pedaços",
+          "quantidade": "30 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "15 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "8 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "500 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "7 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Banho e acabamento",
+      "itens": [
+        {
+          "nome": "Água para o banho",
+          "quantidade": "1 litro"
+        },
+        {
+          "nome": "Bicarbonato de sódio",
+          "quantidade": "30 g"
+        },
+        {
+          "nome": "Sal grosso",
+          "quantidade": "a gosto"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá. Coloque a água (em temperatura ambiente) e a manteiga.",
+        "Por cima, coloque o açúcar, o sal e a farinha. Faça uma covinha no topo da farinha e coloque o fermento ali.",
+        "Encaixe a forma e rode o programa Massa."
+      ]
+    },
+    {
+      "grupo": "Modelagem, banho e forno",
+      "passos": [
+        "Divida a massa em 8 partes, role cada uma num cordão de uns 50 cm e dê o nó do pretzel, apertando as pontas.",
+        "Deixe descansar coberto por 15 minutos. Preaqueça o forno a 220 °C.",
+        "Ferva a água com o bicarbonato numa panela funda (cuidado: a mistura espuma). Mergulhe um pretzel por vez por 20 a 30 segundos e escorra com escumadeira.",
+        "Coloque numa assadeira com papel-manteiga, salpique sal grosso e asse por 12 a 15 minutos, até ficarem bem dourados."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Assado, em saco bem fechado por até 3 dias. A massa crua pode ficar na geladeira, em pote untado, por até 1 dia, ou congelada por até 1 mês.",
+  "dica": "O banho quente causa queimaduras. Use panela funda, mergulhe uma peça por vez e não use utensílio de alumínio sem verificar compatibilidade."
+}

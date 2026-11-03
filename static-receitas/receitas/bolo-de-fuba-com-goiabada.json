@@ -1,0 +1,79 @@
+{
+  "titulo": "Bolo de fubá com goiabada",
+  "ordem": 97,
+  "publicado": "2026-11-03",
+  "categoria": "bolos",
+  "tags": [
+    "Festa junina",
+    "Lanche"
+  ],
+  "resumo": "Bolo de fubá em lote compacto com cubinhos de goiabada firme, no programa Bolo.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 bolo pequeno",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "80 g"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "50 ml"
+        },
+        {
+          "nome": "Leite",
+          "quantidade": "80 ml"
+        },
+        {
+          "nome": "Fubá fino",
+          "quantidade": "75 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "60 g"
+        },
+        {
+          "nome": "Fermento químico",
+          "quantidade": "5 g"
+        },
+        {
+          "nome": "Goiabada firme em cubos pequenos",
+          "quantidade": "60 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Bata ovos, açúcar, óleo e leite.",
+        "Misture fubá e farinha; incorpore aos líquidos. Adicione fermento por último.",
+        "Unte a forma e despeje metade da massa. Distribua parte da goiabada, cubra com o restante e finalize com os cubos restantes.",
+        "Use programa Bolo. Verifique o centro com palito. Se necessário, complete com Assar em intervalos curtos.",
+        "Deixe amornar antes de desenformar."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas. Se sair molhado, rode o programa Assar por mais 5 a 10 minutos e teste de novo.",
+  "guardar": "Em pote bem fechado por até 3 dias em temperatura ambiente; com cobertura cremosa ou recheio, na geladeira.",
+  "dica": "Goiabada pode afundar ou caramelizar no fundo. Cubos pequenos e levemente enfarinhados ajudam a distribuir."
+}

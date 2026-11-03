@@ -1,0 +1,131 @@
+{
+  "titulo": "Pão de tapioca com coco",
+  "ordem": 42,
+  "publicado": "2026-11-02",
+  "categoria": "doces",
+  "tags": [
+    "Café da manhã",
+    "Norte e Nordeste"
+  ],
+  "resumo": "Leite de coco, coco ralado e tapioca granulada (a de grãos, não a goma pronta), que deixa pontinhos no miolo.",
+  "icone": "brioche",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Brioche",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel, revisada com o manual da Gallant"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "750 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Leite de coco",
+          "quantidade": "100 ml",
+          "q750": "150 ml",
+          "q1000": "200 ml"
+        },
+        {
+          "nome": "Leite",
+          "quantidade": "90 ml",
+          "q750": "160 ml",
+          "q1000": "180 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1",
+          "q750": "1",
+          "q1000": "2"
+        },
+        {
+          "nome": "Manteiga amolecida",
+          "quantidade": "30 g",
+          "q750": "45 g",
+          "q1000": "60 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "3 colheres (sopa)",
+          "q750": "4½ colheres (sopa)",
+          "q1000": "6 colheres (sopa)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "½ colher (chá)",
+          "q750": "¾ colher (chá)",
+          "q1000": "1 colher (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "270 g",
+          "q750": "405 g",
+          "q1000": "540 g"
+        },
+        {
+          "nome": "Tapioca granulada",
+          "quantidade": "30 g",
+          "q750": "45 g",
+          "q1000": "60 g"
+        },
+        {
+          "nome": "Coco ralado",
+          "quantidade": "30 g",
+          "q750": "45 g",
+          "q1000": "60 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "1¼ colher (chá)",
+          "q750": "2 colheres (chá)",
+          "q1000": "2½ colheres (chá)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos e a manteiga da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
+        "Use o leite em temperatura ambiente, entre 20 °C e 25 °C, como pede o manual da Gallant: líquido quente demais mata o fermento.",
+        "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "Na forma",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "A tapioca granulada e o coco ralado vão junto com a farinha.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: leite de coco, leite, ovo e manteiga amolecida.",
+        "Por cima, coloque açúcar, sal, farinha de trigo, tapioca granulada e coco ralado, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal."
+      ]
+    },
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Encaixe a forma na máquina e escolha o programa Brioche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
+        "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Massa com bastante ovo, manteiga ou açúcar fica mais mole e brilhante e pode grudar nas paredes: isso é normal, não junte farinha por causa disso. Só se ela estiver escorrendo como um creme, junte 1 colher (sopa) de farinha por vez.",
+        "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
+        "Deixe esfriar sobre uma grade por cerca de 20 minutos antes de fatiar, como orienta o manual. Para fatias finas e firmes, espere esfriar por completo.",
+        "Assim que desenformar, pincele um pouco de leite de coco na casca."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado ou num pote, em temperatura ambiente, por até 3 dias. Para congelar, fatie antes e guarde por até 1 mês; tire as fatias que for usar e leve direto à torradeira.",
+  "dica": "A tapioca granulada deixa pontinhos crocantes no miolo. Lembra o cuscuz de tapioca."
+}

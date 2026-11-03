@@ -1,0 +1,125 @@
+{
+  "titulo": "Rosca de Páscoa trançada",
+  "ordem": 47,
+  "publicado": "2026-11-02",
+  "categoria": "doces",
+  "tags": [
+    "Páscoa"
+  ],
+  "resumo": "Trança com passas e raspas de laranja, coberta com glacê de laranja, assada dentro da forma.",
+  "icone": "brioche",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → Fermentar → Assar",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 pão na forma da máquina",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa (na ordem)",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "250 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Manteiga amolecida",
+          "quantidade": "60 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "4½ colheres (sopa)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "¾ colher (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "1½ colher (chá)"
+        },
+        {
+          "nome": "Raspas de laranja",
+          "quantidade": "¾ laranja"
+        },
+        {
+          "nome": "Uvas-passas (à mão, na modelagem)",
+          "quantidade": "75 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Acabamento e glacê",
+      "itens": [
+        {
+          "nome": "Gema (para pincelar)",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Açúcar de confeiteiro",
+          "quantidade": "120 g"
+        },
+        {
+          "nome": "Suco de laranja",
+          "quantidade": "1½ colher (sopa)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos e a manteiga da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
+        "Use o leite em temperatura ambiente, entre 20 °C e 25 °C, como pede o manual da Gallant: líquido quente demais mata o fermento.",
+        "Separe e pese todos os ingredientes antes de começar. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "A massa",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: leite, ovo e manteiga amolecida.",
+        "Por cima, coloque açúcar, sal, farinha de trigo e raspas de laranja, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
+        "Ao fim do programa Massa, abra a massa e espalhe uvas-passas por cima; dobre e sove com as mãos por 1 minuto para distribuir. O programa Massa não tem aviso de adição."
+      ]
+    },
+    {
+      "grupo": "Montagem, fermentação e forno",
+      "passos": [
+        "Ao fim do programa Massa, divida a massa em 3 partes iguais e role cada uma num cordão de 17 cm.",
+        "Trance os 3 cordões sem apertar, prendendo bem as pontas e dobrando-as para baixo, para a trança caber nos 17 cm da forma. Ela precisa de espaço para crescer sem rasgar.",
+        "Tire a pá, unte a forma e coloque a trança.",
+        "Rode o programa Fermentar até crescer bem. Bata a gema com uma colher de água, pincele por cima e rode o Assar até dourar."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere uns 10 minutos antes de desenformar, para o pão firmar e não rasgar.",
+        "Desenforme e deixe esfriar por completo sobre uma grade. Só então misture o açúcar de confeiteiro com o suco de laranja e espalhe o glacê por cima.",
+        "Corte só depois de amornar, com faca de serra."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado ou num pote, em temperatura ambiente, por até 3 dias. Para congelar, fatie antes e guarde por até 1 mês; tire as fatias que for usar e leve direto à torradeira.",
+  "dica": "Trance sem apertar: a trança precisa de espaço para crescer sem rasgar."
+}

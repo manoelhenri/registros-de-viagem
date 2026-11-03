@@ -1,0 +1,94 @@
+{
+  "titulo": "Pão de milho",
+  "ordem": 61,
+  "publicado": "2026-11-03",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Café da manhã",
+    "Festa junina"
+  ],
+  "resumo": "O pão de milho do livro da Gallant, com farinha de milho e farinha de trigo, no programa Francês.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Francês ou D'Água",
+  "casca": "Média",
+  "timer": true,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "oficial",
+    "fonte": "Livro de Receitas Gallant, Panificadora 19 programas, p. 6"
+  },
+  "quantidades": "oficial",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "160 ml",
+          "q750": "240 ml",
+          "q1000": "320 ml"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3 g",
+          "q750": "5 g",
+          "q1000": "6 g"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "12 ml",
+          "q750": "18 ml",
+          "q1000": "24 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "8 g",
+          "q750": "12 g",
+          "q1000": "16 g"
+        },
+        {
+          "nome": "Leite em pó",
+          "quantidade": "8 g",
+          "q750": "12 g",
+          "q1000": "16 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "200 g",
+          "q750": "300 g",
+          "q1000": "400 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3 g",
+          "q750": "4 g",
+          "q1000": "6 g"
+        },
+        {
+          "nome": "Farinha de milho",
+          "quantidade": "60 g",
+          "q750": "100 g",
+          "q1000": "120 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Coloque água e óleo na forma.",
+        "Acrescente sal, açúcar, leite em pó, farinhas e fermento em cavidade na farinha.",
+        "Selecione Francês ou D'Água, o tamanho escolhido e casca média. Inicie.",
+        "Desenforme ao fim e esfrie em grade."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Use farinha de milho, não milho verde nem fubá grosso."
+}

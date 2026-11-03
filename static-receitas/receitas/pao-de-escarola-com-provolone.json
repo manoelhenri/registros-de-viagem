@@ -1,0 +1,89 @@
+{
+  "titulo": "Pão de escarola com provolone",
+  "ordem": 85,
+  "publicado": "2026-11-03",
+  "categoria": "recheados",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Escarola refogada e bem espremida com provolone, recheando uma massa de azeite assada no forno.",
+  "icone": "swirl",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → forno",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 pão recheado",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "240 ml"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "30 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "15 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "7 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "5 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Recheio",
+      "itens": [
+        {
+          "nome": "Escarola refogada e espremida",
+          "quantidade": "180 g"
+        },
+        {
+          "nome": "Provolone ralado",
+          "quantidade": "100 g"
+        },
+        {
+          "nome": "Cebola refogada",
+          "quantidade": "30 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Coloque na forma, nesta ordem: água e azeite.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
+        "Refogue escarola e cebola até perderem a água. Esprema e esfrie. Misture o provolone.",
+        "Abra a massa, espalhe o recheio frio e enrole.",
+        "Feche a emenda, coloque em forma untada e deixe crescer.",
+        "Asse a 180 °C por 25 a 30 minutos, até dourar e cozinhar no centro."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Por levar ingredientes perecíveis, guarde na geladeira, bem embalado, por até 3 dias. Aqueça as fatias antes de servir. Congelado, dura até 1 mês.",
+  "dica": "O recheio deve estar frio e sem líquido. O provolone é salgado; ajuste o sal da massa se necessário."
+}

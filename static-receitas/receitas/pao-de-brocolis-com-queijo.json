@@ -1,0 +1,92 @@
+{
+  "titulo": "Pão de brócolis com queijo",
+  "ordem": 86,
+  "publicado": "2026-11-03",
+  "categoria": "recheados",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Brócolis cozido al dente e bem seco com muçarela e parmesão, recheando uma massa assada no forno.",
+  "icone": "swirl",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → forno",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 pão recheado",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "240 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "30 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "15 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "7 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "5 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Recheio",
+      "itens": [
+        {
+          "nome": "Brócolis cozido al dente, picado e bem seco",
+          "quantidade": "160 g"
+        },
+        {
+          "nome": "Muçarela",
+          "quantidade": "130 g"
+        },
+        {
+          "nome": "Parmesão",
+          "quantidade": "25 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Coloque na forma, nesta ordem: leite, ovo e óleo.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
+        "Cozinhe o brócolis al dente, escorra, seque e esfrie. Misture a muçarela e o parmesão.",
+        "Abra a massa, espalhe o recheio frio e enrole sem apertar demais.",
+        "Feche a emenda, deixe crescer em forma untada e asse a 180 °C por 25 a 35 minutos."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Por levar ingredientes perecíveis, guarde na geladeira, bem embalado, por até 3 dias. Aqueça as fatias antes de servir. Congelado, dura até 1 mês.",
+  "dica": "Brócolis úmido deixa o centro pastoso. Não use recheio quente."
+}

@@ -1,0 +1,89 @@
+{
+  "titulo": "Pão sírio integral",
+  "ordem": 26,
+  "publicado": "2026-11-02",
+  "categoria": "massas",
+  "tags": [
+    "Jantar"
+  ],
+  "resumo": "Discos que estufam na frigideira, com metade de farinha integral. Para recheio, homus ou acompanhar pratos árabes.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa Integral",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "8 discos",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel, revisada com o manual da Gallant"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "300 ml"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "2 colheres (sopa)"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "1 colher (chá)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "1½ colher (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "250 g"
+        },
+        {
+          "nome": "Farinha de trigo integral",
+          "quantidade": "200 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "1½ colher (chá)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Separe e pese todos os ingredientes antes de começar. Nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: água e azeite.",
+        "Por cima, coloque açúcar, sal, farinha de trigo e farinha de trigo integral, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa Integral."
+      ]
+    },
+    {
+      "grupo": "Modelagem e finalização",
+      "passos": [
+        "Divida em 8 bolas, cubra e deixe descansar por 15 minutos.",
+        "Abra discos de 0,5 cm com rolo, em superfície enfarinhada.",
+        "Aqueça bem uma frigideira seca e asse cada disco por 1 a 2 minutos de cada lado, até estufar. No forno, a 250 °C, leva 4 a 5 minutos.",
+        "Assim que sair, embrulhe num pano limpo para continuar macio."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Em saco fechado por até 2 dias. Congelado dura 1 mês; aqueça na frigideira seca.",
+  "dica": "Guarde num pano assim que sair do fogo para continuar macio."
+}

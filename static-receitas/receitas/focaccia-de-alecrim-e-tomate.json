@@ -1,0 +1,106 @@
+{
+  "titulo": "Focaccia de alecrim e tomate",
+  "ordem": 25,
+  "publicado": "2026-11-02",
+  "categoria": "massas",
+  "tags": [
+    "Jantar"
+  ],
+  "resumo": "Massa bem hidratada, muito azeite, alecrim e tomate-cereja. Fundo crocante e miolo aerado.",
+  "icone": "pizza",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa",
+  "casca": "",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "Assadeira de 30 × 20 cm",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 53"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "330 ml"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "3 colheres (sopa)"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "1 colher (chá)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "2 colheres (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "2 colheres (chá)"
+        }
+      ]
+    },
+    {
+      "grupo": "Cobertura",
+      "itens": [
+        {
+          "nome": "Azeite (assadeira e cobertura)",
+          "quantidade": "5 colheres (sopa)"
+        },
+        {
+          "nome": "Alecrim fresco",
+          "quantidade": "2 ramos"
+        },
+        {
+          "nome": "Tomate-cereja",
+          "quantidade": "10"
+        },
+        {
+          "nome": "Sal grosso",
+          "quantidade": "1 colher (chá)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Separe e pese todos os ingredientes antes de começar. Nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: água e azeite. A cobertura só entra na assadeira.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa."
+      ]
+    },
+    {
+      "grupo": "Modelagem e finalização",
+      "passos": [
+        "Unte uma assadeira de 30 × 20 cm com 3 colheres (sopa) do azeite da cobertura. A massa é bem mole: passe para a assadeira e espalhe com os dedos untados.",
+        "Cubra e deixe crescer por 40 minutos. Enquanto isso, preaqueça o forno a 220 °C.",
+        "Afunde os dedos por toda a massa, regue o restante do azeite e espalhe as folhas de alecrim, os tomates-cereja cortados ao meio e o sal grosso.",
+        "Asse por 20 a 25 minutos, até dourar."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "No mesmo dia é o ideal. No dia seguinte, aqueça no forno por 5 minutos para a casca voltar a ficar crocante.",
+  "dica": "Seja generoso no azeite: é ele que faz o fundo crocante."
+}

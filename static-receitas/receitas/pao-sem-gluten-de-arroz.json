@@ -1,0 +1,126 @@
+{
+  "titulo": "Pão sem glúten de arroz",
+  "ordem": 11,
+  "publicado": "2026-11-02",
+  "categoria": "integrais",
+  "tags": [
+    "Sem glúten"
+  ],
+  "resumo": "Farinha de arroz, polvilho doce e psyllium, que faz o papel do glúten. Massa mole como bolo e pão de verdade no final.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Sem Glúten",
+  "casca": "Escura",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 38–39"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "750 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "300 ml",
+          "q750": "450 ml",
+          "q1000": "600 ml"
+        },
+        {
+          "nome": "Ovos",
+          "quantidade": "2",
+          "q750": "3",
+          "q1000": "4"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "3 colheres (sopa)",
+          "q750": "4 colheres (sopa)",
+          "q1000": "6 colheres (sopa)"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "1 colher (sopa)",
+          "q750": "1½ colher (sopa)",
+          "q1000": "2 colheres (sopa)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "1 colher (chá)",
+          "q750": "1½ colher (chá)",
+          "q1000": "2 colheres (chá)"
+        },
+        {
+          "nome": "Farinha de arroz",
+          "quantidade": "200 g",
+          "q750": "300 g",
+          "q1000": "400 g"
+        },
+        {
+          "nome": "Polvilho doce",
+          "quantidade": "100 g",
+          "q750": "150 g",
+          "q1000": "200 g"
+        },
+        {
+          "nome": "Psyllium em pó (não use a casca inteira)",
+          "quantidade": "1½ colher (sopa)",
+          "q750": "2 colheres (sopa)",
+          "q1000": "3 colheres (sopa)"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "2 colheres (chá)",
+          "q750": "3 colheres (chá)",
+          "q1000": "4 colheres (chá)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Para celíacos, use ingredientes com selo sem glúten e lave muito bem a forma e a pá antes de começar.",
+        "Misture numa tigela a farinha de arroz, o polvilho doce e o psyllium. Sem glúten, o psyllium é o que segura o pão.",
+        "Tire os ovos da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
+        "Use a água em temperatura ambiente, entre 20 °C e 25 °C, como pede o manual da Gallant: líquido quente demais mata o fermento.",
+        "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "Na forma",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Bata os ovos com a água e o óleo antes de colocar na forma.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: água, ovos e óleo.",
+        "Por cima, coloque açúcar, sal, farinha de arroz, polvilho doce e psyllium em pó, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal."
+      ]
+    },
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Encaixe a forma na máquina e escolha o programa Sem Glúten, o tamanho escolhido e a casca escura. Inicie na hora: esta receita não pode ficar no timer.",
+        "Nos primeiros 5 minutos, abra a tampa e raspe as laterais com uma espátula de silicone, para não sobrar farinha nos cantos.",
+        "A massa fica mole, parecida com massa de bolo. É assim mesmo: não junte farinha.",
+        "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
+        "Deixe esfriar por completo sobre uma grade antes de cortar, pelo menos 1 hora: pão sem glúten quente parece cru por dentro."
+      ]
+    }
+  ],
+  "pronto": "A casca fica firme e bem dourada e um palito espetado no centro sai seco. Espere esfriar por completo antes de cortar, senão o miolo parece cru mesmo estando assado.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado ou num pote, em temperatura ambiente, por até 3 dias. Para congelar, fatie antes e guarde por até 1 mês; tire as fatias que for usar e leve direto à torradeira.",
+  "dica": "Sem glúten, o psyllium é o que segura o pão. Para celíacos, use ingredientes com selo e lave muito bem a forma e a pá."
+}

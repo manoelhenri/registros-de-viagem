@@ -1,0 +1,89 @@
+{
+  "titulo": "Pão rápido de banana, aveia e castanha",
+  "ordem": 59,
+  "publicado": "2026-11-03",
+  "categoria": "bolos",
+  "tags": [
+    "Café da manhã",
+    "Lanche"
+  ],
+  "resumo": "Pão-bolo de banana com aveia e castanha-do-pará, com fermento químico, no programa Bolo.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão-bolo pequeno",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 34"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Banana nanica madura amassada",
+          "quantidade": "220 g"
+        },
+        {
+          "nome": "Ovos",
+          "quantidade": "2"
+        },
+        {
+          "nome": "Óleo vegetal",
+          "quantidade": "45 ml"
+        },
+        {
+          "nome": "Açúcar mascavo",
+          "quantidade": "120 g"
+        },
+        {
+          "nome": "Castanha-do-Pará triturada",
+          "quantidade": "45 g"
+        },
+        {
+          "nome": "Aveia em flocos",
+          "quantidade": "90 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "180 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3 g"
+        },
+        {
+          "nome": "Bicarbonato de sódio",
+          "quantidade": "3 g"
+        },
+        {
+          "nome": "Fermento químico em pó",
+          "quantidade": "8 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Unte levemente a forma e encaixe a pá.",
+        "Em uma tigela, misture banana, ovos, óleo e açúcar mascavo.",
+        "Acrescente castanha, aveia, farinha e sal. Misture até não haver farinha seca.",
+        "Junte bicarbonato e fermento químico por último, sem bater excessivamente.",
+        "Coloque a massa na forma, selecione Bolo e inicie. Não há seletor de peso neste programa.",
+        "Ao terminar, confira o centro com palito. Se houver massa crua e o manual permitir, use Assar em períodos curtos, acompanhando.",
+        "Deixe amornar antes de desenformar."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas. Se sair molhado, rode o programa Assar por mais 5 a 10 minutos e teste de novo.",
+  "guardar": "Em pote bem fechado por até 3 dias em temperatura ambiente; com cobertura cremosa ou recheio, na geladeira.",
+  "dica": "É um pão-bolo de banana com fermento químico, não um pão fermentado: confira o centro com um palito antes de desenformar."
+}

@@ -1,0 +1,106 @@
+{
+  "titulo": "Pão de sorgo sem glúten",
+  "ordem": 73,
+  "publicado": "2026-11-03",
+  "categoria": "integrais",
+  "tags": [
+    "Sem glúten"
+  ],
+  "resumo": "Farinha de sorgo, polvilho doce, fécula de batata e psyllium no programa Sem Glúten. Receita experimental.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Sem Glúten",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "190 ml",
+          "q750": "285 ml",
+          "q1000": "380 ml"
+        },
+        {
+          "nome": "Ovos",
+          "quantidade": "1",
+          "q750": "2",
+          "q1000": "2"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "18 ml",
+          "q750": "26 ml",
+          "q1000": "35 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "8 g",
+          "q750": "11 g",
+          "q1000": "15 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Farinha de sorgo certificada sem glúten",
+          "quantidade": "110 g",
+          "q750": "165 g",
+          "q1000": "220 g"
+        },
+        {
+          "nome": "Polvilho doce certificado",
+          "quantidade": "60 g",
+          "q750": "90 g",
+          "q1000": "120 g"
+        },
+        {
+          "nome": "Fécula de batata",
+          "quantidade": "18 g",
+          "q750": "26 g",
+          "q1000": "35 g"
+        },
+        {
+          "nome": "Psyllium em pó",
+          "quantidade": "6 g",
+          "q750": "9 g",
+          "q1000": "12 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Misture farinha de sorgo, polvilho, fécula e psyllium em uma tigela.",
+        "Bata água, ovos e óleo. Coloque na forma.",
+        "Acrescente açúcar, sal e mistura seca; adicione fermento por último.",
+        "Encaixe a forma, escolha o programa Sem Glúten, o tamanho escolhido e a casca média e aperte iniciar. Nos primeiros minutos, raspe as laterais com espátula de silicone se necessário. A massa será uma pasta espessa, não uma bola.",
+        "Deixe assar até o fim do programa e esfrie completamente antes de cortar."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Fórmula experimental: requer teste específico de absorção e estrutura. Para celíacos, use ingredientes certificados e controle rigoroso de contaminação cruzada."
+}

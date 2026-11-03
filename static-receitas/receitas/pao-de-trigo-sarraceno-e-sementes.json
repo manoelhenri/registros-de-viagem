@@ -1,0 +1,100 @@
+{
+  "titulo": "Pão de trigo-sarraceno e sementes",
+  "ordem": 72,
+  "publicado": "2026-11-03",
+  "categoria": "integrais",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "Farinha de trigo-sarraceno, girassol e linhaça numa massa com trigo. Sabor marcante e miolo mais denso.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": true,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "140 ml",
+          "q750": "210 ml",
+          "q1000": "280 ml"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "12 ml",
+          "q750": "19 ml",
+          "q1000": "25 ml"
+        },
+        {
+          "nome": "Mel",
+          "quantidade": "10 g",
+          "q750": "15 g",
+          "q1000": "20 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "150 g",
+          "q750": "225 g",
+          "q1000": "300 g"
+        },
+        {
+          "nome": "Farinha de trigo-sarraceno",
+          "quantidade": "60 g",
+          "q750": "90 g",
+          "q1000": "120 g"
+        },
+        {
+          "nome": "Sementes de girassol",
+          "quantidade": "15 g",
+          "q750": "22 g",
+          "q1000": "30 g"
+        },
+        {
+          "nome": "Linhaça",
+          "quantidade": "10 g",
+          "q750": "15 g",
+          "q1000": "20 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3 g",
+          "q750": "4,5 g",
+          "q1000": "6 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Coloque água, azeite e mel na forma.",
+        "Acrescente sal, as farinhas, as sementes de girassol e a linhaça. Por último, faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma, escolha o programa Macio, o tamanho escolhido e a casca média e aperte iniciar.",
+        "A massa fica mais densa e ligeiramente pegajosa; ajuste a água em pequenas doses se esfarelar.",
+        "Desenforme e esfrie completamente."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Trigo-sarraceno não é trigo, mas esta receita contém farinha de trigo e glúten. Para versão sem glúten, requer outra fórmula."
+}

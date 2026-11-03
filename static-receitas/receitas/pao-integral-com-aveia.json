@@ -1,0 +1,88 @@
+{
+  "titulo": "Pão 100% integral com aveia",
+  "ordem": 69,
+  "publicado": "2026-11-03",
+  "categoria": "integrais",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "Só farinha de trigo integral e aveia, adoçado com mel, no programa Pão Integral. Miolo mais denso.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Pão Integral",
+  "casca": "Média",
+  "timer": true,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "165 ml",
+          "q750": "250 ml",
+          "q1000": "330 ml"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "12 ml",
+          "q750": "19 ml",
+          "q1000": "25 ml"
+        },
+        {
+          "nome": "Mel",
+          "quantidade": "12 g",
+          "q750": "19 g",
+          "q1000": "25 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "4 g",
+          "q750": "6 g",
+          "q1000": "8 g"
+        },
+        {
+          "nome": "Farinha de trigo integral fina",
+          "quantidade": "200 g",
+          "q750": "300 g",
+          "q1000": "400 g"
+        },
+        {
+          "nome": "Aveia em flocos finos",
+          "quantidade": "30 g",
+          "q750": "45 g",
+          "q1000": "60 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Coloque água, óleo e mel na forma.",
+        "Acrescente sal, farinha integral e aveia.",
+        "Faça cavidade e adicione fermento.",
+        "Encaixe a forma, escolha o programa Pão Integral, o tamanho escolhido e a casca média e aperte iniciar. A massa deve ficar úmida e coesa, mais pegajosa que pão branco. Não exija bola lisa.",
+        "Desenforme e esfrie completamente antes de fatiar."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "A absorção varia muito entre farinhas integrais. Esta fórmula exige teste de hidratação; ajuste água em pequenas doses."
+}

@@ -265,5 +265,45 @@ Mantidos os endereços das receitas que continuam (mesmo prato). Novos endereço
 
 1. Nenhuma receita foi preparada na máquina; quantidades calculadas e receitas autorais e adaptadas precisam de teste.
 2. Os PDFs dos livros saíram da home por estarem desatualizados; regerar a partir do catálogo novo, se quiser.
-3. Fotos reais dos pães.
+3. Fotos reais dos pães (agora pelo painel, campo "Foto da receita").
 4. Reenviar o sitemap no Search Console (agora com 102 endereços).
+
+---
+
+# Auditoria profunda e edição pelo painel (nov/2026)
+
+## Funções testadas (iPhone SE, iPhone 13 e 320 px, Playwright)
+
+Testados em todas as 103 páginas: erros de console, rolagem horizontal, links internos, JSON-LD, imagens, botões sem nome e alvos de toque. Nenhum problema. Nas páginas de receita, cada botão foi clicado com e sem permissão de área de transferência e simulando o navegador de dentro do Instagram.
+
+| Função | Problema | Correção |
+|---|---|---|
+| Copiar ingredientes | Sem permissão de área de transferência (Instagram, Facebook, alguns apps), o botão não fazia nada | Tenta a área de transferência, depois o método antigo e, se nada funcionar, mostra a lista pronta numa caixa para copiar com o dedo |
+| Compartilhar | Sem `navigator.share` e sem permissão, não fazia nada; um erro do compartilhamento nativo também ficava mudo | Mesmo caminho do copiar, com o endereço da receita |
+| Imprimir | Nos navegadores de dentro de apps, `window.print()` não faz nada | O botão some nesses navegadores |
+| Desmarcar tudo | Aparecia mesmo sem nada marcado | Só aparece com algum ingrediente ou passo marcado |
+| Modo cozinha | Dizia "tela acesa" mesmo quando o navegador recusa manter a tela ligada | Diz "letras maiores" e só fala em tela acesa quando o Wake Lock é concedido; volta a pedir ao retornar à aba |
+| Botão Topo | No celular, cobria parte da lista de ingredientes | Abaixo de 600 px vira um círculo só com a seta |
+| CSS e JS sem versão | Depois de publicar, um celular com a cópia antiga do JS mostraria botões novos sem função | Arquivos entram com `?v=<hash>` do conteúdo |
+
+## Receitas corrigidas
+
+Checagem automática de ingrediente sem passo, programa da ficha diferente do citado no passo, casca, timer, sinal de adição e proporções.
+
+- **Fermento sumido do preparo** (efeito da normalização do catálogo de 100): pão de cebola, tomate seco e manjericão, multigrãos de linhaça e chia, quinoa e ervas, trigo-sarraceno e sementes, sem lactose de ervas, vegano integral e pão doce de abacaxi e coco. O passo do fermento voltou.
+- **Pão de sanduíche:** sal em 2,9% da farinha; passou para cerca de 2% (5, 7 e 10 g), como os outros pães. Passo citava "Sanduíche ou Macio"; ficou só Sanduíche, como a ficha.
+- **Pão de milho (oficial):** o passo mandava o programa Macio; o livro usa o Francês. Casca da ficha (escura) diferente do passo (média); ficou média nos dois.
+- **Pão de banana (oficial):** os passos ainda falavam em nozes e em amassar a banana com a água; foram refeitos na ordem do livro, com a manteiga 10 minutos depois do início.
+- **Pão sovado:** leva manteiga, mas o passo oferecia o timer; agora diz para iniciar na hora.
+- **Panetone, pão de mel, bolo de milho verde e broa de fubá:** faltava o passo de escolher o programa.
+- **Stollen:** ficha "Massa → forno", mas o pão fermenta e assa na máquina (Massa → Fermentar → Assar); as frutas entravam no "sinal de adição", que o programa Massa não tem, e agora entram na modelagem. Ingrediente "Limão Raspas de limão" e grupo "Recheio E Acabamento" corrigidos.
+- **Pão de nozes e cereja, abacaxi e coco, tomate seco:** "no sinal de adição, se disponível" virou instrução direta (Brioche e Macio têm o sinal).
+- **14 massas que vão ao forno** (rolinhos, pão de maçã, rosca de creme, trança, recheados de carne-seca, escarola, brócolis, tomate seco, cogumelos, pernil, bacalhau, hot dog, baguete e esfiha): a abertura dizia só "Rode Massa com os ingredientes"; agora lista os ingredientes na ordem e o fermento na covinha. A trança tinha "Rode Massa" duas vezes.
+- Ingredientes que não apareciam nos passos: cream cheese dos rolinhos, coco do bolo de milho verde, cheiro-verde do pão de carne-seca, especiarias do pão de mel (nome "No total de..." virou "Canela, cravo e gengibre em pó (somados)").
+
+## Edição de textos e fotos pelo painel
+
+- `static-receitas/receitas.json` foi dividido em `static-receitas/categorias.json` e um arquivo por receita em `static-receitas/receitas/`. As 100 páginas geradas ficaram idênticas às de antes da divisão (comparação do HTML).
+- Duas coleções novas no `/admin`: **Receitas (Pães do Manoel)** (todos os campos, foto com upload em `static-receitas/assets/img/fotos/`) e **Receitas: categorias** (nome, texto e cores).
+- Testado com `decap-server` local e o Decap 3.1.3: a lista abre as 100 receitas, a edição de um texto grava só aquele campo e o upload de foto grava o arquivo e o caminho; a foto aparece na página, no cartão, no JSON-LD e no Open Graph.
+- Receita salva com erro grave fica fora do site e as outras continuam; o log mostra `[receitas] ERRO` com o motivo.
