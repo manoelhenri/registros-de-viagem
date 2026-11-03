@@ -463,3 +463,11 @@ footer.foot{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
 .cooking .steps li.now button{box-shadow:inset 4px 0 0 var(--c)}
 @media(max-width:360px){.cooknav button{padding:0 12px;font-size:15px}.cooknav #passo-pos{font-size:13px}}
 @media print{.cooknav,.ing-actions,.alerta svg{display:none!important}}
+.prognota{font-size:13.5px;color:var(--muted);margin:10px 4px 0;line-height:1.5}.prognota a{color:var(--c);font-weight:600}
+/* origem da receita e nota das quantidades */
+.origem{display:flex;gap:10px;align-items:flex-start;margin:14px 4px 0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.origem svg{flex:none;width:20px;height:20px;margin-top:1px;color:var(--muted)}
+.origem.o-oficial svg{color:#2E6B3A}
+.origem.o-oficial b{color:#2E6B3A}
+.qnota{font-size:13.5px;color:var(--muted);margin:-4px 0 12px;line-height:1.5}
+.pill.o{background:#E1EEDF;color:#2E5A33;font-weight:600}

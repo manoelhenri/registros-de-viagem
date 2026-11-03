@@ -212,7 +212,7 @@
   var vazio = document.getElementById("vazio");
   var secao = document.getElementById("receitas");
   var selTag = document.getElementById("f-tag");
-  function novoEstado() { return { q: "", cat: "", tag: "", timer: false, salvas: false, facil: false }; }
+  function novoEstado() { return { q: "", cat: "", tag: "", timer: false, salvas: false, facil: false, oficial: false }; }
   var ordemOriginal = cards.slice();
   var parcial = document.getElementById("parcial");
   var estado = novoEstado();
@@ -234,7 +234,7 @@
   }
   function marcar(sel, attr, valor) { $all(sel).forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute(attr) === valor ? "true" : "false"); }); }
   function irParaLista() { var alvo = secao.querySelector(".filters") || secao; alvo.scrollIntoView({ block: "start" }); }
-  function filtrando() { return !!(estado.q.trim() || estado.cat || estado.tag || estado.timer || estado.salvas || estado.facil); }
+  function filtrando() { return !!(estado.q.trim() || estado.cat || estado.tag || estado.timer || estado.salvas || estado.facil || estado.oficial); }
 
   aplicar = function () {
     var q = norm(estado.q.trim()), n = 0;
@@ -244,6 +244,7 @@
         (!estado.tag || c.getAttribute("data-tags").split("|").indexOf(estado.tag) >= 0) &&
         (!estado.timer || c.getAttribute("data-timer") === "1") &&
         (!estado.facil || c.getAttribute("data-nivel") === "facil") &&
+        (!estado.oficial || c.getAttribute("data-origem") === "oficial") &&
         (!estado.salvas || salvas.indexOf(c.getAttribute("data-slug")) >= 0);
     };
     var nota = {};
@@ -277,6 +278,7 @@
     $all("button[data-f-timer]").forEach(function (b) { b.setAttribute("aria-pressed", estado.timer ? "true" : "false"); });
     $all("button[data-f-salvas]").forEach(function (b) { b.setAttribute("aria-pressed", estado.salvas ? "true" : "false"); });
     $all("button[data-f-facil]").forEach(function (b) { b.setAttribute("aria-pressed", estado.facil ? "true" : "false"); });
+    $all("button[data-f-oficial]").forEach(function (b) { b.setAttribute("aria-pressed", estado.oficial ? "true" : "false"); });
     if (selTag) { selTag.value = estado.tag; selTag.classList.toggle("on", !!estado.tag); }
     if (busca.value !== estado.q) busca.value = estado.q;
     // deixa a categoria escolhida visível na faixa que rola para o lado
@@ -284,7 +286,7 @@
     if (chipAtivo) { var faixa = chipAtivo.parentNode; var x = chipAtivo.offsetLeft - (faixa.clientWidth - chipAtivo.offsetWidth) / 2; faixa.scrollLeft = Math.max(0, x); }
     var p = new URLSearchParams();
     if (estado.q.trim()) p.set("q", estado.q.trim()); if (estado.cat) p.set("categoria", estado.cat); if (estado.tag) p.set("tag", estado.tag);
-    if (estado.timer) p.set("timer", "1"); if (estado.facil) p.set("nivel", "facil"); if (estado.salvas) p.set("salvas", "1");
+    if (estado.timer) p.set("timer", "1"); if (estado.facil) p.set("nivel", "facil"); if (estado.oficial) p.set("origem", "oficial"); if (estado.salvas) p.set("salvas", "1");
     var qs = p.toString();
     try { history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + (qs ? "#receitas" : "")); } catch (e) {}
   };
@@ -317,6 +319,7 @@
   $all("button[data-f-timer]").forEach(function (b) { b.addEventListener("click", function () { estado.timer = !estado.timer; aplicar(); }); });
   $all("button[data-f-salvas]").forEach(function (b) { b.addEventListener("click", function () { estado.salvas = !estado.salvas; aplicar(); }); });
   $all("button[data-f-facil]").forEach(function (b) { b.addEventListener("click", function () { estado.facil = !estado.facil; aplicar(); }); });
+  $all("button[data-f-oficial]").forEach(function (b) { b.addEventListener("click", function () { estado.oficial = !estado.oficial; aplicar(); }); });
   if (selTag) selTag.addEventListener("change", function () { estado.tag = selTag.value; aplicar(); });
   $all("[data-limpar]").forEach(function (b) { b.addEventListener("click", function () {
     estado = novoEstado(); aplicar(); irParaLista();
@@ -336,7 +339,7 @@
   estado.q = p.get("q") || "";
   estado.cat = catsValidas.indexOf(p.get("categoria")) >= 0 ? p.get("categoria") : "";
   estado.tag = tagsValidas.indexOf(p.get("tag")) >= 0 ? p.get("tag") : "";
-  estado.timer = p.get("timer") === "1"; estado.salvas = p.get("salvas") === "1"; estado.facil = p.get("nivel") === "facil";
+  estado.timer = p.get("timer") === "1"; estado.salvas = p.get("salvas") === "1"; estado.facil = p.get("nivel") === "facil"; estado.oficial = p.get("origem") === "oficial";
   aplicar();
   var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
   var voltando = nav && nav.type === "back_forward";

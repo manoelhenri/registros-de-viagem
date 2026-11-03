@@ -40,35 +40,42 @@ const P = {
 };
 const ico = (n, cls = "ico") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
 
+// Descrições do Manual de Instruções da Gallant (programas 1 a 19).
 const DESC_PROG = {
-  "Macio": "Pão branco de miolo fofo, ciclo completo.",
-  "Francês ou D'Água": "Sova e fermentação mais longas, casca firme.",
-  "Pão Integral": "Começa com um descanso para a farinha integral hidratar.",
-  "Pão Rápido": "Ciclo curto, para receitas com mais fermento.",
-  "Brioche": "Para massas ricas em ovo, manteiga e açúcar.",
-  "Sanduíche": "Miolo mais fechado, bom para fatiar fino.",
-  "Sem Glúten": "Mistura curta, sem sova, e assa por mais tempo.",
-  "Massa": "Só bate e deixa crescer, sem assar. Você modela depois.",
-  "Massa Integral": "Igual ao Massa, para farinha integral.",
-  "Massa de Pizza": "Sova curta, sem fermentação longa.",
-  "Fermentar": "Só aquece de leve para a massa crescer.",
-  "Assar": "Só assa, sem bater. Também serve para dar mais tempo de forno.",
-  "Bolo": "Mistura suave e assa massas com fermento químico.",
-  "Misturar e Assar": "Mistura rápido e assa, sem fermentar.",
-  "Misturar": "Mistura curta, sem sova.",
-  "Sovar": "Só sova, sem fermentar nem assar.",
-  "Geleia": "Cozinha mexendo devagar.",
-  "Mingau": "Cozinha mexendo devagar, com leite.",
+  "Macio": "Pão branco básico e pães mistos, também com ervas e passas. Escolhe tamanho e cor.",
+  "Francês ou D'Água": "Pães leves, de casca mais crocante. Escolhe tamanho e cor.",
+  "Pão Integral": "Pães com bastante farinha integral; começa com um pré-aquecimento mais longo para o grão absorver a água.",
+  "Pão Rápido": "Mistura, crescimento e forno mais curtos e miolo mais denso; feito para receitas com fermento em pó e bicarbonato.",
+  "Brioche": "Massas ricas em ovo, manteiga, líquido e açúcar; crescimento mais longo, pão leve e arejado.",
+  "Sanduíche": "Miolo branco, casca dourada e textura macia, fácil de fatiar.",
+  "Sem Glúten": "Farinhas sem glúten, que pedem mais tempo para absorver o líquido.",
+  "Misturar": "Só mistura, por 15 minutos fixos.",
+  "Massa Integral": "Mistura e fermenta, sem assar, para massa com farinha integral. Tempo fixo.",
+  "Massa de Pizza": "Mistura e fermenta, sem assar. Tempo fixo.",
+  "Massa": "Mistura e fermenta, sem assar: você modela e assa depois. Tempo fixo; no máximo 1 kg de ingredientes.",
+  "Sovar": "Só mistura, sem fermentar nem assar. Tempo ajustável de 8 a 45 minutos.",
+  "Mingau": "Mistura e fermenta, para mingau de cereais grossos.",
+  "Descongelar": "Mantém cerca de 50 °C para descongelar; o tempo é ajustável.",
+  "Fermentar": "Só fermenta.",
+  "Misturar e Assar": "Mistura e assa.",
+  "Geleia": "Geleias de frutas e marmeladas. Não aumente a quantidade: a geleia não pode transbordar.",
+  "Bolo": "Mistura, cresce e assa massas com fermento em pó. Escolhe a cor.",
+  "Assar": "Só assa, sem misturar nem descansar. Serve para dar mais tempo de forno.",
 };
+// Problemas e soluções do manual da Gallant, mais os casos de pães recheados.
 const PROBLEMAS = [
-  ["O pão cresceu e murchou no topo", "Fermento ou líquido demais, ou um dia muito quente. Na próxima vez, tire ¼ colher (chá) de fermento ou 10 ml de líquido. No verão, use água gelada."],
-  ["Pão baixo e pesado", "Fermento velho, líquido quente demais ou sal encostado no fermento. Teste o fermento: 1 colher (chá) dele em meio copo de água morna, com 1 colher (chá) de açúcar, deve espumar em até 10 minutos. Use líquidos até 30 °C."],
-  ["Farinha seca nos cantos da forma", "A massa ficou seca ou a pá não alcançou os cantos. Nos primeiros 5 minutos, raspe as laterais com espátula de silicone e junte 1 colher (sopa) de água se precisar."],
-  ["A massa gruda nas paredes durante a sova", "Massa úmida demais, comum com batata, abóbora ou macaxeira. Junte 1 colher (sopa) de farinha por vez até formar uma bola que solta das paredes."],
-  ["Casca escura demais", "Muito açúcar, ovo ou leite na massa. Nos pães doces, escolha sempre casca clara."],
-  ["Miolo cru perto do recheio", "Recheio úmido ou rolo apertado demais. O recheio precisa estar cozido, frio e sem caldo. Se o pão sair pálido, rode mais um ciclo de Assar."],
-  ["Buraco no fundo do pão", "É a marca da pá, normal em toda panificadora. Para evitar, tire a pá depois da última sova, antes da fermentação final."],
-  ["O pão grudou na forma", "Desenformado frio ou antiaderente gasto. Desenforme logo que terminar e unte a forma nos pães doces e recheados."],
+  ["Cheiro de queimado", "Farinha ou outro ingrediente caiu na câmara da máquina. Pare, deixe esfriar por completo e limpe o excesso com papel-toalha. Monte a forma sempre fora da máquina."],
+  ["Os ingredientes não se misturam e o motor faz barulho", "A forma ou a pá não estão bem encaixadas, ou há ingrediente demais. Confira se a pá está no eixo, se a forma travou girando no sentido horário e meça tudo com precisão."],
+  ["Aparece HHH no visor", "A máquina está quente demais, em geral logo depois de outro programa. Desligue da tomada, abra a tampa, tire a forma e espere de 15 a 30 minutos antes de começar de novo."],
+  ["Farinha seca nos cantos ou pão coberto de farinha", "Forma ou pá mal encaixadas, ingrediente demais ou massa seca. Junte água, 1 colher (sopa) por vez, até a massa formar uma bola. Massa sem glúten é bem úmida e pode precisar de ajuda: raspe as laterais com espátula de silicone no começo."],
+  ["O pão cresceu demais e empurrou a tampa", "Fermento ou farinha demais, sal esquecido ou pá fora da forma. Meça com precisão e, na próxima vez, tire ¼ de colher (chá) de fermento."],
+  ["Pão baixo, que não cresceu", "Fermento vencido ou fraco, medida errada ou tampa aberta durante o programa. Confira a validade, use líquidos em temperatura ambiente e não abra a tampa. Para testar o fermento, o manual indica 1 xícara (240 ml) de água a 45 °C a 50 °C, 1 colher (chá) de açúcar e 1 colher (sopa) de fermento: em 10 minutos, ele deve borbulhar."],
+  ["Buraco no topo depois de assar", "A massa fermentou rápido demais, há fermento ou água demais, ou o programa não é o certo para a receita. Reduza um pouco o fermento ou a água e confira o programa."],
+  ["Casca clara demais", "A tampa foi aberta durante o forno ou a cor escolhida foi clara. Não abra a tampa e escolha uma cor mais escura."],
+  ["Casca escura demais", "Açúcar demais na receita, ou o pão ficou no Manter Aquecido. Reduza um pouco o açúcar, escolha casca clara e tire o pão logo que o programa terminar."],
+  ["Pão torto ou com fundo oco", "Fermento ou água demais, massa muito úmida ou sem sal. Pães integrais e multigrãos são naturalmente mais baixos e irregulares."],
+  ["A pá saiu presa no pão", "É comum, principalmente com casca escura. Espere o pão esfriar e solte a pá com uma espátula ou utensílio pequeno, nunca com a mão."],
+  ["Miolo cru perto do recheio", "Recheio úmido ou rolo apertado demais. O recheio precisa estar cozido, frio e sem caldo. Se o pão sair pálido, rode mais um ciclo do programa Assar."],
 ];
 
 // Negrito nos ingredientes citados nos passos. Cada nome da lista gera variações curtas
@@ -198,14 +205,14 @@ ${extra}
 </body>
 </html>`;
 
-  const pills = (r) => [`<span class="pill">${esc(r.programa)}</span>`, r.timer ? `<span class="pill t">Timer da noite</span>` : "", `<span class="pill">${esc(r.nivel)}</span>`].join("");
+  const pills = (r) => [r.origem && r.origem.tipo === "oficial" ? `<span class="pill o">Oficial Gallant</span>` : "", `<span class="pill">${esc(r.programa)}</span>`, r.timer ? `<span class="pill t">Timer da noite</span>` : "", `<span class="pill">${esc(r.nivel)}</span>`].join("");
   const cartao = (r) => {
     const c = cats[r.categoria];
     const k = r.complemento || {};
-    const busca = norm([r.titulo, c.nome, r.programa, r.resumo, r.nivel, "panificadora maquina de pao", ...r.tags,
+    const busca = norm([r.titulo, c.nome, r.programa, r.resumo, r.nivel, "panificadora maquina de pao", r.origem && r.origem.tipo === "oficial" ? "oficial gallant" : "", ...r.tags,
       ...r.tabelas.flatMap(([, it]) => it.map((x) => x[0])),
       ...(k.itens || []).flatMap((it) => [it.nome, ...it.ingredientes.map((x) => x[0])])].join(" "));
-    return `<article class="rc" style="--c:${esc(c.cor)};--soft:${esc(c.soft)}" data-slug="${esc(r.slug)}" data-cat="${esc(r.categoria)}" data-tags="${esc(r.tags.join("|"))}" data-timer="${r.timer ? 1 : 0}" data-nivel="${esc(norm(r.nivel))}" data-busca="${esc(busca)}">
+    return `<article class="rc" style="--c:${esc(c.cor)};--soft:${esc(c.soft)}" data-slug="${esc(r.slug)}" data-cat="${esc(r.categoria)}" data-tags="${esc(r.tags.join("|"))}" data-timer="${r.timer ? 1 : 0}" data-nivel="${esc(norm(r.nivel))}" data-origem="${esc(r.origem ? r.origem.tipo : "autoral")}" data-busca="${esc(busca)}">
 <div class="pic"><span class="tagc">${esc(c.nome)}</span><img src="${art(r.icone)}" alt="" width="116" height="90" loading="lazy"></div>
 <button class="save" type="button" data-save="${esc(r.slug)}" data-titulo="${esc(r.titulo)}" aria-pressed="false" aria-label="Salvar: ${esc(r.titulo)}">${ico("heart")}</button>
 <div class="body"><small class="kc">${esc(c.nome)}</small><h3><a href="${urlR(r)}">${esc(r.titulo)}</a></h3><p>${esc(r.resumo)}</p><div class="meta">${pills(r)}</div></div>
@@ -223,9 +230,17 @@ ${extra}
       return tit + `<ul class="ing">${itens.map((it) => `<li><button type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span><span class="it"><span class="qs">${it.slice(1).map((q, j) => `<span class="q${j === mid ? " on" : ""}" data-col="${j}">${esc(q)}</span>`).join("")}</span> <span class="nm">${esc(it[0])}</span></span></button></li>`).join("")}</ul>`;
     }).join("");
     const tam = tres ? `<div class="sizes needs-js" role="group" aria-label="Tamanho do pão">${r.colunas.map((h, j) => `<button type="button" data-col="${j}" aria-pressed="${j === mid ? "true" : "false"}">${esc(h)}</button>`).join("")}</div>` : "";
+    const outros = tres && r.tamanhoBase ? r.colunas.filter((x) => x !== r.tamanhoBase).join(" e ") : "";
+    const notaQtd = r.quantidades === "oficial"
+      ? "Quantidades do livro de receitas da Gallant, nos três tamanhos. O tamanho de 750 g do painel aparece no livro como 700 g."
+      : r.quantidades === "calculadas"
+        ? `Quantidades de ${esc(outros || "500 g e 1000 g")} calculadas por proporção a partir da receita de ${esc(r.tamanhoBase || "750 g")}.`
+        : /Massa|Sovar|Bolo|Geleia|Misturar/.test(r.programa)
+          ? "Tamanho único: nesses programas a máquina não tem seletor de tamanho" + (/^Massa/.test(r.programa) ? ", e o livro da Gallant limita o programa Massa a 1 kg de ingredientes." : ".")
+          : "";
     const subIng = tres
-      ? `<p class="sub">Escolha o tamanho do pão e marque o mesmo tamanho no painel da máquina.<span class="no-js-only"></span></p>`
-      : `<p class="sub">${r.rende ? `Rende ${esc(r.rende.charAt(0).toLowerCase() + r.rende.slice(1))}.` : "Quantidades para uma receita."}</p>`;
+      ? `<p class="sub">Escolha o tamanho do pão e marque o mesmo tamanho no painel da máquina.<span class="no-js-only"></span></p><p class="qnota">${notaQtd}</p>`
+      : `<p class="sub">${r.rende ? `Rende ${esc(r.rende.charAt(0).toLowerCase() + r.rende.slice(1))}.` : "Quantidades para uma receita."}</p>${notaQtd ? `<p class="qnota">${notaQtd}</p>` : ""}`;
 
     const nomesIng = r.tabelas.flatMap(([, itens]) => itens.map((it) => it[0]));
     const passos = r.preparo.map(([g, itens]) =>
@@ -235,7 +250,7 @@ ${extra}
     const k = r.complemento;
     const complemento = k ? `<section class="extra" id="complemento" aria-labelledby="h-extra">
 <h2 id="h-extra">${esc(k.titulo)}</h2>${k.intro ? `<p class="sub">${esc(k.intro)}</p>` : ""}
-${k.passos && k.passos.length ? `<div class="steps-g"><h3>${esc(k.passosTitulo || "Passo a passo")}</h3><ol class="steps plain">${k.passos.map((p) => `<li><span class="num" aria-hidden="true"></span><span>${realce(esc(p), ["Molho de tomate", "Polpa de tomate", "Azeite", "Sal", "Orégano", "Queijo", "Mussarela", "Tomate", "Frango", "Milho", "Manjericão", "Rúcula"])}</span></li>`).join("")}</ol></div>` : ""}
+${k.passos && k.passos.length ? `<div class="steps-g"><h3>${esc(k.passosTitulo || "Passo a passo")}</h3><ol class="steps plain">${k.passos.map((p) => `<li><span class="num" aria-hidden="true"></span><span>${realce(esc(p), ["Molho de tomate", "Polpa de tomate", "Azeite", "Sal", "Orégano", "Queijo", "Muçarela", "Tomate", "Frango", "Milho", "Manjericão", "Rúcula"])}</span></li>`).join("")}</ol></div>` : ""}
 ${(k.itens || []).length ? `<div class="flavors">${k.itens.map((it) => `<article class="flavor"><h3>${esc(it.nome)}</h3><ul>${it.ingredientes.map(([n, q]) => `<li><b>${esc(q)}</b> <span>${esc(n)}</span></li>`).join("")}</ul><p>${realce(esc(it.modo), it.ingredientes.map((x) => x[0]))}</p></article>`).join("")}</div>` : ""}
 </section>` : "";
 
@@ -258,7 +273,7 @@ ${(k.itens || []).length ? `<div class="flavors">${k.itens.map((it) => `<article
     const ld = {
       "@context": "https://schema.org", "@type": "Recipe",
       name: r.titulo, description: r.resumo, image: imgs(r),
-      author: { "@type": "Person", name: site.author },
+      author: r.origem && r.origem.tipo === "oficial" ? { "@type": "Organization", name: "Gallant" } : { "@type": "Person", name: site.author },
       recipeCategory: c.nome, recipeCuisine: "Brasileira",
       keywords: ["panificadora", "máquina de pão", ...r.tags, r.programa].join(", "),
       recipeYield: tres ? "1 pão de 750 g" : r.rende || "1 receita",
@@ -297,6 +312,8 @@ ${topo("receita")}
 </div></section>
 <div class="wrap">
 <div class="glance">${glance.map(([i, l, v]) => `<div>${ico(i)}<span><small>${esc(l)}</small><b>${esc(v)}</b></span></div>`).join("")}</div>
+<p class="origem o-${esc(r.origem.tipo)}">${ico(r.origem.tipo === "oficial" ? "check" : "info")}<span><b>${r.origem.tipo === "oficial" ? "Receita oficial Gallant" : r.origem.tipo === "adaptada" ? "Receita adaptada" : "Receita autoral"}</b> ${esc(r.origem.tipo === "oficial" ? `do ${r.origem.fonte}.` : r.origem.tipo === "adaptada" ? `${r.origem.fonte.replace(/^Adaptada de/, "a partir de")}, ajustada para a Gallant.` : "do Pães do Manoel, feita para a Gallant.")}</span></p>
+<p class="prognota">Programas da panificadora Gallant de 19 programas. Na sua máquina o nome pode ser outro: escolha o ciclo equivalente no manual e nunca um que asse quando a receita pede só para bater a massa. <a href="${BASE}guia/#programas">O que faz cada programa</a></p>
 <nav class="jump" aria-label="Ir para"><a href="#ingredientes" data-jump="ingredientes">Ingredientes<span class="jt" data-tam-label>${tres ? ` · ${esc(r.colunas[mid])}` : ""}</span></a><a href="#preparo" data-jump="preparo">Modo de preparo</a></nav>
 ${r.tags.includes("Sem glúten") ? `<aside class="alerta" role="note">${ico("info")}<p><b>Sem glúten, com cuidado.</b> Confira no rótulo de cada ingrediente (polvilho, farinha de arroz, psyllium, fermento) a frase "não contém glúten". Quem tem doença celíaca precisa evitar a contaminação cruzada: forma, pá e utensílios usados com farinha de trigo guardam resíduos. Na dúvida, fale com seu médico ou nutricionista.</p></aside>` : ""}
 <div class="layout">
@@ -356,7 +373,7 @@ ${topo("home")}
 </div>
 </div></section>
 <div class="wrap">
-<div class="facts"><div><b>${rec.length}</b><span>receitas com as quantidades conferidas</span></div><div><b>${dados.categorias.length}</b><span>categorias, do pão de forma à geleia</span></div><div><b>${nProg}</b><span>programas da máquina usados nas receitas</span></div><div><b>${rec.filter((r) => r.colunas.length === 3).length}</b><span>pães com 3 tamanhos: 500 g, 750 g e 1 kg</span></div></div>
+<div class="facts"><div><b>${rec.length}</b><span>receitas para a panificadora</span></div><div><b>${rec.filter((r) => r.origem && r.origem.tipo === "oficial").length}</b><span>receitas oficiais do livro da Gallant</span></div><div><b>${nProg}</b><span>programas da máquina usados nas receitas</span></div><div><b>${rec.filter((r) => r.colunas.length === 3).length}</b><span>pães com 3 tamanhos: 500 g, 750 g e 1 kg</span></div></div>
 
 <section class="sec" aria-labelledby="h-start"><div class="sec-h"><div><h2 id="h-start">Comece por aqui</h2><p>Três leituras rápidas para acertar já na primeira fornada.</p></div><a class="more" href="${BASE}guia/">Ver o guia completo</a></div>
 <div class="starts">
@@ -377,6 +394,7 @@ ${topo("home")}
 <div class="frow"><label class="fsearch">${ico("busca")}<span class="sr">Buscar receita ou ingrediente</span><input id="busca" type="search" placeholder="Ex.: banana, queijo, integral" autocomplete="off"></label>
 <label class="needs-js"><span class="sr">Região ou ocasião</span><select id="f-tag"><option value="">Região ou ocasião</option>${todasTags.map((t) => `<option value="${esc(t)}">${esc(t)}</option>`).join("")}</select></label>
 <button class="chip needs-js" type="button" data-f-timer aria-pressed="false">${ico("timer")}Timer da noite</button>
+<button class="chip needs-js" type="button" data-f-oficial aria-pressed="false">${ico("check")}Oficiais Gallant</button>
 <button class="chip needs-js" type="button" data-f-facil aria-pressed="false">Fáceis</button>
 <button class="chip needs-js" type="button" data-f-salvas aria-pressed="false">${ico("heart")}Salvas</button></div>
 <div class="chips-scroll needs-js" role="group" aria-label="Categoria"><button class="chip" type="button" data-f-cat="" aria-pressed="true">Todas</button>${dados.categorias.map((c) => `<button class="chip" type="button" data-f-cat="${esc(c.id)}" aria-pressed="false" style="--c:${esc(c.cor)}"><span class="sw"></span>${esc(c.nome)}</button>`).join("")}</div>
@@ -387,9 +405,9 @@ ${topo("home")}
 <div class="grid" id="todas">${rec.map(cartao).join("")}</div>
 </section>
 
-<section class="sec" aria-labelledby="h-livros"><div class="sec-h"><div><h2 id="h-livros">Prefere no papel?</h2><p>As receitas também estão em dois livros em PDF, prontos para imprimir.</p></div></div>
+${dados.livros.length ? `<section class="sec" aria-labelledby="h-livros"><div class="sec-h"><div><h2 id="h-livros">Prefere no papel?</h2><p>As receitas também estão em dois livros em PDF, prontos para imprimir.</p></div></div>
 <div class="books">${dados.livros.map((l, i) => `<a class="book" href="${BASE}${esc(l.arquivo)}" download><img src="${BASE}assets/img/capa-volume-${i + 1}.jpg" alt="" width="78" height="110" loading="lazy"><span><b>${esc(l.titulo)}</b><span>PDF para imprimir</span></span></a>`).join("")}</div>
-</section>
+</section>` : ""}
 </div>
 </main>
 ${rodape}`;
@@ -414,34 +432,34 @@ ${topo("guia")}
 <div>
 <section class="panel gsec" id="ordem"><h2>A ordem que nunca falha</h2>
 <ol class="order"><li>Tire a forma da máquina antes de colocar qualquer ingrediente: o que cai na resistência queima e solta fumaça.</li>
-<li>Encaixe a pá no eixo da forma.</li><li>Líquidos primeiro: água, leite, ovos, óleo, manteiga.</li>
+<li>Encaixe a pá no eixo da forma.</li><li>Líquidos primeiro, em temperatura ambiente: água, leite, ovos, óleo. A manteiga vai derretida ou em pedacinhos.</li>
 <li>Depois o sal e o açúcar, em cantos opostos, e as farinhas por cima, cobrindo todo o líquido.</li>
 <li>O fermento por último, numa covinha no topo da farinha, sem tocar o líquido nem o sal.</li>
-<li>Encaixe a forma, escolha o programa, o tamanho e a cor da casca e aperte iniciar.</li></ol>
+<li>Encaixe a forma girando no sentido horário até travar, feche a tampa, escolha o programa (MENU), o tamanho (PESO) e a cor (COR) e aperte INICIAR/PARAR.</li></ol>
 <div class="layers" aria-hidden="true"><div style="background:#E9DCC6;color:#3B2A1E">Fermento<small>numa covinha, no topo</small></div><div style="background:#E2B65A;color:#33241A">Farinhas<small>cobrindo o líquido</small></div><div style="background:#D99A4E;color:#33241A">Sal e açúcar<small>em cantos opostos</small></div><div style="background:#3D6A92">Líquidos<small>água, leite, ovos, óleo</small></div><div style="background:#3B2A1E">Pá encaixada<small>no eixo da forma</small></div></div>
 <p class="cap">Como a forma fica por dentro, de cima para baixo.</p></section>
 
 <section class="panel gsec" id="medidas"><h2>Medidas</h2><p>As receitas usam a colher e o copo medidor que vêm com a máquina, ou colheres de medida comuns. Nas colheres, a medida é sempre rasa: encha e passe as costas de uma faca por cima. Para o melhor resultado, pese farinha e açúcar na balança.</p>
 <div class="meas"><div><b>1 colher (chá)</b>5 ml: cerca de 3 g de fermento ou 6 g de sal</div><div><b>1 colher (sopa)</b>15 ml: cerca de 12 g de açúcar ou 8 g de farinha</div><div><b>ml</b>líquidos, no copo medidor, olhando na altura dos olhos</div><div><b>g</b>sólidos, de preferência na balança de cozinha</div></div>
-<p><b>Fermento:</b> sempre biológico seco instantâneo, o de sachê de 10 g. <b>Farinha:</b> de trigo tipo 1; a "especial para pão" deixa o pão mais alto. <b>Líquidos:</b> até 30 °C, porque líquido quente mata o fermento.</p></section>
+<p><b>Fermento:</b> biológico seco instantâneo. Guarde na geladeira e confira a validade: o manual aponta fermento ruim como a causa mais comum de pão que não cresce. <b>Farinha:</b> de trigo para pão (mais glúten) deixa o pão mais alto. <b>Líquidos:</b> em temperatura ambiente, entre 20 °C e 25 °C, como pede o manual.</p></section>
 
-<section class="panel gsec" id="timer"><h2>Timer da noite</h2><p>Na Gallant, o timer deixa a máquina esperando até 15 horas para começar, e o pão fica pronto na hora que você escolher. Só use nas receitas marcadas com <b>Timer da noite</b>: elas não levam ovo, leite fresco, queijo ou recheio, que estragariam fora da geladeira. O fermento nunca pode encostar no líquido enquanto a massa espera.</p>
+<section class="panel gsec" id="timer"><h2>Timer da noite</h2><p>Com a função PROGRAMAR, a Gallant termina o pão na hora que você escolher, em até 15 horas (o tempo conta o programa inteiro). Escolha primeiro o programa, o tamanho e a cor e depois ajuste o tempo com as setas, de 10 em 10 minutos. A função não existe nos programas Sovar, Mingau, Descongelar, Fermentar, Geleia, Bolo e Assar.</p><p>O manual proíbe o timer com laticínios, ovos, creme ou queijo, porque estragam enquanto esperam. Por isso o selo <b>Timer da noite</b> só aparece nos pães sem esses ingredientes, e o fermento nunca pode encostar no líquido.</p>
 <p><a class="more" href="${BASE}?timer=1#receitas">Ver as ${comTimer.length} receitas que podem ficar no timer</a></p></section>
 
-<section class="panel gsec" id="depois"><h2>Depois de assar</h2><p>Tire a forma com luva, vire e desenforme na hora: se o pão ficar na forma, o vapor amolece a casca. Se a pá ficar presa no pão, solte com um palito de madeira, nunca com faca, para não riscar o antiaderente. Espere pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria.</p></section>
+<section class="panel gsec" id="depois"><h2>Depois de assar</h2><p>No fim, a máquina toca 10 bipes e passa para o Manter Aquecido por 1 hora. Tirar o pão logo evita que a casca escureça: segure INICIAR/PARAR por 3 segundos, tire a forma com luva (girando no sentido anti-horário), vire sobre uma grade e sacuda de leve. Se a pá ficar no pão, solte com uma espátula quando ele esfriar, nunca com a mão.</p><p>O manual recomenda esperar cerca de 20 minutos antes de fatiar, com faca de serra ou cortador elétrico. Guarde em saco plástico fechado por até 3 dias, ou até 10 dias na geladeira.</p></section>
 
 <section class="panel gsec" id="programas"><h2>Os programas e quando usar cada um</h2><p>O tempo de cada ciclo aparece no visor da máquina quando você escolhe o programa e o tamanho.</p>
 <table class="gtable"><thead><tr><th>Programa</th><th>O que faz</th><th>Receitas</th></tr></thead><tbody>${progRows}</tbody></table>
-<p style="margin-top:14px"><b>Descongelar:</b> nenhuma receita usa esse programa. Para saber como ele funciona na sua máquina, veja o manual.</p></section>
+<p style="margin-top:14px">Tamanho (500, 750 ou 1000 g) só existe nos programas 1 a 7; a cor da casca, nos programas 1 a 7, Misturar e Assar, Bolo e Assar. O aviso de adição (10 bipes, para frutas, nozes e passas) também só existe nos programas 1 a 7, e o momento muda de um programa para outro. <b>Descongelar</b> mantém cerca de 50 °C e não é usado em nenhuma receita.</p></section>
 
-<section class="panel gsec" id="recheados"><h2>A técnica dos pães recheados</h2><p>Dá para fazer pão recheado sem ligar o forno, com três programas em sequência:</p>
-<ol class="order"><li><b>Massa:</b> a máquina bate a massa e deixa crescer.</li><li>Você abre a massa num retângulo de 1 cm, com um lado de 17 cm (o comprimento interno da forma), espalha o recheio e enrola.</li><li>O rolo volta para a forma <b>sem a pá</b>, com a emenda para baixo.</li><li><b>Fermentar:</b> a massa cresce de novo até quase a borda.</li><li><b>Assar:</b> o pão assa e doura.</li></ol>
+<section class="panel gsec" id="recheados"><h2>A técnica dos pães recheados</h2><p>Na maior parte dos pães recheados do site, a máquina faz tudo, sem ligar o forno, com três programas em sequência. Nos outros, ela prepara a massa e você assa no forno; cada receita diz qual é o caso.</p>
+<ol class="order"><li><b>Massa:</b> a máquina bate a massa e deixa crescer. O livro da Gallant limita esse programa a 1 kg de ingredientes, por isso as receitas com ele têm um tamanho só.</li><li>Você abre a massa num retângulo de 1 cm, com um lado de 17 cm (o comprimento interno da forma), espalha o recheio e enrola.</li><li>O rolo volta para a forma <b>sem a pá</b>, com a emenda para baixo.</li><li><b>Fermentar:</b> a massa cresce de novo até quase a borda.</li><li><b>Assar:</b> o pão assa e doura.</li></ol>
 <p><a class="more" href="${BASE}?categoria=recheados#receitas">Ver os pães recheados</a></p></section>
 
 <section class="panel gsec" id="problemas"><h2>Deu errado? Resolva aqui</h2><p>Quase todo problema vem da medida, da temperatura ou do fermento. Toque no problema para ver a causa e a solução, e mude uma coisa por vez na próxima fornada.</p>
 <div class="prob">${PROBLEMAS.map(([t, d]) => `<details><summary>${esc(t)}</summary><p>${esc(d)}</p></details>`).join("")}</div></section>
 
-<section class="panel gsec" id="cuidados"><h2>Cuidados com a máquina</h2><p>Não lave a forma na lava-louças nem use palha de aço. Se a pá prender no eixo, deixe a forma de molho em água morna por 15 minutos. Limpe o interior só com pano úmido, com a máquina fria e desligada da tomada. Nunca ligue a máquina vazia ou sem a forma encaixada.</p></section>
+<section class="panel gsec" id="cuidados"><h2>Cuidados com a máquina</h2><p><b>Antes do primeiro uso:</b> lave e seque a forma e a pá e rode o programa Assar com a máquina vazia por cerca de 10 minutos. Um pouco de fumaça ou cheiro é normal nas primeiras vezes.</p><p><b>Limpeza:</b> desligue da tomada e espere esfriar. A forma e a pá podem ir à lava-louças; o lado de fora da forma pode mudar de cor, o que é normal. Se a pá estiver difícil de soltar, deixe água no fundo da forma por até 1 hora. Não use utensílios de metal, nem produtos abrasivos, no antiaderente. O gabinete, a tampa e a janela, só com pano úmido.</p><p><b>Uso:</b> deixe a máquina no centro da bancada, porque ela balança durante a sova, e num ambiente entre 15 °C e 34 °C. Se faltar luz por até 10 minutos, o programa continua sozinho.</p></section>
 </div></div>
 </main>
 ${rodape}`;
