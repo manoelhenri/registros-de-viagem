@@ -1,0 +1,94 @@
+{
+  "titulo": "Pão de cereais sem açúcar",
+  "ordem": 51,
+  "publicado": "2026-11-03",
+  "categoria": "integrais",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "Pão sem açúcar com aveia e mix de sementes ou cereais, para quem prefere um pão menos doce.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 37"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "750 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Leite (com o ovo dentro do copo)",
+          "quantidade": "120 ml",
+          "q750": "180 ml",
+          "q1000": "240 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1",
+          "q750": "1",
+          "q1000": "1"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Óleo vegetal",
+          "quantidade": "13 ml",
+          "q750": "20 ml",
+          "q1000": "27 ml"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "240 g",
+          "q750": "360 g",
+          "q1000": "480 g"
+        },
+        {
+          "nome": "Aveia em flocos",
+          "quantidade": "23 g",
+          "q750": "35 g",
+          "q1000": "47 g"
+        },
+        {
+          "nome": "Mix de sementes ou cereais sem açúcar",
+          "quantidade": "17 g",
+          "q750": "25 g",
+          "q1000": "33 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "2,5 g",
+          "q750": "4 g",
+          "q1000": "5 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Coloque o ovo no copo medidor e complete com leite até a quantidade da lista.",
+        "Coloque o líquido e o óleo na forma.",
+        "Acrescente sal, farinha, aveia e cereais. Faça uma cavidade e coloque o fermento.",
+        "Selecione Macio, o tamanho escolhido e casca média. Inicie.",
+        "Desenforme e deixe esfriar em grade."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Use cereais e sementes sem açúcar e sem cobertura: os açucarados mudam o sabor e escurecem a casca."
+}

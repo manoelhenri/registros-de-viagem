@@ -1,0 +1,84 @@
+{
+  "titulo": "Bolo de pão de queijo",
+  "ordem": 95,
+  "publicado": "2026-11-03",
+  "categoria": "bolos",
+  "tags": [
+    "Lanche",
+    "Sudeste"
+  ],
+  "resumo": "Polvilho azedo, muçarela e parmesão numa massa de bolo com fermento químico, no programa Bolo.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 bolo pequeno",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Leite",
+          "quantidade": "120 ml"
+        },
+        {
+          "nome": "Óleo vegetal",
+          "quantidade": "60 ml"
+        },
+        {
+          "nome": "Polvilho azedo",
+          "quantidade": "180 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "2,5 g"
+        },
+        {
+          "nome": "Muçarela ralada",
+          "quantidade": "110 g"
+        },
+        {
+          "nome": "Queijo parmesão ralado",
+          "quantidade": "45 g"
+        },
+        {
+          "nome": "Orégano (opcional)",
+          "quantidade": "1 pitada"
+        },
+        {
+          "nome": "Fermento químico em pó",
+          "quantidade": "6 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Retire a forma, encaixe a pá e unte levemente o fundo e as laterais.",
+        "Bata ovo, leite e óleo até homogeneizar. Misture o polvilho e o sal até não restarem bolsões secos.",
+        "Incorpore os queijos e o orégano. Junte o fermento químico por último, sem bater excessivamente.",
+        "Despeje na forma e alise. Selecione Bolo e inicie. Não abra a tampa durante a cocção.",
+        "Ao fim, confira o centro com um palito. Se ainda houver massa crua, rode o programa Assar por mais 5 a 10 minutos, acompanhando pelo visor.",
+        "Espere 10 a 15 minutos, desenforme com cuidado e esfrie em grade antes de fatiar."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas. Se sair molhado, rode o programa Assar por mais 5 a 10 minutos e teste de novo.",
+  "guardar": "Em pote bem fechado por até 3 dias em temperatura ambiente; com cobertura cremosa ou recheio, na geladeira.",
+  "dica": "A massa é espessa e fluida, não uma bola de pão. Esta receita não é o pão de queijo mineiro tradicional em bolinhas."
+}

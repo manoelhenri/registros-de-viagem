@@ -1,0 +1,61 @@
+{
+  "categorias": [
+    {
+      "id": "dia-a-dia",
+      "nome": "Pães do dia a dia",
+      "cor": "#C8402B",
+      "soft": "#F7DCD3",
+      "icone": "loaf",
+      "intro": "Pão caseiro básico, francês de forma e pães de leite, batata, abóbora, milho, cebola, iogurte e mais. Os pães da semana, do café da manhã ao lanche."
+    },
+    {
+      "id": "integrais",
+      "nome": "Integrais e especiais",
+      "cor": "#5E7A2E",
+      "soft": "#E3EBCF",
+      "icone": "wheat",
+      "intro": "Pão integral, 100% integral com aveia, multigrãos, centeio, trigo-sarraceno, ervas e três pães sem glúten. Mais fibra e mais sabor."
+    },
+    {
+      "id": "doces",
+      "nome": "Pães doces e roscas",
+      "cor": "#C9506A",
+      "soft": "#F8DCE2",
+      "icone": "brioche",
+      "intro": "Brioche, pães de coco e de banana do livro da Gallant, panetone, stollen, roscas, tranças e rolinhos de canela. Massas ricas, sempre com casca clara."
+    },
+    {
+      "id": "recheados",
+      "nome": "Pães recheados",
+      "cor": "#B97300",
+      "soft": "#FBEBC6",
+      "icone": "swirl",
+      "intro": "Pães enrolados com recheio. Em parte deles a máquina bate, fermenta e assa tudo na forma; nos outros, ela faz a massa e você assa no forno."
+    },
+    {
+      "id": "massas",
+      "nome": "Massas para modelar",
+      "cor": "#A4542F",
+      "soft": "#F2DFD3",
+      "icone": "pizza",
+      "intro": "Pizza, focaccia, baguete, hot dog, hambúrguer, pão sírio, esfiha, pretzel, macarrão e pastel. A máquina faz a sova e você modela e finaliza."
+    },
+    {
+      "id": "bolos",
+      "nome": "Bolos e cucas",
+      "cor": "#2E6B78",
+      "soft": "#D6E8EB",
+      "icone": "cake",
+      "intro": "Bolos do livro da Gallant, bolos de liquidificador, broa, cucas, pão de mel e brownie, feitos no programa Bolo da panificadora."
+    },
+    {
+      "id": "doces-de-pote",
+      "nome": "Geleias",
+      "cor": "#8E2C48",
+      "soft": "#F1D6DE",
+      "icone": "jar",
+      "intro": "Geleia de morango do livro da Gallant e geleia de abacaxi, no programa Geleia. Sempre guardadas na geladeira."
+    }
+  ],
+  "livros": []
+}

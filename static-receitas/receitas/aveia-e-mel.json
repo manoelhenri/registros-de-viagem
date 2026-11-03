@@ -1,0 +1,88 @@
+{
+  "titulo": "Pão de aveia e mel",
+  "ordem": 9,
+  "publicado": "2026-11-02",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "Aveia em flocos e mel numa massa de farinha branca. Miolo úmido, ótimo para torrar.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 39"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "750 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "190 ml",
+          "q750": "285 ml",
+          "q1000": "380 ml"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "20 g",
+          "q750": "30 g",
+          "q1000": "40 g"
+        },
+        {
+          "nome": "Mel",
+          "quantidade": "40 g",
+          "q750": "60 g",
+          "q1000": "80 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "4,5 g",
+          "q750": "7 g",
+          "q1000": "9 g"
+        },
+        {
+          "nome": "Aveia em flocos",
+          "quantidade": "50 g",
+          "q750": "75 g",
+          "q1000": "100 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "250 g",
+          "q750": "375 g",
+          "q1000": "500 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Coloque água, manteiga e mel na forma.",
+        "Acrescente sal, aveia e farinha. Faça uma cavidade e adicione o fermento.",
+        "Selecione Macio, o tamanho escolhido e casca média. Inicie imediatamente.",
+        "Observe a massa na primeira mistura. Ela deve ficar macia e um pouco pegajosa; não acrescente farinha só porque a aveia deixa a superfície úmida.",
+        "Ao terminar, desenforme e esfrie sobre grade antes de fatiar."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Use aveia em flocos, não farelo, para manter a textura proposta. O miolo parece úmido quando quente; espere esfriar para avaliar a estrutura."
+}

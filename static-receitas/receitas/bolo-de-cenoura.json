@@ -1,0 +1,105 @@
+{
+  "titulo": "Bolo de cenoura",
+  "ordem": 27,
+  "publicado": "2026-11-02",
+  "categoria": "bolos",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "O bolo de cenoura de liquidificador com cobertura de chocolate, assado na forma da máquina.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 bolo, no formato da forma da máquina",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel, revisada com o manual da Gallant"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Cenoura média, em rodelas",
+          "quantidade": "2 (250 g)"
+        },
+        {
+          "nome": "Ovos",
+          "quantidade": "3"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "180 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "270 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "240 g"
+        },
+        {
+          "nome": "Fermento químico",
+          "quantidade": "1 colher (sopa)"
+        }
+      ]
+    },
+    {
+      "grupo": "Cobertura",
+      "itens": [
+        {
+          "nome": "Leite condensado",
+          "quantidade": "1 lata"
+        },
+        {
+          "nome": "Cacau em pó",
+          "quantidade": "2 colheres (sopa)"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "1 colher (sopa)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos da geladeira 30 minutos antes.",
+        "Deixe a pá encaixada e passe um pouco de manteiga no fundo e nos cantos da forma, para o bolo soltar inteiro."
+      ]
+    },
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Bata no liquidificador a cenoura, os ovos e o óleo até ficar bem liso e despeje na forma.",
+        "Junte o açúcar e a farinha e coloque o fermento por cima.",
+        "Rode o programa Bolo, casca média. Nos primeiros 2 minutos, raspe as laterais com uma espátula de silicone."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere 15 minutos antes de desenformar. Passe uma espátula fina nas laterais, vire sobre um prato e retire a pá, se ela ficar presa no fundo."
+      ]
+    },
+    {
+      "grupo": "Cobertura",
+      "passos": [
+        "Numa panela, misture o leite condensado, o cacau e a manteiga e mexa em fogo baixo até engrossar levemente.",
+        "Espalhe sobre o bolo ainda morno, já desenformado."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas, e as bordas começam a soltar da forma. Se sair molhado, rode o programa Assar por mais 10 minutos e teste de novo.",
+  "guardar": "Coberto, em temperatura ambiente, por até 3 dias. Em dia muito quente ou com cobertura de leite condensado, prefira a geladeira.",
+  "dica": "Teste do palito no fim. Se sair molhado, rode Assar por mais 10 minutos."
+}

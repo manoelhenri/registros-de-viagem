@@ -1,0 +1,90 @@
+{
+  "titulo": "Bolo de banana com canela",
+  "ordem": 28,
+  "publicado": "2026-11-02",
+  "categoria": "bolos",
+  "tags": [
+    "Lanche",
+    "Café da manhã"
+  ],
+  "resumo": "Bananas bem maduras, aveia, açúcar mascavo e canela. Úmido e com cheiro de casa de vó.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 bolo, no formato da forma da máquina",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel, revisada com o manual da Gallant"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Bananas bem maduras, amassadas",
+          "quantidade": "3"
+        },
+        {
+          "nome": "Ovos",
+          "quantidade": "2"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "100 ml"
+        },
+        {
+          "nome": "Açúcar mascavo",
+          "quantidade": "150 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "200 g"
+        },
+        {
+          "nome": "Aveia em flocos",
+          "quantidade": "50 g"
+        },
+        {
+          "nome": "Canela em pó",
+          "quantidade": "1 colher (chá)"
+        },
+        {
+          "nome": "Fermento químico",
+          "quantidade": "1 colher (sopa)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos da geladeira 30 minutos antes.",
+        "Deixe a pá encaixada e passe um pouco de manteiga no fundo e nos cantos da forma, para o bolo soltar inteiro."
+      ]
+    },
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Amasse as bananas com um garfo, misture os ovos e o óleo e despeje na forma.",
+        "Junte o açúcar mascavo, a farinha, a aveia e a canela, com o fermento por cima.",
+        "Rode o programa Bolo, casca média. Nos primeiros 2 minutos, raspe as laterais com uma espátula de silicone."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere 15 minutos antes de desenformar. Passe uma espátula fina nas laterais, vire sobre um prato e retire a pá, se ela ficar presa no fundo."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas, e as bordas começam a soltar da forma. Se sair molhado, rode o programa Assar por mais 10 minutos e teste de novo.",
+  "guardar": "Coberto, em temperatura ambiente, por até 3 dias. Em dia muito quente ou com cobertura de leite condensado, prefira a geladeira.",
+  "dica": "Quanto mais pintada a casca da banana, mais doce e úmido fica o bolo."
+}

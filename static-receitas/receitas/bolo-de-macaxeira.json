@@ -1,0 +1,92 @@
+{
+  "titulo": "Bolo de macaxeira",
+  "ordem": 43,
+  "publicado": "2026-11-02",
+  "categoria": "bolos",
+  "tags": [
+    "Lanche",
+    "Norte e Nordeste"
+  ],
+  "resumo": "Bolo úmido de macaxeira (aipim ou mandioca mansa) ralada, coco e leite condensado, em lote compacto para a forma da máquina.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 bolo pequeno",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Macaxeira crua ralada fina e bem espremida",
+          "quantidade": "250 g"
+        },
+        {
+          "nome": "Leite condensado",
+          "quantidade": "100 g"
+        },
+        {
+          "nome": "Leite de coco",
+          "quantidade": "65 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Coco ralado",
+          "quantidade": "30 g"
+        },
+        {
+          "nome": "Manteiga derretida",
+          "quantidade": "15 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "50 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "1 pitada"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "40 g"
+        },
+        {
+          "nome": "Fermento químico em pó",
+          "quantidade": "5 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Numa tigela, misture todos os ingredientes com uma colher até ficar homogêneo e despeje na forma.",
+        "Selecione Bolo e inicie. Não abra a tampa durante a cocção.",
+        "Verifique o centro com um palito; se ainda houver massa crua, use Assar em períodos curtos de 5 a 10 minutos, se necessário, acompanhando o processo."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere 15 minutos antes de desenformar. Passe uma espátula fina nas laterais, vire sobre um prato e retire a pá, se ela ficar presa no fundo.",
+        "Desenforme só depois de frio: ele firma ao esfriar."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas. Se sair molhado, rode o programa Assar por mais 5 a 10 minutos e teste de novo.",
+  "guardar": "Em pote bem fechado por até 3 dias em temperatura ambiente; com cobertura cremosa ou recheio, na geladeira.",
+  "dica": "Use só macaxeira de mesa (aipim ou mandioca mansa), nunca mandioca-brava, e esprema bem antes de pesar."
+}

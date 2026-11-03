@@ -1,0 +1,94 @@
+{
+  "titulo": "Pão integral",
+  "ordem": 7,
+  "publicado": "2026-11-03",
+  "categoria": "integrais",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "O pão integral do livro da Gallant, com farinha integral e um pouco de farinha branca, adoçado com açúcar mascavo.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Pão Integral",
+  "casca": "Média",
+  "timer": true,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "oficial",
+    "fonte": "Livro de Receitas Gallant, Panificadora 19 programas, p. 7"
+  },
+  "quantidades": "oficial",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "170 ml",
+          "q750": "250 ml",
+          "q1000": "340 ml"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "5 g",
+          "q750": "8 g",
+          "q1000": "10 g"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "12 ml",
+          "q750": "18 ml",
+          "q1000": "24 ml"
+        },
+        {
+          "nome": "Açúcar mascavo",
+          "quantidade": "12 g",
+          "q750": "18 g",
+          "q1000": "24 g"
+        },
+        {
+          "nome": "Leite em pó",
+          "quantidade": "9 g",
+          "q750": "13 g",
+          "q1000": "18 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "100 g",
+          "q750": "150 g",
+          "q1000": "200 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "4 g",
+          "q750": "5 g",
+          "q1000": "8 g"
+        },
+        {
+          "nome": "Farinha de trigo integral",
+          "quantidade": "180 g",
+          "q750": "250 g",
+          "q1000": "360 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Coloque água e óleo na forma.",
+        "Acrescente sal, açúcar mascavo e leite em pó.",
+        "Adicione as farinhas e faça uma pequena cavidade para o fermento.",
+        "Selecione Pão Integral, o tamanho escolhido e casca média. Inicie.",
+        "Desenforme com luvas e esfrie completamente antes de fatiar."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "O programa Pão Integral começa com um tempo mais longo de pré-aquecimento para a farinha integral absorver a água. Não interrompa."
+}

@@ -1,0 +1,67 @@
+{
+  "titulo": "Geleia de morango",
+  "ordem": 30,
+  "publicado": "2026-11-02",
+  "categoria": "doces-de-pote",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "A geleia de morango do livro da Gallant, com amido de milho e limão, no programa Geleia. Guarde na geladeira.",
+  "icone": "jar",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Geleia",
+  "casca": "",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 receita",
+  "origem": {
+    "tipo": "oficial",
+    "fonte": "Livro de Receitas Gallant, Panificadora 19 programas, p. 19"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Morangos frescos",
+          "quantidade": "900 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "540 g"
+        },
+        {
+          "nome": "Amido de milho",
+          "quantidade": "30 g"
+        },
+        {
+          "nome": "Suco de limão",
+          "quantidade": "15 ml"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Lave os morangos e retire as folhas.",
+        "Corte em pedaços pequenos ou amasse.",
+        "Encaixe a pá na forma e coloque todos os ingredientes. Não aumente a quantidade: a geleia não pode transbordar.",
+        "Rode o programa Geleia. Se a mistura ameaçar transbordar, pare a máquina na hora e tire a forma com luva, como orienta o manual."
+      ]
+    },
+    {
+      "grupo": "Cuidado ao abrir",
+      "passos": [
+        "No fim, abra a tampa com cuidado: sai muito vapor. Passe para um pote limpo, deixe esfriar e leve à geladeira."
+      ]
+    }
+  ],
+  "pronto": "Faça o teste do pires: pingue um pouco num pires gelado, espere 1 minuto e empurre com o dedo. Se enrugar, está no ponto. Ela engrossa bastante ao esfriar.",
+  "guardar": "Depois de frio, guarde na geladeira em pote limpo e bem fechado por até 1 semana, como orienta o livro de receitas da Gallant para geleias feitas na panificadora. Não é conserva: não deixe fora da geladeira.",
+  "dica": "Esta é a quantidade do livro da Gallant: não aumente, para a geleia não transbordar da forma."
+}

@@ -167,3 +167,167 @@ collections:
             hint: "Cole o link de posts/reels públicos do Instagram (ex: https://www.instagram.com/p/XXXXXXX/). Deixe vazio para não mostrar nenhum."
             fields:
               - { label: "Link do post", name: "url", widget: "string" }
+
+  # ---------- Receitas (área /receitas, "Pães do Manoel") ----------
+  # Produto separado do blog: os arquivos ficam em static-receitas/ e são lidos por
+  # scripts/build-receitas.js. Um arquivo JSON por receita; o nome do arquivo é o endereço
+  # da página e nunca muda depois de publicado.
+  - name: "receitas"
+    label: "Receitas (Pães do Manoel)"
+    label_singular: "Receita"
+    description: "Textos, ingredientes, passos e foto de cada receita do manoelhenrique.com/receitas. Ao salvar, o site atualiza em cerca de 1 minuto."
+    folder: "static-receitas/receitas"
+    extension: "json"
+    format: "json"
+    create: true
+    delete: false
+    slug: "{{slug}}"
+    identifier_field: "titulo"
+    summary: "{{titulo}}"
+    sortable_fields: ["titulo", "ordem", "publicado"]
+    view_groups:
+      - { label: "Categoria", field: "categoria" }
+    media_folder: "/static-receitas/assets/img/fotos"
+    public_folder: "/receitas/assets/img/fotos"
+    editor: { preview: false }
+    fields:
+      - { label: "Título", name: "titulo", widget: "string", hint: "O endereço da página sai do título só na hora de criar a receita e não muda depois, mesmo se você trocar o título." }
+      - { label: "Posição na lista", name: "ordem", widget: "number", value_type: "int", required: false, hint: "Ordem na página inicial das receitas (1 aparece primeiro). Em branco, a receita vai para o fim." }
+      - { label: "Data de publicação", name: "publicado", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, hint: "Dia em que a receita entrou no site (aparece para o Google)." }
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options:
+          - { label: "Pães do dia a dia", value: "dia-a-dia" }
+          - { label: "Integrais e especiais", value: "integrais" }
+          - { label: "Pães doces e roscas", value: "doces" }
+          - { label: "Pães recheados", value: "recheados" }
+          - { label: "Massas para modelar", value: "massas" }
+          - { label: "Bolos e cucas", value: "bolos" }
+          - { label: "Geleias", value: "doces-de-pote" }
+      - label: "Etiquetas"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        required: false
+        hint: "Viram filtros na lista. \"Sem glúten\" mostra sozinha o alerta de rótulo e contaminação cruzada."
+        options: ["Café da manhã", "Lanche", "Jantar", "Sobremesa", "Churrasco", "Festa junina", "Natal", "Páscoa", "Norte e Nordeste", "Sudeste", "Sul", "Sem glúten"]
+      - { label: "Resumo", name: "resumo", widget: "text", hint: "Uma ou duas frases. Aparece no cartão da lista, no topo da página e no Google." }
+      - { label: "Foto da receita", name: "foto", widget: "image", required: false, choose_url: false, hint: "Opcional. Foto sua, de preferência quadrada ou horizontal, em JPG com até 500 KB. Ela aparece no lugar da ilustração, na página, no cartão e quando alguém compartilha o link." }
+      - { label: "Descrição da foto", name: "fotoAlt", widget: "string", required: false, hint: "Para quem usa leitor de tela. Ex.: Pão de forma fatiado sobre a tábua." }
+      - label: "Ilustração (quando não houver foto)"
+        name: "icone"
+        widget: "select"
+        options:
+          - { label: "Pão de forma", value: "loaf" }
+          - { label: "Brioche", value: "brioche" }
+          - { label: "Trigo", value: "wheat" }
+          - { label: "Bolo", value: "cake" }
+          - { label: "Rolinho / rosca", value: "swirl" }
+          - { label: "Pizza", value: "pizza" }
+          - { label: "Pote de geleia", value: "jar" }
+          - { label: "Milho", value: "corn" }
+          - { label: "Panela", value: "pot" }
+      - { label: "Programa da máquina", name: "programa", widget: "string", hint: "Como aparece no painel da Gallant (ex.: Macio, Brioche, Bolo). Para massas que vão ao forno: Massa → forno, ou Massa → Fermentar → Assar." }
+      - { label: "Cor da casca", name: "casca", widget: "select", required: false, options: ["Clara", "Média", "Escura"], hint: "Os programas 1 a 7, Misturar e Assar, Bolo e Assar têm cor. Deixe em branco nos outros (Massa, Geleia, Sovar...)." }
+      - { label: "Pode ficar no timer?", name: "timer", widget: "boolean", default: false, hint: "Só sem leite fresco, ovo, manteiga, queijo ou creme, como pede o manual." }
+      - { label: "Nível", name: "nivel", widget: "select", options: ["Fácil", "Médio"] }
+      - { label: "Rende", name: "rende", widget: "string", hint: "Ex.: 1 pão de 500, 750 ou 1000 g; 8 pães de hambúrguer." }
+      - label: "Origem da receita"
+        name: "origem"
+        widget: "object"
+        collapsed: true
+        summary: "{{fields.tipo}}"
+        fields:
+          - { label: "Tipo", name: "tipo", widget: "select", options: [{ label: "Oficial (livro da Gallant)", value: "oficial" }, { label: "Adaptada de outra fonte", value: "adaptada" }, { label: "Autoral (Pães do Manoel)", value: "autoral" }] }
+          - { label: "Fonte", name: "fonte", widget: "string", required: false, hint: "Ex.: Livro de Receitas Gallant, Panificadora 19 programas, p. 2" }
+      - label: "Tamanhos e quantidades"
+        name: "quantidades"
+        widget: "select"
+        hint: "Três tamanhos só nos programas 1 a 7 (os que têm seletor de peso). Nos três tamanhos, preencha as três colunas de cada ingrediente."
+        options:
+          - { label: "Três tamanhos, quantidades oficiais do livro", value: "oficial" }
+          - { label: "Três tamanhos, quantidades calculadas por proporção", value: "calculadas" }
+          - { label: "Quantidade única", value: "unica" }
+      - { label: "Tamanho de onde as contas partiram (só nas calculadas)", name: "tamanhoBase", widget: "select", required: false, options: ["500 g", "750 g", "1000 g"] }
+      - label: "Ingredientes"
+        name: "tabelas"
+        widget: "list"
+        label_singular: "grupo de ingredientes"
+        summary: "{{fields.grupo}}"
+        hint: "Na ordem de colocar na forma. Medidas por extenso: 1 colher (chá), 3 colheres (sopa)."
+        fields:
+          - { label: "Nome do grupo", name: "grupo", widget: "string", hint: "Ex.: Ingredientes (na ordem), Massa, Recheio, Cobertura" }
+          - label: "Itens"
+            name: "itens"
+            widget: "list"
+            label_singular: "ingrediente"
+            summary: "{{fields.quantidade}} {{fields.nome}}"
+            fields:
+              - { label: "Ingrediente", name: "nome", widget: "string", hint: "Escreva igual nos passos: o nome fica em negrito sozinho no modo de preparo." }
+              - { label: "Quantidade (ou do pão de 500 g)", name: "quantidade", widget: "string" }
+              - { label: "Pão de 750 g", name: "q750", widget: "string", required: false, hint: "Só nas receitas de três tamanhos." }
+              - { label: "Pão de 1000 g", name: "q1000", widget: "string", required: false, hint: "Só nas receitas de três tamanhos." }
+      - label: "Modo de preparo"
+        name: "preparo"
+        widget: "list"
+        label_singular: "etapa"
+        summary: "{{fields.grupo}}"
+        fields:
+          - { label: "Nome da etapa", name: "grupo", widget: "string", hint: "Ex.: Antes de começar, Na forma, Na máquina, Depois de pronto" }
+          - { label: "Passos", name: "passos", widget: "list", label_singular: "passo", field: { label: "Passo", name: "passo", widget: "text" } }
+      - { label: "Como saber se está pronto", name: "pronto", widget: "text" }
+      - { label: "Como guardar", name: "guardar", widget: "text" }
+      - { label: "Dica", name: "dica", widget: "text" }
+      - label: "Bloco extra no fim do preparo (opcional)"
+        name: "complemento"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Hoje usado só na massa de pizza (como rechear e os 5 sabores). Deixe em branco nas outras."
+        fields:
+          - { label: "Título do bloco", name: "titulo", widget: "string", required: false }
+          - { label: "Introdução", name: "intro", widget: "text", required: false }
+          - { label: "Título dos passos", name: "passosTitulo", widget: "string", required: false }
+          - { label: "Passos", name: "passos", widget: "list", required: false, label_singular: "passo", field: { label: "Passo", name: "passo", widget: "text" } }
+          - label: "Itens (ex.: sabores)"
+            name: "itens"
+            widget: "list"
+            required: false
+            summary: "{{fields.nome}}"
+            fields:
+              - { label: "Nome", name: "nome", widget: "string" }
+              - label: "Ingredientes"
+                name: "ingredientes"
+                widget: "list"
+                summary: "{{fields.quantidade}} {{fields.nome}}"
+                fields:
+                  - { label: "Ingrediente", name: "nome", widget: "string" }
+                  - { label: "Quantidade", name: "quantidade", widget: "string", required: false }
+              - { label: "Modo", name: "modo", widget: "text", required: false }
+
+  # ---------- Categorias das receitas ----------
+  - name: "receitas-categorias"
+    label: "Receitas: categorias"
+    description: "Nome, texto de abertura e cores de cada categoria da área de receitas. Criar ou apagar uma categoria é mudança de código (o filtro e o painel precisam acompanhar)."
+    files:
+      - name: "categorias"
+        label: "Categorias"
+        file: "static-receitas/categorias.json"
+        editor: { preview: false }
+        fields:
+          - label: "Categorias"
+            name: "categorias"
+            widget: "list"
+            allow_add: false
+            allow_remove: false
+            allow_reorder: true
+            summary: "{{fields.nome}}"
+            fields:
+              - { label: "Identificador (não mude)", name: "id", widget: "hidden" }
+              - { label: "Nome", name: "nome", widget: "string" }
+              - { label: "Texto de abertura", name: "intro", widget: "text" }
+              - { label: "Cor principal", name: "cor", widget: "color", hint: "O site escurece sozinho para o texto ficar legível." }
+              - { label: "Cor de fundo clara", name: "soft", widget: "color" }
+              - { label: "Ilustração", name: "icone", widget: "select", options: ["loaf", "brioche", "wheat", "cake", "swirl", "pizza", "jar", "corn", "pot"] }
+          - { label: "Livros em PDF", name: "livros", widget: "hidden", default: [] }

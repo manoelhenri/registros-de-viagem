@@ -1,0 +1,88 @@
+{
+  "titulo": "Pão de beterraba",
+  "ordem": 60,
+  "publicado": "2026-11-03",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Beterraba cozida e amassada na massa para um pão de miolo rosado e levemente adocicado.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Leite com 1 ovo (coloque o ovo no copo e complete com leite)",
+          "quantidade": "120 ml",
+          "q750": "180 ml",
+          "q1000": "240 ml"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "12 g",
+          "q750": "19 g",
+          "q1000": "25 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "12 g",
+          "q750": "19 g",
+          "q1000": "25 g"
+        },
+        {
+          "nome": "Beterraba cozida e amassada, fria",
+          "quantidade": "60 g",
+          "q750": "90 g",
+          "q1000": "120 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "210 g",
+          "q750": "315 g",
+          "q1000": "420 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Cozinhe a beterraba, escorra, amasse e deixe esfriar completamente.",
+        "Coloque o leite com ovo e a manteiga na forma.",
+        "Acrescente sal, açúcar, beterraba e farinha. Faça uma cavidade e coloque o fermento.",
+        "Selecione Macio, o tamanho escolhido e casca média. Inicie.",
+        "Desenforme e esfrie sobre grade."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Beterraba cozida deve estar fria e sem excesso de líquido. A cor pode ficar menos intensa depois de assada."
+}

@@ -1,0 +1,77 @@
+{
+  "titulo": "Macarrão fresco",
+  "ordem": 53,
+  "publicado": "2026-11-02",
+  "categoria": "massas",
+  "tags": [
+    "Jantar"
+  ],
+  "resumo": "A máquina sova a massa de ovos e você só abre e corta. Cozinha em 2 a 3 minutos.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Sovar",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "4 porções",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 51–52"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Ovos",
+          "quantidade": "3"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "1 colher (sopa)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "½ colher (chá)"
+        },
+        {
+          "nome": "Farinha de trigo (ou metade sêmola)",
+          "quantidade": "300 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
+        "Separe e pese todos os ingredientes antes de começar. Nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: ovos e azeite.",
+        "Por cima, coloque sal e farinha de trigo (ou metade sêmola), cobrindo todo o líquido.",
+        "Encaixe a forma e rode o programa Sovar."
+      ]
+    },
+    {
+      "grupo": "Modelagem e finalização",
+      "passos": [
+        "Embrulhe a massa em filme e deixe descansar por 30 minutos em temperatura ambiente.",
+        "Divida em 4 partes e abra cada uma bem fina com rolo ou cilindro, polvilhando farinha.",
+        "Corte no formato que quiser e deixe secar por 10 minutos sobre um pano enfarinhado.",
+        "Cozinhe em bastante água fervente com sal por 2 a 3 minutos."
+      ]
+    }
+  ],
+  "pronto": "A massa fica lisa, firme e não gruda nas mãos. Se esfarelar, junte 1 colher (sopa) de água e sove mais um pouco; se grudar, 1 colher (sopa) de farinha.",
+  "guardar": "Cru, polvilhado com farinha, dura 2 dias na geladeira. Para congelar, espalhe em ninhos numa assadeira, congele e depois passe para um saco. Cozinhe direto do congelador.",
+  "dica": "Se a massa ficar esfarelada, junte 1 colher (sopa) de água. Se grudar, 1 colher (sopa) de farinha."
+}

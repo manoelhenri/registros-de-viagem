@@ -1,0 +1,85 @@
+{
+  "titulo": "Bolo de chocolate",
+  "ordem": 29,
+  "publicado": "2026-11-02",
+  "categoria": "bolos",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Bolo de chocolate fofinho, de massa simples, para comer puro ou com a sua cobertura preferida.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 bolo, no formato da forma da máquina",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel, revisada com o manual da Gallant"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Ovos",
+          "quantidade": "3"
+        },
+        {
+          "nome": "Leite",
+          "quantidade": "200 ml"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "120 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "250 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "220 g"
+        },
+        {
+          "nome": "Cacau em pó 50% ou 100%",
+          "quantidade": "50 g"
+        },
+        {
+          "nome": "Fermento químico",
+          "quantidade": "1 colher (sopa)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos da geladeira 30 minutos antes.",
+        "Deixe a pá encaixada e passe um pouco de manteiga no fundo e nos cantos da forma, para o bolo soltar inteiro."
+      ]
+    },
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Bata os ovos, o leite e o óleo com um batedor de arame e despeje na forma.",
+        "Peneire a farinha e o cacau por cima e junte o açúcar e o fermento.",
+        "Rode o programa Bolo, casca clara. Nos primeiros 2 minutos, raspe as laterais com uma espátula de silicone."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere 15 minutos antes de desenformar. Passe uma espátula fina nas laterais, vire sobre um prato e retire a pá, se ela ficar presa no fundo."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas, e as bordas começam a soltar da forma. Se sair molhado, rode o programa Assar por mais 10 minutos e teste de novo.",
+  "guardar": "Coberto, em temperatura ambiente, por até 3 dias. Em dia muito quente ou com cobertura de leite condensado, prefira a geladeira.",
+  "dica": "Cor clara: chocolate escurece rápido e a casca amarga se passar do ponto."
+}

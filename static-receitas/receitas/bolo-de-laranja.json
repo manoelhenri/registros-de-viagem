@@ -1,0 +1,96 @@
+{
+  "titulo": "Bolo de laranja",
+  "ordem": 96,
+  "publicado": "2026-11-03",
+  "categoria": "bolos",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "O bolo de laranja do livro da Gallant, com raspas e glacê de laranja, no programa Bolo.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 bolo pequeno",
+  "origem": {
+    "tipo": "oficial",
+    "fonte": "Livro de Receitas Gallant, Panificadora 19 programas, p. 16"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Leite",
+          "quantidade": "100 ml"
+        },
+        {
+          "nome": "Margarina",
+          "quantidade": "15 g"
+        },
+        {
+          "nome": "Açúcar baunilhado",
+          "quantidade": "4 g"
+        },
+        {
+          "nome": "Raspas finas de laranja",
+          "quantidade": "1 colher (chá)"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "70 a 80 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "180 g"
+        },
+        {
+          "nome": "Fermento químico peneirado",
+          "quantidade": "16 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Cobertura",
+      "itens": [
+        {
+          "nome": "Açúcar de confeiteiro",
+          "quantidade": "2 colheres (sopa)"
+        },
+        {
+          "nome": "Suco de laranja",
+          "quantidade": "algumas gotas"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Tire a forma da máquina, encaixe a pá e coloque todos os ingredientes na ordem da lista, menos os da cobertura.",
+        "Encaixe a forma e rode o programa Bolo.",
+        "Quando o ciclo de assar terminar e a máquina tocar os 10 bipes, desligue (botão Iniciar/Parar) e deixe o bolo dentro da máquina por cerca de 15 minutos, com a tampa fechada.",
+        "Tire a forma e deixe o bolo esfriar nela por mais 15 minutos. Desenforme sobre uma grade e espere esfriar por completo."
+      ]
+    },
+    {
+      "grupo": "Cobertura",
+      "passos": [
+        "Glaceie o bolo frio: misture o açúcar de confeiteiro com algumas gotas de suco de laranja até virar uma calda espessa e espalhe por cima."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas. Se sair molhado, rode o programa Assar por mais 5 a 10 minutos e teste de novo.",
+  "guardar": "Em pote bem fechado por até 3 dias em temperatura ambiente; com cobertura cremosa ou recheio, na geladeira.",
+  "dica": "O livro da Gallant pede para não deixar o bolo no Manter Aquecido: desligue assim que o ciclo terminar, para ele não murchar."
+}

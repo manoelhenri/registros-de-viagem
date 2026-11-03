@@ -471,3 +471,19 @@ footer.foot{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
 .origem.o-oficial b{color:#2E6B3A}
 .qnota{font-size:13.5px;color:var(--muted);margin:-4px 0 12px;line-height:1.5}
 .pill.o{background:#E1EEDF;color:#2E5A33;font-weight:600}
+/* auditoria de funções (nov/2026): cópia manual, botão concluído, topo compacto no celular */
+.copia-manual{margin:12px 0 0;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;font-size:14px;line-height:1.45}
+.copia-manual p{margin:0 0 8px}
+.copia-manual textarea{display:block;width:100%;box-sizing:border-box;font:16px/1.4 Poppins,sans-serif;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--paper,#fbf5ea);color:var(--ink);resize:vertical}
+.actions+.copia-manual{max-width:520px}
+.btn.feito{outline:2px solid currentColor;outline-offset:-2px}
+@media(max-width:599px){
+  .totop{width:46px;padding:0;justify-content:center}
+  .totop span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
+/* foto real da receita (campo "foto" no painel): ocupa o círculo da abertura e o quadro do cartão */
+.rh .art.foto{background:#fff;padding:3%;box-sizing:border-box}
+.rh .art.foto img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.rc .pic.com-foto::before{display:none}
+.rc .pic img.ft,.grid .rc .pic img.ft{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:none}
+.rc .pic.com-foto .tagc{z-index:1}

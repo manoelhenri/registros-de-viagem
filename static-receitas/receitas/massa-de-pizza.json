@@ -1,0 +1,274 @@
+{
+  "titulo": "Massa de pizza",
+  "ordem": 24,
+  "publicado": "2026-11-02",
+  "categoria": "massas",
+  "tags": [
+    "Jantar"
+  ],
+  "resumo": "Massa para duas pizzas de 35 cm, no programa próprio da máquina. Fina, crocante e fácil de abrir.",
+  "icone": "pizza",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa de Pizza",
+  "casca": "",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "2 pizzas de 35 cm",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 51"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "300 ml"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "3 colheres (sopa)"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "1 colher (chá)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "2 colheres (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "500 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "1½ colher (chá)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Separe e pese todos os ingredientes antes de começar. Nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: água e azeite.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa de Pizza."
+      ]
+    },
+    {
+      "grupo": "Modelagem e finalização",
+      "passos": [
+        "Divida em 2 bolas, cubra e deixe descansar por 30 minutos.",
+        "Preaqueça o forno no máximo (250 °C) por 15 minutos, com a assadeira dentro, se puder.",
+        "Abra a massa com as mãos, do centro para as bordas, até uns 35 cm. Recheie seguindo o passo a passo e um dos sabores logo abaixo.",
+        "Asse na grade mais baixa do forno por 10 a 12 minutos, até a borda dourar e o fundo ficar crocante."
+      ]
+    }
+  ],
+  "pronto": "A massa sai lisa e elástica. Ela não precisa dobrar de volume dentro da máquina: cresce no descanso e no forno.",
+  "guardar": "Bolas de massa cruas duram até 2 dias na geladeira, em pote untado com azeite, ou 1 mês no congelador. Pizza pré-assada com molho também congela bem.",
+  "dica": "Para congelar: pré-asse só com molho por 5 minutos, esfrie e embale.",
+  "complemento": {
+    "titulo": "Como rechear e 5 sabores clássicos",
+    "intro": "Cada sabor é para uma pizza de 35 cm. A receita de massa faz duas: dá para fazer dois sabores diferentes na mesma noite.",
+    "passosTitulo": "Como rechear",
+    "passos": [
+      "Prepare o molho básico (logo abaixo, antes dos sabores). Ele não precisa ir ao fogo: termina de cozinhar no forno.",
+      "Abra a massa já sobre a assadeira untada com azeite ou polvilhada com farinha. Depois de recheada, a pizza fica pesada para mudar de lugar.",
+      "Espalhe cerca de 5 colheres (sopa) de molho com as costas da colher, em espiral do centro para fora, deixando 1,5 cm de borda livre.",
+      "Monte nesta ordem: molho, queijo e só então os outros ingredientes. O queijo por baixo protege a massa da umidade do recheio.",
+      "Use pouco recheio e bem escorrido: tomate, frango e milho soltam água e deixam o centro cru. Uma camada só, sem montanha.",
+      "Folhas frescas (manjericão, rúcula) e fio de azeite vão só depois de assar, para não queimar.",
+      "Pincele a borda com azeite para dourar.",
+      "Recheio mais pesado, como portuguesa ou frango: asse a massa só com o molho por 5 minutos, depois coloque o restante e volte ao forno."
+    ],
+    "itens": [
+      {
+        "nome": "Molho básico (para as duas pizzas)",
+        "ingredientes": [
+          {
+            "nome": "Polpa de tomate (passata)",
+            "quantidade": "200 g"
+          },
+          {
+            "nome": "Azeite",
+            "quantidade": "1 colher (sopa)"
+          },
+          {
+            "nome": "Sal",
+            "quantidade": "½ colher (chá)"
+          },
+          {
+            "nome": "Orégano",
+            "quantidade": "1 colher (chá)"
+          }
+        ],
+        "modo": "Misture tudo numa tigela. Use cerca de 5 colheres (sopa) por pizza e guarde o que sobrar na geladeira por até 3 dias."
+      },
+      {
+        "nome": "Marguerita",
+        "ingredientes": [
+          {
+            "nome": "Molho de tomate",
+            "quantidade": "5 colheres (sopa)"
+          },
+          {
+            "nome": "Muçarela ralada ou em fatias",
+            "quantidade": "200 g"
+          },
+          {
+            "nome": "Tomates maduros em rodelas finas",
+            "quantidade": "2"
+          },
+          {
+            "nome": "Folhas de manjericão",
+            "quantidade": "1 punhado"
+          },
+          {
+            "nome": "Azeite",
+            "quantidade": "1 fio"
+          }
+        ],
+        "modo": "Molho, muçarela e as rodelas de tomate por cima, sem sobrepor. Asse e, ao sair do forno, cubra com o manjericão e o fio de azeite."
+      },
+      {
+        "nome": "Calabresa",
+        "ingredientes": [
+          {
+            "nome": "Molho de tomate",
+            "quantidade": "5 colheres (sopa)"
+          },
+          {
+            "nome": "Muçarela ralada (opcional)",
+            "quantidade": "150 g"
+          },
+          {
+            "nome": "Calabresa em fatias finas",
+            "quantidade": "200 g"
+          },
+          {
+            "nome": "Cebola em rodelas finas",
+            "quantidade": "1"
+          },
+          {
+            "nome": "Azeitonas pretas",
+            "quantidade": "8"
+          },
+          {
+            "nome": "Orégano",
+            "quantidade": "a gosto"
+          }
+        ],
+        "modo": "Na versão de pizzaria paulistana vai sem queijo; com muçarela, ela entra logo depois do molho. Distribua a calabresa, a cebola e as azeitonas e finalize com orégano."
+      },
+      {
+        "nome": "Portuguesa",
+        "ingredientes": [
+          {
+            "nome": "Molho de tomate",
+            "quantidade": "5 colheres (sopa)"
+          },
+          {
+            "nome": "Muçarela ralada",
+            "quantidade": "200 g"
+          },
+          {
+            "nome": "Presunto picado",
+            "quantidade": "100 g"
+          },
+          {
+            "nome": "Ovos cozidos em rodelas",
+            "quantidade": "2"
+          },
+          {
+            "nome": "Cebola em rodelas finas",
+            "quantidade": "½"
+          },
+          {
+            "nome": "Ervilha escorrida",
+            "quantidade": "3 colheres (sopa)"
+          },
+          {
+            "nome": "Azeitonas pretas",
+            "quantidade": "8"
+          },
+          {
+            "nome": "Orégano",
+            "quantidade": "a gosto"
+          }
+        ],
+        "modo": "Pré-asse a massa com o molho por 5 minutos. Cubra com a muçarela, o presunto, a cebola e a ervilha; as rodelas de ovo e as azeitonas vão por cima. Finalize com orégano."
+      },
+      {
+        "nome": "Frango com requeijão",
+        "ingredientes": [
+          {
+            "nome": "Molho de tomate",
+            "quantidade": "5 colheres (sopa)"
+          },
+          {
+            "nome": "Muçarela ralada",
+            "quantidade": "150 g"
+          },
+          {
+            "nome": "Frango cozido, desfiado e temperado",
+            "quantidade": "250 g"
+          },
+          {
+            "nome": "Requeijão de corte (tipo catupiry)",
+            "quantidade": "150 g"
+          },
+          {
+            "nome": "Milho verde escorrido (opcional)",
+            "quantidade": "3 colheres (sopa)"
+          },
+          {
+            "nome": "Orégano",
+            "quantidade": "a gosto"
+          }
+        ],
+        "modo": "Pré-asse a massa com o molho por 5 minutos. Espalhe a muçarela e o frango bem escorrido e distribua o requeijão em colheradas ou num cordão em espiral. Milho e orégano por cima."
+      },
+      {
+        "nome": "Quatro queijos",
+        "ingredientes": [
+          {
+            "nome": "Molho de tomate",
+            "quantidade": "5 colheres (sopa)"
+          },
+          {
+            "nome": "Muçarela ralada",
+            "quantidade": "150 g"
+          },
+          {
+            "nome": "Provolone ralado",
+            "quantidade": "80 g"
+          },
+          {
+            "nome": "Gorgonzola em pedacinhos",
+            "quantidade": "80 g"
+          },
+          {
+            "nome": "Parmesão ralado",
+            "quantidade": "3 colheres (sopa)"
+          }
+        ],
+        "modo": "Muçarela primeiro, cobrindo o molho; depois o provolone e o gorgonzola espalhados. O parmesão vai por cima de tudo e forma uma casquinha dourada."
+      }
+    ]
+  }
+}

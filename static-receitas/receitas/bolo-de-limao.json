@@ -1,0 +1,74 @@
+{
+  "titulo": "Bolo de limão",
+  "ordem": 99,
+  "publicado": "2026-11-03",
+  "categoria": "bolos",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Bolo de iogurte com suco e raspas de limão, em lote compacto, no programa Bolo.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 bolo pequeno",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "75 g"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "45 ml"
+        },
+        {
+          "nome": "Iogurte natural",
+          "quantidade": "90 g"
+        },
+        {
+          "nome": "Suco de limão raspas de 1 limão",
+          "quantidade": "20 ml"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "130 g"
+        },
+        {
+          "nome": "Fermento químico",
+          "quantidade": "6 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Bata ovos e açúcar. Misture óleo, iogurte, suco e raspas.",
+        "Incorpore a farinha e, por último, o fermento.",
+        "Unte a forma e despeje a massa sem ultrapassar a capacidade indicada.",
+        "Use programa Bolo. Verifique o centro com palito; complete com Assar em intervalos curtos se necessário.",
+        "Espere amornar antes de desenformar."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas. Se sair molhado, rode o programa Assar por mais 5 a 10 minutos e teste de novo.",
+  "guardar": "Em pote bem fechado por até 3 dias em temperatura ambiente; com cobertura cremosa ou recheio, na geladeira.",
+  "dica": "O limão e o iogurte dão acidez e umidade. Não use timer; refrigere sobras se o ambiente estiver quente."
+}

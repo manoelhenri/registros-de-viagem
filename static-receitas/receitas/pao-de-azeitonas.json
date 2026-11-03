@@ -1,0 +1,95 @@
+{
+  "titulo": "Pão de azeitonas e orégano",
+  "ordem": 65,
+  "publicado": "2026-11-03",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Lanche",
+    "Jantar"
+  ],
+  "resumo": "Azeitonas bem secas e orégano numa massa de azeite. As azeitonas entram no sinal de adição.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 33"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "135 ml",
+          "q750": "200 ml",
+          "q1000": "270 ml"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "15 ml",
+          "q750": "22 ml",
+          "q1000": "30 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "8 g",
+          "q750": "11 g",
+          "q1000": "15 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "225 g",
+          "q750": "340 g",
+          "q1000": "450 g"
+        },
+        {
+          "nome": "Azeitonas sem caroço, escorridas e secas",
+          "quantidade": "40 g",
+          "q750": "60 g",
+          "q1000": "80 g"
+        },
+        {
+          "nome": "Orégano",
+          "quantidade": "½ colher (chá)",
+          "q750": "¾ colher (chá)",
+          "q1000": "1 colher (chá)"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "2,5 g",
+          "q750": "4 g",
+          "q1000": "5 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Seque bem as azeitonas e pique.",
+        "Coloque água e azeite na forma; acrescente açúcar, sal, farinha e orégano.",
+        "Encaixe a forma, escolha o programa Macio, o tamanho escolhido e a casca média e aperte iniciar.",
+        "Quando a massa já estiver formada, acrescente as azeitonas no aviso de adição; se não houver aviso, incorpore no fim da sova, sem abrir durante a fermentação.",
+        "Desenforme e esfrie."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Azeitonas salgadas variam; prove antes e reduza o sal para 5 g se necessário."
+}

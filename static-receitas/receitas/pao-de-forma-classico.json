@@ -1,0 +1,88 @@
+{
+  "titulo": "Pão caseiro básico",
+  "ordem": 1,
+  "publicado": "2026-11-02",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "O pão branco básico do livro da Gallant, com leite em pó: macio, fácil e pode ficar programado no timer.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": true,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "oficial",
+    "fonte": "Livro de Receitas Gallant, Panificadora 19 programas, p. 2"
+  },
+  "quantidades": "oficial",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "160 ml",
+          "q750": "250 ml",
+          "q1000": "300 ml"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3 g",
+          "q750": "5 g",
+          "q1000": "6 g"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "12 ml",
+          "q750": "18 ml",
+          "q1000": "24 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "12 g",
+          "q750": "18 g",
+          "q1000": "24 g"
+        },
+        {
+          "nome": "Leite em pó",
+          "quantidade": "6 g",
+          "q750": "12 g",
+          "q1000": "15 g"
+        },
+        {
+          "nome": "Farinha de trigo para pão",
+          "quantidade": "260 g",
+          "q750": "400 g",
+          "q1000": "520 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3 g",
+          "q750": "4 g",
+          "q1000": "6 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Retire a forma da máquina, encaixe a pá e coloque a água e o óleo.",
+        "Acrescente sal, açúcar e leite em pó. Cubra com a farinha.",
+        "Faça uma pequena cavidade na farinha e adicione o fermento, sem contato direto com líquido ou sal.",
+        "Encaixe a forma, selecione Macio, o tamanho escolhido e casca média. Inicie.",
+        "Retire o pão ao final do ciclo, desenforme com luvas e esfrie em grade antes de fatiar."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Para se acostumar com a máquina, o livro da Gallant sugere começar com uma mistura pronta para pão e só depois partir para as receitas próprias."
+}

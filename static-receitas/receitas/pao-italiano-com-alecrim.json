@@ -1,0 +1,93 @@
+{
+  "titulo": "Pão italiano com alecrim",
+  "ordem": 10,
+  "publicado": "2026-11-02",
+  "categoria": "integrais",
+  "tags": [
+    "Jantar"
+  ],
+  "resumo": "Pão de água e azeite com alecrim seco e alho em pó, inspirado nos sabores italianos. Bom para bruschetta.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": true,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 27 e 30"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "750 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "190 ml",
+          "q750": "285 ml",
+          "q1000": "380 ml"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "30 ml",
+          "q750": "45 ml",
+          "q1000": "60 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "4,5 g",
+          "q750": "7 g",
+          "q1000": "9 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "4,5 g",
+          "q750": "7 g",
+          "q1000": "9 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "300 g",
+          "q750": "450 g",
+          "q1000": "600 g"
+        },
+        {
+          "nome": "Alecrim seco",
+          "quantidade": "1 colher (chá)",
+          "q750": "1½ colher (chá)",
+          "q1000": "2 colheres (chá)"
+        },
+        {
+          "nome": "Alho em pó",
+          "quantidade": "½ colher (chá)",
+          "q750": "¾ colher (chá)",
+          "q1000": "1 colher (chá)"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Coloque água e azeite na forma.",
+        "Acrescente açúcar, sal, farinha, alecrim e alho em pó. Faça uma cavidade e adicione o fermento.",
+        "Selecione Macio, o tamanho escolhido e casca média. Inicie imediatamente.",
+        "Ao terminar, desenforme e esfrie sobre grade. Sirva com azeite ou use fatias tostadas para bruschetta."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "O alho em pó e o alecrim seco são usados na massa. Ervas frescas e alho fresco têm umidade maior e exigem ajuste da fórmula."
+}

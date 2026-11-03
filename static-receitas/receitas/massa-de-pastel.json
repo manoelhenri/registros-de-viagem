@@ -1,0 +1,81 @@
+{
+  "titulo": "Massa de pastel",
+  "ordem": 54,
+  "publicado": "2026-11-02",
+  "categoria": "massas",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "A massa de feira com cachaça, que faz as bolhinhas crocantes ao fritar. Rende 20 pastéis médios.",
+  "icone": "wheat",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Sovar",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "20 pastéis médios",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel, revisada com o manual da Gallant"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "260 ml"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "2 colheres (sopa)"
+        },
+        {
+          "nome": "Cachaça",
+          "quantidade": "1 colher (sopa)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "1½ colher (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "500 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Use a água, uns 30 °C: ela deixa a massa mais fácil de abrir.",
+        "Separe e pese todos os ingredientes antes de começar. Nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: água e óleo.",
+        "Por cima, coloque cachaça, sal e farinha de trigo, cobrindo todo o líquido.",
+        "Encaixe a forma e rode o programa Sovar."
+      ]
+    },
+    {
+      "grupo": "Modelagem e finalização",
+      "passos": [
+        "Embrulhe a massa em filme e deixe descansar por 30 minutos.",
+        "Abra bem fina, quase transparente, e corte retângulos de 10 × 20 cm.",
+        "Recheie metade de cada retângulo, dobre, tire o ar e feche as bordas apertando com um garfo.",
+        "Frite em óleo a 180 °C até dourar e escorra em papel-toalha."
+      ]
+    }
+  ],
+  "pronto": "A massa fica lisa, firme e não gruda nas mãos. Se esfarelar, junte 1 colher (sopa) de água e sove mais um pouco; se grudar, 1 colher (sopa) de farinha.",
+  "guardar": "A massa crua, bem embrulhada em filme, dura 2 dias na geladeira. Pastéis montados e crus podem ser congelados e fritos sem descongelar.",
+  "dica": "A cachaça é o que faz as bolhinhas crocantes da massa de feira."
+}

@@ -47,6 +47,40 @@
     topo.addEventListener("click", irAoTopo);
   }
 
+  // ---------- copiar texto ----------
+  // Tenta a área de transferência; se o navegador negar (comum nos navegadores de dentro do
+  // Instagram, Facebook e de alguns apps), tenta o jeito antigo e, se ainda falhar, mostra o
+  // texto pronto para a pessoa copiar com o dedo.
+  function copiaAntiga(texto) {
+    var area = document.createElement("textarea");
+    area.value = texto; area.setAttribute("readonly", "");
+    area.style.position = "fixed"; area.style.top = "0"; area.style.left = "0"; area.style.opacity = "0"; area.style.fontSize = "16px";
+    document.body.appendChild(area);
+    var ok = false;
+    try { area.focus(); area.select(); area.setSelectionRange(0, texto.length); ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(area);
+    return ok;
+  }
+  function copiarTexto(texto, caixaId, aoCopiar) {
+    var caixa = caixaId && document.getElementById(caixaId);
+    if (caixa) caixa.hidden = true;
+    var falhou = function () {
+      if (copiaAntiga(texto)) { aoCopiar(); return; }
+      if (!caixa) return;
+      var campo = caixa.querySelector("textarea");
+      campo.value = texto; caixa.hidden = false;
+      try { campo.focus(); campo.select(); campo.setSelectionRange(0, texto.length); } catch (e) {}
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext !== false) {
+      try { navigator.clipboard.writeText(texto).then(aoCopiar, falhou); } catch (e) { falhou(); }
+    } else falhou();
+  }
+  function avisar(botao, texto, original) {
+    var l = botao.querySelector(".lbl"); if (!l) return;
+    l.textContent = texto; botao.classList.add("feito");
+    setTimeout(function () { l.textContent = original; botao.classList.remove("feito"); }, 2200);
+  }
+
   // ---------- receitas salvas ----------
   var salvas = ler("receitas-salvas", []);
   function atualizarSalvas() {
@@ -104,16 +138,19 @@
           if (on && k < 0) arr.push(idx); if (!on && k >= 0) arr.splice(k, 1);
           gravar(chave, marcas);
           if (lista === "p") passoAtual();
+          verLimpar();
         });
       });
     }
     ligar(".ing button", "i");
     ligar(".steps button", "p");
     var limpar = document.getElementById("limpar-marcas");
+    function verLimpar() { if (limpar) limpar.hidden = !(marcas.i.length || marcas.p.length); }
+    verLimpar();
     if (limpar) limpar.addEventListener("click", function () {
       marcas = { d: hoje, i: [], p: [] }; gravar(chave, marcas);
       $all(".ing button, .steps button").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
-      passoAtual();
+      passoAtual(); verLimpar();
     });
     var pos = document.getElementById("passo-pos");
     function passoAtual() {
@@ -153,29 +190,34 @@
         linhas.push("- " + (q ? q.textContent.trim() + " " : "") + (n ? n.textContent.trim() : ""));
       });
       linhas.push("", location.href.split("#")[0]);
-      var texto = linhas.join("\n"), l = copiar.querySelector(".lbl");
-      var ok = function () { if (l) { l.textContent = "Lista copiada"; setTimeout(function () { l.textContent = "Copiar ingredientes"; }, 2200); } };
-      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(texto).then(ok, function () {}); return; }
-      var area = document.createElement("textarea"); area.value = texto; area.setAttribute("readonly", ""); area.style.position = "fixed"; area.style.opacity = "0";
-      document.body.appendChild(area); area.select(); try { document.execCommand("copy"); ok(); } catch (e) {} document.body.removeChild(area);
+      copiarTexto(linhas.join("\n"), "copia-ing", function () { avisar(copiar, "Lista copiada", "Copiar ingredientes"); });
     });
     passoAtual();
 
     // modo cozinha: tela acesa e letras maiores
     var lock = null, cozinha = document.getElementById("modo-cozinha"), sair = document.getElementById("sair-cozinha");
+    var ckCurto = document.querySelector("[data-ck-short]"), ckLongo = document.querySelector("[data-ck-long]");
+    function telaAcesa(sim) {
+      if (ckCurto) ckCurto.textContent = sim ? ": tela acesa" : ": letras maiores";
+      if (ckLongo) ckLongo.textContent = sim ? " ligado: a tela fica acesa. Toque nos ingredientes e passos para marcar." : " ligado: letras maiores e um passo por vez. Este navegador não deixa manter a tela acesa; se ela apagar, é só tocar.";
+    }
+    function pedirTela() {
+      if (!navigator.wakeLock || typeof navigator.wakeLock.request !== "function") { telaAcesa(false); return; }
+      navigator.wakeLock.request("screen").then(function (l) {
+        lock = l; telaAcesa(true);
+        l.addEventListener && l.addEventListener("release", function () { if (lock === l) { lock = null; if (document.visibilityState === "visible") telaAcesa(false); } });
+      }).catch(function () { telaAcesa(false); });
+    }
     function setCozinha(on) {
       doc.classList.toggle("cooking", on);
       if (cozinha) cozinha.setAttribute("aria-pressed", on ? "true" : "false");
-      if (on && "wakeLock" in navigator) {
-        navigator.wakeLock.request("screen").then(function (l) { lock = l; }).catch(function () {});
-      } else if (!on && lock) { lock.release().catch(function () {}); lock = null; }
+      if (on) pedirTela();
+      else if (lock) { var l = lock; lock = null; l.release().catch(function () {}); }
     }
     if (cozinha) cozinha.addEventListener("click", function () { setCozinha(!doc.classList.contains("cooking")); });
     if (sair) sair.addEventListener("click", function () { setCozinha(false); });
     document.addEventListener("visibilitychange", function () {
-      if (document.visibilityState === "visible" && doc.classList.contains("cooking") && "wakeLock" in navigator) {
-        navigator.wakeLock.request("screen").then(function (l) { lock = l; }).catch(function () {});
-      }
+      if (document.visibilityState === "visible" && doc.classList.contains("cooking") && !lock) pedirTela();
     });
 
     // barra "Ingredientes / Modo de preparo" (celular): marca a seção que está na tela
@@ -191,14 +233,17 @@
     }
 
     var imprimir = document.getElementById("imprimir");
+    if (imprimir && (typeof window.print !== "function" || /FBAN|FBAV|Instagram|Line\/|; wv\)|WhatsApp|TikTok|musical_ly|Snapchat|Pinterest|Twitter/i.test(navigator.userAgent))) imprimir.hidden = true;
     if (imprimir) imprimir.addEventListener("click", function () { window.print(); });
     var compartilhar = document.getElementById("compartilhar");
     if (compartilhar) compartilhar.addEventListener("click", function () {
-      var dados = { title: document.title, url: location.href };
-      if (navigator.share) { navigator.share(dados).catch(function () {}); return; }
-      if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(function () {
-        var l = compartilhar.querySelector(".lbl"); if (l) { l.textContent = "Link copiado"; setTimeout(function () { l.textContent = "Compartilhar"; }, 2000); }
-      });
+      var url = location.href.split("#")[0];
+      var copiarLink = function () { copiarTexto(url, "copia-link", function () { avisar(compartilhar, "Link copiado", "Compartilhar"); }); };
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: url }).catch(function (e) { if (!e || e.name !== "AbortError") copiarLink(); });
+        return;
+      }
+      copiarLink();
     });
   }
 

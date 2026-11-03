@@ -1,0 +1,99 @@
+{
+  "titulo": "Pão doce de laranja e baunilha",
+  "ordem": 79,
+  "publicado": "2026-11-03",
+  "categoria": "doces",
+  "tags": [
+    "Café da manhã"
+  ],
+  "resumo": "Suco e raspas de laranja com baunilha numa massa doce, no programa Brioche.",
+  "icone": "brioche",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Brioche",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "1000 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "90 ml",
+          "q750": "135 ml",
+          "q1000": "180 ml"
+        },
+        {
+          "nome": "Suco de laranja",
+          "quantidade": "35 ml",
+          "q750": "52 ml",
+          "q1000": "70 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1",
+          "q750": "1",
+          "q1000": "1"
+        },
+        {
+          "nome": "Manteiga",
+          "quantidade": "20 g",
+          "q750": "30 g",
+          "q1000": "40 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "30 g",
+          "q750": "45 g",
+          "q1000": "60 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "3 g",
+          "q750": "4,5 g",
+          "q1000": "6 g"
+        },
+        {
+          "nome": "Farinha de trigo raspas de 1 laranja",
+          "quantidade": "225 g",
+          "q750": "340 g",
+          "q1000": "450 g"
+        },
+        {
+          "nome": "Extrato de baunilha",
+          "quantidade": "2,5 ml",
+          "q750": "4 ml",
+          "q1000": "5 ml"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "2,5 g",
+          "q750": "4 g",
+          "q1000": "5 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Misture leite, suco, ovo, manteiga, baunilha e raspas. Coloque na forma.",
+        "Acrescente açúcar, sal e farinha; fermento por último.",
+        "Encaixe a forma, escolha o programa Brioche, o tamanho escolhido e a casca clara e aperte iniciar. E observe a massa. Deve ficar macia e coesa.",
+        "Desenforme ao terminar e esfrie sobre grade."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Suco de laranja é líquido ácido; não substitua todo o leite sem recalcular. Não usar timer por conter leite e ovo."
+}

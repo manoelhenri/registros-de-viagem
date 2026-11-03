@@ -1,0 +1,124 @@
+{
+  "titulo": "Stollen de Natal",
+  "ordem": 46,
+  "publicado": "2026-11-02",
+  "categoria": "doces",
+  "tags": [
+    "Natal"
+  ],
+  "resumo": "O pão alemão de Natal com frutas secas e marzipã no centro, coberto de açúcar de confeiteiro.",
+  "icone": "brioche",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → Fermentar → Assar",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "1 stollen na forma da máquina",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa",
+      "itens": [
+        {
+          "nome": "Leite integral",
+          "quantidade": "170 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Manteiga amolecida",
+          "quantidade": "65 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "4½ colheres (sopa)"
+        },
+        {
+          "nome": "Raspas de limão",
+          "quantidade": "¾"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "¾ colher (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "450 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "2¼ colheres (chá)"
+        },
+        {
+          "nome": "Frutas secas e passas (na modelagem)",
+          "quantidade": "80 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Recheio e Acabamento",
+      "itens": [
+        {
+          "nome": "Marzipã em rolo",
+          "quantidade": "120 g"
+        },
+        {
+          "nome": "Manteiga derretida",
+          "quantidade": "3 colheres (sopa)"
+        },
+        {
+          "nome": "Açúcar de confeiteiro",
+          "quantidade": "a gosto"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire os ovos e a manteiga da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
+        "Use o leite em temperatura ambiente, entre 20 °C e 25 °C, como pede o manual da Gallant: líquido quente demais mata o fermento.",
+        "Separe e pese todos os ingredientes antes de começar. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "A massa",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: leite, ovo e manteiga amolecida.",
+        "Por cima, coloque açúcar, raspas de limão, sal e farinha de trigo, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar."
+      ]
+    },
+    {
+      "grupo": "Montagem, fermentação e forno",
+      "passos": [
+        "Ao fim do programa Massa, tire a massa, espalhe as frutas secas e passas por cima e dobre e aperte com as mãos até se espalharem por igual. Abra num retângulo de 1 cm, com um lado de 17 cm.",
+        "Faça um rolo com o marzipã, coloque no meio da massa e dobre as bordas por cima, fechando bem.",
+        "Tire a pá, unte a forma e coloque o rolo com a emenda para baixo.",
+        "Rode o programa Fermentar até crescer bem e depois o Assar até dourar.",
+        "Ainda quente, pincele a manteiga derretida e cubra de açúcar de confeiteiro. Repita depois de 10 minutos, para formar uma camada grossa."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere uns 10 minutos antes de desenformar, para o pão firmar e não rasgar.",
+        "Embrulhe e espere 3 dias antes de servir: os sabores se misturam e ele fica muito melhor."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Assado, em saco bem fechado por até 3 dias. A massa crua pode ficar na geladeira, em pote untado, por até 1 dia, ou congelada por até 1 mês.",
+  "dica": "Depois de frio, embrulhe em papel-manteiga e papel-alumínio e espere 3 dias antes de servir: os sabores se misturam."
+}

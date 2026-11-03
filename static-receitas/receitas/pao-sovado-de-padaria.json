@@ -1,0 +1,112 @@
+{
+  "titulo": "Pão sovado de padaria",
+  "ordem": 33,
+  "publicado": "2026-11-02",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Café da manhã",
+    "Sul"
+  ],
+  "resumo": "O pão sovado do Sul, de massa firme, miolo branquinho e casca fina. Pode ficar no timer da noite.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Sanduíche",
+  "casca": "Clara",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "750 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "165 ml",
+          "q750": "250 ml",
+          "q1000": "330 ml"
+        },
+        {
+          "nome": "Manteiga em cubos",
+          "quantidade": "30 g",
+          "q750": "45 g",
+          "q1000": "60 g"
+        },
+        {
+          "nome": "Leite em pó",
+          "quantidade": "2 colheres (sopa)",
+          "q750": "3 colheres (sopa)",
+          "q1000": "4 colheres (sopa)"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "2 colheres (sopa)",
+          "q750": "3 colheres (sopa)",
+          "q1000": "4 colheres (sopa)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "1 colher (chá)",
+          "q750": "1½ colher (chá)",
+          "q1000": "2 colheres (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "300 g",
+          "q750": "450 g",
+          "q1000": "600 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "1 colher (chá)",
+          "q750": "1½ colher (chá)",
+          "q1000": "2 colheres (chá)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Tire a manteiga da geladeira 30 minutos antes, para ficar em temperatura ambiente.",
+        "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      ]
+    },
+    {
+      "grupo": "Na forma",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "A massa desta receita é mais firme que a dos outros pães: é ela que dá o miolo fechado e branquinho.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: água e manteiga em cubos.",
+        "Por cima, coloque leite em pó, açúcar, sal e farinha de trigo, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal."
+      ]
+    },
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Encaixe a forma na máquina e escolha o programa Sanduíche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita leva manteiga e não pode ficar no timer.",
+        "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
+        "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
+        "Deixe esfriar sobre uma grade por cerca de 20 minutos antes de fatiar, como orienta o manual. Para fatias finas e firmes, espere esfriar por completo.",
+        "Cubra com um pano limpo enquanto esfria: ele segura o vapor e deixa a casca fininha."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado ou num pote, em temperatura ambiente, por até 3 dias. Para congelar, fatie antes e guarde por até 1 mês; tire as fatias que for usar e leve direto à torradeira.",
+  "dica": "O pano por cima segura o vapor e deixa a casca fininha, como a do pão sovado de padaria."
+}

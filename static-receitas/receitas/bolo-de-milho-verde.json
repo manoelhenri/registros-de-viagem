@@ -1,0 +1,88 @@
+{
+  "titulo": "Bolo de milho verde",
+  "ordem": 48,
+  "publicado": "2026-11-02",
+  "categoria": "bolos",
+  "tags": [
+    "Festa junina"
+  ],
+  "resumo": "O bolo de milho de festa junina, com fubá e coco, em lote compacto para a forma da máquina.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 bolo pequeno",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Milho verde escorrido",
+          "quantidade": "100 g"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Leite",
+          "quantidade": "75 ml"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "50 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "90 g"
+        },
+        {
+          "nome": "Fubá fino",
+          "quantidade": "75 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "60 g"
+        },
+        {
+          "nome": "Coco ralado",
+          "quantidade": "50 g"
+        },
+        {
+          "nome": "Fermento químico",
+          "quantidade": "1 colher (sopa)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Bata no liquidificador o milho, o ovo, o leite, o óleo e o açúcar até obter mistura homogênea.",
+        "Em uma tigela, misture o fubá, a farinha, o coco ralado e o fermento. Incorpore à mistura líquida e despeje na forma.",
+        "Encaixe a forma na máquina, com a pá no eixo, e rode o programa Bolo.",
+        "Não abra a tampa durante o ciclo. Para evitar farinha seca, pese e distribua os ingredientes com precisão antes de iniciar."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Tire a forma com luva e espere 15 minutos antes de desenformar. Passe uma espátula fina nas laterais, vire sobre um prato e retire a pá, se ela ficar presa no fundo.",
+        "Sirva em quadrados, com canela polvilhada por cima."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas. Se sair molhado, rode o programa Assar por mais 5 a 10 minutos e teste de novo.",
+  "guardar": "Em pote bem fechado por até 3 dias em temperatura ambiente; com cobertura cremosa ou recheio, na geladeira.",
+  "dica": "Sirva em quadrados, com canela polvilhada por cima."
+}

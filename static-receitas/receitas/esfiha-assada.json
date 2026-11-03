@@ -1,0 +1,89 @@
+{
+  "titulo": "Esfiha assada",
+  "ordem": 93,
+  "publicado": "2026-11-03",
+  "categoria": "massas",
+  "tags": [
+    "Lanche"
+  ],
+  "resumo": "Massa de esfiha feita na máquina com recheio de carne moída temperada, modelada e assada no forno.",
+  "icone": "pizza",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Massa → forno",
+  "casca": "",
+  "timer": false,
+  "nivel": "Médio",
+  "rende": "cerca de 20 esfihas",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 52"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "250 ml"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "60 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "30 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "8 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "500 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "6 g"
+        }
+      ]
+    },
+    {
+      "grupo": "Recheio",
+      "itens": [
+        {
+          "nome": "Carne moída",
+          "quantidade": "300 g"
+        },
+        {
+          "nome": "Sem sementes",
+          "quantidade": "1 tomate"
+        },
+        {
+          "nome": "Cebola, limão, sal, pimenta e salsa",
+          "quantidade": "½"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Coloque na forma, nesta ordem: água e óleo.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
+        "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
+        "Misture a carne com tomate sem sementes, cebola, limão e temperos. Se formar líquido, escorra antes de rechear.",
+        "Divida a massa em 12 a 14 porções. Abra discos, coloque recheio e feche em triângulo ou modele abertas.",
+        "Deixe crescer por 15 a 20 minutos.",
+        "Asse a 200 °C por 15 a 20 minutos, até a massa dourar e a carne cozinhar completamente."
+      ]
+    }
+  ],
+  "pronto": "Ao fim do programa, a massa está lisa, macia e com quase o dobro do volume. Aperte com o dedo: a marca deve voltar devagar.",
+  "guardar": "Assado, em saco bem fechado por até 3 dias. A massa crua pode ficar na geladeira, em pote untado, por até 1 dia, ou congelada por até 1 mês.",
+  "dica": "Recheio cru deve ser manipulado com higiene e permanecer refrigerado. As esfihas devem atingir cozimento completo no centro."
+}

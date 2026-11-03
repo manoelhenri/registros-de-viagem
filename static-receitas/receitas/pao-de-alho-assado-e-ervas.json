@@ -1,0 +1,95 @@
+{
+  "titulo": "Pão de alho assado e ervas",
+  "ordem": 67,
+  "publicado": "2026-11-03",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Churrasco",
+    "Jantar"
+  ],
+  "resumo": "Alho assado amassado e ervas secas na própria massa, sem recheio enrolado.",
+  "icone": "loaf",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane, p. 29"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "750 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes",
+      "itens": [
+        {
+          "nome": "Água",
+          "quantidade": "180 ml",
+          "q750": "270 ml",
+          "q1000": "360 ml"
+        },
+        {
+          "nome": "Azeite",
+          "quantidade": "20 ml",
+          "q750": "30 ml",
+          "q1000": "40 ml"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "10 g",
+          "q750": "15 g",
+          "q1000": "20 g"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "4,5 g",
+          "q750": "7 g",
+          "q1000": "9 g"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "300 g",
+          "q750": "450 g",
+          "q1000": "600 g"
+        },
+        {
+          "nome": "Alho assado amassado e frio",
+          "quantidade": "23 g",
+          "q750": "35 g",
+          "q1000": "47 g"
+        },
+        {
+          "nome": "Ervas secas (orégano, tomilho e alecrim)",
+          "quantidade": "¾ colher (sopa)",
+          "q750": "1 colher (sopa)",
+          "q1000": "1¼ colher (sopa)"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "3,5 g",
+          "q750": "5 g",
+          "q1000": "7 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Asse os dentes de alho embrulhados até ficarem macios; esprema e deixe esfriar.",
+        "Coloque água, azeite e alho na forma.",
+        "Acrescente açúcar, sal, farinha e ervas; fermento por último.",
+        "Encaixe a forma, escolha o programa Macio, o tamanho escolhido e a casca média e aperte iniciar. A massa fica aromática e macia; ajuste somente se necessário.",
+        "Desenforme e esfrie."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado por até 3 dias em temperatura ambiente, ou até 10 dias na geladeira, como indica o manual da Gallant. Para congelar, fatie antes e use em até 1 mês.",
+  "dica": "Diferente do pão de alho recheado: aqui o alho assado vai amassado na própria massa."
+}

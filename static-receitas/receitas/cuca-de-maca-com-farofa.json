@@ -1,0 +1,92 @@
+{
+  "titulo": "Cuca de maçã com farofa",
+  "ordem": 98,
+  "publicado": "2026-11-03",
+  "categoria": "bolos",
+  "tags": [
+    "Café da manhã",
+    "Sul"
+  ],
+  "resumo": "Massa de bolo com maçã em cubos e farofa de canela por cima, no programa Bolo.",
+  "icone": "cake",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Bolo",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 cuca pequena",
+  "origem": {
+    "tipo": "adaptada",
+    "fonte": "Adaptada de receita do manual da panificadora Britânia Multi Pane"
+  },
+  "quantidades": "unica",
+  "tamanhoBase": "",
+  "tabelas": [
+    {
+      "grupo": "Massa",
+      "itens": [
+        {
+          "nome": "Ovo",
+          "quantidade": "1"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "70 g"
+        },
+        {
+          "nome": "Óleo",
+          "quantidade": "45 ml"
+        },
+        {
+          "nome": "Leite",
+          "quantidade": "90 ml"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "125 g"
+        },
+        {
+          "nome": "Fermento químico",
+          "quantidade": "5 g"
+        },
+        {
+          "nome": "Em cubos",
+          "quantidade": "1 maçã pequena"
+        }
+      ]
+    },
+    {
+      "grupo": "Farofa",
+      "itens": [
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "35 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "30 g"
+        },
+        {
+          "nome": "Manteiga gelada, canela",
+          "quantidade": "20 g"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Preparo",
+      "passos": [
+        "Misture ovos, açúcar, óleo e leite. Incorpore farinha e fermento.",
+        "Misture os cubos de maçã com um pouco de canela e incorpore à massa.",
+        "Para a farofa, esfregue farinha, açúcar e manteiga gelada até formar grumos.",
+        "Despeje a massa na forma untada e distribua a farofa por cima, sem pressionar. Selecione Bolo e inicie.",
+        "Ao fim do Programa Bolo, confira o centro com palito. Se ainda houver massa crua, use Assar em blocos curtos de 5 a 10 minutos, se necessário. A farofa pode ficar menos dourada que no forno convencional."
+      ]
+    }
+  ],
+  "pronto": "Um palito espetado no centro sai limpo ou com migalhas secas. Se sair molhado, rode o programa Assar por mais 5 a 10 minutos e teste de novo.",
+  "guardar": "Em pote bem fechado por até 3 dias em temperatura ambiente; com cobertura cremosa ou recheio, na geladeira.",
+  "dica": "A panificadora pode não dourar a farofa superior. Para resultado crocante e uniforme, o forno convencional é a opção recomendada."
+}

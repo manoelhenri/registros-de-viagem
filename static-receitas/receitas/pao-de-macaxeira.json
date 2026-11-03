@@ -1,0 +1,121 @@
+{
+  "titulo": "Pão de macaxeira",
+  "ordem": 40,
+  "publicado": "2026-11-02",
+  "categoria": "dia-a-dia",
+  "tags": [
+    "Café da manhã",
+    "Norte e Nordeste"
+  ],
+  "resumo": "Macaxeira (aipim ou mandioca mansa) cozida na massa deixa o pão macio e dourado. Combina com manteiga de garrafa e queijo coalho.",
+  "icone": "corn",
+  "foto": "",
+  "fotoAlt": "",
+  "programa": "Macio",
+  "casca": "Média",
+  "timer": false,
+  "nivel": "Fácil",
+  "rende": "1 pão de 500, 750 ou 1000 g",
+  "origem": {
+    "tipo": "autoral",
+    "fonte": "Receita autoral do Pães do Manoel, revisada com o manual da Gallant"
+  },
+  "quantidades": "calculadas",
+  "tamanhoBase": "750 g",
+  "tabelas": [
+    {
+      "grupo": "Ingredientes (na ordem)",
+      "itens": [
+        {
+          "nome": "Leite",
+          "quantidade": "65 ml",
+          "q750": "100 ml",
+          "q1000": "135 ml"
+        },
+        {
+          "nome": "Ovo",
+          "quantidade": "1",
+          "q750": "1",
+          "q1000": "2"
+        },
+        {
+          "nome": "Manteiga amolecida",
+          "quantidade": "30 g",
+          "q750": "45 g",
+          "q1000": "60 g"
+        },
+        {
+          "nome": "Macaxeira cozida e espremida, fria",
+          "quantidade": "120 g",
+          "q750": "180 g",
+          "q1000": "240 g"
+        },
+        {
+          "nome": "Açúcar",
+          "quantidade": "1½ colher (sopa)",
+          "q750": "2 colheres (sopa)",
+          "q1000": "3 colheres (sopa)"
+        },
+        {
+          "nome": "Sal",
+          "quantidade": "1 colher (chá)",
+          "q750": "1½ colher (chá)",
+          "q1000": "2 colheres (chá)"
+        },
+        {
+          "nome": "Farinha de trigo",
+          "quantidade": "300 g",
+          "q750": "450 g",
+          "q1000": "600 g"
+        },
+        {
+          "nome": "Fermento biológico seco",
+          "quantidade": "1 colher (chá)",
+          "q750": "1½ colher (chá)",
+          "q1000": "2 colheres (chá)"
+        }
+      ]
+    }
+  ],
+  "preparo": [
+    {
+      "grupo": "Antes de começar",
+      "passos": [
+        "Cozinhe a macaxeira até desmanchar, tire as fibras do meio, esprema e deixe esfriar.",
+        "Tire os ovos e a manteiga da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
+        "Use o leite em temperatura ambiente, entre 20 °C e 25 °C, como pede o manual da Gallant: líquido quente demais mata o fermento.",
+        "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa.",
+        "Pese a macaxeira depois de cozida, escorrida e espremida: é esse peso que vale na receita.",
+        "A umidade do tubérculo varia: comece com o leite da lista e, só se a massa estiver quebradiça nos primeiros minutos, junte 1 colher (chá) de leite por vez."
+      ]
+    },
+    {
+      "grupo": "Na forma",
+      "passos": [
+        "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
+        "Coloque na forma os ingredientes úmidos, nesta ordem: leite, ovo, manteiga amolecida e macaxeira cozida e espremida, fria.",
+        "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+        "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal."
+      ]
+    },
+    {
+      "grupo": "Na máquina",
+      "passos": [
+        "Encaixe a forma na máquina e escolha o programa Macio, o tamanho escolhido e a casca média. Inicie na hora: esta receita não pode ficar no timer.",
+        "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
+        "A umidade da macaxeira varia: confira com atenção a massa nos primeiros 10 minutos.",
+        "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
+      ]
+    },
+    {
+      "grupo": "Depois de pronto",
+      "passos": [
+        "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
+        "Deixe esfriar sobre uma grade por cerca de 20 minutos antes de fatiar, como orienta o manual. Para fatias finas e firmes, espere esfriar por completo."
+      ]
+    }
+  ],
+  "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
+  "guardar": "Depois de frio, guarde em saco plástico bem fechado ou num pote, em temperatura ambiente, por até 3 dias. Para congelar, fatie antes e guarde por até 1 mês; tire as fatias que for usar e leve direto à torradeira.",
+  "dica": "Combina com manteiga de garrafa e queijo coalho na chapa."
+}
