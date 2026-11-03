@@ -95,17 +95,21 @@ function validarBuild() {
 module.exports = function (eleventyConfig) {
     validarBuild();
 
-    // Área /jogos (apps estáticos fora do Eleventy): copiada ao fim de todo build,
-    // não importa o comando que o Cloudflare use (npm run build ou eleventy direto).
+    // Jogos, _redirects e _headers: ao fim de todo build, não importa o comando que o
+    // Cloudflare use (npm run build ou eleventy direto). Com "separado": false em
+    // sites.json, copia os jogos para /jogos como sempre; com true, o blog não leva os
+    // jogos e só redireciona os endereços antigos para os subdomínios.
     eleventyConfig.on("eleventy.after", () => {
-          require("./scripts/build-jogos.js");
+          require("./scripts/build-jogos.js").noBlog();
     });
 
     // Área /receitas ("Pães do Manoel"): produto separado, gerado de
     // static-receitas/ (categorias.json + receitas/*.json) por scripts/build-receitas.js. Roda depois
     // dos jogos e dentro de try/catch: se algo der errado nas receitas, o blog
     // e os jogos são publicados normalmente e o erro aparece no log do build.
+    // Depois da virada ("separado": true) as receitas saem só no site próprio.
     eleventyConfig.on("eleventy.after", () => {
+          if (require("./sites.json").separado) return;
           try {
                 require("./scripts/build-receitas.js")();
           } catch (erro) {

@@ -10,8 +10,10 @@ const path = require("path");
 
 const root = path.join(__dirname, "..");
 const src = path.join(root, "static-receitas");
-const out = path.join(root, "_site", "receitas");
-const BASE = "/receitas/";
+// Dentro do build do blog (antes da virada) as receitas ficam em /receitas/; no site
+// próprio (receitas.manoelhenrique.com, `--sozinho`) ficam na raiz. Ver sites.json.
+let out = path.join(root, "_site", "receitas");
+let BASE = "/receitas/";
 
 const esc = (t) => String(t == null ? "" : t)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
@@ -161,9 +163,11 @@ function carregar() {
     if (falta) return erro(`receita de 3 tamanhos sem as 3 quantidades em "${falta}"`);
     const preparo = (d.preparo || []).map((g) => [txt(g && g.grupo) || "Preparo", (g && g.passos || []).map(txt).filter(Boolean)]).filter((g) => g[1].length);
     if (!preparo.length) return erro("nenhum passo no modo de preparo");
-    let foto = txt(d.foto);
+    // a foto é gravada pelo painel como /receitas/assets/... (antes da virada) ou /assets/...;
+    // aqui vira um caminho relativo (assets/...), que funciona nos dois endereços
+    let foto = txt(d.foto).replace(/^\/(receitas\/)?/, "");
     if (foto) {
-      const local = foto.startsWith(BASE + "assets/") ? path.join(src, foto.slice(BASE.length)) : "";
+      const local = foto.startsWith("assets/") ? path.join(src, foto) : "";
       if (!local || !fs.existsSync(local)) { aviso(`foto não encontrada (${foto}); a página usa a ilustração`); foto = ""; }
       else if (fs.statSync(local).size > 700 * 1024) aviso(`foto com ${Math.round(fs.statSync(local).size / 1024)} KB; abaixo de 500 KB a página abre mais rápido no celular`);
     }
@@ -194,14 +198,19 @@ function carregar() {
   return { categorias: base.categorias, livros: base.livros || [], receitas };
 }
 
-function build() {
+function build(opcoes = {}) {
+  const sites = JSON.parse(fs.readFileSync(path.join(root, "sites.json"), "utf8"));
+  const SOZINHO = !!opcoes.sozinho;
+  if (SOZINHO) { BASE = "/"; out = opcoes.saida || path.join(root, "_site"); }
+  // site próprio antes da virada: existe só para teste, fora do Google
+  const PREVIA = SOZINHO && !sites.separado;
   const dados = carregar();
   // versão dos arquivos pelo conteúdo: depois de publicar, o celular baixa o CSS e o JS novos
   // em vez de usar a cópia antiga (que não teria os botões novos)
   const hash = (f) => crypto.createHash("sha1").update(fs.readFileSync(path.join(src, "assets", f))).digest("hex").slice(0, 10);
   VER.css = hash("receitas.css"); VER.js = hash("receitas.js");
   const site = JSON.parse(fs.readFileSync(path.join(root, "_data", "site.json"), "utf8"));
-  const origem = String(site.url).replace(/\/$/, "");
+  const origem = String(SOZINHO ? sites.receitas : site.url).replace(/\/$/, "");
   const abs = (p) => origem + p;
   dados.categorias.forEach((c) => { c.cor = tinta(c.cor, c.soft); });
   const cats = Object.fromEntries(dados.categorias.map((c) => [c.id, c]));
@@ -233,7 +242,7 @@ function build() {
     return n;
   };
   const art = (n) => `${BASE}assets/art/${n}.svg`;
-  const imgs = (r) => (r.foto ? [abs(r.foto)] : Array.isArray(r.imagens) && r.imagens.length
+  const imgs = (r) => (r.foto ? [abs(BASE + r.foto)] : Array.isArray(r.imagens) && r.imagens.length
     ? r.imagens.map((p) => abs(`${BASE}assets/img/${p}`))
     : ["1x1", "4x3", "16x9"].map((k) => abs(`${BASE}assets/img/${r.categoria}-${k}.jpg`)));
   const programas = (r) => r.programa.split("→").map((p) => p.trim());
@@ -249,7 +258,7 @@ function build() {
 <meta name="theme-color" content="#FBF5EA">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-${robots}<link rel="canonical" href="${esc(url)}">
+${PREVIA && !robots ? '<meta name="robots" content="noindex">\n' : robots}<link rel="canonical" href="${esc(url)}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pães do Manoel">
 <meta property="og:locale" content="pt_BR">
@@ -293,7 +302,7 @@ ${extra}
       ...r.tabelas.flatMap(([, it]) => it.map((x) => x[0])),
       ...(k.itens || []).flatMap((it) => [it.nome, ...it.ingredientes.map((x) => x[0])])].join(" "));
     return `<article class="rc" style="--c:${esc(c.cor)};--soft:${esc(c.soft)}" data-slug="${esc(r.slug)}" data-cat="${esc(r.categoria)}" data-tags="${esc(r.tags.join("|"))}" data-timer="${r.timer ? 1 : 0}" data-nivel="${esc(norm(r.nivel))}" data-origem="${esc(r.origem ? r.origem.tipo : "autoral")}" data-busca="${esc(busca)}">
-<div class="pic${r.foto ? " com-foto" : ""}"><span class="tagc">${esc(c.nome)}</span>${r.foto ? `<img class="ft" src="${esc(r.foto)}" alt="" width="320" height="240" loading="lazy">` : `<img src="${art(r.icone)}" alt="" width="116" height="90" loading="lazy">`}</div>
+<div class="pic${r.foto ? " com-foto" : ""}"><span class="tagc">${esc(c.nome)}</span>${r.foto ? `<img class="ft" src="${esc(BASE + r.foto)}" alt="" width="320" height="240" loading="lazy">` : `<img src="${art(r.icone)}" alt="" width="116" height="90" loading="lazy">`}</div>
 <button class="save" type="button" data-save="${esc(r.slug)}" data-titulo="${esc(r.titulo)}" aria-pressed="false" aria-label="Salvar: ${esc(r.titulo)}">${ico("heart")}</button>
 <div class="body"><small class="kc">${esc(c.nome)}</small><h3><a href="${urlR(r)}">${esc(r.titulo)}</a></h3><p>${esc(r.resumo)}</p><div class="meta">${pills(r)}</div></div>
 </article>`;
@@ -389,7 +398,7 @@ ${topo("receita")}
 </div>
 <div class="copia-manual" id="copia-link" hidden><p><b>Não deu para copiar sozinho.</b> Toque e segure no endereço abaixo para copiar.</p><textarea readonly rows="2" aria-label="Endereço da receita"></textarea></div>
 </div>
-${r.foto ? `<div class="art foto"><img src="${esc(r.foto)}" alt="${esc(r.fotoAlt || r.titulo)}" width="640" height="640"></div>` : `<div class="art"><img src="${art(r.icone)}" alt="" width="200" height="155"></div>`}
+${r.foto ? `<div class="art foto"><img src="${esc(BASE + r.foto)}" alt="${esc(r.fotoAlt || r.titulo)}" width="640" height="640"></div>` : `<div class="art"><img src="${art(r.icone)}" alt="" width="200" height="155"></div>`}
 </div></section>
 <div class="wrap">
 <div class="glance">${glance.map(([i, l, v]) => `<div>${ico(i)}<span><small>${esc(l)}</small><b>${esc(v)}</b></span></div>`).join("")}</div>
@@ -559,8 +568,20 @@ ${rodape}`);
   const urls = [BASE, `${BASE}guia/`, ...rec.map(urlR)].map((u) => `  <url><loc>${esc(abs(u))}</loc></url>`).join("\n");
   fs.writeFileSync(path.join(out, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
 
-  console.log(`[receitas] ${rec.length} receitas geradas em _site/receitas`);
+  if (SOZINHO) {
+    // site próprio: redirecionamentos das receitas que mudaram, cabeçalhos e robots.txt
+    const redir = JSON.parse(fs.readFileSync(path.join(src, "redirecionamentos.json"), "utf8")).redirecionamentos;
+    fs.writeFileSync(path.join(out, "_redirects"), ["# Quem digitar o caminho antigo dentro do subdomínio", "/receitas / 301", "/receitas/* /:splat 301",
+      "# Receitas que mudaram de endereço ou saíram do catálogo (static-receitas/redirecionamentos.json)",
+      ...redir.flatMap(({ de, para }) => [`/${de} /${para ? para + "/" : ""} 301`, `/${de}/ /${para ? para + "/" : ""} 301`]), ""].join("\n"));
+    fs.writeFileSync(path.join(out, "_headers"), PREVIA ? "/*\n  X-Robots-Tag: noindex\n" : "");
+    fs.writeFileSync(path.join(out, "robots.txt"), `User-agent: *\nAllow: /\n${PREVIA ? "" : `\nSitemap: ${abs("/sitemap.xml")}\n`}`);
+  }
+  console.log(`[receitas] ${rec.length} receitas geradas em ${path.relative(root, out)}${SOZINHO ? ` (${origem}${PREVIA ? ", noindex até a virada" : ""})` : ""}`);
 }
 
 module.exports = build;
-if (require.main === module) build();
+if (require.main === module) {
+  const arg = process.argv.find((a) => a.startsWith("--saida="));
+  build({ sozinho: process.argv.includes("--sozinho"), saida: arg ? path.resolve(root, arg.slice(8)) : undefined });
+}

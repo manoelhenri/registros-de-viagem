@@ -1,0 +1,53 @@
+{
+  "_leia": "Receitas que saíram do catálogo ou mudaram de endereço (redirecionamento 301). 'para' vazio leva à página inicial das receitas.",
+  "redirecionamentos": [
+    {
+      "de": "pao-rapido-de-queijo",
+      "para": "pao-de-parmesao"
+    },
+    {
+      "de": "integral-com-mel",
+      "para": "pao-integral"
+    },
+    {
+      "de": "brioche-amanteigado",
+      "para": "pao-brioche"
+    },
+    {
+      "de": "rosca-de-coco",
+      "para": "pao-de-coco"
+    },
+    {
+      "de": "geleia-de-abacaxi-com-pimenta",
+      "para": "geleia-de-abacaxi"
+    },
+    {
+      "de": "multigraos-com-sementes",
+      "para": "pao-multigraos-de-linhaca-e-chia"
+    },
+    {
+      "de": "arroz-doce-cremoso",
+      "para": ""
+    },
+    {
+      "de": "canjica-cremosa",
+      "para": ""
+    },
+    {
+      "de": "nhoque-de-batata",
+      "para": ""
+    },
+    {
+      "de": "goiabada-cremosa",
+      "para": ""
+    },
+    {
+      "de": "doce-de-banana",
+      "para": ""
+    },
+    {
+      "de": "geleia-de-frutas-vermelhas",
+      "para": ""
+    }
+  ]
+}

@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "serve": "eleventy --serve"
+    "serve": "eleventy --serve",
+    "build:jogos": "node scripts/build-jogos.js --sozinho",
+    "build:receitas": "node scripts/build-receitas.js --sozinho"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
