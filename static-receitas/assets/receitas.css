@@ -439,3 +439,5 @@ footer.foot{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
   .nav .nav-home svg{width:21px;height:21px}
   .nav a[href$="?salvas=1#receitas"]{min-width:40px;min-height:40px;justify-content:center}
 }
+/* voltar ao topo: mais alto que a barra do Safari no iPhone e sempre acima de tudo */
+.totop{bottom:calc(28px + env(safe-area-inset-bottom));z-index:60;touch-action:manipulation;-webkit-tap-highlight-color:transparent}

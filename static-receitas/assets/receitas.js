@@ -10,17 +10,41 @@
   function $all(sel, raiz) { return Array.prototype.slice.call((raiz || document).querySelectorAll(sel)); }
 
   // ---------- voltar ao topo: aparece depois de rolar mais ou menos uma tela e meia ----------
+  // Lê a posição de qualquer um dos contêineres (alguns navegadores rolam o body, não a janela)
+  // e, se a rolagem suave for interrompida ou não existir, termina com um salto direto.
   var topo = document.querySelector("[data-topo]");
   if (topo) {
+    var alvoRolagem = document.scrollingElement || document.documentElement;
+    var posicao = function () { return Math.max(window.pageYOffset || 0, alvoRolagem.scrollTop || 0, document.body.scrollTop || 0); };
     var agendado = false;
-    var conferir = function () { agendado = false; topo.hidden = window.scrollY < Math.max(700, window.innerHeight * 1.5); };
-    window.addEventListener("scroll", function () { if (!agendado) { agendado = true; requestAnimationFrame(conferir); } }, { passive: true });
+    var conferir = function () { agendado = false; topo.hidden = posicao() < Math.max(700, window.innerHeight * 1.5); };
+    var aoRolar = function () { if (!agendado) { agendado = true; requestAnimationFrame(conferir); } };
+    document.addEventListener("scroll", aoRolar, { passive: true, capture: true });
+    window.addEventListener("resize", aoRolar, { passive: true });
     conferir();
-    topo.addEventListener("click", function () {
+    // salto sem animação, ignorando o scroll-behavior:smooth do CSS
+    var saltar = function (y) {
+      var html = document.documentElement, antes = html.style.scrollBehavior;
+      html.style.scrollBehavior = "auto";
+      window.scrollTo(0, y); alvoRolagem.scrollTop = y; if (y === 0) document.body.scrollTop = 0;
+      html.style.scrollBehavior = antes;
+    };
+    var irAoTopo = function (ev) {
+      ev.preventDefault();
       var suave = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-      window.scrollTo({ top: 0, behavior: suave ? "smooth" : "auto" });
-      var marca = document.querySelector(".brand"); if (marca) marca.focus({ preventScroll: true });
-    });
+      if (!suave) { saltar(0); } else {
+        // página longa: pula para perto do topo e anima só o último trecho (rápido e sem travar)
+        var perto = Math.round(window.innerHeight * 1.2);
+        if (posicao() > perto) saltar(perto);
+        try { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); } catch (e) { saltar(0); }
+      }
+      setTimeout(function () {
+        if (posicao() > 2) saltar(0);
+        if (ev.detail === 0) { var marca = document.querySelector(".brand"); if (marca) marca.focus(); }
+        conferir();
+      }, suave ? 700 : 30);
+    };
+    topo.addEventListener("click", irAoTopo);
   }
 
   // ---------- receitas salvas ----------
