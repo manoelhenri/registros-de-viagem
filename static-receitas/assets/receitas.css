@@ -419,3 +419,23 @@ footer.foot .t{font-size:12px;letter-spacing:.16em;text-transform:uppercase;colo
 .flavor li b{display:inline;margin-right:.3em;font-weight:700}
 ol.steps.plain{counter-reset:s}
 @media(max-width:360px){.jump .jt{display:none}.jump a{font-size:14px}}
+/* botão Início no topo (visível também no celular) */
+.nav .nav-home{display:inline-flex;align-items:center;gap:6px}
+.nav .nav-home svg{width:19px;height:19px}
+@media(max-width:430px){.nav .nav-home span{font-size:14px}}
+@media(max-width:360px){.brand{font-size:16px!important;gap:7px}.brand .mark{width:30px!important;height:30px!important;border-radius:10px}.brand .mark img{width:23px}.top .wrap{gap:4px}.nav a{padding:8px 7px}}
+/* voltar ao topo */
+.totop{position:fixed;z-index:40;right:calc(16px + env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));display:inline-flex;align-items:center;gap:6px;height:46px;padding:0 16px 0 13px;border:0;border-radius:999px;background:var(--ink);color:#fff;font:600 14px Poppins,sans-serif;box-shadow:0 10px 24px -8px rgba(51,36,26,.55);cursor:pointer;animation:totop-in .2s ease-out}
+.totop svg{width:20px;height:20px}
+.totop:hover{background:var(--red)}
+.totop:focus-visible{outline:3px solid var(--mustard);outline-offset:3px}
+@keyframes totop-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media print{.totop{display:none!important}}
+/* espaço no fim da página para o botão não cobrir o rodapé */
+footer.foot{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+@media(max-width:400px){
+  .nav .nav-home{width:40px;height:40px;padding:0;justify-content:center}
+  .nav .nav-home span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .nav .nav-home svg{width:21px;height:21px}
+  .nav a[href$="?salvas=1#receitas"]{min-width:40px;min-height:40px;justify-content:center}
+}

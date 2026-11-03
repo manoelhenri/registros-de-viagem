@@ -30,6 +30,8 @@ const P = {
   box: '<path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/>',
   alert: '<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/>',
   layers: '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+  home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/>',
+  up: '<path d="M12 19V5M5 12l7-7 7 7"/>',
 };
 const ico = (n, cls = "ico") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
 
@@ -150,7 +152,7 @@ ${extra}
 <header class="top"><div class="wrap">
 <a class="brand" href="${BASE}"><span class="mark"><img src="${art("loaf")}" alt="" width="28" height="22"></span><span>Pães do Manoel</span></a>
 <nav class="nav" aria-label="Principal">
-<a class="nav-rec" href="${BASE}#receitas"${atual === "receitas" ? ' aria-current="page"' : ""}>Receitas</a>
+<a class="nav-home" href="${BASE}"${atual === "home" ? ' aria-current="page"' : ""}>${ico("home")}<span>Início</span></a>
 <a href="${BASE}guia/"${atual === "guia" ? ' aria-current="page"' : ""}><span class="long">Guia da máquina</span><span class="short">Guia</span></a>
 <a href="${BASE}?salvas=1#receitas" class="needs-js" aria-label="Receitas salvas">${ico("heart")}<span class="long">Salvas</span><span class="badge" data-salvas-count></span></a>
 </nav></div></header>`;
@@ -160,6 +162,7 @@ ${extra}
 <div><div class="t">Navegue</div><a href="${BASE}#receitas">Todas as receitas</a><a href="${BASE}guia/">Guia da máquina</a><a href="${BASE}guia/#problemas">Deu errado? Resolva aqui</a></div>
 <div><div class="t">Categorias</div>${dados.categorias.map((c) => `<a href="${BASE}?categoria=${esc(c.id)}#receitas">${esc(c.nome)}</a>`).join("")}</div>
 </div></footer>
+<button class="totop" type="button" data-topo hidden aria-label="Voltar ao topo">${ico("up")}<span>Topo</span></button>
 <script src="${BASE}assets/receitas.js" defer></script>
 </body>
 </html>`;
@@ -233,7 +236,7 @@ ${(k.itens || []).length ? `<div class="flavors">${k.itens.map((it) => `<article
       extra: `<script type="application/ld+json">${jsonLd(ld)}</script>\n<script type="application/ld+json">${jsonLd(crumbsLd)}</script>`,
     })}
 <body style="--c:${esc(c.cor)};--soft:${esc(c.soft)}">
-${topo("receitas")}
+${topo("receita")}
 <div class="cookbar" role="status"><div class="wrap"><span><b>Modo cozinha</b><span class="ck-long"> ligado: a tela fica acesa. Toque nos ingredientes e passos para marcar.</span><span class="ck-short">: tela acesa</span></span><button type="button" id="sair-cozinha">Sair</button></div></div>
 <main id="conteudo">
 <section class="rh"><div class="wrap">
@@ -292,7 +295,7 @@ ${rodape}`;
   const descHome = `${rec.length} receitas para panificadora: pães, recheados, bolos, massas e geleias, com o programa certo, a cor da casca e as quantidades para pães de 500 g, 750 g e 1 kg.`;
   const home = `${head({ title: "Pães do Manoel | Receitas para panificadora e máquina de pão", description: descHome, url: abs(BASE), image: ogPadrao, extra: `<script type="application/ld+json">${jsonLd(itemList)}</script>` })}
 <body>
-${topo("receitas")}
+${topo("home")}
 <main id="conteudo">
 <section class="hero"><div class="wrap">
 <div>

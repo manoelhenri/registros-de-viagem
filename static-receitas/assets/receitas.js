@@ -9,6 +9,20 @@
   function gravar(chave, valor) { try { localStorage.setItem(chave, JSON.stringify(valor)); } catch (e) {} }
   function $all(sel, raiz) { return Array.prototype.slice.call((raiz || document).querySelectorAll(sel)); }
 
+  // ---------- voltar ao topo: aparece depois de rolar mais ou menos uma tela e meia ----------
+  var topo = document.querySelector("[data-topo]");
+  if (topo) {
+    var agendado = false;
+    var conferir = function () { agendado = false; topo.hidden = window.scrollY < Math.max(700, window.innerHeight * 1.5); };
+    window.addEventListener("scroll", function () { if (!agendado) { agendado = true; requestAnimationFrame(conferir); } }, { passive: true });
+    conferir();
+    topo.addEventListener("click", function () {
+      var suave = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+      window.scrollTo({ top: 0, behavior: suave ? "smooth" : "auto" });
+      var marca = document.querySelector(".brand"); if (marca) marca.focus({ preventScroll: true });
+    });
+  }
+
   // ---------- receitas salvas ----------
   var salvas = ler("receitas-salvas", []);
   function atualizarSalvas() {
