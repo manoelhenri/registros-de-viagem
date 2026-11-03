@@ -463,3 +463,4 @@ footer.foot{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
 .cooking .steps li.now button{box-shadow:inset 4px 0 0 var(--c)}
 @media(max-width:360px){.cooknav button{padding:0 12px;font-size:15px}.cooknav #passo-pos{font-size:13px}}
 @media print{.cooknav,.ing-actions,.alerta svg{display:none!important}}
+.prognota{font-size:13.5px;color:var(--muted);margin:10px 4px 0;line-height:1.5}.prognota a{color:var(--c);font-weight:600}

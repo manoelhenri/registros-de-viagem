@@ -157,7 +157,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Macio, o tamanho escolhido e a casca média. Pode iniciar agora ou programar o timer para o pão ficar pronto na hora que você quiser.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -165,8 +165,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Se preferir a casca mais macia, cubra o pão com um pano limpo enquanto ele esfria.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Se preferir a casca mais macia, cubra o pão com um pano limpo enquanto ele esfria."
      ]
     ]
    ],
@@ -185,7 +185,7 @@
     "Lanche"
    ],
    "icone": "loaf",
-   "resumo": "Miolo fofo e levemente adocicado, com leite, ovo e manteiga. Perfeito com manteiga ou para sanduíche de lanche da tarde.",
+   "resumo": "Miolo fofo e levemente adocicado, com leite, ovo e manteiga. Bom com manteiga ou para sanduíche de lanche da tarde.",
    "programa": "Macio",
    "casca": "Clara",
    "timer": false,
@@ -268,7 +268,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Macio, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -276,8 +276,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Assim que desenformar, pincele manteiga na casca: ela fica macia de ponta a ponta.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Assim que desenformar, pincele manteiga na casca: ela fica macia de ponta a ponta."
      ]
     ]
    ],
@@ -368,7 +368,8 @@
       "Cozinhe a batata sem sal, escorra bem, esprema e deixe esfriar por completo.",
       "Tire os ovos da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
       "Amorne o leite até uns 30 °C: ele deve parecer só levemente quente no pulso. Líquido quente demais mata o fermento.",
-      "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa.",
+      "Pese a batata depois de cozida, escorrida e espremida: é esse peso que vale na receita."
      ]
     ],
     [
@@ -384,7 +385,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Macio, o tamanho escolhido e a casca média. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "A umidade da batata varia de uma vez para outra: nesta receita, a conferência dos primeiros 10 minutos é ainda mais importante.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
@@ -393,7 +394,7 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria."
      ]
     ]
    ],
@@ -494,7 +495,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Sanduíche, o tamanho escolhido e a casca clara. Pode iniciar agora ou programar o timer para o pão ficar pronto na hora que você quiser.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -502,8 +503,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Para fatiar fino sem esfarelar, espere esfriar por completo e use faca de serra.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Para fatiar fino sem esfarelar, use faca de serra: quanto mais frio o pão, mais fino ele corta."
      ]
     ]
    ],
@@ -591,7 +592,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Francês ou D'Água, o tamanho escolhido e a casca escura. Pode iniciar agora ou programar o timer para o pão ficar pronto na hora que você quiser.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -599,8 +600,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Não cubra o pão enquanto esfria, para a casca continuar crocante.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Não cubra o pão enquanto esfria, para a casca continuar crocante."
      ]
     ]
    ],
@@ -618,7 +619,7 @@
     "Lanche"
    ],
    "icone": "loaf",
-   "resumo": "Pão de parmesão no ciclo curto da máquina, para quando você quer pão caseiro sem esperar a tarde toda.",
+   "resumo": "Pão de forma com parmesão no ciclo curto da máquina, para quando você quer pão caseiro sem esperar a tarde toda. Não é pão de queijo mineiro: leva farinha de trigo.",
    "programa": "Pão Rápido",
    "casca": "Média",
    "timer": false,
@@ -700,7 +701,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Pão Rápido, o tamanho escolhido e a casca média. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -708,8 +709,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Sirva ainda morno, com manteiga.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Sirva ainda morno, com manteiga."
      ]
     ]
    ],
@@ -808,7 +809,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Pão Integral, o tamanho escolhido e a casca média. Pode iniciar agora ou programar o timer para o pão ficar pronto na hora que você quiser.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "O programa Pão Integral começa com um descanso sem bater: é a farinha integral hidratando. Não estranhe a máquina parada no início.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
@@ -817,14 +818,13 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Para um pão 100% integral, troque toda a farinha branca por integral e acrescente 20, 30 ou 40 ml de água, conforme o tamanho.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria."
      ]
     ]
    ],
    "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
    "guardar": "Depois de frio, guarde em saco plástico bem fechado ou num pote, em temperatura ambiente, por até 3 dias. Para congelar, fatie antes e guarde por até 1 mês; tire as fatias que for usar e leve direto à torradeira.",
-   "dica": "Para 100% integral, troque toda a farinha branca por integral e acrescente 20 / 30 / 40 ml de água.",
+   "dica": "O programa Pão Integral começa parado por alguns minutos: é a farinha integral hidratando antes da sova. Não interrompa.",
    "livro": 1,
    "publicado": "2026-11-02"
   },
@@ -898,6 +898,12 @@
        "1¼ colher (chá)",
        "2 colheres (chá)",
        "2½ colheres (chá)"
+      ],
+      [
+       "Mix de sementes (para a casca)",
+       "1 colher (sopa)",
+       "1 colher (sopa)",
+       "1 colher (sopa)"
       ]
      ]
     ]
@@ -924,8 +930,8 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Pão Integral, o tamanho escolhido e a casca média. Pode iniciar agora ou programar o timer para o pão ficar pronto na hora que você quiser.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
-      "Para ter sementes na casca, polvilhe 1 colher (sopa) por cima da massa logo depois da última sova, sem apertar.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
+      "Para ter sementes na casca, polvilhe a colher de sementes separada para a casca (além das da massa) por cima da massa logo depois da última sova, antes de ela começar a crescer. Se a sua máquina não avisar esse momento, pule esta etapa.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -933,7 +939,7 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria."
      ]
     ]
    ],
@@ -946,12 +952,12 @@
   {
    "slug": "aveia-e-mel",
    "titulo": "Aveia e mel",
-   "categoria": "integrais",
+   "categoria": "dia-a-dia",
    "tags": [
     "Café da manhã"
    ],
    "icone": "wheat",
-   "resumo": "Aveia em flocos que some no miolo e deixa o pão úmido. O melhor do site para torrar ou fazer rabanada.",
+   "resumo": "Aveia em flocos na massa de farinha de trigo branca, adoçada com mel. O miolo fica úmido e ótimo para torrar ou fazer rabanada.",
    "programa": "Pão Integral",
    "casca": "Média",
    "timer": true,
@@ -1034,7 +1040,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Pão Integral, o tamanho escolhido e a casca média. Pode iniciar agora ou programar o timer para o pão ficar pronto na hora que você quiser.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -1042,14 +1048,13 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "No dia seguinte, ele fica ótimo torrado ou em rabanada.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria."
      ]
     ]
    ],
    "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
    "guardar": "Depois de frio, guarde em saco plástico bem fechado ou num pote, em temperatura ambiente, por até 3 dias. Para congelar, fatie antes e guarde por até 1 mês; tire as fatias que for usar e leve direto à torradeira.",
-   "dica": "É o melhor pão do livro para torrar com manteiga ou fazer rabanada.",
+   "dica": "No dia seguinte, ele fica ótimo torrado com manteiga ou em rabanada.",
    "livro": 1,
    "publicado": "2026-11-02"
   },
@@ -1061,7 +1066,7 @@
     "Lanche"
    ],
    "icone": "wheat",
-   "resumo": "Azeite, alecrim e alho na massa, casca escura e firme. Para servir com azeite e sal grosso ou virar bruschetta.",
+   "resumo": "Pão de azeite, alho e alecrim, inspirado nos sabores italianos, com casca escura e firme. Feito na forma da máquina, para servir com azeite e sal grosso ou virar bruschetta.",
    "programa": "Francês ou D'Água",
    "casca": "Escura",
    "timer": true,
@@ -1149,7 +1154,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Francês ou D'Água, o tamanho escolhido e a casca escura. Pode iniciar agora ou programar o timer para o pão ficar pronto na hora que você quiser.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -1157,8 +1162,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Sirva com azeite e sal grosso. No dia seguinte, fatie, regue azeite e toste na frigideira para fazer bruschetta.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Sirva com azeite e sal grosso. No dia seguinte, fatie, regue azeite e toste na frigideira para fazer bruschetta."
      ]
     ]
    ],
@@ -1234,7 +1239,7 @@
        "200 g"
       ],
       [
-       "Psyllium em pó",
+       "Psyllium em pó (não use a casca inteira)",
        "1½ colher (sopa)",
        "2 colheres (sopa)",
        "3 colheres (sopa)"
@@ -1282,8 +1287,7 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Espere esfriar por completo antes de cortar: pão sem glúten quente parece cru por dentro.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar por completo sobre uma grade antes de cortar, pelo menos 1 hora: pão sem glúten quente parece cru por dentro."
      ]
     ]
    ],
@@ -1302,7 +1306,7 @@
     "Natal"
    ],
    "icone": "brioche",
-   "resumo": "Massa rica em ovos e manteiga, brilhante e macia. Vira a melhor rabanada e o melhor pão de hambúrguer doce.",
+   "resumo": "Massa rica em ovos e manteiga, brilhante e macia. Boa para rabanada e para pão de hambúrguer adocicado.",
    "programa": "Brioche",
    "casca": "Clara",
    "timer": false,
@@ -1385,8 +1389,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Brioche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
-      "A massa fica mole, brilhante e um pouco grudada nas paredes. É assim mesmo: não junte farinha.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Massa com bastante ovo, manteiga ou açúcar fica mais mole e brilhante e pode grudar nas paredes: isso é normal, não junte farinha por causa disso. Só se ela estiver escorrendo como um creme, junte 1 colher (sopa) de farinha por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -1394,14 +1397,13 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Espere esfriar por completo antes de cortar. É o melhor pão para rabanada.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria."
      ]
     ]
    ],
    "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
    "guardar": "Depois de frio, guarde em saco plástico bem fechado ou num pote, em temperatura ambiente, por até 3 dias. Para congelar, fatie antes e guarde por até 1 mês; tire as fatias que for usar e leve direto à torradeira.",
-   "dica": "É o melhor pão para rabanada de Natal: firme por fora, amanteigado por dentro.",
+   "dica": "Para rabanada de Natal, use o brioche do dia anterior: ele absorve o leite sem desmanchar.",
    "livro": 1,
    "publicado": "2026-11-02"
   },
@@ -1413,7 +1415,7 @@
     "Lanche"
    ],
    "icone": "brioche",
-   "resumo": "Leite condensado no lugar do açúcar, para um pão doce de miolo cremoso e casca bem dourada.",
+   "resumo": "Leite condensado no lugar do açúcar, para um pão doce de miolo macio e levemente adocicado. O açúcar doura a casca mais rápido: use casca clara.",
    "programa": "Brioche",
    "casca": "Clara",
    "timer": false,
@@ -1496,7 +1498,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Brioche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Massa com bastante ovo, manteiga ou açúcar fica mais mole e brilhante e pode grudar nas paredes: isso é normal, não junte farinha por causa disso. Só se ela estiver escorrendo como um creme, junte 1 colher (sopa) de farinha por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -1504,8 +1506,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Se a casca escurecer demais na sua máquina, na próxima vez escolha casca clara e confira se o tamanho no painel é o da receita.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Se a casca escurecer demais na sua máquina, na próxima vez escolha casca clara e confira se o tamanho no painel é o da receita."
      ]
     ]
    ],
@@ -1773,7 +1775,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Brioche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Massa com bastante ovo, manteiga ou açúcar fica mais mole e brilhante e pode grudar nas paredes: isso é normal, não junte farinha por causa disso. Só se ela estiver escorrendo como um creme, junte 1 colher (sopa) de farinha por vez.",
       "Quando a massa já estiver lisa, cerca de 10 minutos depois do início, junte frutas cristalizadas + passas. Se a sua máquina apitar avisando, coloque nesse momento.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
@@ -1782,8 +1784,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Para fazer chocotone, troque as frutas por gotas de chocolate forneável.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Para fazer chocotone, troque as frutas por gotas de chocolate forneável."
      ]
     ]
    ],
@@ -1897,7 +1899,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Brioche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Massa com bastante ovo, manteiga ou açúcar fica mais mole e brilhante e pode grudar nas paredes: isso é normal, não junte farinha por causa disso. Só se ela estiver escorrendo como um creme, junte 1 colher (sopa) de farinha por vez.",
       "Quando a massa já estiver lisa, cerca de 10 minutos depois do início, junte gotas de chocolate forneável. Se a sua máquina apitar avisando, coloque nesse momento.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
@@ -1906,7 +1908,7 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria."
      ]
     ]
    ],
@@ -1924,7 +1926,7 @@
     "Lanche"
    ],
    "icone": "swirl",
-   "resumo": "Massa salgada enrolada com calabresa, cebola e mussarela, assada inteira na máquina.",
+   "resumo": "Massa salgada enrolada com calabresa, cebola e muçarela, assada inteira na máquina.",
    "programa": "Massa → Fermentar → Assar",
    "casca": "Média",
    "timer": false,
@@ -1999,7 +2001,7 @@
        "1 cebola"
       ],
       [
-       "Mussarela ralada",
+       "Muçarela ralada",
        "80 g",
        "120 g",
        "160 g"
@@ -2035,7 +2037,7 @@
     [
      "Montagem, fermentação e forno",
      [
-      "Enquanto a massa cresce, refogue a calabresa com a cebola, escorra a gordura em papel-toalha e deixe esfriar. Misture com a mussarela e o orégano.",
+      "Enquanto a massa cresce, refogue a calabresa com a cebola, escorra a gordura em papel-toalha e deixe esfriar. Misture com a muçarela e o orégano.",
       "Ao fim do programa Massa, tire a massa, aperte para soltar o ar e abra com rolo num retângulo de 1 cm de espessura. Um lado deve ter 17 cm (o comprimento interno da forma); o outro, 30, 40 ou 50 cm, conforme o tamanho escolhido.",
       "Espalhe o recheio deixando 2 cm de borda livre em volta.",
       "Enrole como rocambole a partir do lado de 17 cm. Aperte bem a emenda e as pontas para o recheio não vazar.",
@@ -2066,7 +2068,7 @@
     "Lanche"
    ],
    "icone": "swirl",
-   "resumo": "O clássico pão de padaria com camadas de presunto, mussarela e requeijão.",
+   "resumo": "O clássico pão de padaria com camadas de presunto, muçarela e requeijão.",
    "programa": "Massa → Fermentar → Assar",
    "casca": "Média",
    "timer": false,
@@ -2141,7 +2143,7 @@
        "200 g"
       ],
       [
-       "Mussarela fatiada",
+       "Muçarela fatiada",
        "100 g",
        "150 g",
        "200 g"
@@ -2171,7 +2173,7 @@
     [
      "Montagem, fermentação e forno",
      [
-      "Separe os ingredientes do recheio. Na hora de rechear, espalhe o requeijão primeiro e depois intercale presunto e mussarela.",
+      "Separe os ingredientes do recheio. Na hora de rechear, espalhe o requeijão primeiro e depois intercale presunto e muçarela.",
       "Ao fim do programa Massa, tire a massa, aperte para soltar o ar e abra com rolo num retângulo de 1 cm de espessura. Um lado deve ter 17 cm (o comprimento interno da forma); o outro, 30, 40 ou 50 cm, conforme o tamanho escolhido.",
       "Espalhe o recheio deixando 2 cm de borda livre em volta.",
       "Enrole como rocambole a partir do lado de 17 cm. Aperte bem a emenda e as pontas para o recheio não vazar.",
@@ -2411,6 +2413,12 @@
        "80 g",
        "120 g",
        "160 g"
+      ],
+      [
+       "Gema e açúcar cristal (acabamento)",
+       "1 gema e 1 colher (sopa)",
+       "1 gema e 1½ colher (sopa)",
+       "1 gema e 2 colheres (sopa)"
       ]
      ]
     ]
@@ -2439,10 +2447,10 @@
      [
       "Enquanto a massa cresce, corte a goiabada e o queijo em cubos pequenos.",
       "Ao fim do programa Massa, tire a massa, aperte para soltar o ar e abra com rolo num retângulo de 1 cm de espessura. Um lado deve ter 17 cm (o comprimento interno da forma); o outro, 30, 40 ou 50 cm, conforme o tamanho escolhido.",
-      "Espalhe o recheio deixando 2 cm de borda livre em volta.",
+      "Espalhe o recheio deixando 2 cm de borda livre em volta. Use cubos pequenos de goiabada, sem amassar: goiabada derretida perto da borda é o que vaza.",
       "Enrole como rocambole a partir do lado de 17 cm. Aperte bem a emenda e as pontas para o recheio não vazar.",
       "Tire a pá da forma, unte a forma com óleo e coloque o rolo com a emenda para baixo.",
-      "Pincele gema por cima do rolo e polvilhe açúcar cristal.",
+      "Bata a gema com uma colher de água, pincele por cima do rolo e polvilhe o açúcar cristal.",
       "Encaixe a forma e rode o programa Fermentar até a massa quase alcançar a borda da forma.",
       "Rode o programa Assar até a casca dourar por igual."
      ]
@@ -2469,7 +2477,7 @@
     "Churrasco"
    ],
    "icone": "swirl",
-   "resumo": "Pasta de manteiga, alho e salsinha com mussarela, enrolada na massa. Feito para o churrasco.",
+   "resumo": "Pasta de manteiga, alho e salsinha com muçarela, enrolada na massa. Feito para o churrasco.",
    "programa": "Massa → Fermentar → Assar",
    "casca": "Média",
    "timer": false,
@@ -2550,7 +2558,7 @@
        "4 colheres (sopa)"
       ],
       [
-       "Mussarela ralada",
+       "Muçarela ralada",
        "80 g",
        "120 g",
        "160 g"
@@ -2580,7 +2588,7 @@
     [
      "Montagem, fermentação e forno",
      [
-      "Enquanto a massa cresce, misture a manteiga amolecida com o alho e a salsinha até virar uma pasta. Na hora de rechear, espalhe a pasta e cubra com a mussarela.",
+      "Enquanto a massa cresce, misture a manteiga amolecida com o alho e a salsinha até virar uma pasta. Na hora de rechear, espalhe a pasta e cubra com a muçarela.",
       "Ao fim do programa Massa, tire a massa, aperte para soltar o ar e abra com rolo num retângulo de 1 cm de espessura. Um lado deve ter 17 cm (o comprimento interno da forma); o outro, 30, 40 ou 50 cm, conforme o tamanho escolhido.",
       "Espalhe o recheio deixando 2 cm de borda livre em volta.",
       "Enrole como rocambole a partir do lado de 17 cm. Aperte bem a emenda e as pontas para o recheio não vazar.",
@@ -2599,7 +2607,7 @@
    ],
    "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
    "guardar": "Por causa do recheio, guarde na geladeira, bem embalado, por até 3 dias. Aqueça as fatias no forno ou na frigideira antes de servir. Congelado, dura até 1 mês.",
-   "dica": "Misture manteiga, alho e salsinha numa pasta antes de espalhar. É o pão perfeito para o churrasco.",
+   "dica": "Misture manteiga, alho e salsinha numa pasta antes de espalhar. Combina com churrasco.",
    "livro": 1,
    "publicado": "2026-11-02"
   },
@@ -2722,7 +2730,7 @@
     [
      "Montagem, fermentação e forno",
      [
-      "Enquanto a massa cresce, esprema o espinafre refogado num pano limpo até não sair mais água. Misture com a ricota, o parmesão, a noz-moscada, sal e pimenta.",
+      "Enquanto a massa cresce, esprema o espinafre refogado num pano limpo até não sair mais água. Misture com a ricota, o parmesão, a noz-moscada, sal e pimenta. A massa já tem sal: prove o recheio antes de salgar.",
       "Ao fim do programa Massa, tire a massa, aperte para soltar o ar e abra com rolo num retângulo de 1 cm de espessura. Um lado deve ter 17 cm (o comprimento interno da forma); o outro, 30, 40 ou 50 cm, conforme o tamanho escolhido.",
       "Espalhe o recheio deixando 2 cm de borda livre em volta.",
       "Enrole como rocambole a partir do lado de 17 cm. Aperte bem a emenda e as pontas para o recheio não vazar.",
@@ -2764,7 +2772,7 @@
    ],
    "tabelas": [
     [
-     "Ingredientes (na ordem)",
+     "Massa (na ordem)",
      [
       [
        "Leite morno",
@@ -2793,10 +2801,19 @@
       [
        "Fermento biológico seco",
        "2 colheres (chá)"
+      ]
+     ]
+    ],
+    [
+     "Acabamento",
+     [
+      [
+       "Gema",
+       "1"
       ],
       [
-       "Gema e gergelim (acabamento)",
-       "1 gema e 2 colheres (sopa)"
+       "Gergelim",
+       "2 colheres (sopa)"
       ]
      ]
     ]
@@ -2805,7 +2822,7 @@
     [
      "Antes de começar",
      [
-      "Tire os ovos e a manteiga da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
+      "Tire o ovo e a manteiga da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
       "Amorne o leite até uns 30 °C: ele deve parecer só levemente quente no pulso. Líquido quente demais mata o fermento.",
       "Separe e pese todos os ingredientes antes de começar. Nas colheres, use sempre medida rasa."
      ]
@@ -2815,7 +2832,7 @@
      [
       "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
       "Coloque na forma os ingredientes úmidos, nesta ordem: leite morno, ovo e manteiga amolecida.",
-      "Por cima, coloque açúcar, sal, farinha de trigo e gema e gergelim (acabamento), cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
+      "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
       "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
       "Encaixe a forma e rode o programa Massa."
      ]
@@ -2826,7 +2843,7 @@
       "Divida a massa em 8 partes iguais (pese para ficarem do mesmo tamanho) e boleie cada uma, esticando a superfície e fechando por baixo.",
       "Coloque numa assadeira com papel-manteiga e achate até uns 10 cm de diâmetro.",
       "Cubra com um pano e deixe crescer por 40 minutos. Enquanto isso, preaqueça o forno a 180 °C.",
-      "Pincele gema, salpique gergelim e asse por 15 a 18 minutos, até dourar."
+      "Bata a gema com uma colher de água, pincele os pães, salpique o gergelim e asse por 15 a 18 minutos, até dourar."
      ]
     ]
    ],
@@ -2907,7 +2924,7 @@
       "Divida em 2 bolas, cubra e deixe descansar por 30 minutos.",
       "Preaqueça o forno no máximo (250 °C) por 15 minutos, com a assadeira dentro, se puder.",
       "Abra a massa com as mãos, do centro para as bordas, até uns 35 cm. Recheie seguindo o passo a passo e um dos sabores logo abaixo.",
-      "Asse por 10 a 12 minutos, até a borda dourar e o fundo ficar crocante."
+      "Asse na grade mais baixa do forno por 10 a 12 minutos, até a borda dourar e o fundo ficar crocante."
      ]
     ]
    ],
@@ -2920,16 +2937,38 @@
     "intro": "Cada sabor é para uma pizza de 35 cm. A receita de massa faz duas: dá para fazer dois sabores diferentes na mesma noite.",
     "passosTitulo": "Como rechear",
     "passos": [
-     "Molho rápido para as duas pizzas: misture 200 g de polpa de tomate (passata), 1 colher (sopa) de azeite, ½ colher (chá) de sal e 1 colher (chá) de orégano. Não precisa cozinhar: ele termina no forno.",
+     "Prepare o molho básico (logo abaixo, antes dos sabores). Ele não precisa ir ao fogo: termina de cozinhar no forno.",
      "Abra a massa já sobre a assadeira untada com azeite ou polvilhada com farinha. Depois de recheada, a pizza fica pesada para mudar de lugar.",
      "Espalhe cerca de 5 colheres (sopa) de molho com as costas da colher, em espiral do centro para fora, deixando 1,5 cm de borda livre.",
      "Monte nesta ordem: molho, queijo e só então os outros ingredientes. O queijo por baixo protege a massa da umidade do recheio.",
      "Use pouco recheio e bem escorrido: tomate, frango e milho soltam água e deixam o centro cru. Uma camada só, sem montanha.",
-     "Pincele a borda com azeite para dourar e asse na grade mais baixa do forno, a 250 °C, por 10 a 12 minutos.",
      "Folhas frescas (manjericão, rúcula) e fio de azeite vão só depois de assar, para não queimar.",
+     "Pincele a borda com azeite para dourar.",
      "Recheio mais pesado, como portuguesa ou frango: asse a massa só com o molho por 5 minutos, depois coloque o restante e volte ao forno."
     ],
     "itens": [
+     {
+      "nome": "Molho básico (para as duas pizzas)",
+      "ingredientes": [
+       [
+        "Polpa de tomate (passata)",
+        "200 g"
+       ],
+       [
+        "Azeite",
+        "1 colher (sopa)"
+       ],
+       [
+        "Sal",
+        "½ colher (chá)"
+       ],
+       [
+        "Orégano",
+        "1 colher (chá)"
+       ]
+      ],
+      "modo": "Misture tudo numa tigela. Use cerca de 5 colheres (sopa) por pizza e guarde o que sobrar na geladeira por até 3 dias."
+     },
      {
       "nome": "Marguerita",
       "ingredientes": [
@@ -2938,7 +2977,7 @@
         "5 colheres (sopa)"
        ],
        [
-        "Mussarela ralada ou em fatias",
+        "Muçarela ralada ou em fatias",
         "200 g"
        ],
        [
@@ -2954,7 +2993,7 @@
         "1 fio"
        ]
       ],
-      "modo": "Molho, mussarela e as rodelas de tomate por cima, sem sobrepor. Asse e, ao sair do forno, cubra com o manjericão e o fio de azeite."
+      "modo": "Molho, muçarela e as rodelas de tomate por cima, sem sobrepor. Asse e, ao sair do forno, cubra com o manjericão e o fio de azeite."
      },
      {
       "nome": "Calabresa",
@@ -2964,7 +3003,7 @@
         "5 colheres (sopa)"
        ],
        [
-        "Mussarela ralada (opcional)",
+        "Muçarela ralada (opcional)",
         "150 g"
        ],
        [
@@ -2984,7 +3023,7 @@
         "a gosto"
        ]
       ],
-      "modo": "Na versão de pizzaria paulistana vai sem queijo; com mussarela, ela entra logo depois do molho. Distribua a calabresa, a cebola e as azeitonas e finalize com orégano."
+      "modo": "Na versão de pizzaria paulistana vai sem queijo; com muçarela, ela entra logo depois do molho. Distribua a calabresa, a cebola e as azeitonas e finalize com orégano."
      },
      {
       "nome": "Portuguesa",
@@ -2994,7 +3033,7 @@
         "5 colheres (sopa)"
        ],
        [
-        "Mussarela ralada",
+        "Muçarela ralada",
         "200 g"
        ],
        [
@@ -3022,7 +3061,7 @@
         "a gosto"
        ]
       ],
-      "modo": "Pré-asse a massa com o molho por 5 minutos. Cubra com a mussarela, o presunto, a cebola e a ervilha; as rodelas de ovo e as azeitonas vão por cima. Finalize com orégano."
+      "modo": "Pré-asse a massa com o molho por 5 minutos. Cubra com a muçarela, o presunto, a cebola e a ervilha; as rodelas de ovo e as azeitonas vão por cima. Finalize com orégano."
      },
      {
       "nome": "Frango com requeijão",
@@ -3032,7 +3071,7 @@
         "5 colheres (sopa)"
        ],
        [
-        "Mussarela ralada",
+        "Muçarela ralada",
         "150 g"
        ],
        [
@@ -3052,7 +3091,7 @@
         "a gosto"
        ]
       ],
-      "modo": "Pré-asse a massa com o molho por 5 minutos. Espalhe a mussarela e o frango bem escorrido e distribua o requeijão em colheradas ou num cordão em espiral. Milho e orégano por cima."
+      "modo": "Pré-asse a massa com o molho por 5 minutos. Espalhe a muçarela e o frango bem escorrido e distribua o requeijão em colheradas ou num cordão em espiral. Milho e orégano por cima."
      },
      {
       "nome": "Quatro queijos",
@@ -3062,7 +3101,7 @@
         "5 colheres (sopa)"
        ],
        [
-        "Mussarela ralada",
+        "Muçarela ralada",
         "150 g"
        ],
        [
@@ -3078,7 +3117,7 @@
         "3 colheres (sopa)"
        ]
       ],
-      "modo": "Mussarela primeiro, cobrindo o molho; depois o provolone e o gorgonzola espalhados. O parmesão vai por cima de tudo e forma uma casquinha dourada."
+      "modo": "Muçarela primeiro, cobrindo o molho; depois o provolone e o gorgonzola espalhados. O parmesão vai por cima de tudo e forma uma casquinha dourada."
      }
     ]
    },
@@ -3103,14 +3142,14 @@
    ],
    "tabelas": [
     [
-     "Ingredientes (na ordem)",
+     "Massa (na ordem)",
      [
       [
        "Água",
        "330 ml"
       ],
       [
-       "Azeite (massa)",
+       "Azeite",
        "3 colheres (sopa)"
       ],
       [
@@ -3128,10 +3167,27 @@
       [
        "Fermento biológico seco",
        "2 colheres (chá)"
+      ]
+     ]
+    ],
+    [
+     "Cobertura",
+     [
+      [
+       "Azeite (assadeira e cobertura)",
+       "5 colheres (sopa)"
       ],
       [
-       "Azeite, alecrim, tomate-cereja, sal grosso",
-       "a gosto"
+       "Alecrim fresco",
+       "2 ramos"
+      ],
+      [
+       "Tomate-cereja",
+       "10"
+      ],
+      [
+       "Sal grosso",
+       "1 colher (chá)"
       ]
      ]
     ]
@@ -3147,7 +3203,7 @@
      "Na máquina",
      [
       "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
-      "Coloque na forma os ingredientes úmidos, nesta ordem: água, azeite (massa) e azeite, alecrim, tomate-cereja, sal grosso.",
+      "Coloque na forma os ingredientes úmidos, nesta ordem: água e azeite. A cobertura só entra na assadeira.",
       "Por cima, coloque açúcar, sal e farinha de trigo, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
       "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
       "Encaixe a forma e rode o programa Massa."
@@ -3156,9 +3212,9 @@
     [
      "Modelagem e finalização",
      [
-      "Unte uma assadeira de 30 × 20 cm com 3 colheres (sopa) de azeite. A massa é bem mole: passe para a assadeira e espalhe com os dedos untados.",
+      "Unte uma assadeira de 30 × 20 cm com 3 colheres (sopa) do azeite da cobertura. A massa é bem mole: passe para a assadeira e espalhe com os dedos untados.",
       "Cubra e deixe crescer por 40 minutos. Enquanto isso, preaqueça o forno a 220 °C.",
-      "Afunde os dedos por toda a massa, regue mais azeite e espalhe alecrim, tomate-cereja cortado ao meio e sal grosso.",
+      "Afunde os dedos por toda a massa, regue o restante do azeite e espalhe as folhas de alecrim, os tomates-cereja cortados ao meio e o sal grosso.",
       "Asse por 20 a 25 minutos, até dourar."
      ]
     ]
@@ -3570,7 +3626,7 @@
      [
       "Lave os morangos, tire as folhas e pique.",
       "Coloque os morangos, o açúcar e o suco de limão na forma e rode o programa Geleia.",
-      "Passe ainda quente para um pote de vidro esterilizado e feche."
+      "Passe ainda quente para um pote de vidro limpo e escaldado, feche e, depois de frio, leve à geladeira."
      ]
     ],
     [
@@ -3581,7 +3637,7 @@
     ]
    ],
    "pronto": "Faça o teste do pires: pingue um pouco num pires que ficou no congelador, espere 1 minuto e empurre com o dedo. Se enrugar, está no ponto. Lembre que ela engrossa bastante ao esfriar.",
-   "guardar": "Em pote de vidro esterilizado, bem fechado, na geladeira, por até 3 semanas. Use sempre colher limpa e seca.",
+   "guardar": "Depois de frio, guarde na geladeira em pote de vidro limpo e bem fechado, por até 3 semanas, ou congele por até 3 meses. É doce caseiro, não conserva: não deixe fora da geladeira. Use sempre colher limpa e seca.",
    "dica": "Lave a forma logo depois, com água morna, para o açúcar não grudar no antiaderente.",
    "livro": 1,
    "publicado": "2026-11-02"
@@ -3716,7 +3772,8 @@
       "Ao fim do programa Massa, tire a massa e a pá. Unte a forma com manteiga e volte a massa, apertando com os dedos para cobrir o fundo.",
       "Cubra com as fatias de banana, polvilhe a canela e espalhe a farofa por cima.",
       "Rode o programa Fermentar por cerca de 30 minutos, até a massa crescer uns 2 cm.",
-      "Rode o programa Assar até a farofa dourar."
+      "Rode o programa Assar até a farofa dourar.",
+      "Se a farofa não dourar na máquina, desenforme como explicado abaixo e leve a cuca ao forno preaquecido a 200 °C por 5 a 10 minutos, só para dourar por cima."
      ]
     ],
     [
@@ -3863,7 +3920,8 @@
       "Ao fim do programa Massa, tire a massa e a pá. Unte a forma com manteiga e volte a massa, apertando com os dedos para cobrir o fundo.",
       "Espalhe as uvas cortadas ao meio, com o lado cortado para cima, e cubra com a farofa.",
       "Rode o programa Fermentar por cerca de 30 minutos, até a massa crescer uns 2 cm.",
-      "Rode o programa Assar até a farofa dourar."
+      "Rode o programa Assar até a farofa dourar.",
+      "Se a farofa não dourar na máquina, desenforme como explicado abaixo e leve a cuca ao forno preaquecido a 200 °C por 5 a 10 minutos, só para dourar por cima."
      ]
     ],
     [
@@ -3972,7 +4030,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Sanduíche, o tamanho escolhido e a casca clara. Pode iniciar agora ou programar o timer para o pão ficar pronto na hora que você quiser.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -3980,8 +4038,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Cubra com um pano limpo enquanto esfria: ele segura o vapor e deixa a casca fininha.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Cubra com um pano limpo enquanto esfria: ele segura o vapor e deixa a casca fininha."
      ]
     ]
    ],
@@ -4073,7 +4131,8 @@
       "Cozinhe a batata-doce sem sal, escorra, esprema e deixe esfriar por completo.",
       "Tire os ovos da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
       "Amorne o leite até uns 30 °C: ele deve parecer só levemente quente no pulso. Líquido quente demais mata o fermento.",
-      "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa.",
+      "Pese a batata-doce depois de cozida, escorrida e espremida: é esse peso que vale na receita."
      ]
     ],
     [
@@ -4089,7 +4148,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Macio, o tamanho escolhido e a casca média. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "A umidade da batata-doce varia: confira com atenção a massa nos primeiros 10 minutos.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
@@ -4098,7 +4157,7 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria."
      ]
     ]
    ],
@@ -4116,7 +4175,7 @@
     "Sul"
    ],
    "icone": "wheat",
-   "resumo": "Centeio com melado e erva-doce, como nos cafés coloniais. Miolo denso e sabor marcante.",
+   "resumo": "Pão de trigo com 30% de farinha de centeio, melado e erva-doce, como nos cafés coloniais. Miolo mais denso e sabor marcante.",
    "programa": "Pão Integral",
    "casca": "Escura",
    "timer": true,
@@ -4204,7 +4263,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Pão Integral, o tamanho escolhido e a casca escura. Pode iniciar agora ou programar o timer para o pão ficar pronto na hora que você quiser.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Massa com centeio é mais pegajosa que a de trigo. Só junte farinha se ela não formar bola nenhuma.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
@@ -4213,8 +4272,7 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Espere esfriar por completo antes de cortar: o centeio fica pegajoso enquanto está quente.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar por completo sobre uma grade antes de cortar (pelo menos 1 hora): o centeio fica pegajoso enquanto está quente."
      ]
     ]
    ],
@@ -4325,7 +4383,7 @@
     "Sudeste"
    ],
    "icone": "loaf",
-   "resumo": "O sabor do pão de queijo mineiro num pão para fatiar, com polvilho azedo e queijo meia cura na massa.",
+   "resumo": "O sabor do pão de queijo num pão para fatiar, com polvilho azedo e queijo meia cura. Leva farinha de trigo: contém glúten e não é o pão de queijo mineiro tradicional.",
    "programa": "Macio",
    "casca": "Média",
    "timer": false,
@@ -4410,7 +4468,6 @@
      "Na forma",
      [
       "Tire a forma da máquina e encaixe a pá no eixo. Monte sempre com a forma fora da máquina: o que cai na resistência queima.",
-      "O queijo ralado vai junto com a farinha e o polvilho.",
       "Coloque na forma os ingredientes úmidos, nesta ordem: leite morno, ovo e óleo.",
       "Por cima, coloque açúcar, sal, polvilho azedo, farinha de trigo e queijo meia cura ralado, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
       "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal."
@@ -4420,7 +4477,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Macio, o tamanho escolhido e a casca média. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -4428,13 +4485,13 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Fatie grosso e leve à frigideira com manteiga até dourar dos dois lados.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Para servir quente, depois de frio fatie grosso e leve à frigideira com manteiga até dourar dos dois lados."
      ]
     ]
    ],
    "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
-   "guardar": "Por causa do recheio, guarde na geladeira, bem embalado, por até 3 dias. Aqueça as fatias no forno ou na frigideira antes de servir. Congelado, dura até 1 mês.",
+   "guardar": "Depois de frio, guarde em saco bem fechado em temperatura ambiente por até 2 dias, ou na geladeira por até 4. Aqueça as fatias na frigideira ou no forno antes de servir. Congelado, dura até 1 mês.",
    "dica": "O polvilho azedo dá o sabor e a casquinha do pão de queijo mineiro, num pão para fatiar.",
    "livro": 2,
    "publicado": "2026-11-02"
@@ -4559,7 +4616,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Brioche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Massa com bastante ovo, manteiga ou açúcar fica mais mole e brilhante e pode grudar nas paredes: isso é normal, não junte farinha por causa disso. Só se ela estiver escorrendo como um creme, junte 1 colher (sopa) de farinha por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -4567,9 +4624,9 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
       "Assim que desenformar, pincele a manteiga derretida na casca.",
-      "Misture o leite em pó com o açúcar de confeiteiro e peneire por cima. Espere 5 minutos e peneire de novo: a segunda camada gruda na primeira.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Misture o leite em pó com o açúcar de confeiteiro e peneire por cima. Espere 5 minutos e peneire de novo: a segunda camada gruda na primeira."
      ]
     ]
    ],
@@ -4725,7 +4782,7 @@
     "Norte e Nordeste"
    ],
    "icone": "corn",
-   "resumo": "Macaxeira cozida na massa deixa o pão macio e dourado. Combina com manteiga de garrafa e queijo coalho.",
+   "resumo": "Macaxeira (aipim ou mandioca mansa) cozida na massa deixa o pão macio e dourado. Combina com manteiga de garrafa e queijo coalho.",
    "programa": "Macio",
    "casca": "Média",
    "timer": false,
@@ -4798,7 +4855,8 @@
       "Cozinhe a macaxeira até desmanchar, tire as fibras do meio, esprema e deixe esfriar.",
       "Tire os ovos e a manteiga da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
       "Amorne o leite até uns 30 °C: ele deve parecer só levemente quente no pulso. Líquido quente demais mata o fermento.",
-      "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa.",
+      "Pese a macaxeira depois de cozida, escorrida e espremida: é esse peso que vale na receita."
      ]
     ],
     [
@@ -4814,7 +4872,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Macio, o tamanho escolhido e a casca média. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "A umidade da macaxeira varia: confira com atenção a massa nos primeiros 10 minutos.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
@@ -4823,26 +4881,26 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria."
      ]
     ]
    ],
    "pronto": "A casca fica dourada por igual e, ao bater no fundo do pão desenformado, o som é oco. Com termômetro de cozinha, o miolo marca entre 90 °C e 96 °C. Se estiver pálido ou pesado, rode o programa Assar por mais 10 minutos.",
    "guardar": "Depois de frio, guarde em saco plástico bem fechado ou num pote, em temperatura ambiente, por até 3 dias. Para congelar, fatie antes e guarde por até 1 mês; tire as fatias que for usar e leve direto à torradeira.",
-   "dica": "Fica perfeito com manteiga de garrafa e queijo coalho na chapa.",
+   "dica": "Combina com manteiga de garrafa e queijo coalho na chapa.",
    "livro": 2,
    "publicado": "2026-11-02"
   },
   {
    "slug": "pao-de-jerimum",
-   "titulo": "Pão de jerimum",
+   "titulo": "Pão de abóbora cabotiá (jerimum)",
    "categoria": "dia-a-dia",
    "tags": [
     "Lanche",
     "Norte e Nordeste"
    ],
    "icone": "corn",
-   "resumo": "Abóbora cabotiá na massa para um miolo alaranjado, úmido e muito macio.",
+   "resumo": "Jerimum, a abóbora cabotiá, na massa para um miolo alaranjado, úmido e muito macio.",
    "programa": "Macio",
    "casca": "Média",
    "timer": false,
@@ -4915,7 +4973,8 @@
       "Cozinhe a abóbora no vapor e deixe escorrer numa peneira por 15 minutos: ela solta menos água e o pão cresce mais.",
       "Tire os ovos da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
       "Amorne o leite até uns 30 °C: ele deve parecer só levemente quente no pulso. Líquido quente demais mata o fermento.",
-      "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa."
+      "Separe as quantidades do tamanho escolhido na lista de ingredientes, o mesmo que você vai marcar no painel da máquina. Com balança de cozinha o resultado fica mais certo; nas colheres, use sempre medida rasa.",
+      "Pese a abóbora cabotiá depois de cozida, escorrida e espremida: é esse peso que vale na receita."
      ]
     ],
     [
@@ -4931,7 +4990,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Macio, o tamanho escolhido e a casca média. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "A massa fica bem macia e alaranjada. Só junte farinha se ela não descolar das paredes.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
@@ -4940,7 +4999,7 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria."
      ]
     ]
    ],
@@ -4959,7 +5018,7 @@
     "Norte e Nordeste"
    ],
    "icone": "brioche",
-   "resumo": "Leite de coco, coco ralado e tapioca granulada, que deixa pontinhos crocantes no miolo.",
+   "resumo": "Leite de coco, coco ralado e tapioca granulada (a de grãos, não a goma pronta), que deixa pontinhos no miolo.",
    "programa": "Brioche",
    "casca": "Clara",
    "timer": false,
@@ -5060,7 +5119,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Brioche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Massa com bastante ovo, manteiga ou açúcar fica mais mole e brilhante e pode grudar nas paredes: isso é normal, não junte farinha por causa disso. Só se ela estiver escorrendo como um creme, junte 1 colher (sopa) de farinha por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -5068,8 +5127,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Assim que desenformar, pincele um pouco de leite de coco na casca.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Assim que desenformar, pincele um pouco de leite de coco na casca."
      ]
     ]
    ],
@@ -5088,7 +5147,7 @@
     "Norte e Nordeste"
    ],
    "icone": "corn",
-   "resumo": "Macaxeira ralada, coco e leite condensado, sem fermento. Um bolo cremoso, de colher, que firma ao esfriar.",
+   "resumo": "Macaxeira (aipim ou mandioca mansa) ralada crua, coco e leite condensado, sem fermento. Um bolo cremoso, de colher, que firma ao esfriar.",
    "programa": "Bolo",
    "casca": "Média",
    "timer": false,
@@ -5140,6 +5199,7 @@
     [
      "Antes de começar",
      [
+      "Use só macaxeira de mesa (aipim ou mandioca mansa), comprada para cozinhar. Nunca use mandioca-brava.",
       "Rale a macaxeira crua no ralo fino e esprema num pano limpo para tirar o excesso de líquido.",
       "Tire os ovos da geladeira 30 minutos antes.",
       "Deixe a pá encaixada e passe um pouco de manteiga no fundo e nos cantos da forma, para o bolo soltar inteiro."
@@ -5265,7 +5325,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Brioche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Massa com bastante ovo, manteiga ou açúcar fica mais mole e brilhante e pode grudar nas paredes: isso é normal, não junte farinha por causa disso. Só se ela estiver escorrendo como um creme, junte 1 colher (sopa) de farinha por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -5273,8 +5333,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Sirva com doce de cupuaçu ou com chocolate derretido.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Sirva com doce de cupuaçu ou com chocolate derretido."
      ]
     ]
    ],
@@ -5375,7 +5435,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Sanduíche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Ela deve virar uma bola macia, que gira com a pá e pode grudar um pouquinho no dedo. Se estiver mole e espalhada no fundo, junte 1 colher (sopa) de farinha; se estiver seca, esfarelando ou com farinha sobrando nos cantos, 1 colher (sopa) de líquido. Ajuste aos poucos, uma colher por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -5383,8 +5443,9 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "No dia seguinte, corte fatias de 2 cm. Molhe no leite adoçado, passe no ovo batido, frite em óleo quente e passe em açúcar com canela.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Depois de frio, embrulhe e guarde em temperatura ambiente até o dia seguinte.",
+      "No dia seguinte, corte fatias de 2 cm. Molhe no leite adoçado, passe no ovo batido, frite em óleo quente e passe em açúcar com canela."
      ]
     ]
    ],
@@ -5514,7 +5575,7 @@
       "Por cima, coloque açúcar, raspas de limão, sal e farinha de trigo, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
       "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
       "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
-      "Junte frutas secas e passas quando a massa estiver lisa, uns 10 minutos depois do início."
+      "Junte frutas secas e passas quando a máquina apitar para os adicionais (se a sua avisar) ou, sem aviso, quando a massa estiver lisa, uns 10 minutos depois do início."
      ]
     ],
     [
@@ -5531,7 +5592,7 @@
      "Depois de pronto",
      [
       "Tire a forma com luva e espere uns 10 minutos antes de desenformar, para o pão firmar e não rasgar.",
-      "Embrulhe e espere 3 dias antes de servir: os sabores se misturam e ele fica muito melhor."
+      "Depois de frio, embrulhe em papel-manteiga e depois em papel-alumínio e guarde em lugar fresco por 3 dias antes de servir: os sabores se misturam."
      ]
     ]
    ],
@@ -5621,8 +5682,14 @@
      ]
     ],
     [
-     "Glacê",
+     "Acabamento e glacê",
      [
+      [
+       "Gema (para pincelar)",
+       "1",
+       "1",
+       "1"
+      ],
       [
        "Açúcar de confeiteiro",
        "80 g",
@@ -5655,23 +5722,23 @@
       "Por cima, coloque açúcar, sal, farinha de trigo e raspas de laranja, cobrindo todo o líquido. Deixe o sal e o açúcar em cantos opostos.",
       "Faça uma covinha no topo da farinha e coloque o fermento ali, sem encostar no líquido nem no sal.",
       "Encaixe a forma e rode o programa Massa. Ele só bate a massa e deixa crescer, sem assar.",
-      "Junte uvas-passas quando a massa estiver lisa, uns 10 minutos depois do início."
+      "Junte uvas-passas quando a máquina apitar para os adicionais (se a sua avisar) ou, sem aviso, quando a massa estiver lisa, uns 10 minutos depois do início."
      ]
     ],
     [
      "Montagem, fermentação e forno",
      [
       "Ao fim do programa Massa, divida a massa em 3 partes iguais e role cada uma num cordão de 17 cm.",
-      "Trance os 3 cordões sem apertar, prendendo bem as pontas: a trança precisa de espaço para crescer sem rasgar.",
+      "Trance os 3 cordões sem apertar, prendendo bem as pontas e dobrando-as para baixo, para a trança caber nos 17 cm da forma. Ela precisa de espaço para crescer sem rasgar.",
       "Tire a pá, unte a forma e coloque a trança.",
-      "Rode o programa Fermentar até crescer bem. Pincele gema batida e rode o Assar até dourar.",
-      "Depois de fria, misture o açúcar de confeiteiro com o suco de laranja e espalhe o glacê por cima."
+      "Rode o programa Fermentar até crescer bem. Bata a gema com uma colher de água, pincele por cima e rode o Assar até dourar."
      ]
     ],
     [
      "Depois de pronto",
      [
       "Tire a forma com luva e espere uns 10 minutos antes de desenformar, para o pão firmar e não rasgar.",
+      "Desenforme e deixe esfriar por completo sobre uma grade. Só então misture o açúcar de confeiteiro com o suco de laranja e espalhe o glacê por cima.",
       "Corte só depois de amornar, com faca de serra."
      ]
     ]
@@ -5832,7 +5899,7 @@
        "560 g"
       ],
       [
-       "Paçoca esfarelada",
+       "Paçoca de rolha esfarelada",
        "60 g",
        "90 g",
        "120 g"
@@ -5869,7 +5936,7 @@
      "Na máquina",
      [
       "Encaixe a forma na máquina e escolha o programa Brioche, o tamanho escolhido e a casca clara. Inicie na hora: esta receita não pode ficar no timer.",
-      "Nos primeiros 10 minutos, abra a tampa e olhe a massa: ela deve formar uma bola lisa que solta das paredes. Se grudar, junte 1 colher (sopa) de farinha; se ficar dura ou sobrar farinha seca, 1 colher (sopa) de líquido.",
+      "Nos primeiros 10 minutos, abra a tampa e olhe a massa. Massa com bastante ovo, manteiga ou açúcar fica mais mole e brilhante e pode grudar nas paredes: isso é normal, não junte farinha por causa disso. Só se ela estiver escorrendo como um creme, junte 1 colher (sopa) de farinha por vez.",
       "Depois disso, não abra mais a tampa até o fim: a perda de calor pode fazer o pão murchar."
      ]
     ],
@@ -5877,8 +5944,8 @@
      "Depois de pronto",
      [
       "Quando a máquina avisar que terminou, tire a forma com luva, vire e desenforme na hora, para a casca não amolecer com o vapor. Se a pá ficar presa no pão, solte com um palito de madeira.",
-      "Sirva com doce de leite ou geleia de morango.",
-      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria."
+      "Deixe esfriar sobre uma grade por pelo menos 40 minutos antes de fatiar (o pão de 1 kg pede um pouco mais): o miolo termina de firmar enquanto esfria.",
+      "Sirva com doce de leite ou geleia de morango."
      ]
     ]
    ],
@@ -5938,8 +6005,16 @@
        "30 g"
       ],
       [
-       "Canela, cravo e gengibre em pó",
-       "1 colher (chá) no total"
+       "Canela em pó",
+       "½ colher (chá)"
+      ],
+      [
+       "Cravo em pó",
+       "¼ colher (chá)"
+      ],
+      [
+       "Gengibre em pó",
+       "¼ colher (chá)"
       ],
       [
        "Bicarbonato de sódio",
@@ -5965,7 +6040,7 @@
     [
      "Antes de começar",
      [
-      "Tire os ovos da geladeira 30 minutos antes.",
+      "Tire o ovo da geladeira 30 minutos antes.",
       "Deixe a pá encaixada e passe um pouco de manteiga no fundo e nos cantos da forma, para o bolo soltar inteiro."
      ]
     ],
@@ -5973,7 +6048,7 @@
      "Preparo",
      [
       "Misture o leite, o mel, o açúcar mascavo, o ovo e a manteiga derretida e despeje na forma.",
-      "Junte a farinha, o cacau e as especiarias, com o bicarbonato e o fermento por cima.",
+      "Junte a farinha, o cacau, a canela, o cravo e o gengibre, com o bicarbonato e o fermento por cima.",
       "Rode o programa Bolo, casca clara. Nos primeiros 2 minutos, raspe as laterais com uma espátula de silicone."
      ]
     ],
@@ -6020,8 +6095,8 @@
      "Ingredientes",
      [
       [
-       "Arroz branco, pré-cozido 10 min em água",
-       "150 g (cru)"
+       "Arroz branco (pesado cru)",
+       "150 g"
       ],
       [
        "Leite",
@@ -6060,7 +6135,7 @@
     [
      "Preparo",
      [
-      "Cozinhe o arroz em água por 10 minutos e escorra.",
+      "Pese 150 g de arroz cru, cozinhe em água por 10 minutos e escorra.",
       "Coloque na forma o arroz, o leite, o leite condensado, o açúcar, a canela, o cravo e a casca de limão.",
       "Rode o programa Mingau. Se ainda estiver ralo no fim, rode mais um ciclo.",
       "Tire a canela, os cravos e a casca de limão. Sirva com canela em pó."
@@ -6101,8 +6176,8 @@
      "Ingredientes",
      [
       [
-       "Canjica branca cozida na pressão",
-       "250 g (crua)"
+       "Canjica branca (pesada seca, antes de cozinhar)",
+       "250 g"
       ],
       [
        "Leite",
@@ -6137,7 +6212,7 @@
     [
      "Preparo",
      [
-      "Deixe a canjica de molho em água na véspera e cozinhe na pressão por 40 minutos. Escorra.",
+      "Deixe os 250 g de canjica seca de molho em água na véspera e cozinhe na pressão por 40 minutos. Escorra bem.",
       "Coloque na forma a canjica, o leite, o leite condensado, o coco, o amendoim e a canela.",
       "Rode o programa Mingau. Se quiser mais cremosa, rode mais um ciclo.",
       "Sirva quente ou gelada, com canela em pó."
@@ -6277,7 +6352,7 @@
     [
      "Antes de começar",
      [
-      "Amorne a água até uns 30 °C: ela deve parecer só levemente quente no pulso. Líquido quente demais mata o fermento.",
+      "Use a água morna, uns 30 °C: ela deixa a massa mais fácil de abrir.",
       "Separe e pese todos os ingredientes antes de começar. Nas colheres, use sempre medida rasa."
      ]
     ],
@@ -6359,8 +6434,9 @@
      "Antes de começar",
      [
       "Cozinhe as batatas com casca até ficarem macias. Descasque e esprema ainda mornas.",
-      "Tire os ovos da geladeira 30 minutos antes, para ficarem em temperatura ambiente.",
-      "Separe e pese todos os ingredientes antes de começar. Nas colheres, use sempre medida rasa."
+      "Tire o ovo da geladeira 30 minutos antes, para ficar em temperatura ambiente.",
+      "Separe e pese todos os ingredientes antes de começar. Nas colheres, use sempre medida rasa.",
+      "Pese a batata depois de cozida, escorrida e espremida: é esse peso que vale na receita."
      ]
     ],
     [
@@ -6499,6 +6575,10 @@
        "500 g"
       ],
       [
+       "Água",
+       "100 ml"
+      ],
+      [
        "Açúcar",
        "250 g"
       ],
@@ -6519,9 +6599,9 @@
     [
      "Preparo",
      [
-      "Bata a goiaba picada com meio copo de água no liquidificador e passe na peneira para tirar as sementes.",
+      "Bata a goiaba picada com a água no liquidificador e passe na peneira para tirar as sementes.",
       "Coloque o purê, o açúcar e o suco de limão na forma e rode o programa Geleia.",
-      "Se quiser mais firme, rode mais um ciclo. Passe ainda quente para um pote de vidro esterilizado."
+      "Se quiser mais firme, rode mais um ciclo. Passe ainda quente para um pote de vidro limpo e escaldado, feche e, depois de frio, leve à geladeira."
      ]
     ],
     [
@@ -6532,8 +6612,8 @@
     ]
    ],
    "pronto": "Faça o teste do pires: pingue um pouco num pires que ficou no congelador, espere 1 minuto e empurre com o dedo. Se enrugar, está no ponto. Lembre que ela engrossa bastante ao esfriar.",
-   "guardar": "Em pote de vidro esterilizado, bem fechado, na geladeira, por até 3 semanas. Use sempre colher limpa e seca.",
-   "dica": "Com queijo minas, é o Romeu e Julieta mais cremoso que existe.",
+   "guardar": "Depois de frio, guarde na geladeira em pote de vidro limpo e bem fechado, por até 3 semanas, ou congele por até 3 meses. É doce caseiro, não conserva: não deixe fora da geladeira. Use sempre colher limpa e seca.",
+   "dica": "Com queijo minas, vira um Romeu e Julieta de colher.",
    "livro": 2,
    "publicado": "2026-11-02"
   },
@@ -6589,7 +6669,7 @@
      [
       "Pique o abacaxi bem miúdo. Tire as sementes da pimenta e pique bem fino.",
       "Coloque tudo na forma e rode o programa Geleia.",
-      "Passe ainda quente para um pote de vidro esterilizado."
+      "Passe ainda quente para um pote de vidro limpo e escaldado, feche e, depois de frio, leve à geladeira."
      ]
     ],
     [
@@ -6600,7 +6680,7 @@
     ]
    ],
    "pronto": "Faça o teste do pires: pingue um pouco num pires que ficou no congelador, espere 1 minuto e empurre com o dedo. Se enrugar, está no ponto. Lembre que ela engrossa bastante ao esfriar.",
-   "guardar": "Em pote de vidro esterilizado, bem fechado, na geladeira, por até 3 semanas. Use sempre colher limpa e seca.",
+   "guardar": "Depois de frio, guarde na geladeira em pote de vidro limpo e bem fechado, por até 3 semanas, ou congele por até 3 meses. É doce caseiro, não conserva: não deixe fora da geladeira. Use sempre colher limpa e seca.",
    "dica": "Sirva com queijo coalho grelhado ou cream cheese e torradas.",
    "livro": 2,
    "publicado": "2026-11-02"
@@ -6657,7 +6737,8 @@
      [
       "Amasse as bananas com um garfo.",
       "Coloque tudo na forma e rode o programa Geleia.",
-      "Se quiser mais firme, rode mais um ciclo. Tire a canela antes de guardar."
+      "Se quiser mais firme, rode mais um ciclo. Tire a canela antes de passar para o pote.",
+      "Passe ainda quente para um pote de vidro limpo e escaldado, feche e, depois de frio, leve à geladeira."
      ]
     ],
     [
@@ -6668,7 +6749,7 @@
     ]
    ],
    "pronto": "Faça o teste do pires: pingue um pouco num pires que ficou no congelador, espere 1 minuto e empurre com o dedo. Se enrugar, está no ponto. Lembre que ela engrossa bastante ao esfriar.",
-   "guardar": "Em pote de vidro esterilizado, bem fechado, na geladeira, por até 3 semanas. Use sempre colher limpa e seca.",
+   "guardar": "Depois de frio, guarde na geladeira em pote de vidro limpo e bem fechado, por até 3 semanas, ou congele por até 3 meses. É doce caseiro, não conserva: não deixe fora da geladeira. Use sempre colher limpa e seca.",
    "dica": "O limão segura a cor dourada e não deixa o doce escurecer demais.",
    "livro": 2,
    "publicado": "2026-11-02"
@@ -6720,8 +6801,8 @@
      "Preparo",
      [
       "Se usar frutas congeladas, descongele numa tigela e aproveite o caldo.",
-      "Coloque as frutas, o açúcar e o suco de limão na forma e rode o programa Geleia.",
-      "Passe ainda quente para um pote de vidro esterilizado."
+      "Morangos e frutas grandes vão cortados em pedaços; amoras, framboesas e mirtilos podem ir inteiros. Coloque as frutas, o açúcar e o suco de limão na forma e rode o programa Geleia.",
+      "Passe ainda quente para um pote de vidro limpo e escaldado, feche e, depois de frio, leve à geladeira."
      ]
     ],
     [
@@ -6732,7 +6813,7 @@
     ]
    ],
    "pronto": "Faça o teste do pires: pingue um pouco num pires que ficou no congelador, espere 1 minuto e empurre com o dedo. Se enrugar, está no ponto. Lembre que ela engrossa bastante ao esfriar.",
-   "guardar": "Em pote de vidro esterilizado, bem fechado, na geladeira, por até 3 semanas. Use sempre colher limpa e seca.",
+   "guardar": "Depois de frio, guarde na geladeira em pote de vidro limpo e bem fechado, por até 3 semanas, ou congele por até 3 meses. É doce caseiro, não conserva: não deixe fora da geladeira. Use sempre colher limpa e seca.",
    "dica": "O mix congelado de mercado funciona muito bem e sai mais barato que fruta fresca.",
    "livro": 2,
    "publicado": "2026-11-02"

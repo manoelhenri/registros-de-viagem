@@ -118,3 +118,103 @@ INP não é medido em laboratório; só aparece com visitas reais no Search Cons
 3. Fotos reais dos pães, quando houver.
 4. Decidir sobre lista de compras e tempos cronometrados (seção 4).
 5. Os PDFs ainda usam "cs" e "cc"; regerar se quiser os livros iguais ao site.
+
+---
+
+# Revisão editorial das 60 receitas (3 de novembro de 2026)
+
+Base: auditoria editorial externa (`auditoria-receitas-manoel-100.md`), feita sobre o arquivo de texto exportado do site. **Status: aplicada na branch `receitas-revisao-editorial`, com prévia, ainda não publicada.**
+
+## O que a auditoria apontou e não se aplicava ao site
+
+- **Tamanhos (item 4.1):** o arquivo exportado só trazia o pão de 750 g, mas o site tem as três colunas (500, 750 e 1000 g) com botão de tamanho. A instrução "escolha o tamanho" está certa no site.
+- **Massa de pizza (24):** no site, massa, passo a passo e sabores já ficavam em blocos separados; o texto exportado juntava tudo. Mesmo assim, o molho virou um item próprio e o forno deixou de aparecer duas vezes.
+
+## Correções aplicadas
+
+| Nº | Receita | Correção |
+|---:|---|---|
+| todas | Ponto da massa | A frase única ("bola lisa que solta das paredes") virou duas: uma para pão comum (bola macia, pode grudar um pouco) e outra para massas ricas do programa Brioche (mole e brilhante é normal, não junte farinha) |
+| todas | Ordem do fim | "Deixe esfriar 40 minutos" vem logo depois de desenformar, antes de qualquer passo de fatiar, dourar ou fazer rabanada; o pão de 1 kg pede mais tempo |
+| 15, 16, 46, 47 | Adicionais | Frutas, gotas e passas entram quando a máquina apitar (se avisar) ou com a massa lisa |
+| todas | Grafia | "Mussarela" virou "muçarela" |
+| 3, 34, 40, 41, 55 | Peso cozido | Passo novo: pesar depois de cozido, escorrido e espremido |
+| 7 | Integral com mel | Saiu a troca genérica para 100% integral, sem tabela nem teste |
+| 8 | Multigrãos | Colher de sementes da casca separada na lista; se a máquina não avisar o momento, pular |
+| 9 | Aveia e mel | Mudou para "Pães do dia a dia" (é farinha branca com aveia); sem "o melhor do site" |
+| 10 | Pão italiano | Descrição: "inspirado nos sabores italianos", feito na forma |
+| 11 | Sem glúten | Psyllium em pó (não a casca inteira); esfriar pelo menos 1 hora; sem frase duplicada |
+| 12 | Brioche | Sem a contradição de juntar farinha; sem superlativos |
+| 13 | Leite condensado | "Miolo macio e levemente adocicado"; casca clara porque doura rápido |
+| 20 | Romeu e Julieta | Gema e açúcar cristal na lista (acabamento); cubos de goiabada longe da borda |
+| 23 | Hambúrguer | Gema e gergelim saíram da massa e viraram "Acabamento" |
+| 25 | Focaccia | Azeite, alecrim, tomate e sal grosso saíram da forma da máquina e viraram "Cobertura" com quantidades |
+| 30, 57 a 60 | Geleias e doces | Pote limpo e escaldado, geladeira até 3 semanas ou freezer até 3 meses, "não é conserva" |
+| 35 | Centeio | Descrição: pão de trigo com 30% de centeio |
+| 37 | Pão de queijo de forma | Avisa que leva trigo e glúten; fatiar e dourar só depois de frio; "como guardar" sem o recheio que não existe |
+| 40, 43 | Macaxeira | "(aipim ou mandioca mansa)"; no bolo, aviso para nunca usar mandioca-brava |
+| 41 | Jerimum | Título "Pão de abóbora cabotiá (jerimum)" (endereço mantido) |
+| 42 | Tapioca | Tapioca granulada, não a goma pronta |
+| 45 | Rabanada | Esfriar, guardar até o dia seguinte e só então fatiar e fritar |
+| 46 | Stollen | Como embrulhar e guardar nos 3 dias de descanso |
+| 47 | Rosca de Páscoa | Gema na lista; glacê só depois de desenformar e esfriar; como a trança cabe na forma |
+| 50 | Pão de mel | Especiarias separadas: ½ colher (chá) de canela, ¼ de cravo, ¼ de gengibre |
+| 51, 52 | Arroz-doce e canjica | Peso cru (arroz) e seco (canjica), antes de cozinhar |
+| 54 | Pastel | Saiu a frase sobre fermento (a receita não leva) |
+| 57 | Goiabada | 100 ml de água na lista |
+| 31, 32 | Cucas | Se a farofa não dourar na máquina, 5 a 10 minutos no forno |
+| 6, 22, 49 e outras | Ajustes | Pão rápido com parmesão (não é pão de queijo); provar o recheio antes de salgar; paçoca de rolha |
+| páginas | Programas | Nota em toda receita: os programas são os da Gallant; em outra máquina, use o ciclo equivalente do manual |
+
+## Depende de teste na máquina (não alterado sem preparo real)
+
+| Receitas | O que testar |
+|---|---|
+| 43, 46, 51, 52, 36, 48 | Volume na forma: bolo de macaxeira (800 g), stollen com frutas e marzipã, arroz-doce, canjica, broa e bolo de milho. Doce que ferve não pode passar da metade da forma |
+| 42 | Se a tapioca granulada precisa ser hidratada antes |
+| 11 | Textura final do pão sem glúten |
+| 31, 32 | Se a farofa doura dentro da máquina |
+| 14, 17 a 22 | Volume de recheio e se a emenda segura |
+| 56 | Ponto do brownie no programa Misturar e Assar |
+| 6 | Fermento no ciclo rápido |
+
+Nenhuma receita deve ser apresentada como "testada" até esse preparo real.
+
+## Sugestões não aplicadas (decisão do dono)
+
+- **Trocar colheres por gramas como medida principal:** exige pesar cada colher de cada ingrediente; as colheres hoje seguem o padrão da máquina.
+- **"Panificadora (máquina de pão)" e "programar para começar mais tarde (timer)" em todo texto:** o guia já explica; repetir em 60 receitas deixaria os passos mais longos no celular.
+- **Renomear "Pão francês de forma" e "Pão de queijo de forma":** mantive os nomes (são os que as pessoas buscam) e deixei a descrição honesta.
+
+## Pauta de 40 receitas novas (planejamento, não publicado)
+
+Só entram no site depois de terem quantidades nos três tamanhos (quando for pão), preparo real na Gallant, rendimento confirmado e foto.
+
+| Categoria | Atuais | Novas | Meta |
+|---|---:|---:|---:|
+| Pães do dia a dia | 13 | 8 | 21 |
+| Integrais e especiais | 5 | 8 | 13 |
+| Pães doces e roscas | 11 | 7 | 18 |
+| Pães recheados | 7 | 7 | 14 |
+| Massas para modelar | 7 | 5 | 12 |
+| Bolos e cucas | 10 | 4 | 14 |
+| Geleias e doces de panela | 7 | 1 | 8 |
+| **Total** | **60** | **40** | **100** |
+
+(Aveia e mel passou de "Integrais" para "Dia a dia", por isso 13 e 5.)
+
+**Pães do dia a dia:** pão de milho verde; pão de cebola; pão de iogurte natural; pão de mandioquinha; pão de azeitonas e orégano; pão de tomate seco e manjericão; pão de alho assado e ervas; pão de arroz cozido.
+
+**Integrais e especiais:** pão 100% integral com aveia; pão integral de linhaça e chia; pão de quinoa e ervas; pão de trigo-sarraceno e sementes; pão de sorgo sem glúten; pão sem glúten de milho e polvilho; pão sem lactose de ervas; pão vegano integral.
+
+**Pães doces e roscas:** rolinhos de canela; pão doce de maçã e canela; pão doce de laranja e baunilha; rosca de creme de baunilha; pão de banana com nozes; pão doce de abacaxi e coco; trança doce de chocolate e avelã.
+
+**Pães recheados:** carne-seca com abóbora; escarola com provolone; brócolis com queijo; tomate seco com muçarela; cogumelos e queijo; pernil com queijo coalho; bacalhau com azeitonas.
+
+**Massas para modelar:** pão de hot dog; baguete caseira; esfiha assada; pretzel macio; pão de queijo mineiro em bolinhas.
+
+**Bolos e cucas:** bolo de laranja; bolo de fubá com goiabada; cuca de maçã com farofa; bolo de limão com iogurte.
+
+**Geleias e doces de panela:** doce de abóbora com coco.
+
+**Ordem sugerida:** primeiro as que preenchem lacunas reais do catálogo (pão 100% integral, pão de queijo mineiro sem trigo, segunda opção sem glúten, rolinhos de canela, pão de hot dog), porque respondem a buscas comuns e corrigem pontos levantados pela auditoria.

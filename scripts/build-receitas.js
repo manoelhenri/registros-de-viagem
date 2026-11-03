@@ -235,7 +235,7 @@ ${extra}
     const k = r.complemento;
     const complemento = k ? `<section class="extra" id="complemento" aria-labelledby="h-extra">
 <h2 id="h-extra">${esc(k.titulo)}</h2>${k.intro ? `<p class="sub">${esc(k.intro)}</p>` : ""}
-${k.passos && k.passos.length ? `<div class="steps-g"><h3>${esc(k.passosTitulo || "Passo a passo")}</h3><ol class="steps plain">${k.passos.map((p) => `<li><span class="num" aria-hidden="true"></span><span>${realce(esc(p), ["Molho de tomate", "Polpa de tomate", "Azeite", "Sal", "Orégano", "Queijo", "Mussarela", "Tomate", "Frango", "Milho", "Manjericão", "Rúcula"])}</span></li>`).join("")}</ol></div>` : ""}
+${k.passos && k.passos.length ? `<div class="steps-g"><h3>${esc(k.passosTitulo || "Passo a passo")}</h3><ol class="steps plain">${k.passos.map((p) => `<li><span class="num" aria-hidden="true"></span><span>${realce(esc(p), ["Molho de tomate", "Polpa de tomate", "Azeite", "Sal", "Orégano", "Queijo", "Muçarela", "Tomate", "Frango", "Milho", "Manjericão", "Rúcula"])}</span></li>`).join("")}</ol></div>` : ""}
 ${(k.itens || []).length ? `<div class="flavors">${k.itens.map((it) => `<article class="flavor"><h3>${esc(it.nome)}</h3><ul>${it.ingredientes.map(([n, q]) => `<li><b>${esc(q)}</b> <span>${esc(n)}</span></li>`).join("")}</ul><p>${realce(esc(it.modo), it.ingredientes.map((x) => x[0]))}</p></article>`).join("")}</div>` : ""}
 </section>` : "";
 
@@ -297,6 +297,7 @@ ${topo("receita")}
 </div></section>
 <div class="wrap">
 <div class="glance">${glance.map(([i, l, v]) => `<div>${ico(i)}<span><small>${esc(l)}</small><b>${esc(v)}</b></span></div>`).join("")}</div>
+<p class="prognota">Programas da panificadora Gallant de 19 programas. Na sua máquina o nome pode ser outro: escolha o ciclo equivalente no manual e nunca um que asse quando a receita pede só para bater a massa. <a href="${BASE}guia/#programas">O que faz cada programa</a></p>
 <nav class="jump" aria-label="Ir para"><a href="#ingredientes" data-jump="ingredientes">Ingredientes<span class="jt" data-tam-label>${tres ? ` · ${esc(r.colunas[mid])}` : ""}</span></a><a href="#preparo" data-jump="preparo">Modo de preparo</a></nav>
 ${r.tags.includes("Sem glúten") ? `<aside class="alerta" role="note">${ico("info")}<p><b>Sem glúten, com cuidado.</b> Confira no rótulo de cada ingrediente (polvilho, farinha de arroz, psyllium, fermento) a frase "não contém glúten". Quem tem doença celíaca precisa evitar a contaminação cruzada: forma, pá e utensílios usados com farinha de trigo guardam resíduos. Na dúvida, fale com seu médico ou nutricionista.</p></aside>` : ""}
 <div class="layout">
