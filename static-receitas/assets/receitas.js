@@ -78,7 +78,7 @@
       passoAtual();
     });
     function passoAtual() {
-      var lis = $all(".steps li"); lis.forEach(function (li) { li.classList.remove("now"); });
+      var lis = $all(".steps:not(.plain) li"); lis.forEach(function (li) { li.classList.remove("now"); });
       for (var i = 0; i < lis.length; i++) { if (lis[i].querySelector("button").getAttribute("aria-pressed") !== "true") { lis[i].classList.add("now"); break; } }
     }
     passoAtual();

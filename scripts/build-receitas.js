@@ -54,15 +54,43 @@ const DESC_PROG = {
   "Mingau": "Cozinha mexendo devagar, com leite.",
 };
 const PROBLEMAS = [
-  ["O pão cresceu e murchou no topo", "Fermento ou líquido demais, ou um dia muito quente. Na próxima vez, tire ¼ cc de fermento ou 10 ml de líquido. No verão, use água gelada."],
-  ["Pão baixo e pesado", "Fermento velho, líquido quente demais ou sal encostado no fermento. Teste o fermento: 1 cc em meio copo de água morna com 1 cc de açúcar deve espumar em 10 minutos. Use líquidos até 30 °C."],
-  ["Farinha seca nos cantos da forma", "A massa ficou seca ou a pá não alcançou os cantos. Nos primeiros 5 minutos, raspe as laterais com espátula de silicone e junte 1 cs de água se precisar."],
-  ["A massa gruda nas paredes durante a sova", "Massa úmida demais, comum com batata, abóbora ou macaxeira. Junte 1 cs de farinha por vez até formar uma bola que solta das paredes."],
+  ["O pão cresceu e murchou no topo", "Fermento ou líquido demais, ou um dia muito quente. Na próxima vez, tire ¼ colher (chá) de fermento ou 10 ml de líquido. No verão, use água gelada."],
+  ["Pão baixo e pesado", "Fermento velho, líquido quente demais ou sal encostado no fermento. Teste o fermento: 1 colher (chá) dele em meio copo de água morna, com 1 colher (chá) de açúcar, deve espumar em até 10 minutos. Use líquidos até 30 °C."],
+  ["Farinha seca nos cantos da forma", "A massa ficou seca ou a pá não alcançou os cantos. Nos primeiros 5 minutos, raspe as laterais com espátula de silicone e junte 1 colher (sopa) de água se precisar."],
+  ["A massa gruda nas paredes durante a sova", "Massa úmida demais, comum com batata, abóbora ou macaxeira. Junte 1 colher (sopa) de farinha por vez até formar uma bola que solta das paredes."],
   ["Casca escura demais", "Muito açúcar, ovo ou leite na massa. Nos pães doces, escolha sempre casca clara."],
   ["Miolo cru perto do recheio", "Recheio úmido ou rolo apertado demais. O recheio precisa estar cozido, frio e sem caldo. Se o pão sair pálido, rode mais um ciclo de Assar."],
   ["Buraco no fundo do pão", "É a marca da pá, normal em toda panificadora. Para evitar, tire a pá depois da última sova, antes da fermentação final."],
   ["O pão grudou na forma", "Desenformado frio ou antiaderente gasto. Desenforme logo que terminar e unte a forma nos pães doces e recheados."],
 ];
+
+// Negrito nos ingredientes citados nos passos. Cada nome da lista gera variações curtas
+// ("Fermento biológico seco" também acha "fermento"; "Leite morno" também acha "leite").
+// O texto já vem escapado por esc(); os nomes só têm letras, espaços e hífen.
+const DESCRITIVOS = new Set(["cozida", "cozido", "picada", "picado", "picados", "ralada", "ralado", "amassada", "espremida", "fatiada", "fatiado", "refogada", "refogado", "derretido", "derretida", "amolecida", "sem", "escorrido", "madura", "maduras", "bem", "desfiado", "granulada", "torrado", "moído", "esfarelada", "descongelada", "crua", "média", "nanica", "frescas", "cortada", "gelada", "morna", "morno", "seco", "fina", "miúdo", "padrão", "cremoso", "branca", "verde", "sêmola", "ou", "tipo"]);
+const SO_COMPLETO = new Set(["raspas", "suco", "gotas", "casca", "polpa", "mix", "essência", "frutas", "folhas", "tomates", "molho"]);
+function termos(nomes) {
+  const t = new Set();
+  nomes.forEach((nome) => {
+    String(nome).toLowerCase().replace(/\(.*?\)/g, " ").split(/,|\+/).forEach((parte) => {
+      const p = parte.trim().split(/\s+/).filter(Boolean);
+      if (!p.length) return;
+      const cab = [];
+      for (const w of p) { if (DESCRITIVOS.has(w)) break; cab.push(w); }
+      if (cab.length) t.add(cab.join(" "));
+      if (cab.length >= 3 && cab[1] === "de") t.add(cab.slice(0, 3).join(" "));
+      if (!SO_COMPLETO.has(p[0]) && (p[0].length >= 3)) t.add(p[0]);
+    });
+  });
+  return [...t].filter((x) => x.length >= 3 && /^[\p{L} -]+$/u.test(x)).sort((a, b) => b.length - a.length);
+}
+function realce(textoEscapado, nomes) {
+  const lista = termos(nomes);
+  if (!lista.length) return textoEscapado;
+  const alt = lista.map((x) => x.replace(/ /g, "\\s+")).join("|");
+  const rx = new RegExp(`(?<![\\p{L}\\p{N}-])((?:${alt})(?:e?s)?)(?![\\p{L}-])`, "giu");
+  return textoEscapado.replace(rx, "<strong>$1</strong>");
+}
 
 function build() {
   const dados = JSON.parse(fs.readFileSync(path.join(src, "receitas.json"), "utf8"));
@@ -155,19 +183,28 @@ ${extra}
 
     const ingHtml = r.tabelas.map(([rotulo, itens]) => {
       const tit = r.tabelas.length > 1 ? `<h3 class="ing-g">${esc(rotulo.replace(" (na ordem)", ""))}</h3>` : "";
-      return tit + `<ul class="ing">${itens.map((it) => `<li><button type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span><span class="qs">${it.slice(1).map((q, j) => `<span class="q${j === mid ? " on" : ""}" data-col="${j}">${esc(q)}</span>`).join("")}</span><span class="nm">${esc(it[0])}</span></button></li>`).join("")}</ul>`;
+      return tit + `<ul class="ing">${itens.map((it) => `<li><button type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span><span class="it"><span class="qs">${it.slice(1).map((q, j) => `<span class="q${j === mid ? " on" : ""}" data-col="${j}">${esc(q)}</span>`).join("")}</span> <span class="nm">${esc(it[0])}</span></span></button></li>`).join("")}</ul>`;
     }).join("");
     const tam = tres ? `<div class="sizes needs-js" role="group" aria-label="Tamanho do pão">${r.colunas.map((h, j) => `<button type="button" data-col="${j}" aria-pressed="${j === mid ? "true" : "false"}">${esc(h)}</button>`).join("")}</div>` : "";
     const subIng = tres
-      ? `<p class="sub">Escolha o tamanho do pão e use o mesmo no painel da máquina.<span class="no-js-only"></span></p>`
-      : `<p class="sub">Quantidades para uma receita.</p>`;
+      ? `<p class="sub">Escolha o tamanho do pão e marque o mesmo tamanho no painel da máquina.<span class="no-js-only"></span></p>`
+      : `<p class="sub">${r.rende ? `Rende ${esc(r.rende.charAt(0).toLowerCase() + r.rende.slice(1))}.` : "Quantidades para uma receita."}</p>`;
 
+    const nomesIng = r.tabelas.flatMap(([, itens]) => itens.map((it) => it[0]));
     const passos = r.preparo.map(([g, itens]) =>
-      `<div class="steps-g"><h3>${esc(g)}</h3><ol class="steps">${itens.map((p) => `<li><button type="button" aria-pressed="false"><span class="num" aria-hidden="true"></span><span>${esc(p)}</span></button></li>`).join("")}</ol></div>`).join("");
+      `<div class="steps-g"><h3>${esc(g)}</h3><ol class="steps">${itens.map((p) => `<li><button type="button" aria-pressed="false"><span class="num" aria-hidden="true"></span><span>${realce(esc(p), nomesIng)}</span></button></li>`).join("")}</ol></div>`).join("");
+
+    // complemento opcional (ex.: como rechear e sabores da pizza)
+    const k = r.complemento;
+    const complemento = k ? `<section class="extra" id="complemento" aria-labelledby="h-extra">
+<h2 id="h-extra">${esc(k.titulo)}</h2>${k.intro ? `<p class="sub">${esc(k.intro)}</p>` : ""}
+${k.passos && k.passos.length ? `<div class="steps-g"><h3>${esc(k.passosTitulo || "Passo a passo")}</h3><ol class="steps plain">${k.passos.map((p) => `<li><span class="num" aria-hidden="true"></span><span>${realce(esc(p), ["Molho de tomate", "Polpa de tomate", "Azeite", "Sal", "Orégano", "Queijo", "Mussarela", "Tomate", "Frango", "Milho", "Manjericão", "Rúcula"])}</span></li>`).join("")}</ol></div>` : ""}
+${(k.itens || []).length ? `<div class="flavors">${k.itens.map((it) => `<article class="flavor"><h3>${esc(it.nome)}</h3><ul>${it.ingredientes.map(([n, q]) => `<li><b>${esc(q)}</b> <span>${esc(n)}</span></li>`).join("")}</ul><p>${realce(esc(it.modo), it.ingredientes.map((x) => x[0]))}</p></article>`).join("")}</div>` : ""}
+</section>` : "";
 
     const glance = [["prog", "Programa", r.programa]];
     if (r.casca) glance.push(["casca", "Casca", r.casca]);
-    glance.push(["timer", "Timer da noite", r.timer ? "Pode usar" : "Não usar"]);
+    glance.push(["timer", "Timer da noite", r.timer ? "Pode programar" : "Não programe"]);
     glance.push(["nivel", "Nível", r.nivel]);
     glance.push(["rende", "Rende", r.rende]);
 
@@ -223,13 +260,14 @@ ${topo("receitas")}
 ${subIng}
 ${tam}
 ${ingHtml}
-<p class="hint needs-js">Toque em cada item conforme for separando. <button class="linkbtn" type="button" id="limpar-marcas">Desmarcar tudo</button></p>
+<p class="hint needs-js">Toque em cada item conforme for separando: ele fica riscado. <button class="linkbtn" type="button" id="limpar-marcas">Desmarcar tudo</button></p>
 </section>
 <div>
 <section class="panel" id="preparo" aria-labelledby="h-modo">
 <h2 id="h-modo">Modo de preparo</h2>
-<p class="sub needs-js">Toque no passo quando terminar: o próximo fica em destaque.</p>
+<p class="sub needs-js">Toque em cada passo quando terminar; o próximo fica em destaque.</p>
 <div class="steps-wrap">${passos}</div>
+${complemento}
 <div class="info">
 <div class="infocard"><h3>${ico("check")}Como saber se está pronto</h3><p>${esc(r.pronto)}</p></div>
 <div class="infocard"><h3>${ico("box")}Como guardar</h3><p>${esc(r.guardar)}</p></div>
@@ -272,12 +310,12 @@ ${topo("receitas")}
 </div>
 </div></section>
 <div class="wrap">
-<div class="facts"><div><b>${rec.length}</b><span>receitas conferidas na balança</span></div><div><b>${dados.categorias.length}</b><span>categorias, do pão de forma à geleia</span></div><div><b>${nProg}</b><span>dos 19 programas da máquina em uso</span></div><div><b>3</b><span>tamanhos de pão em cada receita</span></div></div>
+<div class="facts"><div><b>${rec.length}</b><span>receitas com as quantidades conferidas</span></div><div><b>${dados.categorias.length}</b><span>categorias, do pão de forma à geleia</span></div><div><b>${nProg}</b><span>programas da máquina usados nas receitas</span></div><div><b>3</b><span>tamanhos de pão em cada receita</span></div></div>
 
-<section class="sec" aria-labelledby="h-start"><div class="sec-h"><div><h2 id="h-start">Comece por aqui</h2><p>O básico que faz toda receita dar certo na primeira tentativa.</p></div><a class="more" href="${BASE}guia/">Ver o guia completo</a></div>
+<section class="sec" aria-labelledby="h-start"><div class="sec-h"><div><h2 id="h-start">Comece por aqui</h2><p>Três leituras rápidas para acertar já na primeira fornada.</p></div><a class="more" href="${BASE}guia/">Ver o guia completo</a></div>
 <div class="starts">
-<a class="start" href="${BASE}guia/#ordem"><span class="n" style="background:#C8402B">${ico("layers")}</span><span><b>A ordem que nunca falha</b><span>Líquidos, secos e fermento: como montar a forma.</span></span></a>
-<a class="start" href="${BASE}guia/#programas"><span class="n" style="background:#2E6B78">${ico("prog")}</span><span><b>Qual programa usar</b><span>O que cada programa faz e as receitas de cada um.</span></span></a>
+<a class="start" href="${BASE}guia/#ordem"><span class="n" style="background:#C8402B">${ico("layers")}</span><span><b>A ordem que nunca falha</b><span>Líquidos, depois secos, fermento por último.</span></span></a>
+<a class="start" href="${BASE}guia/#programas"><span class="n" style="background:#2E6B78">${ico("prog")}</span><span><b>Qual programa usar</b><span>O que cada um faz e quais receitas usam.</span></span></a>
 <a class="start" href="${BASE}guia/#problemas"><span class="n" style="background:#B97300">${ico("alert")}</span><span><b>Deu errado? Resolva aqui</b><span>Pão baixo, murcho, cru ou com farinha nos cantos.</span></span></a>
 </div></section>
 
@@ -285,7 +323,7 @@ ${topo("receitas")}
 <div class="cats">${dados.categorias.map((c) => `<a class="cat" href="${BASE}?categoria=${esc(c.id)}#receitas" data-f-cat="${esc(c.id)}" style="--c:${esc(c.cor)};--soft:${esc(c.soft)}"><img src="${art(c.icone)}" alt="" width="92" height="72" loading="lazy"><b>${esc(c.nome)}</b><span>${rec.filter((r) => r.categoria === c.id).length} receitas</span></a>`).join("")}</div>
 </section>
 
-<section class="sec" aria-labelledby="h-timer"><div class="sec-h"><div><h2 id="h-timer">Para acordar com pão quentinho</h2><p>Monte à noite, programe o timer e o pão fica pronto na hora do café.</p></div><a class="more" href="${BASE}?timer=1#receitas" data-f-timer>Ver as ${comTimer.length}</a></div>
+<section class="sec" aria-labelledby="h-timer"><div class="sec-h"><div><h2 id="h-timer">Para acordar com pão quentinho</h2><p>Monte a forma à noite, programe o timer e acorde com o pão pronto.</p></div><a class="more" href="${BASE}?timer=1#receitas" data-f-timer>Ver as ${comTimer.length}</a></div>
 <div class="rail">${comTimer.slice(0, 8).map(cartao).join("")}</div></section>
 
 <section class="sec" id="receitas" aria-labelledby="h-todas"><div class="sec-h"><div><h2 id="h-todas">Todas as receitas</h2><p>Busque pelo nome ou por um ingrediente que você tem em casa.</p></div></div>
@@ -301,7 +339,7 @@ ${topo("receitas")}
 <div class="grid" id="todas">${rec.map(cartao).join("")}</div>
 </section>
 
-<section class="sec" aria-labelledby="h-livros"><div class="sec-h"><div><h2 id="h-livros">Prefere no papel?</h2><p>As receitas também existem em dois livros em PDF, prontos para imprimir.</p></div></div>
+<section class="sec" aria-labelledby="h-livros"><div class="sec-h"><div><h2 id="h-livros">Prefere no papel?</h2><p>As receitas também estão em dois livros em PDF, prontos para imprimir.</p></div></div>
 <div class="books">${dados.livros.map((l, i) => `<a class="book" href="${BASE}${esc(l.arquivo)}" download><img src="${BASE}assets/img/capa-volume-${i + 1}.jpg" alt="" width="78" height="110" loading="lazy"><span><b>${esc(l.titulo)}</b><span>PDF para imprimir</span></span></a>`).join("")}</div>
 </section>
 </div>
@@ -334,8 +372,8 @@ ${topo("guia")}
 <div class="layers" aria-hidden="true"><div style="background:#E9DCC6;color:#3B2A1E">Fermento<small>numa covinha, no topo</small></div><div style="background:#D9A441">Farinhas<small>cobrindo o líquido</small></div><div style="background:#C9802F">Sal e açúcar<small>em cantos opostos</small></div><div style="background:#5B8DB8">Líquidos<small>água, leite, ovos, óleo</small></div><div style="background:#3B2A1E">Pá encaixada<small>no eixo da forma</small></div></div>
 <p class="cap">Como a forma fica por dentro, de cima para baixo.</p></section>
 
-<section class="panel gsec" id="medidas"><h2>Medidas</h2><p>As receitas usam as colheres e o copo que vêm com a máquina. Para o melhor resultado, pese os ingredientes secos.</p>
-<div class="meas"><div><b>cc</b>colher de chá rasa: 5 ml, cerca de 3 g de fermento ou 6 g de sal</div><div><b>cs</b>colher de sopa rasa: 15 ml, cerca de 12 g de açúcar</div><div><b>ml</b>líquidos, no copo medidor da máquina</div><div><b>g</b>sólidos, de preferência na balança</div></div>
+<section class="panel gsec" id="medidas"><h2>Medidas</h2><p>As receitas usam a colher e o copo medidor que vêm com a máquina, ou colheres de medida comuns. Nas colheres, a medida é sempre rasa: encha e passe as costas de uma faca por cima. Para o melhor resultado, pese farinha e açúcar na balança.</p>
+<div class="meas"><div><b>1 colher (chá)</b>5 ml: cerca de 3 g de fermento ou 6 g de sal</div><div><b>1 colher (sopa)</b>15 ml: cerca de 12 g de açúcar ou 8 g de farinha</div><div><b>ml</b>líquidos, no copo medidor, olhando na altura dos olhos</div><div><b>g</b>sólidos, de preferência na balança de cozinha</div></div>
 <p><b>Fermento:</b> sempre biológico seco instantâneo, o de sachê de 10 g. <b>Farinha:</b> de trigo tipo 1; a "especial para pão" deixa o pão mais alto. <b>Líquidos:</b> até 30 °C, porque líquido quente mata o fermento.</p></section>
 
 <section class="panel gsec" id="timer"><h2>Timer da noite</h2><p>O timer deixa a máquina esperando até 15 horas para começar, e o pão fica pronto na hora que você escolher. Só use nas receitas marcadas com <b>Timer da noite</b>: elas não levam ovo, leite fresco, queijo ou recheio, que estragariam fora da geladeira. O fermento nunca pode encostar no líquido enquanto a massa espera.</p>
@@ -347,11 +385,11 @@ ${topo("guia")}
 <table class="gtable"><thead><tr><th>Programa</th><th>O que faz</th><th>Receitas</th></tr></thead><tbody>${progRows}</tbody></table>
 <p style="margin-top:14px"><b>Descongelar:</b> coloque o pão congelado na forma, sem a pá, e rode o programa para ele voltar macio.</p></section>
 
-<section class="panel gsec" id="recheados"><h2>A técnica dos pães recheados</h2><p>Dá para fazer pão recheado sem ligar o forno, usando três programas em sequência:</p>
+<section class="panel gsec" id="recheados"><h2>A técnica dos pães recheados</h2><p>Dá para fazer pão recheado sem ligar o forno, com três programas em sequência:</p>
 <ol class="order"><li><b>Massa:</b> a máquina bate a massa e deixa crescer.</li><li>Você abre a massa num retângulo de 1 cm, com um lado de 17 cm (o comprimento interno da forma), espalha o recheio e enrola.</li><li>O rolo volta para a forma <b>sem a pá</b>, com a emenda para baixo.</li><li><b>Fermentar:</b> a massa cresce de novo até quase a borda.</li><li><b>Assar:</b> o pão assa e doura.</li></ol>
 <p><a class="more" href="${BASE}?categoria=recheados#receitas">Ver os pães recheados</a></p></section>
 
-<section class="panel gsec" id="problemas"><h2>Deu errado? Resolva aqui</h2><p>Quase todo problema vem de medida, temperatura ou fermento. Mude uma coisa por vez na próxima fornada.</p>
+<section class="panel gsec" id="problemas"><h2>Deu errado? Resolva aqui</h2><p>Quase todo problema vem da medida, da temperatura ou do fermento. Toque no problema para ver a causa e a solução, e mude uma coisa por vez na próxima fornada.</p>
 <div class="prob">${PROBLEMAS.map(([t, d]) => `<details><summary>${esc(t)}</summary><p>${esc(d)}</p></details>`).join("")}</div></section>
 
 <section class="panel gsec" id="cuidados"><h2>Cuidados com a máquina</h2><p>Não lave a forma na lava-louças nem use palha de aço. Se a pá prender no eixo, deixe a forma de molho em água morna por 15 minutos. Limpe o interior só com pano úmido, com a máquina fria e desligada da tomada. Nunca ligue a máquina vazia ou sem a forma encaixada.</p></section>
