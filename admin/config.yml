@@ -10,8 +10,8 @@ public_folder: "/images/uploads"
 
 locale: "pt"
 
-site_url: https://manoelhenrique.com
-display_url: https://manoelhenrique.com
+site_url: https://viagens.manoelhenrique.com
+display_url: https://viagens.manoelhenrique.com
 
 collections:
 
@@ -175,7 +175,7 @@ collections:
   - name: "receitas"
     label: "Receitas (Pães do Manoel)"
     label_singular: "Receita"
-    description: "Textos, ingredientes, passos e foto de cada receita do manoelhenrique.com/receitas. Ao salvar, o site atualiza em cerca de 1 minuto."
+    description: "Textos, ingredientes, passos e foto de cada receita de receitas.manoelhenrique.com. Ao salvar, o site atualiza em cerca de 1 minuto."
     folder: "static-receitas/receitas"
     extension: "json"
     format: "json"
@@ -188,7 +188,7 @@ collections:
     view_groups:
       - { label: "Categoria", field: "categoria" }
     media_folder: "/static-receitas/assets/img/fotos"
-    public_folder: "/receitas/assets/img/fotos"
+    public_folder: "/assets/img/fotos"
     editor: { preview: false }
     fields:
       - { label: "Título", name: "titulo", widget: "string", hint: "O endereço da página sai do título só na hora de criar a receita e não muda depois, mesmo se você trocar o título." }
