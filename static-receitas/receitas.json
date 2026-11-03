@@ -1,0 +1,4565 @@
+{
+ "volumes": [
+  {
+   "numero": 1,
+   "titulo": "Volume 1",
+   "pdf": "assets/pdf/paes-do-manoel-volume-1.pdf"
+  },
+  {
+   "numero": 2,
+   "titulo": "Volume 2 · O Brasil na forma",
+   "pdf": "assets/pdf/paes-do-manoel-volume-2.pdf"
+  }
+ ],
+ "capitulos": [
+  {
+   "id": "v1-dia",
+   "volume": 1,
+   "numero": "01",
+   "nome": "Pães do dia a dia",
+   "cor": "#C8402B",
+   "corSuave": "#F7DCD3",
+   "icone": "loaf",
+   "intro": "Seis pães de rotina, do café da manhã ao lanche da tarde. Os que levam Timer: sim podem ser programados à noite para você acordar com cheiro de pão quentinho."
+  },
+  {
+   "id": "v1-int",
+   "volume": 1,
+   "numero": "02",
+   "nome": "Integrais e especiais",
+   "cor": "#5E7A2E",
+   "corSuave": "#E3EBCF",
+   "icone": "wheat",
+   "intro": "Mais fibra, mais sabor e mais textura. A farinha integral cresce menos que a branca, então esses pães saem mais baixinhos, e é assim mesmo."
+  },
+  {
+   "id": "v1-doce",
+   "volume": 1,
+   "numero": "03",
+   "nome": "Pães doces",
+   "cor": "#C9506A",
+   "corSuave": "#F8DCE2",
+   "icone": "brioche",
+   "intro": "Massas ricas em ovo, manteiga e açúcar. Use sempre cor clara: o açúcar doura a casca rápido. Frutas e gotas entram só quando a massa já formou uma bola lisa."
+  },
+  {
+   "id": "v1-rech",
+   "volume": 1,
+   "numero": "04",
+   "nome": "Pães recheados",
+   "cor": "#C77F00",
+   "corSuave": "#FBEBC6",
+   "icone": "swirl",
+   "intro": "Feitos do começo ao fim na Gallant, sem forno: a máquina bate, você recheia e enrola, e ela fermenta e assa. Todos partem da mesma massa base salgada."
+  },
+  {
+   "id": "v1-mas",
+   "volume": 1,
+   "numero": "05",
+   "nome": "Massas para modelar",
+   "cor": "#A4542F",
+   "corSuave": "#F2DFD3",
+   "icone": "pizza",
+   "intro": "A Gallant faz o trabalho pesado, bater, sovar e a primeira fermentação, e você modela e assa no forno ou na frigideira. Não passe de 500 g de farinha por vez."
+  },
+  {
+   "id": "v1-bolo",
+   "volume": 1,
+   "numero": "06",
+   "nome": "Bolos e geleia",
+   "cor": "#2E6B78",
+   "corSuave": "#D6E8EB",
+   "icone": "cake",
+   "intro": "Bolos com fermento químico e a pá na forma, e uma geleia que se faz sozinha. Raspe as laterais com espátula de silicone nos primeiros 2 minutos."
+  },
+  {
+   "id": "v2-sul",
+   "volume": 2,
+   "numero": "01",
+   "nome": "Sul",
+   "cor": "#8E2C48",
+   "corSuave": "#F1D6DE",
+   "icone": "loaf",
+   "intro": "Cucas com farofa, pão sovado de padaria de bairro e pães de colono. A herança alemã e italiana do Sul cabe direitinho na forma da Gallant."
+  },
+  {
+   "id": "v2-sud",
+   "volume": 2,
+   "numero": "02",
+   "nome": "Sudeste",
+   "cor": "#3D7A4A",
+   "corSuave": "#D9EBDC",
+   "icone": "cake",
+   "intro": "Gosto de café da tarde em Minas e em São Paulo: broa de fubá, pão de queijo de forma, rosca de leite e pão de linguiça recheado."
+  },
+  {
+   "id": "v2-nne",
+   "volume": 2,
+   "numero": "03",
+   "nome": "Norte e Nordeste",
+   "cor": "#C9581F",
+   "corSuave": "#F8DDCC",
+   "icone": "corn",
+   "intro": "Macaxeira, jerimum, coco, tapioca e cupuaçu. Ingredientes do Norte e do Nordeste que deixam o miolo dourado, úmido e cheiroso."
+  },
+  {
+   "id": "v2-festa",
+   "volume": 2,
+   "numero": "04",
+   "nome": "Datas especiais",
+   "cor": "#6B3F8F",
+   "corSuave": "#E6DAF0",
+   "icone": "brioche",
+   "intro": "Natal, Páscoa e festa junina. Pães e bolos de festa que a máquina faz enquanto você cuida do resto da celebração."
+  },
+  {
+   "id": "v2-alem",
+   "volume": 2,
+   "numero": "05",
+   "nome": "Além do pão",
+   "cor": "#2C5F8A",
+   "corSuave": "#D6E4F0",
+   "icone": "pot",
+   "intro": "Os cinco programas que ficaram de fora do Volume 1. Mingau, Sovar, Misturar e Misturar e Assar viram doces de panela, massas frescas e brownie. Descongelar devolve a maciez ao pão congelado."
+  },
+  {
+   "id": "v2-gel",
+   "volume": 2,
+   "numero": "06",
+   "nome": "Geleias e doces de colher",
+   "cor": "#B23A5E",
+   "corSuave": "#F6D9E2",
+   "icone": "jar",
+   "intro": "Para passar no pão que você acabou de fazer. O programa Geleia cozinha mexendo sozinho, sem você ficar na beira do fogão."
+  }
+ ],
+ "receitas": [
+  {
+   "slug": "pao-de-forma-classico",
+   "volume": 1,
+   "numero": 1,
+   "capitulo": "v1-dia",
+   "titulo": "Pão de forma clássico",
+   "programa": "Macio",
+   "casca": "Média",
+   "timer": true,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "190 ml",
+       "285 ml",
+       "380 ml"
+      ],
+      [
+       "Óleo",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Leite em pó",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Coloque tudo na forma na ordem da tabela, com o fermento numa covinha no topo da farinha.",
+    "Escolha o programa Macio, o tamanho e cor média. Inicie na hora ou programe o timer.",
+    "Ao fim, desenforme logo e deixe esfriar sobre uma grade por 40 minutos antes de fatiar."
+   ],
+   "dica": "O leite em pó deixa o miolo macio e permite usar o timer à noite, sem risco de estragar."
+  },
+  {
+   "slug": "pao-de-leite-fofinho",
+   "volume": 1,
+   "numero": 2,
+   "capitulo": "v1-dia",
+   "titulo": "Pão de leite fofinho",
+   "programa": "Macio",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "160 ml",
+       "250 ml",
+       "320 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "30 g",
+       "45 g",
+       "60 g"
+      ],
+      [
+       "Açúcar",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Bata o ovo com o leite morno antes de colocar na forma.",
+    "Junte o restante na ordem e escolha Macio com cor clara, o açúcar escurece a casca.",
+    "Desenforme e pincele manteiga na casca ainda quente."
+   ],
+   "dica": "Manteiga na casca assim que sai da máquina deixa o pão macio de ponta a ponta."
+  },
+  {
+   "slug": "pao-de-batata",
+   "volume": 1,
+   "numero": 3,
+   "capitulo": "v1-dia",
+   "titulo": "Pão de batata",
+   "programa": "Macio",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "90 ml",
+       "140 ml",
+       "180 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Batata cozida e espremida, fria",
+       "100 g",
+       "150 g",
+       "200 g"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Use batata sem sal, bem escorrida e já fria.",
+    "Monte na ordem e escolha Macio, cor média.",
+    "Olhe a massa nos primeiros 10 minutos: o ponto certo é uma bola macia que solta das paredes."
+   ],
+   "dica": "Se a massa grudar, junte 1 cs de farinha. Se ficar dura, 1 cs de leite. A umidade da batata varia."
+  },
+  {
+   "slug": "pao-de-sanduiche",
+   "volume": 1,
+   "numero": 4,
+   "capitulo": "v1-dia",
+   "titulo": "Pão de sanduíche",
+   "programa": "Sanduíche",
+   "casca": "Clara",
+   "timer": true,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "180 ml",
+       "270 ml",
+       "360 ml"
+      ],
+      [
+       "Manteiga em cubos",
+       "20 g",
+       "30 g",
+       "40 g"
+      ],
+      [
+       "Leite em pó",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Monte na ordem e escolha o programa Sanduíche, cor clara.",
+    "O miolo sai mais fechado e firme, ideal para fatiar fino.",
+    "Fatie só depois de frio, com faca de serra."
+   ],
+   "dica": "Guardado em saco bem fechado, dura 3 dias. Congelado em fatias, até 1 mês."
+  },
+  {
+   "slug": "pao-frances-de-forma",
+   "volume": 1,
+   "numero": 5,
+   "capitulo": "v1-dia",
+   "titulo": "Pão francês de forma",
+   "programa": "Francês ou D'Água",
+   "casca": "Escura",
+   "timer": true,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "195 ml",
+       "290 ml",
+       "390 ml"
+      ],
+      [
+       "Açúcar",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Monte na ordem: sem gordura e sem leite.",
+    "Escolha Francês ou D'Água, cor escura.",
+    "Desenforme logo ao fim para a casca não amolecer com o vapor."
+   ],
+   "dica": "É a falta de gordura e de leite que dá a casca firme e o miolo aberto do pão de padaria."
+  },
+  {
+   "slug": "pao-rapido-de-queijo",
+   "volume": 1,
+   "numero": 6,
+   "capitulo": "v1-dia",
+   "titulo": "Pão rápido de queijo",
+   "programa": "Pão Rápido",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água morna (35 °C)",
+       "180 ml",
+       "270 ml",
+       "360 ml"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "¾ cc",
+       "1 cc",
+       "1½ cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Queijo parmesão ralado",
+       "50 g",
+       "75 g",
+       "100 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1½ cc",
+       "2½ cc",
+       "3 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Coloque o queijo junto com a farinha e o fermento por último.",
+    "Escolha Pão Rápido, cor média.",
+    "Sirva ainda morno, com manteiga."
+   ],
+   "dica": "O ciclo é curto, por isso leva mais fermento e água morna. O sal é menor porque o parmesão já é salgado."
+  },
+  {
+   "slug": "integral-com-mel",
+   "volume": 1,
+   "numero": 7,
+   "capitulo": "v1-int",
+   "titulo": "Integral com mel",
+   "programa": "Pão Integral",
+   "casca": "Média",
+   "timer": true,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "200 ml",
+       "300 ml",
+       "400 ml"
+      ],
+      [
+       "Óleo",
+       "1½ cs",
+       "2 cs",
+       "3 cs"
+      ],
+      [
+       "Mel",
+       "1½ cs",
+       "2 cs",
+       "3 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "150 g",
+       "225 g",
+       "300 g"
+      ],
+      [
+       "Farinha de trigo integral",
+       "150 g",
+       "225 g",
+       "300 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1¼ cc",
+       "2 cc",
+       "2½ cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Monte na ordem, com o fermento por cima das farinhas.",
+    "Escolha Pão Integral: ele deixa a farinha hidratar antes de sovar.",
+    "Desenforme e espere esfriar para fatiar."
+   ],
+   "dica": "Para 100% integral, troque toda a farinha branca por integral e acrescente 20 / 30 / 40 ml de água."
+  },
+  {
+   "slug": "multigraos-com-sementes",
+   "volume": 1,
+   "numero": 8,
+   "capitulo": "v1-int",
+   "titulo": "Multigrãos com sementes",
+   "programa": "Pão Integral",
+   "casca": "Média",
+   "timer": true,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "200 ml",
+       "300 ml",
+       "400 ml"
+      ],
+      [
+       "Azeite",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Açúcar mascavo",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "180 g",
+       "270 g",
+       "360 g"
+      ],
+      [
+       "Farinha de trigo integral",
+       "120 g",
+       "180 g",
+       "240 g"
+      ],
+      [
+       "Mix de sementes",
+       "40 g",
+       "60 g",
+       "80 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1¼ cc",
+       "2 cc",
+       "2½ cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Use linhaça, girassol, gergelim e chia no mix de sementes.",
+    "As sementes vão junto com as farinhas, assim aguentam o timer sem empapar.",
+    "Antes de fechar a tampa, polvilhe 1 cs de sementes por cima."
+   ],
+   "dica": "As sementes na casca deixam o pão com cara de padaria artesanal."
+  },
+  {
+   "slug": "aveia-e-mel",
+   "volume": 1,
+   "numero": 9,
+   "capitulo": "v1-int",
+   "titulo": "Aveia e mel",
+   "programa": "Pão Integral",
+   "casca": "Média",
+   "timer": true,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "190 ml",
+       "285 ml",
+       "380 ml"
+      ],
+      [
+       "Manteiga em cubos",
+       "20 g",
+       "30 g",
+       "40 g"
+      ],
+      [
+       "Mel",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Aveia em flocos",
+       "50 g",
+       "75 g",
+       "100 g"
+      ],
+      [
+       "Farinha de trigo",
+       "250 g",
+       "375 g",
+       "500 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Use aveia em flocos, não farelo: ela some no miolo e deixa o pão úmido.",
+    "Monte na ordem e escolha Pão Integral.",
+    "Espere esfriar antes de cortar."
+   ],
+   "dica": "É o melhor pão do livro para torrar com manteiga ou fazer rabanada."
+  },
+  {
+   "slug": "pao-italiano-com-alecrim",
+   "volume": 1,
+   "numero": 10,
+   "capitulo": "v1-int",
+   "titulo": "Pão italiano com alecrim",
+   "programa": "Francês ou D'Água",
+   "casca": "Escura",
+   "timer": true,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "190 ml",
+       "285 ml",
+       "380 ml"
+      ],
+      [
+       "Azeite",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Alecrim seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Alho em pó",
+       "½ cc",
+       "¾ cc",
+       "1 cc"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Monte na ordem, com as ervas por cima da farinha e o fermento separado delas.",
+    "Escolha Francês ou D'Água, cor escura.",
+    "Sirva com azeite e sal grosso."
+   ],
+   "dica": "No dia seguinte, fatie, regue azeite e leve à frigideira: vira bruschetta."
+  },
+  {
+   "slug": "pao-sem-gluten-de-arroz",
+   "volume": 1,
+   "numero": 11,
+   "capitulo": "v1-int",
+   "titulo": "Pão sem glúten de arroz",
+   "programa": "Sem Glúten",
+   "casca": "Escura",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água morna",
+       "300 ml",
+       "450 ml",
+       "600 ml"
+      ],
+      [
+       "Ovos",
+       "2",
+       "3",
+       "4"
+      ],
+      [
+       "Óleo",
+       "3 cs",
+       "4 cs",
+       "6 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de arroz",
+       "200 g",
+       "300 g",
+       "400 g"
+      ],
+      [
+       "Polvilho doce",
+       "100 g",
+       "150 g",
+       "200 g"
+      ],
+      [
+       "Psyllium em pó",
+       "1½ cs",
+       "2 cs",
+       "3 cs"
+      ],
+      [
+       "Fermento biológico seco",
+       "2 cc",
+       "3 cc",
+       "4 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Misture os secos numa tigela antes de ir para a forma.",
+    "Nos primeiros 5 minutos, raspe as laterais com espátula de silicone.",
+    "A massa é mole, parecida com bolo, é assim mesmo."
+   ],
+   "dica": "Sem glúten, o psyllium é o que segura o pão. Para celíacos, use ingredientes com selo e lave muito bem a forma e a pá."
+  },
+  {
+   "slug": "brioche-amanteigado",
+   "volume": 1,
+   "numero": 12,
+   "capitulo": "v1-doce",
+   "titulo": "Brioche amanteigado",
+   "programa": "Brioche",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "100 ml",
+       "150 ml",
+       "200 ml"
+      ],
+      [
+       "Ovos",
+       "2",
+       "3",
+       "4"
+      ],
+      [
+       "Manteiga amolecida",
+       "60 g",
+       "90 g",
+       "120 g"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Sal",
+       "¾ cc",
+       "1 cc",
+       "1½ cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1½ cc",
+       "2 cc",
+       "2½ cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Ovos e manteiga em temperatura ambiente.",
+    "Monte na ordem e escolha Brioche, cor clara.",
+    "A massa fica mole e brilhante. Deixe esfriar por completo antes de cortar."
+   ],
+   "dica": "É o melhor pão para rabanada de Natal: firme por fora, amanteigado por dentro."
+  },
+  {
+   "slug": "pao-de-leite-condensado",
+   "volume": 1,
+   "numero": 13,
+   "capitulo": "v1-doce",
+   "titulo": "Pão de leite condensado",
+   "programa": "Brioche",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "120 ml",
+       "180 ml",
+       "240 ml"
+      ],
+      [
+       "Leite condensado",
+       "100 g",
+       "150 g",
+       "200 g"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "20 g",
+       "30 g",
+       "40 g"
+      ],
+      [
+       "Sal",
+       "¾ cc",
+       "1 cc",
+       "1½ cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Não leva açúcar: o leite condensado adoça.",
+    "Monte na ordem e escolha Brioche, cor clara.",
+    "Desenforme e pincele manteiga."
+   ],
+   "dica": "Se a casca dourar demais, da próxima vez escolha um tamanho abaixo no painel."
+  },
+  {
+   "slug": "rosca-de-coco",
+   "volume": 1,
+   "numero": 14,
+   "capitulo": "v1-doce",
+   "titulo": "Rosca de coco",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa (na ordem)",
+     [
+      [
+       "Leite morno",
+       "130 ml",
+       "195 ml",
+       "260 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "30 g",
+       "45 g",
+       "60 g"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Sal",
+       "½ cc",
+       "¾ cc",
+       "1 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ],
+    [
+     "Recheio e cobertura",
+     [
+      [
+       "Coco ralado",
+       "50 g",
+       "75 g",
+       "100 g"
+      ],
+      [
+       "Açúcar",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Manteiga derretida",
+       "20 g",
+       "30 g",
+       "40 g"
+      ],
+      [
+       "Leite de coco (cobertura)",
+       "50 ml",
+       "75 ml",
+       "100 ml"
+      ],
+      [
+       "Açúcar (cobertura)",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Rode a massa no programa Massa e misture coco, açúcar e manteiga.",
+    "Abra, recheie e enrole como nos pães recheados. Volte à forma sem a pá.",
+    "Rode Fermentar até dobrar e Assar até dourar. Ainda quente, regue a cobertura."
+   ],
+   "dica": "A cobertura entra com o pão quente para ser absorvida e deixar tudo úmido."
+  },
+  {
+   "slug": "panetone-de-forma",
+   "volume": 1,
+   "numero": 15,
+   "capitulo": "v1-doce",
+   "titulo": "Panetone de forma",
+   "programa": "Brioche",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "100 ml",
+       "150 ml",
+       "200 ml"
+      ],
+      [
+       "Ovos",
+       "2",
+       "3",
+       "4"
+      ],
+      [
+       "Manteiga amolecida",
+       "50 g",
+       "75 g",
+       "100 g"
+      ],
+      [
+       "Essência de panetone",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Raspas de laranja",
+       "½ laranja",
+       "¾ laranja",
+       "1 laranja"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Sal",
+       "½ cc",
+       "¾ cc",
+       "1 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1½ cc",
+       "2 cc",
+       "3 cc"
+      ],
+      [
+       "Frutas cristalizadas + passas (depois)",
+       "100 g",
+       "150 g",
+       "200 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Monte na ordem e escolha Brioche, cor clara.",
+    "Passe as frutas em 1 cs de farinha para não afundarem.",
+    "Coloque as frutas quando a massa estiver lisa, uns 10 minutos depois do início."
+   ],
+   "dica": "Versão chocotone: troque as frutas por gotas de chocolate forneável."
+  },
+  {
+   "slug": "pao-de-chocolate-com-gotas",
+   "volume": 1,
+   "numero": 16,
+   "capitulo": "v1-doce",
+   "titulo": "Pão de chocolate com gotas",
+   "programa": "Brioche",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "160 ml",
+       "240 ml",
+       "320 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "30 g",
+       "45 g",
+       "60 g"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Sal",
+       "¾ cc",
+       "1 cc",
+       "1½ cc"
+      ],
+      [
+       "Cacau em pó",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Farinha de trigo",
+       "280 g",
+       "420 g",
+       "560 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1¼ cc",
+       "2 cc",
+       "2½ cc"
+      ],
+      [
+       "Gotas de chocolate forneável (depois)",
+       "60 g",
+       "90 g",
+       "120 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "O cacau vai junto com a farinha.",
+    "Escolha Brioche, cor clara.",
+    "As gotas entram quando a massa estiver formada."
+   ],
+   "dica": "Cor clara sempre: casca escura de chocolate fica amarga."
+  },
+  {
+   "slug": "pao-de-calabresa-com-queijo",
+   "volume": 1,
+   "numero": 17,
+   "capitulo": "v1-rech",
+   "titulo": "Pão de calabresa com queijo",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa base salgada (na ordem)",
+     [
+      [
+       "Leite morno",
+       "150 ml",
+       "225 ml",
+       "290 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ],
+    [
+     "Recheio",
+     [
+      [
+       "Calabresa picada e refogada",
+       "120 g",
+       "180 g",
+       "240 g"
+      ],
+      [
+       "Cebola picada e refogada",
+       "½",
+       "¾",
+       "1"
+      ],
+      [
+       "Mussarela ralada",
+       "80 g",
+       "120 g",
+       "160 g"
+      ],
+      [
+       "Orégano",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Faça a massa base (tabela acima) no programa Massa. Prepare o recheio: cozido, frio e sem caldo.",
+    "Abra a massa num retângulo de 1 cm: um lado com 17 cm, o outro com 30 / 40 / 50 cm.",
+    "Espalhe o recheio deixando 2 cm de borda e enrole a partir do lado de 17 cm.",
+    "Tire a pá, unte a forma e coloque o rolo com a emenda para baixo.",
+    "Rode Fermentar até quase chegar à borda e depois Assar até dourar."
+   ],
+   "dica": "Escorra a gordura da calabresa em papel-toalha antes de esfriar: recheio seco, miolo bem assado."
+  },
+  {
+   "slug": "pao-de-presunto-e-queijo",
+   "volume": 1,
+   "numero": 18,
+   "capitulo": "v1-rech",
+   "titulo": "Pão de presunto e queijo",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa base salgada (na ordem)",
+     [
+      [
+       "Leite morno",
+       "150 ml",
+       "225 ml",
+       "290 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ],
+    [
+     "Recheio",
+     [
+      [
+       "Requeijão cremoso",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Presunto fatiado",
+       "100 g",
+       "150 g",
+       "200 g"
+      ],
+      [
+       "Mussarela fatiada",
+       "100 g",
+       "150 g",
+       "200 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Faça a massa base (tabela acima) no programa Massa. Prepare o recheio: cozido, frio e sem caldo.",
+    "Abra a massa num retângulo de 1 cm: um lado com 17 cm, o outro com 30 / 40 / 50 cm.",
+    "Espalhe o recheio deixando 2 cm de borda e enrole a partir do lado de 17 cm.",
+    "Tire a pá, unte a forma e coloque o rolo com a emenda para baixo.",
+    "Rode Fermentar até quase chegar à borda e depois Assar até dourar."
+   ],
+   "dica": "Espalhe o requeijão primeiro e depois intercale presunto e queijo: o rolo fica com camadas bonitas no corte."
+  },
+  {
+   "slug": "pao-de-frango-com-requeijao",
+   "volume": 1,
+   "numero": 19,
+   "capitulo": "v1-rech",
+   "titulo": "Pão de frango com requeijão",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa base salgada (na ordem)",
+     [
+      [
+       "Leite morno",
+       "150 ml",
+       "225 ml",
+       "290 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ],
+    [
+     "Recheio",
+     [
+      [
+       "Frango cozido, desfiado e temperado",
+       "150 g",
+       "225 g",
+       "300 g"
+      ],
+      [
+       "Requeijão de corte (tipo catupiry)",
+       "80 g",
+       "120 g",
+       "160 g"
+      ],
+      [
+       "Milho verde escorrido (opcional)",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Faça a massa base (tabela acima) no programa Massa. Prepare o recheio: cozido, frio e sem caldo.",
+    "Abra a massa num retângulo de 1 cm: um lado com 17 cm, o outro com 30 / 40 / 50 cm.",
+    "Espalhe o recheio deixando 2 cm de borda e enrole a partir do lado de 17 cm.",
+    "Tire a pá, unte a forma e coloque o rolo com a emenda para baixo.",
+    "Rode Fermentar até quase chegar à borda e depois Assar até dourar."
+   ],
+   "dica": "Refogue o frango até secar. Requeijão de corte escorre menos que o de copo."
+  },
+  {
+   "slug": "romeu-e-julieta",
+   "volume": 1,
+   "numero": 20,
+   "capitulo": "v1-rech",
+   "titulo": "Romeu e Julieta",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa base salgada (na ordem)",
+     [
+      [
+       "Leite morno",
+       "150 ml",
+       "225 ml",
+       "290 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ],
+    [
+     "Recheio",
+     [
+      [
+       "Goiabada cascão em cubos pequenos",
+       "120 g",
+       "180 g",
+       "240 g"
+      ],
+      [
+       "Queijo minas meia cura em cubos",
+       "80 g",
+       "120 g",
+       "160 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Faça a massa base (tabela acima) no programa Massa. Prepare o recheio: cozido, frio e sem caldo.",
+    "Abra a massa num retângulo de 1 cm: um lado com 17 cm, o outro com 30 / 40 / 50 cm.",
+    "Espalhe o recheio deixando 2 cm de borda e enrole a partir do lado de 17 cm.",
+    "Tire a pá, unte a forma e coloque o rolo com a emenda para baixo.",
+    "Rode Fermentar até quase chegar à borda e depois Assar até dourar."
+   ],
+   "dica": "Na massa base, use 3 / 4½ / 6 cs de açúcar e ½ / ¾ / 1 cc de sal. Polvilhe açúcar cristal sobre gema antes de fermentar."
+  },
+  {
+   "slug": "pao-de-alho-recheado",
+   "volume": 1,
+   "numero": 21,
+   "capitulo": "v1-rech",
+   "titulo": "Pão de alho recheado",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa base salgada (na ordem)",
+     [
+      [
+       "Leite morno",
+       "150 ml",
+       "225 ml",
+       "290 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ],
+    [
+     "Recheio",
+     [
+      [
+       "Manteiga amolecida",
+       "50 g",
+       "75 g",
+       "100 g"
+      ],
+      [
+       "Alho picado",
+       "3 dentes",
+       "4 dentes",
+       "6 dentes"
+      ],
+      [
+       "Salsinha picada",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Mussarela ralada",
+       "80 g",
+       "120 g",
+       "160 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Faça a massa base (tabela acima) no programa Massa. Prepare o recheio: cozido, frio e sem caldo.",
+    "Abra a massa num retângulo de 1 cm: um lado com 17 cm, o outro com 30 / 40 / 50 cm.",
+    "Espalhe o recheio deixando 2 cm de borda e enrole a partir do lado de 17 cm.",
+    "Tire a pá, unte a forma e coloque o rolo com a emenda para baixo.",
+    "Rode Fermentar até quase chegar à borda e depois Assar até dourar."
+   ],
+   "dica": "Misture manteiga, alho e salsinha numa pasta antes de espalhar. É o pão perfeito para o churrasco."
+  },
+  {
+   "slug": "pao-de-espinafre-e-ricota",
+   "volume": 1,
+   "numero": 22,
+   "capitulo": "v1-rech",
+   "titulo": "Pão de espinafre e ricota",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa base salgada (na ordem)",
+     [
+      [
+       "Leite morno",
+       "150 ml",
+       "225 ml",
+       "290 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ],
+    [
+     "Recheio",
+     [
+      [
+       "Espinafre refogado e bem espremido",
+       "100 g",
+       "150 g",
+       "200 g"
+      ],
+      [
+       "Ricota amassada",
+       "100 g",
+       "150 g",
+       "200 g"
+      ],
+      [
+       "Parmesão ralado",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Noz-moscada, sal e pimenta",
+       "a gosto",
+       "a gosto",
+       "a gosto"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Faça a massa base (tabela acima) no programa Massa. Prepare o recheio: cozido, frio e sem caldo.",
+    "Abra a massa num retângulo de 1 cm: um lado com 17 cm, o outro com 30 / 40 / 50 cm.",
+    "Espalhe o recheio deixando 2 cm de borda e enrole a partir do lado de 17 cm.",
+    "Tire a pá, unte a forma e coloque o rolo com a emenda para baixo.",
+    "Rode Fermentar até quase chegar à borda e depois Assar até dourar."
+   ],
+   "dica": "Esprema o espinafre num pano até sair toda a água: é isso que evita miolo cru perto do recheio."
+  },
+  {
+   "slug": "pao-de-hamburguer",
+   "volume": 1,
+   "numero": 23,
+   "capitulo": "v1-mas",
+   "titulo": "Pão de hambúrguer",
+   "programa": "Massa",
+   "casca": null,
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "8 pães de 100 g",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "200 ml"
+      ],
+      [
+       "Ovo",
+       "1"
+      ],
+      [
+       "Manteiga amolecida",
+       "40 g"
+      ],
+      [
+       "Açúcar",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1½ cc"
+      ],
+      [
+       "Farinha de trigo",
+       "500 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "2 cc"
+      ],
+      [
+       "Gema e gergelim (acabamento)",
+       "1 gema · 2 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Ao fim do programa Massa, divida em 8 bolas, boleie e achate até 10 cm.",
+    "Deixe crescer 40 minutos na assadeira, coberto.",
+    "Pincele gema, salpique gergelim e asse a 180 °C por 15 a 18 minutos."
+   ],
+   "dica": "Para pães iguais, pese a massa e divida o peso por 8."
+  },
+  {
+   "slug": "massa-de-pizza",
+   "volume": 1,
+   "numero": 24,
+   "capitulo": "v1-mas",
+   "titulo": "Massa de pizza",
+   "programa": "Massa de Pizza",
+   "casca": null,
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "2 pizzas de 35 cm",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "300 ml"
+      ],
+      [
+       "Azeite",
+       "3 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cc"
+      ],
+      [
+       "Sal",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "500 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1½ cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Ao fim do programa, divida em 2 bolas e descanse 30 minutos coberto.",
+    "Abra com as mãos e cubra.",
+    "Asse no forno no máximo (250 °C), pré-aquecido por 15 minutos, por 10 a 12 minutos."
+   ],
+   "dica": "Para congelar: pré-asse só com molho por 5 minutos, esfrie e embale."
+  },
+  {
+   "slug": "focaccia-de-alecrim-e-tomate",
+   "volume": 1,
+   "numero": 25,
+   "capitulo": "v1-mas",
+   "titulo": "Focaccia de alecrim e tomate",
+   "programa": "Massa",
+   "casca": null,
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "Assadeira de 30 × 20 cm",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "330 ml"
+      ],
+      [
+       "Azeite (massa)",
+       "3 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cc"
+      ],
+      [
+       "Sal",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "450 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "2 cc"
+      ],
+      [
+       "Azeite, alecrim, tomate-cereja, sal grosso",
+       "a gosto"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Passe a massa mole para assadeira untada com 3 cs de azeite e espalhe com os dedos.",
+    "Deixe crescer 40 minutos. Afunde os dedos por toda a massa e cubra.",
+    "Asse a 220 °C por 20 a 25 minutos, até dourar."
+   ],
+   "dica": "Seja generoso no azeite: é ele que faz o fundo crocante."
+  },
+  {
+   "slug": "pao-sirio-integral",
+   "volume": 1,
+   "numero": 26,
+   "capitulo": "v1-mas",
+   "titulo": "Pão sírio integral",
+   "programa": "Massa Integral",
+   "casca": null,
+   "timer": false,
+   "nivel": "Médio",
+   "rende": "8 discos",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "300 ml"
+      ],
+      [
+       "Azeite",
+       "2 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cc"
+      ],
+      [
+       "Sal",
+       "1½ cc"
+      ],
+      [
+       "Farinha de trigo",
+       "250 g"
+      ],
+      [
+       "Farinha de trigo integral",
+       "200 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1½ cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Divida em 8 bolas, descanse 15 minutos e abra discos de 0,5 cm.",
+    "Asse em frigideira bem quente e seca, 1 a 2 minutos de cada lado, até estufar.",
+    "Ou no forno a 250 °C por 4 a 5 minutos."
+   ],
+   "dica": "Guarde num pano assim que sair do fogo para continuar macio."
+  },
+  {
+   "slug": "bolo-de-cenoura",
+   "volume": 1,
+   "numero": 27,
+   "capitulo": "v1-bolo",
+   "titulo": "Bolo de cenoura",
+   "programa": "Bolo",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Cenoura média, em rodelas",
+       "2 (250 g)"
+      ],
+      [
+       "Ovos",
+       "3"
+      ],
+      [
+       "Óleo",
+       "180 ml"
+      ],
+      [
+       "Açúcar",
+       "270 g"
+      ],
+      [
+       "Farinha de trigo",
+       "240 g"
+      ],
+      [
+       "Fermento químico",
+       "1 cs"
+      ]
+     ]
+    ],
+    [
+     "Cobertura",
+     [
+      [
+       "Leite condensado",
+       "1 lata"
+      ],
+      [
+       "Cacau em pó",
+       "2 cs"
+      ],
+      [
+       "Manteiga",
+       "1 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Bata cenoura, ovos e óleo no liquidificador e despeje na forma.",
+    "Junte açúcar e farinha, com o fermento por cima, e rode Bolo.",
+    "Cobertura: mexa tudo no fogo até engrossar levemente e espalhe no bolo."
+   ],
+   "dica": "Teste do palito no fim. Se sair molhado, rode Assar por mais 10 minutos."
+  },
+  {
+   "slug": "bolo-de-banana-com-canela",
+   "volume": 1,
+   "numero": 28,
+   "capitulo": "v1-bolo",
+   "titulo": "Bolo de banana com canela",
+   "programa": "Bolo",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Bananas bem maduras, amassadas",
+       "3"
+      ],
+      [
+       "Ovos",
+       "2"
+      ],
+      [
+       "Óleo",
+       "100 ml"
+      ],
+      [
+       "Açúcar mascavo",
+       "150 g"
+      ],
+      [
+       "Farinha de trigo",
+       "200 g"
+      ],
+      [
+       "Aveia em flocos",
+       "50 g"
+      ],
+      [
+       "Canela em pó",
+       "1 cc"
+      ],
+      [
+       "Fermento químico",
+       "1 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Misture banana, ovos e óleo com um garfo e despeje na forma.",
+    "Junte os secos, com o fermento por último.",
+    "Rode Bolo e faça o teste do palito."
+   ],
+   "dica": "Quanto mais pintada a casca da banana, mais doce e úmido fica o bolo."
+  },
+  {
+   "slug": "bolo-de-chocolate",
+   "volume": 1,
+   "numero": 29,
+   "capitulo": "v1-bolo",
+   "titulo": "Bolo de chocolate",
+   "programa": "Bolo",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Ovos",
+       "3"
+      ],
+      [
+       "Leite",
+       "200 ml"
+      ],
+      [
+       "Óleo",
+       "120 ml"
+      ],
+      [
+       "Açúcar",
+       "250 g"
+      ],
+      [
+       "Farinha de trigo",
+       "220 g"
+      ],
+      [
+       "Cacau em pó 50% ou 100%",
+       "50 g"
+      ],
+      [
+       "Fermento químico",
+       "1 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Bata ovos, leite e óleo com um batedor e despeje na forma.",
+    "Peneire farinha e cacau por cima, junte açúcar e fermento.",
+    "Rode Bolo, cor clara."
+   ],
+   "dica": "Cor clara: chocolate escurece rápido e a casca amarga se passar do ponto."
+  },
+  {
+   "slug": "geleia-de-morango",
+   "volume": 1,
+   "numero": 30,
+   "capitulo": "v1-bolo",
+   "titulo": "Geleia de morango",
+   "programa": "Geleia",
+   "casca": null,
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "1 pote de 400 g",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Morangos picados",
+       "500 g"
+      ],
+      [
+       "Açúcar",
+       "200 g"
+      ],
+      [
+       "Suco de limão",
+       "½ limão"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Coloque tudo na forma com a pá. Não passe de 500 g de fruta.",
+    "Rode Geleia. Ela termina rala e engrossa ao esfriar.",
+    "Passe ainda quente para pote de vidro esterilizado e guarde na geladeira por até 3 semanas."
+   ],
+   "dica": "Lave a forma logo depois, com água morna, para o açúcar não grudar no antiaderente."
+  },
+  {
+   "slug": "cuca-de-banana-com-farofa",
+   "volume": 2,
+   "numero": 1,
+   "capitulo": "v2-sul",
+   "titulo": "Cuca de banana com farofa",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa (na ordem)",
+     [
+      [
+       "Leite morno",
+       "120 ml",
+       "180 ml",
+       "240 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "40 g",
+       "60 g",
+       "80 g"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Sal",
+       "½ cc",
+       "¾ cc",
+       "1 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ],
+    [
+     "Cobertura",
+     [
+      [
+       "Banana nanica fatiada",
+       "2",
+       "3",
+       "4"
+      ],
+      [
+       "Canela em pó",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha (farofa)",
+       "50 g",
+       "75 g",
+       "100 g"
+      ],
+      [
+       "Açúcar (farofa)",
+       "50 g",
+       "75 g",
+       "100 g"
+      ],
+      [
+       "Manteiga gelada (farofa)",
+       "40 g",
+       "60 g",
+       "80 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Rode a massa no programa Massa. Esfarele farinha, açúcar e manteiga gelada com as pontas dos dedos.",
+    "Tire a pá, unte a forma e volte a massa. Aperte a massa no fundo e cubra com banana, canela e farofa.",
+    "Rode Fermentar por cerca de 30 minutos e depois Assar até a farofa dourar."
+   ],
+   "dica": "Desenforme morna, virando sobre um prato e desvirando em outro: a farofa fica por cima, inteira."
+  },
+  {
+   "slug": "cuca-de-uva-com-coco",
+   "volume": 2,
+   "numero": 2,
+   "capitulo": "v2-sul",
+   "titulo": "Cuca de uva com coco",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa (na ordem)",
+     [
+      [
+       "Leite morno",
+       "120 ml",
+       "180 ml",
+       "240 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "40 g",
+       "60 g",
+       "80 g"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Sal",
+       "½ cc",
+       "¾ cc",
+       "1 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ],
+    [
+     "Cobertura",
+     [
+      [
+       "Uva sem semente, cortada ao meio",
+       "200 g",
+       "300 g",
+       "400 g"
+      ],
+      [
+       "Farinha (farofa)",
+       "40 g",
+       "60 g",
+       "80 g"
+      ],
+      [
+       "Açúcar (farofa)",
+       "50 g",
+       "75 g",
+       "100 g"
+      ],
+      [
+       "Coco ralado (farofa)",
+       "20 g",
+       "30 g",
+       "40 g"
+      ],
+      [
+       "Manteiga gelada (farofa)",
+       "40 g",
+       "60 g",
+       "80 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Rode a massa no programa Massa e prepare a farofa com coco.",
+    "Tire a pá, unte a forma e volte a massa. Aperte a massa no fundo, espalhe a uva e cubra com a farofa.",
+    "Rode Fermentar por cerca de 30 minutos e depois Assar até dourar."
+   ],
+   "dica": "Uva Niágara ou Isabel dão o sabor clássico das cucas da serra gaúcha."
+  },
+  {
+   "slug": "pao-sovado-de-padaria",
+   "volume": 2,
+   "numero": 3,
+   "capitulo": "v2-sul",
+   "titulo": "Pão sovado de padaria",
+   "programa": "Sanduíche",
+   "casca": "Clara",
+   "timer": true,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "165 ml",
+       "250 ml",
+       "330 ml"
+      ],
+      [
+       "Manteiga em cubos",
+       "30 g",
+       "45 g",
+       "60 g"
+      ],
+      [
+       "Leite em pó",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Monte na ordem e escolha Sanduíche, cor clara.",
+    "A massa é mais firme que a dos outros pães: é ela que dá o miolo fechado e branquinho.",
+    "Desenforme logo e cubra com um pano enquanto esfria."
+   ],
+   "dica": "O pano por cima segura o vapor e deixa a casca fininha, como a do pão sovado de padaria."
+  },
+  {
+   "slug": "pao-de-batata-doce",
+   "volume": 2,
+   "numero": 4,
+   "capitulo": "v2-sul",
+   "titulo": "Pão de batata-doce",
+   "programa": "Macio",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "90 ml",
+       "140 ml",
+       "180 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Batata-doce cozida e espremida, fria",
+       "120 g",
+       "180 g",
+       "240 g"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Cozinhe a batata-doce sem sal, escorra bem e deixe esfriar.",
+    "Monte na ordem e escolha Macio, cor média.",
+    "Olhe a massa nos primeiros 10 minutos e ajuste com 1 cs de farinha se grudar."
+   ],
+   "dica": "Com batata-doce roxa, o miolo fica lilás. Faz sucesso com crianças."
+  },
+  {
+   "slug": "pao-de-centeio-caseiro",
+   "volume": 2,
+   "numero": 5,
+   "capitulo": "v2-sul",
+   "titulo": "Pão de centeio caseiro",
+   "programa": "Pão Integral",
+   "casca": "Escura",
+   "timer": true,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água",
+       "200 ml",
+       "300 ml",
+       "400 ml"
+      ],
+      [
+       "Óleo",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Melado de cana",
+       "1½ cs",
+       "2 cs",
+       "3 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "210 g",
+       "315 g",
+       "420 g"
+      ],
+      [
+       "Farinha de centeio",
+       "90 g",
+       "135 g",
+       "180 g"
+      ],
+      [
+       "Erva-doce (opcional)",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Fermento biológico seco",
+       "1¼ cc",
+       "2 cc",
+       "2½ cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Monte na ordem, com a erva-doce por cima da farinha.",
+    "Escolha Pão Integral, cor escura.",
+    "Espere esfriar por completo antes de cortar: o centeio fica pegajoso quente."
+   ],
+   "dica": "Combina com frios, queijo e manteiga salgada, num café colonial de verdade."
+  },
+  {
+   "slug": "broa-de-fuba-cremosa",
+   "volume": 2,
+   "numero": 6,
+   "capitulo": "v2-sud",
+   "titulo": "Broa de fubá cremosa",
+   "programa": "Bolo",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Leite",
+       "300 ml"
+      ],
+      [
+       "Ovos",
+       "3"
+      ],
+      [
+       "Óleo",
+       "120 ml"
+      ],
+      [
+       "Açúcar",
+       "200 g"
+      ],
+      [
+       "Fubá mimoso",
+       "150 g"
+      ],
+      [
+       "Farinha de trigo",
+       "120 g"
+      ],
+      [
+       "Queijo parmesão ralado",
+       "50 g"
+      ],
+      [
+       "Erva-doce",
+       "1 cc"
+      ],
+      [
+       "Fermento químico",
+       "1 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Bata no liquidificador leite, ovos, óleo e açúcar e despeje na forma.",
+    "Junte fubá, farinha, queijo e erva-doce, com o fermento por cima.",
+    "Rode Bolo e faça o teste do palito ao final."
+   ],
+   "dica": "Sirva morna com café passado. Se o centro estiver úmido, mais 10 minutos no programa Assar."
+  },
+  {
+   "slug": "pao-de-queijo-de-forma",
+   "volume": 2,
+   "numero": 7,
+   "capitulo": "v2-sud",
+   "titulo": "Pão de queijo de forma",
+   "programa": "Macio",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "150 ml",
+       "225 ml",
+       "300 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "¾ cc",
+       "1 cc",
+       "1½ cc"
+      ],
+      [
+       "Polvilho azedo",
+       "60 g",
+       "90 g",
+       "120 g"
+      ],
+      [
+       "Farinha de trigo",
+       "240 g",
+       "360 g",
+       "480 g"
+      ],
+      [
+       "Queijo meia cura ralado",
+       "80 g",
+       "120 g",
+       "160 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1¼ cc",
+       "2 cc",
+       "2½ cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "O queijo vai junto com a farinha e o polvilho.",
+    "Escolha Macio, cor média.",
+    "Fatie grosso e leve à frigideira com manteiga."
+   ],
+   "dica": "O polvilho azedo dá o sabor e a casquinha do pão de queijo mineiro, num pão para fatiar."
+  },
+  {
+   "slug": "rosca-de-leite-em-po",
+   "volume": 2,
+   "numero": 8,
+   "capitulo": "v2-sud",
+   "titulo": "Rosca de leite em pó",
+   "programa": "Brioche",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "140 ml",
+       "210 ml",
+       "280 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "40 g",
+       "60 g",
+       "80 g"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Leite em pó",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Sal",
+       "¾ cc",
+       "1 cc",
+       "1½ cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1¼ cc",
+       "2 cc",
+       "2½ cc"
+      ]
+     ]
+    ],
+    [
+     "Cobertura",
+     [
+      [
+       "Manteiga derretida",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Leite em pó",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar de confeiteiro",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Monte a massa na ordem e escolha Brioche, cor clara.",
+    "Desenforme e pincele manteiga ainda quente.",
+    "Peneire por cima o leite em pó misturado ao açúcar de confeiteiro."
+   ],
+   "dica": "Peneire a cobertura duas vezes, com 5 minutos de intervalo: a segunda camada gruda na primeira."
+  },
+  {
+   "slug": "pao-de-linguica-mineiro",
+   "volume": 2,
+   "numero": 9,
+   "capitulo": "v2-sud",
+   "titulo": "Pão de linguiça mineiro",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa (na ordem)",
+     [
+      [
+       "Leite morno",
+       "150 ml",
+       "225 ml",
+       "290 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ],
+    [
+     "Recheio",
+     [
+      [
+       "Linguiça sem pele, refogada",
+       "150 g",
+       "225 g",
+       "300 g"
+      ],
+      [
+       "Queijo minas padrão ralado",
+       "80 g",
+       "120 g",
+       "160 g"
+      ],
+      [
+       "Cheiro-verde picado",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Rode Massa. Refogue a linguiça até secar e esfrie.",
+    "Abra em retângulo de 1 cm, com um lado de 17 cm. Recheie e enrole a partir do lado de 17 cm.",
+    "Tire a pá, unte a forma e volte a massa. Rode Fermentar e depois Assar até dourar."
+   ],
+   "dica": "Escorra a gordura da linguiça em papel-toalha: recheio seco é miolo bem assado."
+  },
+  {
+   "slug": "pao-de-macaxeira",
+   "volume": 2,
+   "numero": 10,
+   "capitulo": "v2-nne",
+   "titulo": "Pão de macaxeira",
+   "programa": "Macio",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "90 ml",
+       "140 ml",
+       "180 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "30 g",
+       "45 g",
+       "60 g"
+      ],
+      [
+       "Macaxeira cozida e espremida, fria",
+       "120 g",
+       "180 g",
+       "240 g"
+      ],
+      [
+       "Açúcar",
+       "1½ cs",
+       "2 cs",
+       "3 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Cozinhe a macaxeira até desmanchar, tire as fibras do meio e esprema.",
+    "Monte na ordem e escolha Macio, cor média.",
+    "Olhe a massa nos primeiros 10 minutos e ajuste se precisar."
+   ],
+   "dica": "Fica perfeito com manteiga de garrafa e queijo coalho na chapa."
+  },
+  {
+   "slug": "pao-de-jerimum",
+   "volume": 2,
+   "numero": 11,
+   "capitulo": "v2-nne",
+   "titulo": "Pão de jerimum",
+   "programa": "Macio",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "70 ml",
+       "105 ml",
+       "140 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Óleo",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Abóbora cabotiá cozida e amassada",
+       "130 g",
+       "195 g",
+       "260 g"
+      ],
+      [
+       "Açúcar",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Cozinhe a abóbora no vapor e deixe escorrer numa peneira por 15 minutos.",
+    "Monte na ordem e escolha Macio, cor média.",
+    "O miolo sai alaranjado e muito macio."
+   ],
+   "dica": "Abóbora cozida no vapor solta menos água que a cozida na panela, e o pão cresce mais."
+  },
+  {
+   "slug": "pao-de-tapioca-com-coco",
+   "volume": 2,
+   "numero": 12,
+   "capitulo": "v2-nne",
+   "titulo": "Pão de tapioca com coco",
+   "programa": "Brioche",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite de coco",
+       "100 ml",
+       "150 ml",
+       "200 ml"
+      ],
+      [
+       "Leite morno",
+       "60 ml",
+       "90 ml",
+       "120 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "30 g",
+       "45 g",
+       "60 g"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Sal",
+       "½ cc",
+       "¾ cc",
+       "1 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "270 g",
+       "405 g",
+       "540 g"
+      ],
+      [
+       "Tapioca granulada",
+       "30 g",
+       "45 g",
+       "60 g"
+      ],
+      [
+       "Coco ralado",
+       "30 g",
+       "45 g",
+       "60 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1¼ cc",
+       "2 cc",
+       "2½ cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Monte na ordem, com tapioca e coco junto da farinha.",
+    "Escolha Brioche, cor clara.",
+    "Desenforme e pincele leite de coco na casca ainda quente."
+   ],
+   "dica": "A tapioca granulada deixa pontinhos crocantes no miolo. Lembra o cuscuz de tapioca."
+  },
+  {
+   "slug": "bolo-de-macaxeira",
+   "volume": 2,
+   "numero": 13,
+   "capitulo": "v2-nne",
+   "titulo": "Bolo de macaxeira",
+   "programa": "Bolo",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Macaxeira crua ralada fina",
+       "500 g"
+      ],
+      [
+       "Leite condensado",
+       "1 lata"
+      ],
+      [
+       "Leite de coco",
+       "200 ml"
+      ],
+      [
+       "Ovos",
+       "3"
+      ],
+      [
+       "Coco ralado",
+       "100 g"
+      ],
+      [
+       "Manteiga derretida",
+       "50 g"
+      ],
+      [
+       "Açúcar",
+       "100 g"
+      ],
+      [
+       "Sal",
+       "1 pitada"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Misture tudo numa tigela com uma colher e despeje na forma.",
+    "Rode Bolo. Não leva fermento: é um bolo cremoso, de colher.",
+    "Se o centro estiver mole, rode Assar por mais 15 minutos."
+   ],
+   "dica": "Desenforme só depois de frio. O bolo firma ao esfriar e fica com a textura cremosa do bolo de macaxeira nordestino."
+  },
+  {
+   "slug": "pao-doce-de-cupuacu",
+   "volume": 2,
+   "numero": 14,
+   "capitulo": "v2-nne",
+   "titulo": "Pão doce de cupuaçu",
+   "programa": "Brioche",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Polpa de cupuaçu descongelada",
+       "80 g",
+       "120 g",
+       "160 g"
+      ],
+      [
+       "Leite morno",
+       "80 ml",
+       "120 ml",
+       "160 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "30 g",
+       "45 g",
+       "60 g"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Sal",
+       "½ cc",
+       "¾ cc",
+       "1 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1¼ cc",
+       "2 cc",
+       "2½ cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Descongele a polpa na geladeira na véspera.",
+    "Monte na ordem e escolha Brioche, cor clara.",
+    "Sirva com doce de cupuaçu ou chocolate."
+   ],
+   "dica": "O cupuaçu é azedinho e perfumado. O açúcar da massa equilibra, sem esconder a fruta."
+  },
+  {
+   "slug": "pao-de-rabanada",
+   "volume": 2,
+   "numero": 15,
+   "capitulo": "v2-festa",
+   "titulo": "Pão de rabanada",
+   "programa": "Sanduíche",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "150 ml",
+       "225 ml",
+       "300 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "40 g",
+       "60 g",
+       "80 g"
+      ],
+      [
+       "Açúcar",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Sal",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Faça na véspera, no programa Sanduíche, cor clara.",
+    "No dia seguinte, corte fatias de 2 cm.",
+    "Molhe no leite, passe no ovo, frite e passe em açúcar com canela."
+   ],
+   "dica": "Pão de um dia é o segredo: fresco demais, ele desmancha no leite."
+  },
+  {
+   "slug": "stollen-de-natal",
+   "volume": 2,
+   "numero": 16,
+   "capitulo": "v2-festa",
+   "titulo": "Stollen de Natal",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Difícil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa (na ordem)",
+     [
+      [
+       "Leite morno",
+       "100 ml",
+       "150 ml",
+       "200 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "60 g",
+       "90 g",
+       "120 g"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Raspas de limão",
+       "½",
+       "¾",
+       "1"
+      ],
+      [
+       "Sal",
+       "½ cc",
+       "¾ cc",
+       "1 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1½ cc",
+       "2 cc",
+       "3 cc"
+      ],
+      [
+       "Frutas secas e passas (depois)",
+       "100 g",
+       "150 g",
+       "200 g"
+      ]
+     ]
+    ],
+    [
+     "Recheio e acabamento",
+     [
+      [
+       "Marzipã em rolo",
+       "80 g",
+       "120 g",
+       "160 g"
+      ],
+      [
+       "Manteiga derretida",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Açúcar de confeiteiro",
+       "a gosto",
+       "a gosto",
+       "a gosto"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Rode Massa; as frutas entram quando a massa formar bola.",
+    "Abra em retângulo de 1 cm, com um lado de 17 cm. Ponha o marzipã no meio e dobre a massa.",
+    "Tire a pá, unte a forma e volte a massa. Fermentar e Assar. Quente, pincele manteiga e açúcar."
+   ],
+   "dica": "O stollen fica melhor depois de 3 dias embrulhado: os sabores se misturam."
+  },
+  {
+   "slug": "rosca-de-pascoa-trancada",
+   "volume": 2,
+   "numero": 17,
+   "capitulo": "v2-festa",
+   "titulo": "Rosca de Páscoa trançada",
+   "programa": "Massa → Fermentar → Assar",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Massa (na ordem)",
+     [
+      [
+       "Leite morno",
+       "120 ml",
+       "180 ml",
+       "240 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "40 g",
+       "60 g",
+       "80 g"
+      ],
+      [
+       "Açúcar",
+       "3 cs",
+       "4½ cs",
+       "6 cs"
+      ],
+      [
+       "Sal",
+       "½ cc",
+       "¾ cc",
+       "1 cc"
+      ],
+      [
+       "Farinha de trigo",
+       "300 g",
+       "450 g",
+       "600 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1 cc",
+       "1½ cc",
+       "2 cc"
+      ],
+      [
+       "Raspas de laranja",
+       "½",
+       "¾",
+       "1"
+      ],
+      [
+       "Uvas-passas (depois)",
+       "50 g",
+       "75 g",
+       "100 g"
+      ]
+     ]
+    ],
+    [
+     "Glacê",
+     [
+      [
+       "Açúcar de confeiteiro",
+       "80 g",
+       "120 g",
+       "160 g"
+      ],
+      [
+       "Suco de laranja",
+       "1 cs",
+       "1½ cs",
+       "2 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Rode Massa e junte as passas quando a massa formar bola.",
+    "Divida em 3 rolos de 17 cm e trance, apertando bem as pontas.",
+    "Tire a pá, unte a forma e volte a massa. Fermentar, gema e Assar. Fria, cubra com glacê."
+   ],
+   "dica": "Trance sem apertar: a trança precisa de espaço para crescer sem rasgar."
+  },
+  {
+   "slug": "bolo-de-milho-verde",
+   "volume": 2,
+   "numero": 18,
+   "capitulo": "v2-festa",
+   "titulo": "Bolo de milho verde",
+   "programa": "Bolo",
+   "casca": "Média",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Milho verde escorrido",
+       "2 latas"
+      ],
+      [
+       "Ovos",
+       "3"
+      ],
+      [
+       "Leite",
+       "200 ml"
+      ],
+      [
+       "Óleo",
+       "100 ml"
+      ],
+      [
+       "Açúcar",
+       "250 g"
+      ],
+      [
+       "Fubá",
+       "100 g"
+      ],
+      [
+       "Farinha de trigo",
+       "60 g"
+      ],
+      [
+       "Coco ralado",
+       "50 g"
+      ],
+      [
+       "Fermento químico",
+       "1 cs"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Bata no liquidificador milho, ovos, leite, óleo e açúcar.",
+    "Despeje na forma e junte fubá, farinha e coco, com o fermento por cima.",
+    "Rode Bolo e faça o teste do palito."
+   ],
+   "dica": "Para a festa junina, sirva em quadrados com canela polvilhada por cima."
+  },
+  {
+   "slug": "pao-de-pacoca",
+   "volume": 2,
+   "numero": 19,
+   "capitulo": "v2-festa",
+   "titulo": "Pão de paçoca",
+   "programa": "Brioche",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": null,
+   "colunas": [
+    "500 g",
+    "750 g",
+    "1000 g"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Leite morno",
+       "160 ml",
+       "240 ml",
+       "320 ml"
+      ],
+      [
+       "Ovo",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Manteiga amolecida",
+       "20 g",
+       "30 g",
+       "40 g"
+      ],
+      [
+       "Açúcar",
+       "2 cs",
+       "3 cs",
+       "4 cs"
+      ],
+      [
+       "Sal",
+       "¾ cc",
+       "1 cc",
+       "1½ cc"
+      ],
+      [
+       "Farinha de trigo",
+       "280 g",
+       "420 g",
+       "560 g"
+      ],
+      [
+       "Paçoca esfarelada",
+       "60 g",
+       "90 g",
+       "120 g"
+      ],
+      [
+       "Fermento biológico seco",
+       "1¼ cc",
+       "2 cc",
+       "2½ cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Coloque a paçoca junto com a farinha.",
+    "Escolha Brioche, cor clara.",
+    "Sirva com doce de leite ou geleia de morango."
+   ],
+   "dica": "A paçoca já tem açúcar e gordura, por isso a massa leva menos manteiga que um brioche."
+  },
+  {
+   "slug": "pao-de-mel-de-forma",
+   "volume": 2,
+   "numero": 20,
+   "capitulo": "v2-festa",
+   "titulo": "Pão de mel de forma",
+   "programa": "Bolo",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Médio",
+   "rende": null,
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Leite",
+       "240 ml"
+      ],
+      [
+       "Mel",
+       "120 g"
+      ],
+      [
+       "Açúcar mascavo",
+       "120 g"
+      ],
+      [
+       "Ovo",
+       "1"
+      ],
+      [
+       "Manteiga derretida",
+       "30 g"
+      ],
+      [
+       "Farinha de trigo",
+       "280 g"
+      ],
+      [
+       "Cacau em pó",
+       "30 g"
+      ],
+      [
+       "Canela, cravo e gengibre em pó",
+       "1 cc no total"
+      ],
+      [
+       "Bicarbonato de sódio",
+       "1 cc"
+      ],
+      [
+       "Fermento químico",
+       "1 cs"
+      ]
+     ]
+    ],
+    [
+     "Cobertura",
+     [
+      [
+       "Chocolate meio amargo derretido",
+       "200 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Misture leite, mel, açúcar, ovo e manteiga e despeje na forma.",
+    "Junte os secos, com fermento e bicarbonato por cima, e rode Bolo.",
+    "Frio, corte em cubos e banhe no chocolate derretido."
+   ],
+   "dica": "Embrulhado em celofane com fita, vira lembrancinha de Natal."
+  },
+  {
+   "slug": "arroz-doce-cremoso",
+   "volume": 2,
+   "numero": 21,
+   "capitulo": "v2-alem",
+   "titulo": "Arroz-doce cremoso",
+   "programa": "Mingau",
+   "casca": null,
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "6 porções",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Arroz branco, pré-cozido 10 min em água",
+       "150 g (cru)"
+      ],
+      [
+       "Leite",
+       "700 ml"
+      ],
+      [
+       "Leite condensado",
+       "200 g"
+      ],
+      [
+       "Açúcar",
+       "2 cs"
+      ],
+      [
+       "Canela em pau",
+       "1"
+      ],
+      [
+       "Cravo",
+       "3"
+      ],
+      [
+       "Casca de limão",
+       "1 tira"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Pré-cozinhe o arroz em água por 10 minutos e escorra.",
+    "Coloque tudo na forma com a pá e rode Mingau. Não passe da metade da forma.",
+    "Se ainda estiver ralo, rode mais um ciclo. Sirva com canela em pó."
+   ],
+   "dica": "Ele engrossa bastante ao esfriar. Desligue quando ainda estiver mais mole do que você quer."
+  },
+  {
+   "slug": "canjica-cremosa",
+   "volume": 2,
+   "numero": 22,
+   "capitulo": "v2-alem",
+   "titulo": "Canjica cremosa",
+   "programa": "Mingau",
+   "casca": null,
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "8 porções",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Canjica branca cozida na pressão",
+       "250 g (crua)"
+      ],
+      [
+       "Leite",
+       "600 ml"
+      ],
+      [
+       "Leite condensado",
+       "1 lata"
+      ],
+      [
+       "Coco ralado",
+       "50 g"
+      ],
+      [
+       "Amendoim torrado moído",
+       "50 g"
+      ],
+      [
+       "Canela em pau",
+       "1"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Deixe a canjica de molho na véspera e cozinhe na pressão por 40 minutos.",
+    "Escorra e coloque tudo na forma com a pá. Rode Mingau.",
+    "Sirva quente ou gelada, com canela."
+   ],
+   "dica": "A máquina mexe sozinha: a canjica não pega no fundo como na panela."
+  },
+  {
+   "slug": "macarrao-fresco",
+   "volume": 2,
+   "numero": 23,
+   "capitulo": "v2-alem",
+   "titulo": "Macarrão fresco",
+   "programa": "Sovar",
+   "casca": null,
+   "timer": false,
+   "nivel": "Médio",
+   "rende": "4 porções",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Ovos",
+       "3"
+      ],
+      [
+       "Azeite",
+       "1 cs"
+      ],
+      [
+       "Sal",
+       "½ cc"
+      ],
+      [
+       "Farinha de trigo (ou metade sêmola)",
+       "300 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Coloque ovos, azeite e sal na forma e cubra com a farinha. Rode Sovar.",
+    "Embrulhe a massa em filme e descanse 30 minutos.",
+    "Abra bem fina com rolo ou cilindro, corte e cozinhe por 2 a 3 minutos."
+   ],
+   "dica": "Se a massa ficar esfarelada, junte 1 cs de água. Se grudar, 1 cs de farinha."
+  },
+  {
+   "slug": "massa-de-pastel",
+   "volume": 2,
+   "numero": 24,
+   "capitulo": "v2-alem",
+   "titulo": "Massa de pastel",
+   "programa": "Sovar",
+   "casca": null,
+   "timer": false,
+   "nivel": "Médio",
+   "rende": "20 pastéis médios",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Água morna",
+       "230 ml"
+      ],
+      [
+       "Óleo",
+       "2 cs"
+      ],
+      [
+       "Cachaça",
+       "1 cs"
+      ],
+      [
+       "Sal",
+       "1½ cc"
+      ],
+      [
+       "Farinha de trigo",
+       "500 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Coloque os líquidos e o sal na forma e cubra com a farinha. Rode Sovar.",
+    "Descanse 30 minutos coberta e abra bem fina.",
+    "Recheie, feche com garfo e frite em óleo a 180 °C."
+   ],
+   "dica": "A cachaça é o que faz as bolhinhas crocantes da massa de feira."
+  },
+  {
+   "slug": "nhoque-de-batata",
+   "volume": 2,
+   "numero": 25,
+   "capitulo": "v2-alem",
+   "titulo": "Nhoque de batata",
+   "programa": "Misturar",
+   "casca": null,
+   "timer": false,
+   "nivel": "Médio",
+   "rende": "4 porções",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes (na ordem)",
+     [
+      [
+       "Batata cozida e espremida, morna",
+       "600 g"
+      ],
+      [
+       "Ovo",
+       "1"
+      ],
+      [
+       "Sal",
+       "1 cc"
+      ],
+      [
+       "Parmesão ralado",
+       "2 cs"
+      ],
+      [
+       "Noz-moscada",
+       "1 pitada"
+      ],
+      [
+       "Farinha de trigo",
+       "180 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Coloque batata, ovo, sal, queijo e noz-moscada na forma e a farinha por cima.",
+    "Rode Misturar e desligue assim que a massa unir.",
+    "Enrole em cordões, corte em pedaços de 2 cm e cozinhe até subirem."
+   ],
+   "dica": "Nhoque não pode ser sovado: misturou, parou. Massa lisa demais fica borrachuda."
+  },
+  {
+   "slug": "brownie-de-forma",
+   "volume": 2,
+   "numero": 26,
+   "capitulo": "v2-alem",
+   "titulo": "Brownie de forma",
+   "programa": "Misturar e Assar",
+   "casca": "Clara",
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "12 cubos",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Chocolate meio amargo",
+       "150 g"
+      ],
+      [
+       "Manteiga",
+       "120 g"
+      ],
+      [
+       "Açúcar",
+       "200 g"
+      ],
+      [
+       "Ovos",
+       "3"
+      ],
+      [
+       "Farinha de trigo",
+       "90 g"
+      ],
+      [
+       "Cacau em pó",
+       "20 g"
+      ],
+      [
+       "Sal",
+       "1 pitada"
+      ],
+      [
+       "Nozes picadas (opcional)",
+       "60 g"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Derreta chocolate e manteiga e misture com açúcar e ovos.",
+    "Despeje na forma, junte farinha, cacau, sal e nozes por cima.",
+    "Rode Misturar e Assar. Desenforme frio e corte em cubos."
+   ],
+   "dica": "Centro úmido é o ponto certo. Ele termina de firmar na geladeira."
+  },
+  {
+   "slug": "goiabada-cremosa",
+   "volume": 2,
+   "numero": 27,
+   "capitulo": "v2-gel",
+   "titulo": "Goiabada cremosa",
+   "programa": "Geleia",
+   "casca": null,
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "1 pote de 450 g",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Goiaba vermelha sem sementes, picada",
+       "500 g"
+      ],
+      [
+       "Açúcar",
+       "250 g"
+      ],
+      [
+       "Suco de limão",
+       "½ limão"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Bata a goiaba com um pouco de água e passe na peneira para tirar as sementes.",
+    "Coloque tudo na forma com a pá e rode Geleia.",
+    "Passe para pote de vidro esterilizado ainda quente."
+   ],
+   "dica": "Com queijo minas, é o Romeu e Julieta mais cremoso que existe."
+  },
+  {
+   "slug": "geleia-de-abacaxi-com-pimenta",
+   "volume": 2,
+   "numero": 28,
+   "capitulo": "v2-gel",
+   "titulo": "Geleia de abacaxi com pimenta",
+   "programa": "Geleia",
+   "casca": null,
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "1 pote de 400 g",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Abacaxi picado miúdo",
+       "450 g"
+      ],
+      [
+       "Açúcar",
+       "200 g"
+      ],
+      [
+       "Pimenta dedo-de-moça sem sementes, picada",
+       "1"
+      ],
+      [
+       "Gengibre ralado",
+       "1 cc"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Coloque tudo na forma com a pá.",
+    "Rode Geleia. Ela termina rala e engrossa ao esfriar.",
+    "Guarde na geladeira por até 3 semanas."
+   ],
+   "dica": "Sirva com queijo coalho grelhado ou cream cheese e torradas."
+  },
+  {
+   "slug": "doce-de-banana",
+   "volume": 2,
+   "numero": 29,
+   "capitulo": "v2-gel",
+   "titulo": "Doce de banana",
+   "programa": "Geleia",
+   "casca": null,
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "1 pote de 400 g",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Banana-prata madura, amassada",
+       "500 g"
+      ],
+      [
+       "Açúcar mascavo",
+       "150 g"
+      ],
+      [
+       "Canela em pau",
+       "1"
+      ],
+      [
+       "Suco de limão",
+       "½ limão"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Coloque tudo na forma com a pá e rode Geleia.",
+    "Se quiser mais firme, rode mais um ciclo.",
+    "Tire a canela e guarde em pote de vidro."
+   ],
+   "dica": "O limão segura a cor dourada e não deixa o doce escurecer demais."
+  },
+  {
+   "slug": "geleia-de-frutas-vermelhas",
+   "volume": 2,
+   "numero": 30,
+   "capitulo": "v2-gel",
+   "titulo": "Geleia de frutas vermelhas",
+   "programa": "Geleia",
+   "casca": null,
+   "timer": false,
+   "nivel": "Fácil",
+   "rende": "1 pote de 400 g",
+   "colunas": [
+    "Quantidade"
+   ],
+   "tabelas": [
+    [
+     "Ingredientes",
+     [
+      [
+       "Frutas vermelhas (frescas ou congeladas)",
+       "500 g"
+      ],
+      [
+       "Açúcar",
+       "200 g"
+      ],
+      [
+       "Suco de limão",
+       "½ limão"
+      ]
+     ]
+    ]
+   ],
+   "passos": [
+    "Se usar frutas congeladas, descongele e aproveite o caldo.",
+    "Coloque tudo na forma com a pá e rode Geleia.",
+    "Passe ainda quente para pote de vidro esterilizado."
+   ],
+   "dica": "O mix congelado de mercado funciona muito bem e sai mais barato que fruta fresca."
+  }
+ ]
+}

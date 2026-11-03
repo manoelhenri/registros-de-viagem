@@ -4,7 +4,7 @@ Este arquivo vale para qualquer agente (Codex, Antigravity, Claude Code e outros
 
 ## O que é este repositório
 
-Blog pessoal de viagens do Manoel Henrique, "registros de viagem", no ar em **https://manoelhenrique.com**. Todo o conteúdo é em português do Brasil. O mesmo repositório também publica uma área de jogos em `/jogos/`, que é um produto separado do blog (ver "Jogos ficam separados do blog", abaixo).
+Blog pessoal de viagens do Manoel Henrique, "registros de viagem", no ar em **https://manoelhenrique.com**. Todo o conteúdo é em português do Brasil. O mesmo repositório também publica uma área de jogos em `/jogos/` e uma área de receitas em `/receitas/` ("Pães do Manoel"), produtos separados do blog (ver "Jogos ficam separados do blog" e "Receitas ficam separadas do blog", abaixo).
 
 ## Stack
 
@@ -26,11 +26,13 @@ Blog pessoal de viagens do Manoel Henrique, "registros de viagem", no ar em **ht
 | `feed.njk`, `sitemap.njk`, `robots.njk` | RSS, sitemap e robots |
 | `_data/` | Dados globais: `site.json`, `home.json`, `sobre.json`, `destinosData.json`, `parquesData.json` (editados pelo painel), mais os `.js` que derivam dados deles |
 | `lib/` | Módulos compartilhados (geo, geocodificação, vídeo, mapa embutido, callout, datas do Git) |
-| `.eleventy.js` | Filtros, coleções, markdown-it, `validarBuild()` e o gancho que copia `/jogos` |
+| `.eleventy.js` | Filtros, coleções, markdown-it, `validarBuild()` e os ganchos que copiam `/jogos` e geram `/receitas` |
 | `admin/` | Painel Decap CMS |
 | `functions/api/` | Login OAuth do painel |
 | `static-jogos/` | Área de jogos (fora do Eleventy) |
 | `scripts/build-jogos.js` | Copia os jogos para `_site/jogos` e gera `_redirects` e `_headers` |
+| `static-receitas/` | Área de receitas (fora do Eleventy): `receitas.json` + `assets/` |
+| `scripts/build-receitas.js` | Gera as páginas de `_site/receitas` a partir de `static-receitas/receitas.json` |
 | `README.md`, `COMO-PUBLICAR.md`, `GUIA-DO-BLOG.html` | Documentação para o dono (não viram páginas) |
 
 ## Jogos ficam separados do blog
@@ -44,6 +46,18 @@ A área `/jogos/` (hoje: o hub em `static-jogos/index.html`, o jogo "Quem é mai
 5. **Service worker:** ao mudar qualquer arquivo de um jogo com PWA, suba a versão do cache no `sw.js` dele (ex.: `quem-e-mais-v5` para `quem-e-mais-v6`) e mantenha a lista de arquivos em dia, senão o celular de quem já instalou continua com a versão antiga.
 6. **`_redirects` e `_headers` são gerados por `scripts/build-jogos.js`** e sobrescrevem qualquer arquivo com esse nome. Redirecionamento ou cabeçalho novo (do blog ou dos jogos) entra nesse script. O endereço antigo `/quem-e-mais` redireciona (301) para `/jogos/quem-e-mais/`; não quebre isso.
 7. **Arquivos na raiz do domínio** (ex.: `.well-known/assetlinks.json`, para vincular o app Android) vão em `static-root/`, que o mesmo script copia para a raiz de `_site/`. A pasta ainda não existe; crie quando precisar e mantenha no `.eleventyignore`.
+
+## Receitas ficam separadas do blog
+
+A área `/receitas/` ("Pães do Manoel": receitas para a panificadora Gallant de 19 programas, com os dois livros em PDF) segue as mesmas regras de separação dos jogos: nenhum link entre ela e o blog (nem menu, rodapé, sitemap, feed ou `robots.txt`), nada do blog dentro dela (sem `base.njk`, `style.css`, filtros do Eleventy nem Google Analytics) e fora do Eleventy. Regras próprias:
+
+1. **Uma fonte de dados:** todo o conteúdo vem de `static-receitas/receitas.json` (`volumes`, `capitulos`, `receitas`). Receita nova ou correção é só editar esse arquivo; não escreva HTML de receita à mão.
+2. **Gerador:** `scripts/build-receitas.js` (só módulos do Node, sem dependência) cria `_site/receitas/index.html`, uma página por receita em `_site/receitas/<slug>/`, `404.html` e `sitemap.xml` próprios, e copia `static-receitas/assets/` (CSS, JS, fontes, ilustrações, imagens de compartilhamento e PDFs). É chamado num gancho `eleventy.after` separado, **dentro de try/catch**: se as receitas quebrarem, o blog e os jogos publicam normalmente e o erro aparece no log como `[receitas]`. Não junte esse gancho com o dos jogos.
+3. **Slug** é único, só `a-z`, `0-9` e hífen, e nunca muda depois de publicado (é o endereço indexado pelo Google). O build das receitas para se houver slug repetido ou capítulo inexistente.
+4. **SEO:** cada página tem `description`, `canonical`, Open Graph e JSON-LD `Recipe` (ingredientes do tamanho de 750 g, passos em `HowToStep`, imagens 1:1, 4:3 e 16:9 do capítulo em `assets/img/<capitulo>-<proporção>.jpg`). Sem tempos de preparo no JSON-LD, porque a duração dos ciclos da Gallant não é publicada; não invente. O sitemap das receitas é cadastrado direto no Google Search Console (`/receitas/sitemap.xml`); não o coloque no `robots.txt` nem no sitemap do blog.
+5. **Imagens das receitas** hoje são ilustrações por capítulo. Foto real de prato, quando o dono mandar, vai em `static-receitas/assets/img/` e entra no campo opcional `imagens` da receita no JSON (lista de nomes de arquivo, de preferência nas proporções 1:1, 4:3 e 16:9, nessa ordem); com ele, a foto substitui a ilustração no JSON-LD e no Open Graph.
+6. **Domínio:** o gerador lê a URL de `_data/site.json` (só leitura, para montar os links absolutos). Não escreva o domínio fixo.
+7. **Interface:** a página só liga e desliga elementos que já vêm prontos no HTML (busca, filtros, tamanho do pão). Texto de dado sempre passa por `esc()` no gerador.
 
 ## Regras de manutenção do blog
 
