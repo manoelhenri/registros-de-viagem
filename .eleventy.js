@@ -101,6 +101,18 @@ module.exports = function (eleventyConfig) {
           require("./scripts/build-jogos.js");
     });
 
+    // Área /receitas ("Pães do Manoel"): produto separado, gerado de
+    // static-receitas/receitas.json por scripts/build-receitas.js. Roda depois
+    // dos jogos e dentro de try/catch: se algo der errado nas receitas, o blog
+    // e os jogos são publicados normalmente e o erro aparece no log do build.
+    eleventyConfig.on("eleventy.after", () => {
+          try {
+                require("./scripts/build-receitas.js")();
+          } catch (erro) {
+                console.error("[receitas] área de receitas NÃO foi gerada:", erro && erro.message ? erro.message : erro);
+          }
+    });
+
     // Static passthrough: images uploaded via the admin panel, the stylesheet,
     // and the admin panel itself (Decap CMS) go straight to the output folder.
     eleventyConfig.addPassthroughCopy("images");
