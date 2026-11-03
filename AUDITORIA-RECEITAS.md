@@ -218,3 +218,52 @@ Só entram no site depois de terem quantidades nos três tamanhos (quando for p�
 **Geleias e doces de panela:** doce de abóbora com coco.
 
 **Ordem sugerida:** primeiro as que preenchem lacunas reais do catálogo (pão 100% integral, pão de queijo mineiro sem trigo, segunda opção sem glúten, rolinhos de canela, pão de hot dog), porque respondem a buscas comuns e corrigem pontos levantados pela auditoria.
+
+---
+
+# Catálogo de 100 receitas revisado com os manuais (3 de novembro de 2026)
+
+Base: o catálogo sugerido em `catalogo_100_receitas_Gallant_final_para_site.docx`, conferido contra o **Manual de Instruções Gallant** (24 páginas), o **Livro de Receitas Gallant** (19 programas, 600 W) e o **manual Britânia Multi Pane** (61 páginas). Publicado depois da aprovação do dono.
+
+## O que vale dos manuais
+
+- Tamanho (500, 750, 1000 g) só nos programas 1 a 7; cor nos programas 1 a 7, 16, 18 e 19; PROGRAMAR até 15 horas, indisponível nos programas 12 a 15 e 17 a 19, e proibido com laticínios, ovos, creme ou queijo.
+- Aviso de adição (10 bipes) só nos programas 1 a 7. Manter Aquecido por 1 hora.
+- Líquidos em temperatura ambiente (20 °C a 25 °C). Esperar cerca de 20 minutos antes de fatiar. Pão em saco fechado por 3 dias, ou 10 dias na geladeira.
+- Forma e pá podem ir à lava-louças; primeiro uso: Assar vazia por 10 minutos; ambiente de 15 °C a 34 °C.
+- Programa Massa: no máximo 1 kg de ingredientes (livro). Geleias feitas na panificadora: geladeira, até 1 semana (livro).
+- O livro usa 1 kg, 700 g e 500 g; o painel mostra 1000, 750 e 500 g.
+
+## Como cada receita foi montada
+
+| Origem | Quantas | Como |
+|---|---:|---|
+| Oficial Gallant | 12 | Fórmulas transcritas do livro: 9 pães nos três tamanhos, 2 bolos e a geleia de morango |
+| Adaptada (Britânia) | 39 | Fórmula do docx; páginas do manual Britânia conferidas no índice |
+| Autoral | 49 | Fórmula do docx ou a versão já revisada do site |
+
+Pães dos programas 1 a 7 sempre com três tamanhos: oficiais (do livro) ou calculados por proporção a partir do tamanho-base, marcado na página. Massa, Bolo, Geleia, Sovar e Misturar e Assar com quantidade única.
+
+## Erros do docx corrigidos
+
+- **Massa de pastel (54):** o docx trazia ingredientes e preparo de pão de cerveja; ficou a versão revisada do site.
+- **Pretzel (94):** o docx trazia uma receita de pão de queijo no programa Bolo; a massa de pretzel foi escrita do zero (autoral).
+- **Programas impressos no livro:** o livro da Gallant põe "programa 1" em todas as receitas; valeu o nome (Macio, Francês, Integral, Brioche), confirmado no painel do manual. Pão de milho no programa Francês, como no livro.
+- **Pão de banana (81):** o docx somou nozes à fórmula oficial; ficou a fórmula do livro.
+- **Pão de sanduíche:** a dica dizia que o programa Sanduíche não permite escolher a cor; o manual diz que permite.
+- **Rosca de Páscoa e stollen:** passas e frutas entram à mão na modelagem (o programa Massa não tem aviso de adição).
+- Textos herdados que contradiziam o manual: amornar o leite a 30 °C, esperar 40 minutos, "não lave na lava-louças", "nunca ligue vazia", soltar a pá com palito.
+
+## Endereços
+
+Mantidos os endereços das receitas que continuam (mesmo prato). Novos endereços para pratos novos. Redirecionamento 301:
+
+- para a receita equivalente: pão rápido de queijo → pão de parmesão; integral com mel → pão integral; brioche amanteigado → pão brioche; rosca de coco → pão de coco; geleia de abacaxi com pimenta → geleia de abacaxi; multigrãos com sementes → pão multigrãos de linhaça e chia;
+- para a página inicial das receitas (prato que saiu do catálogo): arroz-doce, canjica, nhoque, goiabada cremosa, doce de banana e geleia de frutas vermelhas.
+
+## Pendências
+
+1. Nenhuma receita foi preparada na máquina; quantidades calculadas e receitas autorais e adaptadas precisam de teste.
+2. Os PDFs dos livros saíram da home por estarem desatualizados; regerar a partir do catálogo novo, se quiser.
+3. Fotos reais dos pães.
+4. Reenviar o sitemap no Search Console (agora com 102 endereços).
