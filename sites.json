@@ -1,0 +1,8 @@
+{
+  "_leia": "Endereços dos três sites. Enquanto 'separado' for false, o blog continua publicando /jogos e /receitas no domínio antigo (como sempre foi) e os sites próprios de jogos e receitas saem com noindex. A virada é trocar para true, junto com a url de _data/site.json. Ver AGENTS.md, seção Domínios.",
+  "separado": false,
+  "antigo": "https://manoelhenrique.com",
+  "viagens": "https://viagens.manoelhenrique.com",
+  "jogos": "https://jogos.manoelhenrique.com",
+  "receitas": "https://receitas.manoelhenrique.com"
+}

@@ -84,3 +84,56 @@ Toda alteração feita no painel é salva automaticamente no GitHub (sem você p
 - **O painel não carrega, ou fica travado numa tela em branco.** Confira sua conexão e tente atualizar a página. Se persistir, avise para investigarmos — pode ser uma mudança na versão do Decap CMS usada pelo painel.
 - **Cliquei em "Entrar" e nada acontece / dá erro de autorização.** Normalmente resolve tentando de novo. Se continuar, pode ser que o acesso do GitHub OAuth App tenha expirado ou sido revogado — nesse caso, é preciso reconfigurar a Parte 1 acima.
 - **Publiquei algo e não apareceu no site depois de alguns minutos.** Confira no painel do Cloudflare Pages (aba "Deployments" do projeto) se o build rodou sem erro. Um erro de build geralmente significa algum dado inválido (por exemplo, um campo obrigatório vazio).
+
+---
+
+## Parte 3 — Três sites: viagens, jogos e receitas
+
+O blog vai para **viagens.manoelhenrique.com**, os jogos para **jogos.manoelhenrique.com** e as receitas para **receitas.manoelhenrique.com**. O domínio antigo continua funcionando só para levar cada pessoa ao endereço novo. O painel continua sendo um só e edita os três.
+
+São três projetos no Cloudflare Pages, todos ligados ao mesmo repositório do GitHub. O projeto que já existe (`registros-de-viagem`) passa a ser só o blog e não muda de nome: é por ele que o login do painel funciona.
+
+### Fase 2 — criar os dois sites novos (antes da virada)
+
+Enquanto o arquivo `sites.json` estiver com `"separado": false`, nada muda no site atual. Os sites novos ficam no ar só para teste, escondidos do Google.
+
+**Site de jogos.** Em [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers e Pages** → **Criar** → aba **Pages** → **Conectar ao Git** → escolha o repositório `registros-de-viagem`:
+- **Nome do projeto:** `jogos-manoelhenrique`
+- **Branch de produção:** `main`
+- **Predefinição de framework:** Nenhuma
+- **Comando de build:** `npm run build:jogos`
+- **Diretório de saída do build:** `_site`
+
+Depois do primeiro build: **Domínios personalizados** → **Configurar um domínio personalizado** → `jogos.manoelhenrique.com` → **Ativar domínio**.
+
+**Site de receitas.** Igual ao de jogos, com:
+- **Nome do projeto:** `receitas-manoelhenrique`
+- **Comando de build:** `npm run build:receitas`
+- **Diretório de saída do build:** `_site`
+- **Domínio personalizado:** `receitas.manoelhenrique.com`
+
+**Blog.** No projeto `registros-de-viagem` → **Domínios personalizados**, adicione `viagens.manoelhenrique.com`, `blog.manoelhenrique.com`, `viagem.manoelhenrique.com` e, se ainda não estiver lá, `www.manoelhenrique.com`. O `manoelhenrique.com` continua no mesmo projeto.
+
+### Fase 3 — a virada (no mesmo dia)
+
+1. O código da virada é publicado (troca `"separado"` para `true` e o endereço do blog para `viagens.manoelhenrique.com`).
+2. Na Cloudflare, abra o domínio **manoelhenrique.com** → **Regras** → **Regras de redirecionamento** → **Criar regra**:
+   - **Nome:** Domínio antigo para viagens
+   - **Se as solicitações recebidas corresponderem a:** Expressão personalizada → **Editar expressão** e cole:
+     ```
+     (http.host in {"manoelhenrique.com" "www.manoelhenrique.com" "blog.manoelhenrique.com" "viagem.manoelhenrique.com"} and not starts_with(http.request.uri.path, "/jogos") and not starts_with(http.request.uri.path, "/receitas") and not starts_with(http.request.uri.path, "/quem-e-mais"))
+     ```
+   - **Então:** Tipo **Dinâmico**, expressão `concat("https://viagens.manoelhenrique.com", http.request.uri.path)`, código de status **301**, marque **Preservar string de consulta**.
+   - **Implantar.**
+
+   Os endereços antigos de jogos e receitas não passam por essa regra: o próprio blog os redireciona para os subdomínios, e o jogo instalado no celular é levado ao endereço novo sozinho.
+3. Conferir: manoelhenrique.com, manoelhenrique.com/posts/, manoelhenrique.com/jogos/quem-e-mais/, manoelhenrique.com/receitas/pao-de-milho/ e o login do painel em viagens.manoelhenrique.com/admin.
+
+**Se algo der errado:** desative a regra e volte o commit da virada. Tudo volta a ser como antes em poucos minutos.
+
+### Fase 4 — depois da virada
+
+- **Search Console:** se a propriedade for do tipo **Domínio** (manoelhenrique.com), os três subdomínios já estão dentro dela; senão, adicione cada subdomínio como propriedade. Envie os três sitemaps: `viagens.manoelhenrique.com/sitemap.xml`, `receitas.manoelhenrique.com/sitemap.xml` (jogos não têm sitemap). Se a ferramenta **Mudança de endereço** aparecer para a propriedade antiga, aponte para viagens.manoelhenrique.com.
+- **Google Analytics:** em **Administrador → Fluxos de dados**, troque o endereço do fluxo do blog para `https://viagens.manoelhenrique.com`. A medição continua sem mexer em código.
+- **Links fora do site:** bio do Instagram e onde mais você divulgou os endereços antigos.
+- **Builds só quando precisa:** em cada projeto, **Configurações → Build → Caminhos de observação de build**. Jogos: incluir `static-jogos/*`, `scripts/build-jogos.js` e `sites.json`. Receitas: incluir `static-receitas/*`, `scripts/build-receitas.js`, `sites.json` e `_data/site.json`. Blog: excluir `static-jogos/*` e `static-receitas/*`.

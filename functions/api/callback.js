@@ -34,10 +34,11 @@ export async function onRequestGet(context) {
 
   const payload = JSON.stringify({ token: tokenData.access_token, provider: 'github' });
 
-  // O painel pode ser aberto em manoelhenrique.com/admin, mas o login sempre
-  // volta por registros-de-viagem.pages.dev (base_url do config.yml). Por isso
-  // o token só é entregue a uma destas origens, nunca a "*".
-  const origens = [url.origin, 'https://manoelhenrique.com', 'https://www.manoelhenrique.com'];
+  // O painel pode ser aberto em viagens.manoelhenrique.com/admin (ou no domínio
+  // antigo, antes da virada), mas o login sempre volta por
+  // registros-de-viagem.pages.dev (base_url do config.yml). Por isso o token só é
+  // entregue a uma destas origens, nunca a "*".
+  const origens = [url.origin, 'https://viagens.manoelhenrique.com', 'https://manoelhenrique.com', 'https://www.manoelhenrique.com'];
 
   const html = `<!DOCTYPE html><html><body>
 <script>
