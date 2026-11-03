@@ -143,7 +143,7 @@ ${extra}
     return `<article class="rc" style="--c:${esc(c.cor)};--soft:${esc(c.soft)}" data-slug="${esc(r.slug)}" data-cat="${esc(r.categoria)}" data-tags="${esc(r.tags.join("|"))}" data-timer="${r.timer ? 1 : 0}" data-busca="${esc(busca)}">
 <div class="pic"><span class="tagc">${esc(c.nome)}</span><img src="${art(r.icone)}" alt="" width="116" height="90" loading="lazy"></div>
 <button class="save" type="button" data-save="${esc(r.slug)}" data-titulo="${esc(r.titulo)}" aria-pressed="false" aria-label="Salvar: ${esc(r.titulo)}">${ico("heart")}</button>
-<div class="body"><h3><a href="${urlR(r)}">${esc(r.titulo)}</a></h3><p>${esc(r.resumo)}</p><div class="meta">${pills(r)}</div></div>
+<div class="body"><small class="kc">${esc(c.nome)}</small><h3><a href="${urlR(r)}">${esc(r.titulo)}</a></h3><p>${esc(r.resumo)}</p><div class="meta">${pills(r)}</div></div>
 </article>`;
   };
 
@@ -197,7 +197,7 @@ ${extra}
     })}
 <body style="--c:${esc(c.cor)};--soft:${esc(c.soft)}">
 ${topo("receitas")}
-<div class="cookbar" role="status"><div class="wrap"><span>Modo cozinha ligado: a tela fica acesa. Toque nos ingredientes e passos para marcar.</span><button type="button" id="sair-cozinha">Sair</button></div></div>
+<div class="cookbar" role="status"><div class="wrap"><span><b>Modo cozinha</b><span class="ck-long"> ligado: a tela fica acesa. Toque nos ingredientes e passos para marcar.</span><span class="ck-short">: tela acesa</span></span><button type="button" id="sair-cozinha">Sair</button></div></div>
 <main id="conteudo">
 <section class="rh"><div class="wrap">
 <div>
@@ -216,8 +216,9 @@ ${topo("receitas")}
 </div></section>
 <div class="wrap">
 <div class="glance">${glance.map(([i, l, v]) => `<div>${ico(i)}<span><small>${esc(l)}</small><b>${esc(v)}</b></span></div>`).join("")}</div>
+<nav class="jump" aria-label="Ir para"><a href="#ingredientes" data-jump="ingredientes">Ingredientes<span class="jt" data-tam-label>${tres ? ` · ${esc(r.colunas[mid])}` : ""}</span></a><a href="#preparo" data-jump="preparo">Modo de preparo</a></nav>
 <div class="layout">
-<section class="panel ingbox" data-ing="${esc(r.slug)}" aria-labelledby="h-ing">
+<section class="panel ingbox" id="ingredientes" data-ing="${esc(r.slug)}" aria-labelledby="h-ing">
 <h2 id="h-ing">Ingredientes</h2>
 ${subIng}
 ${tam}
@@ -225,7 +226,7 @@ ${ingHtml}
 <p class="hint needs-js">Toque em cada item conforme for separando. <button class="linkbtn" type="button" id="limpar-marcas">Desmarcar tudo</button></p>
 </section>
 <div>
-<section class="panel" aria-labelledby="h-modo">
+<section class="panel" id="preparo" aria-labelledby="h-modo">
 <h2 id="h-modo">Modo de preparo</h2>
 <p class="sub needs-js">Toque no passo quando terminar: o próximo fica em destaque.</p>
 <div class="steps-wrap">${passos}</div>
@@ -260,7 +261,7 @@ ${topo("receitas")}
 <div class="eyebrow">Receitas para panificadora</div>
 <h1>Pão caseiro <em>sem errar</em>, direto da sua máquina.</h1>
 <p class="lead">${rec.length} receitas com o programa certo, a cor da casca e as quantidades para pães de 500 g, 750 g e 1 kg. Escolha, separe e aperte iniciar.</p>
-<form class="bigsearch" id="busca-topo" action="${BASE}" method="get" role="search">${ico("busca")}<label class="sr" for="q-topo">Buscar receita ou ingrediente</label><input id="q-topo" name="q" type="search" placeholder="Que pão você quer fazer hoje?" autocomplete="off"><button type="submit">Buscar</button></form>
+<form class="bigsearch" id="busca-topo" action="${BASE}" method="get" role="search">${ico("busca")}<label class="sr" for="q-topo">Buscar receita ou ingrediente</label><input id="q-topo" name="q" type="search" placeholder="Pão ou ingrediente" autocomplete="off"><button type="submit">Buscar</button></form>
 <div class="quick"><a href="${BASE}?timer=1#receitas" data-f-timer>Para acordar com pão quentinho</a><a href="${BASE}?categoria=recheados#receitas" data-f-cat="recheados">Pães recheados</a><a href="${BASE}?tag=Natal#receitas" data-f-tag="Natal">Natal</a><a href="${BASE}?tag=Sem%20gl%C3%BAten#receitas" data-f-tag="Sem glúten">Sem glúten</a><a href="${BASE}?tag=Festa%20junina#receitas" data-f-tag="Festa junina">Festa junina</a></div>
 </div>
 <div class="stage" aria-hidden="true">
@@ -296,7 +297,7 @@ ${topo("receitas")}
 <div class="chips-scroll needs-js" role="group" aria-label="Categoria"><button class="chip" type="button" data-f-cat="" aria-pressed="true">Todas</button>${dados.categorias.map((c) => `<button class="chip" type="button" data-f-cat="${esc(c.id)}" aria-pressed="false" style="--c:${esc(c.cor)}"><span class="sw"></span>${esc(c.nome)}</button>`).join("")}</div>
 </div>
 <div class="result-line"><span id="contador" aria-live="polite">${rec.length} receitas</span><button class="linkbtn needs-js" type="button" data-limpar>Limpar filtros</button></div>
-<div class="empty" id="vazio" hidden><b>Nenhuma receita com esses filtros</b>Tente outra palavra ou limpe os filtros.<br><button class="linkbtn" type="button" data-limpar>Limpar filtros</button></div>
+<div class="empty" id="vazio" hidden><span data-vazio="filtro"><b>Nenhuma receita com esses filtros</b>Tente outra palavra ou limpe os filtros.</span><span data-vazio="salvas" hidden><b>Você ainda não salvou receitas</b>Toque no coração de uma receita para guardá-la aqui. Fica salvo neste aparelho.</span><br><button class="linkbtn" type="button" data-limpar>Limpar filtros</button></div>
 <div class="grid" id="todas">${rec.map(cartao).join("")}</div>
 </section>
 

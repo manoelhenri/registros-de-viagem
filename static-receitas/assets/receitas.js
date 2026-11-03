@@ -43,6 +43,8 @@
       $all(".q", ingBox).forEach(function (q) { q.classList.toggle("on", q.getAttribute("data-col") === String(i)); });
       botoesTam.forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-col") === String(i) ? "true" : "false"); });
       gravar("receitas-tamanho", String(i));
+      var ativo = botoesTam.filter(function (b) { return b.getAttribute("data-col") === String(i); })[0];
+      $all("[data-tam-label]").forEach(function (el) { if (ativo) el.textContent = " · " + ativo.textContent; });
     }
     if (botoesTam.length) {
       var t = ler("receitas-tamanho", "1");
@@ -98,6 +100,18 @@
       }
     });
 
+    // barra "Ingredientes / Modo de preparo" (celular): marca a seção que está na tela
+    var saltos = $all("[data-jump]");
+    if (saltos.length && "IntersectionObserver" in window) {
+      var obs = new IntersectionObserver(function (ents) {
+        ents.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          saltos.forEach(function (a) { if (a.getAttribute("data-jump") === e.target.id) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+        });
+      }, { rootMargin: "-45% 0px -50% 0px" });
+      saltos.forEach(function (a) { var alvo = document.getElementById(a.getAttribute("data-jump")); if (alvo) obs.observe(alvo); });
+    }
+
     var imprimir = document.getElementById("imprimir");
     if (imprimir) imprimir.addEventListener("click", function () { window.print(); });
     var compartilhar = document.getElementById("compartilhar");
@@ -118,68 +132,111 @@
   var cards = $all(".rc", lista);
   var contador = document.getElementById("contador");
   var vazio = document.getElementById("vazio");
-  var estado = { q: "", cat: "", tag: "", timer: false, salvas: false };
+  var secao = document.getElementById("receitas");
+  var selTag = document.getElementById("f-tag");
+  function novoEstado() { return { q: "", cat: "", tag: "", timer: false, salvas: false }; }
+  var estado = novoEstado();
+
+  // valores aceitos (um endereço antigo ou digitado errado não deixa a lista vazia)
+  var catsValidas = $all(".chips-scroll [data-f-cat]").map(function (b) { return b.getAttribute("data-f-cat"); }).filter(Boolean);
+  var tagsValidas = selTag ? $all("option", selTag).map(function (o) { return o.value; }).filter(Boolean) : [];
 
   function norm(t) { return (t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+  // aceita plural e singular: "queijos" acha "queijo", "goiabadas" acha "goiabada"
+  function casa(texto, t) {
+    if (texto.indexOf(t) >= 0) return true;
+    if (t.length > 3 && /s$/.test(t)) {
+      var sem = t.replace(/(oes|aes|es|s)$/, function (m) { return m === "oes" ? "ao" : m === "aes" ? "ao" : m === "es" ? "e" : ""; });
+      if (texto.indexOf(sem) >= 0) return true;
+      if (texto.indexOf(t.slice(0, -1)) >= 0) return true;
+    }
+    return false;
+  }
   function marcar(sel, attr, valor) { $all(sel).forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute(attr) === valor ? "true" : "false"); }); }
+  function irParaLista() { var alvo = secao.querySelector(".filters") || secao; alvo.scrollIntoView({ block: "start" }); }
+  function filtrando() { return !!(estado.q.trim() || estado.cat || estado.tag || estado.timer || estado.salvas); }
 
   aplicar = function () {
     var q = norm(estado.q.trim()), n = 0;
-    var termos = q ? q.split(/\s+/) : [];
+    var termos = q ? q.split(/\s+/).filter(function (t) { return t.length > 1 || /\d/.test(t); }) : [];
     cards.forEach(function (c) {
       var texto = c.getAttribute("data-busca");
       var ok = (!estado.cat || c.getAttribute("data-cat") === estado.cat) &&
         (!estado.tag || c.getAttribute("data-tags").split("|").indexOf(estado.tag) >= 0) &&
         (!estado.timer || c.getAttribute("data-timer") === "1") &&
         (!estado.salvas || salvas.indexOf(c.getAttribute("data-slug")) >= 0) &&
-        termos.every(function (t) { return texto.indexOf(t) >= 0; });
+        termos.every(function (t) { return casa(texto, t); });
       c.hidden = !ok; if (ok) n++;
     });
     contador.textContent = n === 1 ? "1 receita" : n + " receitas";
     vazio.hidden = n !== 0;
-    marcar("[data-f-cat]", "data-f-cat", estado.cat);
-    $all("[data-f-timer]").forEach(function (b) { b.setAttribute("aria-pressed", estado.timer ? "true" : "false"); });
-    $all("[data-f-salvas]").forEach(function (b) { b.setAttribute("aria-pressed", estado.salvas ? "true" : "false"); });
-    var sel = document.getElementById("f-tag"); if (sel) sel.value = estado.tag;
+    var semSalvas = estado.salvas && !salvas.length;
+    $all("[data-vazio]", vazio).forEach(function (el) { el.hidden = (el.getAttribute("data-vazio") === "salvas") !== semSalvas; });
+    $all(".result-line [data-limpar]").forEach(function (b) { b.hidden = !filtrando(); });
+    marcar(".chips-scroll [data-f-cat]", "data-f-cat", estado.cat);
+    $all("button[data-f-timer]").forEach(function (b) { b.setAttribute("aria-pressed", estado.timer ? "true" : "false"); });
+    $all("button[data-f-salvas]").forEach(function (b) { b.setAttribute("aria-pressed", estado.salvas ? "true" : "false"); });
+    if (selTag) { selTag.value = estado.tag; selTag.classList.toggle("on", !!estado.tag); }
+    if (busca.value !== estado.q) busca.value = estado.q;
+    // deixa a categoria escolhida visível na faixa que rola para o lado
+    var chipAtivo = document.querySelector(".chips-scroll [aria-pressed=true]");
+    if (chipAtivo) { var faixa = chipAtivo.parentNode; var x = chipAtivo.offsetLeft - (faixa.clientWidth - chipAtivo.offsetWidth) / 2; faixa.scrollLeft = Math.max(0, x); }
     var p = new URLSearchParams();
-    if (estado.q) p.set("q", estado.q); if (estado.cat) p.set("categoria", estado.cat); if (estado.tag) p.set("tag", estado.tag);
+    if (estado.q.trim()) p.set("q", estado.q.trim()); if (estado.cat) p.set("categoria", estado.cat); if (estado.tag) p.set("tag", estado.tag);
     if (estado.timer) p.set("timer", "1"); if (estado.salvas) p.set("salvas", "1");
     var qs = p.toString();
-    history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+    try { history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + (qs ? "#receitas" : "")); } catch (e) {}
   };
 
-  busca.addEventListener("input", function () { estado.q = busca.value; aplicar(); });
-  $all("[data-f-cat]").forEach(function (b) {
-    b.addEventListener("click", function (ev) {
+  // atalhos (links da abertura, categorias, "Ver as 9", menu de salvas): começam do zero
+  // e aplicam só o filtro do atalho, para nunca somar com um filtro antigo e zerar a lista.
+  $all("a[data-f-cat], a[data-f-tag], a[data-f-timer], a[data-f-salvas]").forEach(function (a) {
+    a.addEventListener("click", function (ev) {
       ev.preventDefault();
-      var v = b.getAttribute("data-f-cat");
-      estado.cat = (estado.cat === v && b.classList.contains("chip")) ? "" : v;
-      aplicar();
-      if (!b.classList.contains("chip")) document.getElementById("receitas").scrollIntoView();
+      estado = novoEstado();
+      if (a.hasAttribute("data-f-cat")) estado.cat = a.getAttribute("data-f-cat");
+      if (a.hasAttribute("data-f-tag")) estado.tag = a.getAttribute("data-f-tag");
+      if (a.hasAttribute("data-f-timer")) estado.timer = true;
+      if (a.hasAttribute("data-f-salvas")) estado.salvas = true;
+      aplicar(); irParaLista();
     });
   });
-  $all("[data-f-timer]").forEach(function (b) { b.addEventListener("click", function (ev) { ev.preventDefault(); estado.timer = b.tagName === "A" ? true : !estado.timer; aplicar(); if (b.tagName === "A") document.getElementById("receitas").scrollIntoView(); }); });
-  $all("[data-f-salvas]").forEach(function (b) { b.addEventListener("click", function (ev) { ev.preventDefault(); estado.salvas = !estado.salvas || b.tagName === "A"; aplicar(); document.getElementById("receitas").scrollIntoView(); }); });
-  var selTag = document.getElementById("f-tag");
+
+  // controles da própria lista: combinam entre si
+  var espera = null;
+  busca.addEventListener("input", function () { estado.q = busca.value; clearTimeout(espera); espera = setTimeout(aplicar, 120); });
+  busca.addEventListener("keydown", function (ev) { if (ev.key === "Enter") { ev.preventDefault(); busca.blur(); } });
+  $all(".chips-scroll [data-f-cat]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var v = b.getAttribute("data-f-cat");
+      estado.cat = (estado.cat === v) ? "" : v;
+      aplicar();
+    });
+  });
+  $all("button[data-f-timer]").forEach(function (b) { b.addEventListener("click", function () { estado.timer = !estado.timer; aplicar(); }); });
+  $all("button[data-f-salvas]").forEach(function (b) { b.addEventListener("click", function () { estado.salvas = !estado.salvas; aplicar(); }); });
   if (selTag) selTag.addEventListener("change", function () { estado.tag = selTag.value; aplicar(); });
   $all("[data-limpar]").forEach(function (b) { b.addEventListener("click", function () {
-    estado = { q: "", cat: "", tag: "", timer: false, salvas: false }; busca.value = ""; aplicar(); busca.focus();
+    estado = novoEstado(); aplicar(); irParaLista();
   }); });
 
-  // busca do topo: leva para a lista já filtrada
+  // busca da abertura: leva para a lista já filtrada (sem somar com filtros antigos)
   var form = document.getElementById("busca-topo");
   if (form) form.addEventListener("submit", function (ev) {
     ev.preventDefault();
-    var v = form.querySelector("input").value;
-    estado.q = v; busca.value = v; aplicar();
-    document.getElementById("receitas").scrollIntoView();
+    var campo = form.querySelector("input");
+    estado = novoEstado(); estado.q = campo.value; campo.blur();
+    aplicar(); irParaLista();
   });
 
-  // estado inicial vindo do endereço (links da página da receita e da home)
+  // estado inicial vindo do endereço (links da página da receita, compartilhados ou voltar)
   var p = new URLSearchParams(location.search);
-  estado.q = p.get("q") || ""; estado.cat = p.get("categoria") || ""; estado.tag = p.get("tag") || "";
+  estado.q = p.get("q") || "";
+  estado.cat = catsValidas.indexOf(p.get("categoria")) >= 0 ? p.get("categoria") : "";
+  estado.tag = tagsValidas.indexOf(p.get("tag")) >= 0 ? p.get("tag") : "";
   estado.timer = p.get("timer") === "1"; estado.salvas = p.get("salvas") === "1";
-  busca.value = estado.q;
   aplicar();
-  if (p.toString() && !location.hash) document.getElementById("receitas").scrollIntoView();
+  var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+  var voltando = nav && nav.type === "back_forward";
+  if (filtrando() && !voltando) requestAnimationFrame(irParaLista);
 })();

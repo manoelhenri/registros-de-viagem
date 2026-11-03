@@ -268,7 +268,7 @@ ol.steps{list-style:none;margin:0;padding:0}
 .toc ol{margin:8px 0 0;padding-left:20px}
 .toc a{text-decoration:none;font-weight:500;display:block;padding:4px 0}
 .toc a:hover{color:var(--red)}
-.gsec{scroll-margin-top:84px;margin-bottom:22px}
+.gsec{scroll-margin-top:0;margin-bottom:22px}
 .gsec h2{font-size:clamp(26px,3.6vw,34px);font-weight:800;margin-bottom:12px}
 .gsec p{color:var(--ink-2)}
 .order{list-style:none;counter-reset:o;padding:0;margin:0}
@@ -325,3 +325,67 @@ footer.foot .t{font-size:12px;letter-spacing:.16em;text-transform:uppercase;colo
 .filters{grid-template-columns:minmax(0,1fr)}.filters>*{min-width:0}.fsearch{min-width:0}
 .nav .short{display:none}@media(max-width:600px){.nav .short{display:inline}}
 @media(max-width:560px){.stage{width:min(74vw,460px)}}
+
+/* ---------- auditoria mobile (nov/2026) ---------- */
+/* o atributo hidden sempre vence (os cartões usam display:flex e ignoravam o filtro) */
+[hidden]{display:none!important}
+
+#ingredientes,#preparo{scroll-margin-top:0}@media(max-width:959px){#ingredientes,#preparo{scroll-margin-top:56px}}
+.rc .kc{display:none}
+#f-tag.on{background-color:#fff;box-shadow:inset 0 0 0 2px var(--red);font-weight:600}
+
+/* barra Ingredientes / Modo de preparo: só no celular e tablet */
+.jump{display:none}
+@media(max-width:959px){
+  .jump{display:grid;grid-template-columns:1fr 1fr;gap:4px;position:sticky;top:62px;z-index:15;margin:16px -4px 0;padding:4px;background:rgba(251,245,234,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:999px;border:1px solid var(--line);box-shadow:var(--sh-1)}
+  .jump a{display:flex;align-items:center;justify-content:center;gap:2px;min-height:40px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14.5px;color:var(--ink-2);white-space:nowrap}
+  .jump a[aria-current]{background:var(--c);color:#fff}
+  .jump .jt{font-weight:500;opacity:.85}
+  .layout{margin-top:16px}
+  .cooking .jump{top:104px}
+}
+.no-js .jump .jt{display:none}
+
+@media(max-width:599px){
+  /* lista em formato compacto: miniatura à esquerda, texto à direita */
+  .grid{grid-template-columns:minmax(0,1fr);gap:10px}
+  .grid .rc{flex-direction:row;min-height:118px}
+  .grid .rc:hover{transform:none}
+  .grid .rc .pic{width:98px;height:auto;flex:none}
+  .grid .rc .pic::before{display:none}
+  .grid .rc .pic img{width:70px}
+  .grid .rc .tagc{display:none}
+  .grid .rc .body{padding:11px 48px 12px 14px;gap:3px;min-width:0}
+  .grid .rc .kc{display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+  .grid .rc h3{font-size:17px;line-height:1.2}
+  .grid .rc p{font-size:13.5px;line-height:1.4}
+  .grid .rc .meta{padding-top:6px;gap:5px}
+  .grid .rc .pill{font-size:12px;padding:2px 8px}
+  .grid .rc .save{top:8px;right:8px;width:36px;height:36px;box-shadow:none;background:var(--paper-2)}
+  /* categorias mais baixas: cabem as 7 em menos de uma tela */
+  .cats{gap:10px}
+  .cat{min-height:92px;padding:12px 12px 12px}
+  .cat img{width:56px;top:8px;right:2px}
+  .cat b{font-size:15.5px;padding-right:44px}
+  .cat span{font-size:12.5px}
+  /* filtros: alvos de toque maiores e campo de busca em linha inteira */
+  .filters{padding:12px}
+  .fsearch{flex:1 1 100%}
+  .frow .chip,.frow select{min-height:42px}
+  .chips-scroll{scroll-padding:0 16px}
+  .quick a{padding:8px 14px}
+}
+/* modo cozinha no celular: aviso de uma linha, sem cobrir a barra de navegação */
+.cookbar .ck-short{display:none}
+.cookbar button{min-height:36px}
+@media(max-width:959px){
+  .cookbar{padding:0}.cookbar .wrap{min-height:48px}
+  .cookbar .ck-long{display:none}.cookbar .ck-short{display:inline}
+  .cooking .jump{top:116px}
+}
+/* alvos de toque de pelo menos 40 px */
+.more{display:inline-flex;align-items:center;min-height:40px;padding:0 2px}
+.tags .pill{min-height:34px;padding:4px 12px}
+@media(max-width:640px){.gtable td a{display:inline-block;padding:5px 0}.toc a{padding:7px 0}}
+@media(max-width:959px){.cookbar .wrap>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+
