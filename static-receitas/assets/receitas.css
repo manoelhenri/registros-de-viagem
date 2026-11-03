@@ -1,12 +1,12 @@
 /* Pães do Manoel (/receitas): visual próprio, sem nada do blog. */
-@font-face{font-family:Fraunces;src:url(fonts/fraunces.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
-@font-face{font-family:Fraunces;src:url(fonts/fraunces-italic.woff2) format("woff2");font-weight:100 900;font-style:italic;font-display:swap}
+@font-face{font-family:Fraunces;src:url(fonts/fraunces.woff2) format("woff2");font-weight:600 900;font-style:normal;font-display:swap}
+@font-face{font-family:Fraunces;src:url(fonts/fraunces-italic.woff2) format("woff2");font-weight:600 900;font-style:italic;font-display:swap}
 @font-face{font-family:Caveat;src:url(fonts/caveat-700.woff2) format("woff2");font-weight:700;font-display:swap}
 @font-face{font-family:Poppins;src:url(fonts/poppins-400.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:Poppins;src:url(fonts/poppins-600.woff2) format("woff2");font-weight:600;font-display:swap}
 
 :root{
-  --paper:#FBF5EA;--paper-2:#F5EBDA;--card:#FFFDF9;--ink:#33241A;--ink-2:#5C4636;--muted:#8A7462;--line:#ECDDC7;
+  --paper:#FBF5EA;--paper-2:#F5EBDA;--card:#FFFDF9;--ink:#33241A;--ink-2:#5C4636;--muted:#6F5A4A;--line:#ECDDC7;
   --red:#C8402B;--mustard:#E3A21A;--note:#FFF4C7;
   --r-lg:26px;--r:18px;--r-sm:12px;
   --sh-1:0 1px 0 rgba(51,36,26,.05),0 6px 16px -6px rgba(51,36,26,.12);
@@ -441,3 +441,25 @@ footer.foot{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
 }
 /* voltar ao topo: mais alto que a barra do Safari no iPhone e sempre acima de tudo */
 .totop{bottom:calc(28px + env(safe-area-inset-bottom));z-index:60;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+/* ---------- auditoria externa (nov/2026) ---------- */
+.alerta{display:flex;gap:12px;align-items:flex-start;background:#FFF4D6;border:1px solid #EBCB7A;border-radius:var(--r);padding:14px 16px;margin-top:18px;font-size:14.5px;line-height:1.55}
+.alerta svg{flex:none;width:22px;height:22px;color:#9A6A00;margin-top:1px}
+.alerta p{margin:0}
+.gh .modelo{display:flex;gap:10px;align-items:flex-start;margin-top:16px;max-width:720px;font-size:14.5px;line-height:1.55;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.gh .modelo svg{flex:none;width:20px;height:20px;color:var(--red);margin-top:2px}
+.ing-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:6px}
+.btn.small{min-height:40px;padding:0 14px;font-size:14px}
+.btn.small svg{width:18px;height:18px}
+.parcial{margin:-4px 2px 14px;font-size:14px;color:var(--ink-2);background:var(--note);border-radius:12px;padding:10px 14px}
+/* modo cozinha: barra fixa com Voltar / Concluí no rodapé da tela */
+.cooknav{display:none}
+.cooking .cooknav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;position:fixed;z-index:55;left:0;right:0;bottom:0;padding:10px calc(12px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) calc(12px + env(safe-area-inset-left));background:var(--ink);color:#fff;box-shadow:0 -8px 24px -10px rgba(0,0,0,.45)}
+.cooknav button{display:inline-flex;align-items:center;gap:6px;min-height:52px;padding:0 16px;border:0;border-radius:999px;font:600 16px Poppins,sans-serif;cursor:pointer;background:rgba(255,255,255,.14);color:#fff;touch-action:manipulation}
+.cooknav button.ok{background:var(--mustard);color:var(--ink);padding:0 20px}
+.cooknav button svg{width:20px;height:20px}
+.cooknav #passo-pos{text-align:center;font-size:14px;opacity:.85}
+.cooking .totop{display:none!important}
+.cooking footer.foot{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+.cooking .steps li.now button{box-shadow:inset 4px 0 0 var(--c)}
+@media(max-width:360px){.cooknav button{padding:0 12px;font-size:15px}.cooknav #passo-pos{font-size:13px}}
+@media print{.cooknav,.ing-actions,.alerta svg{display:none!important}}

@@ -32,6 +32,11 @@ const P = {
   layers: '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
   home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/>',
   up: '<path d="M12 19V5M5 12l7-7 7 7"/>',
+  zap: '<path d="M4 20l1.3-4A8 8 0 1 1 8.4 19z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .8c-1-.4-2.2-1.6-2.7-2.7l.8-1-1-2z"/>',
+  copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>',
+  prev: '<path d="M15 6l-6 6 6 6"/>',
+  next: '<path d="M9 6l6 6-6 6"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.5"/>',
 };
 const ico = (n, cls = "ico") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
 
@@ -94,11 +99,24 @@ function realce(textoEscapado, nomes) {
   return textoEscapado.replace(rx, "<strong>$1</strong>");
 }
 
+// Cor da categoria escurecida até ter contraste de leitura (4,5:1) sobre o branco e sobre o fundo claro dela.
+function luz(h) { const c = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255).map((x) => (x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4)); return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]; }
+function contraste(a, b) { const [x, y] = [luz(a), luz(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); }
+function tinta(cor, fundo) {
+  let rgb = [1, 3, 5].map((i) => parseInt(cor.slice(i, i + 2), 16)), hex = cor;
+  for (let k = 0; k < 40 && (contraste(hex, "#FFFFFF") < 4.5 || contraste(hex, fundo) < 4.5); k++) {
+    rgb = rgb.map((v) => Math.round(v * 0.95));
+    hex = "#" + rgb.map((v) => v.toString(16).padStart(2, "0")).join("").toUpperCase();
+  }
+  return hex;
+}
+
 function build() {
   const dados = JSON.parse(fs.readFileSync(path.join(src, "receitas.json"), "utf8"));
   const site = JSON.parse(fs.readFileSync(path.join(root, "_data", "site.json"), "utf8"));
   const origem = String(site.url).replace(/\/$/, "");
   const abs = (p) => origem + p;
+  dados.categorias.forEach((c) => { c.cor = tinta(c.cor, c.soft); });
   const cats = Object.fromEntries(dados.categorias.map((c) => [c.id, c]));
   const rec = dados.receitas;
 
@@ -116,6 +134,17 @@ function build() {
   fs.cpSync(path.join(src, "assets"), path.join(out, "assets"), { recursive: true });
 
   const urlR = (r) => `${BASE}${r.slug}/`;
+  // ingredientes que quase toda receita tem não contam para "receitas parecidas"
+  const BASICOS = new Set(["farinha de trigo", "sal", "acucar", "fermento biologico seco", "agua", "agua morna", "oleo", "ovo", "ovos", "leite", "leite morno", "manteiga", "manteiga amolecida", "manteiga derretida", "azeite", "fermento quimico", "gema e gergelim"]);
+  const chaves = (r) => new Set(r.tabelas.flatMap(([, it]) => it.map((x) => norm(x[0]).replace(/\s*\(.*?\)/g, "").trim())).filter((n) => !BASICOS.has(n)).map((n) => n.split(/[ ,]/)[0]));
+  const pontos = (a, b) => {
+    const ka = chaves(a); let n = 0;
+    chaves(b).forEach((x) => { if (ka.has(x)) n += 3; });
+    if (a.categoria === b.categoria) n += 2;
+    if (a.programa === b.programa) n += 1;
+    a.tags.forEach((t) => { if (b.tags.includes(t)) n += 1; });
+    return n;
+  };
   const art = (n) => `${BASE}assets/art/${n}.svg`;
   const imgs = (r) => (Array.isArray(r.imagens) && r.imagens.length
     ? r.imagens.map((p) => abs(`${BASE}assets/img/${p}`))
@@ -143,7 +172,9 @@ ${robots}<link rel="canonical" href="${esc(url)}">
 <meta property="og:image" content="${esc(image)}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="${art("loaf")}">
+<link rel="preload" href="${BASE}assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${BASE}assets/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${BASE}assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${BASE}assets/receitas.css">
 ${extra}
 </head>`;
@@ -158,7 +189,7 @@ ${extra}
 </nav></div></header>`;
 
   const rodape = `<footer class="foot"><div class="wrap">
-<div><b>Pães do Manoel</b><p>Receitas pensadas para panificadora: o programa certo, a cor da casca e as quantidades para pães de 500 g, 750 g e 1 kg.</p></div>
+<div><b>Pães do Manoel</b><p>Receitas pensadas para a panificadora Gallant de 19 programas: o programa certo, a cor da casca e as quantidades para pães de 500 g, 750 g e 1 kg.</p></div>
 <div><div class="t">Navegue</div><a href="${BASE}#receitas">Todas as receitas</a><a href="${BASE}guia/">Guia da máquina</a><a href="${BASE}guia/#problemas">Deu errado? Resolva aqui</a></div>
 <div><div class="t">Categorias</div>${dados.categorias.map((c) => `<a href="${BASE}?categoria=${esc(c.id)}#receitas">${esc(c.nome)}</a>`).join("")}</div>
 </div></footer>
@@ -170,8 +201,11 @@ ${extra}
   const pills = (r) => [`<span class="pill">${esc(r.programa)}</span>`, r.timer ? `<span class="pill t">Timer da noite</span>` : "", `<span class="pill">${esc(r.nivel)}</span>`].join("");
   const cartao = (r) => {
     const c = cats[r.categoria];
-    const busca = norm([r.titulo, c.nome, r.programa, r.resumo, ...r.tags, ...r.tabelas.flatMap(([, it]) => it.map((x) => x[0]))].join(" "));
-    return `<article class="rc" style="--c:${esc(c.cor)};--soft:${esc(c.soft)}" data-slug="${esc(r.slug)}" data-cat="${esc(r.categoria)}" data-tags="${esc(r.tags.join("|"))}" data-timer="${r.timer ? 1 : 0}" data-busca="${esc(busca)}">
+    const k = r.complemento || {};
+    const busca = norm([r.titulo, c.nome, r.programa, r.resumo, r.nivel, "panificadora maquina de pao", ...r.tags,
+      ...r.tabelas.flatMap(([, it]) => it.map((x) => x[0])),
+      ...(k.itens || []).flatMap((it) => [it.nome, ...it.ingredientes.map((x) => x[0])])].join(" "));
+    return `<article class="rc" style="--c:${esc(c.cor)};--soft:${esc(c.soft)}" data-slug="${esc(r.slug)}" data-cat="${esc(r.categoria)}" data-tags="${esc(r.tags.join("|"))}" data-timer="${r.timer ? 1 : 0}" data-nivel="${esc(norm(r.nivel))}" data-busca="${esc(busca)}">
 <div class="pic"><span class="tagc">${esc(c.nome)}</span><img src="${art(r.icone)}" alt="" width="116" height="90" loading="lazy"></div>
 <button class="save" type="button" data-save="${esc(r.slug)}" data-titulo="${esc(r.titulo)}" aria-pressed="false" aria-label="Salvar: ${esc(r.titulo)}">${ico("heart")}</button>
 <div class="body"><small class="kc">${esc(c.nome)}</small><h3><a href="${urlR(r)}">${esc(r.titulo)}</a></h3><p>${esc(r.resumo)}</p><div class="meta">${pills(r)}</div></div>
@@ -214,7 +248,11 @@ ${(k.itens || []).length ? `<div class="flavors">${k.itens.map((it) => `<article
     const mesmas = rec.filter((x) => x.categoria === r.categoria);
     const pos = mesmas.indexOf(r);
     const ant = mesmas[pos - 1], prox = mesmas[pos + 1];
-    const relacionadas = mesmas.filter((x) => x !== r).slice(0, 8);
+    const relacionadas = rec.filter((x) => x !== r)
+      .map((x) => ({ x, n: pontos(r, x) }))
+      .filter((o) => o.n > 0)
+      .sort((a, b) => b.n - a.n || rec.indexOf(a.x) - rec.indexOf(b.x))
+      .slice(0, 8).map((o) => o.x);
 
     const ingLd = r.tabelas.flatMap(([, itens]) => itens.map((it) => `${it[0]}: ${it[1 + mid]}`));
     const ld = {
@@ -224,6 +262,7 @@ ${(k.itens || []).length ? `<div class="flavors">${k.itens.map((it) => `<article
       recipeCategory: c.nome, recipeCuisine: "Brasileira",
       keywords: ["panificadora", "máquina de pão", ...r.tags, r.programa].join(", "),
       recipeYield: tres ? "1 pão de 750 g" : r.rende || "1 receita",
+      ...(r.publicado ? { datePublished: r.publicado } : {}),
       recipeIngredient: ingLd,
       recipeInstructions: r.preparo.map(([g, itens]) => ({ "@type": "HowToSection", name: g, itemListElement: itens.map((p) => ({ "@type": "HowToStep", text: p })) })),
     };
@@ -237,6 +276,7 @@ ${(k.itens || []).length ? `<div class="flavors">${k.itens.map((it) => `<article
     })}
 <body style="--c:${esc(c.cor)};--soft:${esc(c.soft)}">
 ${topo("receita")}
+<nav class="cooknav" aria-label="Passos do modo cozinha"><button type="button" id="passo-ant">${ico("prev")}<span>Voltar</span></button><span id="passo-pos" aria-live="polite"></span><button type="button" id="passo-ok" class="ok"><span>Concluí</span>${ico("next")}</button></nav>
 <div class="cookbar" role="status"><div class="wrap"><span><b>Modo cozinha</b><span class="ck-long"> ligado: a tela fica acesa. Toque nos ingredientes e passos para marcar.</span><span class="ck-short">: tela acesa</span></span><button type="button" id="sair-cozinha">Sair</button></div></div>
 <main id="conteudo">
 <section class="rh"><div class="wrap">
@@ -249,6 +289,7 @@ ${topo("receita")}
 <button class="btn primary needs-js" type="button" id="modo-cozinha" aria-pressed="false">${ico("chef")}Modo cozinha</button>
 <button class="btn save-btn needs-js" type="button" data-save="${esc(r.slug)}" data-titulo="${esc(r.titulo)}" aria-pressed="false">${ico("heart")}<span class="lbl">Salvar</span></button>
 <button class="btn needs-js" type="button" id="compartilhar">${ico("share")}<span class="lbl">Compartilhar</span></button>
+<a class="btn" href="https://wa.me/?text=${encodeURIComponent(`${r.titulo} na panificadora: ${abs(urlR(r))}`)}" target="_blank" rel="noopener">${ico("zap")}WhatsApp</a>
 <button class="btn needs-js" type="button" id="imprimir">${ico("print")}Imprimir</button>
 </div>
 </div>
@@ -257,13 +298,15 @@ ${topo("receita")}
 <div class="wrap">
 <div class="glance">${glance.map(([i, l, v]) => `<div>${ico(i)}<span><small>${esc(l)}</small><b>${esc(v)}</b></span></div>`).join("")}</div>
 <nav class="jump" aria-label="Ir para"><a href="#ingredientes" data-jump="ingredientes">Ingredientes<span class="jt" data-tam-label>${tres ? ` · ${esc(r.colunas[mid])}` : ""}</span></a><a href="#preparo" data-jump="preparo">Modo de preparo</a></nav>
+${r.tags.includes("Sem glúten") ? `<aside class="alerta" role="note">${ico("info")}<p><b>Sem glúten, com cuidado.</b> Confira no rótulo de cada ingrediente (polvilho, farinha de arroz, psyllium, fermento) a frase "não contém glúten". Quem tem doença celíaca precisa evitar a contaminação cruzada: forma, pá e utensílios usados com farinha de trigo guardam resíduos. Na dúvida, fale com seu médico ou nutricionista.</p></aside>` : ""}
 <div class="layout">
 <section class="panel ingbox" id="ingredientes" data-ing="${esc(r.slug)}" aria-labelledby="h-ing">
 <h2 id="h-ing">Ingredientes</h2>
 ${subIng}
 ${tam}
 ${ingHtml}
-<p class="hint needs-js">Toque em cada item conforme for separando: ele fica riscado. <button class="linkbtn" type="button" id="limpar-marcas">Desmarcar tudo</button></p>
+<p class="hint needs-js">Toque em cada item conforme for separando: ele fica riscado.</p>
+<div class="ing-actions needs-js"><button class="btn small" type="button" id="copiar-ing">${ico("copy")}<span class="lbl">Copiar ingredientes</span></button><button class="linkbtn" type="button" id="limpar-marcas">Desmarcar tudo</button></div>
 </section>
 <div>
 <section class="panel" id="preparo" aria-labelledby="h-modo">
@@ -281,7 +324,7 @@ ${complemento}
 <nav class="pager" aria-label="Mais receitas desta categoria">${ant ? `<a href="${urlR(ant)}"><small>‹ Anterior</small><b>${esc(ant.titulo)}</b></a>` : ""}${prox ? `<a class="next" href="${urlR(prox)}"><small>Próxima ›</small><b>${esc(prox.titulo)}</b></a>` : ""}</nav>
 </div>
 </div>
-${relacionadas.length ? `<section class="sec related" aria-labelledby="h-rel"><div class="sec-h"><div><h2 id="h-rel">Mais ${esc(c.nome.toLowerCase())}</h2></div><a class="more" href="${BASE}?categoria=${esc(c.id)}#receitas">Ver todas</a></div><div class="rail">${relacionadas.map(cartao).join("")}</div></section>` : ""}
+${relacionadas.length ? `<section class="sec related" aria-labelledby="h-rel"><div class="sec-h"><div><h2 id="h-rel">Você também pode gostar</h2><p>Receitas com ingredientes, programa ou ocasião em comum.</p></div><a class="more" href="${BASE}?categoria=${esc(c.id)}#receitas">Mais ${esc(c.nome.toLowerCase())}</a></div><div class="rail">${relacionadas.map(cartao).join("")}</div></section>` : ""}
 </div>
 </main>
 ${rodape}`;
@@ -313,7 +356,7 @@ ${topo("home")}
 </div>
 </div></section>
 <div class="wrap">
-<div class="facts"><div><b>${rec.length}</b><span>receitas com as quantidades conferidas</span></div><div><b>${dados.categorias.length}</b><span>categorias, do pão de forma à geleia</span></div><div><b>${nProg}</b><span>programas da máquina usados nas receitas</span></div><div><b>3</b><span>tamanhos de pão em cada receita</span></div></div>
+<div class="facts"><div><b>${rec.length}</b><span>receitas com as quantidades conferidas</span></div><div><b>${dados.categorias.length}</b><span>categorias, do pão de forma à geleia</span></div><div><b>${nProg}</b><span>programas da máquina usados nas receitas</span></div><div><b>${rec.filter((r) => r.colunas.length === 3).length}</b><span>pães com 3 tamanhos: 500 g, 750 g e 1 kg</span></div></div>
 
 <section class="sec" aria-labelledby="h-start"><div class="sec-h"><div><h2 id="h-start">Comece por aqui</h2><p>Três leituras rápidas para acertar já na primeira fornada.</p></div><a class="more" href="${BASE}guia/">Ver o guia completo</a></div>
 <div class="starts">
@@ -329,16 +372,18 @@ ${topo("home")}
 <section class="sec" aria-labelledby="h-timer"><div class="sec-h"><div><h2 id="h-timer">Para acordar com pão quentinho</h2><p>Monte a forma à noite, programe o timer e acorde com o pão pronto.</p></div><a class="more" href="${BASE}?timer=1#receitas" data-f-timer>Ver as ${comTimer.length}</a></div>
 <div class="rail">${comTimer.slice(0, 8).map(cartao).join("")}</div></section>
 
-<section class="sec" id="receitas" aria-labelledby="h-todas"><div class="sec-h"><div><h2 id="h-todas">Todas as receitas</h2><p>Busque pelo nome ou por um ingrediente que você tem em casa.</p></div></div>
+<section class="sec" id="receitas" aria-labelledby="h-todas"><div class="sec-h"><div><h2 id="h-todas">Todas as receitas</h2><p>Busque pelo nome, por um programa da máquina ou pelos ingredientes que você tem em casa (ex.: "banana aveia").</p></div></div>
 <div class="filters">
 <div class="frow"><label class="fsearch">${ico("busca")}<span class="sr">Buscar receita ou ingrediente</span><input id="busca" type="search" placeholder="Ex.: banana, queijo, integral" autocomplete="off"></label>
 <label class="needs-js"><span class="sr">Região ou ocasião</span><select id="f-tag"><option value="">Região ou ocasião</option>${todasTags.map((t) => `<option value="${esc(t)}">${esc(t)}</option>`).join("")}</select></label>
 <button class="chip needs-js" type="button" data-f-timer aria-pressed="false">${ico("timer")}Timer da noite</button>
+<button class="chip needs-js" type="button" data-f-facil aria-pressed="false">Fáceis</button>
 <button class="chip needs-js" type="button" data-f-salvas aria-pressed="false">${ico("heart")}Salvas</button></div>
 <div class="chips-scroll needs-js" role="group" aria-label="Categoria"><button class="chip" type="button" data-f-cat="" aria-pressed="true">Todas</button>${dados.categorias.map((c) => `<button class="chip" type="button" data-f-cat="${esc(c.id)}" aria-pressed="false" style="--c:${esc(c.cor)}"><span class="sw"></span>${esc(c.nome)}</button>`).join("")}</div>
 </div>
 <div class="result-line"><span id="contador" aria-live="polite">${rec.length} receitas</span><button class="linkbtn needs-js" type="button" data-limpar>Limpar filtros</button></div>
 <div class="empty" id="vazio" hidden><span data-vazio="filtro"><b>Nenhuma receita com esses filtros</b>Tente outra palavra ou limpe os filtros.</span><span data-vazio="salvas" hidden><b>Você ainda não salvou receitas</b>Toque no coração de uma receita para guardá-la aqui. Fica salvo neste aparelho.</span><br><button class="linkbtn" type="button" data-limpar>Limpar filtros</button></div>
+<p class="parcial" id="parcial" hidden>Nenhuma receita leva todos esses ingredientes. Estas levam parte deles, das que mais combinam para as que menos combinam.</p>
 <div class="grid" id="todas">${rec.map(cartao).join("")}</div>
 </section>
 
@@ -355,11 +400,12 @@ ${rodape}`;
     const rs = rec.filter((r) => programas(r).includes(p));
     return rs.length ? `<tr><td>${esc(p)}</td><td>${esc(DESC_PROG[p])}</td><td>${rs.map((r) => `<a href="${urlR(r)}">${esc(r.titulo)}</a>`).join(", ")}</td></tr>` : "";
   }).join("");
-  const guia = `${head({ title: "Guia da panificadora: ordem dos ingredientes, programas e problemas | Pães do Manoel", description: "Como montar a forma, as medidas, o timer, o que faz cada programa da máquina de pão, a técnica dos pães recheados e como resolver os problemas mais comuns.", url: abs(`${BASE}guia/`), image: ogPadrao })}
+  const guia = `${head({ title: "Guia da panificadora: ordem, medidas e programas | Pães do Manoel", description: "Como montar a forma, as medidas, o timer, o que faz cada programa da máquina de pão, a técnica dos pães recheados e como resolver os problemas mais comuns.", url: abs(`${BASE}guia/`), image: ogPadrao })}
 <body>
 ${topo("guia")}
 <main id="conteudo">
-<section class="gh"><div class="wrap"><div class="eyebrow">Guia da máquina</div><h1>Tudo o que faz o pão <em>dar certo</em></h1><p class="lead">A ordem dos ingredientes, as medidas, quando usar o timer, o que cada programa faz e como resolver os problemas mais comuns.</p></div></section>
+<section class="gh"><div class="wrap"><div class="eyebrow">Guia da máquina</div><h1>Tudo o que faz o pão <em>dar certo</em></h1><p class="lead">A ordem dos ingredientes, as medidas, quando usar o timer, o que cada programa faz e como resolver os problemas mais comuns.</p>
+<p class="modelo">${ico("info")}<span>Receitas e guia feitos para a panificadora <b>Gallant de 19 programas (modelo GPA1E19A)</b>, com pães de 500 g, 750 g e 1 kg e timer de até 15 horas. Em outra máquina, os nomes dos programas, o timer e o tamanho da forma podem mudar: confira o manual dela.</span></p></div></section>
 <div class="wrap glayout">
 <nav class="toc" aria-label="Neste guia"><b>Neste guia</b><ol>
 <li><a href="#ordem">A ordem que nunca falha</a></li><li><a href="#medidas">Medidas</a></li><li><a href="#timer">Timer da noite</a></li>
@@ -372,21 +418,21 @@ ${topo("guia")}
 <li>Depois o sal e o açúcar, em cantos opostos, e as farinhas por cima, cobrindo todo o líquido.</li>
 <li>O fermento por último, numa covinha no topo da farinha, sem tocar o líquido nem o sal.</li>
 <li>Encaixe a forma, escolha o programa, o tamanho e a cor da casca e aperte iniciar.</li></ol>
-<div class="layers" aria-hidden="true"><div style="background:#E9DCC6;color:#3B2A1E">Fermento<small>numa covinha, no topo</small></div><div style="background:#D9A441">Farinhas<small>cobrindo o líquido</small></div><div style="background:#C9802F">Sal e açúcar<small>em cantos opostos</small></div><div style="background:#5B8DB8">Líquidos<small>água, leite, ovos, óleo</small></div><div style="background:#3B2A1E">Pá encaixada<small>no eixo da forma</small></div></div>
+<div class="layers" aria-hidden="true"><div style="background:#E9DCC6;color:#3B2A1E">Fermento<small>numa covinha, no topo</small></div><div style="background:#E2B65A;color:#33241A">Farinhas<small>cobrindo o líquido</small></div><div style="background:#D99A4E;color:#33241A">Sal e açúcar<small>em cantos opostos</small></div><div style="background:#3D6A92">Líquidos<small>água, leite, ovos, óleo</small></div><div style="background:#3B2A1E">Pá encaixada<small>no eixo da forma</small></div></div>
 <p class="cap">Como a forma fica por dentro, de cima para baixo.</p></section>
 
 <section class="panel gsec" id="medidas"><h2>Medidas</h2><p>As receitas usam a colher e o copo medidor que vêm com a máquina, ou colheres de medida comuns. Nas colheres, a medida é sempre rasa: encha e passe as costas de uma faca por cima. Para o melhor resultado, pese farinha e açúcar na balança.</p>
 <div class="meas"><div><b>1 colher (chá)</b>5 ml: cerca de 3 g de fermento ou 6 g de sal</div><div><b>1 colher (sopa)</b>15 ml: cerca de 12 g de açúcar ou 8 g de farinha</div><div><b>ml</b>líquidos, no copo medidor, olhando na altura dos olhos</div><div><b>g</b>sólidos, de preferência na balança de cozinha</div></div>
 <p><b>Fermento:</b> sempre biológico seco instantâneo, o de sachê de 10 g. <b>Farinha:</b> de trigo tipo 1; a "especial para pão" deixa o pão mais alto. <b>Líquidos:</b> até 30 °C, porque líquido quente mata o fermento.</p></section>
 
-<section class="panel gsec" id="timer"><h2>Timer da noite</h2><p>O timer deixa a máquina esperando até 15 horas para começar, e o pão fica pronto na hora que você escolher. Só use nas receitas marcadas com <b>Timer da noite</b>: elas não levam ovo, leite fresco, queijo ou recheio, que estragariam fora da geladeira. O fermento nunca pode encostar no líquido enquanto a massa espera.</p>
+<section class="panel gsec" id="timer"><h2>Timer da noite</h2><p>Na Gallant, o timer deixa a máquina esperando até 15 horas para começar, e o pão fica pronto na hora que você escolher. Só use nas receitas marcadas com <b>Timer da noite</b>: elas não levam ovo, leite fresco, queijo ou recheio, que estragariam fora da geladeira. O fermento nunca pode encostar no líquido enquanto a massa espera.</p>
 <p><a class="more" href="${BASE}?timer=1#receitas">Ver as ${comTimer.length} receitas que podem ficar no timer</a></p></section>
 
 <section class="panel gsec" id="depois"><h2>Depois de assar</h2><p>Tire a forma com luva, vire e desenforme na hora: se o pão ficar na forma, o vapor amolece a casca. Se a pá ficar presa no pão, solte com um palito de madeira, nunca com faca, para não riscar o antiaderente. Espere pelo menos 40 minutos antes de fatiar: o miolo termina de firmar enquanto esfria.</p></section>
 
 <section class="panel gsec" id="programas"><h2>Os programas e quando usar cada um</h2><p>O tempo de cada ciclo aparece no visor da máquina quando você escolhe o programa e o tamanho.</p>
 <table class="gtable"><thead><tr><th>Programa</th><th>O que faz</th><th>Receitas</th></tr></thead><tbody>${progRows}</tbody></table>
-<p style="margin-top:14px"><b>Descongelar:</b> coloque o pão congelado na forma, sem a pá, e rode o programa para ele voltar macio.</p></section>
+<p style="margin-top:14px"><b>Descongelar:</b> nenhuma receita usa esse programa. Para saber como ele funciona na sua máquina, veja o manual.</p></section>
 
 <section class="panel gsec" id="recheados"><h2>A técnica dos pães recheados</h2><p>Dá para fazer pão recheado sem ligar o forno, com três programas em sequência:</p>
 <ol class="order"><li><b>Massa:</b> a máquina bate a massa e deixa crescer.</li><li>Você abre a massa num retângulo de 1 cm, com um lado de 17 cm (o comprimento interno da forma), espalha o recheio e enrola.</li><li>O rolo volta para a forma <b>sem a pá</b>, com a emenda para baixo.</li><li><b>Fermentar:</b> a massa cresce de novo até quase a borda.</li><li><b>Assar:</b> o pão assa e doura.</li></ol>
