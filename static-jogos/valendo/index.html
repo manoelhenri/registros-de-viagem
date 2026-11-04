@@ -86,7 +86,9 @@ body.palco .holofotes{display:block}
 .btn.leve:active{transform:scale(.985)}
 .btn.rosa{background:linear-gradient(180deg,#ff6aa6,var(--rosa));color:#fff;box-shadow:0 5px 0 #a3134f}
 .btn.peq{display:inline-block;width:auto;padding:9px 14px;font-size:15px;border-radius:12px}
-.icone{width:42px;height:42px;border-radius:12px;border:2px solid var(--borda);display:grid;place-items:center;font-size:20px;flex:none}
+.icone{width:42px;height:42px;border-radius:12px;border:2px solid var(--borda);display:grid;place-items:center;font-size:20px;flex:none;background:rgba(13,20,82,.5)}
+.icone svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.icone:active{transform:scale(.94)}
 
 input[type=text]{width:100%;font:inherit;font-size:19px;padding:14px 16px;border-radius:14px;border:2px solid var(--borda);background:var(--palco);color:var(--creme)}
 input.codigo{font-family:var(--tv);font-size:40px;letter-spacing:.3em;text-align:center;text-transform:uppercase;padding:10px 0 10px .3em}
@@ -99,9 +101,11 @@ input[type=range]{width:100%;accent-color:var(--ouro)}
 /* foto */
 .foto-ed{display:flex;flex-direction:column;align-items:center;gap:12px}
 .foto-ed canvas{width:min(70vw,260px);height:min(70vw,260px);border-radius:50%;box-shadow:0 0 0 5px var(--ouro),0 10px 30px rgba(0,0,0,.4);touch-action:none;cursor:grab}
+.foto-ed .ctrl{display:flex;align-items:center;gap:10px;width:100%}
+.foto-ed .ctrl label{flex:1;display:flex;align-items:center;gap:8px;color:var(--nevoa);font-size:14px}
 .filtros{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 8px;width:100%;scrollbar-width:none}
-.filtros button{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 10px;border-radius:14px;border:2px solid var(--borda);background:var(--palco);font-size:12px;color:var(--nevoa);min-width:70px}
-.filtros button b{font-size:24px;font-weight:400}
+.filtros button{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 6px 8px;border-radius:14px;border:2px solid var(--borda);background:var(--palco);font-size:12px;color:var(--nevoa);min-width:74px}
+.filtros button img{width:52px;height:52px;border-radius:50%;display:block}
 .filtros button[aria-pressed=true]{border-color:var(--ouro);color:var(--creme);background:#3b2c0a}
 .minha-foto{display:flex;align-items:center;gap:14px}
 .botoes-foto{display:flex;gap:8px;flex-wrap:wrap}
@@ -142,7 +146,7 @@ input[type=range]{width:100%;accent-color:var(--ouro)}
 
 /* topo do jogo */
 .topo{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.topo .dir{display:flex;align-items:center;gap:8px}
+.topo .dir,.topo .esq{display:flex;align-items:center;gap:8px;min-width:0}
 .premio{font-family:var(--tv);font-size:15px;color:#3a2400;background:var(--ouro);padding:6px 10px;border-radius:10px;box-shadow:0 3px 0 var(--ouro-d);white-space:nowrap}
 .sinal{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--certo)}
 .sinal.off{background:var(--errado);animation:pisca 1s steps(2) infinite}
@@ -248,6 +252,20 @@ input[type=range]{width:100%;accent-color:var(--ouro)}
 /* compartilhar */
 .cartaz{width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 .copia{width:100%;font:inherit;font-size:15px;padding:10px;border-radius:12px;border:1.5px solid var(--borda);background:var(--palco);color:var(--creme);resize:none}
+/* menu e confirmações */
+.veu{position:fixed;inset:0;z-index:60;background:rgba(5,8,40,.66);display:flex;align-items:flex-end;justify-content:center;animation:aparece .18s both}
+.folha{width:100%;max-width:520px;max-height:88vh;overflow:auto;background:linear-gradient(180deg,#22309e,#16207a);border:1.5px solid var(--borda);border-bottom:0;border-radius:24px 24px 0 0;
+  padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px;animation:sobeFolha .25s cubic-bezier(.2,.9,.3,1) both}
+.folha h2{font-size:21px}
+.folha .alca{width:44px;height:5px;border-radius:9px;background:var(--borda);align-self:center;margin-bottom:4px}
+.item{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px;border-radius:16px;background:var(--palco);border:1.5px solid var(--borda);font-weight:700;font-size:17px;color:var(--creme);text-decoration:none}
+.item .ic{font-size:22px;width:28px;text-align:center}
+.item small{display:block;font-weight:500;font-size:13px;color:var(--nevoa)}
+.item.perigo{border-color:#7a2340;color:#ffb3c4}
+.regras{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--creme);font-size:16px}
+.regras b{color:var(--ouro)}
+@keyframes aparece{from{opacity:0}}
+@keyframes sobeFolha{from{transform:translateY(40px);opacity:0}}
 .rodape{margin-top:auto;padding-top:10px;text-align:center;color:var(--nevoa);font-size:13px}
 .rodape a{color:inherit}
 
@@ -260,13 +278,14 @@ input[type=range]{width:100%;accent-color:var(--ouro)}
 </head>
 <body>
 <div class="holofotes" aria-hidden="true"><div class="holofote"></div><div class="holofote b"></div></div>
-<main class="app" id="app" aria-live="polite"></main>
+<main class="app" id="app"></main>
+<div id="modal"></div>
 <div class="confete" id="confete" aria-hidden="true"></div>
 
 <script type="module">
 import { novaPartida, votar, responder, usarAjuda, proxima, avancar, publico, pergunta, posicoes, valorDa, reais, reaisCurto, ESCADAS, TEMAS, AVATARES, AJUDAS, MAX_JOGADORES, MIN_TEMAS, RODADAS_OPCOES, RODADAS_PADRAO, TEMPO } from "./motor.js";
 import { Som } from "./som.js";
-import { FILTROS, carregarImagem, desenhar as desenharFoto, exportar as exportarFoto } from "./foto.js";
+import { FILTROS, carregarImagem, desenhar as desenharFoto, exportar as exportarFoto, miniatura } from "./foto.js";
 
 /* ---------- configuração ---------- */
 const local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
@@ -331,7 +350,7 @@ function conectar() {
     if (m.t === "ok") {
       status = "on"; tentativas = 0; criarSala = false; modo = "online"; erro = "";
       if (m.a && m.a !== eu.a) { eu.a = m.a; guarda.set("vl_av", eu.a); }
-      history.replaceState(null, "", "?sala=" + codigo); return;
+      history.replaceState(history.state, "", "?sala=" + codigo); return;
     }
     if (m.t === "fotos") { fotos = m.fotos || {}; return desenhar(true); }
     if (m.t === "foto") { if (m.img) fotos[m.id] = m.img; else delete fotos[m.id]; return desenhar(true); }
@@ -411,9 +430,16 @@ function trilhaDaTela() {
 /* ---------- pedaços de tela ---------- */
 const marca = () => `<div class="marca">Valendo!</div>`;
 function botaoSom() { return `<button class="icone" data-acao="som" aria-label="${Som.mudo ? "Ligar o som" : "Desligar o som"}">${Som.mudo ? "🔇" : "🔊"}</button>`; }
+const SVG_MENU = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>`;
+const SVG_VOLTAR = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>`;
+const botaoMenu = () => `<button class="icone" data-acao="menu" aria-label="Menu" aria-haspopup="dialog">${SVG_MENU}</button>`;
+const sinal = () => modo === "online" ? `<span class="sinal ${status === "on" ? "" : "off"}" role="img" aria-label="${status === "on" ? "Conectado" : "Reconectando"}"></span>` : "";
+// Cabeçalho comum: voltar, marca, som e menu.
+function cabeca(semVoltar) {
+  return `<header class="topo"><div class="esq">${semVoltar ? "" : `<button class="icone" data-acao="voltar" aria-label="Voltar">${SVG_VOLTAR}</button>`}${marca()}</div><div class="dir">${sinal()}${botaoSom()}${botaoMenu()}</div></header>`;
+}
 function topo(v) {
-  const s = modo === "online" ? `<span class="sinal ${status === "on" ? "" : "off"}" role="img" aria-label="${status === "on" ? "Conectado" : "Reconectando"}"></span>` : "";
-  return `<div class="topo">${marca()}<div class="dir">${s}<span class="premio" title="Prêmio desta rodada">${reais(valorDa(v))}</span>${botaoSom()}</div></div>
+  return `<header class="topo">${marca()}<div class="dir">${sinal()}<span class="premio" title="Prêmio desta rodada">${reais(valorDa(v))}</span>${botaoMenu()}</div></header>
   <p class="rodada-txt">Rodada ${v.rodada} de ${v.rodadas}${v.rodada === v.rodadas ? ", a pergunta do milhão!" : ""}</p>`;
 }
 function relogio(txt) {
@@ -440,7 +466,7 @@ function temasHTML(lista, editavel, attr) {
 /* ---------- telas fora da partida ---------- */
 function tInicio() {
   return `
-  <div class="linha" style="justify-content:flex-end">${botaoSom()}</div>
+  <div class="linha" style="justify-content:flex-end">${botaoSom()}${botaoMenu()}</div>
   <h1 class="letreiro"><b>Valendo!</b><small>O quiz de auditório no seu celular</small></h1>
   <p class="chamada">Escolham os temas, respondam rápido e subam a escada até a pergunta do milhão.</p>
   ${erro ? `<p class="aviso centro" role="alert">${esc(erro)}</p>` : ""}
@@ -459,7 +485,7 @@ function tInicio() {
 }
 function tCodigo() {
   return `
-  <div class="topo">${marca()}<button class="btn leve peq" data-acao="inicio">Voltar</button></div>
+  ${cabeca()}
   <div class="bloco entra">
     <h2>Qual é o código da sala?</h2>
     <p class="dica">São 4 letras. Quem criou a sala vê o código no saguão.</p>
@@ -472,9 +498,10 @@ function blocoFoto(foto, rotulo) {
   if (ed) return `
   <div class="bloco foto-ed">
     <h2>Ajeite o rosto no círculo</h2>
+    <p class="dica centro">Arraste a foto com o dedo. Use o zoom para aproximar ou afastar.</p>
     <canvas id="tela-foto" width="280" height="280" aria-label="Prévia da foto"></canvas>
-    <label class="dica" style="width:100%">Zoom<input type="range" id="zoom" min="1" max="3" step="0.02" value="${ed.zoom}"></label>
-    <div class="filtros" role="group" aria-label="Filtros">${FILTROS.map(([k, n, e]) => `<button data-filtro="${k}" aria-pressed="${ed.filtro === k}"><b>${e}</b>${n}</button>`).join("")}</div>
+    <div class="ctrl"><label>Zoom<input type="range" id="zoom" min="0.5" max="3" step="0.02" value="${ed.zoom}"></label><button class="icone" data-acao="foto-gira" aria-label="Girar a foto">↻</button></div>
+    <div class="filtros" role="group" aria-label="Filtros de cor" id="filtros">${filtrosHTML()}</div>
     <div class="linha" style="width:100%"><button class="btn leve peq" data-acao="foto-cancela" style="flex:1">Cancelar</button><button class="btn peq" data-acao="foto-usa" style="flex:2">Usar esta foto</button></div>
   </div>`;
   return `
@@ -485,10 +512,10 @@ function blocoFoto(foto, rotulo) {
       <div class="botoes-foto">
         <label class="btn rosa peq" for="cam" tabindex="0">Tirar foto</label>
         <label class="btn leve peq" for="gal" tabindex="0">Galeria</label>
-        ${foto ? `<button class="btn leve peq" data-acao="foto-tira">Tirar</button>` : ""}
+        ${foto ? `<button class="btn leve peq" data-acao="foto-tira">Remover</button>` : ""}
       </div>
     </div>
-    <p class="dica">Com filtros engraçados. ${foto ? "" : "Sem foto, vale o bicho."}</p>
+    <p class="dica">Com filtros de cor. ${foto ? "" : "Sem foto, vale o bicho."}</p>
     <input class="arquivo" type="file" id="cam" accept="image/*" capture="user">
     <input class="arquivo" type="file" id="gal" accept="image/*">
   </div>`;
@@ -496,12 +523,11 @@ function blocoFoto(foto, rotulo) {
 function tPerfil() {
   const usados = acao === "local" ? lJog.map((p) => p.a) : sala ? sala.membros.filter((m) => m.id !== pid).map((m) => m.a) : [];
   const rotuloBtn = acao === "criar" ? "Criar sala" : acao === "trocar" ? "Salvar" : acao === "local" ? "Adicionar jogador" : `Entrar na sala ${esc(codigo)}`;
-  const voltar = acao === "trocar" ? "volta-saguao" : acao === "local" ? "volta-local" : "inicio";
   const nome = acao === "local" ? (ed ? ed.nomeLocal : lNome) || "" : eu.n;
   const av = acao === "local" ? (ed && ed.avLocal) || lAv : eu.a;
   const foto = acao === "local" ? lFoto : eu.foto;
   return `
-  <div class="topo">${marca()}<button class="btn leve peq" data-acao="${voltar}">Voltar</button></div>
+  ${cabeca()}
   <div class="bloco entra">
     <label for="nome"><h2>${acao === "local" ? `Nome do jogador ${lJog.length + 1}` : "Seu nome"}</h2></label>
     <input type="text" id="nome" maxlength="16" placeholder="Como vai aparecer no placar" value="${esc(nome)}" autocomplete="${acao === "local" ? "off" : "nickname"}">
@@ -516,14 +542,14 @@ function tPerfil() {
 }
 let lAv = "", lFoto = "";
 function tSaguao() {
-  if (!sala) return `<div class="topo">${marca()}</div><div class="bloco centro"><p class="dica">${status === "off" ? "Reconectando à sala…" : "Entrando na sala…"}</p></div>`;
+  if (!sala) return `${cabeca()}<div class="bloco centro"><p class="dica">${status === "off" ? "Reconectando à sala…" : "Entrando na sala…"}</p></div>`;
   const on = sala.membros.filter((m) => m.on);
   const host = souAnfitriao();
   const vagas = Math.max(0, Math.min(2, MAX_JOGADORES - sala.membros.length));
   const nomeHost = (sala.membros.find((m) => m.id === sala.anfitriao) || {}).n || "o anfitrião";
   const temas = sala.temas || TODOS_TEMAS;
   return `
-  <div class="topo">${marca()}<div class="dir">${botaoSom()}<button class="btn leve peq" data-acao="sair">Sair</button></div></div>
+  ${cabeca()}
   <div class="bloco centro">
     <p class="dica">Código da sala</p>
     ${placas(sala.codigo)}
@@ -542,11 +568,12 @@ function tSaguao() {
     <p class="dica">A última vale R$ 1 milhão.</p>
     ${erro ? `<p class="aviso" role="alert">${esc(erro)}</p>` : ""}
     <button class="btn" data-acao="comecar" ${on.length < 2 || temas.length < MIN_TEMAS ? "disabled" : ""}>${on.length < 2 ? "Esperando mais alguém entrar" : `Começar com ${on.length} jogadores`}</button>
-  </div>` : `<div class="bloco centro"><p class="dica">Esperando ${esc(nomeHost)} começar o jogo (${sala.rodadas} rodadas).</p></div>`}`;
+  </div>` : `<div class="bloco centro"><p class="dica">Esperando ${esc(nomeHost)} começar o jogo (${sala.rodadas} rodadas).</p></div>`}
+  <button class="btn leve" data-acao="pedir-sair">Sair da sala</button>`;
 }
 function tLocalConfig() {
   return `
-  <div class="topo">${marca()}<div class="dir">${botaoSom()}<button class="btn leve peq" data-acao="inicio">Voltar</button></div></div>
+  ${cabeca()}
   <div class="bloco">
     <h2>Jogadores (${lJog.length}/${MAX_JOGADORES})</h2>
     ${lJog.length ? `<div class="gente">${lJog.map((p, i) => `<button class="pessoa" data-tira="${i}" aria-label="Tirar ${esc(p.n)}">${rosto(p.id, p.a, 52)}<span class="n">${esc(p.n)}</span><span class="dica" style="font-size:12px">tirar</span></button>`).join("")}</div>` : `<p class="dica">Adicione pelo menos 2 jogadores.</p>`}
@@ -664,17 +691,17 @@ function tFim(v) {
   const camp = ord.filter((p) => pos[p.id] === 1);
   const deg = (p, n) => p ? `<div class="degrau p${n}">${rosto(p.id, p.a, n === 1 ? 84 : 60)}<span class="nm">${esc(p.n)}</span><span class="pt">${reais(v.pontos[p.id] || 0)}</span><div class="base">${pos[p.id]}º</div></div>` : `<div></div>`;
   const host = souAnfitriao();
-  return `<div class="topo">${marca()}${botaoSom()}</div>
+  return `<header class="topo">${marca()}<div class="dir">${sinal()}${botaoMenu()}</div></header>
   <p class="campeao">${camp.length > 1 ? `Empate! ${camp.map((c) => esc(c.n)).join(" e ")} levaram a noite` : `${esc(camp[0].n)} levou ${reais(v.pontos[camp[0].id] || 0)}!`}</p>
   <div class="podio">${deg(ord[1], 2)}${deg(ord[0], 1)}${deg(ord[2], 3)}</div>
   <button class="btn rosa" data-acao="cartaz">Compartilhar o campeão</button>
   ${ranking(v, false)}
   <p class="dica centro">No empate de dinheiro, ganha quem respondeu mais rápido.</p>
   ${host ? `<button class="btn" data-acao="denovo">Jogar de novo</button><button class="btn leve" data-acao="${modo === "local" ? "lvolta" : "saguao"}">${modo === "local" ? "Trocar jogadores ou temas" : "Voltar ao saguão"}</button>`
-    : `<p class="dica centro">Quem criou a sala pode começar outra partida.</p><button class="btn leve" data-acao="sair">Sair da sala</button>`}`;
+    : `<p class="dica centro">Quem criou a sala pode começar outra partida.</p><button class="btn leve" data-acao="pedir-sair">Sair da sala</button>`}`;
 }
 function tCartaz() {
-  return `<div class="topo">${marca()}<button class="btn leve peq" data-acao="volta-fim">Voltar</button></div>
+  return `${cabeca()}
   <h2>Cartaz do campeão</h2>
   ${cartazUrl ? `<img class="cartaz entra" src="${cartazUrl}" alt="Cartaz com o campeão e o placar da partida">` : `<p class="dica">Montando o cartaz…</p>`}
   <button class="btn rosa" data-acao="compartilhar" ${cartazUrl ? "" : "disabled"}>Compartilhar</button>
@@ -765,6 +792,7 @@ function desenhar(forcar) {
   if (ed && $("#tela-foto")) pintarFoto();
   relogioTick();
   contar();
+  marcarHistorico();
 }
 function contar() {
   if (calmo) return;
@@ -799,15 +827,107 @@ setInterval(() => {
 
 /* ---------- editor de foto ---------- */
 function pintarFoto() { const cv = $("#tela-foto"); if (cv && ed) desenharFoto(cv, ed, 280); }
+const filtrosHTML = () => FILTROS.map(([k, n]) => `<button data-filtro="${k}" aria-pressed="${ed.filtro === k}"><img src="${miniatura(ed, k)}" alt="">${n}</button>`).join("");
+let timerMini = null;
+function atualizarMiniaturas() { clearTimeout(timerMini); timerMini = setTimeout(() => { const f = $("#filtros"); if (f && ed) f.innerHTML = filtrosHTML(); }, 250); }
 async function abrirFoto(arquivo) {
-  try { const img = await carregarImagem(arquivo); const nm = $("#nome") ? $("#nome").value : ""; ed = { img, zoom: 1, x: 0, y: 0, filtro: "nenhum", nomeLocal: nm, avLocal: lAv }; desenhar(true); }
+  try { const img = await carregarImagem(arquivo); const nm = $("#nome") ? $("#nome").value : ""; ed = { img, zoom: 1, x: 0, y: 0, giro: 0, filtro: "normal", nomeLocal: nm, avLocal: lAv }; desenhar(true); }
   catch (e) { erro = "Não consegui abrir essa imagem. Tente outra."; desenhar(true); }
 }
-let arrasto = null;
-document.addEventListener("pointerdown", (e) => { if (e.target.id === "tela-foto" && ed) { arrasto = { x: e.clientX, y: e.clientY, ox: ed.x, oy: ed.y, w: e.target.clientWidth }; e.target.setPointerCapture(e.pointerId); } });
-document.addEventListener("pointermove", (e) => { if (!arrasto || !ed) return; ed.x = arrasto.ox + (e.clientX - arrasto.x) / arrasto.w; ed.y = arrasto.oy + (e.clientY - arrasto.y) / arrasto.w; pintarFoto(); });
-document.addEventListener("pointerup", () => (arrasto = null));
-document.addEventListener("change", (e) => { if ((e.target.id === "cam" || e.target.id === "gal") && e.target.files && e.target.files[0]) abrirFoto(e.target.files[0]); });
+// Arrastar com um dedo e aproximar com dois (pinça).
+const dedos = new Map(); let arrasto = null;
+function inicioGesto(cv) {
+  const ps = [...dedos.values()];
+  arrasto = { ox: ed.x, oy: ed.y, oz: ed.zoom, w: cv.clientWidth, cx: ps.reduce((a, p) => a + p.x, 0) / ps.length, cy: ps.reduce((a, p) => a + p.y, 0) / ps.length,
+    d: ps.length > 1 ? Math.hypot(ps[0].x - ps[1].x, ps[0].y - ps[1].y) : 0 };
+}
+document.addEventListener("pointerdown", (e) => { if (e.target.id !== "tela-foto" || !ed) return; e.target.setPointerCapture(e.pointerId); dedos.set(e.pointerId, { x: e.clientX, y: e.clientY }); inicioGesto(e.target); });
+document.addEventListener("pointermove", (e) => {
+  if (!arrasto || !ed || !dedos.has(e.pointerId)) return;
+  dedos.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  const ps = [...dedos.values()], cx = ps.reduce((a, p) => a + p.x, 0) / ps.length, cy = ps.reduce((a, p) => a + p.y, 0) / ps.length;
+  ed.x = arrasto.ox + (cx - arrasto.cx) / arrasto.w; ed.y = arrasto.oy + (cy - arrasto.cy) / arrasto.w;
+  if (ps.length > 1 && arrasto.d) { ed.zoom = Math.max(0.5, Math.min(3, arrasto.oz * Math.hypot(ps[0].x - ps[1].x, ps[0].y - ps[1].y) / arrasto.d)); const z = $("#zoom"); if (z) z.value = ed.zoom; }
+  pintarFoto();
+});
+function fimGesto(e) { if (!dedos.has(e.pointerId)) return; dedos.delete(e.pointerId); const cv = $("#tela-foto"); if (dedos.size && cv && ed) inicioGesto(cv); else { arrasto = null; atualizarMiniaturas(); } }
+document.addEventListener("pointerup", fimGesto); document.addEventListener("pointercancel", fimGesto);
+document.addEventListener("change", (e) => {
+  if ((e.target.id === "cam" || e.target.id === "gal") && e.target.files && e.target.files[0]) { const f = e.target.files[0]; e.target.value = ""; abrirFoto(f); }
+  if (e.target.id === "zoom") atualizarMiniaturas();
+});
+
+/* ---------- menu, confirmações e voltar ---------- */
+let modal = null; // {tipo: "menu" | "regras" | "confirma", titulo, texto, sim, ao}
+const naSala = () => modo === "online" && (querConectado || sala);
+const naPartidaLocal = () => modo === "local" && G && tela !== "lconfig";
+function desenharModal() {
+  const box = $("#modal");
+  if (!modal) { box.innerHTML = ""; marcarHistorico(); return; }
+  let corpo = "";
+  if (modal.tipo === "menu") {
+    corpo = `<h2 id="titulo-modal">Menu</h2>
+      <button class="item" data-acao="regras"><span class="ic">📖</span><span>Como jogar</span></button>
+      <button class="item" data-acao="som"><span class="ic">${Som.mudo ? "🔇" : "🔊"}</span><span>Som ${Som.mudo ? "desligado" : "ligado"}<small>Toque para ${Som.mudo ? "ligar" : "desligar"} a trilha e os efeitos</small></span></button>
+      ${tela !== "inicio" ? `<button class="item" data-acao="ir-inicio"><span class="ic">🏠</span><span>Início do Valendo!</span></button>` : ""}
+      ${naPartidaLocal() ? `<button class="item perigo" data-acao="pedir-encerrar"><span class="ic">⏹️</span><span>Encerrar partida<small>Volta para a lista de jogadores</small></span></button>` : ""}
+      ${naSala() ? `<button class="item perigo" data-acao="pedir-sair"><span class="ic">🚪</span><span>Sair da sala${sala ? ` ${esc(sala.codigo)}` : ""}</span></button>` : ""}
+      <a class="item" href="../"><span class="ic">🎮</span><span>Mais jogos</span></a>
+      <button class="btn leve" data-acao="fechar">Fechar</button>`;
+  } else if (modal.tipo === "regras") {
+    corpo = `<h2 id="titulo-modal">Como jogar</h2>
+      <ol class="regras">
+        <li>Quem cria a sala passa o código ou o link. Cada um entra no seu celular, com foto ou bicho.</li>
+        <li>A cada rodada, todos votam num tema entre três. O mais votado vale.</li>
+        <li>Escolha uma das quatro respostas e confirme em <b>Tô certo disso!</b> antes do tempo acabar.</li>
+        <li>Acertou, ganha o prêmio da rodada. Errou, não ganha nada nessa rodada, mas não perde o que já tem.</li>
+        <li>O prêmio sobe a cada rodada até a <b>pergunta do milhão</b>, na última.</li>
+        <li>Cada um tem três ajudas por partida: <b>Cartas</b> (tira duas erradas), <b>Universitários</b> e <b>Placas</b> (palpites que podem errar).</li>
+        <li>No empate de dinheiro, ganha quem respondeu mais rápido somando todas as rodadas.</li>
+        <li>No modo de um celular só, o aparelho passa de mão em mão e ninguém vê a resposta do outro.</li>
+      </ol>
+      <button class="btn" data-acao="fechar">Entendi</button>`;
+  } else {
+    corpo = `<h2 id="titulo-modal">${esc(modal.titulo)}</h2><p class="dica">${esc(modal.texto)}</p>
+      <button class="btn rosa" data-acao="modal-sim">${esc(modal.sim)}</button><button class="btn leve" data-acao="fechar">Cancelar</button>`;
+  }
+  box.innerHTML = `<div class="veu"><div class="folha" role="dialog" aria-modal="true" aria-labelledby="titulo-modal" tabindex="-1"><span class="alca"></span>${corpo}</div></div>`;
+  const f = box.querySelector(".folha"); f.scrollTop = 0; f.focus({ preventScroll: true });
+  marcarHistorico();
+}
+function abrirModal(m) { modal = m; desenharModal(); }
+function fecharModal() { modal = null; desenharModal(); }
+function confirmar(titulo, texto, sim, ao) { abrirModal({ tipo: "confirma", titulo, texto, sim, ao }); }
+function irInicio() {
+  modal = null; desenharModal();
+  tela = "inicio"; modo = null; G = null; ed = null; acao = null; erro = "";
+  history.replaceState(null, "", location.pathname); desenhar(true);
+}
+function pedirSair() {
+  const jogando = !!g && g.fase !== "fim";
+  confirmar("Sair da sala?", jogando ? "A partida continua para os outros. Se entrar de novo com o mesmo código neste celular, você volta com os seus pontos." : "Você pode voltar com o mesmo código enquanto a sala existir.", "Sair da sala", () => sair());
+}
+function pedirEncerrar(depois) {
+  confirmar("Encerrar a partida?", "O placar desta partida será perdido.", "Encerrar", () => { G = null; cartazUrl = null; if (depois) depois(); else { tela = "lconfig"; desenhar(true); } });
+}
+// Volta uma tela, como o botão Voltar do celular.
+function voltar() {
+  if (modal) return fecharModal();
+  if (ed) { ed = null; return desenhar(true); }
+  if (tela === "perfil") {
+    if (acao === "trocar") tela = "saguao";
+    else if (acao === "local") { tela = "lconfig"; lAv = ""; lFoto = ""; }
+    else return irInicio();
+    return desenhar(true);
+  }
+  if (tela === "cartaz") { tela = "jogo"; return desenhar(true); }
+  if (naSala()) return pedirSair();
+  if (naPartidaLocal()) return pedirEncerrar();
+  irInicio();
+}
+function marcarHistorico() { if ((tela !== "inicio" || modal) && !(history.state && history.state.vl)) history.pushState({ vl: 1 }, "", location.href); }
+addEventListener("popstate", () => { if (modal) fecharModal(); else if (tela !== "inicio") voltar(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal) fecharModal(); });
 
 /* ---------- ações ---------- */
 function respLocal(c) {
@@ -847,6 +967,7 @@ document.addEventListener("keydown", (e) => {
   if ((e.key === "Enter" || e.key === " ") && e.target.tagName === "LABEL" && e.target.htmlFor) { e.preventDefault(); $("#" + e.target.htmlFor).click(); }
 });
 document.addEventListener("click", (e) => {
+  if (e.target.classList && e.target.classList.contains("veu")) return fecharModal();
   const t = e.target.closest("button"); if (!t || t.disabled) return;
   Som.liga();
   const d = t.dataset;
@@ -872,9 +993,19 @@ document.addEventListener("click", (e) => {
     v.ajudas = Object.assign({}, v.ajudas, { [id]: ((v.ajudas || {})[id] || []).concat({ t: d.ajuda, seq: v.seq }) });
     mandar({ t: "ajuda", tipo: d.ajuda }); return desenhar(true);
   }
-  const a = d.acao; if (a) erro = "";
-  if (a === "som") { Som.alternar(); return desenhar(true); }
-  if (a === "inicio") { tela = "inicio"; modo = null; G = null; ed = null; }
+  const a = d.acao;
+  if (a === "menu") return abrirModal({ tipo: "menu" });
+  if (a === "regras") return abrirModal({ tipo: "regras" });
+  if (a === "fechar") return fecharModal();
+  if (a === "modal-sim") { const ao = modal && modal.ao; modal = null; desenharModal(); if (ao) ao(); return; }
+  if (a === "voltar") return voltar();
+  if (a === "ir-inicio") { if (naSala()) return pedirSair(); if (naPartidaLocal()) return pedirEncerrar(irInicio); return irInicio(); }
+  if (a === "pedir-sair") return pedirSair();
+  if (a === "pedir-encerrar") return pedirEncerrar();
+  if (a === "foto-gira" && ed) { ed.giro = (ed.giro + 1) % 4; pintarFoto(); atualizarMiniaturas(); return; }
+  if (a) erro = "";
+  if (a === "som") { Som.alternar(); if (modal) desenharModal(); return desenhar(true); }
+  if (a === "inicio") return irInicio();
   else if (a === "criar") { acao = "criar"; tela = "perfil"; }
   else if (a === "tenhocodigo") { tela = "codigo"; }
   else if (a === "codigook") { if (codigo.length !== 4) erro = "O código tem 4 letras."; else { acao = "entrar"; tela = "perfil"; } }
