@@ -49,7 +49,7 @@ O dono decidiu separar as três áreas em subdomínios: **viagens.manoelhenrique
 
 ## Jogos ficam separados do blog
 
-A área `/jogos/` (hoje: o hub em `static-jogos/index.html`, o jogo "Quem é mais?" em `static-jogos/quem-e-mais/` e a política de privacidade em `static-jogos/privacidade/`) é um produto à parte, que só divide o domínio e o repositório com o blog. Regras:
+A área `/jogos/` (hoje: o hub em `static-jogos/index.html`, o jogo "Quem é mais?" em `static-jogos/quem-e-mais/`, o "Noite do Quiz" em `static-jogos/noite-do-quiz/` (quiz de Halloween; a sala online do original só funciona dentro do Claude, então no site fica só o modo de um celular, sem PWA) e a política de privacidade em `static-jogos/privacidade/`) é um produto à parte, que só divide o domínio e o repositório com o blog. Regras:
 
 1. **Nenhuma ligação entre os dois.** O blog não linka para os jogos (menu, rodapé, home, posts, sitemap, feed) e os jogos não linkam para o blog. Não misture os dois em nenhum template.
 2. **Nada do blog dentro dos jogos.** Os jogos são HTML estático autocontido: não usam `base.njk`, `style.css`, `_data/`, filtros do Eleventy nem a identidade visual do blog. Cada jogo tem visual, fontes, ícones, manifest e service worker próprios.

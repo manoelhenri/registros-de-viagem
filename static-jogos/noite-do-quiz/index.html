@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#110b10">
+<title>Noite do Quiz</title>
+<meta name="description" content="Quiz de Halloween para jogar em grupo no celular: vote no tema, responda rápido e suba no ranking.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jogos">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Noite do Quiz 🎃 Especial de Halloween">
+<meta property="og:description" content="Quiz de Halloween para jogar em grupo no celular: vote no tema, responda rápido e suba no ranking.">
+<meta property="og:url" content="https://manoelhenrique.com/jogos/noite-do-quiz/">
+<meta property="og:image" content="https://manoelhenrique.com/jogos/noite-do-quiz/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://manoelhenrique.com/jogos/noite-do-quiz/og-image.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+[hidden]{display:none!important}
+</style>
+<style>
+/* Layout: one-screen phone app, a single stage card per phase, sticky scoreline on top.
+   Single committed look: a candle-lit horror night (works on any host background). */
+:root{
+  --bg:#110b10; --bg2:#1c1219; --panel:#241820; --line:#3b2833;
+  --bone:#f1e7d6; --muted:#b39fa6; --blood:#d4183a; --blood-d:#8e0f27;
+  --pumpkin:#ff8a1f; --ok:#4fd27f; --bad:#ff4d6a;
+  --display:"Creepster", "Impact", fantasy;
+  --body:"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:dark;
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--bone);font-family:var(--body);font-size:16px;line-height:1.4;
+  background-image:radial-gradient(120% 60% at 50% -10%, #3a1020 0%, transparent 60%),radial-gradient(80% 40% at 50% 110%, #2a0f05 0%, transparent 70%);
+  background-attachment:fixed}
+.app{max-width:520px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;gap:16px;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:16px 32px}
+h1,h2,h3{margin:0;text-wrap:balance}
+.logo{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,12vw,3.6rem);line-height:.95;color:var(--blood);letter-spacing:.02em;text-shadow:0 2px 0 #000,0 0 24px rgba(212,24,58,.35)}
+.logo span{color:var(--bone)}
+.kicker{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.big{font-family:var(--display);font-weight:400;font-size:2.2rem;line-height:1;color:var(--pumpkin)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.muted{color:var(--muted)}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+button:focus-visible,input:focus-visible{outline:3px solid var(--pumpkin);outline-offset:2px}
+.btn{background:var(--blood);color:#fff;font-weight:800;font-size:1.05rem;padding:15px 18px;border-radius:12px;box-shadow:0 4px 0 var(--blood-d);transition:transform .08s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--blood-d)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;border:2px solid var(--line);box-shadow:none;color:var(--bone)}
+.btn.alt{background:var(--pumpkin);color:#1a0d00;box-shadow:0 4px 0 #a5520b}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.stack{display:flex;flex-direction:column;gap:12px}
+input[type=text]{width:100%;font:inherit;font-size:1.1rem;padding:13px 14px;border-radius:10px;border:2px solid var(--line);background:var(--bg2);color:var(--bone)}
+.avatars{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.av{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 4px;border-radius:12px;border:2px solid var(--line);background:var(--bg2);font-size:.72rem;color:var(--muted)}
+.av b{font-size:1.9rem;line-height:1.1}
+.av[aria-pressed=true]{border-color:var(--pumpkin);background:#3a2312;color:var(--bone)}
+.av[disabled]{opacity:.3}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px 6px 6px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);font-weight:600}
+.chip .e{font-size:1.3rem}
+.chip.done{border-color:var(--ok)}
+.chip.done::after{content:"✓";color:var(--ok);font-weight:800}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.round{font-weight:800;font-variant-numeric:tabular-nums}
+.round small{color:var(--muted);font-weight:600}
+.themes{display:grid;gap:10px}
+.theme{display:flex;align-items:center;gap:14px;text-align:left;padding:16px;border-radius:14px;background:var(--bg2);border:2px solid var(--line);font-weight:800;font-size:1.15rem}
+.theme .e{font-size:2rem}
+.theme[aria-pressed=true]{border-color:var(--pumpkin);background:#3a2312}
+.timer{height:8px;border-radius:99px;background:var(--bg2);overflow:hidden}
+.timer i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--blood),var(--pumpkin));transform-origin:left;transition:transform .25s linear}
+.tnum{font-variant-numeric:tabular-nums;font-weight:800;color:var(--pumpkin)}
+.question{font-size:1.3rem;font-weight:800;line-height:1.25;text-wrap:balance}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;text-align:left;padding:14px;border-radius:12px;background:var(--bg2);border:2px solid var(--line);font-weight:600;font-size:1.05rem}
+.opt .L{flex:0 0 32px;height:32px;border-radius:8px;display:grid;place-items:center;background:var(--line);font-weight:800}
+.opt[aria-pressed=true]{border-color:var(--pumpkin)}
+.opt.right{border-color:var(--ok);background:#12301f}
+.opt.right .L{background:var(--ok);color:#06200f}
+.opt.wrong{border-color:var(--bad);background:#3a1119}
+.opt[disabled]{cursor:default}
+.res{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:10px;background:var(--bg2)}
+.res .pts{font-weight:800;font-variant-numeric:tabular-nums}
+.res .pts.ok{color:var(--ok)} .res .pts.no{color:var(--bad)}
+.rank{display:flex;flex-direction:column;gap:8px;padding:0;margin:0;list-style:none}
+.rank li{display:grid;grid-template-columns:34px 40px 1fr auto;align-items:center;gap:8px;padding:12px;border-radius:12px;background:var(--bg2);border:1px solid var(--line)}
+.rank li.first{border-color:var(--pumpkin);background:#33200f}
+.rank .pos{font-family:var(--display);font-size:1.6rem;color:var(--muted);text-align:center}
+.rank li.first .pos{color:var(--pumpkin)}
+.rank .e{font-size:1.8rem}
+.rank .nm{font-weight:800;min-width:0;overflow-wrap:anywhere}
+.rank .sc{font-weight:800;font-variant-numeric:tabular-nums;font-size:1.15rem}
+.rank .gain{display:block;font-size:.75rem;color:var(--ok);font-weight:600}
+.champ{text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+.champ .e{font-size:5rem;line-height:1;animation:float 2.4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.reveal-theme{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center;padding:24px 16px}
+.reveal-theme .e{font-size:4.5rem;line-height:1}
+.pass{text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;padding:28px 16px}
+.pass .e{font-size:4.5rem;line-height:1}
+.note{font-size:.85rem;color:var(--muted)}
+.err{color:var(--bad);font-size:.9rem}
+.center{text-align:center}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+
+<script>
+// Sala online só existe dentro do Claude; no site o jogo roda no modo de um celular.
+const ONLINE = !!(window.claude && window.claude.use);
+/* ---------------- Conteúdo ---------------- */
+const THEMES = {
+  terror:{n:"Filmes de terror", e:"🔪"},
+  disney:{n:"Filmes Disney", e:"🏰"},
+  esporte:{n:"Esporte", e:"⚽"},
+  tech:{n:"Tecnologia", e:"💻"},
+  games:{n:"Games", e:"🎮"},
+  filmes:{n:"Filmes em geral", e:"🎬"},
+  orlando:{n:"Orlando", e:"🎢"},
+  brasil:{n:"História do Brasil", e:"🇧🇷"},
+  musica:{n:"Músicas", e:"🎵"},
+  anos90:{n:"Anos 90", e:"📼"},
+  novelas:{n:"Novelas", e:"💋"},
+  japao:{n:"Japão", e:"🗾"},
+  series:{n:"Séries", e:"🍿"},
+  lendas:{n:"Lendas urbanas", e:"👁️"},
+  sp:{n:"Cidade de São Paulo", e:"🏙️"},
+  comidas:{n:"Comidas típicas", e:"🍲"},
+  mitologia:{n:"Mitologia", e:"⚡"},
+  chaves:{n:"Chaves e Chapolin", e:"🛢️"},
+  pop:{n:"Cultura pop", e:"🌟"}
+};
+// Primeira alternativa é sempre a correta; a ordem é embaralhada a cada pergunta.
+const Q = {
+  terror:[
+    ["No primeiro \"Sexta-Feira 13\" (1980), quem é o assassino?",["Pamela Voorhees, mãe do Jason","Jason Voorhees","Freddy Krueger","Michael Myers"]],
+    ["Em qual rua Freddy Krueger ataca, segundo o título original de \"A Hora do Pesadelo\"?",["Elm Street","Maple Street","Oak Street","Main Street"]],
+    ["Qual é o nome do palhaço de \"It: A Coisa\"?",["Pennywise","Art","Twisty","Captain Spaulding"]],
+    ["Em qual hotel se passa \"O Iluminado\"?",["Overlook","Bates","Cecil","Stanley"]],
+    ["Qual é o nome completo do boneco Chucky?",["Charles Lee Ray","Charles Myers","Chuck Norris Ray","Charlie Krueger"]],
+    ["Em \"Invocação do Mal\", qual casal de investigadores paranormais é o protagonista?",["Ed e Lorraine Warren","Gomez e Morticia Addams","Sam e Dean Winchester","Jack e Wendy Torrance"]],
+    ["Michael Myers é o vilão de qual franquia?",["Halloween","Pânico","Jogos Mortais","Hellraiser"]],
+    ["Quem dirigiu \"Corra!\" (2017)?",["Jordan Peele","James Wan","Ari Aster","Mike Flanagan"]],
+    ["Como é chamado o vilão de \"Jogos Mortais\"?",["Jigsaw","Pinhead","Leatherface","Candyman"]],
+    ["Em \"Pânico\" (1996), qual é a pergunta clássica que o assassino faz ao telefone?",["Qual é o seu filme de terror favorito?","Você está sozinha em casa?","Quer brincar comigo?","Você sabe o que fez no verão passado?"]]
+  ],
+  disney:[
+    ["Qual é o nome do pai de Simba em \"O Rei Leão\"?",["Mufasa","Scar","Rafiki","Zazu"]],
+    ["Como se chama o boneco de neve de \"Frozen\"?",["Olaf","Sven","Kristoff","Hans"]],
+    ["Qual foi o primeiro longa-metragem animado da Disney (1937)?",["Branca de Neve e os Sete Anões","Pinóquio","Cinderela","Fantasia"]],
+    ["Em \"Procurando Nemo\", qual peixe tem problema de memória?",["Dory","Marlin","Gill","Bruce"]],
+    ["Qual é o nome do macaquinho de \"Aladdin\"?",["Abu","Iago","Rajah","Jafar"]],
+    ["Qual semideus acompanha Moana na aventura?",["Maui","Tamatoa","Hei Hei","Pua"]],
+    ["Como se chama o caranguejo de \"A Pequena Sereia\"?",["Sebastião","Linguado","Sabidão","Tritão"]],
+    ["Em \"Toy Story\", qual é o nome do menino dono do Woody?",["Andy","Sid","Bonnie","Al"]],
+    ["Qual é o nome do camaleão de Rapunzel em \"Enrolados\"?",["Pascal","Max","Flynn","Meeko"]],
+    ["Qual é o sobrenome da família de \"Encanto\"?",["Madrigal","Rivera","Garcia","Mendoza"]]
+  ],
+  esporte:[
+    ["Quantas Copas do Mundo a seleção brasileira masculina já venceu?",["5","4","6","3"]],
+    ["Em que país foi disputada a Copa do Mundo de 2022?",["Catar","Rússia","Emirados Árabes","Arábia Saudita"]],
+    ["Quantos jogadores cada time tem em quadra no vôlei?",["6","5","7","4"]],
+    ["Quantos títulos mundiais de Fórmula 1 Ayrton Senna conquistou?",["3","2","4","5"]],
+    ["Quem é o maior artilheiro da história das Copas do Mundo?",["Miroslav Klose","Ronaldo Fenômeno","Pelé","Lionel Messi"]],
+    ["Por qual time Michael Jordan conquistou seus seis títulos da NBA?",["Chicago Bulls","Los Angeles Lakers","Boston Celtics","Washington Wizards"]],
+    ["No futebol americano, quantos pontos vale um touchdown?",["6","7","3","5"]],
+    ["Em qual cidade foram disputadas as Olimpíadas de 2016?",["Rio de Janeiro","Londres","Tóquio","Pequim"]],
+    ["Em qual clube brasileiro Pelé fez história?",["Santos","Corinthians","Flamengo","Botafogo"]],
+    ["Qual torneio de tênis do Grand Slam é disputado na grama?",["Wimbledon","Roland Garros","US Open","Australian Open"]]
+  ],
+  tech:[
+    ["Quem fundou a Microsoft junto com Paul Allen?",["Bill Gates","Steve Jobs","Larry Page","Mark Zuckerberg"]],
+    ["O que significa a sigla \"www\"?",["World Wide Web","Wide World Window","Web World Wire","World Web Window"]],
+    ["Em que ano o primeiro iPhone foi lançado?",["2007","2005","2009","2010"]],
+    ["Quantos bits tem um byte?",["8","4","16","10"]],
+    ["Qual empresa desenvolve o sistema Android?",["Google","Samsung","Apple","Microsoft"]],
+    ["O que significa a sigla \"CPU\"?",["Unidade Central de Processamento","Central de Programas Úteis","Computador Pessoal Universal","Controle de Processos Unificado"]],
+    ["Quem fundou a Apple junto com Steve Jobs?",["Steve Wozniak","Bill Gates","Elon Musk","Jeff Bezos"]],
+    ["O que significa a sigla \"USB\"?",["Universal Serial Bus","United System Board","Universal Storage Box","Ultra Speed Bus"]],
+    ["Qual linguagem de programação tem uma xícara de café como logo?",["Java","Python","C++","Ruby"]],
+    ["Qual rede social foi criada por Mark Zuckerberg em 2004?",["Facebook","Orkut","Twitter","MySpace"]]
+  ],
+  games:[
+    ["Qual é o nome do famoso encanador da Nintendo?",["Mario","Luigi","Wario","Toad"]],
+    ["Em Minecraft, como se chama o monstro verde que explode?",["Creeper","Enderman","Zumbi","Slime"]],
+    ["Qual empresa criou o PlayStation?",["Sony","Nintendo","Microsoft","Sega"]],
+    ["O Sonic é mascote de qual empresa?",["Sega","Nintendo","Atari","Capcom"]],
+    ["Qual é o nome do herói de \"The Legend of Zelda\"?",["Link","Zelda","Ganon","Navi"]],
+    ["Quantos fantasmas perseguem o Pac-Man no jogo clássico?",["4","3","5","6"]],
+    ["Qual battle royale foi criado pela Epic Games?",["Fortnite","PUBG","Free Fire","Apex Legends"]],
+    ["O que significa a sigla GTA?",["Grand Theft Auto","Great Town Action","Gang Theft Arena","Grand Turbo Auto"]],
+    ["Qual é o Pokémon número 1 da Pokédex?",["Bulbasaur","Pikachu","Charmander","Mew"]],
+    ["Qual é o nome atual do jogo de futebol da EA, antes chamado FIFA?",["EA Sports FC","EA Football","FIFA Pro","Ultimate Soccer"]]
+  ],
+  filmes:[
+    ["Quem dirigiu \"Titanic\" (1997)?",["James Cameron","Steven Spielberg","Christopher Nolan","Ridley Scott"]],
+    ["Qual é o sobrenome da família de \"O Poderoso Chefão\"?",["Corleone","Soprano","Montana","Gambino"]],
+    ["Em \"Matrix\", qual pílula Neo escolhe tomar?",["Vermelha","Azul","Verde","Amarela"]],
+    ["Qual carro vira máquina do tempo em \"De Volta para o Futuro\"?",["DeLorean","Mustang","Camaro","Fusca"]],
+    ["Qual filme sul-coreano ganhou o Oscar de Melhor Filme em 2020?",["Parasita","Oldboy","Invasão Zumbi","A Criada"]],
+    ["Quem dirigiu \"Cidade de Deus\" (2002)?",["Fernando Meirelles","Walter Salles","José Padilha","Kleber Mendonça Filho"]],
+    ["Qual filme brasileiro ganhou o Oscar de Melhor Filme Internacional em 2025?",["Ainda Estou Aqui","Central do Brasil","O Auto da Compadecida","Bacurau"]],
+    ["Em \"O Senhor dos Anéis\", qual hobbit carrega o Um Anel até Mordor?",["Frodo","Sam","Bilbo","Pippin"]],
+    ["Quem dirigiu \"Jurassic Park\" (1993)?",["Steven Spielberg","George Lucas","James Cameron","Peter Jackson"]],
+    ["Em \"Forrest Gump\", a vida é comparada a uma caixa de quê?",["Chocolates","Surpresas","Fósforos","Sapatos"]]
+  ],
+  orlando:[
+    ["Em qual estado americano fica Orlando?",["Flórida","Califórnia","Texas","Geórgia"]],
+    ["Qual parque da Disney em Orlando tem o Castelo da Cinderela?",["Magic Kingdom","Epcot","Hollywood Studios","Animal Kingdom"]],
+    ["Quantos parques temáticos o Walt Disney World tem em Orlando?",["4","3","5","6"]],
+    ["Em qual parque da Disney fica a grande esfera Spaceship Earth?",["Epcot","Magic Kingdom","Hollywood Studios","Animal Kingdom"]],
+    ["Qual parque da Universal foi inaugurado em Orlando em 2025?",["Epic Universe","Volcano Bay","Islands of Adventure","CityWalk"]],
+    ["Em qual parque da Disney fica a área de Pandora, do filme Avatar?",["Animal Kingdom","Epcot","Magic Kingdom","Hollywood Studios"]],
+    ["Qual é a sigla do aeroporto internacional de Orlando?",["MCO","ORL","MIA","FLL"]],
+    ["Qual parque aquático da Disney tem tema de estação de esqui derretendo?",["Blizzard Beach","Typhoon Lagoon","Aquatica","Volcano Bay"]],
+    ["Em qual parque da Universal fica o castelo de Hogwarts?",["Islands of Adventure","Universal Studios Florida","Epic Universe","Volcano Bay"]],
+    ["O que é o Disney Springs?",["Área de compras e restaurantes","Um parque aquático","Um hotel","Um parque temático"]]
+  ],
+  brasil:[
+    ["Em que ano os portugueses chegaram ao Brasil?",["1500","1492","1530","1822"]],
+    ["Quem proclamou a Independência do Brasil?",["Dom Pedro I","Dom Pedro II","Tiradentes","Deodoro da Fonseca"]],
+    ["Quem assinou a Lei Áurea, que aboliu a escravidão em 1888?",["Princesa Isabel","Dom Pedro II","Dom João VI","Getúlio Vargas"]],
+    ["Quem foi o primeiro presidente do Brasil?",["Deodoro da Fonseca","Floriano Peixoto","Getúlio Vargas","Prudente de Morais"]],
+    ["Qual cidade era a capital do Brasil antes de Brasília?",["Rio de Janeiro","Salvador","São Paulo","Belo Horizonte"]],
+    ["Em que ano Brasília foi inaugurada?",["1960","1955","1964","1950"]],
+    ["Tiradentes foi líder de qual movimento?",["Inconfidência Mineira","Revolução Farroupilha","Cabanagem","Canudos"]],
+    ["Em que ano foi proclamada a República no Brasil?",["1889","1822","1888","1930"]],
+    ["Qual presidente construiu Brasília?",["Juscelino Kubitschek","Getúlio Vargas","Jânio Quadros","João Goulart"]],
+    ["Qual foi a primeira capital do Brasil?",["Salvador","Rio de Janeiro","Recife","São Vicente"]]
+  ],
+  musica:[
+    ["Quem é conhecida como a Rainha do Rock brasileiro?",["Rita Lee","Pitty","Cássia Eller","Elis Regina"]],
+    ["Qual banda gravou \"Bohemian Rhapsody\"?",["Queen","The Beatles","Led Zeppelin","Pink Floyd"]],
+    ["Quem é conhecido como o Rei do Pop?",["Michael Jackson","Elvis Presley","Prince","Justin Timberlake"]],
+    ["Quem compôs \"Garota de Ipanema\"?",["Tom Jobim e Vinicius de Moraes","Caetano Veloso e Gilberto Gil","Chico Buarque e Toquinho","João Gilberto e Djavan"]],
+    ["De qual cidade inglesa vieram os Beatles?",["Liverpool","Londres","Manchester","Birmingham"]],
+    ["Qual cantor brasileiro é chamado de \"o Rei\"?",["Roberto Carlos","Erasmo Carlos","Tim Maia","Zeca Pagodinho"]],
+    ["Luiz Gonzaga é conhecido como o Rei do quê?",["Baião","Samba","Forró universitário","Sertanejo"]],
+    ["Quem canta \"Shake It Off\"?",["Taylor Swift","Katy Perry","Lady Gaga","Ariana Grande"]],
+    ["Qual instrumento consagrou Jimi Hendrix?",["Guitarra","Bateria","Piano","Saxofone"]],
+    ["De qual banda Freddie Mercury era vocalista?",["Queen","Guns N' Roses","AC/DC","Aerosmith"]]
+  ],
+  anos90:[
+    ["Contra qual seleção o Brasil venceu a final da Copa de 1994?",["Itália","Alemanha","Argentina","França"]],
+    ["Qual bichinho virtual japonês virou febre nos anos 90?",["Tamagotchi","Furby","Pokémon","Digimon"]],
+    ["Qual banda de Guarulhos estourou em 1995 com músicas de humor?",["Mamonas Assassinas","Raimundos","Charlie Brown Jr.","Skank"]],
+    ["Qual moeda o Brasil adotou em 1994?",["Real","Cruzeiro Real","Cruzado","Cruzado Novo"]],
+    ["Qual videogame a Sony lançou em 1994?",["PlayStation","Dreamcast","Nintendo 64","Mega Drive"]],
+    ["Qual grupo pop tinha Posh, Baby, Scary, Sporty e Ginger?",["Spice Girls","Destiny's Child","All Saints","TLC"]],
+    ["Qual programa infantil da TV Cultura tinha o Nino como personagem?",["Castelo Rá-Tim-Bum","X-Tudo","Cocoricó","Glub Glub"]],
+    ["Como se chamava a ovelha clonada em 1996?",["Dolly","Molly","Polly","Lilly"]],
+    ["Qual série sobre seis amigos em Nova York estreou em 1994?",["Friends","Seinfeld","Barrados no Baile","Um Maluco no Pedaço"]],
+    ["De qual banda de Seattle Kurt Cobain era vocalista?",["Nirvana","Pearl Jam","Soundgarden","Foo Fighters"]]
+  ],
+  novelas:[
+    ["Em \"Avenida Brasil\", qual é o nome da vilã vivida por Adriana Esteves?",["Carminha","Nazaré","Flora","Perpétua"]],
+    ["Sinhozinho Malta, do bordão \"Tô certo ou tô errado?\", é de qual novela?",["Roque Santeiro","Tieta","O Bem-Amado","Saramandaia"]],
+    ["Na versão de 1988 de \"Vale Tudo\", quem matou Odete Roitman?",["Leila","Maria de Fátima","Raquel","Heleninha"]],
+    ["\"O Clone\" se passa em boa parte em qual país?",["Marrocos","Egito","Turquia","Índia"]],
+    ["Qual vilã de \"Senhora do Destino\" virou meme na internet?",["Nazaré Tedesco","Carminha","Odete Roitman","Bia Falcão"]],
+    ["A primeira \"Pantanal\" (1990) foi exibida por qual emissora?",["Rede Manchete","Globo","SBT","Bandeirantes"]],
+    ["Como se chamam as gêmeas de \"Mulheres de Areia\"?",["Ruth e Raquel","Mel e Lua","Taís e Paula","Isabel e Sofia"]],
+    ["Em \"O Rei do Gado\", qual família é rival dos Mezenga?",["Berdinazi","Medeiros","Sampaio","Bezerra"]],
+    ["Qual novela mexicana do SBT tinha a vilã Paola Bracho?",["A Usurpadora","Maria do Bairro","Marimar","Rubi"]],
+    ["Em \"Laços de Família\", qual personagem raspa a cabeça em uma cena famosa?",["Camila","Helena","Capitu","Íris"]]
+  ],
+  japao:[
+    ["Qual é a capital do Japão?",["Tóquio","Quioto","Osaka","Hiroshima"]],
+    ["Qual é a moeda do Japão?",["Iene","Yuan","Won","Rúpia"]],
+    ["Qual é a montanha mais alta do Japão?",["Monte Fuji","Monte Aso","Monte Kita","Monte Tate"]],
+    ["Como se chama o trem-bala japonês?",["Shinkansen","Maglev Express","Sakura Line","Tokaido Rapid"]],
+    ["Qual é o nome da arte japonesa de dobrar papel?",["Origami","Ikebana","Bonsai","Kirigami"]],
+    ["Qual cidade japonesa foi atingida pela bomba atômica em 6 de agosto de 1945?",["Hiroshima","Nagasaki","Kobe","Yokohama"]],
+    ["Qual bairro de São Paulo é famoso pela comunidade japonesa?",["Liberdade","Pinheiros","Mooca","Bela Vista"]],
+    ["Em que ano o navio Kasato Maru trouxe os primeiros imigrantes japoneses ao Brasil?",["1908","1888","1925","1950"]],
+    ["Qual luta japonesa é disputada por lutadores pesados num ringue circular?",["Sumô","Judô","Caratê","Kendô"]],
+    ["Qual empresa japonesa criou o Walkman?",["Sony","Panasonic","Toshiba","Nintendo"]]
+  ],
+  series:[
+    ["Em \"Breaking Bad\", qual é o nome do professor de química protagonista?",["Walter White","Jesse Pinkman","Saul Goodman","Hank Schrader"]],
+    ["Em qual série casas nobres disputam o Trono de Ferro?",["Game of Thrones","The Witcher","Vikings","The Crown"]],
+    ["Em qual cidade fictícia se passa \"Stranger Things\"?",["Hawkins","Riverdale","Derry","Springfield"]],
+    ["Em \"Friends\", como se chama o café onde a turma se encontra?",["Central Perk","Monk's Café","MacLaren's","Luke's"]],
+    ["Em \"La Casa de Papel\", como é chamado o líder do grupo?",["Professor","Berlim","Tóquio","Rio"]],
+    ["Em \"The Office\" (EUA), qual é o nome da empresa de papel?",["Dunder Mifflin","Paper Corp","Sabre","Staples"]],
+    ["Como se chama no Brasil a série sul-coreana de jogos mortais lançada em 2021?",["Round 6","Alice in Borderland","Kingdom","Sweet Home"]],
+    ["Wandinha é personagem de qual família?",["Addams","Munster","Simpson","Soprano"]],
+    ["Quem é o xerife protagonista de \"The Walking Dead\"?",["Rick Grimes","Daryl Dixon","Negan","Glenn Rhee"]],
+    ["Em \"Chaves\", onde o Chaves costuma se esconder?",["No barril","Na escada","Embaixo da cama","No telhado"]]
+  ],
+  lendas:[
+    ["Qual lenda urbana fala de uma mulher que aparece nos banheiros de escola?",["Loira do Banheiro","Mulher de Branco","Noiva Cadáver","Dama da Noite"]],
+    ["Qual ser do folclore brasileiro tem os pés virados para trás?",["Curupira","Saci-Pererê","Boitatá","Mula sem Cabeça"]],
+    ["Quantas pernas tem o Saci-Pererê?",["1","2","3","Nenhuma"]],
+    ["Segundo a lenda amazônica, qual animal vira um rapaz bonito para encantar moças nas festas?",["Boto-cor-de-rosa","Jacaré","Onça-pintada","Peixe-boi"]],
+    ["Qual criatura lendária ficou famosa por supostamente atacar cabras na América Latina?",["Chupa-cabra","Pé Grande","Mapinguari","Lobisomem"]],
+    ["Qual cidade mineira ficou famosa pelo caso de um suposto ET em 1996?",["Varginha","Ouro Preto","Uberaba","Juiz de Fora"]],
+    ["Qual monstro lendário viveria em um lago da Escócia?",["Monstro do Lago Ness","Kraken","Yeti","Wendigo"]],
+    ["Qual cobra de fogo protege as matas no folclore brasileiro?",["Boitatá","Cuca","Iara","Caipora"]],
+    ["Qual lenda diz que um espírito aparece ao chamar seu nome três vezes diante do espelho?",["Bloody Mary","Slender Man","Homem do Saco","Cuca"]],
+    ["Segundo a lenda, em que noite o lobisomem se transforma?",["Lua cheia","Lua nova","Sexta-feira 13 de manhã","Noite de Natal"]]
+  ],
+  sp:[
+    ["Em qual avenida de São Paulo fica o MASP?",["Avenida Paulista","Avenida Faria Lima","Avenida Brasil","Avenida Ipiranga"]],
+    ["Em que dia se comemora o aniversário da cidade de São Paulo?",["25 de janeiro","9 de julho","7 de setembro","15 de novembro"]],
+    ["Qual é o parque mais famoso de São Paulo, com projetos de Oscar Niemeyer?",["Ibirapuera","Villa-Lobos","Parque da Água Branca","Parque do Carmo"]],
+    ["Onde fica o famoso sanduíche de mortadela paulistano?",["Mercado Municipal","Shopping Iguatemi","Estação da Luz","Bom Retiro"]],
+    ["Quais rios dão nome às duas marginais de São Paulo?",["Tietê e Pinheiros","Tietê e Tamanduateí","Pinheiros e Paraíba","Anhangabaú e Tietê"]],
+    ["Em que ano São Paulo foi fundada pelos jesuítas?",["1554","1500","1630","1822"]],
+    ["Qual prédio ondulado de Oscar Niemeyer é símbolo do centro de São Paulo?",["Edifício Copan","Edifício Itália","Martinelli","Altino Arantes"]],
+    ["Como se chama o autódromo da Fórmula 1 em São Paulo?",["Interlagos","Jacarepaguá","Velocitta","Goiânia"]],
+    ["Qual estádio de São Paulo é a casa do Corinthians?",["Neo Química Arena","Allianz Parque","Morumbi","Canindé"]],
+    ["Em qual bairro fica o Beco do Batman, famoso pelos grafites?",["Vila Madalena","Mooca","Liberdade","Santana"]]
+  ],
+  comidas:[
+    ["Qual prato baiano é feito de massa de feijão-fradinho frita no dendê?",["Acarajé","Vatapá","Moqueca","Cocada"]],
+    ["Qual prato típico do Pará leva tucupi e jambu?",["Tacacá","Baião de dois","Arrumadinho","Escondidinho"]],
+    ["Tradicionalmente, a feijoada é feita com feijão de qual cor?",["Preto","Carioca","Branco","Vermelho"]],
+    ["O pão de queijo é típico de qual estado?",["Minas Gerais","Goiás","São Paulo","Bahia"]],
+    ["Qual prato italiano é um arroz cremoso cozido aos poucos no caldo?",["Risoto","Lasanha","Polenta","Nhoque"]],
+    ["A paella é um prato típico de qual país?",["Espanha","Itália","Portugal","México"]],
+    ["Os tacos são comida típica de qual país?",["México","Peru","Argentina","Chile"]],
+    ["O chimarrão é tradição de qual estado brasileiro?",["Rio Grande do Sul","Paraná","Mato Grosso","Santa Catarina"]],
+    ["Qual prato japonês é peixe cru fatiado, servido sem arroz?",["Sashimi","Sushi","Temaki","Tempurá"]],
+    ["O baião de dois é típico de qual região do Brasil?",["Nordeste","Sul","Norte","Centro-Oeste"]]
+  ],
+  mitologia:[
+    ["Quem é o rei dos deuses na mitologia grega?",["Zeus","Hades","Apolo","Ares"]],
+    ["Qual é o deus nórdico do trovão?",["Thor","Loki","Odin","Freyr"]],
+    ["Qual herói grego realizou os 12 trabalhos?",["Hércules","Aquiles","Perseu","Ulisses"]],
+    ["Qual criatura grega tinha serpentes no lugar dos cabelos?",["Medusa","Hidra","Quimera","Esfinge"]],
+    ["Quem é o deus grego dos mares?",["Poseidon","Hermes","Dionísio","Hefesto"]],
+    ["Qual deus egípcio tem cabeça de chacal?",["Anúbis","Rá","Osíris","Hórus"]],
+    ["Como se chama o cavalo alado da mitologia grega?",["Pégaso","Bucéfalo","Sleipnir","Centauro"]],
+    ["Quem é o pai de Thor na mitologia nórdica?",["Odin","Loki","Tyr","Heimdall"]],
+    ["Qual é a deusa grega da sabedoria?",["Atena","Afrodite","Hera","Ártemis"]],
+    ["Qual criatura metade homem, metade touro vivia no labirinto de Creta?",["Minotauro","Ciclope","Sátiro","Centauro"]]
+  ]
+};
+// Perguntas extras (11 a 20 de cada tema) e o tema Chaves e Chapolin.
+const QX = {
+  terror:[
+    ["Em \"O Exorcista\", qual é o nome da garota possuída?",["Regan","Carrie","Samara","Annabelle"]],
+    ["Qual vilão do terror usa máscara de hóquei?",["Jason Voorhees","Michael Myers","Ghostface","Leatherface"]],
+    ["Em \"O Chamado\", quantos dias a vítima tem depois de ver a fita?",["7","3","13","1"]],
+    ["Qual escritor de \"It\" e \"O Iluminado\" é chamado de Mestre do Terror?",["Stephen King","Edgar Allan Poe","H. P. Lovecraft","Bram Stoker"]],
+    ["Como se chama o vilão de \"O Massacre da Serra Elétrica\"?",["Leatherface","Pinhead","Candyman","Jigsaw"]],
+    ["Qual boneca amaldiçoada ganhou filme próprio derivado de \"Invocação do Mal\"?",["Annabelle","Chucky","M3GAN","Robert"]],
+    ["Em \"Hellraiser\", como é chamado o vilão com pregos na cabeça?",["Pinhead","Leatherface","Pennywise","Ghostface"]],
+    ["Quem dirigiu \"Psicose\" (1960)?",["Alfred Hitchcock","Stanley Kubrick","John Carpenter","Wes Craven"]],
+    ["Em \"Psicose\", qual é o nome do motel?",["Bates","Overlook","Cecil","Elm"]],
+    ["Em \"A Hora do Pesadelo\", onde Freddy Krueger ataca as vítimas?",["Nos sonhos","No espelho","Pelo telefone","Na floresta"]]
+  ],
+  disney:[
+    ["Em \"A Bela e a Fera\", como se chama o candelabro?",["Lumière","Horloge","Zip","Gaston"]],
+    ["Qual é o vilão de \"O Rei Leão\"?",["Scar","Jafar","Hades","Úrsula"]],
+    ["Em \"Divertida Mente\", qual emoção é azul?",["Tristeza","Medo","Nojinho","Raiva"]],
+    ["Qual é o nome da fadinha de Peter Pan?",["Sininho","Fauna","Primavera","Flora"]],
+    ["Em \"Up: Altas Aventuras\", o que faz a casa voar?",["Balões","Um foguete","Um dirigível","Asas de madeira"]],
+    ["Em \"Cinderela\", em que a carruagem se transforma à meia-noite?",["Abóbora","Melancia","Sapato","Rato"]],
+    ["Por que Mulan se disfarça de homem?",["Para lutar no exército no lugar do pai","Para fugir de um casamento","Para virar imperador","Para entrar numa escola"]],
+    ["Em \"Viva: A Vida é uma Festa\", o que Miguel sonha ser?",["Músico","Pintor","Jogador de futebol","Chef"]],
+    ["Qual personagem diz \"Ao infinito e além!\"?",["Buzz Lightyear","Woody","Wall-E","Relâmpago McQueen"]],
+    ["Quantos dálmatas há no título do clássico da Disney?",["101","99","100","102"]]
+  ],
+  esporte:[
+    ["Quantos minutos dura o tempo regulamentar de um jogo de futebol?",["90","80","100","120"]],
+    ["Qual atleta jamaicano é recordista mundial dos 100 metros rasos?",["Usain Bolt","Carl Lewis","Asafa Powell","Yohan Blake"]],
+    ["Em qual país surgiu o futebol moderno?",["Inglaterra","Brasil","Itália","Uruguai"]],
+    ["Quantos jogadores cada time tem em quadra no basquete?",["5","6","7","4"]],
+    ["Qual jogador brasileiro ficou conhecido como \"Fenômeno\"?",["Ronaldo","Ronaldinho","Romário","Rivaldo"]],
+    ["Em qual país foi disputada a Copa do Mundo de 2014?",["Brasil","África do Sul","Alemanha","Rússia"]],
+    ["Qual foi o placar de Brasil x Alemanha na semifinal da Copa de 2014?",["1 a 7","0 a 5","2 a 6","1 a 4"]],
+    ["Gustavo Kuerten, o Guga, brilhou em qual esporte?",["Tênis","Vôlei","Natação","Surfe"]],
+    ["Rebeca Andrade é estrela de qual esporte?",["Ginástica artística","Atletismo","Judô","Skate"]],
+    ["Ítalo Ferreira ganhou ouro olímpico em Tóquio em qual esporte?",["Surfe","Skate","Canoagem","Vela"]]
+  ],
+  tech:[
+    ["Quem fundou a Amazon?",["Jeff Bezos","Elon Musk","Bill Gates","Larry Page"]],
+    ["Qual empresa fabrica o iPhone?",["Apple","Samsung","Motorola","Xiaomi"]],
+    ["Qual tecnologia sem fio leva o nome de um rei viking?",["Bluetooth","Wi-Fi","NFC","5G"]],
+    ["Qual empresa criou o ChatGPT?",["OpenAI","Google","Meta","Microsoft"]],
+    ["Qual empresa criou o assistente Claude?",["Anthropic","OpenAI","Apple","Amazon"]],
+    ["O que significa a sigla \"IA\"?",["Inteligência Artificial","Internet Avançada","Interface Automática","Informação Aberta"]],
+    ["Qual rede social, conhecida pelo passarinho, mudou de nome para X?",["Twitter","Instagram","Threads","Tumblr"]],
+    ["Em que ano o Google foi fundado?",["1998","1994","2001","2004"]],
+    ["O que significa a sigla \"RAM\"?",["Memória de acesso aleatório","Rede de alta memória","Registro automático de máquina","Memória de arquivo remoto"]],
+    ["Qual aplicativo de mensagens o Facebook comprou em 2014?",["WhatsApp","Telegram","Snapchat","Skype"]]
+  ],
+  games:[
+    ["Em \"Street Fighter\", qual lutador é brasileiro?",["Blanka","Ryu","Guile","Zangief"]],
+    ["Qual jogo de blocos que caem foi criado na União Soviética?",["Tetris","Columns","Candy Crush","Dr. Mario"]],
+    ["Qual é o nome do irmão do Mario?",["Luigi","Wario","Yoshi","Toad"]],
+    ["Qual console portátil a Nintendo lançou em 1989?",["Game Boy","Nintendo DS","Game Gear","PSP"]],
+    ["Pikachu é um Pokémon de qual tipo?",["Elétrico","Fogo","Normal","Psíquico"]],
+    ["Qual empresa fabrica o Xbox?",["Microsoft","Sony","Nintendo","Sega"]],
+    ["Em qual jogo o personagem Steve constrói com blocos?",["Minecraft","Roblox","Terraria","Fortnite"]],
+    ["Em \"Mortal Kombat\", qual ninja grita \"Get over here!\"?",["Scorpion","Sub-Zero","Raiden","Liu Kang"]],
+    ["Qual princesa Mario costuma salvar?",["Peach","Zelda","Daisy","Rosalina"]],
+    ["Qual jogo de faroeste foi criado pela Rockstar?",["Red Dead Redemption","Call of Juarez","Gun","Wild Arms"]]
+  ],
+  filmes:[
+    ["Em \"Star Wars\", quem é o pai de Luke Skywalker?",["Darth Vader","Obi-Wan Kenobi","Han Solo","Yoda"]],
+    ["Qual ator interpretou Jack em \"Titanic\"?",["Leonardo DiCaprio","Brad Pitt","Tom Cruise","Matt Damon"]],
+    ["Em \"O Mágico de Oz\", de que cor são os tijolos da estrada?",["Amarelos","Vermelhos","Verdes","Dourados"]],
+    ["Quem dirigiu \"Pulp Fiction\"?",["Quentin Tarantino","Martin Scorsese","David Fincher","Guy Ritchie"]],
+    ["Em qual escola de magia Harry Potter estuda?",["Hogwarts","Durmstrang","Beauxbatons","Ilvermorny"]],
+    ["Quem interpretou o Coringa em \"Batman: O Cavaleiro das Trevas\"?",["Heath Ledger","Joaquin Phoenix","Jack Nicholson","Jared Leto"]],
+    ["Qual filme brasileiro de 1998 com Fernanda Montenegro foi indicado ao Oscar?",["Central do Brasil","Cidade de Deus","Carandiru","O Quatrilho"]],
+    ["Rocky Balboa é lutador de qual esporte?",["Boxe","MMA","Luta livre","Judô"]],
+    ["Quem interpretou o Capitão Nascimento em \"Tropa de Elite\"?",["Wagner Moura","Rodrigo Santoro","Selton Mello","Lázaro Ramos"]],
+    ["Qual filme de Steven Spielberg tem um extraterrestre que quer voltar para casa?",["E.T.: O Extraterrestre","Contatos Imediatos","Guerra dos Mundos","Super 8"]]
+  ],
+  orlando:[
+    ["Qual parque da Disney tem a área de Star Wars: Galaxy's Edge?",["Hollywood Studios","Magic Kingdom","Epcot","Animal Kingdom"]],
+    ["No Epcot, como se chama a área com pavilhões de vários países?",["World Showcase","World Nature","Future World","Adventureland"]],
+    ["Qual parque aquático da Universal tem um vulcão gigante?",["Volcano Bay","Blizzard Beach","Typhoon Lagoon","Aquatica"]],
+    ["Qual é o mascote mais famoso da Disney?",["Mickey Mouse","Pato Donald","Pateta","Pluto"]],
+    ["Qual atração do Magic Kingdom tem barquinhos e bonecos cantando de vários países?",["It's a Small World","Piratas do Caribe","Jungle Cruise","Haunted Mansion"]],
+    ["Em qual parque da Universal fica o Beco Diagonal de Harry Potter?",["Universal Studios Florida","Islands of Adventure","Epic Universe","Volcano Bay"]],
+    ["Qual trem liga as duas áreas de Harry Potter na Universal?",["Hogwarts Express","Monorail","Orient Express","Knight Bus"]],
+    ["Qual transporte elevado liga o Magic Kingdom ao Epcot?",["Monorail","Teleférico","Metrô","Bonde"]],
+    ["Em qual parque da Disney fica a Árvore da Vida?",["Animal Kingdom","Epcot","Magic Kingdom","Hollywood Studios"]],
+    ["Qual avenida turística de Orlando concentra hotéis, lojas e atrações?",["International Drive","Ocean Drive","Hollywood Boulevard","Las Vegas Strip"]]
+  ],
+  brasil:[
+    ["Qual navegador português chegou ao Brasil em 1500?",["Pedro Álvares Cabral","Vasco da Gama","Cristóvão Colombo","Fernão de Magalhães"]],
+    ["Qual presidente criou a CLT, as leis trabalhistas?",["Getúlio Vargas","Juscelino Kubitschek","Eurico Dutra","Jânio Quadros"]],
+    ["Em que ano começou a ditadura militar no Brasil?",["1964","1954","1968","1970"]],
+    ["Quem foi a primeira mulher presidente do Brasil?",["Dilma Rousseff","Marina Silva","Zélia Cardoso","Luiza Erundina"]],
+    ["Em 1808, a família real portuguesa veio ao Brasil fugindo de quem?",["Napoleão","Espanhóis","Ingleses","Holandeses"]],
+    ["Em qual cidade foi dado o Grito do Ipiranga?",["São Paulo","Rio de Janeiro","Salvador","Ouro Preto"]],
+    ["Em que ano foi promulgada a Constituição atual do Brasil?",["1988","1985","1964","1992"]],
+    ["Qual movimento de 1984 pedia eleições diretas para presidente?",["Diretas Já","Caras-Pintadas","Fora Collor","Tenentismo"]],
+    ["Qual quilombo, liderado por Zumbi, é o mais famoso do Brasil?",["Palmares","Canudos","Campo Grande","Ambrósio"]],
+    ["Contra qual país Brasil, Argentina e Uruguai lutaram na Guerra da Tríplice Aliança?",["Paraguai","Bolívia","Chile","Peru"]]
+  ],
+  musica:[
+    ["Quem é conhecido como o Rei do Rock?",["Elvis Presley","Chuck Berry","Little Richard","Johnny Cash"]],
+    ["Quem canta \"Show das Poderosas\"?",["Anitta","Ludmilla","Pabllo Vittar","Ivete Sangalo"]],
+    ["Qual banda brasileira gravou \"Pais e Filhos\"?",["Legião Urbana","Titãs","Paralamas do Sucesso","Capital Inicial"]],
+    ["Quem é o vocalista dos Rolling Stones?",["Mick Jagger","Keith Richards","Paul McCartney","Rod Stewart"]],
+    ["Quem é conhecida como a Rainha do Pop?",["Madonna","Beyoncé","Britney Spears","Lady Gaga"]],
+    ["Quem faz dupla com Zezé Di Camargo?",["Luciano","Leonardo","Xororó","Bruno"]],
+    ["Qual cantor baiano gravou \"Andar com Fé\"?",["Gilberto Gil","Caetano Veloso","Djavan","Lulu Santos"]],
+    ["Qual banda irlandesa tem Bono como vocalista?",["U2","Coldplay","The Cranberries","Oasis"]],
+    ["Quem canta \"Rolling in the Deep\"?",["Adele","Amy Winehouse","Rihanna","Dua Lipa"]],
+    ["Tim Maia é um dos maiores nomes de qual gênero no Brasil?",["Soul","Sertanejo","Axé","Bossa nova"]]
+  ],
+  anos90:[
+    ["Qual desenho dos anos 90 tinha o bebê Tommy Pickles?",["Os Anjinhos (Rugrats)","Hey Arnold!","Doug","Dexter"]],
+    ["Qual piloto brasileiro morreu em 1994 no circuito de Ímola?",["Ayrton Senna","Nelson Piquet","Rubens Barrichello","Emerson Fittipaldi"]],
+    ["Qual filme de 1997 sobre um navio que afunda virou recordista de bilheteria?",["Titanic","Poseidon","Waterworld","Armageddon"]],
+    ["Qual equipe de heróis coloridos fez sucesso na TV nos anos 90?",["Power Rangers","Tartarugas Ninja","Cavaleiros do Zodíaco","X-Men"]],
+    ["Qual grupo baiano fazia sucesso com a \"Dança da Garrafa\"?",["É o Tchan","Terra Samba","Banda Eva","Asa de Águia"]],
+    ["Qual boy band gravou \"I Want It That Way\"?",["Backstreet Boys","*NSYNC","Boyzone","Westlife"]],
+    ["Qual presidente brasileiro sofreu impeachment em 1992?",["Fernando Collor","Itamar Franco","José Sarney","Fernando Henrique"]],
+    ["Qual jogo de dança com tapete virou febre nos fliperamas no fim dos anos 90?",["Dance Dance Revolution","Just Dance","Guitar Hero","Pump It Up Pro"]],
+    ["Quem cantou \"...Baby One More Time\" em 1998?",["Britney Spears","Christina Aguilera","Mandy Moore","Jessica Simpson"]],
+    ["Qual filme de 1999 tem Neo escolhendo entre duas pílulas?",["Matrix","Clube da Luta","O Sexto Sentido","Gattaca"]]
+  ],
+  novelas:[
+    ["Em \"Avenida Brasil\", qual é o nome da protagonista que busca vingança?",["Nina","Carminha","Suelen","Monalisa"]],
+    ["\"Cheias de Charme\" contava a história de três mulheres com qual profissão?",["Empregadas domésticas","Enfermeiras","Cantoras de bar","Manicures"]],
+    ["Em \"Senhora do Destino\", qual é o nome da protagonista vivida por Susana Vieira?",["Maria do Carmo","Nazaré","Helena","Lurdinha"]],
+    ["Quem interpretou Jade em \"O Clone\"?",["Giovanna Antonelli","Débora Falabella","Juliana Paes","Letícia Spiller"]],
+    ["Em \"Pantanal\", em qual animal Juma Marruá se transforma?",["Onça","Jacaré","Sucuri","Tuiuiú"]],
+    ["Qual novela de 2009 mostrava a cultura indiana?",["Caminho das Índias","O Clone","Salve Jorge","Viver a Vida"]],
+    ["Quem interpretou a vilã Flora em \"A Favorita\"?",["Patrícia Pillar","Cláudia Raia","Glória Pires","Adriana Esteves"]],
+    ["Em qual cidade fictícia se passa \"Tieta\"?",["Santana do Agreste","Asa Branca","Sucupira","Greenville"]],
+    ["Em \"Roque Santeiro\", quem interpretou a Viúva Porcina?",["Regina Duarte","Betty Faria","Glória Menezes","Vera Fischer"]],
+    ["Qual atriz viveu Odete Roitman na versão de 1988 de \"Vale Tudo\"?",["Beatriz Segall","Fernanda Montenegro","Nathália Timberg","Eva Wilma"]]
+  ],
+  japao:[
+    ["Como os japoneses chamam o Japão no próprio idioma?",["Nihon","Kanji","Sakura","Edo"]],
+    ["Qual bebida alcoólica japonesa é feita de arroz?",["Saquê","Soju","Cachaça","Tequila"]],
+    ["Como se chama a roupa tradicional japonesa?",["Quimono","Sari","Hanbok","Poncho"]],
+    ["Como eram chamados os guerreiros do Japão feudal?",["Samurais","Vikings","Cossacos","Gladiadores"]],
+    ["Qual flor é símbolo do Japão?",["Cerejeira (sakura)","Lótus","Orquídea","Girassol"]],
+    ["Como se chamam os quadrinhos japoneses?",["Mangá","Anime","Gibi","Tankobon"]],
+    ["Goku é protagonista de qual anime?",["Dragon Ball","Naruto","One Piece","Cavaleiros do Zodíaco"]],
+    ["Qual montadora japonesa fabrica o Corolla?",["Toyota","Honda","Nissan","Mitsubishi"]],
+    ["Qual cidade, antiga capital, é famosa pelos templos e gueixas?",["Quioto","Osaka","Sapporo","Nagoya"]],
+    ["Como se chama o poema japonês curto de três versos?",["Haicai","Soneto","Tanka livre","Cordel"]]
+  ],
+  series:[
+    ["Em \"Grey's Anatomy\", qual é o nome da protagonista?",["Meredith Grey","Cristina Yang","Izzie Stevens","Miranda Bailey"]],
+    ["Em qual cidade vivem os Simpsons?",["Springfield","Shelbyville","Quahog","South Park"]],
+    ["Em \"The Big Bang Theory\", qual físico fala \"Bazinga!\"?",["Sheldon Cooper","Leonard Hofstadter","Howard Wolowitz","Raj Koothrappali"]],
+    ["Qual série da Netflix conta a história da rainha Elizabeth II?",["The Crown","Bridgerton","Downton Abbey","Victoria"]],
+    ["Em \"Lost\", onde o avião cai?",["Numa ilha misteriosa","No deserto","Na Antártida","Na floresta amazônica"]],
+    ["A série \"Dark\" é de qual país?",["Alemanha","Espanha","Suécia","Dinamarca"]],
+    ["Em \"Prison Break\", quem entra na prisão para salvar o irmão?",["Michael Scofield","Lincoln Burrows","T-Bag","Fernando Sucre"]],
+    ["Qual é a protagonista de \"Sex and the City\"?",["Carrie Bradshaw","Samantha Jones","Rachel Green","Blair Waldorf"]],
+    ["Qual detetive da Baker Street ganhou série da BBC com Benedict Cumberbatch?",["Sherlock","Poirot","Columbo","Monk"]],
+    ["Em \"How I Met Your Mother\", quem conta a história aos filhos?",["Ted Mosby","Barney Stinson","Marshall Eriksen","Robin Scherbatsky"]]
+  ],
+  lendas:[
+    ["No folclore, quem é a Iara?",["Uma sereia dos rios","Uma bruxa da floresta","Um espírito do fogo","Uma mulher-onça"]],
+    ["Por onde a Mula sem Cabeça solta fogo?",["Pelo pescoço","Pelos cascos","Pela boca","Pelos olhos"]],
+    ["A Cuca do folclore brasileiro tem a forma de qual animal?",["Jacaré","Coruja","Onça","Cobra"]],
+    ["Qual ser do folclore protege os animais e anda montado num porco-do-mato?",["Caipora","Saci","Iara","Boitatá"]],
+    ["Qual criatura peluda viveria nas florestas da América do Norte?",["Pé Grande","Yeti","Chupa-cabra","Mapinguari"]],
+    ["Como é descrito o Slender Man, lenda nascida na internet?",["Homem muito alto e sem rosto","Palhaço de olhos vermelhos","Menina de vestido branco","Homem com chapéu de fogo"]],
+    ["Qual é o vampiro mais famoso da literatura?",["Drácula","Nosferatu","Lestat","Edward Cullen"]],
+    ["A lenda do Negrinho do Pastoreio é típica de qual estado?",["Rio Grande do Sul","Bahia","Minas Gerais","Amazonas"]],
+    ["Qual criatura lendária, o abominável homem das neves, viveria no Himalaia?",["Yeti","Pé Grande","Wendigo","Troll"]],
+    ["Segundo a lenda, quem o Homem do Saco leva embora?",["Crianças desobedientes","Gatos pretos","Pessoas que roncam","Quem sai na lua cheia"]]
+  ],
+  sp:[
+    ["Qual estação histórica abriga o Museu da Língua Portuguesa?",["Estação da Luz","Estação Júlio Prestes","Estação Brás","Estação Sé"]],
+    ["Qual prédio foi o primeiro arranha-céu de São Paulo?",["Edifício Martinelli","Edifício Copan","Edifício Itália","Banespão"]],
+    ["Qual viaduto famoso passa sobre o Vale do Anhangabaú?",["Viaduto do Chá","Viaduto Santa Ifigênia","Minhocão","Viaduto do Glicério"]],
+    ["Qual estádio é a casa do Palmeiras?",["Allianz Parque","Pacaembu","Neo Química Arena","Morumbi"]],
+    ["Qual estádio é a casa do São Paulo Futebol Clube?",["Morumbi","Allianz Parque","Canindé","Vila Belmiro"]],
+    ["Qual bairro de tradição italiana faz a festa de San Gennaro?",["Mooca","Bixiga","Brás","Lapa"]],
+    ["Qual ponte com cabos em X virou cartão-postal da Marginal Pinheiros?",["Ponte Estaiada","Ponte das Bandeiras","Ponte do Limão","Ponte Cidade Jardim"]],
+    ["Qual teatro histórico do centro foi inaugurado em 1911?",["Theatro Municipal","Teatro Oficina","Teatro Renault","Sala São Paulo"]],
+    ["Como se chama quem nasce na cidade de São Paulo?",["Paulistano","Paulista","Paulense","Sampaulino"]],
+    ["Qual rua do centro é famosa pelo comércio popular?",["25 de Março","Oscar Freire","Augusta","Haddock Lobo"]]
+  ],
+  comidas:[
+    ["Qual fruto do Cerrado é típico da culinária goiana?",["Pequi","Açaí","Cupuaçu","Caju"]],
+    ["A moqueca feita em panela de barro, sem dendê, é típica de qual estado?",["Espírito Santo","Bahia","Pernambuco","Pará"]],
+    ["Quais são os ingredientes principais do brigadeiro?",["Leite condensado e chocolate","Coco e açúcar","Amendoim e mel","Leite e farinha"]],
+    ["A pizza surgiu em qual país?",["Itália","Estados Unidos","Grécia","França"]],
+    ["O croissant é típico de qual país?",["França","Áustria","Bélgica","Suíça"]],
+    ["Qual prato peruano é peixe cru marinado no limão?",["Ceviche","Tamal","Empanada","Guacamole"]],
+    ["Qual prato coreano é feito de acelga fermentada e apimentada?",["Kimchi","Bibimbap","Bulgogi","Tteokbokki"]],
+    ["Qual corte bovino é o mais famoso do churrasco brasileiro?",["Picanha","Filé-mignon","Acém","Músculo"]],
+    ["Qual prato mineiro leva feijão, farinha, torresmo e couve?",["Feijão tropeiro","Tutu à mineira","Vaca atolada","Frango com quiabo"]],
+    ["Qual doce português famoso é feito com creme de ovos em massa folhada?",["Pastel de nata","Quindim","Bem-casado","Papo de anjo"]]
+  ],
+  mitologia:[
+    ["Quem é o deus grego do submundo?",["Hades","Ares","Cronos","Hermes"]],
+    ["Qual deus nórdico é famoso por ser trapaceiro?",["Loki","Thor","Balder","Freya"]],
+    ["Como se chama o martelo de Thor?",["Mjölnir","Gungnir","Excalibur","Tridente"]],
+    ["Qual deus romano corresponde a Zeus?",["Júpiter","Marte","Netuno","Saturno"]],
+    ["Qual ave mítica renasce das próprias cinzas?",["Fênix","Grifo","Harpia","Roc"]],
+    ["Qual herói grego tinha o calcanhar como único ponto fraco?",["Aquiles","Hércules","Teseu","Jasão"]],
+    ["Qual é o deus do sol no Egito antigo?",["Rá","Set","Ptah","Thoth"]],
+    ["Em qual monte moravam os deuses gregos?",["Olimpo","Parnaso","Etna","Ida"]],
+    ["Qual é a deusa grega do amor e da beleza?",["Afrodite","Hera","Deméter","Perséfone"]],
+    ["Em qual guerra os gregos usaram um cavalo de madeira gigante?",["Guerra de Troia","Guerras Médicas","Guerra do Peloponeso","Guerra de Esparta"]]
+  ],
+  chaves:[
+    ["Quem criou Chaves e Chapolin?",["Roberto Gómez Bolaños","Carlos Villagrán","Ramón Valdés","Rubén Aguirre"]],
+    ["Qual era o apelido de Roberto Gómez Bolaños?",["Chespirito","Chavito","Bolañito","Chapulín"]],
+    ["Quantos meses de aluguel o Seu Madruga deve?",["14","10","12","24"]],
+    ["Quem é o dono da vila que cobra o aluguel?",["Senhor Barriga","Professor Girafales","Jaiminho","Seu Madruga"]],
+    ["Como se chama o filho do Senhor Barriga?",["Nhonho","Quico","Godinez","Pópis"]],
+    ["Quem é o professor da escola em \"Chaves\"?",["Professor Girafales","Professor Linguiça","Professor Barriga","Professor Madruga"]],
+    ["Dona Florinda é mãe de qual personagem?",["Quico","Chiquinha","Nhonho","Pópis"]],
+    ["Chiquinha é filha de quem?",["Seu Madruga","Dona Florinda","Senhor Barriga","Dona Clotilde"]],
+    ["Qual é o nome verdadeiro da \"Bruxa do 71\"?",["Dona Clotilde","Dona Neves","Dona Florinda","Dona Edwiges"]],
+    ["Qual é o sanduíche favorito do Chaves?",["De presunto","De queijo","De mortadela","De salame"]],
+    ["Chaves e Chapolin são séries de qual país?",["México","Argentina","Colômbia","Espanha"]],
+    ["Qual emissora brasileira ficou famosa por exibir Chaves por décadas?",["SBT","Globo","Record","Band"]],
+    ["Qual é a arma do Chapolin Colorado?",["Marreta Biônica","Laço da Verdade","Escudo Vermelho","Bengala Mágica"]],
+    ["Como se chamam as pílulas que fazem o Chapolin encolher?",["Pílulas de Nanicolina","Pílulas Encolhedoras","Pastilhas Mini","Comprimidos de Anão"]],
+    ["Como se chamam as antenas do Chapolin?",["Anteninhas de vinil","Antenas biônicas","Antenas de plástico","Radares vermelhos"]],
+    ["Qual personagem diz \"Não contavam com minha astúcia!\"?",["Chapolin Colorado","Chaves","Quico","Seu Madruga"]],
+    ["Qual é a cor principal do uniforme do Chapolin?",["Vermelho","Amarelo","Azul","Verde"]],
+    ["Qual é a profissão do Jaiminho?",["Carteiro","Professor","Sapateiro","Leiteiro"]],
+    ["Quem diz \"Cale-se, cale-se, cale-se! Você me deixa louco!\"?",["Quico","Chaves","Nhonho","Seu Madruga"]],
+    ["De quem é o bordão \"Isso, isso, isso!\"?",["Chaves","Chiquinha","Chapolin","Professor Girafales"]]
+  ]
+};
+for (const k in QX) Q[k] = (Q[k] || []).concat(QX[k]);
+Q.pop = [
+  ["Qual é a identidade secreta do Homem de Ferro?",["Tony Stark","Bruce Wayne","Steve Rogers","Bruce Banner"]],
+  ["Qual herói da Marvel usa um escudo com uma estrela?",["Capitão América","Thor","Falcão","Pantera Negra"]],
+  ["Em qual cidade vive o Batman?",["Gotham","Metrópolis","Star City","Nova York"]],
+  ["Qual é a identidade secreta do Homem-Aranha?",["Peter Parker","Clark Kent","Barry Allen","Wade Wilson"]],
+  ["Qual cantora fez a turnê \"The Eras Tour\"?",["Taylor Swift","Beyoncé","Lady Gaga","Olivia Rodrigo"]],
+  ["Qual boneca ganhou filme em 2023 estrelado por Margot Robbie?",["Barbie","Polly","Bratz","Susi"]],
+  ["Qual grupo sul-coreano gravou \"Dynamite\"?",["BTS","BLACKPINK","EXO","TWICE"]],
+  ["Qual rede social de vídeos curtos pertence à chinesa ByteDance?",["TikTok","Kwai","Snapchat","Vine"]],
+  ["Em \"Harry Potter\", qual é o nome da coruja do Harry?",["Edwiges","Errol","Píchi","Bicuço"]],
+  ["Como se chamam os ajudantes amarelos de \"Meu Malvado Favorito\"?",["Minions","Smurfs","Oompa-Loompas","Gremlins"]],
+  ["Qual vilão da Marvel estala os dedos e faz metade do universo sumir?",["Thanos","Loki","Ultron","Kang"]],
+  ["Em \"Frozen\", qual princesa tem poderes de gelo?",["Elsa","Anna","Moana","Aurora"]],
+  ["Shrek é que tipo de criatura?",["Ogro","Troll","Duende","Gigante"]],
+  ["De qual boy band Harry Styles fazia parte?",["One Direction","Jonas Brothers","Backstreet Boys","The Wanted"]],
+  ["Em \"The Mandalorian\", qual é o nome verdadeiro do \"Baby Yoda\"?",["Grogu","Mando","Yaddle","Din"]],
+  ["Em \"Stranger Things\", qual personagem tem poderes e um número no nome?",["Eleven","Dustin","Max","Will"]],
+  ["Qual rapper é casado com Beyoncé?",["Jay-Z","Kanye West","Drake","Eminem"]],
+  ["O fenômeno \"Barbenheimer\" juntava \"Barbie\" com qual filme?",["Oppenheimer","Duna","Interestelar","Tenet"]],
+  ["Qual personagem de videogame estrelou um filme de animação recordista em 2023?",["Mario","Sonic","Pikachu","Link"]],
+  ["Qual super-herói da DC veio do planeta Krypton?",["Superman","Lanterna Verde","Flash","Aquaman"]]
+];
+const AVATARS = [["🧛","Vampiro"],["🧟","Zumbi"],["🧙‍♀️","Bruxa"],["👻","Fantasma"],["💀","Caveira"],["🎃","Abóbora"],["🤡","Palhaço"],["🐺","Lobisomem"],["🕷️","Aranha"],["🦇","Morcego"],["👹","Demônio"],["👽","Alien"]];
+const ROUNDS = 20, VOTE_MS = 20000, Q_MS = 20000, THEME_MS = 2800, REVEAL_MS = 5000, RANK_MS = 10000;
+const LETTERS = ["A","B","C","D"];
+
+/* ---------------- Utilidades ---------------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const shuffle = a => { a = a.slice(); for (let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
+const store = { get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}} };
+let pid = store.get("qz_pid"); if(!pid){ pid = Math.random().toString(36).slice(2,10); store.set("qz_pid", pid); }
+
+/* ---------------- Estado ---------------- */
+let mode = null;            // "online" | "local"
+let room = null;
+let isHost = false;
+let G = null;               // estado do jogo (autoritativo no anfitrião)
+let phaseT0 = 0;            // relógio do anfitrião
+let seenSeq = -1, localT0 = 0;
+const me = { pid, n: store.get("qz_name") || "", a: store.get("qz_av") || "", joined:false };
+let myIn = { vote:null, ans:null };     // minhas entradas (online)
+let localPlayers = [];                   // modo um celular
+let localIn = {};                        // pid -> {vote, ans}
+let localTurn = 0, turnT0 = 0, turnReady = false;
+let roomOK = null;
+let lastGid = null;                        // null: verificando
+
+function peersList(){ return room ? room.peers() : []; }
+function hostPeer(){
+  let best=null;
+  for (const p of peersList()){ const g=p.presence && p.presence.g; if(p.presence && p.presence.host && (!best || ((g&&g.seq)||0) > ((best.presence.g&&best.presence.g.seq)||0))) best=p; }
+  return best;
+}
+function lobbyPlayers(){
+  const seen = {}, out = [];
+  if (me.joined) { seen[me.pid]=1; out.push({id:me.pid,n:me.n,a:me.a}); }
+  for (const p of peersList()){
+    const m = p.presence && p.presence.me;
+    if (!m || typeof m.n!=="string" || !m.n || typeof m.pid!=="string" || seen[m.pid]) continue;
+    seen[m.pid]=1; out.push({id:m.pid, n:m.n.slice(0,16), a:String(m.a||"👻").slice(0,8)});
+  }
+  return out;
+}
+function inputsOf(id){
+  if (mode==="local") return localIn[id] || {};
+  if (id===me.pid) return myIn;
+  for (const p of peersList()){ const pr=p.presence; if (pr && pr.me && pr.me.pid===id) return {vote:pr.vote, ans:pr.ans}; }
+  return {};
+}
+function view(){ // estado que esta tela mostra
+  if (mode==="local" || isHost) return G;
+  if (mode!=="online" || !me.joined) return null;
+  const h = hostPeer(); return h ? (h.presence.g || null) : null;
+}
+
+/* ---------------- Motor do anfitrião ---------------- */
+function broadcast(){ if (mode==="online" && room) room.presence({host:true, g:G}).catch(()=>{}); }
+function setPhase(phase, extra){
+  G = Object.assign({}, G, extra||{}, {phase, seq:(G.seq||0)+1, done:[]});
+  if (phase==="vote"||phase==="q"){ localTurn=0; turnReady=false; }
+  phaseT0 = Date.now(); broadcast(); render();
+}
+function pickOpts(exclude){ return shuffle(Object.keys(THEMES).filter(k=>k!==exclude)).slice(0,3); }
+function startGame(players){
+  const scores = {}; players.forEach(p=>scores[p.id]=0);
+  G = {v:1, gid:Math.random().toString(36).slice(2,8), seq:0, phase:"vote", round:1, players, scores, last:{}, used:[], opts:pickOpts(null), theme:null, tally:{}, done:[]};
+  localIn = {}; myIn = {vote:null, ans:null}; localTurn = 0; turnReady=false;
+  phaseT0 = Date.now(); G.seq = 1; broadcast(); render(); wake();
+}
+function finishVote(){
+  const tally = {}; G.opts.forEach(k=>tally[k]=0);
+  G.players.forEach(p=>{ const v=inputsOf(p.id).vote; if (cur(v,G) && tally[v.t]!==undefined) tally[v.t]++; });
+  const max = Math.max(...Object.values(tally));
+  const theme = shuffle(G.opts.filter(k=>tally[k]===max))[0];
+  setPhase("theme", {theme, tally});
+}
+function askQuestion(){
+  const all = Q[G.theme].map((_,i)=>G.theme+"-"+i);
+  let pool = all.filter(id=>!G.used.includes(id)); if (!pool.length) pool = all;
+  const qid = shuffle(pool)[0];
+  setPhase("q", {qid, order:shuffle([0,1,2,3]), used:G.used.concat(qid)});
+}
+function finishQ(){
+  const scores = Object.assign({}, G.scores), last = {};
+  G.players.forEach(p=>{
+    const a = inputsOf(p.id).ans; const valid = cur(a,G) && typeof a.c==="number";
+    const ok = valid && a.c===0;
+    const ms = valid ? Math.max(0, Math.min(Q_MS, Number(a.ms)||Q_MS)) : Q_MS;
+    const pts = ok ? 100 + Math.round(100*(1 - ms/Q_MS)) : 0;
+    scores[p.id] = (scores[p.id]||0) + pts;
+    last[p.id] = {c: valid ? a.c : -1, pts};
+  });
+  setPhase("reveal", {scores, last});
+}
+function nextRound(){
+  if (G.round >= ROUNDS) setPhase("end");
+  else setPhase("vote", {round:G.round+1, opts:pickOpts(G.theme), tally:{}});
+}
+function hostTick(){
+  if (!G || !(isHost || mode==="local")) return;
+  const el = Date.now()-phaseT0, online = mode==="online";
+  if (G.phase==="vote" || G.phase==="q"){
+    const key = G.phase==="vote" ? "vote" : "ans";
+    const done = G.players.filter(p=>{ return cur(inputsOf(p.id)[key], G); }).map(p=>p.id);
+    if (done.join()!==G.done.join()){ G = Object.assign({}, G, {done}); broadcast(); render(); }
+    const all = done.length===G.players.length;
+    if (G.phase==="vote" && (all || (online && el>VOTE_MS))) finishVote();
+    else if (G.phase==="q" && (all || (online && el>Q_MS+800))) finishQ();
+  } else if (G.phase==="theme" && el>THEME_MS) askQuestion();
+  else if (G.phase==="reveal" && el>REVEAL_MS) setPhase("rank");
+  else if (G.phase==="rank" && online && el>RANK_MS) nextRound();
+}
+setInterval(hostTick, 300);
+
+/* ---------------- Ações do jogador ---------------- */
+function vote(t){
+  const g = view(); if (!g || g.phase!=="vote") return;
+  if (mode==="local"){
+    const p = G.players[localTurn]; if (!p) return;
+    localIn[p.id] = Object.assign({}, localIn[p.id], {vote:{g:G.gid, r:G.round, t}});
+    localTurn++; render(); return;
+  }
+  if (cur(myIn.vote,g)) return;
+  myIn.vote = {g:g.gid, r:g.round, t}; room && room.presence({vote:myIn.vote}).catch(()=>{}); render();
+}
+function answer(c){
+  const g = view(); if (!g || g.phase!=="q") return;
+  if (mode==="local"){
+    const p = G.players[localTurn]; if (!turnReady || !p) return;
+    localIn[p.id] = Object.assign({}, localIn[p.id], {ans:{g:G.gid, r:G.round, c, ms:Date.now()-turnT0}});
+    localTurn++; turnReady=false; render(); return;
+  }
+  if (cur(myIn.ans,g)) return;
+  myIn.ans = {g:g.gid, r:g.round, c, ms:Date.now()-localT0}; room && room.presence({ans:myIn.ans}).catch(()=>{}); render();
+}
+
+/* ---------------- Telas ---------------- */
+function themeName(k){ return THEMES[k] ? THEMES[k].n : ""; }
+const cur = (x,g) => !!(x && g && x.r===g.round && x.g===g.gid);
+function playerById(g,id){ return (g.players||[]).find(p=>p.id===id) || {n:"?",a:"👻"}; }
+function chipsHTML(g){
+  return `<div class="chips">${g.players.map(p=>`<span class="chip ${g.done&&g.done.includes(p.id)?"done":""}"><span class="e">${esc(p.a)}</span>${esc(p.n)}</span>`).join("")}</div>`;
+}
+function topbar(g){
+  return `<div class="topbar"><div class="logo" style="font-size:1.9rem">Noite do <span>Quiz</span></div><div class="round">Rodada ${g.round}<small>/${ROUNDS}</small></div></div>`;
+}
+function avatarPicker(taken){
+  return `<div class="avatars" role="group" aria-label="Avatar">${AVATARS.map(([e,n])=>{
+    const t = taken.includes(e) && me.a!==e;
+    return `<button class="av" data-av="${e}" aria-pressed="${me.a===e}" ${t?"disabled":""}><b>${e}</b>${n}</button>`; }).join("")}</div>`;
+}
+
+function screenHome(){
+  return `
+  <div class="stack" style="padding-top:12px">
+    <div class="kicker">Especial de Halloween · 3 jogadores · ${ROUNDS} rodadas</div>
+    <h1 class="logo">Noite do <span>Quiz</span></h1>
+    <p class="muted">Vote no tema, responda rápido e suba no ranking. Quem acerta mais rápido leva mais pontos.</p>
+  </div>
+  <div class="panel"${ONLINE?"":" hidden"}>
+    <h3>Cada um no seu celular</h3>
+    <p class="muted">Todos abrem este link logados no Claude e entram na mesma sala.</p>
+    <button class="btn" data-act="online" ${roomOK===false?"disabled":""}>Entrar na sala</button>
+    ${roomOK===false?`<p class="err">A sala online não conectou neste aparelho. Use o modo de um celular só ou abra o link logado no Claude.</p>`:""}
+    ${roomOK===null?`<p class="note">Conectando à sala…</p>`:""}
+  </div>
+  <div class="panel">
+    <h3>Um celular só</h3>
+    <p class="muted">Passa o celular de mão em mão. Funciona sem internet nos outros aparelhos.</p>
+    <button class="btn ghost" data-act="local">Jogar passando o celular</button>
+  </div>`;
+}
+
+function screenProfile(){
+  const taken = lobbyPlayers().filter(p=>p.id!==me.pid).map(p=>p.a);
+  return `
+  <div class="topbar"><div class="logo" style="font-size:1.9rem">Noite do <span>Quiz</span></div><button class="btn ghost" data-act="home" style="padding:8px 12px">Voltar</button></div>
+  <div class="panel">
+    <label class="kicker" for="nm">Seu nome</label>
+    <input type="text" id="nm" maxlength="16" placeholder="Ex.: Michel" value="${esc(me.n)}" autocomplete="off">
+    <div class="kicker">Escolha seu monstro</div>
+    ${avatarPicker(taken)}
+    <button class="btn" data-act="join" ${me.n&&me.a?"":"disabled"}>Entrar</button>
+  </div>`;
+}
+
+function screenLobby(){
+  const players = lobbyPlayers();
+  const h = hostPeer();
+  const hostHere = isHost || !!h;
+  return `
+  <div class="topbar"><div class="logo" style="font-size:1.9rem">Noite do <span>Quiz</span></div><button class="btn ghost" data-act="edit" style="padding:8px 12px">Trocar monstro</button></div>
+  <div class="panel">
+    <div class="kicker">Na sala agora</div>
+    <div id="lobbyList" class="chips">${players.map(p=>`<span class="chip"><span class="e">${esc(p.a)}</span>${esc(p.n)}${p.id===me.pid?" (você)":""}</span>`).join("")}</div>
+    <p class="muted">${players.length<3?`Esperando mais ${3-players.length} jogador${3-players.length>1?"es":""}…`:"Todo mundo aqui!"}</p>
+  </div>
+  ${isHost ? `
+    <div class="panel">
+      <p>Você é o anfitrião. Comece quando todos estiverem na sala.</p>
+      <button class="btn" data-act="start" ${players.length<2?"disabled":""}>Começar o jogo (${players.length} jogadores)</button>
+    </div>` : hostHere ? `
+    <div class="panel"><p>Aguardando ${esc((h.presence.me&&h.presence.me.n)||"o anfitrião")} começar o jogo…</p></div>` : `
+    <div class="panel">
+      <p class="muted">Um aparelho comanda o jogo. Escolha um só.</p>
+      <button class="btn alt" data-act="becomehost">Eu comando o jogo</button>
+    </div>`}`;
+}
+
+function screenLocalSetup(){
+  const taken = localPlayers.map(p=>p.a);
+  return `
+  <div class="topbar"><div class="logo" style="font-size:1.9rem">Noite do <span>Quiz</span></div><button class="btn ghost" data-act="home" style="padding:8px 12px">Voltar</button></div>
+  <div class="panel">
+    <div class="kicker">Jogadores (${localPlayers.length}/3)</div>
+    <div class="chips">${localPlayers.length?localPlayers.map((p,i)=>`<span class="chip"><span class="e">${esc(p.a)}</span>${esc(p.n)} <button data-rm="${i}" aria-label="Remover ${esc(p.n)}" style="color:var(--muted);padding:0 4px">✕</button></span>`).join(""):`<span class="muted">Ninguém ainda</span>`}</div>
+  </div>
+  ${localPlayers.length<3?`
+  <div class="panel">
+    <label class="kicker" for="nm">Nome do jogador ${localPlayers.length+1}</label>
+    <input type="text" id="nm" maxlength="16" placeholder="Nome" value="" autocomplete="off">
+    <div class="kicker">Monstro</div>
+    <div class="avatars" role="group" aria-label="Avatar">${AVATARS.map(([e,n])=>`<button class="av" data-lav="${e}" aria-pressed="${me._la===e}" ${taken.includes(e)?"disabled":""}><b>${e}</b>${n}</button>`).join("")}</div>
+    <button class="btn ghost" data-act="ladd">Adicionar jogador</button>
+  </div>`:""}
+  <button class="btn" data-act="lstart" ${localPlayers.length<2?"disabled":""}>Começar o jogo</button>`;
+}
+
+function timerHTML(){ return `<div class="row" style="justify-content:space-between"><span class="kicker">Tempo</span><span class="tnum" id="tnum"></span></div><div class="timer"><i id="tbar"></i></div>`; }
+
+function screenVote(g){
+  let who = null, voted = false, myVote=null;
+  if (mode==="local"){ who = g.players[localTurn]; if (!who) return `${topbar(g)}<div class="panel pass"><div class="big">Contando os votos…</div></div>`; }
+  else { myVote = cur(myIn.vote,g) ? myIn.vote.t : null; voted = !!myVote; }
+  const inGame = mode==="local" || g.players.some(p=>p.id===me.pid);
+  return `${topbar(g)}
+  <div class="stack">
+    <div class="kicker">${mode==="local"?`Vez de ${esc(who.a)} ${esc(who.n)} votar`:"Vote no tema da rodada"}</div>
+    ${mode==="online"?timerHTML():""}
+    <div class="themes">${g.opts.map(k=>`<button class="theme" data-vote="${k}" aria-pressed="${myVote===k}" ${voted||!inGame?"disabled":""}><span class="e">${THEMES[k].e}</span>${THEMES[k].n}</button>`).join("")}</div>
+    ${voted?`<p class="muted center">Voto registrado. Esperando os outros…</p>`:""}
+    ${chipsHTML(g)}
+  </div>`;
+}
+
+function screenTheme(g){
+  const t = THEMES[g.theme];
+  const counts = g.opts.map(k=>`${THEMES[k].e} ${g.tally[k]||0}`).join(" · ");
+  return `${topbar(g)}
+  <div class="panel reveal-theme">
+    <div class="kicker">O tema escolhido foi</div>
+    <div class="e">${t.e}</div>
+    <div class="big">${t.n}</div>
+    <p class="muted">Votos: ${counts}</p>
+  </div>`;
+}
+
+function qData(g){ const [th,i]=g.qid.split("-"); return Q[th][+i]; }
+
+function screenQuestion(g){
+  const [text, alts] = qData(g);
+  if (mode==="local"){
+    const p = g.players[localTurn];
+    if (!p) return `${topbar(g)}<div class="panel pass"><div class="big">Conferindo respostas…</div></div>`;
+    if (!turnReady) return `${topbar(g)}
+      <div class="panel pass"><div class="kicker">${THEMES[g.theme].e} ${THEMES[g.theme].n}</div>
+      <div class="e">${esc(p.a)}</div><div class="big">Vez de ${esc(p.n)}</div>
+      <p class="muted">Passe o celular para ${esc(p.n)}. Os outros não podem espiar!</p>
+      <button class="btn" data-act="ready">Estou pronto</button></div>`;
+  }
+  const mine = mode==="online" && cur(myIn.ans,g) ? myIn.ans.c : null;
+  const inGame = mode==="local" || g.players.some(p=>p.id===me.pid);
+  const locked = mine!==null || !inGame;
+  return `${topbar(g)}
+  <div class="stack">
+    <div class="kicker">${THEMES[g.theme].e} ${THEMES[g.theme].n}${mode==="local"?` · ${esc(g.players[localTurn].n)} respondendo`:""}</div>
+    ${timerHTML()}
+    <div class="question">${esc(text)}</div>
+    <div class="opts">${g.order.map((oi,pos)=>`<button class="opt" data-ans="${oi}" aria-pressed="${mine===oi}" ${locked?"disabled":""}><span class="L">${LETTERS[pos]}</span><span>${esc(alts[oi])}</span></button>`).join("")}</div>
+    ${mine!==null?`<p class="muted center">Resposta enviada. Esperando os outros…</p>`:""}
+    ${mode==="online"?chipsHTML(g):""}
+  </div>`;
+}
+
+function screenReveal(g){
+  const [text, alts] = qData(g);
+  const mineC = mode==="online" && g.last[me.pid] ? g.last[me.pid].c : null;
+  return `${topbar(g)}
+  <div class="stack">
+    <div class="question">${esc(text)}</div>
+    <div class="opts">${g.order.map((oi,pos)=>`<div class="opt ${oi===0?"right":(oi===mineC?"wrong":"")}"><span class="L">${LETTERS[pos]}</span><span>${esc(alts[oi])}</span></div>`).join("")}</div>
+    <div class="panel">
+      <div class="kicker">Quem acertou</div>
+      ${g.players.map(p=>{ const l=g.last[p.id]||{pts:0,c:-1}; const ok=l.pts>0;
+        return `<div class="res"><span>${esc(p.a)} ${esc(p.n)}</span><span class="pts ${ok?"ok":"no"}">${ok?"+"+l.pts:(l.c===-1?"sem resposta":"errou")}</span></div>`; }).join("")}
+    </div>
+  </div>`;
+}
+
+function rankingList(g, withGain){
+  const sorted = g.players.slice().sort((a,b)=>(g.scores[b.id]||0)-(g.scores[a.id]||0));
+  let lastScore=null, pos=0;
+  return `<ol class="rank">${sorted.map((p,i)=>{
+    const s=g.scores[p.id]||0; if (s!==lastScore){pos=i+1; lastScore=s;}
+    const gain = withGain && g.last[p.id] ? g.last[p.id].pts : 0;
+    return `<li class="${pos===1?"first":""}"><span class="pos">${pos}º</span><span class="e">${esc(p.a)}</span><span class="nm">${esc(p.n)}${p.id===me.pid&&mode==="online"?" (você)":""}</span><span class="sc">${s}${withGain?`<span class="gain">${gain?"+"+gain:"+0"}</span>`:""}</span></li>`; }).join("")}</ol>`;
+}
+
+function screenRank(g){
+  const host = mode==="local" || isHost;
+  return `${topbar(g)}
+  <div class="stack">
+    <div class="kicker">Ranking depois da rodada ${g.round}</div>
+    ${rankingList(g,true)}
+    ${host?`<button class="btn" data-act="next">${g.round>=ROUNDS?"Ver o campeão":"Próxima rodada"}</button>
+      ${mode==="online"?`<p class="note center">Avança sozinho em alguns segundos.</p>`:""}`
+      :`<p class="muted center">${g.round>=ROUNDS?"O campeão vem aí…":"Próxima rodada já já…"}</p>`}
+  </div>`;
+}
+
+function screenEnd(g){
+  const max = Math.max(...g.players.map(p=>g.scores[p.id]||0));
+  const champs = g.players.filter(p=>(g.scores[p.id]||0)===max);
+  const host = mode==="local" || isHost;
+  return `
+  <div class="panel champ">
+    <div class="kicker">${champs.length>1?"Empate! Campeões da noite":"Campeão da noite"}</div>
+    <div class="e">${champs.map(c=>esc(c.a)).join(" ")}</div>
+    <div class="big">${champs.map(c=>esc(c.n)).join(" & ")}</div>
+    <p class="muted">${max} pontos em ${ROUNDS} rodadas</p>
+  </div>
+  ${rankingList(g,false)}
+  ${host?`<button class="btn" data-act="again">Jogar de novo</button><button class="btn ghost" data-act="tolobby">${mode==="local"?"Trocar jogadores":"Voltar para a sala"}</button>`:`<p class="muted center">O anfitrião pode começar outra partida.</p>`}`;
+}
+
+let screen = "home", lastKey = "";
+function render(force){
+  const g = view();
+  let html, key;
+  if (g && (mode==="local" || g.phase)) {
+    if (g.seq!==seenSeq){ seenSeq=g.seq; localT0 = isHost||mode==="local" ? phaseT0 : Date.now(); }
+    key = [g.seq, g.phase, (g.done||[]).join(), JSON.stringify(myIn), localTurn, turnReady].join("|");
+    if (!force && key===lastKey) return;
+    html = ({vote:screenVote, theme:screenTheme, q:screenQuestion, reveal:screenReveal, rank:screenRank, end:screenEnd})[g.phase](g);
+  } else {
+    if (screen==="lobby" && !force && $("#lobbyList")) { // atualização leve do saguão
+      const k = "lobby|"+JSON.stringify(lobbyPlayers())+"|"+isHost+"|"+!!hostPeer();
+      if (k===lastKey) return; lastKey=k; $("#app").innerHTML = screenLobby(); tickTimer(); return;
+    }
+    if (screen==="profile" && !force && $("#nm")) return; // não atrapalha a digitação
+    if (screen==="lsetup" && !force && $("#nm")) return;
+    key = screen+"|"+roomOK;
+    if (!force && key===lastKey) return;
+    html = ({home:screenHome, profile:screenProfile, lobby:screenLobby, lsetup:screenLocalSetup})[screen]();
+    if (screen==="lobby") key = "lobby|"+JSON.stringify(lobbyPlayers())+"|"+isHost+"|"+!!hostPeer();
+  }
+  lastKey = key;
+  $("#app").innerHTML = html;
+  tickTimer();
+}
+
+function tickTimer(){
+  const bar = $("#tbar"), num = $("#tnum"); if (!bar) return;
+  const g = view(); if (!g) return;
+  let total = g.phase==="vote" ? VOTE_MS : Q_MS;
+  let start = mode==="local" ? turnT0 : localT0;
+  const left = Math.max(0, total - (Date.now()-start));
+  bar.style.transform = `scaleX(${left/total})`;
+  num.textContent = Math.ceil(left/1000)+"s";
+  if (mode==="local" && g.phase==="q" && turnReady && left<=0) answer(-1);
+}
+setInterval(tickTimer, 250);
+
+/* ---------------- Eventos ---------------- */
+document.addEventListener("input", e=>{
+  if (e.target.id==="nm" && screen==="profile"){ me.n = e.target.value.trim(); store.set("qz_name", me.n);
+    const b = document.querySelector('[data-act="join"]'); if (b) b.disabled = !(me.n && me.a); }
+});
+document.addEventListener("click", e=>{
+  const t = e.target.closest("button"); if (!t) return;
+  if (t.dataset.av){ me.a = t.dataset.av; store.set("qz_av", me.a);
+    document.querySelectorAll("[data-av]").forEach(b=>b.setAttribute("aria-pressed", b.dataset.av===me.a));
+    const b = document.querySelector('[data-act="join"]'); if (b) b.disabled = !(me.n && me.a); return; }
+  if (t.dataset.lav){ me._la = t.dataset.lav; document.querySelectorAll("[data-lav]").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lav===me._la)); return; }
+  if (t.dataset.rm){ localPlayers.splice(+t.dataset.rm,1); render(true); return; }
+  if (t.dataset.vote){ vote(t.dataset.vote); return; }
+  if (t.dataset.ans){ answer(+t.dataset.ans); return; }
+  const a = t.dataset.act;
+  if (a==="online"){ mode="online"; screen="profile"; render(true); }
+  else if (a==="local"){ mode="local"; screen="lsetup"; render(true); }
+  else if (a==="home"){ mode=null; screen="home"; if (me.joined && room){ room.presence({me:null, host:null, g:null}).catch(()=>{}); me.joined=false; isHost=false; } render(true); }
+  else if (a==="join"){ if(!me.n||!me.a) return; me.joined=true; screen="lobby"; room && room.presence({me:{pid:me.pid,n:me.n,a:me.a}}).catch(()=>{}); render(true); }
+  else if (a==="edit"){ screen="profile"; render(true); }
+  else if (a==="becomehost"){ if (hostPeer()) return render(true); isHost=true; room && room.presence({host:true, g:null}).catch(()=>{}); render(true); }
+  else if (a==="start"){ const ps = lobbyPlayers(); if (ps.length<2) return; startGame(ps); }
+  else if (a==="ladd"){ const n = ($("#nm").value||"").trim().slice(0,16); if (!n || !me._la) return;
+    localPlayers.push({id:"p"+localPlayers.length+Date.now()%1000, n, a:me._la}); me._la=""; render(true); }
+  else if (a==="lstart"){ if (localPlayers.length<2) return; startGame(localPlayers.slice()); }
+  else if (a==="ready"){ turnReady=true; turnT0=Date.now(); render(true); }
+  else if (a==="next"){ if (G && G.phase==="rank") nextRound(); }
+  else if (a==="again"){ startGame(mode==="local" ? G.players : lobbyPlayers()); }
+  else if (a==="tolobby"){ G=null; myIn={vote:null,ans:null}; if (mode==="online"){ room && room.presence({g:null}).catch(()=>{}); screen="lobby"; } else screen="lsetup"; render(true); }
+});
+
+let wakeLock=null;
+async function wake(){ try{ if (navigator.wakeLock && !wakeLock) { wakeLock = await navigator.wakeLock.request("screen"); wakeLock.addEventListener("release",()=>wakeLock=null); } }catch(e){} }
+document.addEventListener("visibilitychange", ()=>{ if (document.visibilityState==="visible" && G) wake(); });
+
+/* ---------------- Sala online ---------------- */
+render(true);
+(async ()=>{
+  try {
+    room = window.claude && window.claude.use ? await window.claude.use("room") : null;
+  } catch(e){ room = null; }
+  roomOK = !!room;
+  if (room){
+    room.onPeers(()=>{
+      // o anfitrião sumiu no meio do jogo?
+      const g = view();
+      if (g && g.gid && g.gid!==lastGid){ lastGid=g.gid; if (!isHost){ myIn={vote:null,ans:null}; room.presence({vote:null, ans:null}).catch(()=>{}); } }
+      render();
+    }, ()=>{ roomOK=false; render(true); });
+  }
+  if (screen==="home") render(true);
+})();
+</script>
+</body>
+</html>
