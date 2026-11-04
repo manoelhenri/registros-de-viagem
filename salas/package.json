@@ -8,9 +8,7 @@
     "deploy": "wrangler deploy"
   },
   "devDependencies": {
-    "wrangler": "^4"
+    "wrangler": "4.86.0"
   },
-  "engines": {
-    "node": ">=22"
-  }
+  "//": "wrangler fixo em 4.86.0: é a última versão que roda no Node 20, que o Workers Builds usa por causa do .nvmrc do blog na raiz"
 }
