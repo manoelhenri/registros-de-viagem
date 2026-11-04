@@ -108,7 +108,7 @@ function sozinho(out) {
   // O service worker é outro endereço; a versão do cache sobe para garantir arquivos novos.
   const swf = path.join(out, "quem-e-mais", "sw.js");
   fs.writeFileSync(swf, fs.readFileSync(swf, "utf8").replace(/const CACHE='quem-e-mais-v(\d+)';/, (m, n) => `const CACHE='quem-e-mais-v${Number(n) + 1}';`));
-  fs.writeFileSync(path.join(out, "_redirects"), ["# Quem digitar o caminho antigo dentro do subdomínio", "/jogos / 301", "/jogos/* /:splat 301", ""].join("\n"));
+  fs.writeFileSync(path.join(out, "_redirects"), ["# Quem digitar o caminho antigo dentro do subdomínio", "/jogos / 301", "/jogos/* /:splat 301", "# Noite do Quiz virou Valendo! (nov/2026)", "/noite-do-quiz /valendo/ 301", "/noite-do-quiz/* /valendo/ 301", ""].join("\n"));
   const headers = [...SW_NO_CACHE("/")];
   // Antes da virada este site existe só para teste: fora do Google.
   if (!sites.separado) headers.push("/*", "  X-Robots-Tag: noindex");

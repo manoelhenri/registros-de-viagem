@@ -1,15 +1,16 @@
-// Servidor das salas online dos jogos (salas.manoelhenrique.com).
+// Servidor das salas online dos jogos (salas.manoelhenrique.com). Hoje atende o Valendo!.
 // Um Worker da Cloudflare com um Durable Object por sala: cada código de 4 letras é uma
 // sala, que guarda os jogadores e o estado da partida e é a única fonte de verdade
 // (sorteia, marca o tempo e calcula os pontos). Os celulares só mandam ações.
 // As regras vêm do mesmo arquivo usado pelo jogo no navegador.
 import { DurableObject } from "cloudflare:workers";
-import { novaPartida, votar, responder, proxima, avancar, incluir, publico, AVATARES, MAX_JOGADORES, RODADAS_OPCOES, RODADAS_PADRAO } from "../../static-jogos/noite-do-quiz/motor.js";
+import { novaPartida, votar, responder, usarAjuda, proxima, avancar, incluir, publico, temasValidos, AVATARES, MAX_JOGADORES, RODADAS_OPCOES, RODADAS_PADRAO, TEMAS } from "../../static-jogos/valendo/motor.js";
 
 const ORIGENS = /^(https:\/\/([a-z0-9-]+\.)*manoelhenrique\.com|https:\/\/([a-z0-9-]+\.)*pages\.dev|http:\/\/(localhost|127\.0\.0\.1)(:\d+)?)$/;
 const CODIGO = /^[A-Z]{4}$/;
 const SEM_USO_MS = 3 * 60 * 60 * 1000; // sala vazia por 3 h é apagada
 const AVS = AVATARES.map((a) => a[0]);
+const FOTO = /^data:image\/jpeg;base64,[A-Za-z0-9+/=]{100,40000}$/; // foto pequena (até ~30 KB) feita no celular
 
 export default {
   async fetch(req, env) {
@@ -37,7 +38,9 @@ export class Sala extends DurableObject {
   async fetch(req) {
     const codigo = new URL(req.url).pathname.slice(1);
     if (!CODIGO.test(codigo)) return new Response("Código inválido", { status: 400 });
-    if (!this.s) this.s = { codigo, membros: {}, ordem: [], anfitriao: null, rodadas: RODADAS_PADRAO, G: null };
+    if (!this.s) this.s = { codigo, membros: {}, ordem: [], anfitriao: null, rodadas: RODADAS_PADRAO, temas: Object.keys(TEMAS), G: null };
+    if (!this.s.temas) this.s.temas = Object.keys(TEMAS);
+    if (!this.fotos) this.fotos = (await this.ctx.storage.get("fotos")) || {};
     const [cliente, servidor] = Object.values(new WebSocketPair());
     this.ctx.acceptWebSocket(servidor);
     servidor.serializeAttachment({ pid: null });
@@ -52,6 +55,11 @@ export class Sala extends DurableObject {
 
   enviar(ws, msg) { try { ws.send(JSON.stringify(msg)); } catch (e) {} }
 
+  espalhar(msg, exceto) {
+    const txt = JSON.stringify(msg);
+    for (const ws of this.ctx.getWebSockets()) { const a = ws.deserializeAttachment(); if (ws !== exceto && a && a.pid) try { ws.send(txt); } catch (e) {} }
+  }
+
   async salvarEEnviar() {
     const s = this.s, on = this.conectados();
     if (!s.anfitriao || !on.has(s.anfitriao)) s.anfitriao = s.ordem.find((id) => on.has(id)) || s.anfitriao;
@@ -60,7 +68,7 @@ export class Sala extends DurableObject {
     await this.ctx.storage.setAlarm(prazo ? prazo + 50 : Date.now() + SEM_USO_MS);
     const msg = JSON.stringify({
       t: "estado", agora: Date.now(),
-      sala: { codigo: s.codigo, anfitriao: s.anfitriao, rodadas: s.rodadas, membros: s.ordem.map((id) => ({ id, n: s.membros[id].n, a: s.membros[id].a, on: on.has(id) })) },
+      sala: { codigo: s.codigo, anfitriao: s.anfitriao, rodadas: s.rodadas, temas: s.temas, membros: s.ordem.map((id) => ({ id, n: s.membros[id].n, a: s.membros[id].a, on: on.has(id) })) },
       g: publico(s.G),
     });
     for (const ws of this.ctx.getWebSockets()) { const a = ws.deserializeAttachment(); if (a && a.pid) try { ws.send(msg); } catch (e) {} }
@@ -74,7 +82,7 @@ export class Sala extends DurableObject {
 
   async alarm() {
     if (!this.s) return;
-    if (this.ctx.getWebSockets().length === 0 && (!this.s.G || !this.s.G.prazo)) { await this.ctx.storage.deleteAll(); this.s = null; return; }
+    if (this.ctx.getWebSockets().length === 0 && (!this.s.G || !this.s.G.prazo)) { await this.ctx.storage.deleteAll(); this.s = null; this.fotos = null; return; }
     this.avancarTudo();
     await this.salvarEEnviar();
   }
@@ -110,6 +118,9 @@ export class Sala extends DurableObject {
       if (s.G && s.G.fase !== "fim" && !s.G.jogadores.some((p) => p.id === pid)) s.G = incluir(s.G, { id: pid, n, a });
       if (!s.anfitriao || !on.has(s.anfitriao)) s.anfitriao = pid;
       this.enviar(ws, { t: "ok", pid, a });
+      if (!this.fotos) this.fotos = (await this.ctx.storage.get("fotos")) || {};
+      if (FOTO.test(m.foto || "")) { this.fotos[pid] = m.foto; await this.ctx.storage.put("fotos", this.fotos); this.espalhar({ t: "foto", id: pid, img: m.foto }, ws); }
+      this.enviar(ws, { t: "fotos", fotos: this.fotos });
       this.avancarTudo();
       return this.salvarEEnviar();
     }
@@ -125,22 +136,32 @@ export class Sala extends DurableObject {
       if (AVS.includes(m.a) && !outros.includes(m.a)) s.membros[pid].a = m.a;
     } else if (m.t === "rodadas" && host && saguao && RODADAS_OPCOES.includes(m.r)) {
       s.rodadas = m.r;
+    } else if (m.t === "temas" && host && saguao && Array.isArray(m.lista)) {
+      s.temas = temasValidos(m.lista.map(String).slice(0, 60));
+    } else if (m.t === "foto") {
+      if (!this.fotos) this.fotos = (await this.ctx.storage.get("fotos")) || {};
+      if (m.img === null) delete this.fotos[pid]; else if (FOTO.test(m.img || "")) this.fotos[pid] = m.img; else return;
+      await this.ctx.storage.put("fotos", this.fotos);
+      this.espalhar({ t: "foto", id: pid, img: this.fotos[pid] || null });
+      return;
     } else if ((m.t === "comecar" || m.t === "denovo") && host && saguao) {
       const on = this.conectados();
       const js = s.ordem.filter((id) => on.has(id)).map((id) => ({ id, n: s.membros[id].n, a: s.membros[id].a }));
       if (js.length < 2) return this.enviar(ws, { t: "erro", e: "poucos" });
-      s.G = novaPartida(js, agora, { rodadas: s.rodadas });
+      s.G = novaPartida(js, agora, { rodadas: s.rodadas, temas: s.temas });
     } else if (m.t === "saguao" && host && s.G && s.G.fase === "fim") {
       s.G = null;
     } else if (m.t === "votar" && s.G) {
       s.G = votar(s.G, pid, String(m.tema), agora);
+    } else if (m.t === "ajuda" && s.G) {
+      s.G = usarAjuda(s.G, pid, String(m.tipo));
     } else if (m.t === "responder" && s.G) {
       s.G = responder(s.G, pid, Number(m.c), agora);
     } else if (m.t === "proxima" && host && s.G) {
       s.G = proxima(s.G, agora);
     } else if (m.t === "sair") {
       ws.serializeAttachment({ pid: null });
-      if (saguao) { delete s.membros[pid]; s.ordem = s.ordem.filter((id) => id !== pid); }
+      if (saguao) { delete s.membros[pid]; s.ordem = s.ordem.filter((id) => id !== pid); if (this.fotos && this.fotos[pid]) { delete this.fotos[pid]; await this.ctx.storage.put("fotos", this.fotos); } }
       try { ws.close(1000, "saiu"); } catch (e) {}
     } else return;
     this.avancarTudo();
