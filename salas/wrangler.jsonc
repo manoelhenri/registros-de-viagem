@@ -1,0 +1,12 @@
+// Servidor das salas online dos jogos. Publicado pelo Workers Builds da Cloudflare a cada
+// push na main (projeto "salas-jogos", diretório raiz "salas"). Ver COMO-PUBLICAR.md.
+{
+  "name": "salas-jogos",
+  "main": "src/index.js",
+  "compatibility_date": "2025-09-01",
+  "workers_dev": true,
+  "routes": [{ "pattern": "salas.manoelhenrique.com", "custom_domain": true }],
+  "durable_objects": { "bindings": [{ "name": "SALA", "class_name": "Sala" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Sala"] }],
+  "observability": { "enabled": true }
+}

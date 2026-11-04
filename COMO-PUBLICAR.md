@@ -137,3 +137,21 @@ Depois do primeiro build: **Domínios personalizados** → **Configurar um domí
 - **Google Analytics:** em **Administrador → Fluxos de dados**, troque o endereço do fluxo do blog para `https://viagens.manoelhenrique.com`. A medição continua sem mexer em código.
 - **Links fora do site:** bio do Instagram e onde mais você divulgou os endereços antigos.
 - **Builds só quando precisa:** em cada projeto, **Configurações → Build → Caminhos de observação de build**. Jogos: incluir `static-jogos/*`, `scripts/build-jogos.js` e `sites.json`. Receitas: incluir `static-receitas/*`, `scripts/build-receitas.js`, `sites.json` e `_data/site.json`. Blog: excluir `static-jogos/*` e `static-receitas/*`.
+
+## Parte 4 — Servidor das salas online (Noite do Quiz)
+
+O modo "cada um no seu celular" do Noite do Quiz precisa de um pequeno servidor na Cloudflare, no endereço salas.manoelhenrique.com. Ele fica na pasta `salas/` deste repositório e é grátis no plano Free. A ligação é feita **uma vez só**; depois, todo push na `main` atualiza o servidor sozinho.
+
+1. No painel da Cloudflare, abra **Workers e Pages** e clique em **Criar**.
+2. Escolha **Importar um repositório** (aba Workers, não Pages) e selecione `manoelhenri/registros-de-viagem`.
+3. Na configuração:
+   - **Nome do projeto:** `salas-jogos`
+   - **Diretório raiz** (em configurações avançadas): `salas`
+   - **Comando de build:** deixe vazio
+   - **Comando de deploy:** `npx wrangler deploy` (é o padrão)
+4. Clique em **Implantar**. Em cerca de 1 minuto o servidor sobe e o endereço `salas.manoelhenrique.com` é criado sozinho (está na própria configuração do projeto).
+5. Para conferir, abra https://salas.manoelhenrique.com no navegador: deve aparecer "Salas dos jogos". Depois crie uma sala no jogo.
+
+Opcional: em **Configurações → Build → Caminhos observados**, coloque `salas/*` e `static-jogos/noite-do-quiz/*` para o servidor só reconstruir quando algo dele mudar.
+
+Se o servidor estiver fora do ar, o jogo avisa ao criar ou entrar numa sala, e o modo "um celular só" continua funcionando normalmente.

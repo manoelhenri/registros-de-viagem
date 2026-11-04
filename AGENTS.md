@@ -49,7 +49,7 @@ O dono decidiu separar as três áreas em subdomínios: **viagens.manoelhenrique
 
 ## Jogos ficam separados do blog
 
-A área `/jogos/` (hoje: o hub em `static-jogos/index.html`, o jogo "Quem é mais?" em `static-jogos/quem-e-mais/`, o "Noite do Quiz" em `static-jogos/noite-do-quiz/` (quiz de Halloween; a sala online do original só funciona dentro do Claude, então no site fica só o modo de um celular, sem PWA) e a política de privacidade em `static-jogos/privacidade/`) é um produto à parte, que só divide o domínio e o repositório com o blog. Regras:
+A área `/jogos/` (hoje: o hub em `static-jogos/index.html`, o jogo "Quem é mais?" em `static-jogos/quem-e-mais/`, o "Noite do Quiz" em `static-jogos/noite-do-quiz/` (quiz de Halloween online, ver "Salas online", abaixo) e a política de privacidade em `static-jogos/privacidade/`) é um produto à parte, que só divide o domínio e o repositório com o blog. Regras:
 
 1. **Nenhuma ligação entre os dois.** O blog não linka para os jogos (menu, rodapé, home, posts, sitemap, feed) e os jogos não linkam para o blog. Não misture os dois em nenhum template.
 2. **Nada do blog dentro dos jogos.** Os jogos são HTML estático autocontido: não usam `base.njk`, `style.css`, `_data/`, filtros do Eleventy nem a identidade visual do blog. Cada jogo tem visual, fontes, ícones, manifest e service worker próprios.
@@ -58,6 +58,16 @@ A área `/jogos/` (hoje: o hub em `static-jogos/index.html`, o jogo "Quem é mai
 5. **Service worker:** ao mudar qualquer arquivo de um jogo com PWA, suba a versão do cache no `sw.js` dele (ex.: `quem-e-mais-v5` para `quem-e-mais-v6`) e mantenha a lista de arquivos em dia, senão o celular de quem já instalou continua com a versão antiga.
 6. **`_redirects` e `_headers` do blog são gerados por `scripts/build-jogos.js`** (`noBlog()`), e os do site de jogos pelo mesmo script com `--sozinho`; os das receitas, por `scripts/build-receitas.js --sozinho`. Eles sobrescrevem qualquer arquivo com esse nome. O endereço antigo `/quem-e-mais` redireciona (301) para o jogo; não quebre isso.
 7. **Arquivos na raiz do domínio** (ex.: `.well-known/assetlinks.json`, para vincular o app Android) vão em `static-root/`, que o mesmo script copia para a raiz de `_site/` do blog e do site de jogos (é no `jogos.manoelhenrique.com` que o app Android vai procurar). A pasta ainda não existe; crie quando precisar e mantenha no `.eleventyignore`.
+
+## Salas online (Noite do Quiz)
+
+O Noite do Quiz tem partida online para até 10 celulares, com um servidor próprio em **https://salas.manoelhenrique.com** (pasta `salas/`, fora do Eleventy e no `.eleventyignore`).
+
+1. **Servidor:** um Worker da Cloudflare (`salas/src/index.js`, config em `salas/wrangler.jsonc`) com um Durable Object por sala (SQLite, plano grátis). O código da sala tem 4 consoantes e é o nome do Durable Object. A sala é a única fonte de verdade: sorteia temas e perguntas, marca o tempo com alarmes e calcula os pontos; os celulares só mandam ações por WebSocket (`entrar`, `perfil`, `rodadas`, `comecar`, `votar`, `responder`, `proxima`, `denovo`, `saguao`, `sair`, `ping`). Só aceita conexões de origens `*.manoelhenrique.com`, `*.pages.dev` e localhost.
+2. **Regras num lugar só:** `static-jogos/noite-do-quiz/motor.js` (regras puras) e `perguntas.js` (temas e perguntas; a primeira alternativa é a certa) são usados pelo navegador no modo de um celular só e importados pelo servidor. Mudou uma regra ou pergunta, as duas pontas mudam juntas. Durante o voto e a pergunta o servidor só conta QUEM já agiu (`publico()`), nunca o quê.
+3. **Publicação:** o Worker `salas-jogos` é publicado pelo Workers Builds da Cloudflare a cada push na `main` (diretório raiz `salas`, comando `npx wrangler deploy`), e o domínio `salas.manoelhenrique.com` vem da própria config (`custom_domain`). A ligação inicial é feita uma vez no painel da Cloudflare (ver `COMO-PUBLICAR.md`). Sem o servidor no ar, o jogo avisa e o modo de um celular só continua funcionando.
+4. **Testar localmente:** `cd salas && npm install && npx wrangler dev --port 8787`; o jogo servido em `localhost` usa `ws://127.0.0.1:8787` sozinho (ou `?servidor=` só em localhost).
+5. **Reconexão:** o celular guarda um id (`nq_pid`) no `localStorage` e volta para a mesma sala com os mesmos pontos se cair. Se o anfitrião cair, o próximo conectado assume. Quem entra no meio da partida começa com zero.
 
 ## Receitas ficam separadas do blog
 
